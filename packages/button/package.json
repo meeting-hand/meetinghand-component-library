@@ -1,19 +1,11 @@
 {
     "name": "@meetinghand/button",
-    "description": "Vue3 Component Library Component Example for button",
+    "description": "MeetingHand Buttons",
     "version": "0.0.2-alpha.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
     },
-    "keywords": [
-        "vue3",
-        "component",
-        "library",
-        "vue3",
-        "lerna",
-        "storybook"
-    ],
     "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
     "bugs": {
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
@@ -34,7 +26,7 @@
         "access": "public"
     },
     "files": [
-        "dist/*"
+        "lib/*"
     ],
     "dependencies": {
         "vue": "^3.0.5"
