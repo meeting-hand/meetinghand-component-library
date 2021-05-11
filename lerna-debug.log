@@ -1,0 +1,8 @@
+44 warn complete Waiting for 1 child process to exit. CTRL-C to exit immediately.
+45 error Error: Command failed: git tag @meetinghand/button@0.0.3-alpha.0 -m @meetinghand/button@0.0.3-alpha.0
+45 error fatal: tag '@meetinghand/button@0.0.3-alpha.0' already exists
+45 error
+45 error     at makeError (/Users/meetinghand/Desktop/dev/meetinghand-component-library/node_modules/execa/index.js:174:9)
+45 error     at /Users/meetinghand/Desktop/dev/meetinghand-component-library/node_modules/execa/index.js:278:16
+45 error     at processTicksAndRejections (internal/process/task_queues.js:93:5)
+45 error     at async Promise.all (index 0)

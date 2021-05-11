@@ -1,164 +1,153 @@
 <template>
-	<component
-		:is="tag"
-		:class="btnClass"
-		:style="btnStyle"
-		:target="target"
-		v-if="!routerRedirectStatus"
-	>
-		<slot></slot>
-	</component>
-	<router-link
-		:class="btnClass"
-		tag="a"
-		:style="btnStyle"
-		:to="to"
-		:target="target"
-		v-else
-	>
-		<slot></slot>
-	</router-link>
+  <component
+    :is="tag"
+    :class="btnClass"
+    :style="btnStyle"
+    :target="target"
+    v-if="!routerRedirectStatus"
+  >
+    <slot></slot>
+  </component>
+  <router-link
+    :class="btnClass"
+    tag="a"
+    :style="btnStyle"
+    :to="to"
+    :target="target"
+    v-else
+  >
+    <slot></slot>
+  </router-link>
 </template>
 
 <script>
 export default {
+  name: "MhButton",
 
-	name: "MhButton",
+  data() {
+    return {};
+  },
 
-	data() {
-		return {};
-	},
+  props: {
+    borderless: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
 
-	props: {
+    tag: {
+      type: String,
+      required: false,
+      default: "a",
+    },
 
-		borderless: {
-			type: Boolean,
-			required: false,
-			default: false
-		},
+    type: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
 
-		tag: {
-			type: String,
-			required: false,
-			default: "a"
-		},
+    iconOnly: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
 
-		type: {
-			type: Boolean,
-			required: false,
-			default: false
-		},
+    small: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
 
-		iconOnly: {
-			type: Boolean,
-			required: false,
-			default: false
-		},
+    color: {
+      type: String,
+      required: false,
+      default: "blue",
+    },
 
-		small: {
-			type: Boolean,
-			required: false,
-			default: false
-		},
+    icon: {
+      type: String,
+      required: false,
+      default: null,
+    },
 
-		color: {
-			type: String,
-			required: false,
-			default: "blue"
-		},
+    width: {
+      type: String,
+      required: false,
+      default: null,
+    },
 
-		icon: {
-			type: String,
-			required: false,
-			default: null
-		},
+    height: {
+      type: String,
+      required: false,
+      default: null,
+    },
 
-		width: {
-			type: String,
-			required: false,
-			default: null
-		},
+    justify: {
+      type: String,
+      required: false,
+      default: null,
+    },
 
-		height: {
-			type: String,
-			required: false,
-			default: null
-		},
+    to: {
+      type: [String, Object],
+      default: null,
+    },
 
-		justify: {
-			type: String,
-			required: false,
-			default: null
-		},
+    transform: {
+      type: String,
+      required: false,
+      default: null,
+    },
 
-		to: {
-			type: [String, Object],
-			default: null
-		},
+    block: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
 
-		transform: {
-			type: String,
-			required: false,
-			default: null
-		},
+    target: {
+      type: String,
+      default: "_self",
+    },
+  },
 
-		block: {
-			type: Boolean,
-			required: false,
-			default: false
-		},
+  computed: {
+    btnClass() {
+      return [
+        {
+          borderless: this.borderless,
+          iconOnly: this.iconOnly,
+          small: this.small,
+          type: this.type,
+          block: this.block,
+        },
+        this.icon,
+        this.color,
+        "mh-button",
+      ];
+    },
 
-		target: {
-			type: String,
-			default: '_self'
-		}
+    btnStyle() {
+      return [
+        {
+          width: this.width,
+        },
+        {
+          height: this.height,
+        },
+        {
+          "justify-content": this.justify,
+        },
+        {
+          "text-transform": this.transform,
+        },
+      ];
+    },
 
-	},
-
-	computed: {
-
-		btnClass() {
-
-			return [
-				{
-					'borderless': 	this.borderless,
-					'iconOnly': 	this.iconOnly,
-					'small': 		this.small,
-					'type': 		this.type,
-					'esat-type':	this.esatType,
-					'block':		this.block,
-				},
-				this.icon,
-				this.color,
-				'mh-button'
-			];
-
-		},
-
-		btnStyle() {
-
-			return [
-				{
-					'width': this.width
-				},
-				{
-					'height': this.height
-				},
-				{
-					'justify-content': this.justify
-				},
-				{
-					'text-transform': this.transform
-				},
-			]
-
-		},
-
-		routerRedirectStatus() {
-			return (this.to !== null)
-		}
-
-	}
-
+    routerRedirectStatus() {
+      return this.to !== null;
+    },
+  },
 };
 </script>
