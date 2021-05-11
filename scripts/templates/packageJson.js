@@ -5,7 +5,7 @@ module.exports =  ({ packageName }) => {
     "version": "0.0.0",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fatihsinanyaman/vue3-component-library.git"
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
     },
     "keywords": [
         "vue3",
@@ -15,9 +15,9 @@ module.exports =  ({ packageName }) => {
         "lerna",
         "storybook"
     ],
-    "homepage": "https://github.com/fatihsinanyaman/vue3-component-library#readme",
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
     "bugs": {
-        "url": "https://github.com/fatihsinanyaman/vue3-component-library/issues"
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
     "main": "./dist/@meetinghand/${packageName}.umd.js",
