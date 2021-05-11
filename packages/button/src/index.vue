@@ -49,12 +49,6 @@ export default {
 			default: false
 		},
 
-		esatType: {
-			type: Boolean,
-			required: false,
-			default: false
-		},
-
 		iconOnly: {
 			type: Boolean,
 			required: false,
