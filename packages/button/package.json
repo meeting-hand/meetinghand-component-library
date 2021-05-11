@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/button",
     "description": "Vue3 Component Library Component Example for button",
-    "version": "0.0.0",
+    "version": "0.0.1-alpha.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
