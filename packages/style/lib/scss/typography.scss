@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body,
+* {
+	font-family: "Inter", sans-serif;
+}
+
+.text-message {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.text-message-xs {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.text-title {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 42px;
+}
+
+.text-subtitle {
+	//font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+}
