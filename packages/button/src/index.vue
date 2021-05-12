@@ -1,5 +1,5 @@
 <template>
-  <button style="min-width: 200px;">
+  <button style="min-width: 200px; min-height: 300px;">
 		<slot></slot>
 	</button>
 </template>
