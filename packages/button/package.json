@@ -29,7 +29,6 @@
         "dist/*"
     ],
     "dependencies": {
-        "ant-design-vue": "^2.1.4",
         "vue": "^3.0.5"
     }
 }
