@@ -10,7 +10,7 @@ export default {
   setup() {
   },
   created(){
-    console.log('it works! 2');
+    console.log('it works! 3');
   }
   // components: {
   //   [Button.name]: Button
