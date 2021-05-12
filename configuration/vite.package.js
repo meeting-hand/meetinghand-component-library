@@ -10,22 +10,10 @@ export default {
     lib: {
       entry: "index.js",
     },
-    external: ["vue", "vuex", "vue-router", "ant-design-vue"],
+    external: ["vue", "vuex", "vue-router"],
     minify: "eslint",
   },
-  rollupOptions: {
-    // make sure to externalize deps that shouldn't be bundled
-    // into your library
-    external: ["vue", "ant-design-vue"],
-    output: {
-      // Provide global variables to use in the UMD build
-      // for externalized deps
-      globals: {
-        vue: "Vue",
-      },
-    },
-  },
-  resolve: {
-    dedupe: ["vue", "ant-design-vue"]
-  },
+  // resolve: {
+  //   dedupe: ["vue"],
+  // },
 };
