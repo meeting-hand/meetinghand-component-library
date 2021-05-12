@@ -9,7 +9,7 @@
     <a-button type="link" ghost>Link</a-button>
 </template>
 <script>
-import { Button } from "ant-design-vue";
+import { Button } from "ant-design-vue/lib/button";
 export default {
   name: "MhButton",
   components: {
