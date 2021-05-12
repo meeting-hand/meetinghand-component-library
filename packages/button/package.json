@@ -27,8 +27,5 @@
     },
     "files": [
         "dist/*"
-    ],
-    "dependencies": {
-        "vue": "^3.0.5"
-    }
+    ]
 }
