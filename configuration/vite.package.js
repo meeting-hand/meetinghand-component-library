@@ -10,7 +10,7 @@ export default {
     lib: {
       entry: "index.js",
     },
-    external: ["vue", "vuex", "vue-router"],
+    //external: ["vue", "vuex", "vue-router"],
     minify: "eslint",
   },
   resolve: {

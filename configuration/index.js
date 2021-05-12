@@ -37,6 +37,8 @@ function getConfiguration (configuration, options = {}, name) {
   // when things go berserk ;-)
   // console.warn(JSON.stringify(result, null, 2))
 
+  console.log(result);
+
   return result
 }
 
