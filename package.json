@@ -37,6 +37,7 @@
     "lerna": "^3.22.1",
     "sass": "^1.32.5",
     "vite": "^2.0.0-beta.44",
+    "vite-plugin-babel-import": "^2.0.2",
     "vue-loader": "^16.2.0",
     "yargs": "^16.2.0"
   },
