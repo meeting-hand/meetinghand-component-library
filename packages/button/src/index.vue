@@ -9,6 +9,9 @@ export default {
   name: "MhButton",
   setup() {
   },
+  created(){
+    console.log('it works!');
+  }
   // components: {
   //   [Button.name]: Button
   // }
