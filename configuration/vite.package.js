@@ -25,7 +25,7 @@ export default {
       },
     },
   },
-  // resolve: {
-  //   dedupe: ["vue"],
-  // },
+  resolve: {
+    dedupe: ["vue", "ant-design-vue"]
+  },
 };
