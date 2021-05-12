@@ -1,6 +1,8 @@
 <template>
-  <!-- <a-button type="primary"><slot></slot></a-button> -->
-  <button><slot></slot></button>
+  <div>
+        <h1>Rick Sanchez</h1>
+        <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez">
+    </div>
 </template>
 <script>
 //import Button from "ant-design-vue/lib/button";
