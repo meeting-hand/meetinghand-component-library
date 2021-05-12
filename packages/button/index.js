@@ -8,8 +8,8 @@ import MHButton from "./src/index.vue";
 // };
 
 
-MHButton.install = (Vue) => {
-  Vue.component(MHButton.name, MHButton);
-};
+// MHButton.install = (Vue) => {
+//   Vue.component(MHButton.name, MHButton);
+// };
 
 export default MHButton;
