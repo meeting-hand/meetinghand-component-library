@@ -11,21 +11,8 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/button.umd.js",
-    "module": "./dist/@meetinghand/button.es.js",
-    "exports": {
-        ".": {
-            "import": "./dist/@meetinghand/button.es.js",
-            "require": "./dist/@meetinghand/button.umd.js"
-        }
-    },
-    "scripts": {
-        "build": "vite build"
-    },
+    "main": "./dist/index.js",
     "publishConfig": {
         "access": "public"
-    },
-    "files": [
-        "dist/*"
-    ]
+    }
 }
