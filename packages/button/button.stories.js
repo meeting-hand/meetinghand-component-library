@@ -4,7 +4,7 @@ import MhButton from "./index";
 storiesOf("Button", module).add("a", () => ({
   components: { MhButton },
   template: `
-      <mh-button color="green" justify="center" transform="uppercase" width="178px">
+      <mh-button>
       It Works!
       </mh-button>
     `,

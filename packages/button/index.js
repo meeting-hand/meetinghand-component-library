@@ -1,5 +1,15 @@
-import Button from "./src/index.vue";
-Button.install = function (Vue) {
-  Vue.component(Button.name, Button);
-  };
-  export default Button;
+import MHButton from "./src/index.vue";
+
+/* Ant UI Imports */
+// import "ant-design-vue/dist/antd.css"; 
+import Button from "ant-design-vue/lib/button";
+MHButton.components = {
+  [Button.name]: Button,
+};
+
+
+MHButton.install = (Vue) => {
+  Vue.component(MHButton.name, MHButton);
+};
+
+export default MHButton;

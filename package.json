@@ -41,6 +41,7 @@
     "yargs": "^16.2.0"
   },
   "dependencies": {
+    "ant-design-vue": "^2.1.4",
     "vue": "^3.0.11"
   }
 }
