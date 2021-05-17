@@ -1,5 +1,5 @@
 <template>
-  <a-button style="min-width: 400px; min-height: 300px">
+  <a-button style="min-width: 450px; min-height: 300px">
     <slot></slot>
   </a-button>
 </template>
