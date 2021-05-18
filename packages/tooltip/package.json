@@ -1,0 +1,42 @@
+{
+    "name": "@meetinghand/tooltip",
+    "description": "Meetinghand Component Library Component for tooltip",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "keywords": [
+        "vue3",
+        "component",
+        "library",
+        "vue3",
+        "lerna",
+        "storybook"
+    ],
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "main": "./dist/@meetinghand/tooltip.umd.js",
+    "module": "./dist/@meetinghand/tooltip.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/@meetinghand/tooltip.es.js",
+            "require": "./dist/@meetinghand/tooltip.umd.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist/*"
+    ],
+    "dependencies": {
+        "vue": "^3.0.5"
+    }
+}
