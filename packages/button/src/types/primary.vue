@@ -29,6 +29,7 @@ export default {
   line-height: 20px;
   padding: 16px 32px;
   height: auto;
+  border-radius: 4px;
 }
 .size-large {
   min-width: 360px;
