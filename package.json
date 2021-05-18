@@ -34,8 +34,11 @@
     "@vue/compiler-sfc": "^3.0.5",
     "babel-loader": "^8.2.2",
     "chalk": "^4.1.1",
+    "css-loader": "^5.2.4",
     "lerna": "^3.22.1",
-    "sass": "^1.32.5",
+    "node-sass": "^6.0.0",
+    "sass": "^1.32.13",
+    "sass-loader": "^10",
     "vite": "^2.0.0-beta.44",
     "vue-loader": "^16.2.0",
     "yargs": "^16.2.0"
