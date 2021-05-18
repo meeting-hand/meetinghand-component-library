@@ -12,11 +12,9 @@ import Text from "./types/text";
 import Row from "./types/row";
 
 if (process.env.NODE_ENV === "development") {
-  import("ant-design-vue/dist/antd.css");
+  import("@meetinghand/style/lib/less/ant.less");
+  import("./assets/main.scss");
 }
-
-import "ant-design-vue/dist/antd.less";
-
 export default {
   name: "MhButton",
   components: {
@@ -46,8 +44,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.ant-btn {
-  font-weight: 900 !important;
-}
-</style>

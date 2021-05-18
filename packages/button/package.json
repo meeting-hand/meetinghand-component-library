@@ -15,5 +15,8 @@
     "module": "./index.js",
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "@meetinghand/style": "file:../style"
     }
 }

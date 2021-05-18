@@ -19,6 +19,27 @@ module.exports = {
       use: ["style-loader", "css-loader", "sass-loader"],
       include: path.resolve(__dirname, "../packages/"),
     });
+    // config.module.rules.push({
+    //   test: /\.less$/,
+    //   use: ["style-loader", "css-loader", "less-loader"],
+    //   include: path.resolve(__dirname, "../packages/"),
+    // });
+
+    config.module.rules.push({
+      test: /\.less$/,
+      use: [
+        "style-loader",
+        "css-loader",
+        "resolve-url-loader",
+        {
+          loader: "less-loader",
+          options: {
+            javascriptEnabled: true,
+            sourceMap: true,
+          },
+        },
+      ],
+    });
 
     return config;
   },
