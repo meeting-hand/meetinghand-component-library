@@ -38,7 +38,8 @@ module.exports =  ({ packageName }) => {
         "dist/*"
     ],
     "dependencies": {
-        "vue": "^3.0.5"
+        "vue": "^3.0.5",
+        "@meetinghand/style": "file:../style"
     }
 }
 `;
