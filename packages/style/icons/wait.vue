@@ -8,7 +8,7 @@
   </svg>
 </template>
 <style lang="scss" scoped>
-.wait__spinner {
+.wait-spinner {
   animation: rotate 01s linear infinite;
   width: 14px;
   height: 14px;

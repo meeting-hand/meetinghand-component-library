@@ -174,5 +174,9 @@ storiesOf("Button", module).add("row", () => ({
       <mh-button type="row" disabled>
         Default size
       </mh-button>
+      <h1>Wait</h1>
+       <mh-button type="row" wait>
+        Row Butotn
+      </mh-button>
     `,
 }));

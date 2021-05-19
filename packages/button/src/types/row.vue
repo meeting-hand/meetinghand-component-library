@@ -12,7 +12,7 @@
   >
     <mh-icon :name="icon" v-if="icon" />
     <slot></slot>
-    <mh-icon name="wait" class="wait__spinner" v-if="wait" />
+    <mh-icon name="wait" class="wait-spinner" v-if="wait" />
   </a-button>
 </template>
 <script>

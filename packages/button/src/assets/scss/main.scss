@@ -55,10 +55,10 @@
         span {
             display: none;
         }
-        .mh-icon:not(.wait__spinner) {
+        .mh-icon:not(.wait-spinner) {
             display: none;
         }
-        .wait__spinner {
+        .wait-spinner {
             stroke: $color-mono-white;
             fill: none !important;
         }
@@ -115,10 +115,10 @@
         span {
             display: none;
         }
-        .mh-icon:not(.wait__spinner) {
+        .mh-icon:not(.wait-spinner) {
             display: none;
         }
-        .wait__spinner {
+        .wait-spinner {
             stroke: $color-primary-blue;
             fill: none !important;
         }
@@ -173,6 +173,13 @@
     &:hover {
         background: rgba($color-mono-black, 0.04);
         border-color: $color-mono-light-grey-5;
+    }
+    &.wait {
+        background: none;
+        border: 1px solid $color-mono-light-grey-5;
+        &:hover {
+            background: rgba($color-mono-black, 0.04);
+        }
     }
 }
 /* ROW END */
