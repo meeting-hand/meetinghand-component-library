@@ -126,6 +126,24 @@
 }
 /* SECONDARY END */
 
+/* TEXT */
+.text-btn {
+    border: none;
+    &:hover {
+        background: rgba($color-mono-black, 0.04);
+    }
+    &.disabled {
+        border: none;
+    }
+    &.wait {
+        background: none;
+        &:hover {
+            background: rgba($color-mono-black, 0.04);
+        }
+    }
+}
+/* TEXT END */
+
 .size-large {
     min-width: 360px;
 }

@@ -26,7 +26,7 @@ storiesOf("Button", module).add("All", () => ({
 storiesOf("Button", module).add("primary", () => ({
   components: { MhButton },
   template: `
-      <h1>Large</h1>
+    <h1>Large</h1>
       <mh-button type="primary" size="large">
         Large
       </mh-button>
@@ -124,6 +124,42 @@ storiesOf("Button", module).add("secondary", () => ({
         Icon Left
       </mh-button>
       <mh-button type="secondary" icon="arrow-up" icon-alignment="right" wait>
+        Icon Right
+      </mh-button>
+    `,
+}));
+
+storiesOf("Button", module).add("text", () => ({
+  components: { MhButton },
+  template: `
+      <h1>Default</h1>
+      <mh-button type="text">
+        Default size
+      </mh-button>
+      <mh-button type="text" icon="arrow-down">
+        Icon Left
+      </mh-button>
+      <mh-button type="text" icon="arrow-up" icon-alignment="right">
+        Icon Right
+      </mh-button>
+      <h1>Disabled</h1>
+      <mh-button type="text" disabled>
+        Default size
+      </mh-button>
+      <mh-button type="text" icon="arrow-down" disabled>
+        Icon Left
+      </mh-button>
+      <mh-button type="text" icon="arrow-up" icon-alignment="right" disabled>
+        Icon Right
+      </mh-button>
+      <h1>Wait</h1>
+      <mh-button type="text" wait>
+        Default size
+      </mh-button>
+      <mh-button type="text" icon="arrow-down" wait>
+        Icon Left
+      </mh-button>
+      <mh-button type="text" icon="arrow-up" icon-alignment="right" wait>
         Icon Right
       </mh-button>
     `,
