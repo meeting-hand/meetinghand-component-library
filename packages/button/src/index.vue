@@ -11,10 +11,6 @@ import Small from "./types/small";
 import Text from "./types/text";
 import Row from "./types/row";
 
-if (process.env.NODE_ENV === "development") {
-  import("@meetinghand/style/lib/less/ant.less");
-  import("./assets/main.scss");
-}
 export default {
   name: "MhButton",
   components: {

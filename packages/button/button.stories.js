@@ -26,15 +26,17 @@ storiesOf("Button", module).add("All", () => ({
 storiesOf("Button", module).add("primary", () => ({
   components: { MhButton },
   template: `
-      <mh-button type="primary" size="default">
-        Primary Default
-      </mh-button>
-      <mh-button type="primary" size="default" icon="arrow-down">
-        Primary Default with Arrow Down Icon
-      </mh-button>
-      <hr />
       <mh-button type="primary" size="large">
         Primary Large
+      </mh-button>
+      <mh-button type="primary">
+        Default size
+      </mh-button>
+      <mh-button type="primary" icon="arrow-down">
+        Icon Left
+      </mh-button>
+      <mh-button type="primary" icon="arrow-up">
+        Icon Right
       </mh-button>
     `,
 }));
