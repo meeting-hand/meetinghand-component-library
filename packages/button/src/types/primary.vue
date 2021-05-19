@@ -11,19 +11,7 @@
   >
     <mh-icon :name="icon" v-if="icon" />
     <slot></slot>
-    <svg
-      viewBox="0 0 14 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      v-if="wait"
-      class="wait__spinner"
-    >
-      <path
-        d="M5.94118 1C9.83966 1 13 4.13401 13 8C13 11.866 9.83966 15 5.94118 15C4.01733 15 2.27324 14.2368 1 12.999"
-        stroke-width="2"
-        stroke-linecap="round"
-      />
-    </svg>
+    <mh-icon name="wait" class="wait__spinner" v-if="wait" />
   </a-button>
 </template>
 <script>

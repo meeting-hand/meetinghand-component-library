@@ -7,3 +7,15 @@
     />
   </svg>
 </template>
+<style lang="scss" scoped>
+.wait__spinner {
+  animation: rotate 01s linear infinite;
+  width: 14px;
+  height: 14px;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>

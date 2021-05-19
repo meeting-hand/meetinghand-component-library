@@ -48,29 +48,20 @@
         border: none;
         background-color: rgba($color-primary-blue, 0.4);
         &:hover {
-            background-color: rgba($color-primary-blue, 0.4);
-            opacity: 1;
+            background: rgba($color-primary-blue, 0.5);
         }
         span {
             display: none;
         }
-        .mh-icon {
+        .mh-icon:not(.wait__spinner) {
             display: none;
         }
         .wait__spinner {
-            animation: rotate 01s linear infinite;
             stroke: $color-mono-white;
-            width: 14px;
-            height: 14px;
+            fill: none !important;
         }
     }
 }
 .size-large {
     min-width: 360px;
-}
-
-@keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
 }
