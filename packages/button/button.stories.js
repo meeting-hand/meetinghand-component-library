@@ -164,3 +164,65 @@ storiesOf("Button", module).add("text", () => ({
       </mh-button>
     `,
 }));
+
+storiesOf("Button", module).add("small", () => ({
+  components: { MhButton },
+  template: `
+      <h1>Default</h1>
+      <mh-button type="small">
+        Default size
+      </mh-button>
+      <mh-button type="small" icon="arrow-down">
+        Icon Left
+      </mh-button>
+      <mh-button type="small" icon="arrow-up" icon-alignment="right">
+        Icon Right
+      </mh-button>
+      <h1>Disabled</h1>
+      <mh-button type="small" disabled>
+        Default size
+      </mh-button>
+      <mh-button type="small" icon="arrow-down" disabled>
+        Icon Left
+      </mh-button>
+      <mh-button type="small" icon="arrow-up" icon-alignment="right" disabled>
+        Icon Right
+      </mh-button>
+      <h1>Wait</h1>
+      <mh-button type="small" wait>
+        Default size
+      </mh-button>
+      <mh-button type="small" icon="arrow-down" wait>
+        Icon Left
+      </mh-button>
+      <mh-button type="small" icon="arrow-up" icon-alignment="right" wait>
+        Icon Right
+      </mh-button>
+    `,
+}));
+
+storiesOf("Button", module).add("row", () => ({
+  components: { MhButton },
+  template: `
+      <h1>Default</h1>
+      <mh-button type="row">
+        Default size
+      </mh-button>
+      <mh-button type="row" icon="arrow-down">
+        Icon Left
+      </mh-button>
+      <mh-button type="row" icon="arrow-up" icon-alignment="right">
+        Icon Right
+      </mh-button>
+      <h1>Disabled</h1>
+      <mh-button type="row" disabled>
+        Default size
+      </mh-button>
+      <mh-button type="row" icon="arrow-down" disabled>
+        Icon Left
+      </mh-button>
+      <mh-button type="row" icon="arrow-up" icon-alignment="right" disabled>
+        Icon Right
+      </mh-button>
+    `,
+}));

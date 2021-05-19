@@ -129,6 +129,7 @@
 /* TEXT */
 .text-btn {
     border: none;
+    padding: 8px 16px;
     &:hover {
         background: rgba($color-mono-black, 0.04);
     }
@@ -143,6 +144,38 @@
     }
 }
 /* TEXT END */
+
+/* SMALL */
+.small-btn {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 2px 6px;
+    .mh-icon {
+        max-width: 12px;
+        max-height: 12px;
+        margin: 0 6px;
+    }
+}
+/* SMALL END */
+
+/* ROW */
+.row-btn {
+    background: none;
+    border: 1px solid $color-mono-light-grey-5;
+    min-width: 360px;
+    justify-content: flex-start;
+
+    &.alignment-right {
+        justify-content: space-between;
+    }
+
+    &:hover {
+        background: rgba($color-mono-black, 0.04);
+        border-color: $color-mono-light-grey-5;
+    }
+}
+/* ROW END */
 
 .size-large {
     min-width: 360px;
