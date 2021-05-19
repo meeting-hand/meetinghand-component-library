@@ -8,14 +8,10 @@ import Banner from "ant-design-vue/lib/alert";
 import Section from "./types/section";
 import FullWidth from "./types/fullWidth";
 
-if (process.env.NODE_ENV === "development") {
-  import("ant-design-vue/dist/antd.css");
-}
-
 export default {
   name: "Banner",
   components: {
-    Banner,
+    [Banner.name]: Banner,
     Section,
     FullWidth,
   },

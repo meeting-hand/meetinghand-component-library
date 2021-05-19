@@ -1,0 +1,58 @@
+@import "~@meetinghand/style/lib/scss/reset.scss";
+@import "~@meetinghand/style/lib/scss/colors.scss";
+@import "~@meetinghand/style/lib/scss/typography.scss";
+
+.ant-alert {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 16px;
+
+    position: relative;
+    width: 278px;
+    height: 52px;
+
+    border-radius: 4px;
+    background: $color-mono-light-grey-2 !important;
+    border-color: $color-mono-light-grey-2 !important;
+
+    .ant-alert-message {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-mono-grey-3;
+        position: static;
+        width: 210px;
+        height: 20px;
+        left: 52px;
+        top: 16px;
+
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+
+        display: flex;
+        align-items: center;
+
+        color: $color-mono-grey-3;
+
+        flex: none;
+        order: 1;
+        align-self: center;
+        flex-grow: 0;
+        margin: 0px 16px;
+    }
+    .ant-alert-icon {
+        left: 10%;
+        right: 10%;
+        top: 10%;
+        bottom: 10%;
+    }
+    .ant-alert-close-text {
+        color: blue;
+    }
+}

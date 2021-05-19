@@ -1,20 +1,32 @@
 <template>
-  <div v-if="`${button}` === 'null'">
-    <h1>test111</h1>
-  </div>
-  <div v-if="`${button}` === 'custom'">
-    <h1>test222</h1>
-  </div>
-  <div v-if="`${button}` === 'close'">
-    <h1>test333</h1>
-  </div>
+  <a-alert
+    :message="`${text}`"
+    type="info"
+    show-icon
+    v-if="`${button}` === 'null'"
+  />
+  <a-alert
+    :message="`${text}`"
+    type="info"
+    show-icon
+    closable
+    closeText="button"
+    v-if="`${button}` === 'custom'"
+  />
+  <a-alert
+    :message="`${text}`"
+    type="info"
+    show-icon
+    closable
+    v-if="`${button}` === 'close'"
+  />
 </template>
 <script>
 import Banner from "ant-design-vue/lib/alert";
 
 export default {
   components: {
-    Banner,
+    [Banner.name]: Banner,
   },
   props: {
     button: {
@@ -22,11 +34,12 @@ export default {
       default: null,
       validator: (_v) => [null, "custom", "close"].includes(_v),
     },
+    text: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>
 <style scoped>
-div {
-  background-color: green;
-}
 </style>
