@@ -6,6 +6,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+
+    &.alignment-right {
+        flex-direction: row-reverse;
+    }
+
     .mh-icon {
         fill: $color-mono-white;
         margin: 0 12px;
@@ -13,17 +21,56 @@
 }
 
 .ant-btn-primary {
-    &:hover {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
-    }
+    background-color: $color-primary-blue;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
     padding: 16px 32px;
     height: auto;
+    min-height: 52px;
     border-radius: 4px;
     transition: background-color 0.5s ease !important;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
+    }
+
+    &.disabled {
+        border: none;
+        background-color: $color-mono-light-grey-4;
+        color: $color-mono-grey;
+
+        .mh-icon {
+            fill: $color-mono-grey;
+        }
+    }
+    &.wait {
+        border: none;
+        background-color: rgba($color-primary-blue, 0.4);
+        &:hover {
+            background-color: rgba($color-primary-blue, 0.4);
+            opacity: 1;
+        }
+        span {
+            display: none;
+        }
+        .mh-icon {
+            display: none;
+        }
+        .wait__spinner {
+            animation: rotate 01s linear infinite;
+            stroke: $color-mono-white;
+            width: 14px;
+            height: 14px;
+        }
+    }
 }
 .size-large {
     min-width: 360px;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }

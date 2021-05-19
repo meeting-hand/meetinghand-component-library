@@ -1,5 +1,14 @@
 <template>
-  <component :is="type" :size="size" :icon="icon"><slot></slot></component>
+  <component
+    :is="type"
+    :size="size"
+    :icon="icon"
+    :iconAlignment="iconAlignment"
+    :disabled="disabled"
+    :wait="wait"
+  >
+    <slot></slot>
+  </component>
 </template>
 
 <script>
@@ -36,6 +45,19 @@ export default {
     icon: {
       type: String,
       default: null,
+    },
+    iconAlignment: {
+      type: String,
+      default: "left",
+      validator: (_v) => ["left", "right"].includes(_v),
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    wait: {
+      type: Boolean,
+      default: false,
     },
   },
 };
