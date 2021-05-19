@@ -3,26 +3,6 @@ import MhButton from "./index";
 
 import "../../assets/storybook/buttons.css";
 
-storiesOf("Button", module).add("All", () => ({
-  components: { MhButton },
-  template: `
-      <mh-button type="primary">
-      Primary Button
-      </mh-button>
-      <mh-button type="secondary">
-      Secondary Button
-      </mh-button>
-      <mh-button type="text">
-      Text Button
-      </mh-button>
-      <mh-button type="small">
-      Small Button
-      </mh-button>
-      <mh-button type="row">
-      Row Button
-      </mh-button>
-    `,
-}));
 storiesOf("Button", module).add("primary", () => ({
   components: { MhButton },
   template: `
@@ -66,12 +46,6 @@ storiesOf("Button", module).add("primary", () => ({
       </mh-button>
       <mh-button type="primary" wait>
         Default size
-      </mh-button>
-      <mh-button type="primary" icon="arrow-down" wait>
-        Icon Left
-      </mh-button>
-      <mh-button type="primary" icon="arrow-up" icon-alignment="right" wait>
-        Icon Right
       </mh-button>
     `,
 }));
@@ -120,12 +94,6 @@ storiesOf("Button", module).add("secondary", () => ({
       <mh-button type="secondary" wait>
         Default size
       </mh-button>
-      <mh-button type="secondary" icon="arrow-down" wait>
-        Icon Left
-      </mh-button>
-      <mh-button type="secondary" icon="arrow-up" icon-alignment="right" wait>
-        Icon Right
-      </mh-button>
     `,
 }));
 
@@ -155,12 +123,6 @@ storiesOf("Button", module).add("text", () => ({
       <h1>Wait</h1>
       <mh-button type="text" wait>
         Default size
-      </mh-button>
-      <mh-button type="text" icon="arrow-down" wait>
-        Icon Left
-      </mh-button>
-      <mh-button type="text" icon="arrow-up" icon-alignment="right" wait>
-        Icon Right
       </mh-button>
     `,
 }));
@@ -192,12 +154,6 @@ storiesOf("Button", module).add("small", () => ({
       <mh-button type="small" wait>
         Default size
       </mh-button>
-      <mh-button type="small" icon="arrow-down" wait>
-        Icon Left
-      </mh-button>
-      <mh-button type="small" icon="arrow-up" icon-alignment="right" wait>
-        Icon Right
-      </mh-button>
     `,
 }));
 
@@ -217,12 +173,6 @@ storiesOf("Button", module).add("row", () => ({
       <h1>Disabled</h1>
       <mh-button type="row" disabled>
         Default size
-      </mh-button>
-      <mh-button type="row" icon="arrow-down" disabled>
-        Icon Left
-      </mh-button>
-      <mh-button type="row" icon="arrow-up" icon-alignment="right" disabled>
-        Icon Right
       </mh-button>
     `,
 }));
