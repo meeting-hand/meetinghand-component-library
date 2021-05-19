@@ -18,6 +18,7 @@
 import Button from "ant-design-vue/lib/button";
 import MHIcon from "@meetinghand/style/icons/index";
 export default {
+  name: "MhButtonPrimary",
   components: {
     [Button.name]: Button,
     "mh-icon": MHIcon,
@@ -46,6 +47,5 @@ export default {
       default: false,
     },
   },
-  mounted() {},
 };
 </script>

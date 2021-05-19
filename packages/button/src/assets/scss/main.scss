@@ -9,6 +9,8 @@
     text-shadow: none;
     box-shadow: none;
     border: none;
+    outline: none;
+    transition: background-color 0.5s ease !important;
 
     &.alignment-right {
         flex-direction: row-reverse;
@@ -20,6 +22,7 @@
     }
 }
 
+/* PRIMARY */
 .ant-btn-primary {
     background-color: $color-primary-blue;
     font-weight: 600;
@@ -29,7 +32,6 @@
     height: auto;
     min-height: 52px;
     border-radius: 4px;
-    transition: background-color 0.5s ease !important;
 
     &:hover {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
@@ -62,6 +64,68 @@
         }
     }
 }
+
+/* PRIMARY END */
+
+/* SECONDARY */
+.ant-btn-default {
+    border: 1.5px solid $color-primary-blue;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 16px 32px;
+    height: auto;
+    min-height: 52px;
+    border-radius: 4px;
+    color: $color-primary-blue;
+
+    .mh-icon {
+        fill: $color-primary-blue;
+    }
+
+    &:hover {
+        background: $color-secondary-blue;
+        color: $color-primary-blue;
+        border-color: $color-primary-blue;
+    }
+    &:active {
+        background: $color-secondary-blue;
+    }
+
+    &.disabled {
+        border: 1.5px solid $color-mono-light-grey-4;
+        background-color: transparent;
+        color: $color-mono-grey;
+
+        &:hover {
+            background-color: transparent;
+            border-color: $color-mono-light-grey-4;
+        }
+
+        .mh-icon {
+            fill: $color-mono-grey;
+        }
+    }
+    &.wait {
+        border: none;
+        background-color: rgba($color-secondary-blue, 0.4);
+        &:hover {
+            background: rgba($color-secondary-blue, 0.5);
+        }
+        span {
+            display: none;
+        }
+        .mh-icon:not(.wait__spinner) {
+            display: none;
+        }
+        .wait__spinner {
+            stroke: $color-primary-blue;
+            fill: none !important;
+        }
+    }
+}
+/* SECONDARY END */
+
 .size-large {
     min-width: 360px;
 }
