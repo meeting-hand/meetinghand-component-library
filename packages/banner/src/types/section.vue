@@ -5,12 +5,13 @@
     show-icon
     v-if="`${button}` === 'null'"
   />
+  <!-- Event trigger will be added -->
   <a-alert
     :message="`${text}`"
     type="info"
     show-icon
     closable
-    closeText="button"
+    :closeText="`${customText}`"
     v-if="`${button}` === 'custom'"
   />
   <a-alert
@@ -37,6 +38,10 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+    customText: {
+      type: String,
+      default: "Button",
     },
   },
 };
