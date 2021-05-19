@@ -1,0 +1,39 @@
+@import "~@meetinghand/style/lib/scss/reset.scss";
+@import "~@meetinghand/style/lib/scss/colors.scss";
+@import "~@meetinghand/style/lib/scss/typography.scss";
+
+.ant-input {
+    min-width: 360px;
+    max-width: 100%;
+    padding: 16px;
+    border: 1px solid $color-mono-grey;
+    background: transparent;
+    border-radius: 4px;
+    transition: background-color 0.5s ease, border 0.5s ease !important;
+    color: $color-mono-black;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    box-shadow: none;
+
+    &::placeholder {
+        color: $color-mono-grey;
+    }
+    &:hover {
+        background-color: rgba($color-mono-black, 0.04);
+        border: 1px solid $color-mono-grey;
+    }
+    &:focus {
+        //border: 1.5px solid $color-primary-blue;
+        border-color: $color-primary-blue;
+        outline: none;
+        box-shadow: none;
+    }
+    &.error {
+        border: 1.5px solid $color-primary-red;
+    }
+    &.ant-input-disabled {
+        background-color: $color-mono-light-grey;
+        color: $color-mono-grey;
+    }
+}
