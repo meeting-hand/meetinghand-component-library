@@ -4,7 +4,6 @@
 
 <script>
 import Switch from "ant-design-vue/lib/switch";
-import { ref } from "vue";
 
 export default {
   name: "MhSwitch",
@@ -30,12 +29,6 @@ export default {
         this.$emit("update:modelValue", data);
       },
     },
-  },
-  setup() {
-    const checked = ref(false);
-    return {
-      checked,
-    };
   },
 };
 </script>

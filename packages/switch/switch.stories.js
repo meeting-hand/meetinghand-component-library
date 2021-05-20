@@ -5,7 +5,7 @@ storiesOf("Switch", module).add("All", () => ({
   components: { MhSwitch },
   data(){
     return {
-      value1: false,
+      value1: true,
       value2: false,
     }
   },
