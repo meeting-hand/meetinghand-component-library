@@ -99,7 +99,28 @@ storiesOf("Style", module).add("icons", () => ({
     <mh-icon name="system-send-up" />
     <mh-icon name="system-like" />
     <mh-icon name="system-liked" />
-
+    <mh-icon name="system-mail" />
+    <mh-icon name="system-phone" />
+    <mh-icon name="system-add-contact" />
+    <mh-icon name="system-person" />
+    <mh-icon name="system-slide" />
+    <mh-icon name="system-settings" />
+    <h1>Social</h1>
+    <mh-icon name="social-google" />
+    <mh-icon name="social-face-book" />
+    <mh-icon name="social-linkedin" />
+    <mh-icon name="social-twitter" />
+    <h1>Mobile App </h1>
+    <mh-icon name="mobile-app-venue" />
+    <mh-icon name="mobile-app-registration" />
+    <mh-icon name="mobile-app-attendees" />
+    <mh-icon name="mobile-app-hotel" />
+    <mh-icon name="mobile-app-workshop" />
+    <mh-icon name="mobile-app-about-event" />
+    <mh-icon name="mobile-app-app-store" />
+    <mh-icon name="mobile-app-play-store" />
+    <mh-icon name="mobile-app-box" />
+    
     `,
 }));
 

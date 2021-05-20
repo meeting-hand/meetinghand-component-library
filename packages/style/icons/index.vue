@@ -88,6 +88,25 @@ import UiEmoji from "./uiEmoji";
 import SystemSendUp from "./systemSendUp";
 import SystemLike from "./systemLike";
 import SystemLiked from "./systemLiked";
+import SystemMail from "./systemMail";
+import SystemPhone from "./systemPhone";
+import SystemAddContact from "./systemAddContact";
+import SystemPerson from "./systemPerson";
+import SystemSlide from "./systemSlide";
+import SystemSettings from "./systemSettings";
+import SocialGoogle from "./socialGoogle";
+import SocialFaceBook from "./socialFaceBook";
+import SocialLinkedin from "./socialLinkedin";
+import SocialTwitter from "./socialTwitter";
+import MobileAppVenue from "./mobileAppVenue";
+import MobileAppRegistration from "./mobileAppRegistration";
+import MobileAppAttendees from "./mobileAppAttendees";
+import MobileAppHotel from "./mobileAppHotel";
+import MobileAppWorkshop from "./mobileAppWorkshop";
+import MobileAppAboutEvent from "./mobileAppAboutEvent";
+import MobileAppAppStore from "./mobileAppAppStore";
+import MobileAppPlayStore from "./mobileAppPlayStore";
+import MobileAppBox from "./mobileAppBox";
 
 const iconList = [
   "arrow-down",
@@ -176,6 +195,25 @@ const iconList = [
   "system-send-up",
   "system-like",
   "system-liked",
+  "system-mail",
+  "system-phone",
+  "system-add-contact",
+  "system-person",
+  "system-slide",
+  "system-settings",
+  "social-google",
+  "social-face-book",
+  "social-linkedin",
+  "social-twitter",
+  "mobile-app-venue",
+  "mobile-app-registration",
+  "mobile-app-attendees",
+  "mobile-app-hotel",
+  "mobile-app-workshop",
+  "mobile-app-about-event",
+  "mobile-app-app-store",
+  "mobile-app-play-store",
+  "mobile-app-box",
 ];
 
 export default {
@@ -266,6 +304,25 @@ export default {
     SystemSendUp,
     SystemLike,
     SystemLiked,
+    SystemMail,
+    SystemPhone,
+    SystemAddContact,
+    SystemPerson,
+    SystemSlide,
+    SystemSettings,
+    SocialGoogle,
+    SocialFaceBook,
+    SocialLinkedin,
+    SocialTwitter,
+    MobileAppVenue,
+    MobileAppRegistration,
+    MobileAppAttendees,
+    MobileAppHotel,
+    MobileAppWorkshop,
+    MobileAppAboutEvent,
+    MobileAppAppStore,
+    MobileAppPlayStore,
+    MobileAppBox,
   },
   props: {
     name: {
