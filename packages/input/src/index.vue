@@ -1,9 +1,12 @@
 <template>
   <a-input
-    placeholder="Basic usage"
+    :placeholder="placeholder"
     :class="[{ error: hasError }]"
     :disabled="disabled"
   />
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
@@ -15,9 +18,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    errorMessage: {
+      type: String,
+      default: null,
+    },
     disabled: {
       type: Boolean,
       default: false,
+    },
+    placeholder: {
+      type: String,
+      default: "",
     },
   },
   components: {

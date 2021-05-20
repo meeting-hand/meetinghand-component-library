@@ -10,7 +10,7 @@ storiesOf("Input", module).add("Input", () => ({
       <mh-input />
       <hr />
       <h1>Error</h1>
-      <mh-input hasError />
+      <mh-input has-error error-message="this field is required" />
       <h1>Disabled</h1>
       <mh-input disabled />
     `,
