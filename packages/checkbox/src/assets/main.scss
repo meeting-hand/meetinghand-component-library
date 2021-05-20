@@ -1,0 +1,58 @@
+@import "~@meetinghand/style/lib/scss/reset.scss";
+@import "~@meetinghand/style/lib/scss/colors.scss";
+@import "~@meetinghand/style/lib/scss/typography.scss";
+
+.ant-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    .ant-checkbox-inner {
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid $color-primary-blue;
+        border-radius: 2px;
+        background-color: transparent;
+
+        &::after {
+            left: 0;
+            margin-left: 4.5px;
+        }
+    }
+    .ant-checkbox {
+        &:hover {
+            background-color: $color-secondary-blue;
+        }
+    }
+    .ant-checkbox-checked {
+        .ant-checkbox-inner {
+            background-color: $color-primary-blue;
+        }
+    }
+
+    span {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+.ant-checkbox-wrapper-disabled {
+    .ant-checkbox-disabled {
+        .ant-checkbox-inner {
+            border: 1.5px solid $color-mono-light-grey-5;
+        }
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    span {
+        color: $color-mono-light-grey-5;
+    }
+    .ant-checkbox-checked {
+        .ant-checkbox-inner {
+            background-color: $color-mono-light-grey;
+            &::after {
+                border-color: $color-mono-light-grey-5;
+            }
+        }
+    }
+}
