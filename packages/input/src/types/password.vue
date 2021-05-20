@@ -1,33 +1,26 @@
 <template>
-  <component
-    :is="inputType"
-    :hasError="hasError"
-    :errorMessage="errorMessage"
-    :disabled="disabled"
+  <a-input-password
     :placeholder="placeholder"
-    :leftIcon="leftIcon"
-    :rightIcon="rightIcon"
-    :allowClear="allowClear"
-  />
+    :class="[{ error: hasError }]"
+    :disabled="disabled"
+  >
+    <!-- <template #addonAfter>
+      <mh-icon name="system-show" />
+      <mh-icon name="system-hide" />
+    </template> -->
+  </a-input-password>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
-import Default from "./types/default";
-import Password from "./types/password";
-import Tel from "./types/tel";
+import Input from "ant-design-vue/lib/input/Password";
+import MhIcon from "@meetinghand/style/icons/index";
 
 export default {
-  name: "MhInput",
-  components: {
-    Default,
-    Password,
-    Tel,
-  },
+  name: "MhInputPassword",
   props: {
-    inputType: {
-      type: String,
-      default: "default",
-    },
     hasError: {
       type: Boolean,
       default: false,
@@ -56,6 +49,10 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  components: {
+    [Input.name]: Input,
+    MhIcon,
   },
 };
 </script>

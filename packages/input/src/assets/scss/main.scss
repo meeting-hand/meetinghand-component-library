@@ -113,3 +113,21 @@
     margin-top: 8px;
     display: block;
 }
+
+.ant-input-password {
+    .ant-input {
+        margin: 0 16px;
+    }
+}
+
+.allow-clear {
+    .ant-input {
+        margin: 0 16px;
+    }
+    .ant-input-suffix {
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
