@@ -107,6 +107,9 @@ import MobileAppAboutEvent from "./mobileAppAboutEvent";
 import MobileAppAppStore from "./mobileAppAppStore";
 import MobileAppPlayStore from "./mobileAppPlayStore";
 import MobileAppBox from "./mobileAppBox";
+import Warning from "./warning";
+import Success from "./success";
+import Claps from "./claps";
 
 const iconList = [
   "arrow-down",
@@ -214,6 +217,9 @@ const iconList = [
   "mobile-app-app-store",
   "mobile-app-play-store",
   "mobile-app-box",
+  "warning",
+  "success",
+  "claps",
 ];
 
 export default {
@@ -323,6 +329,9 @@ export default {
     MobileAppAppStore,
     MobileAppPlayStore,
     MobileAppBox,
+    Warning,
+    Success,
+    Claps,
   },
   props: {
     name: {
