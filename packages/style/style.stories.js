@@ -120,6 +120,10 @@ storiesOf("Style", module).add("icons", () => ({
     <mh-icon name="mobile-app-app-store" />
     <mh-icon name="mobile-app-play-store" />
     <mh-icon name="mobile-app-box" />
+    <h1>Status</h1>
+    <mh-icon name="visual-warning" />
+    <mh-icon name="visual-success" />
+    <mh-icon name="visual-claps" />
     
     `,
 }));
