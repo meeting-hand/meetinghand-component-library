@@ -1,22 +1,17 @@
 <template>
-  <component
-    :is="componentType"
-    v-model="value"
-    :label="label"
-    :disabled="disabled"
-    :data="data"
-  />
+  <a-checkbox v-model:checked="value" :disabled="disabled">
+    {{ label }}
+  </a-checkbox>
 </template>
 
 <script>
-import Single from "./types/single";
-import Multiple from "./types/multiple";
+import Checkbox from "ant-design-vue/lib/checkbox";
 
 export default {
-  name: "MhCheckbox",
+  name: "MhCheckboxSingle",
   props: {
     modelValue: {
-      type: [Boolean, Array],
+      type: Boolean,
       required: true,
     },
     label: {
@@ -33,8 +28,7 @@ export default {
     },
   },
   components: {
-    Single,
-    Multiple,
+    [Checkbox.name]: Checkbox,
   },
   computed: {
     value: {
@@ -44,9 +38,6 @@ export default {
       set(value) {
         this.$emit("update:modelValue", value);
       },
-    },
-    componentType() {
-      return Array.isArray(this.modelValue) ? "multiple" : "single";
     },
   },
 };

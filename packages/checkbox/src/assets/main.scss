@@ -5,6 +5,9 @@
 .ant-checkbox-wrapper {
     display: flex;
     align-items: center;
+    & + .ant-checkbox-wrapper {
+        margin-left: 0;
+    }
     .ant-checkbox-inner {
         width: 20px;
         height: 20px;

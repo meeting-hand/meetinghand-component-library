@@ -30,7 +30,16 @@ storiesOf("Checkbox", module).add("Single", () => ({
 
 storiesOf("Checkbox", module).add("Group", () => ({
   components: { MhCheckbox },
+  data() {
+    return {
+      value: ["John"],
+    };
+  },
   template: `
-      <mh-checkbox />
+      <mh-checkbox v-model="value" label="John" data="John" />
+      <br />
+      <mh-checkbox v-model="value" label="Allen" data="Allen" />
+      <br />
+      <pre>{{ value }}</pre>
     `,
 }));
