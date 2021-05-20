@@ -4,7 +4,7 @@ import MhButton from "../button/index";
 
 import "../../assets/storybook/modal.css";
 
-storiesOf("Modal", module).add("Modal!", () => ({
+storiesOf("Modal", module).add("All", () => ({
   components: { MhModal, MhButton },
   data(){
     return {
