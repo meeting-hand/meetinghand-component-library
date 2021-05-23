@@ -37,7 +37,10 @@
         "dist/*"
     ],
     "dependencies": {
-        "vue": "^3.0.5",
-        "@meetinghand/style": "file:../style"
+        "@meetinghand/style": "file:../style",
+        "vue": "^3.0.5"
+    },
+    "devDependencies": {
+        "accounting-js": "^1.1.1"
     }
 }

@@ -7,16 +7,19 @@
     :step="step"
     :hasError="hasError"
     :disabled="disabled"
+    :currency="currency"
   />
 </template>
 
 <script>
 import Default from "./types/default";
+import Currency from "./types/currency";
 
 export default {
   name: "InputNumber",
   components: {
     Default,
+    Currency,
   },
   props: {
     modelValue: {
@@ -51,6 +54,10 @@ export default {
       type: String,
       default: "default",
       validator: (_t) => ["default", "currency"].includes(_t),
+    },
+    currency: {
+      type: String,
+      default: "USD",
     },
   },
   computed: {
