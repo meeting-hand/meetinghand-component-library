@@ -12,7 +12,6 @@
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
   </span>
-  {{ value }}
 </template>
 
 <script>
@@ -85,19 +84,33 @@ export default {
     },
 
     parseCurrency(e) {
-      e = this.convertDecimal(e);
-      e = accounting.unformat(e, this.moneyFormat.decimal);
-      return e;
-    },
-    convertDecimal(e) {
-      const split = e.split(this.moneyFormat.decimal);
-      if (split.length === 1) {
-        if (!isNaN(parseInt(e))) {
-          return e / Math.pow(10, this.moneyFormat.precision);
-        }
+      // full delete
+      if (e == "") {
         return 0;
       }
+
+      // ignore decimal delete
+      if (!e.includes(this.moneyFormat.decimal) && e.length > 1) {
+        return this.value;
+      }
+
+      e = this.convertDecimal(e);
+      e = accounting.unformat(e, this.moneyFormat.decimal);
+
+      return e;
+    },
+
+    convertDecimal(e) {
+      const split = e.split(this.moneyFormat.decimal);
+
+      // first char enter decimal check
+      if (split.length === 1 && !isNaN(parseInt(e))) {
+        return e / Math.pow(10, this.moneyFormat.precision);
+      }
+
       const decimal = split[split.length - 1];
+
+      // 12.532 => 125.32
       if (
         decimal.length > this.moneyFormat.precision &&
         !isNaN(parseInt(decimal[decimal.length - 1]))
