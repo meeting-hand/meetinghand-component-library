@@ -8,7 +8,6 @@
     :disabled="disabled"
     :formatter="formatCurrency"
     :parser="parseCurrency"
-    :precision="moneyFormat.precision"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -71,47 +70,45 @@ export default {
     moneyFormat() {
       return {
         decimal: ".",
-        thousands: ",",
+        thousand: ",",
         precision: 2,
         symbol: "₺",
+        format: "%s%v",
       };
     },
   },
 
   methods: {
     formatCurrency(e) {
-      e = this.convertDecimal(e);
       e = accounting.formatMoney(e, this.moneyFormat);
       return e;
     },
 
     parseCurrency(e) {
-      e = accounting.unformat(e, this.moneyFormat.decimal);
       e = this.convertDecimal(e);
-      e = this.decimalSeperatorCancel(e);
+      e = accounting.unformat(e, this.moneyFormat.decimal);
       return e;
     },
-
-    decimalSeperatorCancel(num) {
-      // decimal sepeareter delete
-      if (num === this.value * Math.pow(10, this.moneyFormat.precision)) {
-        num = this.value;
-      }
-      return num;
-    },
-
     convertDecimal(e) {
-      if (this.countDecimals(e) === this.moneyFormat.precision + 1) {
-        let lastChar = e.toString()[e.toString().length - 1];
-        e = this.value * Math.pow(10, this.moneyFormat.precision - 1);
-        e += lastChar / Math.pow(10, this.moneyFormat.precision);
+      const split = e.split(this.moneyFormat.decimal);
+      if (split.length === 1) {
+        if (!isNaN(parseInt(e))) {
+          return e / Math.pow(10, this.moneyFormat.precision);
+        }
+        return 0;
+      }
+      const decimal = split[split.length - 1];
+      if (
+        decimal.length > this.moneyFormat.precision &&
+        !isNaN(parseInt(decimal[decimal.length - 1]))
+      ) {
+        e =
+          split[0] +
+          decimal[0] +
+          this.moneyFormat.decimal +
+          decimal.replace(decimal[0], "");
       }
       return e;
-    },
-    countDecimals(value) {
-      if (isNaN(parseFloat(value))) return this.moneyFormat.precision;
-      if (Math.floor(value) === value) return 0;
-      return value.toString().split(".")[1].length || 0;
     },
   },
 };
