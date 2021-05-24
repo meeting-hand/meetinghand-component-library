@@ -38,4 +38,7 @@
             color: $color-mono-grey;
         }
     }
+    &.error {
+        caret-color: $color-primary-red;
+    }
 }
