@@ -17,6 +17,7 @@
 <script>
 import InputNumber from "ant-design-vue/lib/input-number";
 import accounting from "accounting-js";
+import { convertCurrencyFormat } from "../utils/currency";
 
 export default {
   name: "InputNumberCurrency",
@@ -67,13 +68,7 @@ export default {
       },
     },
     moneyFormat() {
-      return {
-        decimal: ".",
-        thousand: ",",
-        precision: 2,
-        symbol: "₺",
-        format: "%s%v",
-      };
+      return convertCurrencyFormat(this.currency);
     },
   },
 

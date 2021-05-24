@@ -35,8 +35,6 @@ storiesOf("InputNumber", module).add("Currency", () => ({
   template: `
       <h1>Currency Default</h1>  
       <mh-input-number v-model="currency1" type="currency" currency="USD" :max="100000" />
-      {{ currency1 }}
-      <hr>
       <!--<h1>Currency Error</h1>  
       <mh-input-number v-model="currency2" has-error error-message="Field is required" type="currency" />
       <hr>
