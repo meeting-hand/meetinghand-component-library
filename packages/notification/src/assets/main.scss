@@ -4,11 +4,12 @@
 
 .ant-notification-notice {
     width: 400px;
-    background: #ffffff;
+    background: $color-mono-white;
     border: 1.5px solid;
     box-sizing: border-box;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
     border-radius: 4px;
+
     .ant-notification-notice-content {
         margin: 0px;
         padding: 0px;
@@ -30,7 +31,7 @@
         line-height: 20px;
         margin-left: 0px;
 
-        color: #000000;
+        color: $color-mono-black;
     }
     .anticon-close {
         svg {
@@ -40,63 +41,83 @@
             height: 16px;
             fill: $color-mono-grey;
 
-            background: #ffffff;
+            background: $color-mono-white;
         }
     }
     &.success {
         border-left: 8px solid;
-        border-color: #4caf50;
+        border-color: $color-primary-green;
         .ant-notification-notice-message {
-            color: #4caf50;
+            color: $color-primary-green;
         }
         svg {
             margin-top: 0px;
             margin-left: 0px;
             width: 20px;
             height: 20px;
-            fill: #4caf50;
+            fill: $color-primary-green;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
         }
     }
     &.error {
         border-left: 8px solid;
-        border-color: #f44336;
+        border-color: $color-primary-red;
         .ant-notification-notice-message {
-            color: #f44336;
+            color: $color-primary-red;
         }
         svg {
             margin-top: 0px;
             margin-left: 0px;
             width: 20px;
             height: 20px;
-            fill: #f44336;
+            fill: $color-primary-red;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
         }
     }
     &.info {
         border-left: 8px solid;
-        border-color: #2196f3;
+        border-color: $color-primary-blue;
         .ant-notification-notice-message {
-            color: #2196f3;
+            color: $color-primary-blue;
         }
         svg {
             margin-top: 0px;
             margin-left: 0px;
             width: 20px;
             height: 20px;
-            fill: #2196f3;
+            fill: $color-primary-blue;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
         }
     }
     &.hint {
         border-left: 8px solid;
-        border-color: #ff9800;
+        border-color: $color-primary-onsite;
         .ant-notification-notice-message {
-            color: #ff9800;
+            color: $color-primary-onsite;
         }
         svg {
             margin-top: 0px;
             margin-left: 0px;
             width: 20px;
             height: 20px;
-            fill: #ff9800;
+            fill: $color-primary-onsite;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
         }
     }
 }

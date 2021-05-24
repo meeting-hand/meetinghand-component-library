@@ -6,7 +6,7 @@ import Button from "ant-design-vue/lib/button";
 import MHIcon from "@meetinghand/style/icons/index";
 import StatusSuccess from "@meetinghand/style/icons/systemStatusSuccess";
 import StatusError from "@meetinghand/style/icons/systemStatusError";
-import StatusInfo from "@meetinghand/style/icons/systemStatusInfo";
+import StatusInfo from "@meetinghand/style/icons/systemInfo";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint";
 import { h } from "vue";
 
