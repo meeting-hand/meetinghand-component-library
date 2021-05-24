@@ -4,7 +4,7 @@
     :min="min"
     :max="max"
     :step="step"
-    :class="[{ error: hasError }]"
+    :class="[{ error: hasError }, 'currency-input']"
     :disabled="disabled"
     :formatter="formatCurrency"
     :parser="parseCurrency"

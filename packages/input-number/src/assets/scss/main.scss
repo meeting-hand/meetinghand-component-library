@@ -23,6 +23,9 @@
     box-shadow: none !important;
     border-radius: 4px;
     background-color: transparent;
+    &.currency-input {
+        min-width: 200px;
+    }
     &:hover {
         background-color: $transparent-hover;
         border-color: $color-mono-grey;
@@ -70,7 +73,7 @@
     }
     .ant-input-number-input-wrap {
         position: relative;
-        width: 70px;
+        width: calc(100% - 96px);
         height: 100%;
         margin: 0 auto;
         input {
@@ -105,6 +108,14 @@
         }
         .ant-input-number-handler-wrap {
             display: block;
+        }
+    }
+    &.ant-input-number-focused {
+        .ant-input-number-handler-down {
+            @include minus-icon("%232196f3");
+        }
+        .ant-input-number-handler-up {
+            @include plus-icon("%232196f3");
         }
     }
 }
