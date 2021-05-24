@@ -1,0 +1,123 @@
+<template>
+  <a-input-number
+    v-model:value="value"
+    :min="min"
+    :max="max"
+    :step="step"
+    :class="[{ error: hasError }, 'currency-input']"
+    :disabled="disabled"
+    :formatter="formatCurrency"
+    :parser="parseCurrency"
+  />
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
+</template>
+
+<script>
+import InputNumber from "ant-design-vue/lib/input-number";
+import accounting from "accounting-js";
+import { convertCurrencyFormat } from "../utils/currency";
+
+export default {
+  name: "InputNumberCurrency",
+  components: {
+    [InputNumber.name]: InputNumber,
+  },
+  props: {
+    modelValue: {
+      type: Number,
+      required: true,
+    },
+    min: {
+      type: Number,
+      default: 0,
+    },
+    max: {
+      type: Number,
+      default: 10000,
+    },
+    step: {
+      type: Number,
+      default: 1,
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
+      default: null,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    currency: {
+      type: String,
+      required: true,
+    },
+  },
+  computed: {
+    value: {
+      get() {
+        return this.modelValue;
+      },
+      set(value) {
+        this.$emit("update:modelValue", value);
+      },
+    },
+    moneyFormat() {
+      return convertCurrencyFormat(this.currency);
+    },
+  },
+
+  methods: {
+    formatCurrency(e) {
+      e = accounting.formatMoney(e, this.moneyFormat);
+      return e;
+    },
+
+    parseCurrency(e) {
+      // full delete
+      if (e == "") {
+        return 0;
+      }
+
+      // ignore decimal delete
+      if (!e.includes(this.moneyFormat.decimal) && e.length > 1) {
+        return this.value;
+      }
+
+      e = this.convertDecimal(e);
+      e = accounting.unformat(e, this.moneyFormat.decimal);
+
+      return e;
+    },
+
+    convertDecimal(e) {
+      const split = e.split(this.moneyFormat.decimal);
+
+      // first char enter decimal check
+      if (split.length === 1 && !isNaN(parseInt(e))) {
+        return e / Math.pow(10, this.moneyFormat.precision);
+      }
+
+      const decimal = split[split.length - 1];
+
+      // 12.532 => 125.32
+      if (
+        decimal.length > this.moneyFormat.precision &&
+        !isNaN(parseInt(decimal[decimal.length - 1]))
+      ) {
+        e =
+          split[0] +
+          decimal[0] +
+          this.moneyFormat.decimal +
+          decimal.replace(decimal[0], "");
+      }
+      return e;
+    },
+  },
+};
+</script>
