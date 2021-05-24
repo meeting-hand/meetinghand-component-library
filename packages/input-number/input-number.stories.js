@@ -49,6 +49,7 @@ storiesOf("InputNumber", module).add("Currency", () => ({
       <mh-input-number v-model="currency4" type="currency" currency="TRY" :max="100000" />
       <br />
       <br />
+      <hr>
       <h1>Currency Error</h1>  
       <mh-input-number v-model="currency5" has-error error-message="Field is required" type="currency" />
       <hr>
