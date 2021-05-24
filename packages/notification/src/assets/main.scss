@@ -1,0 +1,102 @@
+@import "~@meetinghand/style/lib/scss/reset.scss";
+@import "~@meetinghand/style/lib/scss/colors.scss";
+@import "~@meetinghand/style/lib/scss/typography.scss";
+
+.ant-notification-notice {
+    width: 400px;
+    background: #ffffff;
+    border: 1.5px solid;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    .ant-notification-notice-content {
+        margin: 0px;
+        padding: 0px;
+    }
+    .ant-notification-notice-icon {
+        margin-left: 0px;
+    }
+    .ant-notification-notice-message {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 30px;
+    }
+    .ant-notification-notice-description {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        margin-left: 0px;
+
+        color: #000000;
+    }
+    .anticon-close {
+        svg {
+            margin-top: 0px;
+            margin-right: 0px;
+            width: 16px;
+            height: 16px;
+            fill: $color-mono-grey;
+
+            background: #ffffff;
+        }
+    }
+    &.success {
+        border-left: 8px solid;
+        border-color: #4caf50;
+        .ant-notification-notice-message {
+            color: #4caf50;
+        }
+        svg {
+            margin-top: 0px;
+            margin-left: 0px;
+            width: 20px;
+            height: 20px;
+            fill: #4caf50;
+        }
+    }
+    &.error {
+        border-left: 8px solid;
+        border-color: #f44336;
+        .ant-notification-notice-message {
+            color: #f44336;
+        }
+        svg {
+            margin-top: 0px;
+            margin-left: 0px;
+            width: 20px;
+            height: 20px;
+            fill: #f44336;
+        }
+    }
+    &.info {
+        border-left: 8px solid;
+        border-color: #2196f3;
+        .ant-notification-notice-message {
+            color: #2196f3;
+        }
+        svg {
+            margin-top: 0px;
+            margin-left: 0px;
+            width: 20px;
+            height: 20px;
+            fill: #2196f3;
+        }
+    }
+    &.hint {
+        border-left: 8px solid;
+        border-color: #ff9800;
+        .ant-notification-notice-message {
+            color: #ff9800;
+        }
+        svg {
+            margin-top: 0px;
+            margin-left: 0px;
+            width: 20px;
+            height: 20px;
+            fill: #ff9800;
+        }
+    }
+}
