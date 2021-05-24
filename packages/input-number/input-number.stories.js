@@ -28,18 +28,32 @@ storiesOf("InputNumber", module).add("Currency", () => ({
   data() {
     return {
       currency1: 12.53,
-      currency2: 16,
-      currency3: 24,
+      currency2: 16.35,
+      currency3: 124.99,
+      currency4: 2124.99,
+      currency5: 100,
+      currency6: 100,
     };
   },
   template: `
       <h1>Currency Default</h1>  
       <mh-input-number v-model="currency1" type="currency" currency="USD" :max="100000" />
-      <!--<h1>Currency Error</h1>  
-      <mh-input-number v-model="currency2" has-error error-message="Field is required" type="currency" />
+      <br />
+      <br />
+      <mh-input-number v-model="currency2" type="currency" currency="EUR" :max="100000" />
+      <br />
+      <br />
+      <mh-input-number v-model="currency3" type="currency" currency="GBP" :max="100000" />
+      <br />
+      <br />
+      <mh-input-number v-model="currency4" type="currency" currency="TRY" :max="100000" />
+      <br />
+      <br />
+      <h1>Currency Error</h1>  
+      <mh-input-number v-model="currency5" has-error error-message="Field is required" type="currency" />
       <hr>
       <h1>Currency Disabled</h1>  
-      <mh-input-number v-model="currency3" disabled type="currency" />
-      <hr>-->
+      <mh-input-number v-model="currency6" disabled type="currency" />
+      <hr>
     `,
 }));
