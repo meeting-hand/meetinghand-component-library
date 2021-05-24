@@ -32,18 +32,6 @@ export default {
       type: String,
       default: null,
     },
-    icon: {
-      type: String,
-      default: null,
-      validator: (_v) =>
-        [
-          null,
-          "status-success",
-          "StatusError",
-          "StatusInfo",
-          "StatusHint",
-        ].includes(_v),
-    },
     modelValue: {
       type: Boolean,
       required: true,
@@ -63,12 +51,19 @@ export default {
 
   setup(props, { emit }) {
     const openNotification = () => {
+      const icons = {
+        success: StatusSuccess,
+        error: StatusError,
+        info: StatusInfo,
+        hint: StatusHint,
+      };
+
       Notification.open({
         message: `${props.title}`,
         description: `${props.description}`,
         duration: Number(`${props.duration}`),
         class: `${props.type}`,
-        icon: h(StatusSuccess),
+        icon: h(icons[props.type]),
         placement: `${props.placement}`,
         onClose: () => {
           emit("update:modelValue", false);
