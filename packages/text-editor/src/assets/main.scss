@@ -1,0 +1,20 @@
+@import "@vueup/vue-quill/dist/vue-quill.snow.css";
+@import "~@meetinghand/style/lib/scss/reset.scss";
+@import "~@meetinghand/style/lib/scss/colors.scss";
+@import "~@meetinghand/style/lib/scss/typography.scss";
+
+.ql-toolbar {
+    width: 928px;
+    height: 64;
+
+    background: #ffffff;
+    /* Mono / Grey */
+
+    border: 1px solid #b6b6b6;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.ql-container {
+    width: 928px;
+    height: 272px;
+}

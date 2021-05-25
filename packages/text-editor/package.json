@@ -1,0 +1,45 @@
+{
+    "name": "@meetinghand/text-editor",
+    "description": "Meetinghand Component Library Component for text-editor",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "keywords": [
+        "vue3",
+        "component",
+        "library",
+        "vue3",
+        "lerna",
+        "storybook"
+    ],
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "main": "./dist/@meetinghand/text-editor.umd.js",
+    "module": "./dist/@meetinghand/text-editor.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/@meetinghand/text-editor.es.js",
+            "require": "./dist/@meetinghand/text-editor.umd.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist/*"
+    ],
+    "dependencies": {
+        "@meetinghand/style": "file:../style",
+        "@vueup/vue-quill": "^1.0.0-beta.5",
+        "vue": "^3.0.5",
+        "vue3-quill": "^0.2.5"
+    }
+}
