@@ -1,26 +1,25 @@
-@import "~@meetinghand/style/lib/scss/reset.scss";
-@import "~@meetinghand/style/lib/scss/colors.scss";
+@import "~@meetinghand/style/lib/scss/variables.scss";
 
 hr {
-    width: 100%;
-    border: none;
-    background-color: $color-mono-light-grey-4;
-    margin: 0;
-    padding: 0;
-    &.size-thin {
-      height: 1px;
-      background-color: $color-mono-light-grey-5;
-    }
-    &.size-normal {
-      height: 4px;
-    }
-    &.size-medium {
-      height: 8px;
-    }
-    &.size-bold {
-      height: 16px;
-    }
-    &.size-xxbold {
-      height: 47px;
-    }
+  width: 100%;
+  border: none;
+  background-color: $color-mono-light-grey-4;
+  margin: 0;
+  padding: 0;
+  &.size-thin {
+    height: 1px;
+    background-color: $color-mono-light-grey-5;
   }
+  &.size-normal {
+    height: 4px;
+  }
+  &.size-medium {
+    height: 8px;
+  }
+  &.size-bold {
+    height: 16px;
+  }
+  &.size-xxbold {
+    height: 47px;
+  }
+}

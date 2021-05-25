@@ -1,5 +1,9 @@
 <template>
-  <component :is="type" :button="button"><slot></slot></component>
+  <div>
+    <component :is="type" :button="button" :text="text"
+      ><slot></slot
+    ></component>
+  </div>
 </template>
 
 <script>
@@ -25,6 +29,10 @@ export default {
       type: String,
       default: null,
       validator: (_v) => [null, "custom", "close"].includes(_v),
+    },
+    text: {
+      type: String,
+      required: true,
     },
   },
 };
