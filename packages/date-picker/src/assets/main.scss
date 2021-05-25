@@ -82,6 +82,9 @@
 						justify-content: center;
 						align-items: center;
 					}
+					&::before {
+						display: none;
+					}
 					&.ant-calendar-selected-day {
 						.ant-calendar-date {
 							background: none;
@@ -120,6 +123,35 @@
 			}
 			.ant-calendar-footer {
 				display: none;
+			}
+		}
+	}
+	.ant-calendar-range {
+		width: 592px;
+		.ant-calendar-date-panel {
+			.ant-calendar-range-right,
+			.ant-calendar-range-left {
+				width: 46%;
+			}
+			.ant-calendar-range-middle {
+				display: none;
+			}
+			.ant-calendar-body {
+				.ant-calendar-selected-start-date,
+				.ant-calendar-selected-end-date {
+					background: none;
+					.ant-calendar-date {
+						color: $color-mono-white;
+						background: $color-primary-blue !important;
+					}
+				}
+				.ant-calendar-in-range-cell {
+					.ant-calendar-date {
+						transition: none;
+						background: $transparent-hover;
+						border-radius: 2px;
+					}
+				}
 			}
 		}
 	}

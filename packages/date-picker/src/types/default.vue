@@ -1,55 +1,48 @@
 <template>
-  <component
-    :is="type"
+  <a-date-picker
+    v-model:value="value"
     :format="format"
+    :valueFormat="format"
+    :class="[{ error: hasError }]"
     :disabled="disabled"
     :placeholder="placeholder"
-    :hasError="hasError"
-    v-model="value"
+    :suffix-icon="icon"
+    :allowClear="false"
   />
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
 </template>
 
 <script>
-import Default from "./types/default";
-import Range from "./types/range";
+import DatePicker from "ant-design-vue/lib/date-picker";
+
+import MhDate from "@meetinghand/style/icons/uiDate";
+import { h } from "vue";
 
 export default {
-  name: "MhDatePicker",
+  name: "MhDatePickerDefault",
   components: {
-    Default,
-    Range,
+    [DatePicker.name]: DatePicker,
   },
   props: {
     modelValue: {
-      type: [String, Array],
+      type: String,
       default: "",
     },
     format: {
-      type: [String, Array],
+      type: String,
       default: "DD.MM.YYYY",
+      validator: (_v) => ["DD.MM.YYYY", "MM.DD.YYYY"].includes(_v),
     },
     hasError: {
       type: Boolean,
       default: false,
-    },
-    errorMessage: {
-      type: String,
-      default: null,
     },
     disabled: {
       type: Boolean,
       default: false,
     },
     placeholder: {
-      type: [String, Array],
-      default: "",
-    },
-    type: {
       type: String,
-      default: "default",
+      default: "",
     },
   },
   computed: {
@@ -61,6 +54,12 @@ export default {
         this.$emit("update:modelValue", value);
       },
     },
+  },
+  setup() {
+    const icon = h(MhDate);
+    return {
+      icon,
+    };
   },
 };
 </script>
