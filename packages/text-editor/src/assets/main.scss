@@ -44,3 +44,16 @@
         border-radius: 6px;
     }
 }
+
+.ql-snow.ql-toolbar button.ql-active {
+    background: $transparent-hover-2;
+    border-radius: 4px;
+}
+
+.ql-snow.ql-toolbar button.ql-active .ql-fill {
+    fill: $color-mono-grey-3;
+}
+
+.ql-snow.ql-toolbar button.ql-active .ql-stroke {
+    stroke: $color-mono-grey-3;
+}
