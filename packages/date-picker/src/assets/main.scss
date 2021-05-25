@@ -1,4 +1,5 @@
 @import "~@meetinghand/style/lib/scss/variables.scss";
+@import "./mixins.scss";
 
 .ant-calendar-picker {
 	div:first-of-type {
@@ -24,7 +25,7 @@
 
 .ant-calendar-picker-container {
 	.ant-calendar-picker-container-content {
-		margin-top: 62px;
+		margin-top: 60px;
 		width: 320px;
 		padding: 24px;
 
@@ -152,6 +153,76 @@
 						border-radius: 2px;
 					}
 				}
+			}
+		}
+	}
+}
+
+.mh-range-picker {
+	width: 540px;
+	.ant-calendar-picker-input {
+		border: none !important;
+		padding: 0 !important;
+		background: none !important;
+		box-shadow: none !important;
+		input {
+			border: 1px solid $color-mono-grey;
+			box-sizing: border-box;
+			border-radius: 4px;
+			padding: 16px;
+			text-align: left;
+			&:hover {
+				background-color: $transparent-hover;
+			}
+			&:active {
+				background-color: $color-secondary-blue;
+				border: 1px solid $color-primary-blue;
+			}
+		}
+		.ant-calendar-picker-icon {
+			display: none;
+		}
+	}
+
+	.ant-calendar-range-picker-input {
+		width: 258px;
+	}
+
+	.ant-calendar-range-picker-separator {
+		width: 24px;
+		position: relative;
+		&::before {
+			@include arrow-icon();
+			content: "";
+			width: 14px;
+			height: 8px;
+			display: block;
+			position: absolute;
+			right: 41px;
+			top: 22px;
+		}
+		&::after {
+			@include arrow-icon();
+			content: "";
+			width: 14px;
+			height: 8px;
+			display: block;
+			position: absolute;
+			left: 251px;
+			top: 22px;
+		}
+	}
+
+	&.mh-range-picker-opened {
+		input {
+			background-color: $color-secondary-blue;
+			border: 1px solid $color-primary-blue;
+		}
+		.ant-calendar-range-picker-separator {
+			&::before,
+			&::after {
+				@include arrow-icon("%232196f3");
+				transform: rotate(180deg);
 			}
 		}
 	}
