@@ -12,14 +12,14 @@
         'link',
         'image',
         'table',
-        [{ align: 'center' }],
-        'picker-item',
-
-        'clean',
         'code-block',
       ],
+      [{ align: null }, { align: 'center' }, { align: 'right' }],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ script: 'sub' }, { script: 'super' }],
     ]"
   >
+    <button type="button" class="ql-undo"></button>
   </quill-editor>
 </template>
 
@@ -50,12 +50,9 @@ export default {
     icons["blockquote"] = MhEditorIcons.blockquote;
     icons["image"] = MhEditorIcons.image;
     icons["table"] = MhEditorIcons.table;
-    const undo = () => {
-      self.editor.history.undo();
-    };
-    return {
-      undo,
-    };
+    icons["code-block"] = MhEditorIcons.codeblock;
+    icons["ordered"] = MhEditorIcons.ordered;
+    icons["bullet"] = MhEditorIcons.bullet;
   },
 };
 </script>
