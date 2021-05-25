@@ -4,6 +4,22 @@
 	div:first-of-type {
 		position: relative;
 	}
+
+	&.error {
+		.ant-calendar-picker-input {
+			border-color: $color-primary-red !important;
+		}
+		svg {
+			fill: $color-primary-red;
+		}
+	}
+	.ant-calendar-picker-icon {
+		fill: $color-mono-grey;
+		width: 18px;
+		height: 18px;
+		margin-top: -9px;
+		right: 16px;
+	}
 }
 
 .ant-calendar-picker-container {
