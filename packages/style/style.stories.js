@@ -124,6 +124,5 @@ storiesOf("Style", module).add("icons", () => ({
     <mh-icon name="warning" />
     <mh-icon name="success" />
     <mh-icon name="claps" />
-    
     `,
 }));

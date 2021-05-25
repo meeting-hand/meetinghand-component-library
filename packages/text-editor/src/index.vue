@@ -1,26 +1,29 @@
 <template>
-  <quill-editor
-    :toolbar="[
-      [
-        'undo',
-        'redo',
-        'bold',
-        'italic',
-        'underline',
-        'strike',
-        'blockquote',
-        'link',
-        'image',
-        'table',
-        'code-block',
-      ],
-      [{ align: null }, { align: 'center' }, { align: 'right' }],
-      [{ list: 'ordered' }, { list: 'bullet' }],
-      [{ script: 'sub' }, { script: 'super' }],
-    ]"
-  >
-    <button type="button" class="ql-undo"></button>
-  </quill-editor>
+  <!-- Undo, redo and table buttons will be added -->
+  <div class="mh-text-editor">
+    <quill-editor
+      :toolbar="[
+        [
+          'undo',
+          'redo',
+          'bold',
+          'italic',
+          'underline',
+          'strike',
+          'blockquote',
+          'link',
+          'image',
+          'table',
+          'code-block',
+        ],
+        [{ align: null }, { align: 'center' }, { align: 'right' }],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        [{ script: 'sub' }, { script: 'super' }],
+      ]"
+      :placeholder="placeholder"
+    >
+    </quill-editor>
+  </div>
 </template>
 
 <script>
@@ -32,7 +35,12 @@ import MhEditorIcons from "./assets/icons";
 
 export default {
   name: "TextEditor",
-  props: {},
+  props: {
+    placeholder: {
+      type: String,
+      default: "",
+    },
+  },
   components: {
     QuillEditor,
     MhIcon,
@@ -57,8 +65,5 @@ export default {
 };
 </script>
 
-<style>
-svg {
-  fill: #000;
-}
+<style >
 </style>

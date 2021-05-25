@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  stories: ["../packages/text-editor/*.stories.@(js|mdx)"],
+  stories: ["../packages/**/*.stories.@(js|mdx)"],
   addons: ["@storybook/addon-essentials", "@storybook/addon-links"],
   //   babel: async (options) => ({
   //     ...options,

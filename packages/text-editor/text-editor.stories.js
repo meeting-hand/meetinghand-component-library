@@ -4,7 +4,7 @@ import MhTextEditor from "./index";
 storiesOf("TextEditor", module).add("All", () => ({
   components: { MhTextEditor },
   template: `
-      <mh-text-editor />
+      <mh-text-editor placeholder="Placeholder"/>
     `,
 }));
 
