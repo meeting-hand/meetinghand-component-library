@@ -45,13 +45,8 @@
 .ant-input-affix-wrapper {
 	margin: 0;
 	padding: 0;
-}
-
-.ant-input-affix-wrapper {
 	.ant-input {
 		background: none;
-		padding-right: 6px !important;
-		padding-left: 6px !important;
 	}
 	.ant-input-prefix,
 	.ant-input-suffix {
@@ -60,6 +55,16 @@
 		background: transparent;
 		svg {
 			fill: $color-mono-grey-2;
+		}
+	}
+	.ant-input-prefix {
+		svg {
+			margin-left: 16px;
+		}
+	}
+	.ant-input-suffix {
+		svg {
+			margin-right: 16px;
 		}
 	}
 	&:hover {
