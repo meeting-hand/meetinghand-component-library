@@ -8,6 +8,8 @@
       { disabled: disabled },
     ]"
     :disabled="disabled"
+    ref="telInput"
+    :id="id"
   >
     <template #addonBefore>
       <a-select
@@ -18,7 +20,6 @@
         :filter-option="filterOption"
         show-search
         @change="setCleave"
-        :disabled="disabled"
       >
       </a-select>
     </template>
@@ -31,28 +32,19 @@
 <script>
 import Input from "ant-design-vue/lib/input";
 import Select from "ant-design-vue/lib/select";
-import MhIcon from "@meetinghand/style/icons/index";
 
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown";
 
 import Cleave from "cleave.js";
 
-import { h } from "vue";
-
-//TODO: select has an error
+import { h, ref, onMounted } from "vue";
 
 export default {
   name: "MhInputTel",
   components: {
     [Input.name]: Input,
     [Select.name]: Select,
-    MhIcon,
-  },
-  data() {
-    return {
-      dialCode: "+1",
-    };
   },
   props: {
     hasError: {
@@ -84,7 +76,7 @@ export default {
       default: false,
     },
   },
-  setup(props) {
+  setup() {
     // phone dialCode
     const phoneCodes = CountryPhoneCodes.map((_c) => {
       return {
@@ -93,6 +85,9 @@ export default {
         label: `${_c.dialCode}`,
       };
     });
+
+    const dialCode = ref("+1");
+    const id = ref("_" + Math.random().toString(36).substr(2, 9));
 
     //filter
     const filterOption = (input, option) => {
@@ -105,21 +100,23 @@ export default {
       const country = CountryPhoneCodes.find((_c) => _c.dialCode === dialCode);
       await require(`cleave.js/dist/addons/cleave-phone.${country.countryCode.toLowerCase()}`);
 
-      new Cleave(".ant-input", {
+      new Cleave(document.getElementById(id.value), {
         phone: true,
         phoneRegionCode: country.countryCode.toLowerCase(),
       });
     };
+
+    onMounted(setCleave(dialCode.value));
 
     return {
       phoneCodes,
       suffixIcon,
       filterOption,
       setCleave,
+      dialCode,
+      id,
+      suffixIcon,
     };
-  },
-  mounted() {
-    this.setCleave(this.dialCode);
   },
 };
 </script>
