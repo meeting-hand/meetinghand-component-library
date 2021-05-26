@@ -1,6 +1,4 @@
 <template>
-  <!-- Undo, redo and table buttons will be added -->
-
   <div
     :class="[{ error: hasError }, 'mh-text-editor', { disabled: hasDisabled }]"
   >
@@ -25,7 +23,7 @@ import MhIcon from "@meetinghand/style/icons/index";
 import { QuillEditor, Quill } from "@vueup/vue-quill";
 import MhEditorIcons from "./assets/icons";
 
-console.log(QuillEditor);
+// TODO: Undo, redo and table buttons will be added
 
 export default {
   name: "TextEditor",
