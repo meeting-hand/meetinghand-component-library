@@ -139,7 +139,7 @@
 		}
 	}
 	.ant-select {
-		width: 90px;
+		min-width: 80px;
 		.ant-select-selection-search {
 			.ant-select-selection-search-input {
 				caret-color: $color-mono-grey-2;
