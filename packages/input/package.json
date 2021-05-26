@@ -37,7 +37,8 @@
         "dist/*"
     ],
     "dependencies": {
-        "vue": "^3.0.5",
-        "@meetinghand/style": "file:../style"
+        "@meetinghand/style": "file:../style",
+        "cleave.js": "^1.6.0",
+        "vue": "^3.0.5"
     }
 }

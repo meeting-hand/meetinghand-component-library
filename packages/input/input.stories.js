@@ -4,8 +4,8 @@ import MhInput from "./index";
 import "../../assets/storybook/input.css";
 
 storiesOf("Input", module).add("Input", () => ({
-  components: { MhInput },
-  template: `
+	components: { MhInput },
+	template: `
       <h1>Standart</h1>
       <mh-input />
       <br />
@@ -35,8 +35,8 @@ storiesOf("Input", module).add("Input", () => ({
     `,
 }));
 storiesOf("Input", module).add("Password", () => ({
-  components: { MhInput },
-  template: `
+	components: { MhInput },
+	template: `
       <h1>Standart</h1>
       <mh-input input-type="password" />
       <br />
@@ -56,10 +56,16 @@ storiesOf("Input", module).add("Password", () => ({
     `,
 }));
 storiesOf("Input", module).add("Tel", () => ({
-  components: { MhInput },
-  template: `
-      <h1>TODO!</h1>
-      <h1>Tel</h1>
+	components: { MhInput },
+	template: `
+			<h1>Standart</h1>
       <mh-input input-type="tel" />
+			<hr />
+			<h1>Error</h1>
+			<mh-input input-type="tel" has-error error-message="this field is required" />
+			<hr />
+			<h1>Disabled</h1>
+      <mh-input input-type="tel" disabled />
+			<hr />
     `,
 }));
