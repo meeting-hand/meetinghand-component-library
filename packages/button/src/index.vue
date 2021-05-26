@@ -6,6 +6,7 @@
     :iconAlignment="iconAlignment"
     :disabled="disabled"
     :wait="wait"
+    :socialMedia="socialMedia"
   >
     <slot></slot>
   </component>
@@ -19,6 +20,7 @@ import Secondary from "./types/secondary";
 import Small from "./types/small";
 import Text from "./types/text";
 import Row from "./types/row";
+import Social from "./types/social";
 
 export default {
   name: "MhButton",
@@ -29,13 +31,14 @@ export default {
     Small,
     Text,
     Row,
+    Social,
   },
   props: {
     type: {
       type: String,
       default: "primary",
       validator: (_v) =>
-        ["primary", "secondary", "small", "text", "row"].includes(_v),
+        ["primary", "secondary", "small", "text", "row", "social"].includes(_v),
     },
     size: {
       type: String,
@@ -58,6 +61,11 @@ export default {
     wait: {
       type: Boolean,
       default: false,
+    },
+    socialMedia: {
+      type: String,
+      default: "google",
+      validator: (_v) => ["google", "facebook", "linkedin"].includes(_v),
     },
   },
 };

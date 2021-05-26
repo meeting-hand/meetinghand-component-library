@@ -180,3 +180,22 @@ storiesOf("Button", module).add("row", () => ({
       </mh-button>
     `,
 }));
+
+storiesOf("Button", module).add("social", () => ({
+  components: { MhButton },
+  template: `
+      <h1>Google</h1>
+      <mh-button type="social" icon="social-google" socialMedia="google">
+        Google
+      </mh-button>
+      <h1>Facebook</h1>
+      <mh-button type="social" icon="social-face-book" socialMedia="facebook">
+        Facebook
+      </mh-button>
+      <h1>Linkedin</h1>
+      <mh-button type="social" icon="social-linkedin" socialMedia="linkedin">
+        Linkedin
+      </mh-button>
+      
+    `,
+}));

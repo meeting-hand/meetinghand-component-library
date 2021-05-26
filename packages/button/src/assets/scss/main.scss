@@ -128,6 +128,9 @@
 .text-btn {
     border: none;
     padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
         background: rgba($color-mono-black, 0.04);
     }
@@ -181,6 +184,58 @@
     }
 }
 /* ROW END */
+
+/* SOCIAL */
+.ant-btn-social {
+    width: 360px;
+    height: 52px;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+    span {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+
+        color: #565656;
+    }
+    svg {
+        height: 20px;
+        width: 30px;
+    }
+
+    .mh-icon {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+
+    &.google {
+        &:hover {
+            background: #518ef8;
+            span {
+                color: #ffffff;
+            }
+        }
+    }
+    &.facebook {
+        &:hover {
+            background: #314f8b;
+            span {
+                color: #ffffff;
+            }
+        }
+    }
+    &.linkedin {
+        &:hover {
+            background: #006ca8;
+            span {
+                color: #ffffff;
+            }
+        }
+    }
+}
+/* SOCIAL END */
 
 .size-large {
     min-width: 360px;
