@@ -1,7 +1,7 @@
 <template>
   <a-input
     :placeholder="placeholder"
-    :class="[{ error: hasError, 'allow-clear': allowClear }]"
+    :class="[{ error: hasError, 'allow-clear': allowClear }, 'mh-input']"
     :disabled="disabled"
     :allow-clear="allowClear"
   >

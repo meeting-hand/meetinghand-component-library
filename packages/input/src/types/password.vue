@@ -1,7 +1,7 @@
 <template>
   <a-input-password
     :placeholder="placeholder"
-    :class="[{ error: hasError }]"
+    :class="[{ error: hasError }, 'mh-input']"
     :disabled="disabled"
   >
     <!-- <template #addonAfter>
