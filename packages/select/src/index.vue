@@ -1,6 +1,7 @@
 <template>
   <a-select
     class="mh-dropdown"
+    :class="[{ error: hasError }, 'mh-dropdown', { disabled: disabled }]"
     :disabled="disabled"
     :filter-option="filterOption"
     :placeholder="placeholder"
@@ -8,14 +9,20 @@
     option-filter-prop="label"
     :show-search="searchable"
     v-model:value="value"
+    :size="size"
+    :suffixIcon="suffixIcon"
   >
   </a-select>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
 import Select from "ant-design-vue/lib/select";
+import ArrowIcon from "@meetinghand/style/icons/chevronDown";
 
-import { computed } from "vue";
+import { computed, h } from "vue";
 
 export default {
   name: "MhSelect",
@@ -47,8 +54,23 @@ export default {
       type: String,
       default: "",
     },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
+      default: null,
+    },
+    size: {
+      type: String,
+      default: "default",
+      validator: (_v) => ["default", "small"].includes(_v),
+    },
   },
   setup(props, { emit }) {
+    const suffixIcon = h(ArrowIcon);
+
     const filterOption = (input, option) => {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
     };
@@ -65,6 +87,7 @@ export default {
     return {
       value,
       filterOption,
+      suffixIcon,
     };
   },
 };
