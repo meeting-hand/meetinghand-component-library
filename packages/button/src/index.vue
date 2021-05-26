@@ -19,6 +19,7 @@ import Secondary from "./types/secondary";
 import Small from "./types/small";
 import Text from "./types/text";
 import Row from "./types/row";
+import Iconic from "./types/iconic";
 
 export default {
   name: "MhButton",
@@ -29,13 +30,14 @@ export default {
     Small,
     Text,
     Row,
+    Iconic,
   },
   props: {
     type: {
       type: String,
       default: "primary",
       validator: (_v) =>
-        ["primary", "secondary", "small", "text", "row"].includes(_v),
+        ["primary", "secondary", "small", "text", "row", "iconic"].includes(_v),
     },
     size: {
       type: String,

@@ -1,4 +1,8 @@
 <template>
+  <div class="mh-input-text">
+    <h1 v-if="title" class="mh-input__title">{{ title }}</h1>
+    <mh-icon :name="icon" v-if="icon" />
+  </div>
   <a-textarea
     v-model:value="value"
     :placeholder="placeholder"
@@ -13,7 +17,7 @@
 
 <script>
 import TextArea from "ant-design-vue/lib/input/TextArea";
-import MHIcon from "@meetinghand/style/icons/index";
+import MHIcon from "@meetinghand/style/icons";
 
 export default {
   name: "MhTextArea",
@@ -40,6 +44,14 @@ export default {
       default: false,
     },
     errorMessage: {
+      type: String,
+      default: null,
+    },
+    title: {
+      type: String,
+      default: null,
+    },
+    icon: {
       type: String,
       default: null,
     },

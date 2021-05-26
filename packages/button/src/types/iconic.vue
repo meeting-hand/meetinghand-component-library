@@ -1,14 +1,7 @@
 <template>
   <a-button
-    type="default"
-    :class="[
-      `size-${size}`,
-      `alignment-${iconAlignment}`,
-      { wait: wait },
-      { disabled: disabled },
-      'row-btn',
-    ]"
-    :disabled="disabled || wait"
+    :class="[`size-${size}`, { disabled: disabled }, 'iconic-btn']"
+    :disabled="disabled"
   >
     <mh-icon :name="icon" v-if="icon" />
   </a-button>
@@ -25,23 +18,14 @@ export default {
   props: {
     size: {
       type: String,
-      default: "default",
-      validator: (_v) => ["default", "large"].includes(_v),
+      default: "normal",
+      validator: (_v) => ["normal", "circular", "small", "tiny"].includes(_v),
     },
     icon: {
       type: String,
       default: null,
     },
-    iconAlignment: {
-      type: String,
-      default: "left",
-      validator: (_v) => ["left", "right"].includes(_v),
-    },
     disabled: {
-      type: Boolean,
-      default: false,
-    },
-    wait: {
       type: Boolean,
       default: false,
     },

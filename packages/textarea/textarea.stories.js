@@ -15,15 +15,17 @@ storiesOf("TextArea", module).add("All", () => ({
         placeholder="placeholder" 
         minRows= "5"
         maxRows= "7"
+        title="Title"
+        icon="system-info"
       />
       <br/> <br/>
       {{ text1 }}
       <h1> Error </h1>
       <mh-text-area 
-      v-model="text1" 
-      placeholder="placeholder" 
-      error-message="this field is required"
-      has-error  
+        v-model="text1" 
+        placeholder="placeholder" 
+        error-message="this field is required"
+        has-error  
       
     />
       <br/> <br/>

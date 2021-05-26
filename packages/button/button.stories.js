@@ -180,3 +180,22 @@ storiesOf("Button", module).add("row", () => ({
       </mh-button>
     `,
 }));
+
+storiesOf("Button", module).add("iconic", () => ({
+  components: { MhButton },
+  template: `
+      <h1>Normal</h1>
+      <mh-button type="iconic" icon="system-other-options" size="normal" />
+        <hr/>
+      <h1>Circular</h1>
+      <mh-button type="iconic" icon="system-other-options" size="circular" />
+      <hr/>
+      <h1>Small</h1>
+      <mh-button type="iconic" icon="system-other-options" size="small" />
+      <hr/>
+      <h1>Tiny</h1>
+      <mh-button type="iconic" icon="system-close" size="tiny" />
+        
+      
+    `,
+}));

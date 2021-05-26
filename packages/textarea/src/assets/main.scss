@@ -40,3 +40,30 @@ textarea.ant-input {
         caret-color: $color-primary-red;
     }
 }
+
+.mh-input-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: -15px;
+    .mh-input__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px !important;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+
+        display: flex;
+        align-items: center;
+
+        /* Mono / Black */
+
+        color: #000000;
+    }
+    svg {
+        fill: #b6b6b6;
+        margin-left: 11px;
+        width: 18px;
+        height: 18px;
+    }
+}

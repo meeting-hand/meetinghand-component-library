@@ -1,12 +1,13 @@
 <template>
   <div
-    :class="[{ error: hasError }, 'mh-text-editor', { disabled: hasDisabled }]"
+    :class="[{ error: hasError }, 'mh-text-editor', { readOnly: hasDisabled }]"
   >
     <quill-editor
       :toolbar="toolbar"
       :placeholder="placeholder"
       v-model:content="value"
       contentType="html"
+      :readOnly="readOnly"
     >
     </quill-editor>
     <div class="editor-footer" v-if="maxWordCount">
@@ -48,6 +49,14 @@ export default {
     errorMessage: {
       type: String,
       default: null,
+    },
+    hasDisabled: {
+      type: Boolean,
+      default: false,
+    },
+    readOnly: {
+      type: Boolean,
+      default: false,
     },
     toolbar: {
       type: Array,

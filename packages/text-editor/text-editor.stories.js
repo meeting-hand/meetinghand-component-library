@@ -5,7 +5,7 @@ storiesOf("TextEditor", module).add("All", () => ({
   components: { MhTextEditor },
   data() {
     return {
-      text1: "test",
+      text1: "",
       toolbar: ['undo','redo','bold','italic','strike',{ align: 'center' }, { script: 'sub' }, { script: 'super' }, 'image']
       
     }
@@ -20,7 +20,7 @@ storiesOf("TextEditor", module).add("All", () => ({
       <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" has-error error-message="this field is required"/>
       <hr />
       <h1>Disabled</h1>
-      <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" has-disabled/>
+      <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15"  :readOnly="true"/>
      
     `,
 }));
