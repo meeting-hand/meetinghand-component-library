@@ -1,17 +1,24 @@
 <template>
   <a-input
     :placeholder="placeholder"
-    :class="[{ error: hasError }, 'mh-input', 'mh-tel-input']"
+    :class="[
+      { error: hasError },
+      'mh-input',
+      'mh-tel-input',
+      { disabled: disabled },
+    ]"
     :disabled="disabled"
   >
     <template #addonBefore>
       <a-select
-        v-model:value="prefix"
+        v-model:value="dialCode"
         :options="phoneCodes"
         :suffixIcon="suffixIcon"
         option-filter-prop="label"
         :filter-option="filterOption"
         show-search
+        @change="setCleave"
+        :disabled="disabled"
       >
       </a-select>
     </template>
@@ -29,6 +36,8 @@ import MhIcon from "@meetinghand/style/icons/index";
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown";
 
+import Cleave from "cleave.js";
+
 import { h } from "vue";
 
 //TODO: select has an error
@@ -42,7 +51,7 @@ export default {
   },
   data() {
     return {
-      prefix: "+1",
+      dialCode: "+1",
     };
   },
   props: {
@@ -76,7 +85,7 @@ export default {
     },
   },
   setup(props) {
-    // phone prefix
+    // phone dialCode
     const phoneCodes = CountryPhoneCodes.map((_c) => {
       return {
         value: _c.dialCode,
@@ -92,17 +101,25 @@ export default {
 
     const suffixIcon = h(ArrowIcon);
 
+    const setCleave = async (dialCode) => {
+      const country = CountryPhoneCodes.find((_c) => _c.dialCode === dialCode);
+      await require(`cleave.js/dist/addons/cleave-phone.${country.countryCode.toLowerCase()}`);
+
+      new Cleave(".ant-input", {
+        phone: true,
+        phoneRegionCode: country.countryCode.toLowerCase(),
+      });
+    };
+
     return {
       phoneCodes,
       suffixIcon,
       filterOption,
+      setCleave,
     };
+  },
+  mounted() {
+    this.setCleave(this.dialCode);
   },
 };
 </script>
-
-<style scoped>
->>> svg {
-  fill: #000;
-}
-</style>
