@@ -1,131 +1,122 @@
 @import "~@meetinghand/style/lib/scss/variables.scss";
 
 .ant-input {
-    min-width: 360px;
-    max-width: 100%;
-    padding: 16px !important;
-    color: $color-mono-black;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    box-shadow: none;
+	min-width: 360px;
+	max-width: 100%;
+	padding: 16px !important;
+	color: $color-mono-black;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 400;
+	box-shadow: none;
 
-    &::placeholder {
-        color: $color-mono-grey;
-    }
+	&::placeholder {
+		color: $color-mono-grey;
+	}
 
-    &:hover {
-        background-color: rgba($color-mono-black, 0.04);
-        border: 1px solid $color-mono-grey;
-    }
+	&:hover {
+		background-color: rgba($color-mono-black, 0.04);
+		border: 1px solid $color-mono-grey;
+	}
 
-    &:focus {
-        //border: 1.5px solid $color-primary-blue;
-        border-color: $color-primary-blue;
-        outline: none;
-        box-shadow: none;
-    }
-    &.error {
-        border: 1.5px solid $color-primary-red;
-    }
-    &.ant-input-disabled {
-        background-color: $color-mono-light-grey;
-        color: $color-mono-grey;
-    }
+	&:focus {
+		//border: 1.5px solid $color-primary-blue;
+		border-color: $color-primary-blue;
+		outline: none;
+		box-shadow: none;
+	}
+	&.error {
+		border: 1.5px solid $color-primary-red;
+	}
+	&.ant-input-disabled {
+		background-color: $color-mono-light-grey;
+		color: $color-mono-grey;
+	}
 }
 
 .ant-input,
 .ant-input-affix-wrapper {
-    border: 1px solid $color-mono-grey;
-    border-radius: 4px;
-    background: transparent;
-    transition: background-color 0.5s ease, border 0.5s ease !important;
+	border: 1px solid $color-mono-grey;
+	border-radius: 4px;
+	background: transparent;
+	transition: background-color 0.5s ease, border 0.5s ease !important;
 }
 
 .ant-input-affix-wrapper {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .ant-input-affix-wrapper {
-    .ant-input {
-        background: none;
-        padding-right: 6px !important;
-        padding-left: 6px !important;
-    }
-    .ant-input-prefix,
-    .ant-input-suffix {
-        margin: 0 !important;
-        padding: 0 !important;
-        background: transparent;
-        svg {
-            fill: $color-mono-grey-2;
-        }
-    }
-    &:hover {
-        background-color: rgba($color-mono-black, 0.04);
-        border: 1px solid $color-mono-grey;
-    }
+	.ant-input {
+		background: none;
+		padding-right: 6px !important;
+		padding-left: 6px !important;
+	}
+	.ant-input-prefix,
+	.ant-input-suffix {
+		margin: 0 !important;
+		padding: 0 !important;
+		background: transparent;
+		svg {
+			fill: $color-mono-grey-2;
+		}
+	}
+	&:hover {
+		background-color: rgba($color-mono-black, 0.04);
+		border: 1px solid $color-mono-grey;
+	}
 
-    &.error {
-        border: 1.5px solid $color-primary-red;
+	&.error {
+		border: 1.5px solid $color-primary-red;
 
-        .ant-input-prefix,
-        .ant-input-suffix {
-            svg {
-                fill: $color-primary-red;
-            }
-        }
-    }
-    .ant-input-disabled {
-        .ant-input-prefix,
-        .ant-input-suffix {
-            svg {
-                fill: $color-mono-grey;
-            }
-        }
-    }
+		.ant-input-prefix,
+		.ant-input-suffix {
+			svg {
+				fill: $color-primary-red;
+			}
+		}
+	}
+	.ant-input-disabled {
+		.ant-input-prefix,
+		.ant-input-suffix {
+			svg {
+				fill: $color-mono-grey;
+			}
+		}
+	}
 
-    &.ant-input-affix-wrapper-disabled {
-        background-color: $color-mono-light-grey;
-        color: $color-mono-grey;
-    }
+	&.ant-input-affix-wrapper-disabled {
+		background-color: $color-mono-light-grey;
+		color: $color-mono-grey;
+	}
 }
 .ant-input-affix-wrapper-focused {
-    border-color: $color-primary-blue !important;
-    outline: none;
-    box-shadow: none;
-    .ant-input-prefix,
-    .ant-input-suffix {
-        svg {
-            fill: $color-primary-blue;
-        }
-    }
-}
-
-.mh-input__error {
-    font-size: 12px;
-    line-height: 16px;
-    color: $color-primary-red;
-    margin-left: 8px;
-    margin-top: 8px;
-    display: block;
+	border-color: $color-primary-blue !important;
+	outline: none;
+	box-shadow: none;
+	.ant-input-prefix,
+	.ant-input-suffix {
+		svg {
+			fill: $color-primary-blue;
+		}
+	}
 }
 
 .ant-input-password {
-    .ant-input {
-        margin: 0 16px;
-    }
+	.ant-input {
+		margin: 0 16px;
+	}
 }
 
 .allow-clear {
-    .ant-input {
-        margin: 0 16px;
-    }
-    .ant-input-suffix {
-        svg {
-            width: 20px;
-            height: 20px;
-        }
-    }
+	.ant-input {
+		margin: 0 16px;
+	}
+	.ant-input-suffix {
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
 }

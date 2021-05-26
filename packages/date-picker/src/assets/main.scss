@@ -1,0 +1,229 @@
+@import "~@meetinghand/style/lib/scss/variables.scss";
+@import "./mixins.scss";
+
+.ant-calendar-picker {
+	div:first-of-type {
+		position: relative;
+	}
+
+	&.error {
+		.ant-calendar-picker-input {
+			border-color: $color-primary-red !important;
+		}
+		svg {
+			fill: $color-primary-red;
+		}
+	}
+	.ant-calendar-picker-icon {
+		fill: $color-mono-grey;
+		width: 18px;
+		height: 18px;
+		margin-top: -9px;
+		right: 16px;
+	}
+}
+
+.ant-calendar-picker-container {
+	.ant-calendar-picker-container-content {
+		margin-top: 60px;
+		width: 320px;
+		padding: 24px;
+
+		background: $color-mono-white;
+		border: 1.5px solid $color-mono-light-grey-5;
+		box-sizing: border-box;
+
+		box-shadow: 0px 12px 16px $shadow-1;
+		border-radius: 4px;
+
+		.ant-calendar-panel {
+			.ant-calendar-input-wrap {
+				display: none;
+			}
+			.ant-calendar-header {
+				border-bottom: none;
+				height: 24px;
+				line-height: 24px;
+				margin-bottom: 20px;
+				.ant-calendar-next-month-btn,
+				.ant-calendar-next-year-btn,
+				.ant-calendar-prev-month-btn,
+				.ant-calendar-prev-year-btn {
+					line-height: 24px;
+					&:after,
+					&:before {
+						border-color: $color-mono-black;
+					}
+				}
+			}
+			.ant-calendar-my-select {
+				a {
+					color: $color-mono-black;
+					font-family: $primaryFont;
+					font-weight: 500;
+					font-size: 16px;
+					line-height: 20px;
+				}
+			}
+			.ant-calendar-body {
+				padding: 0;
+				.ant-calendar-column-header-inner {
+					font-weight: 600;
+					font-size: 12px;
+					line-height: 16px;
+					color: $color-mono-grey-2;
+					text-transform: uppercase;
+				}
+				.ant-calendar-cell {
+					padding: 0;
+					margin: 0;
+					height: auto;
+					div {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+					&::before {
+						display: none;
+					}
+					&.ant-calendar-selected-day {
+						.ant-calendar-date {
+							background: none;
+						}
+					}
+					.ant-calendar-date {
+						font-size: 16px;
+						line-height: 20px;
+						color: $color-mono-black;
+						font-family: $primaryFont;
+						font-weight: normal;
+						width: 100%;
+						height: 20px;
+						margin: 4px 0;
+						padding: 8px 0;
+						height: 100%;
+						display: block;
+						border-radius: 50%;
+						&:hover {
+							background: $transparent-hover;
+						}
+					}
+					&.ant-calendar-today {
+						.ant-calendar-date {
+							border: none;
+							color: $color-primary-blue;
+						}
+					}
+					&.ant-calendar-selected-date {
+						.ant-calendar-date {
+							color: $color-mono-white;
+							background: $color-primary-blue;
+						}
+					}
+				}
+			}
+			.ant-calendar-footer {
+				display: none;
+			}
+		}
+	}
+	.ant-calendar-range {
+		width: 592px;
+		.ant-calendar-date-panel {
+			.ant-calendar-range-right,
+			.ant-calendar-range-left {
+				width: 46%;
+			}
+			.ant-calendar-range-middle {
+				display: none;
+			}
+			.ant-calendar-body {
+				.ant-calendar-selected-start-date,
+				.ant-calendar-selected-end-date {
+					background: none;
+					.ant-calendar-date {
+						color: $color-mono-white;
+						background: $color-primary-blue !important;
+					}
+				}
+				.ant-calendar-in-range-cell {
+					.ant-calendar-date {
+						transition: none;
+						background: $transparent-hover;
+						border-radius: 2px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.mh-range-picker {
+	width: 540px;
+	.ant-calendar-picker-input {
+		border: none !important;
+		padding: 0 !important;
+		background: none !important;
+		box-shadow: none !important;
+		input {
+			border: 1px solid $color-mono-grey;
+			box-sizing: border-box;
+			border-radius: 4px;
+			padding: 16px;
+			text-align: left;
+			&:hover {
+				background-color: $transparent-hover;
+			}
+			&:active {
+				background-color: $color-secondary-blue;
+				border: 1px solid $color-primary-blue;
+			}
+		}
+		.ant-calendar-picker-icon {
+			display: none;
+		}
+	}
+
+	.ant-calendar-range-picker-input {
+		width: 258px;
+	}
+
+	.ant-calendar-range-picker-separator {
+		width: 24px;
+		position: relative;
+		&::before {
+			@include arrow-icon();
+			content: "";
+			width: 14px;
+			height: 8px;
+			display: block;
+			position: absolute;
+			right: 41px;
+			top: 22px;
+		}
+		&::after {
+			@include arrow-icon();
+			content: "";
+			width: 14px;
+			height: 8px;
+			display: block;
+			position: absolute;
+			left: 251px;
+			top: 22px;
+		}
+	}
+
+	&.mh-range-picker-opened {
+		input {
+			background-color: $color-secondary-blue;
+			border: 1px solid $color-primary-blue;
+		}
+		.ant-calendar-range-picker-separator {
+			&::before,
+			&::after {
+				@include arrow-icon("%232196f3");
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
