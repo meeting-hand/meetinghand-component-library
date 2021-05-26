@@ -1,6 +1,6 @@
 <template>
   <!-- Undo, redo and table buttons will be added -->
-  <!-- undo, redo bold, italic, underline, strike, blockquote, link, image, table, code-block -->
+
   <div
     :class="[{ error: hasError }, 'mh-text-editor', { disabled: hasDisabled }]"
   >
@@ -25,8 +25,11 @@ import MhIcon from "@meetinghand/style/icons/index";
 import { QuillEditor, Quill } from "@vueup/vue-quill";
 import MhEditorIcons from "./assets/icons";
 
+console.log(QuillEditor);
+
 export default {
   name: "TextEditor",
+
   props: {
     placeholder: {
       type: String,
@@ -91,23 +94,10 @@ export default {
     icons["code-block"] = MhEditorIcons.codeblock;
     icons["ordered"] = MhEditorIcons.ordered;
   },
+  methods: {
+    undo() {
+      console.log("undoo");
+    },
+  },
 };
-//[
-//   [
-//     toolbarButton.undo,
-//     toolbarButton.redo,
-//     toolbarButton.bold,
-//     toolbarButton.italic,
-//     toolbarButton.underline,
-//     toolbarButton.strike,
-//     toolbarButton.blockquote,
-//     toolbarButton.link,
-//     toolbarButton.image,
-//     toolbarButton.table,
-//     toolbarButton.codeblock,
-//   ],
-//   [{ align: null }, { align: toolbarButton.align }, { align: 'right' }],
-//   [{ list: 'ordered' }, { list: 'bullet' }],
-//   [{ script: 'sub' }, { script: 'super' }],
-// ]
 </script>
