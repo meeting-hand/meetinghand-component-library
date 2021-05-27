@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/vue3";
 import MhSelect from "./index";
 
-storiesOf("Select", module).add("Select!", () => ({
+storiesOf("Select", module).add("All", () => ({
 	components: { MhSelect },
 	data() {
 		return {
