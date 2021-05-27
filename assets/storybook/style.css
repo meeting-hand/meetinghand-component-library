@@ -1,4 +1,11 @@
-/* svg {
-  fill: #2196f3;
-  margin: 16px;
-} */
+.mh-style svg {
+	fill: #2196f3;
+	margin: 16px;
+	width: 14px;
+	height: 14px;
+}
+
+.mh-style svg.mh-icon-order-down,
+.mh-style svg.mh-icon-order-up {
+	fill: none;
+}

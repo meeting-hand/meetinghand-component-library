@@ -1,5 +1,5 @@
 <template>
-  <component :is="name" class="mh-icon"></component>
+  <component :is="name" :class="['mh-icon', `mh-icon-${name}`]"></component>
 </template>
 <script>
 import ArrowDown from "./arrowDown";
