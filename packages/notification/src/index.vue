@@ -6,8 +6,9 @@ import Button from "ant-design-vue/lib/button";
 import MHIcon from "@meetinghand/style/icons/index";
 import StatusSuccess from "@meetinghand/style/icons/systemStatusSuccess";
 import StatusError from "@meetinghand/style/icons/systemStatusError";
-import StatusInfo from "@meetinghand/style/icons/systemInfo";
+import StatusInfo from "@meetinghand/style/icons/systemStatusInfo";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint";
+import SystemClose from "@meetinghand/style/icons/systemClose";
 import { h } from "vue";
 
 export default {
@@ -68,6 +69,7 @@ export default {
         onClose: () => {
           emit("update:modelValue", false);
         },
+        closeIcon: h(SystemClose),
       });
     };
 
