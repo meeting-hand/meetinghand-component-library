@@ -10,6 +10,7 @@
     :disabled="disabled"
     ref="telInput"
     :id="id"
+    v-model:value="value"
   >
     <template #addonBefore>
       <a-select
@@ -38,7 +39,7 @@ import ArrowIcon from "@meetinghand/style/icons/chevronDown";
 
 import Cleave from "cleave.js";
 
-import { h, ref, onMounted } from "vue";
+import { h, ref, onMounted, computed } from "vue";
 
 export default {
   name: "MhInputTel",
@@ -47,6 +48,10 @@ export default {
     [Select.name]: Select,
   },
   props: {
+    modelValue: {
+      type: String,
+      default: "",
+    },
     hasError: {
       type: Boolean,
       default: false,
@@ -76,7 +81,7 @@ export default {
       default: false,
     },
   },
-  setup() {
+  setup(props, { emit }) {
     // phone dialCode
     const phoneCodes = CountryPhoneCodes.map((_c) => {
       return {
@@ -108,6 +113,15 @@ export default {
 
     onMounted(setCleave(dialCode.value));
 
+    const value = computed({
+      get() {
+        return props.modelValue;
+      },
+      set(data) {
+        emit("update:modelValue", data);
+      },
+    });
+
     return {
       phoneCodes,
       suffixIcon,
@@ -116,6 +130,7 @@ export default {
       dialCode,
       id,
       suffixIcon,
+      value,
     };
   },
 };

@@ -3,6 +3,7 @@
     :placeholder="placeholder"
     :class="[{ error: hasError }, 'mh-input']"
     :disabled="disabled"
+    v-model:value="value"
   >
     <!-- <template #addonAfter>
       <mh-icon name="system-show" />
@@ -18,9 +19,15 @@
 import Input from "ant-design-vue/lib/input/Password";
 import MhIcon from "@meetinghand/style/icons/index";
 
+import { computed } from "vue";
+
 export default {
   name: "MhInputPassword",
   props: {
+    modelValue: {
+      type: String,
+      default: "",
+    },
     hasError: {
       type: Boolean,
       default: false,
@@ -53,6 +60,19 @@ export default {
   components: {
     [Input.name]: Input,
     MhIcon,
+  },
+  setup(props, { emit }) {
+    const value = computed({
+      get() {
+        return props.modelValue;
+      },
+      set(data) {
+        emit("update:modelValue", data);
+      },
+    });
+    return {
+      value,
+    };
   },
 };
 </script>
