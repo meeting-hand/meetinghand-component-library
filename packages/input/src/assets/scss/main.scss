@@ -54,6 +54,9 @@
 		margin: 0 !important;
 		padding: 0 !important;
 		background: transparent;
+		.anticon {
+			margin: 0;
+		}
 		svg {
 			fill: $color-mono-grey-2;
 		}
@@ -64,6 +67,9 @@
 		}
 	}
 	.ant-input-suffix {
+		svg {
+			margin-right: 16px;
+		}
 		.ant-input-clear-icon {
 			svg {
 				display: none;
@@ -131,9 +137,6 @@
 }
 
 .allow-clear {
-	.ant-input {
-		margin: 0 16px;
-	}
 	.ant-input-suffix {
 		svg {
 			width: 20px;
@@ -191,17 +194,6 @@
 
 	&.error {
 		border: 1px solid $color-primary-red !important;
-		.ant-input-prefix,
-		.ant-input-suffix {
-			svg {
-				fill: $color-primary-red !important;
-			}
-			.ant-input-clear-icon {
-				&::after {
-					@include close-icon("%23f44336");
-				}
-			}
-		}
 	}
 	&.disabled {
 		background-color: $color-mono-light-grey;
@@ -217,5 +209,19 @@
 		border-color: $color-primary-blue;
 		outline: none;
 		box-shadow: none;
+	}
+}
+
+.error {
+	.ant-input-prefix,
+	.ant-input-suffix {
+		svg {
+			fill: $color-primary-red;
+		}
+		.ant-input-clear-icon {
+			&::after {
+				@include close-icon("%23f44336");
+			}
+		}
 	}
 }

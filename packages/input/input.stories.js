@@ -14,7 +14,7 @@ storiesOf("Input", module).add("Input", () => ({
 			value5: "",
 			value6: "",
 			value7: "",
-			value8: "",
+			value8: "lorem ipsum",
 		};
 	},
 	template: `
@@ -30,7 +30,7 @@ storiesOf("Input", module).add("Input", () => ({
       <br />
       <mh-input v-model="value4" has-error error-message="this field is required" left-icon="arrow-down" right-icon="arrow-up" />
       <h1>Disabled</h1>
-      <mh-input disabled />
+      <mh-input v-model="value8" disabled />
       <br />
       <br />
       <mh-input v-model="value5" disabled left-icon="arrow-down" right-icon="arrow-up" />
@@ -39,9 +39,6 @@ storiesOf("Input", module).add("Input", () => ({
       <br />
       <br />
       <mh-input v-model="value7" allow-clear has-error />
-      <br />
-      <br />
-      <mh-input v-model="value8" allow-clear disabled />
       <br />
       <br />
     `,
