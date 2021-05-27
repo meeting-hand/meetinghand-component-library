@@ -1,8 +1,14 @@
 <template>
-  <div>
-    <component :is="type" :button="button" :text="text" :bannerType="bannerType"
-      ><slot></slot
-    ></component>
+  <div class="mh-banner">
+    <component
+      :is="type"
+      :button="button"
+      :text="text"
+      :bannerType="bannerType"
+      :customText="customText"
+    >
+      <slot></slot>
+    </component>
   </div>
 </template>
 
@@ -32,12 +38,16 @@ export default {
     },
     text: {
       type: String,
-      required: true,
+      default: "",
     },
     bannerType: {
       type: String,
       default: "warning",
       validator: (_v) => ["warning", "success"].includes(_v),
+    },
+    customText: {
+      type: String,
+      default: null,
     },
   },
 };

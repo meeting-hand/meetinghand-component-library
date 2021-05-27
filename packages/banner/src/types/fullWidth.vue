@@ -1,19 +1,10 @@
 <template>
-  <a-alert
-    type="warning"
-    :show-icon="false"
-    :message="`${text}`"
-    banner
-    v-if="`${bannerType}` == 'warning'"
-  />
-  <a-alert
-    type="success"
-    :show-icon="false"
-    :message="`${text}`"
-    banner
-    v-if="`${bannerType}` == 'success'"
-    class="successs"
-  />
+  <a-alert :type="bannerType" :show-icon="false" banner>
+    <template #message>
+      {{ text }}
+      <slot></slot>
+    </template>
+  </a-alert>
 </template>
 <script>
 import Banner from "ant-design-vue/lib/alert";
@@ -37,8 +28,10 @@ export default {
       default: null,
       validator: (_v) => [null, "custom", "close"].includes(_v),
     },
+    customText: {
+      type: String,
+      default: null,
+    },
   },
 };
 </script>
-<style scoped>
-</style>

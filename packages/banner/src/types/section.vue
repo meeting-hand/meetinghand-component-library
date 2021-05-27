@@ -1,27 +1,10 @@
 <template>
   <a-alert
-    :message="`${text}`"
+    :message="text"
     type="info"
     show-icon
-    v-if="`${button}` === 'null'"
-    :icon="infoIcon"
-  />
-  <!-- Event trigger will be added -->
-  <a-alert
-    :message="`${text}`"
-    type="info"
-    show-icon
-    closable
-    :closeText="`${customText}`"
-    v-if="`${button}` === 'custom'"
-    :icon="infoIcon"
-  />
-  <a-alert
-    :message="`${text}`"
-    type="info"
-    show-icon
-    closable
-    v-if="`${button}` === 'close'"
+    :closable="closable"
+    :closeText="customText"
     :icon="infoIcon"
   />
 </template>
@@ -29,7 +12,7 @@
 import Banner from "ant-design-vue/lib/alert";
 import SystemInfo from "@meetinghand/style/icons/systemStatusInfo";
 
-import { h } from "vue";
+import { h, computed } from "vue";
 
 export default {
   components: {
@@ -47,7 +30,7 @@ export default {
     },
     customText: {
       type: String,
-      default: "Button",
+      default: null,
     },
     bannerType: {
       type: String,
@@ -55,17 +38,17 @@ export default {
       validator: (_v) => ["warning", "success"].includes(_v),
     },
   },
-  setup() {
+  setup(props) {
     const infoIcon = h(SystemInfo);
+
+    const closable = computed(() => {
+      return props.button !== null;
+    });
+
     return {
       infoIcon,
+      closable,
     };
   },
 };
 </script>
-<style scoped>
-svg {
-  fill: #000;
-  min-width: 20px;
-}
-</style>
