@@ -1,5 +1,0 @@
-@mixin check-icon($fill: "%23b6b6b6") {
-	background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='" + $fill + "' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.63388 0.616117C10.122 1.10427 10.122 1.89573 9.63388 2.38388L4.63388 7.38388C4.14573 7.87204 3.35427 7.87204 2.86612 7.38388L0.366117 4.88388C-0.122039 4.39573 -0.122039 3.60427 0.366117 3.11612C0.854272 2.62796 1.64573 2.62796 2.13388 3.11612L3.75 4.73223L7.86612 0.616117C8.35427 0.127961 9.14573 0.127961 9.63388 0.616117Z' /%3E%3C/svg%3E%0A");
-	background-repeat: no-repeat;
-	background-position: center;
-}
