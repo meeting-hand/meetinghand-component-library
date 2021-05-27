@@ -4,8 +4,8 @@ import MhButton from "./index";
 import "../../assets/storybook/buttons.css";
 
 storiesOf("Button", module).add("primary", () => ({
-  components: { MhButton },
-  template: `
+	components: { MhButton },
+	template: `
     <h1>Large</h1>
       <mh-button type="primary" size="large">
         Large
@@ -51,8 +51,8 @@ storiesOf("Button", module).add("primary", () => ({
 }));
 
 storiesOf("Button", module).add("secondary", () => ({
-  components: { MhButton },
-  template: `
+	components: { MhButton },
+	template: `
       <h1>Large</h1>
       <mh-button type="secondary" size="large">
         Large
@@ -98,8 +98,8 @@ storiesOf("Button", module).add("secondary", () => ({
 }));
 
 storiesOf("Button", module).add("text", () => ({
-  components: { MhButton },
-  template: `
+	components: { MhButton },
+	template: `
       <h1>Default</h1>
       <mh-button type="text">
         Default size
@@ -128,8 +128,8 @@ storiesOf("Button", module).add("text", () => ({
 }));
 
 storiesOf("Button", module).add("small", () => ({
-  components: { MhButton },
-  template: `
+	components: { MhButton },
+	template: `
       <h1>Default</h1>
       <mh-button type="small">
         Default size
@@ -158,8 +158,8 @@ storiesOf("Button", module).add("small", () => ({
 }));
 
 storiesOf("Button", module).add("row", () => ({
-  components: { MhButton },
-  template: `
+	components: { MhButton },
+	template: `
       <h1>Default</h1>
       <mh-button type="row">
         Default size
@@ -182,8 +182,8 @@ storiesOf("Button", module).add("row", () => ({
 }));
 
 storiesOf("Button", module).add("iconic", () => ({
-  components: { MhButton },
-  template: `
+	components: { MhButton },
+	template: `
       <h1>Normal</h1>
       <mh-button type="iconic" icon="system-other-options" size="normal" />
         <hr/>
@@ -195,26 +195,28 @@ storiesOf("Button", module).add("iconic", () => ({
       <hr/>
       <h1>Tiny</h1>
       <mh-button type="iconic" icon="system-close" size="tiny" />
-        
-      
+			<hr/>
     `,
 }));
 
 storiesOf("Button", module).add("social", () => ({
-  components: { MhButton },
-  template: `
+	components: { MhButton },
+	template: `
       <h1>Google</h1>
-      <mh-button type="social" icon="social-google" socialMedia="google" >
+      <mh-button type="social" icon="social-google" social-media="google" >
         Google
       </mh-button>
+			<hr />
       <h1>Facebook</h1>
-      <mh-button type="social" icon="social-face-book" socialMedia="facebook">
+      <mh-button type="social" icon="social-facebook" social-media="facebook">
         Facebook
       </mh-button>
+			<hr />
       <h1>Linkedin</h1>
-      <mh-button type="social" icon="social-linkedin" socialMedia="linkedin">
+      <mh-button type="social" icon="social-linkedin" social-media="linkedin">
         Linkedin
       </mh-button>
-      
+			<hr />
+
     `,
 }));

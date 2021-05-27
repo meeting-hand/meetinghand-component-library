@@ -95,7 +95,7 @@ import SystemPerson from "./systemPerson";
 import SystemSlide from "./systemSlide";
 import SystemSettings from "./systemSettings";
 import SocialGoogle from "./socialGoogle";
-import SocialFaceBook from "./socialFaceBook";
+import SocialFacebook from "./socialFacebook";
 import SocialLinkedin from "./socialLinkedin";
 import SocialTwitter from "./socialTwitter";
 import MobileAppVenue from "./mobileAppVenue";
@@ -205,7 +205,7 @@ const iconList = [
   "system-slide",
   "system-settings",
   "social-google",
-  "social-face-book",
+  "social-facebook",
   "social-linkedin",
   "social-twitter",
   "mobile-app-venue",
@@ -317,7 +317,7 @@ export default {
     SystemSlide,
     SystemSettings,
     SocialGoogle,
-    SocialFaceBook,
+    SocialFacebook,
     SocialLinkedin,
     SocialTwitter,
     MobileAppVenue,

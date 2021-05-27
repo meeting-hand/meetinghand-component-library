@@ -77,7 +77,7 @@ export default {
     },
     socialMedia: {
       type: String,
-      default: "google",
+      default: null,
       validator: (_v) => ["google", "facebook", "linkedin"].includes(_v),
     },
   },

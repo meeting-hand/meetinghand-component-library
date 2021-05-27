@@ -11,6 +11,8 @@
     :disabled="disabled || wait"
   >
     <mh-icon :name="icon" v-if="icon" />
+    <slot></slot>
+    <mh-icon name="wait" class="wait-spinner" v-if="wait" />
   </a-button>
 </template>
 <script>

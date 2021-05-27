@@ -18,7 +18,7 @@ export default {
       type: String,
       default: "social-google",
       validator: (_v) =>
-        ["social-google", "social-face-book", "social-linkedin"].includes(_v),
+        ["social-google", "social-facebook", "social-linkedin"].includes(_v),
     },
     socialMedia: {
       type: String,
