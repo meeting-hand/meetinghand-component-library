@@ -1,5 +1,5 @@
 <template>
-  <a-button type="social" :class="[`${socialMedia}`]">
+  <a-button type="default" :class="[`${socialMedia}`, `social-btn`]">
     <mh-icon :name="icon" v-if="icon" />
     <slot></slot>
   </a-button>
@@ -8,7 +8,7 @@
 import Button from "ant-design-vue/lib/button";
 import MHIcon from "@meetinghand/style/icons/index";
 export default {
-  name: "MhButtonPrimary",
+  name: "MhButtonSocial",
   components: {
     [Button.name]: Button,
     "mh-icon": MHIcon,
@@ -18,9 +18,8 @@ export default {
       type: String,
       default: "social-google",
       validator: (_v) =>
-        ["social-google", "socail-face-book", "social-linkedin"].includes(_v),
+        ["social-google", "social-face-book", "social-linkedin"].includes(_v),
     },
-
     socialMedia: {
       type: String,
       default: "google",

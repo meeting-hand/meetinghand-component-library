@@ -186,19 +186,27 @@
 /* ROW END */
 
 /* SOCIAL */
-.ant-btn-social {
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 360px;
     height: 52px;
-    background: rgba(0, 0, 0, 0.04);
+    background: $transparent-hover;
     border-radius: 4px;
-
+    &.ant-btn-default {
+        border: none;
+    }
+    &:focus {
+        background: $transparent-hover;
+    }
     span {
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
         line-height: 20px;
 
-        color: #565656;
+        color: $color-mono-grey-3;
     }
     svg {
         height: 20px;
@@ -207,14 +215,19 @@
 
     .mh-icon {
         margin-right: 0px !important;
-        margin-left: 0px !important;
+        margin-left: -10px !important;
     }
 
     &.google {
         &:hover {
             background: #518ef8;
             span {
-                color: #ffffff;
+                color: $color-mono-white;
+            }
+            svg {
+                path {
+                    fill: $color-mono-white;
+                }
             }
         }
     }
@@ -222,7 +235,12 @@
         &:hover {
             background: #314f8b;
             span {
-                color: #ffffff;
+                color: $color-mono-white;
+            }
+            svg {
+                path {
+                    fill: $color-mono-white;
+                }
             }
         }
     }
@@ -230,7 +248,12 @@
         &:hover {
             background: #006ca8;
             span {
-                color: #ffffff;
+                color: $color-mono-white;
+            }
+            svg {
+                path {
+                    fill: $color-mono-white;
+                }
             }
         }
     }

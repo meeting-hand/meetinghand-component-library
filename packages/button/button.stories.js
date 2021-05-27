@@ -185,7 +185,7 @@ storiesOf("Button", module).add("social", () => ({
   components: { MhButton },
   template: `
       <h1>Google</h1>
-      <mh-button type="social" icon="social-google" socialMedia="google">
+      <mh-button type="social" icon="social-google" socialMedia="google" >
         Google
       </mh-button>
       <h1>Facebook</h1>
