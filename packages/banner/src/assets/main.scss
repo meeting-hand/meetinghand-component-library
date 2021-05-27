@@ -6,8 +6,7 @@
 	align-items: flex-start;
 	justify-content: center;
 	padding: 16px;
-	position: relative;
-	height: 52px;
+
 	border-radius: 4px;
 
 	&.ant-alert-info {
@@ -20,26 +19,17 @@
 		font-size: 16px;
 		line-height: 20px;
 
-		height: 20px;
+		height: 52px;
 		left: 52px;
 		top: 16px;
-
-		font-style: normal;
-		font-weight: normal;
-		font-size: 16px;
-		line-height: 20px;
 
 		display: flex;
 		align-items: center;
 
 		color: $color-mono-grey-3;
-
-		flex: none;
-		order: 1;
-		align-self: center;
-		flex-grow: 0;
 		margin: 0px 16px;
 	}
+
 	svg {
 		&.ant-alert-icon {
 			width: 16px;
@@ -48,77 +38,49 @@
 		}
 	}
 
-	.ant-alert-icon {
-		margin: 0;
-	}
+	&.ant-alert-banner {
+		width: 100%;
+		&.ant-alert-warning {
+			background-color: $color-secondary-red;
+			.ant-alert-message {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 20px;
 
-	.ant-alert-close-text {
-		position: static;
-		width: 39px;
-		height: 16px;
-		left: 2px;
-		top: 4px;
-		text-align: center;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				text-align: center;
 
-		color: $color-primary-blue;
-		font-weight: 500;
-		font-size: 12px;
-		line-height: 16px;
-
-		flex: none;
-		order: 0;
-		flex-grow: 0;
-		margin: 0px 4px;
-	}
-	&.ant-alert-warning {
-		position: relative;
-		height: 78px;
-		background-color: $color-secondary-red;
-		.ant-alert-message {
-			position: absolute;
-			height: 46px;
-			left: 96px;
-			right: 96px;
-			top: 16px;
-
-			font-style: normal;
-			font-weight: normal;
-			font-size: 16px;
-			line-height: 20px;
-
-			text-align: center;
-
-			color: $color-mono-black;
+				color: $color-mono-black;
+			}
 		}
-	}
-	&.ant-alert-success {
-		position: relative;
-		height: 78px;
-		background-color: $color-secondary-green;
-		.ant-alert-message {
-			position: absolute;
-			height: 46px;
-			left: 96px;
-			right: 96px;
-			top: 16px;
+		&.ant-alert-success {
+			background-color: $color-secondary-green;
+			.ant-alert-message {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 20px;
 
-			font-style: normal;
-			font-weight: normal;
-			font-size: 16px;
-			line-height: 20px;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				text-align: center;
 
-			text-align: center;
-
-			color: $color-mono-black;
+				color: $color-mono-black;
+			}
 		}
 	}
 	.ant-alert-close-icon {
+		padding: 6px;
+		border-radius: 4px;
 		.anticon-close {
 			svg {
 				display: none;
 			}
-			padding: 6px;
-			border-radius: 4px;
+
 			&::before {
 				@include close-icon("%232196f3");
 				content: "";
@@ -126,9 +88,20 @@
 				height: 14px;
 				display: block;
 			}
-			&:hover {
-				background: $transparent-hover-3;
-			}
+		}
+		.ant-alert-close-text {
+			text-align: center;
+
+			color: $color-primary-blue;
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 16px;
+			padding: 2px 6px;
+
+			border-radius: 4px;
+		}
+		&:hover {
+			background: $transparent-hover-3;
 		}
 	}
 }

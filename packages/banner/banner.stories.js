@@ -22,6 +22,7 @@ storiesOf("Banner", module).add("Banner!", () => ({
       <h1>Banner Full-Width Success</h1>
       <Banner type="fullWidth" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae faucibus enim.
       Aliquam eget diam in purus viverra luctus sed at nisi." bannerType="success" />
+      <br/> <br/>
   </div>
       
     `,
