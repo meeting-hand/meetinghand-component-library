@@ -199,3 +199,22 @@ storiesOf("Button", module).add("iconic", () => ({
       
     `,
 }));
+
+storiesOf("Button", module).add("social", () => ({
+  components: { MhButton },
+  template: `
+      <h1>Google</h1>
+      <mh-button type="social" icon="social-google" socialMedia="google" >
+        Google
+      </mh-button>
+      <h1>Facebook</h1>
+      <mh-button type="social" icon="social-face-book" socialMedia="facebook">
+        Facebook
+      </mh-button>
+      <h1>Linkedin</h1>
+      <mh-button type="social" icon="social-linkedin" socialMedia="linkedin">
+        Linkedin
+      </mh-button>
+      
+    `,
+}));
