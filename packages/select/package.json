@@ -1,6 +1,6 @@
 {
-    "name": "@meetinghand/input",
-    "description": "Meetinghand Component Library Component for input",
+    "name": "@meetinghand/select",
+    "description": "Meetinghand Component Library Component for select",
     "version": "0.0.0",
     "repository": {
         "type": "git",
@@ -19,12 +19,12 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/input.umd.js",
-    "module": "./dist/@meetinghand/input.es.js",
+    "main": "./dist/@meetinghand/select.umd.js",
+    "module": "./dist/@meetinghand/select.es.js",
     "exports": {
         ".": {
-            "import": "./dist/@meetinghand/input.es.js",
-            "require": "./dist/@meetinghand/input.umd.js"
+            "import": "./dist/@meetinghand/select.es.js",
+            "require": "./dist/@meetinghand/select.umd.js"
         }
     },
     "scripts": {
@@ -38,7 +38,6 @@
     ],
     "dependencies": {
         "@meetinghand/style": "file:../style",
-        "cleave.js": "^1.6.0",
         "vue": "^3.0.5"
     }
 }

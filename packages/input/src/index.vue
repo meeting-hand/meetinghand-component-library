@@ -8,6 +8,7 @@
     :leftIcon="leftIcon"
     :rightIcon="rightIcon"
     :allowClear="allowClear"
+    v-model="value"
   />
 </template>
 
@@ -15,6 +16,7 @@
 import Default from "./types/default";
 import Password from "./types/password";
 import Tel from "./types/tel";
+import { computed } from "vue";
 
 export default {
   name: "MhInput",
@@ -24,6 +26,10 @@ export default {
     Tel,
   },
   props: {
+    modelValue: {
+      type: String,
+      default: "",
+    },
     inputType: {
       type: String,
       default: "default",
@@ -56,6 +62,19 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  setup(props, { emit }) {
+    const value = computed({
+      get() {
+        return props.modelValue;
+      },
+      set(data) {
+        emit("update:modelValue", data);
+      },
+    });
+    return {
+      value,
+    };
   },
 };
 </script>

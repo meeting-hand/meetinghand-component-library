@@ -1,9 +1,10 @@
 <template>
   <a-input
     :placeholder="placeholder"
-    :class="[{ error: hasError, 'allow-clear': allowClear }]"
+    :class="[{ error: hasError, 'allow-clear': allowClear }, 'mh-input']"
     :disabled="disabled"
     :allow-clear="allowClear"
+    v-model:value="value"
   >
     <template #prefix v-if="leftIcon">
       <mh-icon :name="leftIcon" />
@@ -20,9 +21,14 @@
 <script>
 import Input from "ant-design-vue/lib/input";
 import MhIcon from "@meetinghand/style/icons/index";
+import { computed } from "vue";
 export default {
   name: "MhInputDefault",
   props: {
+    modelValue: {
+      type: String,
+      default: "",
+    },
     hasError: {
       type: Boolean,
       default: false,
@@ -56,8 +62,18 @@ export default {
     [Input.name]: Input,
     MhIcon,
   },
+  setup(props, { emit }) {
+    const value = computed({
+      get() {
+        return props.modelValue;
+      },
+      set(data) {
+        emit("update:modelValue", data);
+      },
+    });
+    return {
+      value,
+    };
+  },
 };
 </script>
-
-<style scoped>
-</style>

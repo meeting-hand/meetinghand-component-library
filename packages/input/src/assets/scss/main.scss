@@ -26,7 +26,7 @@
 		box-shadow: none;
 	}
 	&.error {
-		border: 1.5px solid $color-primary-red;
+		border: 1px solid $color-primary-red;
 	}
 	&.ant-input-disabled {
 		background-color: $color-mono-light-grey;
@@ -45,13 +45,8 @@
 .ant-input-affix-wrapper {
 	margin: 0;
 	padding: 0;
-}
-
-.ant-input-affix-wrapper {
 	.ant-input {
 		background: none;
-		padding-right: 6px !important;
-		padding-left: 6px !important;
 	}
 	.ant-input-prefix,
 	.ant-input-suffix {
@@ -62,13 +57,23 @@
 			fill: $color-mono-grey-2;
 		}
 	}
+	.ant-input-prefix {
+		svg {
+			margin-left: 16px;
+		}
+	}
+	.ant-input-suffix {
+		svg {
+			margin-right: 16px;
+		}
+	}
 	&:hover {
 		background-color: rgba($color-mono-black, 0.04);
 		border: 1px solid $color-mono-grey;
 	}
 
 	&.error {
-		border: 1.5px solid $color-primary-red;
+		border: 1px solid $color-primary-red;
 
 		.ant-input-prefix,
 		.ant-input-suffix {
@@ -118,5 +123,72 @@
 			width: 20px;
 			height: 20px;
 		}
+	}
+}
+
+/* Tel */
+.mh-tel-input {
+	border: 1px solid $color-mono-grey;
+	border-radius: 4px;
+
+	.ant-input-group-addon {
+		background: transparent;
+		border: none;
+		margin: 0;
+	}
+	.ant-input-wrapper {
+		.ant-input {
+			border: none;
+			background: none;
+			padding-left: 0 !important;
+		}
+	}
+	.ant-select {
+		min-width: 80px;
+		.ant-select-selection-search {
+			.ant-select-selection-search-input {
+				caret-color: $color-mono-grey-2;
+				text-align: center;
+				font-family: Inter;
+				font-size: 16px;
+				color: $color-mono-grey-2;
+			}
+		}
+		.ant-select-selection-item {
+			font-family: Inter;
+			font-size: 16px;
+			color: $color-mono-grey-2;
+		}
+		.ant-select-selector {
+			border: none !important;
+			box-shadow: none !important;
+			padding: 0;
+			height: auto !important;
+		}
+		.ant-select-arrow {
+			svg {
+				fill: $color-mono-grey-2;
+				width: 14px;
+			}
+		}
+	}
+
+	&.error {
+		border: 1px solid $color-primary-red !important;
+	}
+	&.disabled {
+		background-color: $color-mono-light-grey;
+		color: $color-mono-grey;
+	}
+
+	&:hover {
+		background-color: rgba($color-mono-black, 0.04);
+		border: 1px solid $color-mono-grey;
+	}
+
+	&:focus-within {
+		border-color: $color-primary-blue;
+		outline: none;
+		box-shadow: none;
 	}
 }
