@@ -6,6 +6,7 @@
     :step="step"
     :class="[{ error: hasError }]"
     :disabled="disabled"
+    :parser="parser"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -14,6 +15,8 @@
 
 <script>
 import InputNumber from "ant-design-vue/lib/input-number";
+
+import { computed } from "vue";
 
 export default {
   name: "InputNumberDefault",
@@ -53,15 +56,32 @@ export default {
       type: String,
     },
   },
-  computed: {
-    value: {
+
+  setup(props, { emit }) {
+    const value = computed({
       get() {
-        return this.modelValue;
+        return props.modelValue;
       },
-      set(value) {
-        this.$emit("update:modelValue", value);
+      set(data) {
+        emit("update:modelValue", data);
       },
-    },
+    });
+
+    const parser = (e) => {
+      if (e == "") {
+        e = props.min;
+      }
+      e = parseFloat(e);
+      if (isNaN(e)) {
+        e = props.modelValue;
+      }
+      return e;
+    };
+
+    return {
+      value,
+      parser,
+    };
   },
 };
 </script>

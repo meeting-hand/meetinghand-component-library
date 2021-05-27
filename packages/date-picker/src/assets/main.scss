@@ -121,6 +121,12 @@
 						}
 					}
 				}
+				.ant-calendar-last-month-cell,
+				.ant-calendar-next-month-btn-day {
+					.ant-calendar-date {
+						color: $color-mono-grey;
+					}
+				}
 			}
 			.ant-calendar-footer {
 				display: none;

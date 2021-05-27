@@ -4,8 +4,8 @@ import Divider from "./index";
 import "../../assets/storybook/divider.css";
 
 storiesOf("Divider", module).add("All", () => ({
-  components: { Divider },
-  template: `
+	components: { Divider },
+	template: `
       <h1>Thin</h1>
       <divider size="thin"/>
       <h1>Normal</h1>
@@ -15,8 +15,6 @@ storiesOf("Divider", module).add("All", () => ({
       <h1>Bold</h1>
       <divider size="bold"/>
       <h1>XXBold</h1>
-      <divider size="xxbold"/>
+      <divider size="xxbold" />
     `,
 }));
-
-    

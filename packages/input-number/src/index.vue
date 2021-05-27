@@ -8,6 +8,7 @@
     :hasError="hasError"
     :disabled="disabled"
     :currency="currency"
+    :errorMessage="errorMessage"
   />
 </template>
 
