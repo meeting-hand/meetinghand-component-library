@@ -1,59 +1,68 @@
 @import "~@meetinghand/style/lib/scss/variables.scss";
+@import "./mixin.scss";
 
 .ant-checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    & + .ant-checkbox-wrapper {
-        margin-left: 0;
-    }
-    .ant-checkbox-inner {
-        width: 20px;
-        height: 20px;
-        border: 1.5px solid $color-primary-blue;
-        border-radius: 2px;
-        background-color: transparent;
+	display: flex;
+	align-items: center;
+	& + .ant-checkbox-wrapper {
+		margin-left: 0;
+	}
+	.ant-checkbox-inner {
+		width: 20px;
+		height: 20px;
+		border: 1px solid $color-primary-blue;
+		border-radius: 2px;
+		background-color: transparent;
 
-        &::after {
-            left: 0;
-            margin-left: 4.5px;
-        }
-    }
-    .ant-checkbox {
-        &:hover {
-            background-color: $color-secondary-blue;
-        }
-    }
-    .ant-checkbox-checked {
-        .ant-checkbox-inner {
-            background-color: $color-primary-blue;
-        }
-    }
+		&::after {
+			background-color: $color-primary-blue;
+			@include check-icon("%23FFFFFF");
+			transform: none;
+			border: none;
+			content: "";
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			border: none;
+		}
+	}
+	.ant-checkbox {
+		&:hover {
+			background-color: $color-secondary-blue;
+		}
+	}
 
-    span {
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 20px;
-    }
+	span {
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 20px;
+	}
+	& > span:nth-child(2) {
+		padding: 0 16px;
+	}
 }
 
 .ant-checkbox-wrapper-disabled {
-    .ant-checkbox-disabled {
-        .ant-checkbox-inner {
-            border: 1.5px solid $color-mono-light-grey-5;
-        }
-        &:hover {
-            background-color: transparent;
-        }
-    }
-    span {
-        color: $color-mono-light-grey-5;
-    }
-    .ant-checkbox-checked {
-        .ant-checkbox-inner {
-            background-color: $color-mono-light-grey;
-            &::after {
-                border-color: $color-mono-light-grey-5;
-            }
-        }
-    }
+	.ant-checkbox-disabled {
+		.ant-checkbox-inner {
+			border: 1px solid $color-mono-light-grey-5;
+		}
+		&:hover {
+			background-color: transparent;
+		}
+	}
+	span {
+		color: $color-mono-light-grey-5;
+	}
+	.ant-checkbox-checked {
+		.ant-checkbox-inner {
+			background-color: $color-mono-light-grey;
+			&::after {
+				border-color: $color-mono-light-grey-5;
+				background: transparent;
+				@include check-icon("%23DFDFDF");
+			}
+		}
+	}
 }
