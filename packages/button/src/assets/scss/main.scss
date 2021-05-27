@@ -128,6 +128,9 @@
 .text-btn {
     border: none;
     padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
         background: rgba($color-mono-black, 0.04);
     }
@@ -235,6 +238,80 @@
 }
 
 /* ICONIC END */
+/* SOCIAL */
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 52px;
+    background: $transparent-hover;
+    border-radius: 4px;
+    &.ant-btn-default {
+        border: none;
+    }
+    &:focus {
+        background: $transparent-hover;
+    }
+    span {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+
+        color: $color-mono-grey-3;
+    }
+    svg {
+        height: 20px;
+        width: 30px;
+    }
+
+    .mh-icon {
+        margin-right: 0px !important;
+        margin-left: -10px !important;
+    }
+
+    &.google {
+        &:hover {
+            background: #518ef8;
+            span {
+                color: $color-mono-white;
+            }
+            svg {
+                path {
+                    fill: $color-mono-white;
+                }
+            }
+        }
+    }
+    &.facebook {
+        &:hover {
+            background: #314f8b;
+            span {
+                color: $color-mono-white;
+            }
+            svg {
+                path {
+                    fill: $color-mono-white;
+                }
+            }
+        }
+    }
+    &.linkedin {
+        &:hover {
+            background: #006ca8;
+            span {
+                color: $color-mono-white;
+            }
+            svg {
+                path {
+                    fill: $color-mono-white;
+                }
+            }
+        }
+    }
+}
+/* SOCIAL END */
 
 .size-large {
     min-width: 360px;
