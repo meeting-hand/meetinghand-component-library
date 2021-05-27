@@ -10,7 +10,8 @@
     :disabled="disabled"
     ref="telInput"
     :id="id"
-    v-model:value="value"
+    :defaultValue="value"
+    @change="inputChanged"
   >
     <template #addonBefore>
       <a-select
@@ -21,6 +22,7 @@
         :filter-option="filterOption"
         show-search
         @change="setCleave"
+        :disabled="disabled"
       >
       </a-select>
     </template>
@@ -105,22 +107,48 @@ export default {
       const country = CountryPhoneCodes.find((_c) => _c.dialCode === dialCode);
       await require(`cleave.js/dist/addons/cleave-phone.${country.countryCode.toLowerCase()}`);
 
-      new Cleave(document.getElementById(id.value), {
+      cleave = new Cleave(document.getElementById(id.value), {
         phone: true,
         phoneRegionCode: country.countryCode.toLowerCase(),
       });
     };
 
-    onMounted(setCleave(dialCode.value));
+    let cleave;
+
+    onMounted(() => {
+      if (valueDialCode) {
+        // TODO: default value must be set
+      }
+      console.log(valueDialCode.value);
+
+      cleave = setCleave(dialCode.value);
+    });
 
     const value = computed({
       get() {
         return props.modelValue;
       },
-      set(data) {
-        emit("update:modelValue", data);
+      set() {
+        emit(
+          "update:modelValue",
+          `(${dialCode._value}) ${cleave.getFormattedValue()}`
+        );
       },
     });
+
+    const valueDialCode = computed(() => {
+      if (value.value) {
+        const dialCodeResult = value.value.match(/^[(]*.+[)]{1}/g);
+        if (dialCodeResult) {
+          return dialCodeResult[0].replace("(", "").replace(")", "");
+        }
+      }
+      return null;
+    });
+
+    const inputChanged = (data) => {
+      value.value = data;
+    };
 
     return {
       phoneCodes,
@@ -131,6 +159,9 @@ export default {
       id,
       suffixIcon,
       value,
+      cleave,
+      inputChanged,
+      valueDialCode,
     };
   },
 };

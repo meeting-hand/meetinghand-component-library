@@ -21,7 +21,6 @@
 	}
 
 	&:focus {
-		//border: 1.5px solid $color-primary-blue;
 		border-color: $color-primary-blue;
 		outline: none;
 		box-shadow: none;
@@ -117,6 +116,9 @@
 	border-color: $color-primary-blue;
 	outline: none;
 	box-shadow: none;
+	&:hover:not(.error) {
+		border-color: $color-primary-blue;
+	}
 	.ant-input-prefix,
 	.ant-input-suffix {
 		svg {
@@ -126,21 +128,6 @@
 			&::after {
 				@include close-icon("%232196f3");
 			}
-		}
-	}
-}
-
-.ant-input-password {
-	.ant-input {
-		margin: 0 16px;
-	}
-}
-
-.allow-clear {
-	.ant-input-suffix {
-		svg {
-			width: 20px;
-			height: 20px;
 		}
 	}
 }
@@ -212,6 +199,46 @@
 	}
 }
 
+/* Password */
+.ant-input-password {
+	.anticon {
+		svg {
+			display: none;
+		}
+		&::after {
+			content: "";
+			width: 14px;
+			height: 14px;
+			display: block;
+			margin-right: 16px;
+		}
+		&.anticon-eye-invisible {
+			&::after {
+				@include password-icon-show();
+			}
+		}
+		&.anticon-eye {
+			&::after {
+				@include password-icon-hide();
+			}
+		}
+	}
+	&.ant-input-affix-wrapper-focused {
+		.ant-input-password-icon {
+			&.anticon-eye-invisible {
+				&::after {
+					@include password-icon-show("%232196f3");
+				}
+			}
+			&.anticon-eye {
+				&::after {
+					@include password-icon-hide("%232196f3");
+				}
+			}
+		}
+	}
+}
+
 .error {
 	.ant-input-prefix,
 	.ant-input-suffix {
@@ -221,6 +248,18 @@
 		.ant-input-clear-icon {
 			&::after {
 				@include close-icon("%23f44336");
+			}
+		}
+		.ant-input-password-icon {
+			&.anticon-eye-invisible {
+				&::after {
+					@include password-icon-show("%23f44336");
+				}
+			}
+			&.anticon-eye {
+				&::after {
+					@include password-icon-hide("%23f44336");
+				}
 			}
 		}
 	}
