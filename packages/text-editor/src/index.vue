@@ -88,18 +88,21 @@ export default {
   setup() {
     var icons = Quill.import("ui/icons");
 
-    icons["bold"] = MhEditorIcons.bold;
-    icons["italic"] = MhEditorIcons.italic;
-    icons["underline"] = MhEditorIcons.underline;
-    icons["undo"] = MhEditorIcons.undo;
-    icons["redo"] = MhEditorIcons.redo;
-    icons["strike"] = MhEditorIcons.strike;
-    icons["link"] = MhEditorIcons.link;
-    icons["blockquote"] = MhEditorIcons.blockquote;
-    icons["image"] = MhEditorIcons.image;
-    icons["table"] = MhEditorIcons.table;
+    icons.bold = MhEditorIcons.bold;
+    icons.italic = MhEditorIcons.italic;
+    icons.underline = MhEditorIcons.underline;
+    icons.undo = MhEditorIcons.undo;
+    icons.redo = MhEditorIcons.redo;
+    icons.strike = MhEditorIcons.strike;
+    icons.link = MhEditorIcons.link;
+    icons.blockquote = MhEditorIcons.blockquote;
+    icons.image = MhEditorIcons.image;
+    icons.table = MhEditorIcons.table;
     icons["code-block"] = MhEditorIcons.codeblock;
-    icons["ordered"] = MhEditorIcons.ordered;
+    icons.ordered = MhEditorIcons.ordered;
+    //icons.align.center = MhEditorIcons.ordered;
+    //icons.align.left = MhEditorIcons.ordered;
+    //icons.align.right = MhEditorIcons.ordered;
   },
   methods: {
     undo() {

@@ -2,15 +2,26 @@ import { storiesOf } from "@storybook/vue3";
 import MhTextEditor from "./index";
 
 storiesOf("TextEditor", module).add("All", () => ({
-  components: { MhTextEditor },
-  data() {
-    return {
-      text1: "",
-      toolbar: ['undo','redo','bold','italic','strike',{ align: 'center' }, { script: 'sub' }, { script: 'super' }, 'image']
-      
-    }
-  },
-  template: `
+	components: { MhTextEditor },
+	data() {
+		return {
+			text1: "",
+			toolbar: [
+				"undo",
+				"redo",
+				"bold",
+				"italic",
+				"strike",
+				{ align: "center" },
+				{ align: "left" },
+				{ align: "right" },
+				{ script: "sub" },
+				{ script: "super" },
+				"image",
+			],
+		};
+	},
+	template: `
       <h1>Default</h1>
       <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" />
       <hr />
@@ -21,8 +32,6 @@ storiesOf("TextEditor", module).add("All", () => ({
       <hr />
       <h1>Disabled</h1>
       <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15"  :readOnly="true"/>
-     
+
     `,
 }));
-
-    
