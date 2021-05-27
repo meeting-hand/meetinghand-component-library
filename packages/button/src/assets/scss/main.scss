@@ -83,11 +83,14 @@
 
 	&:hover {
 		background: $color-secondary-blue;
-		color: $color-primary-blue;
 		border-color: $color-primary-blue;
+		color: $color-primary-blue;
 	}
 	&:active {
 		background: $color-secondary-blue;
+	}
+	&:focus {
+		color: $color-primary-blue;
 	}
 
 	&.disabled {
