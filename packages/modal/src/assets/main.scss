@@ -29,9 +29,10 @@
 
 		h1 {
 			font-weight: bold;
-			font-size: 24px;
+			font-size: 24px !important;
 			line-height: 32px;
 			color: $color-mono-black;
+			margin: 16px 0 !important;
 		}
 		.warning {
 			.mh-icon {
@@ -47,6 +48,7 @@
 			}
 		}
 		.success {
+			padding: 16px 0;
 			.mh-icon {
 				width: 76.8px;
 				height: 76.8px;
