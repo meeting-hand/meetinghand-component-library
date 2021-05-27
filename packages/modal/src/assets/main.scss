@@ -1,77 +1,72 @@
 @import "~@meetinghand/style/lib/scss/variables.scss";
 
 .ant-modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 48px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 48px;
 
-    position: relative;
+	position: relative;
 
-    background: $color-mono-white;
+	background: $color-mono-white;
 
-    border: 1px solid $color-mono-light-grey-5;
-    box-sizing: border-box;
-    box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
-    border-radius: 8px;
-    .ant-modal-header {
-        height: 32px;
-        left: 48px;
-        top: 48px;
-        border-bottom: none;
-    }
+	border: 1px solid $color-mono-light-grey-5;
+	box-sizing: border-box;
+	box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
+	border-radius: 8px;
+	.ant-modal-header {
+		height: 32px;
+		left: 48px;
+		top: 48px;
+		border-bottom: none;
+	}
 
-    .ant-modal-body {
-        left: 48px;
-        top: 96px;
+	.ant-modal-body {
+		padding: 0;
+		font-size: 16px;
+		line-height: 20px;
+		color: $color-mono-black;
 
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 20px;
-
-        color: $color-mono-black;
-        h1 {
-            font-style: normal;
-            font-weight: bold;
-            font-size: 24px;
-            line-height: 32px;
-            color: $color-mono-black;
-        }
-        .warning {
-            .mh-icon {
-                width: 48px;
-                height: 42px;
-                top: 3px;
-                left: 0%;
-                right: 0%;
-                top: 6.25%;
-                bottom: 6.25%;
-                margin-left: 0;
-                margin-top: 0px;
-            }
-        }
-        .success {
-            .mh-icon {
-                width: 76.8px;
-                height: 76.8px;
-                left: 10%;
-                right: 10%;
-                top: 10%;
-                bottom: 10%;
-            }
-        }
-    }
-    .ant-modal-footer {
-        border-top: none;
-    }
+		h1 {
+			font-weight: bold;
+			font-size: 24px;
+			line-height: 32px;
+			color: $color-mono-black;
+		}
+		.warning {
+			.mh-icon {
+				width: 48px;
+				height: 42px;
+				top: 3px;
+				left: 0%;
+				right: 0%;
+				top: 6.25%;
+				bottom: 6.25%;
+				margin-left: 0;
+				margin-top: 0px;
+			}
+		}
+		.success {
+			.mh-icon {
+				width: 76.8px;
+				height: 76.8px;
+				left: 10%;
+				right: 10%;
+				top: 10%;
+				bottom: 10%;
+			}
+		}
+	}
+	.ant-modal-footer {
+		border-top: none;
+	}
 }
 
 .mh-modal-center {
-    text-align: center;
+	text-align: center;
 }
 
 .ant-modal-mask {
-    background: $color-mono-black;
-    opacity: 0.8;
+	background: $color-mono-black;
+	opacity: 0.8;
 }

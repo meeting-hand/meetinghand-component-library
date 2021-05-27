@@ -1,0 +1,13 @@
+.modal1 .ant-modal-footer {
+	width: 100%;
+}
+.modal1 .story-footer {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.modal1 .story-footer button {
+	margin: 0 0 0 1rem;
+}
