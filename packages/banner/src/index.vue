@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="type" :button="button" :text="text"
+    <component :is="type" :button="button" :text="text" :bannerType="bannerType"
       ><slot></slot
     ></component>
   </div>
@@ -33,6 +33,11 @@ export default {
     text: {
       type: String,
       required: true,
+    },
+    bannerType: {
+      type: String,
+      default: "warning",
+      validator: (_v) => ["warning", "success"].includes(_v),
     },
   },
 };

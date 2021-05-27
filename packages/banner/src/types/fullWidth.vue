@@ -4,14 +4,15 @@
     :show-icon="false"
     :message="`${text}`"
     banner
-    v-if="`${bannerType}` === 'warning'"
+    v-if="`${bannerType}` == 'warning'"
   />
   <a-alert
     type="success"
     :show-icon="false"
     :message="`${text}`"
     banner
-    v-if="`${bannerType}` === 'success'"
+    v-if="`${bannerType}` == 'success'"
+    class="successs"
   />
 </template>
 <script>

@@ -43,6 +43,11 @@ export default {
       type: String,
       default: "Button",
     },
+    bannerType: {
+      type: String,
+      default: "warning",
+      validator: (_v) => ["warning", "success"].includes(_v),
+    },
   },
 };
 </script>

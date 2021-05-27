@@ -53,7 +53,10 @@ export default {
     size: {
       type: String,
       default: "default",
-      validator: (_v) => ["default", "large"].includes(_v),
+      validator: (_v) =>
+        ["default", "large", "normal", "circular", "small", "tiny"].includes(
+          _v
+        ),
     },
     icon: {
       type: String,
