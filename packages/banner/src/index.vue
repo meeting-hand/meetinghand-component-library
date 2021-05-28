@@ -1,5 +1,15 @@
 <template>
-  <component :is="type" :button="button"><slot></slot></component>
+  <div class="mh-banner">
+    <component
+      :is="type"
+      :button="button"
+      :text="text"
+      :bannerType="bannerType"
+      :customText="customText"
+    >
+      <slot></slot>
+    </component>
+  </div>
 </template>
 
 <script>
@@ -25,6 +35,19 @@ export default {
       type: String,
       default: null,
       validator: (_v) => [null, "custom", "close"].includes(_v),
+    },
+    text: {
+      type: String,
+      default: "",
+    },
+    bannerType: {
+      type: String,
+      default: "warning",
+      validator: (_v) => ["warning", "success"].includes(_v),
+    },
+    customText: {
+      type: String,
+      default: null,
     },
   },
 };

@@ -1,0 +1,44 @@
+{
+    "name": "@meetinghand/color-picker",
+    "description": "Meetinghand Component Library Component for color-picker",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "keywords": [
+        "vue3",
+        "component",
+        "library",
+        "vue3",
+        "lerna",
+        "storybook"
+    ],
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "main": "./dist/@meetinghand/color-picker.umd.js",
+    "module": "./dist/@meetinghand/color-picker.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/@meetinghand/color-picker.es.js",
+            "require": "./dist/@meetinghand/color-picker.umd.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist/*"
+    ],
+    "dependencies": {
+        "@ckpack/vue-color": "0.0.3",
+        "@meetinghand/style": "file:../style",
+        "vue": "^3.0.5"
+    }
+}

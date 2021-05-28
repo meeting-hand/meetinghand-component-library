@@ -1,0 +1,96 @@
+@import "@vueup/vue-quill/dist/vue-quill.snow.css";
+@import "~@meetinghand/style/lib/scss/reset.scss";
+@import "~@meetinghand/style/lib/scss/colors.scss";
+@import "~@meetinghand/style/lib/scss/typography.scss";
+.mh-text-editor {
+    width: 928px;
+
+    border: 1px solid $color-mono-grey;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    &.error {
+        border: 1px solid $color-primary-red;
+        &:focus-within {
+            border: 1px solid $color-primary-red;
+            box-sizing: border-box;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+    }
+    &.disabled {
+        opacity: 0.6;
+    }
+    .ql-toolbar {
+        &.ql-snow {
+            background: $color-mono-white;
+            border: none;
+            border-bottom: 1px solid $color-mono-light-grey-5;
+            padding: 20px 0;
+            margin: 0 16px;
+        }
+    }
+    .ql-container {
+        &.ql-snow {
+            border: none;
+            box-sizing: border-box;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+    }
+    .ql-editor {
+        height: 337px;
+        &.ql-blank {
+            width: 928px;
+        }
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: $color-mono-black;
+        }
+        &::before {
+            font-style: normal;
+            color: $color-mono-grey;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &:focus-within {
+        border: 1px solid $color-primary-blue;
+        box-sizing: border-box;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    .editor-footer {
+        border-top: 1px solid $color-mono-light-grey-5;
+        margin: 0 16px;
+        padding: 8px 0;
+        color: $color-mono-grey-2;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: right;
+    }
+}
+
+.ql-snow.ql-toolbar button.ql-active {
+    background: $transparent-hover-2;
+    border-radius: 4px;
+}
+
+.ql-snow.ql-toolbar button.ql-active .ql-fill {
+    fill: $color-mono-grey-3;
+}
+
+.ql-snow.ql-toolbar button.ql-active .ql-stroke {
+    stroke: $color-mono-grey-3;
+}
+
+strong {
+    font-weight: bold !important;
+}
+
+em {
+    font-style: italic !important;
+}

@@ -1,0 +1,122 @@
+@import "~@meetinghand/style/lib/scss/variables.scss";
+
+.ant-notification-notice {
+	background: $color-mono-white;
+	border: 1.5px solid;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+	border-radius: 4px;
+	border-left: 8px solid;
+
+	svg {
+		margin-top: 0px;
+		margin-left: 0px;
+		width: 20px;
+		height: 20px;
+		fill: $color-primary-green;
+	}
+
+	.ant-notification-notice-content {
+		margin: 0px;
+		padding: 0px;
+	}
+	.ant-notification-notice-icon {
+		margin-left: 0px;
+	}
+	.ant-notification-notice-message {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 20px;
+		margin-left: 30px;
+	}
+	.ant-notification-notice-description {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 20px;
+		margin-left: 0px;
+
+		color: $color-mono-black;
+	}
+	.anticon-close {
+		svg {
+			margin-top: 0px;
+			margin-right: 0px;
+			width: 16px;
+			height: 16px;
+			fill: $color-mono-grey;
+
+			background: $color-mono-white;
+		}
+	}
+	&.success {
+		border-color: $color-primary-green;
+		.ant-notification-notice-message {
+			color: $color-primary-green;
+		}
+		svg {
+			fill: $color-primary-green;
+		}
+		.anticon-close {
+			svg {
+				fill: $color-mono-grey-2;
+			}
+		}
+	}
+	&.error {
+		border-color: $color-primary-red;
+		.ant-notification-notice-message {
+			color: $color-primary-red;
+		}
+		svg {
+			fill: $color-primary-red;
+		}
+		.anticon-close {
+			svg {
+				fill: $color-mono-grey-2;
+			}
+		}
+	}
+	&.info {
+		//
+		border-color: $color-primary-blue;
+		.ant-notification-notice-message {
+			color: $color-primary-blue;
+		}
+		svg {
+			fill: $color-primary-blue;
+		}
+		.anticon-close {
+			svg {
+				fill: $color-mono-grey-2;
+			}
+		}
+	}
+	&.hint {
+		border-color: $color-primary-onsite;
+		.ant-notification-notice-message {
+			color: $color-primary-onsite;
+		}
+		svg {
+			fill: $color-primary-onsite;
+		}
+		.anticon-close {
+			svg {
+				fill: $color-mono-grey-2;
+			}
+		}
+	}
+	.ant-notification-notice-close {
+		span {
+			svg {
+				width: 14px;
+				height: 14px;
+				fill: $color-mono-grey;
+				position: relative;
+				right: -7px;
+				top: -7px;
+			}
+		}
+	}
+}

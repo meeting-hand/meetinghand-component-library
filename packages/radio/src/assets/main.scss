@@ -1,0 +1,52 @@
+@import "~@meetinghand/style/lib/scss/variables.scss";
+
+.ant-radio-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    height: 20px;
+    span {
+        height: 20px;
+        top: 0px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-mono-black;
+    }
+}
+
+.ant-radio-inner {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid $color-primary-blue;
+    box-sizing: border-box;
+    border-radius: 99px;
+    border-color: $color-primary-blue;
+    &:hover {
+        background-color: $color-secondary-blue;
+    }
+    &::after {
+        left: 25%;
+        right: 25%;
+        top: 25%;
+        bottom: 25%;
+        background: $color-primary-blue;
+    }
+}
+
+.ant-radio-disabled .ant-radio-inner {
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    border: 1.5px solid $color-mono-grey;
+    box-sizing: border-box;
+    border-radius: 99px;
+    background-color: none;
+    &:hover {
+        background-color: none;
+    }
+}

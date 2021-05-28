@@ -1,111 +1,100 @@
-@import "~@meetinghand/style/lib/scss/reset.scss";
-@import "~@meetinghand/style/lib/scss/colors.scss";
-@import "~@meetinghand/style/lib/scss/typography.scss";
-
+@import "~@meetinghand/style/lib/scss/variables.scss";
+@import "~@meetinghand/style/lib/scss/icons.scss";
+.mh-banner {
+	display: flex;
+}
 .ant-alert {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 16px;
-    position: relative;
-    height: 52px;
-    border-radius: 4px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 18px !important;
+	border-radius: 4px;
 
-    &.ant-alert-info {
-        background: $color-mono-light-grey-2;
-        border-color: $color-mono-light-grey-2;
-    }
-    .ant-alert-message {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 20px;
+	&.ant-alert-info {
+		background: $color-mono-light-grey-2;
+		border-color: $color-mono-light-grey-2;
+	}
+	.ant-alert-message {
+		font-size: 16px;
+		line-height: 20px;
+		color: $color-mono-grey-3;
+		margin: 0px 18px;
+	}
 
-        height: 20px;
-        left: 52px;
-        top: 16px;
+	svg {
+		&.ant-alert-icon {
+			width: 16px;
+			height: 16px;
+			fill: $color-primary-blue;
+			margin-right: 0;
+		}
+	}
 
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 20px;
+	&.ant-alert-banner {
+		width: 100%;
+		&.ant-alert-warning {
+			background-color: $color-secondary-red;
+			.ant-alert-message {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 20px;
 
-        display: flex;
-        align-items: center;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				text-align: center;
 
-        color: $color-mono-grey-3;
+				color: $color-mono-black;
+			}
+		}
+		&.ant-alert-success {
+			background-color: $color-secondary-green;
+			.ant-alert-message {
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 20px;
 
-        flex: none;
-        order: 1;
-        align-self: center;
-        flex-grow: 0;
-        margin: 0px 16px;
-    }
-    .ant-alert-icon {
-        left: 10%;
-        right: 10%;
-        top: 10%;
-        bottom: 10%;
-    }
-    .ant-alert-close-text {
-        position: static;
-        width: 39px;
-        height: 16px;
-        left: 2px;
-        top: 4px;
-        text-align: center;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				text-align: center;
 
-        color: $color-primary-blue;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 16px;
+				color: $color-mono-black;
+			}
+		}
+	}
+	.ant-alert-close-icon {
+		padding: 6px;
+		border-radius: 4px;
+		.anticon-close {
+			svg {
+				display: none;
+			}
 
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        margin: 0px 4px;
-    }
-    &.ant-alert-warning {
-        position: relative;
-        height: 78px;
-        background-color: $color-secondary-red;
-        .ant-alert-message {
-            position: absolute;
-            height: 46px;
-            left: 96px;
-            right: 96px;
-            top: 16px;
+			&::before {
+				@include close-icon("%232196f3");
+				content: "";
+				width: 14px;
+				height: 14px;
+				display: block;
+			}
+		}
+		.ant-alert-close-text {
+			text-align: center;
 
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 20px;
+			color: $color-primary-blue;
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 16px;
+			padding: 2px 6px;
 
-            text-align: center;
-
-            color: $color-mono-black;
-        }
-    }
-    &.ant-alert-success {
-        position: relative;
-        height: 78px;
-        background-color: $color-secondary-green;
-        .ant-alert-message {
-            position: absolute;
-            height: 46px;
-            left: 96px;
-            right: 96px;
-            top: 16px;
-
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 20px;
-
-            text-align: center;
-
-            color: $color-mono-black;
-        }
-    }
+			border-radius: 4px;
+		}
+		&:hover {
+			background: $transparent-hover-3;
+		}
+	}
 }

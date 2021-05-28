@@ -1,0 +1,266 @@
+@import "~@meetinghand/style/lib/scss/variables.scss";
+@import "~@meetinghand/style/lib/scss/icons.scss";
+
+.ant-input {
+	min-width: 360px;
+	max-width: 100%;
+	padding: 16px !important;
+	color: $color-mono-black;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 400;
+	box-shadow: none;
+
+	&::placeholder {
+		color: $color-mono-grey;
+	}
+
+	&:hover {
+		background-color: rgba($color-mono-black, 0.04);
+		border: 1px solid $color-mono-grey;
+	}
+
+	&:focus {
+		border-color: $color-primary-blue;
+		outline: none;
+		box-shadow: none;
+	}
+	&.error {
+		border: 1px solid $color-primary-red;
+	}
+	&.ant-input-disabled {
+		background-color: $color-mono-light-grey;
+		color: $color-mono-grey;
+	}
+}
+
+.ant-input,
+.ant-input-affix-wrapper {
+	border: 1px solid $color-mono-grey;
+	border-radius: 4px;
+	background: transparent;
+	transition: background-color 0.5s ease, border 0.5s ease !important;
+}
+
+.ant-input-affix-wrapper {
+	margin: 0;
+	padding: 0;
+	.ant-input {
+		background: none;
+	}
+	.ant-input-prefix,
+	.ant-input-suffix {
+		margin: 0 !important;
+		padding: 0 !important;
+		background: transparent;
+		.anticon {
+			margin: 0;
+		}
+		svg {
+			fill: $color-mono-grey-2;
+		}
+	}
+	.ant-input-prefix {
+		svg {
+			margin-left: 16px;
+		}
+	}
+	.ant-input-suffix {
+		svg {
+			margin-right: 16px;
+		}
+		.ant-input-clear-icon {
+			svg {
+				display: none;
+			}
+			&::after {
+				@include close-icon();
+				content: "";
+				width: 14px;
+				height: 14px;
+				display: block;
+				margin-right: 16px;
+			}
+		}
+	}
+	&:hover {
+		background-color: rgba($color-mono-black, 0.04);
+		border: 1px solid $color-mono-grey;
+	}
+
+	&.error {
+		border: 1px solid $color-primary-red;
+
+		.ant-input-prefix,
+		.ant-input-suffix {
+			svg {
+				fill: $color-primary-red;
+			}
+		}
+	}
+	.ant-input-disabled {
+		.ant-input-prefix,
+		.ant-input-suffix {
+			svg {
+				fill: $color-mono-grey;
+			}
+		}
+	}
+
+	&.ant-input-affix-wrapper-disabled {
+		background-color: $color-mono-light-grey;
+		color: $color-mono-grey;
+	}
+}
+.ant-input-affix-wrapper-focused {
+	border-color: $color-primary-blue;
+	outline: none;
+	box-shadow: none;
+	&:hover:not(.error) {
+		border-color: $color-primary-blue;
+	}
+	.ant-input-prefix,
+	.ant-input-suffix {
+		svg {
+			fill: $color-primary-blue;
+		}
+		.ant-input-clear-icon {
+			&::after {
+				@include close-icon("%232196f3");
+			}
+		}
+	}
+}
+
+/* Tel */
+.mh-tel-input {
+	border: 1px solid $color-mono-grey;
+	border-radius: 4px;
+
+	.ant-input-group-addon {
+		background: transparent;
+		border: none;
+		margin: 0;
+	}
+	.ant-input-wrapper {
+		.ant-input {
+			border: none;
+			background: none;
+			padding-left: 0 !important;
+		}
+	}
+	.ant-select {
+		min-width: 80px;
+		.ant-select-selection-search {
+			.ant-select-selection-search-input {
+				caret-color: $color-mono-grey-2;
+				text-align: center;
+				font-family: Inter;
+				font-size: 16px;
+				color: $color-mono-grey-2;
+			}
+		}
+		.ant-select-selection-item {
+			font-family: Inter;
+			font-size: 16px;
+			color: $color-mono-grey-2;
+		}
+		.ant-select-selector {
+			border: none !important;
+			box-shadow: none !important;
+			padding: 0;
+			height: auto !important;
+		}
+		.ant-select-arrow {
+			svg {
+				fill: $color-mono-grey-2;
+				width: 14px;
+			}
+		}
+	}
+
+	&.error {
+		border: 1px solid $color-primary-red !important;
+	}
+	&.disabled {
+		background-color: $color-mono-light-grey;
+		color: $color-mono-grey;
+	}
+
+	&:hover {
+		background-color: rgba($color-mono-black, 0.04);
+		border: 1px solid $color-mono-grey;
+	}
+
+	&:focus-within {
+		border-color: $color-primary-blue;
+		outline: none;
+		box-shadow: none;
+	}
+}
+
+/* Password */
+.ant-input-password {
+	.anticon {
+		svg {
+			display: none;
+		}
+		&::after {
+			content: "";
+			width: 14px;
+			height: 14px;
+			display: block;
+			margin-right: 16px;
+		}
+		&.anticon-eye-invisible {
+			&::after {
+				@include password-icon-show();
+			}
+		}
+		&.anticon-eye {
+			&::after {
+				@include password-icon-hide();
+			}
+		}
+	}
+	&.ant-input-affix-wrapper-focused {
+		.ant-input-password-icon {
+			&.anticon-eye-invisible {
+				&::after {
+					@include password-icon-show("%232196f3");
+				}
+			}
+			&.anticon-eye {
+				&::after {
+					@include password-icon-hide("%232196f3");
+				}
+			}
+		}
+	}
+}
+
+.error {
+	.ant-input-prefix,
+	.ant-input-suffix {
+		svg {
+			fill: $color-primary-red;
+		}
+		.ant-input-clear-icon {
+			&::after {
+				@include close-icon("%23f44336");
+			}
+		}
+		.ant-input-password-icon {
+			&.anticon-eye-invisible {
+				&::after {
+					@include password-icon-show("%23f44336");
+				}
+			}
+			&.anticon-eye {
+				&::after {
+					@include password-icon-hide("%23f44336");
+				}
+			}
+		}
+	}
+}

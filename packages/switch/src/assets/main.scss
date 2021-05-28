@@ -1,0 +1,43 @@
+@import "~@meetinghand/style/lib/scss/variables.scss";
+
+.ant-switch {
+    min-width: 40px;
+    height: 23.5px;
+
+    border: 1.5px solid $color-primary-blue;
+    box-sizing: border-box;
+    border-radius: 99px;
+    background: none;
+
+    &::after {
+        background-color: $color-primary-blue;
+    }
+
+    &:hover {
+        background: $color-secondary-blue;
+    }
+}
+.ant-switch-checked {
+    background: $color-primary-blue;
+    border-radius: 99px;
+    &::after {
+        background-color: $color-mono-white;
+    }
+    &:hover {
+        background-color: $color-primary-blue;
+    }
+}
+
+.ant-switch-disabled {
+    border: 1.5px solid $color-mono-grey;
+    box-sizing: border-box;
+    border-radius: 99px;
+    background: none;
+    border-color: $color-mono-grey;
+    &::after {
+        background: $color-mono-grey;
+    }
+    &:hover {
+        background: none;
+    }
+}

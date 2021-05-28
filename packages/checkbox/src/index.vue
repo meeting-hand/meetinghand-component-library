@@ -1,0 +1,53 @@
+<template>
+  <component
+    :is="componentType"
+    v-model="value"
+    :label="label"
+    :disabled="disabled"
+    :data="data"
+  />
+</template>
+
+<script>
+import Single from "./types/single";
+import Multiple from "./types/multiple";
+
+export default {
+  name: "MhCheckbox",
+  props: {
+    modelValue: {
+      type: [Boolean, Array],
+      required: true,
+    },
+    label: {
+      type: String,
+      default: "",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    data: {
+      type: [String, Number],
+      default: null,
+    },
+  },
+  components: {
+    Single,
+    Multiple,
+  },
+  computed: {
+    value: {
+      get() {
+        return this.modelValue;
+      },
+      set(value) {
+        this.$emit("update:modelValue", value);
+      },
+    },
+    componentType() {
+      return Array.isArray(this.modelValue) ? "multiple" : "single";
+    },
+  },
+};
+</script>

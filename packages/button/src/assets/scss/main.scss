@@ -1,29 +1,308 @@
-@import "~@meetinghand/style/lib/scss/reset.scss";
-@import "~@meetinghand/style/lib/scss/colors.scss";
-@import "~@meetinghand/style/lib/scss/typography.scss";
+@import "~@meetinghand/style/lib/scss/variables.scss";
 
 .ant-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .mh-icon {
-        fill: $color-mono-white;
-        margin: 0 12px;
-    }
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-shadow: none;
+	box-shadow: none;
+	border: none;
+	outline: none;
+	transition: background-color 0.5s ease !important;
+
+	&.alignment-right {
+		flex-direction: row-reverse;
+	}
+
+	.mh-icon {
+		fill: $color-mono-white;
+		margin: 0 12px;
+	}
 }
 
+/* PRIMARY */
 .ant-btn-primary {
-    &:hover {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
-    }
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    padding: 16px 32px;
-    height: auto;
-    border-radius: 4px;
-    transition: background-color 0.5s ease !important;
+	background-color: $color-primary-blue;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 16px 32px;
+	height: auto;
+	min-height: 52px;
+	border-radius: 4px;
+
+	&:hover {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
+	}
+
+	&.disabled {
+		border: none;
+		background-color: $color-mono-light-grey-4;
+		color: $color-mono-grey;
+
+		.mh-icon {
+			fill: $color-mono-grey;
+		}
+	}
+	&.wait {
+		border: none;
+		background-color: rgba($color-primary-blue, 0.4);
+		&:hover {
+			background: rgba($color-primary-blue, 0.5);
+		}
+		span {
+			display: none;
+		}
+		.mh-icon:not(.wait-spinner) {
+			display: none;
+		}
+		.wait-spinner {
+			stroke: $color-mono-white;
+			fill: none !important;
+		}
+	}
 }
+
+/* PRIMARY END */
+
+/* SECONDARY */
+.ant-btn-default {
+	border: 1.5px solid $color-primary-blue;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 16px 32px;
+	height: auto;
+	min-height: 52px;
+	border-radius: 4px;
+	color: $color-primary-blue;
+
+	.mh-icon {
+		fill: $color-primary-blue;
+	}
+
+	&:hover {
+		background: $color-secondary-blue;
+		border-color: $color-primary-blue;
+		color: $color-primary-blue;
+	}
+	&:active {
+		background: $color-secondary-blue;
+	}
+	&:focus {
+		color: $color-primary-blue;
+	}
+
+	&.disabled {
+		border: 1.5px solid $color-mono-light-grey-4;
+		background-color: transparent;
+		color: $color-mono-grey;
+
+		&:hover {
+			background-color: transparent;
+			border-color: $color-mono-light-grey-4;
+		}
+
+		.mh-icon {
+			fill: $color-mono-grey;
+		}
+	}
+	&.wait {
+		border: none;
+		background-color: rgba($color-secondary-blue, 0.4);
+		&:hover {
+			background: rgba($color-secondary-blue, 0.5);
+		}
+		span {
+			display: none;
+		}
+		.mh-icon:not(.wait-spinner) {
+			display: none;
+		}
+		.wait-spinner {
+			stroke: $color-primary-blue;
+			fill: none !important;
+		}
+	}
+}
+/* SECONDARY END */
+
+/* TEXT */
+.text-btn {
+	border: none;
+	padding: 8px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:hover {
+		background: rgba($color-mono-black, 0.04);
+	}
+	&.disabled {
+		border: none;
+	}
+	&.wait {
+		background: none;
+		&:hover {
+			background: rgba($color-mono-black, 0.04);
+		}
+	}
+}
+/* TEXT END */
+
+/* SMALL */
+.small-btn {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 2px 6px;
+	.mh-icon {
+		max-width: 12px;
+		max-height: 12px;
+		margin: 0 6px;
+	}
+}
+/* SMALL END */
+
+/* ROW */
+.row-btn {
+	background: none;
+	border: 1px solid $color-mono-light-grey-5;
+	min-width: 360px;
+	justify-content: flex-start;
+
+	&.alignment-right {
+		justify-content: space-between;
+	}
+
+	&:hover {
+		background: rgba($color-mono-black, 0.04);
+		border-color: $color-mono-light-grey-5;
+	}
+	&.wait {
+		background: none;
+		border: 1px solid $color-mono-light-grey-5;
+		&:hover {
+			background: rgba($color-mono-black, 0.04);
+		}
+	}
+}
+/* ROW END */
+
+/* ICONIC */
+.ant-btn {
+	&.iconic-btn {
+		background: none;
+		border: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&.size-circular {
+			width: 52px;
+			height: 52px;
+			border-radius: 99px;
+			.mh-icon {
+				height: 30px;
+				min-width: 30px;
+			}
+		}
+		&.size-normal {
+			width: 52px;
+			height: 52px;
+			.mh-icon {
+				height: 20px;
+				min-width: 20px;
+			}
+		}
+		&.size-small {
+			width: 32px;
+			height: 32px;
+			.mh-icon {
+				height: 20px;
+				min-width: 20px;
+			}
+		}
+		&.size-tiny {
+			width: 24px;
+			height: 24px;
+			.mh-icon {
+				height: 20px;
+				min-width: 20px;
+			}
+		}
+		.mh-icon {
+			margin: 0px;
+			fill: $color-mono-grey-2;
+		}
+		&:hover {
+			background: rgba($color-mono-black, 0.04);
+			border-color: $color-mono-light-grey-5;
+		}
+	}
+}
+
+/* ICONIC END */
+/* SOCIAL */
+.social-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 360px;
+	height: 52px;
+	background: $transparent-hover;
+	border-radius: 4px;
+	&.ant-btn-default {
+		border: none;
+	}
+	&:focus {
+		background: $transparent-hover;
+	}
+	span {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 18px;
+
+		color: $color-mono-grey-3;
+	}
+	svg {
+		height: 20px;
+		width: 30px;
+	}
+
+	.mh-icon {
+		margin-right: 0px !important;
+		margin-left: -10px !important;
+	}
+
+	&.google {
+		&:hover {
+			background: #518ef8;
+		}
+	}
+	&.facebook {
+		&:hover {
+			background: #314f8b;
+		}
+	}
+	&.linkedin {
+		&:hover {
+			background: #006ca8;
+		}
+	}
+
+	&:hover {
+		span {
+			color: $color-mono-white;
+		}
+		svg {
+			path {
+				fill: $color-mono-white;
+			}
+		}
+	}
+}
+/* SOCIAL END */
+
 .size-large {
-    min-width: 360px;
+	min-width: 360px;
 }

@@ -1,0 +1,115 @@
+<template>
+  <div
+    :class="[{ error: hasError }, 'mh-text-editor', { readOnly: hasDisabled }]"
+  >
+    <quill-editor
+      :toolbar="toolbar"
+      :placeholder="placeholder"
+      v-model:content="value"
+      contentType="html"
+      :readOnly="readOnly"
+    >
+    </quill-editor>
+    <div class="editor-footer" v-if="maxWordCount">
+      {{ wordCount }} / {{ maxWordCount }}
+    </div>
+  </div>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
+</template>
+
+<script>
+import MhIcon from "@meetinghand/style/icons/index";
+import { QuillEditor, Quill } from "@vueup/vue-quill";
+import MhEditorIcons from "./assets/icons";
+
+// TODO: Undo, redo and table buttons will be added
+
+export default {
+  name: "TextEditor",
+
+  props: {
+    placeholder: {
+      type: String,
+      default: "",
+    },
+    modelValue: {
+      type: String,
+      required: true,
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    hasDisabled: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
+      default: null,
+    },
+    hasDisabled: {
+      type: Boolean,
+      default: false,
+    },
+    readOnly: {
+      type: Boolean,
+      default: false,
+    },
+    toolbar: {
+      type: Array,
+      default() {
+        return ["undo", "redo", "bold", "italic"];
+      },
+    },
+    maxWordCount: {
+      type: Number,
+    },
+  },
+  components: {
+    QuillEditor,
+    MhIcon,
+  },
+  computed: {
+    value: {
+      get() {
+        return this.modelValue;
+      },
+      set(data) {
+        this.$emit("update:modelValue", data);
+      },
+    },
+    wordCount() {
+      return this.value.split(/\b\S+\b/).length - 1;
+    },
+  },
+  setup() {
+    var icons = Quill.import("ui/icons");
+
+    icons.bold = MhEditorIcons.bold;
+    icons.italic = MhEditorIcons.italic;
+    icons.underline = MhEditorIcons.underline;
+    icons.undo = MhEditorIcons.undo;
+    icons.redo = MhEditorIcons.redo;
+    icons.strike = MhEditorIcons.strike;
+    icons.link = MhEditorIcons.link;
+    icons.blockquote = MhEditorIcons.blockquote;
+    icons.image = MhEditorIcons.image;
+    icons.table = MhEditorIcons.table;
+    icons["code-block"] = MhEditorIcons.codeblock;
+    icons.ordered = MhEditorIcons.ordered;
+    icons.align.center = MhEditorIcons.center;
+    icons.align.left = MhEditorIcons.left;
+    icons.align.right = MhEditorIcons.right;
+    icons.script.sub = MhEditorIcons.sub;
+    icons.script.super = MhEditorIcons.super;
+  },
+  methods: {
+    undo() {
+      console.log("undoo");
+    },
+  },
+};
+</script>

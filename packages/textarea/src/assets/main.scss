@@ -1,0 +1,69 @@
+@import "~@meetinghand/style/lib/scss/variables.scss";
+
+textarea.ant-input {
+    width: 360px;
+    height: 400px;
+
+    border: 1px solid $color-mono-grey;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: none;
+
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-mono-black;
+    caret-color: $color-primary-blue;
+
+    &::after {
+        border: 1.5px solid $color-primary-blue;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    &:hover {
+        background-color: none;
+    }
+    &::placeholder {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-mono-black;
+    }
+    &.ant-input-disabled {
+        background: $color-mono-light-grey;
+        border: 1px solid $color-mono-light-grey-5;
+
+        &::placeholder {
+            color: $color-mono-grey;
+        }
+    }
+    &.error {
+        caret-color: $color-primary-red;
+    }
+}
+
+.mh-input-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: -15px;
+    .mh-input__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px !important;
+        line-height: 20px;
+        /* identical to box height, or 125% */
+
+        display: flex;
+        align-items: center;
+
+        /* Mono / Black */
+
+        color: #000000;
+    }
+    svg {
+        fill: #b6b6b6;
+        margin-left: 11px;
+        width: 18px;
+        height: 18px;
+    }
+}

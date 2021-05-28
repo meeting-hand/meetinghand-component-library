@@ -1,5 +1,5 @@
 <template>
-  <hr :class="[`size-${size}`]" />
+  <hr :class="[`size-${size}`, 'mh-divider']" />
 </template>
 
 <script>

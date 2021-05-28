@@ -28,7 +28,7 @@ storiesOf("Tooltip", module).add("All", () => ({
       <tooltip size="small" placement="left" text="Lorem ipsum dolor sit amet.">
       Tooltip will show when mouse enter.
       </tooltip>
-    <div/>
+    </div>
     `,
 }));
 
