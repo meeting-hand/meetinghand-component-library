@@ -6,6 +6,15 @@
 	box-sizing: border-box;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
 	border-radius: 4px;
+	border-left: 8px solid;
+
+	svg {
+		margin-top: 0px;
+		margin-left: 0px;
+		width: 20px;
+		height: 20px;
+		fill: $color-primary-green;
+	}
 
 	.ant-notification-notice-content {
 		margin: 0px;
@@ -42,16 +51,11 @@
 		}
 	}
 	&.success {
-		border-left: 8px solid;
 		border-color: $color-primary-green;
 		.ant-notification-notice-message {
 			color: $color-primary-green;
 		}
 		svg {
-			margin-top: 0px;
-			margin-left: 0px;
-			width: 20px;
-			height: 20px;
 			fill: $color-primary-green;
 		}
 		.anticon-close {
@@ -61,16 +65,11 @@
 		}
 	}
 	&.error {
-		border-left: 8px solid;
 		border-color: $color-primary-red;
 		.ant-notification-notice-message {
 			color: $color-primary-red;
 		}
 		svg {
-			margin-top: 0px;
-			margin-left: 0px;
-			width: 20px;
-			height: 20px;
 			fill: $color-primary-red;
 		}
 		.anticon-close {
@@ -80,16 +79,12 @@
 		}
 	}
 	&.info {
-		border-left: 8px solid;
+		//
 		border-color: $color-primary-blue;
 		.ant-notification-notice-message {
 			color: $color-primary-blue;
 		}
 		svg {
-			margin-top: 0px;
-			margin-left: 0px;
-			width: 20px;
-			height: 20px;
 			fill: $color-primary-blue;
 		}
 		.anticon-close {
@@ -99,16 +94,11 @@
 		}
 	}
 	&.hint {
-		border-left: 8px solid;
 		border-color: $color-primary-onsite;
 		.ant-notification-notice-message {
 			color: $color-primary-onsite;
 		}
 		svg {
-			margin-top: 0px;
-			margin-left: 0px;
-			width: 20px;
-			height: 20px;
 			fill: $color-primary-onsite;
 		}
 		.anticon-close {

@@ -3,6 +3,11 @@
 
 .mh-dropdown {
 	min-width: 168px;
+
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 20px;
 	&.ant-select-disabled {
 		.ant-select-selector {
 			background-color: $color-mono-light-grey !important;
@@ -27,9 +32,6 @@
 
 		.ant-select-selection-item {
 			padding: 16px;
-			font-family: Inter;
-			font-size: 16px;
-			line-height: 20px;
 			display: flex;
 			align-items: center;
 		}
@@ -41,17 +43,11 @@
 			padding: 0 16px;
 
 			.ant-select-selection-search-input {
-				font-size: 16px;
-				line-height: 20px;
 				height: 16px;
 				color: $color-mono-black;
 			}
 		}
 		.ant-select-selection-placeholder {
-			font-style: normal;
-			font-weight: normal;
-			font-size: 16px;
-			line-height: 20px;
 			padding: 16px;
 			color: $color-mono-black;
 		}
@@ -140,6 +136,8 @@
 		margin-left: 8px;
 		margin-right: 8px;
 		border-radius: 4px;
+		margin-bottom: 2px;
+		margin-top: 2px;
 	}
 	.ant-select-item-option-selected {
 		padding: 16px 8px;
@@ -155,6 +153,8 @@
 
 		margin-left: 8px;
 		margin-right: 8px;
+		margin-bottom: 2px;
+		margin-top: 2px;
 	}
 }
 

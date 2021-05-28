@@ -100,9 +100,11 @@ export default {
     icons.table = MhEditorIcons.table;
     icons["code-block"] = MhEditorIcons.codeblock;
     icons.ordered = MhEditorIcons.ordered;
-    //icons.align.center = MhEditorIcons.ordered;
-    //icons.align.left = MhEditorIcons.ordered;
-    //icons.align.right = MhEditorIcons.ordered;
+    icons.align.center = MhEditorIcons.center;
+    icons.align.left = MhEditorIcons.left;
+    icons.align.right = MhEditorIcons.right;
+    icons.script.sub = MhEditorIcons.sub;
+    icons.script.super = MhEditorIcons.super;
   },
   methods: {
     undo() {
