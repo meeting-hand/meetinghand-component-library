@@ -81,8 +81,6 @@ export default {
     this.openNotification();
   },
 };
-
-// icon: h(`${props.icon}`),
 </script>
 
 <style scoped>
