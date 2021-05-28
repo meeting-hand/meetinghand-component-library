@@ -15,8 +15,8 @@ storiesOf("Modal", module).add("All", () => ({
 	},
 	template: `
     <div class="story-modals">
-			<h1>Default</h1>
-				<mh-modal class="modal1" title="Title" v-model="modal1Status">
+				<h1>Default</h1>
+				<mh-modal class="modal1" title="Title" v-model="modal1Status" :closable="true" dialog-title="Diaolog Title">
 				<p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.      </p>
 				<template v-slot:footer>
 				<div class="story-footer">

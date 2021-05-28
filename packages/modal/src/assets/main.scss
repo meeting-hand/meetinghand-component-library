@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 48px;
+	padding-top: 12px;
 
 	position: relative;
 
@@ -18,11 +18,18 @@
 		height: 32px;
 		left: 48px;
 		top: 48px;
-		border-bottom: none;
+		padding: 0;
+		width: 100%;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 32px;
+		text-align: center;
+		color: $color-mono-black;
 	}
 
 	.ant-modal-body {
-		padding: 0;
+		padding: 48px;
 		font-size: 16px;
 		line-height: 20px;
 		color: $color-mono-black;
@@ -52,6 +59,18 @@
 	}
 	.ant-modal-footer {
 		border-top: none;
+		padding: 48px;
+	}
+	.ant-modal-close {
+		svg {
+			width: 14px;
+			height: 14px;
+			fill: $color-mono-grey;
+			position: relative;
+			right: -7px;
+			top: -7px;
+			fill: $color-mono-black;
+		}
 	}
 }
 

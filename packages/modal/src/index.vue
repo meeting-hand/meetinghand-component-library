@@ -1,12 +1,14 @@
 <template>
   <a-modal
     v-model:visible="modelValue"
-    :closable="false"
+    :closable="closable"
     :destroyOnClose="true"
     @cancel="close()"
     :class="[`mh-modal-${size}`]"
     :width="width"
     :footer="modalFooterProp"
+    :title="dialogTitle"
+    :closeIcon="closeIcon"
   >
     <div :class="icon">
       <mh-icon :name="icon" v-if="icon" />
@@ -24,6 +26,9 @@
 <script>
 import Modal from "ant-design-vue/lib/modal";
 import MHIcon from "@meetinghand/style/icons/index";
+import SystemClose from "@meetinghand/style/icons/systemClose";
+import { h } from "vue";
+
 export default {
   name: "MhModal",
   components: {
@@ -41,6 +46,9 @@ export default {
     },
     modalFooterProp() {
       return this.$slots.footer ? this.$slots.footer : null;
+    },
+    closeIcon() {
+      return h(SystemClose);
     },
   },
   props: {
@@ -60,6 +68,16 @@ export default {
     icon: {
       type: String,
       default: null,
+    },
+    closable: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    dialogTitle: {
+      type: String,
+      required: false,
+      default: "",
     },
   },
   emits: {
