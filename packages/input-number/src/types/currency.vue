@@ -85,8 +85,16 @@ export default {
       }
 
       // ignore decimal delete
-      if (!e.includes(this.moneyFormat.decimal) && e.length > 1) {
+      if (
+        !e.includes(this.moneyFormat.decimal) &&
+        e.length > this.moneyFormat.symbol.length + 1
+      ) {
         return this.value;
+      }
+      // when selected all text except symbol
+      else if (e.length === this.moneyFormat.symbol.length + 1) {
+        e = accounting.unformat(e, this.moneyFormat.decimal);
+        return e / Math.pow(10, this.moneyFormat.precision);
       }
 
       e = this.convertDecimal(e);
