@@ -21,6 +21,14 @@ storiesOf("Select", module).add("All", () => ({
 					value: 3,
 					label: "Grace Slick",
 				},
+				{
+					value: 4,
+					label: "Hasan ali yucel",
+				},
+				{
+					value: 5,
+					label: "ahmet hamdi",
+				},
 			],
 		};
 	},

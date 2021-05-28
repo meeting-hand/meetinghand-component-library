@@ -16,6 +16,7 @@
 import Default from "./types/default";
 import Range from "./types/range";
 
+// TODO: disabled dates
 export default {
   name: "MhDatePicker",
   components: {
