@@ -10,7 +10,7 @@
 		"build": "lerna run build --stream",
 		"publish": "lerna publish",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "cd packages/banner && npm i && cd ../checkbox && npm i && cd ../color-picker && npm i && cd ../date-picker && npm i && cd ../divider && npm i && cd ../input && npm i && cd ../input-number && npm i && cd ../modal && npm i && cd ../notification && npm i && cd ../radio && npm i && cd ../select && npm i && cd ../switch && npm i && cd ../tab && npm i && cd ../text-editor && npm i && cd ../textarea && npm i && cd ../tooltip && npm  build-storybook"
+		"build-storybook": "cd packages/banner && npm i && cd ../checkbox && npm i && cd ../color-picker && npm i && cd ../date-picker && npm i && cd ../divider && npm i && cd ../input && npm i && cd ../input-number && npm i && cd ../modal && npm i && cd ../notification && npm i && cd ../radio && npm i && cd ../select && npm i && cd ../switch && npm i && cd ../tab && npm i && cd ../text-editor && npm i && cd ../textarea && npm i && cd ../tooltip &&  cd ../../ npm build-storybook"
 	},
 	"author": {
 		"name": "Fatih Sinan Yaman",
