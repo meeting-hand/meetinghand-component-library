@@ -9,8 +9,12 @@ storiesOf("Style", module).add("Style!", () => ({
     <h1>MeetingHand Base Style Library</h1>
     <p>Common scss variables & styles</p>
 
-    <h2>Colors</h2>
     <p>assets/colors.scss</p>
+    <p>assets/icons.scss</p>
+    <p>assets/icons.scss</p>
+    <p>assets/reset.scss</p>
+    <p>assets/typography.scss</p>
+    <p>assets/variables.scss</p>
     `,
 }));
 
