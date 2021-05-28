@@ -2,8 +2,7 @@
 
 textarea.ant-input {
     width: 360px;
-    height: 400px;
-
+    height: auto;
     border: 1px solid $color-mono-grey;
     box-sizing: border-box;
     border-radius: 4px;
@@ -45,23 +44,16 @@ textarea.ant-input {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: -15px;
+    margin-bottom: -17px;
     .mh-input__title {
         font-style: normal;
         font-weight: 500;
         font-size: 16px !important;
         line-height: 20px;
-        /* identical to box height, or 125% */
-
-        display: flex;
-        align-items: center;
-
-        /* Mono / Black */
-
-        color: #000000;
+        color: $color-mono-black;
     }
     svg {
-        fill: #b6b6b6;
+        fill: $color-mono-grey;
         margin-left: 11px;
         width: 18px;
         height: 18px;

@@ -2,7 +2,7 @@
   <a-tooltip
     color="transparent"
     :overlayClassName="`mh-tooltip`"
-    :placement="`${placement}`"
+    :placement="placement"
   >
     <template #title>{{ text }}</template>
     <slot></slot>

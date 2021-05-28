@@ -25,7 +25,6 @@ import { QuillEditor, Quill } from "@vueup/vue-quill";
 import MhEditorIcons from "./assets/icons";
 
 // TODO: Undo, redo and table buttons will be added
-
 export default {
   name: "TextEditor",
 
@@ -61,7 +60,26 @@ export default {
     toolbar: {
       type: Array,
       default() {
-        return ["undo", "redo", "bold", "italic"];
+        return [
+          "undo",
+          "redo",
+          "bold",
+          "italic",
+          "underline",
+          "strike",
+          "blockquote",
+          "link",
+          "image",
+          "table",
+          { align: "left" },
+          { align: "center" },
+          { align: "right" },
+          { list: "ordered" },
+          { list: "bullet" },
+          "code-block",
+          { script: "sub" },
+          { script: "super" },
+        ];
       },
     },
     maxWordCount: {
@@ -105,11 +123,6 @@ export default {
     icons.align.right = MhEditorIcons.right;
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
-  },
-  methods: {
-    undo() {
-      console.log("undoo");
-    },
   },
 };
 </script>

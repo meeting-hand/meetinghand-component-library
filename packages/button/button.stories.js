@@ -27,6 +27,7 @@ storiesOf("Button", module).add("primary", () => ({
       <mh-button type="primary" icon="arrow-up" icon-alignment="right">
         Icon Right
       </mh-button>
+      <hr />
       <h1>Disabled</h1>
       <mh-button type="primary" disabled size="large">
         Large size
@@ -40,6 +41,7 @@ storiesOf("Button", module).add("primary", () => ({
       <mh-button type="primary" icon="arrow-up" icon-alignment="right" disabled>
         Icon Right
       </mh-button>
+      <hr />
       <h1>Wait</h1>
       <mh-button type="primary" size="large" wait>
         Large size
@@ -47,6 +49,7 @@ storiesOf("Button", module).add("primary", () => ({
       <mh-button type="primary" wait>
         Default size
       </mh-button>
+      <br/><br />
     `,
 }));
 
@@ -74,6 +77,7 @@ storiesOf("Button", module).add("secondary", () => ({
       <mh-button type="secondary" icon="arrow-up" icon-alignment="right">
         Icon Right
       </mh-button>
+      <hr />
       <h1>Disabled</h1>
       <mh-button type="secondary" disabled size="large">
         Large size
@@ -87,6 +91,7 @@ storiesOf("Button", module).add("secondary", () => ({
       <mh-button type="secondary" icon="arrow-up" icon-alignment="right" disabled>
         Icon Right
       </mh-button>
+      <hr />
       <h1>Wait</h1>
       <mh-button type="secondary" size="large" wait>
         Large size
@@ -94,6 +99,7 @@ storiesOf("Button", module).add("secondary", () => ({
       <mh-button type="secondary" wait>
         Default size
       </mh-button>
+      <br /><br />
     `,
 }));
 
@@ -110,6 +116,7 @@ storiesOf("Button", module).add("text", () => ({
       <mh-button type="text" icon="arrow-up" icon-alignment="right">
         Icon Right
       </mh-button>
+      <hr />
       <h1>Disabled</h1>
       <mh-button type="text" disabled>
         Default size
@@ -120,10 +127,12 @@ storiesOf("Button", module).add("text", () => ({
       <mh-button type="text" icon="arrow-up" icon-alignment="right" disabled>
         Icon Right
       </mh-button>
+      <hr />
       <h1>Wait</h1>
       <mh-button type="text" wait>
         Default size
       </mh-button>
+      <br/><br/>
     `,
 }));
 
@@ -140,6 +149,7 @@ storiesOf("Button", module).add("small", () => ({
       <mh-button type="small" icon="arrow-up" icon-alignment="right">
         Icon Right
       </mh-button>
+      <hr />
       <h1>Disabled</h1>
       <mh-button type="small" disabled>
         Default size
@@ -150,10 +160,12 @@ storiesOf("Button", module).add("small", () => ({
       <mh-button type="small" icon="arrow-up" icon-alignment="right" disabled>
         Icon Right
       </mh-button>
+      <hr />
       <h1>Wait</h1>
       <mh-button type="small" wait>
         Default size
       </mh-button>
+      <br /><br />
     `,
 }));
 
@@ -170,14 +182,17 @@ storiesOf("Button", module).add("row", () => ({
       <mh-button type="row" icon="arrow-up" icon-alignment="right">
         Icon Right
       </mh-button>
+      <hr />
       <h1>Disabled</h1>
       <mh-button type="row" disabled>
         Default size
       </mh-button>
+      <hr />
       <h1>Wait</h1>
        <mh-button type="row" wait>
         Row Butotn
       </mh-button>
+      <br /><br />
     `,
 }));
 
@@ -195,7 +210,7 @@ storiesOf("Button", module).add("iconic", () => ({
       <hr/>
       <h1>Tiny</h1>
       <mh-button type="iconic" icon="system-close" size="tiny" />
-			<hr/>
+			<br/><br />
     `,
 }));
 

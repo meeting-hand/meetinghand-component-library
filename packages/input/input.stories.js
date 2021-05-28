@@ -29,11 +29,13 @@ storiesOf("Input", module).add("Input", () => ({
       <br />
       <br />
       <mh-input v-model="value4" has-error error-message="this field is required" left-icon="arrow-down" right-icon="arrow-up" />
+      <hr />
       <h1>Disabled</h1>
       <mh-input v-model="value8" disabled />
       <br />
       <br />
       <mh-input v-model="value5" disabled left-icon="arrow-down" right-icon="arrow-up" />
+      <hr />
       <h1>Clear</h1>
       <mh-input v-model="value6" allow-clear />
       <br />
@@ -66,6 +68,7 @@ storiesOf("Input", module).add("Password", () => ({
       <br />
       <br />
       <mh-input v-model="pass4" input-type="password" has-error error-message="this field is required" />
+      <hr />
       <h1>Disabled</h1>
       <mh-input v-model="pass5" input-type="password" disabled />
       <br />

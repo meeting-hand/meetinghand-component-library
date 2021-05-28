@@ -196,6 +196,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		.mh-icon {
+			height: 20px;
+			min-width: 20px;
+		}
+
 		&.size-circular {
 			width: 52px;
 			height: 52px;
@@ -208,25 +214,18 @@
 		&.size-normal {
 			width: 52px;
 			height: 52px;
-			.mh-icon {
-				height: 20px;
-				min-width: 20px;
-			}
 		}
 		&.size-small {
 			width: 32px;
 			height: 32px;
-			.mh-icon {
-				height: 20px;
-				min-width: 20px;
-			}
 		}
 		&.size-tiny {
 			width: 24px;
 			height: 24px;
-			.mh-icon {
-				height: 20px;
-				min-width: 20px;
+
+			&:hover {
+				width: 24px;
+				height: 24px;
 			}
 		}
 		.mh-icon {

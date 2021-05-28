@@ -4,7 +4,7 @@ import MhTextArea from "./index";
 storiesOf("TextArea", module).add("All", () => ({
   data() {
     return {
-      text1: "test"
+      text1: ""
     }
   },
   components: { MhTextArea },
@@ -12,27 +12,29 @@ storiesOf("TextArea", module).add("All", () => ({
       <h1>Default</h1>
       <mh-text-area 
         v-model="text1" 
-        placeholder="placeholder" 
+        placeholder="Placeholder" 
         minRows= "5"
         maxRows= "7"
         title="Title"
         icon="system-info"
       />
-      <br/> <br/>
+      <hr/>
       {{ text1 }}
       <h1> Error </h1>
+      <br/>
       <mh-text-area 
         v-model="text1" 
-        placeholder="placeholder" 
+        placeholder="Placeholder" 
         error-message="this field is required"
         has-error  
       
     />
-      <br/> <br/>
+    <hr/>
       <h1>Disabled</h1>
+      <br/>
       <mh-text-area 
         v-model="text1" 
-        placeholder="placeholder"
+        placeholder="Placeholder"
         disabled      
       />
       

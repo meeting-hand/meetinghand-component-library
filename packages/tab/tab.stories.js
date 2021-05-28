@@ -6,7 +6,7 @@ storiesOf("Tab", module).add("All", () => ({
   template: `
       <h1>Blue</h1>
       <mh-tab color="blue"/>
-      <br/> <br/>
+      <hr/>
       <h1>Black</h1>
       <mh-tab color="black"/>
     `,
