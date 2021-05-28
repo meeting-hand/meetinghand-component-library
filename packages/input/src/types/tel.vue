@@ -10,7 +10,7 @@
     :disabled="disabled"
     ref="telInput"
     :id="id"
-    :defaultValue="value"
+    :defaultValue="defaultValue"
     @change="inputChanged"
   >
     <template #addonBefore>
@@ -95,6 +95,7 @@ export default {
 
     const dialCode = ref("+1");
     const id = ref("_" + Math.random().toString(36).substr(2, 9));
+    let cleave;
 
     //filter
     const filterOption = (input, option) => {
@@ -111,18 +112,8 @@ export default {
         phone: true,
         phoneRegionCode: country.countryCode.toLowerCase(),
       });
+      inputChanged(value.value);
     };
-
-    let cleave;
-
-    onMounted(() => {
-      if (valueDialCode) {
-        // TODO: default value must be set
-      }
-      console.log(valueDialCode.value);
-
-      cleave = setCleave(dialCode.value);
-    });
 
     const value = computed({
       get() {
@@ -146,9 +137,23 @@ export default {
       return null;
     });
 
+    const defaultValue = computed(() => {
+      return !value.value ? "" : value.value.replace(/ *\([^)]*\) */g, "");
+    });
+
     const inputChanged = (data) => {
       value.value = data;
     };
+
+    onMounted(() => {
+      if (valueDialCode.value) {
+        dialCode.value = valueDialCode.value;
+      }
+      // TODO: refactor
+      setTimeout(() => {
+        setCleave(dialCode.value);
+      }, 500);
+    });
 
     return {
       phoneCodes,
@@ -162,6 +167,7 @@ export default {
       cleave,
       inputChanged,
       valueDialCode,
+      defaultValue,
     };
   },
 };

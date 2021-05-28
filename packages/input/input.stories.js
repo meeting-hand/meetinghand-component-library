@@ -77,15 +77,14 @@ storiesOf("Input", module).add("Tel", () => ({
 	components: { MhInput },
 	data() {
 		return {
-			tel1: "",
-			tel2: "(+90) 506 900 04 91",
+			tel1: "(+90) 506 900 04 91",
+			tel2: "",
 			tel3: "",
 		};
 	},
 	template: `
 			<h1>Standart</h1>
       <mh-input v-model="tel1" input-type="tel" />
-			{{ tel1 }}
 			<hr />
 			<h1>Error</h1>
 			<mh-input v-model="tel2" input-type="tel" has-error error-message="this field is required" />
