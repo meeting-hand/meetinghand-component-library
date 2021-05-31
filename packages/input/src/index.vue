@@ -33,6 +33,7 @@ export default {
     inputType: {
       type: String,
       default: "default",
+      validator: (_v) => ["default", "tel", "password"].includes(_v),
     },
     hasError: {
       type: Boolean,
