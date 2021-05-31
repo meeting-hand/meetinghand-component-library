@@ -2,15 +2,15 @@ import { storiesOf } from "@storybook/vue3";
 import MhCheckbox from "./index";
 
 storiesOf("Checkbox", module).add("Single", () => ({
-  components: { MhCheckbox },
-  data() {
-    return {
-      value: false,
-      value2: false,
-      value3: true,
-    };
-  },
-  template: `
+	components: { MhCheckbox },
+	data() {
+		return {
+			value: false,
+			value2: false,
+			value3: true,
+		};
+	},
+	template: `
       <mh-checkbox v-model="value" label="default checkbox" />
       <br />
       <br />
@@ -29,13 +29,13 @@ storiesOf("Checkbox", module).add("Single", () => ({
 }));
 
 storiesOf("Checkbox", module).add("Group", () => ({
-  components: { MhCheckbox },
-  data() {
-    return {
-      value: ["John"],
-    };
-  },
-  template: `
+	components: { MhCheckbox },
+	data() {
+		return {
+			value: ["John"],
+		};
+	},
+	template: `
       <mh-checkbox v-model="value" label="John" data="John" />
       <br />
       <mh-checkbox v-model="value" label="Allen" data="Allen" />

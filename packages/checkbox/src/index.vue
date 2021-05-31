@@ -5,7 +5,9 @@
     :label="label"
     :disabled="disabled"
     :data="data"
-  />
+  >
+    <slot></slot>
+  </component>
 </template>
 
 <script>

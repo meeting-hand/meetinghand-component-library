@@ -14,7 +14,7 @@
       <mh-icon :name="icon" v-if="icon" />
     </div>
 
-    <h1>{{ title }}</h1>
+    <h1 v-if="title">{{ title }}</h1>
     <slot></slot>
 
     <template v-slot:footer>
@@ -63,7 +63,6 @@ export default {
     },
     title: {
       type: String,
-      required: true,
     },
     icon: {
       type: String,

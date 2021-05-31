@@ -1,6 +1,7 @@
 <template>
   <a-checkbox v-model:checked="value" :disabled="disabled">
     {{ label }}
+    <slot> </slot>
   </a-checkbox>
 </template>
 
