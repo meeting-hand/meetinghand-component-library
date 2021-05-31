@@ -1,43 +1,22 @@
 {
-    "name": "@meetinghand/divider",
-    "description": "Meetinghand Component Library Component for divider",
-    "version": "0.0.3-alpha.0",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-    },
-    "keywords": [
-        "vue3",
-        "component",
-        "library",
-        "vue3",
-        "lerna",
-        "storybook"
-    ],
-    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-    "bugs": {
-        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-    },
-    "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/divider.umd.js",
-    "module": "./dist/@meetinghand/divider.es.js",
-    "exports": {
-        ".": {
-            "import": "./dist/@meetinghand/divider.es.js",
-            "require": "./dist/@meetinghand/divider.umd.js"
-        }
-    },
-    "scripts": {
-        "build": "vite build"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "dist/*"
-    ],
-    "dependencies": {
-        "@meetinghand/style": "file:../style",
-        "vue": "^3.0.5"
-    }
+	"name": "@meetinghand/divider",
+	"description": "Meetinghand Component Library Component for divider",
+	"version": "0.0.3-alpha.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+	},
+	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+	"bugs": {
+		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+	},
+	"author": "Fatih Sinan Yaman",
+	"main": "./dist/index.js",
+	"module": "./index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@meetinghand/style": "file:../style"
+	}
 }
