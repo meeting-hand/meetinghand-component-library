@@ -2,51 +2,51 @@
 
 .ant-notification-notice {
 	background: $color-mono-white;
-	border: 1.5px solid;
+	border: $border-size-default solid;
 	box-sizing: border-box;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
-	border-radius: 4px;
-	border-left: 8px solid;
+	box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+	border-radius: $border-radius-default;
+	border-left: $spacing-small solid;
 
 	svg {
-		margin-top: 0px;
-		margin-left: 0px;
+		margin-top: $spacing-xxsmall;
+		margin-left: $spacing-xxsmall;
 		width: 20px;
 		height: 20px;
 		fill: $color-primary-green;
 	}
 
 	.ant-notification-notice-content {
-		margin: 0px;
-		padding: 0px;
+		margin: $spacing-xxsmall;
+		padding: $spacing-xxsmall;
 	}
 	.ant-notification-notice-icon {
-		margin-left: 0px;
+		margin-left: $spacing-xxsmall;
 		width: 20px;
 		height: 20px;
 	}
 	.ant-notification-notice-message {
 		font-style: normal;
-		font-weight: 500;
-		font-size: 15px;
-		line-height: 20px;
+		font-weight: $font-weight-default;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
 		margin-left: 30px;
 	}
 	.ant-notification-notice-description {
 		font-style: normal;
 		font-weight: normal;
-		font-size: 15px;
-		line-height: 20px;
-		margin-left: 0px;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
+		margin-left: $spacing-xxsmall;
 
 		color: $color-mono-black;
 	}
 	.anticon-close {
 		svg {
-			margin-top: 0px;
-			margin-right: 0px;
-			width: 16px;
-			height: 16px;
+			margin-top: $spacing-xxsmall;
+			margin-right: $spacing-xxsmall;
+			width: $spacing-default;
+			height: $spacing-default;
 			fill: $color-mono-grey;
 
 			background: $color-mono-white;
@@ -81,7 +81,6 @@
 		}
 	}
 	&.info {
-		//
 		border-color: $color-primary-blue;
 		.ant-notification-notice-message {
 			color: $color-primary-blue;

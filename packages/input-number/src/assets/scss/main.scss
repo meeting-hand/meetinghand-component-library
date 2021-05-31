@@ -5,9 +5,9 @@
     width: auto;
     min-width: 168px;
     height: 52px;
-    border: 1px solid $color-mono-grey;
+    border: $border-size-default solid $color-mono-grey;
     box-shadow: none !important;
-    border-radius: 4px;
+    border-radius: $border-radius-default;
     background-color: transparent;
     &.currency-input {
         min-width: 180px;
@@ -17,7 +17,7 @@
         border-color: $color-mono-grey;
     }
     &:focus-within {
-        border: 1px solid $color-primary-blue;
+        border: $border-size-default solid $color-primary-blue;
     }
     .ant-input-number-handler-wrap {
         opacity: 1;
@@ -28,30 +28,30 @@
         .ant-input-number-handler-down,
         .ant-input-number-handler-up {
             position: absolute;
-            width: 32px;
-            height: 32px;
+            width: $spacing-xlarge;
+            height: $spacing-xlarge;
             top: 50%;
             margin-top: -16px;
-            border: 0 !important;
+            border: $spacing-xxsmall !important;
             box-shadow: none;
             &:active {
                 background-color: transparent !important;
             }
             &:hover {
                 background-color: $transparent-hover;
-                height: 32px !important;
+                height: $spacing-xlarge !important;
             }
         }
         .ant-input-number-handler-down {
             @include minus-icon();
-            left: 8px;
+            left: $spacing-small;
             .ant-input-number-handler-down-inner {
                 display: none;
             }
         }
         .ant-input-number-handler-up {
             @include plus-icon();
-            right: 8px;
+            right: $spacing-small;
             .ant-input-number-handler-up-inner {
                 display: none;
             }
@@ -61,20 +61,20 @@
         position: relative;
         width: calc(100% - 96px);
         height: 100%;
-        margin: 0 auto;
+        margin: $spacing-xxsmall auto;
         input {
-            padding: 0;
+            padding: $spacing-xxsmall;
             text-align: center;
             height: 100%;
             color: $color-mono-black;
-            font-size: 15px;
-            line-height: 20px;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
             outline: none !important;
         }
     }
 
     &.error {
-        border: 1px solid $color-primary-red;
+        border: $border-size-default solid $color-primary-red;
         .ant-input-number-handler-wrap {
             .ant-input-number-handler-down {
                 @include minus-icon("%23f44336");
@@ -86,7 +86,7 @@
     }
     &.ant-input-number-disabled {
         background-color: $color-mono-light-grey;
-        border: 1px solid $color-mono-light-grey-5;
+        border: $border-size-default solid $color-mono-light-grey-5;
         .ant-input-number-input-wrap {
             input {
                 color: $color-mono-grey;

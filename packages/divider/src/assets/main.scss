@@ -4,8 +4,8 @@
 	width: 100%;
 	border: none;
 	background-color: $color-mono-light-grey-4;
-	margin: 0;
-	padding: 0;
+	margin: $spacing-xxsmall;
+	padding: $spacing-xxsmall;
 	&.size-thin {
 		height: 1px;
 		background-color: $color-mono-light-grey-5;
@@ -14,10 +14,10 @@
 		height: 4px;
 	}
 	&.size-medium {
-		height: 8px;
+		height: $spacing-small;
 	}
 	&.size-bold {
-		height: 16px;
+		height: $spacing-default;
 	}
 	&.size-xxbold {
 		height: 47px;

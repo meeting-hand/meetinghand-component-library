@@ -6,8 +6,8 @@
 
 	font-style: normal;
 	font-weight: normal;
-	font-size: 15px;
-	line-height: 20px;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
 	&.ant-select-disabled {
 		.ant-select-selector {
 			background-color: $color-mono-light-grey !important;
@@ -18,11 +18,11 @@
 		display: flex;
 		align-items: center;
 		box-shadow: none !important;
-		border: 1px solid $color-mono-grey;
-		border-radius: 4px;
+		border: $border-size-default solid $color-mono-grey;
+		border-radius: $border-radius-default;
 		width: auto !important;
 		height: auto !important;
-		padding: 0 !important;
+		padding: $spacing-xxsmall !important;
 		min-height: 62px;
 		background-color: none;
 		&:hover {
@@ -31,24 +31,24 @@
 		}
 
 		.ant-select-selection-item {
-			padding: 16px;
+			padding: $spacing-default;
 			display: flex;
 			align-items: center;
 		}
 		.ant-select-selection-search {
-			left: 0;
+			left: $spacing-xxsmall;
 			width: 100%;
 			display: flex;
 			align-items: center;
-			padding: 0 16px;
+			padding: $spacing-xxsmall $spacing-default;
 
 			.ant-select-selection-search-input {
-				height: 16px;
+				height: $spacing-default;
 				color: $color-mono-black;
 			}
 		}
 		.ant-select-selection-placeholder {
-			padding: 16px;
+			padding: $spacing-default;
 			color: $color-mono-black;
 		}
 	}
@@ -84,9 +84,9 @@
 	&.error {
 		.ant-select-selector {
 			background: $color-secondary-red;
-			border: 1px solid $color-primary-red !important;
+			border: $border-size-default solid $color-primary-red !important;
 			box-sizing: border-box;
-			border-radius: 4px;
+			border-radius: $border-radius-default;
 		}
 		.ant-select-arrow {
 			svg {
@@ -96,7 +96,7 @@
 		&.ant-select-open {
 			background-color: $color-secondary-blue;
 			box-sizing: border-box;
-			border-radius: 4px;
+			border-radius: $border-radius-default;
 			.ant-select-arrow {
 				svg {
 					fill: $color-primary-red;
@@ -107,7 +107,7 @@
 			}
 			.ant-select-selector {
 				background-color: $color-secondary-red;
-				border: 1px solid $color-primary-red;
+				border: $border-size-default solid $color-primary-red;
 			}
 		}
 	}
@@ -119,40 +119,40 @@
 
 	background: $color-mono-white;
 
-	border: 1px solid $color-mono-light-grey-5;
+	border: $border-size-default solid $color-mono-light-grey-5;
 	box-sizing: border-box;
 
-	box-shadow: 0px 12px 16px $transparent-hover-2;
-	border-radius: 4px;
+	box-shadow: $spacing-xxsmall 12px $spacing-default $transparent-hover-2;
+	border-radius: $border-radius-default;
 
 	.ant-select-item-option {
 		font-style: normal;
 		font-weight: normal;
-		font-size: 15px;
-		line-height: 20px;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
 
-		padding: 16px 8px;
+		padding: $spacing-default $spacing-small;
 		color: $color-mono-black;
-		margin-left: 8px;
-		margin-right: 8px;
-		border-radius: 4px;
+		margin-left: $spacing-small;
+		margin-right: $spacing-small;
+		border-radius: $border-radius-default;
 		// margin-bottom: 2px;
 		// margin-top: 2px;
 	}
 	.ant-select-item-option-selected {
-		padding: 16px 8px;
+		padding: $spacing-default $spacing-small;
 		background: $transparent-hover;
-		border-radius: 4px;
+		border-radius: $border-radius-default;
 
 		font-style: normal;
 		font-weight: normal;
-		font-size: 15px;
-		line-height: 20px;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
 
 		color: $color-mono-black;
 
-		margin-left: 8px;
-		margin-right: 8px;
+		margin-left: $spacing-small;
+		margin-right: $spacing-small;
 		margin-bottom: 2px;
 		margin-top: 2px;
 	}
@@ -163,9 +163,9 @@
 		.ant-select-selector {
 			min-height: auto !important;
 			height: 48px !important;
-			padding: 0 !important;
+			padding: $spacing-xxsmall !important;
 			.ant-select-selection-search {
-				padding: 0 !important;
+				padding: $spacing-xxsmall !important;
 			}
 		}
 	}

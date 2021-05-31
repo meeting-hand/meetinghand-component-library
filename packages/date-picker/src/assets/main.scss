@@ -16,10 +16,10 @@
 	}
 	.ant-calendar-picker-icon {
 		fill: $color-mono-grey;
-		width: 18px;
-		height: 18px;
+		width: $spacing-large;
+		height: $spacing-large;
 		margin-top: -9px;
-		right: 16px;
+		right: $spacing-default;
 	}
 }
 
@@ -30,11 +30,11 @@
 		padding: 24px;
 
 		background: $color-mono-white;
-		border: 1.5px solid $color-mono-light-grey-5;
+		border: $border-size-default solid $color-mono-light-grey-5;
 		box-sizing: border-box;
 
 		box-shadow: 0px 12px 16px $shadow-1;
-		border-radius: 4px;
+		border-radius: $border-radius-default;
 
 		.ant-calendar-panel {
 			.ant-calendar-input-wrap {
@@ -43,13 +43,13 @@
 			.ant-calendar-header {
 				border-bottom: none;
 				height: 24px;
-				line-height: 24px;
+				line-height: $line-height-large;
 				margin-bottom: 20px;
 				.ant-calendar-next-month-btn,
 				.ant-calendar-next-year-btn,
 				.ant-calendar-prev-month-btn,
 				.ant-calendar-prev-year-btn {
-					line-height: 24px;
+					line-height: $line-height-large;
 					&:after,
 					&:before {
 						border-color: $color-mono-black;
@@ -60,23 +60,23 @@
 				a {
 					color: $color-mono-black;
 					font-family: $primaryFont;
-					font-weight: 500;
-					font-size: 15px;
-					line-height: 20px;
+					font-weight: $font-weight-default;
+					font-size: $font-size-default;
+					line-height: $line-height-default;
 				}
 			}
 			.ant-calendar-body {
-				padding: 0;
+				padding: $spacing-xxsmall;
 				.ant-calendar-column-header-inner {
-					font-weight: 600;
-					font-size: 12px;
-					line-height: 16px;
+					font-weight: $font-weight-large;
+					font-size: $font-size-small;
+					line-height: $line-height-small;
 					color: $color-mono-grey-2;
 					text-transform: uppercase;
 				}
 				.ant-calendar-cell {
-					padding: 0;
-					margin: 0;
+					padding: $spacing-xxsmall;
+					margin: $spacing-xxsmall;
 					height: auto;
 					div {
 						display: flex;
@@ -92,15 +92,15 @@
 						}
 					}
 					.ant-calendar-date {
-						font-size: 15px;
-						line-height: 20px;
+						font-size: $font-size-default;
+						line-height: $line-height-default;
 						color: $color-mono-black;
 						font-family: $primaryFont;
 						font-weight: normal;
 						width: 100%;
 						height: 20px;
-						margin: 4px 0;
-						padding: 8px 0;
+						margin: 4px $spacing-xxsmall;
+						padding: $spacing-small $spacing-xxsmall;
 						height: 100%;
 						display: block;
 						border-radius: 50%;
@@ -156,7 +156,7 @@
 					.ant-calendar-date {
 						transition: none;
 						background: $transparent-hover;
-						border-radius: 2px;
+						border-radius: $border-radius-small;
 					}
 				}
 			}
@@ -168,21 +168,21 @@
 	width: 540px;
 	.ant-calendar-picker-input {
 		border: none !important;
-		padding: 0 !important;
+		padding: $spacing-xxsmall !important;
 		background: none !important;
 		box-shadow: none !important;
 		input {
-			border: 1px solid $color-mono-grey;
+			border: $border-size-default solid $color-mono-grey;
 			box-sizing: border-box;
-			border-radius: 4px;
-			padding: 16px;
+			border-radius: $border-radius-default;
+			padding: $spacing-default;
 			text-align: left;
 			&:hover {
 				background-color: $transparent-hover;
 			}
 			&:active {
 				background-color: $color-secondary-blue;
-				border: 1px solid $color-primary-blue;
+				border: $border-size-default solid $color-primary-blue;
 			}
 		}
 		.ant-calendar-picker-icon {
@@ -222,7 +222,7 @@
 	&.mh-range-picker-opened {
 		input {
 			background-color: $color-secondary-blue;
-			border: 1px solid $color-primary-blue;
+			border: $border-size-default solid $color-primary-blue;
 		}
 		.ant-calendar-range-picker-separator {
 			&::before,

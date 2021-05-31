@@ -16,20 +16,20 @@
 
 	.mh-icon {
 		fill: $color-mono-white;
-		margin: 0 12px;
+		margin: $spacing-xxsmall 12px;
 	}
 }
 
 /* PRIMARY */
 .ant-btn-primary {
 	background-color: $color-primary-blue;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 20px;
-	padding: 16px 32px;
+	font-weight: $font-weight-large;
+	font-size: $font-size-large;
+	line-height: $line-height-default;
+	padding: $spacing-default $spacing-xlarge;
 	height: auto;
 	min-height: 52px;
-	border-radius: 4px;
+	border-radius: $border-radius-default;
 
 	&:hover {
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
@@ -67,14 +67,14 @@
 
 /* SECONDARY */
 .ant-btn-default {
-	border: 1.5px solid $color-primary-blue;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 20px;
-	padding: 16px 32px;
+	border: $border-size-default solid $color-primary-blue;
+	font-weight: $font-weight-large;
+	font-size: $font-size-large;
+	line-height: $line-height-default;
+	padding: $spacing-default $spacing-xlarge;
 	height: auto;
 	min-height: 52px;
-	border-radius: 4px;
+	border-radius: $border-radius-default;
 	color: $color-primary-blue;
 
 	.mh-icon {
@@ -94,7 +94,7 @@
 	}
 
 	&.disabled {
-		border: 1.5px solid $color-mono-light-grey-4;
+		border: $border-size-default solid $color-mono-light-grey-4;
 		background-color: transparent;
 		color: $color-mono-grey;
 
@@ -130,7 +130,7 @@
 /* TEXT */
 .text-btn {
 	border: none;
-	padding: 8px 16px;
+	padding: $spacing-small $spacing-default;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -151,14 +151,14 @@
 
 /* SMALL */
 .small-btn {
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 20px;
-	padding: 2px 6px;
+	font-weight: $font-weight-large;
+	font-size: $font-size-large;
+	line-height: $line-height-default;
+	padding: 2px $spacing-xsmall;
 	.mh-icon {
 		max-width: 12px;
 		max-height: 12px;
-		margin: 0 6px;
+		margin: $spacing-xxsmall $spacing-xsmall;
 	}
 }
 /* SMALL END */
@@ -166,7 +166,7 @@
 /* ROW */
 .row-btn {
 	background: none;
-	border: 1px solid $color-mono-light-grey-5;
+	border: $border-size-default solid $color-mono-light-grey-5;
 	min-width: 360px;
 	justify-content: flex-start;
 
@@ -180,7 +180,7 @@
 	}
 	&.wait {
 		background: none;
-		border: 1px solid $color-mono-light-grey-5;
+		border: $border-size-default solid $color-mono-light-grey-5;
 		&:hover {
 			background: rgba($color-mono-black, 0.04);
 		}
@@ -205,7 +205,7 @@
 		&.size-circular {
 			width: 52px;
 			height: 52px;
-			border-radius: 99px;
+			border-radius: $border-radius-xxlarge;
 			.mh-icon {
 				height: 30px;
 				min-width: 30px;
@@ -229,7 +229,7 @@
 			}
 		}
 		.mh-icon {
-			margin: 0px;
+			margin: $spacing-xxsmall;
 			fill: $color-mono-grey-2;
 		}
 		&:hover {
@@ -248,7 +248,7 @@
 	width: 360px;
 	height: 52px;
 	background: $transparent-hover;
-	border-radius: 4px;
+	border-radius: $border-radius-default;
 	&.ant-btn-default {
 		border: none;
 	}
@@ -257,9 +257,9 @@
 	}
 	span {
 		font-style: normal;
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 20px;
+		font-weight: $font-weight-large;
+		font-size: $font-size-large;
+		line-height: $line-height-default;
 
 		color: $color-mono-grey-3;
 	}
@@ -269,7 +269,7 @@
 	}
 
 	.mh-icon {
-		margin-right: 0px !important;
+		margin-right: $spacing-xxsmall !important;
 		margin-left: -10px !important;
 	}
 

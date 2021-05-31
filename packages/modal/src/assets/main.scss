@@ -10,28 +10,28 @@
 
 	background: $color-mono-white;
 
-	border: 1px solid $color-mono-light-grey-5;
+	border: $border-size-default solid $color-mono-light-grey-5;
 	box-sizing: border-box;
 	box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
-	border-radius: 8px;
+	border-radius: $border-radius-large;
 	.ant-modal-header {
-		height: 32px;
+		height: $spacing-xlarge;
 		left: 48px;
 		top: 48px;
-		padding: 0;
+		padding: $spacing-xxsmall;
 		width: 100%;
 		font-style: normal;
 		font-weight: normal;
 		font-size: 17px;
-		line-height: 24px;
+		line-height: $line-height-large;
 		text-align: center;
 		color: $color-mono-black;
 	}
 
 	.ant-modal-body {
 		padding: 48px;
-		font-size: 15px;
-		line-height: 20px;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
 		color: $color-mono-black;
 
 		h1 {
@@ -39,18 +39,18 @@
 			font-size: 20px !important;
 			line-height: 28px;
 			color: $color-mono-black;
-			margin: 16px 0 !important;
+			margin: $spacing-default $spacing-xxsmall !important;
 		}
 		.warning {
 			.mh-icon {
 				width: 48px;
 				height: 42px;
-				margin-left: 0;
-				margin-top: 0px;
+				margin-left: $spacing-xxsmall;
+				margin-top: $spacing-xxsmall;
 			}
 		}
 		.success {
-			padding: 16px 0;
+			padding: $spacing-default $spacing-xxsmall;
 			.mh-icon {
 				width: 77px;
 				height: 77px;

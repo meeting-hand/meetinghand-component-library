@@ -5,7 +5,7 @@
     display: block;
     width: 40px;
     height: 40px;
-    border-radius: 4px;
+    border-radius: $border-radius-default;
     overflow: hidden;
 }
 
@@ -16,12 +16,12 @@
     height: 279px;
     background-color: $color-mono-white;
     padding: 21px;
-    border: 1.5px solid $color-mono-light-grey-5;
+    border: $border-size-default solid $color-mono-light-grey-5;
     box-shadow: 0px 12px 16px $shadow-1;
-    border-radius: 4px;
+    border-radius: $border-radius-default;
     position: relative;
     .vc-sketch-saturation-wrap {
-        padding: 0;
+        padding: $spacing-xxsmall;
         height: 237px;
     }
     .vc-saturation {
@@ -39,8 +39,8 @@
         left: 285px;
         top: 21px;
         width: 104px;
-        padding: 0;
-        margin: 0;
+        padding: $spacing-xxsmall;
+        margin: $spacing-xxsmall;
     }
     .vc-sketch-presets {
         border: none;
@@ -53,28 +53,28 @@
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            margin: 0;
-            padding: 0;
+            margin: $spacing-xxsmall;
+            padding: $spacing-xxsmall;
             &:nth-of-type(2),
             &:nth-of-type(5),
             &:nth-of-type(8) {
-                margin-left: 16px;
-                margin-right: 16px;
+                margin-left: $spacing-default;
+                margin-right: $spacing-default;
             }
-            margin-bottom: 16px;
+            margin-bottom: $spacing-default;
         }
     }
     .vc-sketch-color-wrap {
         display: none;
     }
     .vc-sketch-sliders {
-        padding: 0;
+        padding: $spacing-xxsmall;
         .vc-sketch-hue-wrap {
-            height: 16px;
+            height: $spacing-default;
             .vc-hue--horizontal {
-                border-radius: 9px;
+                border-radius: $border-radius-xlarge;
                 .vc-hue-container {
-                    margin: 0;
+                    margin: $spacing-xxsmall;
                     margin-right: 12px;
                 }
             }
@@ -90,23 +90,23 @@
     }
     .vc-saturation-circle,
     .vc-hue-picker {
-        border-radius: 9px;
-        border: 2px solid $color-mono-white;
+        border-radius: $border-radius-xlarge;
+        border: $border-size-large solid $color-mono-white;
         width: 14px;
         height: 14px;
-        padding: 0;
-        margin: 0;
+        padding: $spacing-xxsmall;
+        margin: $spacing-xxsmall;
         //box-shadow: none;
     }
     .vc-input__input {
         height: 52px;
         width: 104px;
-        border: 1px solid $color-mono-grey;
+        // border: $border-size-default solid $color-mono-grey;
         color: $color-mono-black;
-        font-size: 16px;
-        line-height: 20px;
-        padding: 16px;
-        margin: 0;
-        border-radius: 4px;
+        font-size: $font-size-large;
+        line-height: $line-height-default;
+        padding: $spacing-default;
+        margin: $spacing-xxsmall;
+        border-radius: $border-radius-default;
     }
 }

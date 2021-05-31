@@ -3,33 +3,33 @@
 textarea.ant-input {
     width: 360px;
     height: auto;
-    border: 1px solid $color-mono-grey;
+    border: $border-size-default solid $color-mono-grey;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: $border-radius-default;
     background-color: none;
 
-    font-size: 15px;
-    line-height: 20px;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
     color: $color-mono-black;
     caret-color: $color-primary-blue;
 
     &::after {
-        border: 1.5px solid $color-primary-blue;
+        border: $border-size-default solid $color-primary-blue;
         box-sizing: border-box;
-        border-radius: 4px;
+        border-radius: $border-radius-default;
     }
     &:hover {
         background-color: none;
     }
     &::placeholder {
         font-weight: normal;
-        font-size: 15px;
-        line-height: 20px;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
         color: $color-mono-black;
     }
     &.ant-input-disabled {
         background: $color-mono-light-grey;
-        border: 1px solid $color-mono-light-grey-5;
+        border: $border-size-default solid $color-mono-light-grey-5;
 
         &::placeholder {
             color: $color-mono-grey;
@@ -44,18 +44,18 @@ textarea.ant-input {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: -17px;
+    margin-bottom: 10px;
     .mh-input__title {
         font-style: normal;
-        font-weight: 500;
-        font-size: 15px !important;
-        line-height: 20px;
+        font-weight: $font-weight-default;
+        font-size: $font-size-default !important;
+        line-height: $line-height-default;
         color: $color-mono-black;
     }
     svg {
         fill: $color-mono-grey;
         margin-left: 11px;
-        margin-bottom: 3px;
+        margin-bottom: -17px;
         width: 20px;
         height: 20px;
     }

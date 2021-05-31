@@ -8,8 +8,8 @@
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 18px !important;
-	border-radius: 4px;
+	padding: $spacing-large !important;
+	border-radius: $border-radius-default;
 
 	&.ant-alert-info {
 		display: flex;
@@ -18,18 +18,18 @@
 		border-color: $color-mono-light-grey-2;
 	}
 	.ant-alert-message {
-		font-size: 15px;
-		line-height: 20px;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
 		color: $color-mono-grey-3;
-		margin: 0px 18px;
+		margin: $spacing-xxsmall $spacing-large;
 	}
 
 	svg {
 		&.ant-alert-icon {
-			width: 16px;
-			height: 16px;
+			width: $icon-size-default;
+			height: $icon-size-default;
 			fill: $color-primary-blue;
-			margin-right: 0;
+			margin-right: $spacing-xxsmall;
 		}
 	}
 
@@ -40,8 +40,8 @@
 			.ant-alert-message {
 				font-style: normal;
 				font-weight: normal;
-				font-size: 15px;
-				line-height: 20px;
+				font-size: $font-size-default;
+				line-height: $line-height-default;
 
 				display: flex;
 				flex-direction: row;
@@ -56,8 +56,8 @@
 			.ant-alert-message {
 				font-style: normal;
 				font-weight: normal;
-				font-size: 15px;
-				line-height: 20px;
+				font-size: $font-size-default;
+				line-height: $line-height-default;
 
 				display: flex;
 				flex-direction: row;
@@ -69,8 +69,8 @@
 		}
 	}
 	.ant-alert-close-icon {
-		padding: 6px;
-		border-radius: 4px;
+		padding: $spacing-xsmall;
+		border-radius: $border-radius-default;
 		.anticon-close {
 			svg {
 				display: none;
@@ -79,8 +79,8 @@
 			&::before {
 				@include close-icon("%232196f3");
 				content: "";
-				width: 14px;
-				height: 14px;
+				width: $icon-size-default;
+				height: $icon-size-default;
 				display: block;
 			}
 		}
@@ -88,12 +88,12 @@
 			text-align: center;
 
 			color: $color-primary-blue;
-			font-weight: 500;
-			font-size: 12px;
-			line-height: 16px;
-			padding: 2px 6px;
+			font-weight: $font-weight-default;
+			font-size: $font-size-small;
+			line-height: $line-height-small;
+			padding: 2px $spacing-xsmall;
 
-			border-radius: 4px;
+			border-radius: $border-radius-default;
 		}
 		&:hover {
 			background: $transparent-hover-3;

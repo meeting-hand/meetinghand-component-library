@@ -7,19 +7,19 @@
 			width: 41px;
 			font-style: normal;
 			font-weight: normal;
-			font-size: 16px;
-			line-height: 20px;
+			font-size: $font-size-large;
+			line-height: $line-height-default;
 
 			color: $color-mono-black;
-			margin-bottom: 18px;
+			margin-bottom: $spacing-large;
 
-			padding-left: 0px;
+			padding-left: $spacing-xxsmall;
 		}
 		.ant-tabs-tab-active {
 			font-style: normal;
-			font-weight: 600;
-			font-size: 16px;
-			line-height: 20px;
+			font-weight: $font-weight-large;
+			font-size: $font-size-large;
+			line-height: $line-height-default;
 		}
 	}
 
@@ -40,15 +40,14 @@
 			width: 41px;
 			height: 4px;
 			background-color: $color-primary-blue;
-			margin-left: 2px;
 		}
 	}
 
 	&.black {
 		.ant-tabs-tab {
-			font-weight: 600;
-			font-size: 17px;
-			line-height: 24px;
+			font-weight: $font-weight-large;
+			font-size: $font-size-xlarge;
+			line-height: $line-height-large;
 
 			color: $color-mono-grey-2;
 			&:hover {
@@ -57,8 +56,8 @@
 		}
 		.ant-tabs-tab-active {
 			font-weight: bold;
-			font-size: 17px;
-			line-height: 24px;
+			font-size: $font-size-xlarge;
+			line-height: $line-height-large;
 			color: $color-mono-black;
 			&:hover {
 				color: $color-mono-black;

@@ -6,7 +6,7 @@
 
     border: 1.5px solid $color-primary-blue;
     box-sizing: border-box;
-    border-radius: 99px;
+    border-radius: $border-radius-xxlarge;
     background: none;
 
     &::after {
@@ -19,7 +19,7 @@
 }
 .ant-switch-checked {
     background: $color-primary-blue;
-    border-radius: 99px;
+    border-radius: $border-radius-xxlarge;
     &::after {
         background-color: $color-mono-white;
     }
@@ -29,11 +29,12 @@
 }
 
 .ant-switch-disabled {
-    border: 1.5px solid $color-mono-grey;
+    border: $border-size-default solid $color-mono-grey;
     box-sizing: border-box;
-    border-radius: 99px;
+    border-radius: $border-radius-xxlarge;
     background: none;
     border-color: $color-mono-grey;
+    height: 22.5px;
     &::after {
         background: $color-mono-grey;
     }

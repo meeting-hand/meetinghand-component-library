@@ -1,3 +1,34 @@
 @import "./colors";
 
 $primaryFont: "Inter", sans-serif;
+
+$font-size-small: 12px;
+$font-size-default: 15px;
+$font-size-large: 16px;
+$font-size-xlarge: 17px;
+
+$font-weight-small: 400;
+$font-weight-default: 500;
+$font-weight-large: 600;
+
+$line-height-small: 16px;
+$line-height-default: 20px;
+$line-height-large: 24px;
+
+$spacing-xxsmall: 0px;
+$spacing-xsmall: 6px;
+$spacing-small: 8px;
+$spacing-default: 16px;
+$spacing-large: 18px;
+$spacing-xlarge: 32px;
+
+$icon-size-default: 20px;
+
+$border-size-default: 1px;
+$border-size-large: 2px;
+
+$border-radius-small: 2px;
+$border-radius-default: 4px;
+$border-radius-large: 8px;
+$border-radius-xlarge: 9px;
+$border-radius-xxlarge: 99px;
