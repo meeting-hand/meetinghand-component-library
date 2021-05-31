@@ -12,7 +12,7 @@ storiesOf("Notification", module).add("All", () => ({
         description: "Lorem ipsum dolor sit amet.",
         title: "Title",
         duration: "0",
-        placement: "topRight",
+        placement: "bottomRight",
       },
       notificationErrorStatus: false,
       notificationError: {
@@ -20,7 +20,7 @@ storiesOf("Notification", module).add("All", () => ({
         description: "Lorem ipsum dolor sit amet.",
         title: "Title",
         duration: "0",
-        placement: "topRight",
+        placement: "bottomRight",
       },
       notificationInfoStatus: false,
       notificationInfo: {
@@ -28,7 +28,7 @@ storiesOf("Notification", module).add("All", () => ({
         description: "Lorem ipsum dolor sit amet.",
         title: "Title",
         duration: "0",
-        placement: "topRight",
+        placement: "bottomRight",
       },
       notificationHintStatus: false,
       notificationHint: {
@@ -36,7 +36,7 @@ storiesOf("Notification", module).add("All", () => ({
         description: "Lorem ipsum dolor sit amet.",
         title: "Title",
         duration: "0",
-        placement: "topRight",
+        placement: "bottomRight",
       },
     };
   },

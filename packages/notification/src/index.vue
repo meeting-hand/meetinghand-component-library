@@ -44,7 +44,7 @@ export default {
     placement: {
       type: String,
       required: true,
-      default: "topRight",
+      default: "bottomRight",
       validator: (_v) =>
         ["topRight", "topLeft", "bottomRight", "bottomLeft"].includes(_v),
     },
