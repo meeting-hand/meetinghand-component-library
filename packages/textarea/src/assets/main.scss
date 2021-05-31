@@ -8,7 +8,7 @@ textarea.ant-input {
     border-radius: 4px;
     background-color: none;
 
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
     color: $color-mono-black;
     caret-color: $color-primary-blue;
@@ -23,7 +23,7 @@ textarea.ant-input {
     }
     &::placeholder {
         font-weight: normal;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 20px;
         color: $color-mono-black;
     }
@@ -48,14 +48,15 @@ textarea.ant-input {
     .mh-input__title {
         font-style: normal;
         font-weight: 500;
-        font-size: 16px !important;
+        font-size: 15px !important;
         line-height: 20px;
         color: $color-mono-black;
     }
     svg {
         fill: $color-mono-grey;
         margin-left: 11px;
-        width: 18px;
-        height: 18px;
+        margin-bottom: 3px;
+        width: 20px;
+        height: 20px;
     }
 }
