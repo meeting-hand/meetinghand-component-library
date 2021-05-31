@@ -1,20 +1,21 @@
 {
-    "name": "@meetinghand/style",
-    "description": "MeetingHand Base Styles",
-    "version": "0.0.5-alpha.0",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-    },
-    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-    "bugs": {
-        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-    },
-    "author": "Fatih Sinan Yaman",
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "lib/*"
-    ]
+	"name": "@meetinghand/style",
+	"description": "MeetingHand Base Styles",
+	"version": "0.0.5-alpha.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+	},
+	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+	"bugs": {
+		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+	},
+	"author": "Fatih Sinan Yaman",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"lib/*",
+		"icons/*"
+	]
 }
