@@ -15,13 +15,13 @@
 <script>
 import Button from "ant-design-vue/lib/button";
 
-import Primary from "./types/primary";
-import Secondary from "./types/secondary";
-import Small from "./types/small";
-import Text from "./types/text";
-import Row from "./types/row";
-import Iconic from "./types/iconic";
-import Social from "./types/social";
+import Primary from "./types/primary.vue";
+import Secondary from "./types/secondary.vue";
+import Small from "./types/small.vue";
+import Text from "./types/text.vue";
+import Row from "./types/row.vue";
+import Iconic from "./types/iconic.vue";
+import Social from "./types/social.vue";
 
 export default {
   name: "MhButton",

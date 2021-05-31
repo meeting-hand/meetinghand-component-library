@@ -1,44 +1,29 @@
 {
-    "name": "@meetinghand/input",
-    "description": "Meetinghand Component Library Component for input",
-    "version": "0.0.2-alpha.0",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-    },
-    "keywords": [
-        "vue3",
-        "component",
-        "library",
-        "vue3",
-        "lerna",
-        "storybook"
-    ],
-    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-    "bugs": {
-        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-    },
-    "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/input.umd.js",
-    "module": "./dist/@meetinghand/input.es.js",
-    "exports": {
-        ".": {
-            "import": "./dist/@meetinghand/input.es.js",
-            "require": "./dist/@meetinghand/input.umd.js"
-        }
-    },
-    "scripts": {
-        "build": "vite build"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "dist/*"
-    ],
-    "dependencies": {
-        "@meetinghand/style": "file:../style",
-        "cleave.js": "^1.6.0",
-        "vue": "^3.0.5"
-    }
+	"name": "@meetinghand/input",
+	"description": "Meetinghand Component Library Component for input",
+	"version": "0.0.2-alpha.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+	},
+	"keywords": [
+		"vue3",
+		"meetinghand",
+		"input"
+	],
+	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+	"bugs": {
+		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+	},
+	"author": "Fatih Sinan Yaman",
+	"main": "./dist/index.js",
+	"module": "./index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@meetinghand/style": "file:../style",
+		"cleave.js": "^1.6.0",
+		"vue": "^3.0.5"
+	}
 }
