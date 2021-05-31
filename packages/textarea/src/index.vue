@@ -1,6 +1,6 @@
 <template>
   <div class="mh-input-text">
-    <h1 v-if="title" class="mh-input__title">{{ title }}</h1>
+    <span v-if="title" class="mh-input__title">{{ title }}</span>
     <mh-icon :name="icon" v-if="icon" />
   </div>
   <a-textarea
