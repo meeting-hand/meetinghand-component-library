@@ -70,8 +70,13 @@ export default {
         emit("update:modelValue", data);
       },
     });
+    const errorStatus = computed(() => {
+      return props.hasError || props.errorMessage;
+    });
+
     return {
       value,
+      errorStatus,
     };
   },
 };

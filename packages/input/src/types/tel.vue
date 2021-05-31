@@ -2,7 +2,7 @@
   <a-input
     :placeholder="placeholder"
     :class="[
-      { error: hasError },
+      { error: errorStatus },
       'mh-input',
       'mh-tel-input',
       { disabled: disabled },
@@ -145,6 +145,10 @@ export default {
       value.value = data;
     };
 
+    const errorStatus = computed(() => {
+      return props.hasError || props.errorMessage;
+    });
+
     onMounted(() => {
       if (valueDialCode.value) {
         dialCode.value = valueDialCode.value;
@@ -168,6 +172,7 @@ export default {
       inputChanged,
       valueDialCode,
       defaultValue,
+      errorStatus,
     };
   },
 };

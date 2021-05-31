@@ -1,7 +1,7 @@
 <template>
   <a-input
     :placeholder="placeholder"
-    :class="[{ error: hasError, 'allow-clear': allowClear }, 'mh-input']"
+    :class="[{ error: errorStatus, 'allow-clear': allowClear }, 'mh-input']"
     :disabled="disabled"
     :allow-clear="allowClear"
     v-model:value="value"
@@ -71,8 +71,13 @@ export default {
         emit("update:modelValue", data);
       },
     });
+    const errorStatus = computed(() => {
+      return props.hasError || props.errorMessage;
+    });
+
     return {
       value,
+      errorStatus,
     };
   },
 };
