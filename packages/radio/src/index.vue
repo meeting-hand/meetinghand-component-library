@@ -1,16 +1,42 @@
 <template>
-  <a-radio v-model:checked="value" :disabled="disabled">{{ text }}</a-radio>
+  <a-radio
+    :disabled="disabled"
+    v-if="type === 'default'"
+    v-model:checked="value"
+  >
+    {{ text }}
+  </a-radio>
+  <mh-button
+    @click="set()"
+    :class="[
+      'mh-btn-radio',
+      { 'mh-btn-radio-selected': value },
+      { 'mh-btn-radio-disabled': disabled },
+    ]"
+    :disabled="disabled"
+    type="secondary"
+    v-else
+  >
+    {{ text }}
+  </mh-button>
 </template>
 
 <script>
 import Radio from "ant-design-vue/lib/radio";
+import MhButton from "@meetinghand/button";
 
 export default {
   name: "MhRadio",
   components: {
     [Radio.name]: Radio,
+    MhButton,
   },
   props: {
+    type: {
+      type: String,
+      default: "default",
+      validator: (_v) => ["default", "button"].includes(_v),
+    },
     disabled: {
       type: Boolean,
       default: false,
@@ -33,13 +59,15 @@ export default {
       get() {
         return this.modelValue == this.data;
       },
-      set(status) {
-        if (status) {
-          this.$emit("update:modelValue", this.data);
-        } else {
-          this.$emit("update:modelValue", null);
-        }
+      set() {
+        this.$emit("update:modelValue", this.data);
       },
+    },
+  },
+  methods: {
+    set() {
+      if (this.disabled) return;
+      this.value = this.modelValue;
     },
   },
 };
