@@ -20,6 +20,6 @@
 		"dist/*"
 	],
 	"dependencies": {
-		"@meetinghand/style": "file:../style",
+		"@meetinghand/style": "file:../style"
 	}
 }
