@@ -14,7 +14,7 @@
 <script>
 import DatePicker from "ant-design-vue/lib/date-picker";
 
-import MhDate from "@meetinghand/style/icons/uiDate";
+import MhDate from "@meetinghand/style/icons/uiDate.vue";
 import { h } from "vue";
 
 export default {

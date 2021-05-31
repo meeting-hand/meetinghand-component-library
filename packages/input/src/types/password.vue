@@ -17,7 +17,7 @@
 
 <script>
 import Input from "ant-design-vue/lib/input/Password";
-import MhIcon from "@meetinghand/style/icons/index";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import { computed } from "vue";
 

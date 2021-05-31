@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import Default from "./types/default";
-import Password from "./types/password";
-import Tel from "./types/tel";
+import Default from "./types/default.vue";
+import Password from "./types/password.vue";
+import Tel from "./types/tel.vue";
 import { computed } from "vue";
 
 export default {

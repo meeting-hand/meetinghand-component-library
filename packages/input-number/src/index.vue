@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Default from "./types/default";
-import Currency from "./types/currency";
+import Default from "./types/default.vue";
+import Currency from "./types/currency.vue";
 
 export default {
   name: "InputNumber",

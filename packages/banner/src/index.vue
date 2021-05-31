@@ -15,8 +15,8 @@
 <script>
 import Banner from "ant-design-vue/lib/alert";
 
-import Section from "./types/section";
-import FullWidth from "./types/fullWidth";
+import Section from "./types/section.vue";
+import FullWidth from "./types/fullWidth.vue";
 
 export default {
   name: "Banner",

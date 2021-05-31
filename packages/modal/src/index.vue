@@ -25,8 +25,8 @@
 
 <script>
 import Modal from "ant-design-vue/lib/modal";
-import MHIcon from "@meetinghand/style/icons/index";
-import SystemClose from "@meetinghand/style/icons/systemClose";
+import MHIcon from "@meetinghand/style/icons/index.vue";
+import SystemClose from "@meetinghand/style/icons/systemClose.vue";
 import { h } from "vue";
 
 export default {

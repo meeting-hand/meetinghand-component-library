@@ -10,7 +10,7 @@
 </template>
 <script>
 import Banner from "ant-design-vue/lib/alert";
-import SystemInfo from "@meetinghand/style/icons/systemStatusInfo";
+import SystemInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 
 import { h, computed } from "vue";
 

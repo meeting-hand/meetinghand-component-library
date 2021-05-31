@@ -17,7 +17,7 @@
 
 <script>
 import TextArea from "ant-design-vue/lib/input/TextArea";
-import MHIcon from "@meetinghand/style/icons";
+import MHIcon from "@meetinghand/style/icons/index.vue";
 
 export default {
   name: "MhTextArea",

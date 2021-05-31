@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Default from "./types/default";
-import Range from "./types/range";
+import Default from "./types/default.vue";
+import Range from "./types/range.vue";
 
 // TODO: disabled dates
 export default {

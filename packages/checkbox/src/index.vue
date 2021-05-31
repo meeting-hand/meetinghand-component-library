@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Single from "./types/single";
-import Multiple from "./types/multiple";
+import Single from "./types/single.vue";
+import Multiple from "./types/multiple.vue";
 
 export default {
   name: "MhCheckbox",

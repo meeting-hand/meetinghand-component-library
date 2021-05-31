@@ -23,7 +23,7 @@
 
 <script>
 import Radio from "ant-design-vue/lib/radio";
-import MhButton from "@meetinghand/button";
+import MhButton from "@meetinghand/button/src/index.vue";
 
 export default {
   name: "MhRadio",

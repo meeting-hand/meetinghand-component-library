@@ -5,6 +5,7 @@ import MhIcon from "./icons/index";
 import "../../assets/storybook/style.css";
 
 storiesOf("Style", module).add("Style!", () => ({
+	components: { MhIcon },
 	template: `
     <h1>MeetingHand Base Style Library</h1>
     <p>Common scss variables & styles</p>
@@ -112,7 +113,7 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="system-settings" />
 			<h1>Social</h1>
 			<mh-icon name="social-google" />
-			<mh-icon name="social-face-book" />
+			<mh-icon name="social-facebook" />
 			<mh-icon name="social-linkedin" />
 			<mh-icon name="social-twitter" />
 			<h1>Mobile App </h1>

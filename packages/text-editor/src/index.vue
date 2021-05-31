@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import MhIcon from "@meetinghand/style/icons/index";
 import { QuillEditor, Quill } from "@vueup/vue-quill";
 import MhEditorIcons from "./assets/icons";
 
@@ -88,7 +87,6 @@ export default {
   },
   components: {
     QuillEditor,
-    MhIcon,
   },
   computed: {
     value: {
