@@ -32,3 +32,9 @@ $border-radius-default: 4px;
 $border-radius-large: 8px;
 $border-radius-xlarge: 9px;
 $border-radius-xxlarge: 99px;
+
+$pixels: (
+	8: $spacing-small,
+	16: $spacing-default,
+	32: $spacing-xlarge,
+);
