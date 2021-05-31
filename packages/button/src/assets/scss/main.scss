@@ -25,7 +25,7 @@
 	background-color: $color-primary-blue;
 	font-weight: 600;
 	font-size: 16px;
-	line-height: 18px;
+	line-height: 20px;
 	padding: 16px 32px;
 	height: auto;
 	min-height: 52px;
@@ -70,7 +70,7 @@
 	border: 1.5px solid $color-primary-blue;
 	font-weight: 600;
 	font-size: 16px;
-	line-height: 18px;
+	line-height: 20px;
 	padding: 16px 32px;
 	height: auto;
 	min-height: 52px;
@@ -151,9 +151,9 @@
 
 /* SMALL */
 .small-btn {
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
 	padding: 2px 6px;
 	.mh-icon {
 		max-width: 12px;
@@ -259,7 +259,7 @@
 		font-style: normal;
 		font-weight: 600;
 		font-size: 16px;
-		line-height: 18px;
+		line-height: 20px;
 
 		color: $color-mono-grey-3;
 	}
