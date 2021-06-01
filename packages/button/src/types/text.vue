@@ -9,6 +9,7 @@
       'text-btn',
     ]"
     :disabled="disabled || wait"
+    :htmlType="submit ? 'submit' : 'button'"
   >
     <mh-icon :name="icon" v-if="icon" />
     <slot></slot>
@@ -44,6 +45,10 @@ export default {
       default: false,
     },
     wait: {
+      type: Boolean,
+      default: false,
+    },
+    submit: {
       type: Boolean,
       default: false,
     },
