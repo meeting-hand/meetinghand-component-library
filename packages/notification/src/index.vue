@@ -35,13 +35,10 @@ export default {
       required: true,
     },
     duration: {
-      type: String,
-      required: true,
+      type: Number,
     },
     placement: {
       type: String,
-      required: true,
-      default: "bottomRight",
       validator: (_v) =>
         ["topRight", "topLeft", "bottomRight", "bottomLeft"].includes(_v),
     },
