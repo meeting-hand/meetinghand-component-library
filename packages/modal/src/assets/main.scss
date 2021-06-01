@@ -34,6 +34,7 @@
 		font-size: $font-size-default;
 		line-height: $line-height-default;
 		color: $color-mono-black;
+		width: 100%;
 
 		h1 {
 			font-weight: bold;
@@ -60,7 +61,8 @@
 	}
 	.ant-modal-footer {
 		border-top: none;
-		padding: 48px;
+		padding: 24px 48px;
+		width: 100%;
 	}
 	.ant-modal-close {
 		svg {
