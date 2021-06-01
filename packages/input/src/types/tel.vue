@@ -1,12 +1,8 @@
 <template>
+  <div class="mh-input"></div>
   <a-input
     :placeholder="placeholder"
-    :class="[
-      { error: errorStatus },
-      'mh-input',
-      'mh-tel-input',
-      { disabled: disabled },
-    ]"
+    :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
     :disabled="disabled"
     ref="telInput"
     :id="id"
