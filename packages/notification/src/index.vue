@@ -2,7 +2,6 @@
 
 <script>
 import Notification from "ant-design-vue/lib/notification";
-import Button from "ant-design-vue/lib/button";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 import StatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
@@ -14,8 +13,6 @@ import { h } from "vue";
 export default {
   name: "MhNotification",
   components: {
-    [Notification.name]: Notification,
-    [Button.name]: Button,
     "mh-icon": MHIcon,
     "status-success": StatusSuccess,
   },
