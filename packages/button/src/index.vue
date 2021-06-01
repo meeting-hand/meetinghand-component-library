@@ -7,6 +7,7 @@
     :disabled="disabled"
     :wait="wait"
     :socialMedia="socialMedia"
+    :submit="submit"
   >
     <slot></slot>
   </component>
@@ -79,6 +80,10 @@ export default {
       type: String,
       default: null,
       validator: (_v) => ["google", "facebook", "linkedin"].includes(_v),
+    },
+    submit: {
+      type: Boolean,
+      default: false,
     },
   },
 };

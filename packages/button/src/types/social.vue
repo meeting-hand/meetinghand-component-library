@@ -1,5 +1,9 @@
 <template>
-  <a-button type="default" :class="[`${socialMedia}`, `social-btn`]">
+  <a-button
+    type="default"
+    :class="[`${socialMedia}`, `social-btn`]"
+    :htmlType="submit ? 'submit' : 'button'"
+  >
     <mh-icon :name="icon" v-if="icon" />
     <slot></slot>
   </a-button>
@@ -24,6 +28,10 @@ export default {
       type: String,
       default: "google",
       validator: (_v) => ["google", "facebook", "linkedin"].includes(_v),
+    },
+    submit: {
+      type: Boolean,
+      default: false,
     },
   },
 };

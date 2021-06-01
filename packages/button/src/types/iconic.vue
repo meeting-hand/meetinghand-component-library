@@ -2,6 +2,7 @@
   <a-button
     :class="[`size-${size}`, { disabled: disabled }, 'iconic-btn']"
     :disabled="disabled"
+    :htmlType="submit ? 'submit' : 'button'"
   >
     <mh-icon :name="icon" v-if="icon" />
   </a-button>
@@ -26,6 +27,10 @@ export default {
       default: null,
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    submit: {
       type: Boolean,
       default: false,
     },
