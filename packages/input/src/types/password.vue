@@ -21,44 +21,13 @@
 import Input from "ant-design-vue/lib/input/Password";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
+import inputProps from "../utils/props";
+
 import { computed } from "vue";
 
 export default {
   name: "MhInputPassword",
-  props: {
-    modelValue: {
-      type: String,
-      default: "",
-    },
-    hasError: {
-      type: Boolean,
-      default: false,
-    },
-    errorMessage: {
-      type: String,
-      default: null,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    placeholder: {
-      type: String,
-      default: "",
-    },
-    leftIcon: {
-      type: String,
-      default: null,
-    },
-    rightIcon: {
-      type: String,
-      default: null,
-    },
-    allowClear: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props: inputProps,
   components: {
     [Input.name]: Input,
     MhIcon,

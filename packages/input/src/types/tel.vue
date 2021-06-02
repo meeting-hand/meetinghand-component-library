@@ -1,31 +1,32 @@
 <template>
-  <div class="mh-input"></div>
-  <a-input
-    :placeholder="placeholder"
-    :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
-    :disabled="disabled"
-    ref="telInput"
-    :id="id"
-    :defaultValue="defaultValue"
-    @change="inputChanged"
-  >
-    <template #addonBefore>
-      <a-select
-        v-model:value="dialCode"
-        :options="phoneCodes"
-        :suffixIcon="suffixIcon"
-        option-filter-prop="label"
-        :filter-option="filterOption"
-        show-search
-        @change="setCleave"
-        :disabled="disabled"
-      >
-      </a-select>
-    </template>
-  </a-input>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
+  <div class="mh-input">
+    <a-input
+      :placeholder="placeholder"
+      :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
+      :disabled="disabled"
+      ref="telInput"
+      :id="id"
+      :defaultValue="defaultValue"
+      @change="inputChanged"
+    >
+      <template #addonBefore>
+        <a-select
+          v-model:value="dialCode"
+          :options="phoneCodes"
+          :suffixIcon="suffixIcon"
+          option-filter-prop="label"
+          :filter-option="filterOption"
+          show-search
+          @change="setCleave"
+          :disabled="disabled"
+        >
+        </a-select>
+      </template>
+    </a-input>
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
+  </div>
 </template>
 
 <script>
@@ -39,46 +40,15 @@ import Cleave from "cleave.js";
 
 import { h, ref, onMounted, computed } from "vue";
 
+import inputProps from "../utils/props";
+
 export default {
   name: "MhInputTel",
   components: {
     [Input.name]: Input,
     [Select.name]: Select,
   },
-  props: {
-    modelValue: {
-      type: String,
-      default: "",
-    },
-    hasError: {
-      type: Boolean,
-      default: false,
-    },
-    errorMessage: {
-      type: String,
-      default: null,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    placeholder: {
-      type: String,
-      default: "",
-    },
-    leftIcon: {
-      type: String,
-      default: null,
-    },
-    rightIcon: {
-      type: String,
-      default: null,
-    },
-    allowClear: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props: inputProps,
   setup(props, { emit }) {
     // phone dialCode
     const phoneCodes = CountryPhoneCodes.map((_c) => {
