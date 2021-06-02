@@ -1,21 +1,17 @@
 <template></template>
-
 <script>
 import Notification from "ant-design-vue/lib/notification";
-import MHIcon from "@meetinghand/style/icons/index.vue";
+
 import StatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
+
 import { h } from "vue";
 
 export default {
   name: "MhNotification",
-  components: {
-    "mh-icon": MHIcon,
-    "status-success": StatusSuccess,
-  },
   props: {
     type: {
       type: String,
@@ -24,21 +20,19 @@ export default {
     },
     description: {
       type: String,
-      default: null,
+      default: "",
     },
     title: {
       type: String,
-      default: null,
-    },
-    modelValue: {
-      type: Boolean,
-      required: true,
+      default: "",
     },
     duration: {
       type: Number,
+      default: 3,
     },
     placement: {
       type: String,
+      default: "bottomRight",
       validator: (_v) =>
         ["topRight", "topLeft", "bottomRight", "bottomLeft"].includes(_v),
     },
@@ -54,14 +48,14 @@ export default {
       };
 
       Notification.open({
-        message: `${props.title}`,
-        description: `${props.description}`,
-        duration: Number(`${props.duration}`),
-        class: `${props.type}`,
+        message: props.title,
+        description: props.description,
+        duration: props.duration,
+        class: props.type,
         icon: h(icons[props.type]),
-        placement: `${props.placement}`,
+        placement: props.placement,
         onClose: () => {
-          emit("update:modelValue", false);
+          emit("close", true);
         },
         closeIcon: h(SystemClose),
       });
@@ -76,7 +70,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>
-
