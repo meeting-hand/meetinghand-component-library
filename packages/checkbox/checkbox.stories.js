@@ -7,7 +7,8 @@ storiesOf("Checkbox", module).add("Single", () => ({
 		return {
 			value: false,
 			value2: false,
-			value3: true,
+			value3: false,
+      value4: true,
 		};
 	},
 	template: `
@@ -16,15 +17,20 @@ storiesOf("Checkbox", module).add("Single", () => ({
       <br />
       <pre>{{ value }}</pre>
       <hr />
-      <mh-checkbox v-model="value2" label="disabled false" disabled />
+      <mh-checkbox v-model="value2" label="error checkbox" has-error error-message="this field is required"/>
       <br />
       <br />
       <pre>{{ value2 }}</pre>
       <hr />
-      <mh-checkbox v-model="value3" label="disabled true" disabled />
+      <mh-checkbox v-model="value3" label="disabled false" disabled />
       <br />
       <br />
       <pre>{{ value3 }}</pre>
+      <hr />
+      <mh-checkbox v-model="value4" label="disabled true" disabled />
+      <br />
+      <br />
+      <pre>{{ value4 }}</pre>
     `,
 }));
 
@@ -36,7 +42,7 @@ storiesOf("Checkbox", module).add("Group", () => ({
 		};
 	},
 	template: `
-      <mh-checkbox v-model="value" label="John" data="John" />
+      <mh-checkbox v-model="value" label="John" data="John"  />
       <br />
       <mh-checkbox v-model="value" label="Allen" data="Allen" />
       <br />
