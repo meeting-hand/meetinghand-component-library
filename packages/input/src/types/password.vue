@@ -1,18 +1,20 @@
 <template>
-  <a-input-password
-    :placeholder="placeholder"
-    :class="[{ error: hasError }, 'mh-input']"
-    :disabled="disabled"
-    v-model:value="value"
-  >
-    <!-- <template #addonAfter>
+  <div class="mh-input">
+    <a-input-password
+      :placeholder="placeholder"
+      :class="[{ error: errorStatus }]"
+      :disabled="disabled"
+      v-model:value="value"
+    >
+      <!-- <template #addonAfter>
       <mh-icon name="system-show" />
       <mh-icon name="system-hide" />
     </template> -->
-  </a-input-password>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
+    </a-input-password>
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
+  </div>
 </template>
 
 <script>

@@ -1,35 +1,32 @@
 <template>
-  <a-input
-    :placeholder="placeholder"
-    :class="[
-      { error: errorStatus },
-      'mh-input',
-      'mh-tel-input',
-      { disabled: disabled },
-    ]"
-    :disabled="disabled"
-    ref="telInput"
-    :id="id"
-    :defaultValue="defaultValue"
-    @change="inputChanged"
-  >
-    <template #addonBefore>
-      <a-select
-        v-model:value="dialCode"
-        :options="phoneCodes"
-        :suffixIcon="suffixIcon"
-        option-filter-prop="label"
-        :filter-option="filterOption"
-        show-search
-        @change="setCleave"
-        :disabled="disabled"
-      >
-      </a-select>
-    </template>
-  </a-input>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
+  <div class="mh-input">
+    <a-input
+      :placeholder="placeholder"
+      :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
+      :disabled="disabled"
+      ref="telInput"
+      :id="id"
+      :defaultValue="defaultValue"
+      @change="inputChanged"
+    >
+      <template #addonBefore>
+        <a-select
+          v-model:value="dialCode"
+          :options="phoneCodes"
+          :suffixIcon="suffixIcon"
+          option-filter-prop="label"
+          :filter-option="filterOption"
+          show-search
+          @change="setCleave"
+          :disabled="disabled"
+        >
+        </a-select>
+      </template>
+    </a-input>
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
+  </div>
 </template>
 
 <script>
