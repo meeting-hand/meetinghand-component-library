@@ -43,46 +43,15 @@ import Cleave from "cleave.js";
 
 import { h, ref, onMounted, computed } from "vue";
 
+import inputProps from "../utils/props";
+
 export default {
   name: "MhInputTel",
   components: {
     [Input.name]: Input,
     [Select.name]: Select,
   },
-  props: {
-    modelValue: {
-      type: String,
-      default: "",
-    },
-    hasError: {
-      type: Boolean,
-      default: false,
-    },
-    errorMessage: {
-      type: String,
-      default: null,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    placeholder: {
-      type: String,
-      default: "",
-    },
-    leftIcon: {
-      type: String,
-      default: null,
-    },
-    rightIcon: {
-      type: String,
-      default: null,
-    },
-    allowClear: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props: inputProps,
   setup(props, { emit }) {
     // phone dialCode
     const phoneCodes = CountryPhoneCodes.map((_c) => {

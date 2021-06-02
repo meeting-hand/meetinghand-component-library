@@ -19,7 +19,7 @@ storiesOf("Input", module).add("Input", () => ({
 	},
 	template: `
       <h1>Standart</h1>
-      <mh-input v-model="value1" />
+      <mh-input v-model="value1" email />
       <br />
       <br />
       <mh-input v-model="value2" left-icon="arrow-down" right-icon="arrow-up" />

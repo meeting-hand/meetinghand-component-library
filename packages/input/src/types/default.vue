@@ -4,6 +4,7 @@
     :class="[{ error: errorStatus, 'allow-clear': allowClear }, 'mh-input']"
     :disabled="disabled"
     :allow-clear="allowClear"
+    :type="inputType"
     v-model:value="value"
   >
     <template #prefix v-if="leftIcon">
@@ -21,43 +22,14 @@
 <script>
 import Input from "ant-design-vue/lib/input";
 import MhIcon from "@meetinghand/style/icons/index.vue";
+
+import inputProps from "../utils/props";
+
 import { computed } from "vue";
+
 export default {
   name: "MhInputDefault",
-  props: {
-    modelValue: {
-      type: String,
-      default: "",
-    },
-    hasError: {
-      type: Boolean,
-      default: false,
-    },
-    errorMessage: {
-      type: String,
-      default: null,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    placeholder: {
-      type: String,
-      default: "",
-    },
-    leftIcon: {
-      type: String,
-      default: null,
-    },
-    rightIcon: {
-      type: String,
-      default: null,
-    },
-    allowClear: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props: inputProps,
   components: {
     [Input.name]: Input,
     MhIcon,
@@ -71,13 +43,19 @@ export default {
         emit("update:modelValue", data);
       },
     });
+
     const errorStatus = computed(() => {
       return props.hasError || props.errorMessage;
+    });
+
+    const inputType = computed(() => {
+      return props.email ? "email" : "text";
     });
 
     return {
       value,
       errorStatus,
+      inputType,
     };
   },
 };
