@@ -5,6 +5,8 @@
     :label="label"
     :disabled="disabled"
     :data="data"
+    :hasError="hasError"
+    :errorMessage="errorMessage"
   >
     <slot></slot>
   </component>
@@ -31,6 +33,14 @@ export default {
     },
     data: {
       type: [String, Number],
+      default: null,
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
       default: null,
     },
   },

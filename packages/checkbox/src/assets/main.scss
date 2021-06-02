@@ -41,6 +41,12 @@
 	& > span:nth-child(2) {
 		padding: $spacing-xxsmall $spacing-default;
 	}
+
+	&.error {
+		.ant-checkbox-inner {
+			border: $border-size-default solid $color-primary-red;
+		}
+	}
 }
 
 .ant-checkbox-wrapper-disabled {
