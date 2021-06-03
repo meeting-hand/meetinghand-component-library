@@ -61,6 +61,12 @@
 			fill: none !important;
 		}
 	}
+	&.green {
+		background: #0ead88;
+		&:hover {
+			background: #15c299;
+		}
+	}
 }
 
 /* PRIMARY END */

@@ -6,6 +6,7 @@ import "../../assets/storybook/buttons.css";
 storiesOf("Button", module).add("primary", () => ({
 	components: { MhButton },
 	template: `
+  
     <h1>Large</h1>
       <mh-button type="primary" size="large">
         Large
@@ -48,6 +49,11 @@ storiesOf("Button", module).add("primary", () => ({
       </mh-button>
       <mh-button type="primary" wait>
         Default size
+      </mh-button>
+      <hr />
+      <h1>Green</h1>
+      <mh-button type="primary" size="large" color="green">
+        Green
       </mh-button>
       <br/><br />
     `,

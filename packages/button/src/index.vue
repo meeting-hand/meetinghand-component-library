@@ -8,6 +8,7 @@
     :wait="wait"
     :socialMedia="socialMedia"
     :submit="submit"
+    :color="color"
   >
     <slot></slot>
   </component>
@@ -84,6 +85,11 @@ export default {
     submit: {
       type: Boolean,
       default: false,
+    },
+    color: {
+      type: String,
+      default: null,
+      validator: (_v) => ["blue", "green"].includes(_v),
     },
   },
 };
