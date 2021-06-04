@@ -225,6 +225,7 @@ const iconList = [
 ];
 
 export default {
+  name: "MhIcon",
   components: {
     ArrowDown,
     ArrowUp,
