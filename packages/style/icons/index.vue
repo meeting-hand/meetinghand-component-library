@@ -110,6 +110,7 @@ import MobileAppBox from "./mobileAppBox.vue";
 import Warning from "./warning.vue";
 import Success from "./success.vue";
 import Claps from "./claps.vue";
+import SocialApple from "./socialApple.vue";
 
 const iconList = [
   "arrow-down",
@@ -220,6 +221,7 @@ const iconList = [
   "warning",
   "success",
   "claps",
+  "social-apple",
 ];
 
 export default {
@@ -332,6 +334,7 @@ export default {
     Warning,
     Success,
     Claps,
+    SocialApple,
   },
   props: {
     name: {

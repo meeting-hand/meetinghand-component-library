@@ -80,7 +80,7 @@ export default {
     socialMedia: {
       type: String,
       default: null,
-      validator: (_v) => ["google", "facebook", "linkedin"].includes(_v),
+      validator: (_v) => ["google", "facebook", "apple"].includes(_v),
     },
     submit: {
       type: Boolean,

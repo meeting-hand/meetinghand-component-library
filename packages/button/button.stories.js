@@ -233,9 +233,9 @@ storiesOf("Button", module).add("social", () => ({
         Facebook
       </mh-button>
 			<hr />
-      <h1>Linkedin</h1>
-      <mh-button type="social" icon="social-linkedin" social-media="linkedin">
-        Linkedin
+      <h1>Apple</h1>
+      <mh-button type="social" icon="social-apple" social-media="apple">
+        Apple
       </mh-button>
 			<hr />
 

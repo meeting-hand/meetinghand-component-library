@@ -47,8 +47,8 @@ storiesOf("Notification", module).add("All", () => ({
       :description="notificationSuccess.description"
       :title="notificationSuccess.title"
       :type="notificationSuccess.type"
-      v-model="notificationSuccessStatus"
       v-if="notificationSuccessStatus"
+      @close="notificationSuccessStatus = false"
       />
       <a @click="notificationSuccessStatus=true">Open Success</a>
       <h1>{{notificationSuccessStatus}}</h1>
@@ -59,8 +59,8 @@ storiesOf("Notification", module).add("All", () => ({
       :description="notificationError.description"
       :title="notificationError.title"
       :type="notificationError.type"
-      v-model="notificationErrorStatus"
       v-if="notificationErrorStatus"
+      @close="notificationErrorStatus = false"
       />
       <a @click="notificationErrorStatus=true">Open Error</a>
       <h1>{{notificationErrorStatus}}</h1>
@@ -71,8 +71,8 @@ storiesOf("Notification", module).add("All", () => ({
       :description="notificationInfo.description"
       :title="notificationInfo.title"
       :type="notificationInfo.type"
-      v-model="notificationInfoStatus"
       v-if="notificationInfoStatus"
+      @close="notificationInfoStatus = false"
       />
       <a @click="notificationInfoStatus=true">Open Info</a>
       <h1>{{notificationInfoStatus}}</h1>
@@ -83,8 +83,8 @@ storiesOf("Notification", module).add("All", () => ({
       :description="notificationHint.description"
       :title="notificationHint.title"
       :type="notificationHint.type"
-      v-model="notificationHintStatus"
       v-if="notificationHintStatus"
+      @close="notificationHintStatus = false"
       />
       <a @click="notificationHintStatus=true">Open Hint</a>
       <h1>{{notificationHintStatus}}</h1>
