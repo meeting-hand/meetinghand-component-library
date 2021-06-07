@@ -1,4 +1,9 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
+@import "@meetinghand/style/lib/scss/mixins.scss";
+
+.ant-modal {
+	top: $spacing-xxlarge;
+}
 
 .ant-modal-content {
 	display: flex;
@@ -65,14 +70,29 @@
 		width: 100%;
 	}
 	.ant-modal-close {
-		svg {
-			width: 14px;
-			height: 14px;
-			fill: $color-mono-grey;
-			position: relative;
-			right: -7px;
-			top: -7px;
-			fill: $color-mono-black;
+		width: 24px;
+		height: 24px;
+		right: $spacing-default;
+		border-radius: $border-radius-default;
+		top: 12px;
+		span {
+			width: auto;
+			height: auto;
+			line-height: 1;
+			svg {
+				@include transition-cubic();
+				width: 14px;
+				height: 14px;
+				fill: $color-mono-grey;
+				position: relative;
+				fill: $color-mono-black;
+			}
+		}
+		&:hover {
+			background-color: $transparent-hover-2;
+			svg {
+				@include transition-cubic-rotate();
+			}
 		}
 	}
 }

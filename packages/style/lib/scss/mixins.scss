@@ -10,6 +10,13 @@
 	flex-direction: column;
 }
 
+@mixin transition-cubic() {
+	transition: 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+@mixin transition-cubic-rotate() {
+	transform: rotate(90deg);
+}
+
 @each $space, $value in $pixels {
 	//Margin
 	.m-#{$space} {
