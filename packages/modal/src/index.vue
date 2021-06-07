@@ -9,6 +9,7 @@
     :footer="modalFooterProp"
     :title="dialogTitle"
     :closeIcon="closeIcon"
+    :keyboard="keyboard"
   >
     <div :class="icon">
       <mh-icon :name="icon" v-if="icon" />
@@ -77,6 +78,10 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    keyboard: {
+      type: Boolean,
+      default: true,
     },
   },
   emits: {
