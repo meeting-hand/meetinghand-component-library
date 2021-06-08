@@ -87,13 +87,13 @@ storiesOf("Input", module).add("Tel", () => ({
 	},
 	template: `
 			<h1>Standart</h1>
-      <mh-input v-model="tel1" input-type="tel" />
+      <mh-input v-model="tel1" input-type="tel" id="tel1" />
 			<hr />
 			<h1>Error</h1>
-			<mh-input v-model="tel2" input-type="tel" has-error error-message="this field is required" />
+			<mh-input v-model="tel2" input-type="tel" has-error error-message="this field is required" id="tel2" />
 			<hr />
 			<h1>Disabled</h1>
-      <mh-input v-model="tel3" input-type="tel" disabled />
+      <mh-input v-model="tel3" input-type="tel" disabled id="tel3" />
 			<hr />
     `,
 }));

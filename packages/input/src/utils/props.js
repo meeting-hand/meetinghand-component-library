@@ -35,4 +35,8 @@ export default {
 		type: Boolean,
 		default: false,
 	},
+	id: {
+		type: String,
+		default: "_" + Math.random().toString(36).substr(2, 9),
+	},
 };

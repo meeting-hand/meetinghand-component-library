@@ -60,7 +60,7 @@ export default {
     });
 
     const dialCode = ref("+1");
-    const id = ref("_" + Math.random().toString(36).substr(2, 9));
+    //const id = ref("_" + Math.random().toString(36).substr(2, 9));
     let cleave;
 
     //filter
@@ -74,7 +74,7 @@ export default {
       const country = CountryPhoneCodes.find((_c) => _c.dialCode === dialCode);
       await require(`cleave.js/dist/addons/cleave-phone.${country.countryCode.toLowerCase()}`);
 
-      cleave = new Cleave(document.getElementById(id.value), {
+      cleave = new Cleave(document.getElementById(props.id), {
         phone: true,
         phoneRegionCode: country.countryCode.toLowerCase(),
       });
@@ -131,7 +131,6 @@ export default {
       filterOption,
       setCleave,
       dialCode,
-      id,
       suffixIcon,
       value,
       cleave,

@@ -9,6 +9,7 @@
     :rightIcon="rightIcon"
     :allowClear="allowClear"
     :email="email"
+    :id="id"
     v-model="value"
   />
 </template>

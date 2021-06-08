@@ -4,6 +4,7 @@
       :placeholder="placeholder"
       :class="[{ error: errorStatus }]"
       :disabled="disabled"
+      :id="id"
       v-model:value="value"
     >
       <!-- <template #addonAfter>

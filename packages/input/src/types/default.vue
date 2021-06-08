@@ -6,6 +6,7 @@
       :disabled="disabled"
       :allow-clear="allowClear"
       :type="inputType"
+      :id="id"
       v-model:value="value"
     >
       <template #prefix v-if="leftIcon">
