@@ -16,9 +16,6 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"files": [
-		"dist/*"
-	],
 	"dependencies": {
 		"@meetinghand/style": "file:../style"
 	}
