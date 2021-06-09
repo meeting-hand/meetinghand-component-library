@@ -11,6 +11,8 @@
 		"editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
 	},
 	"workbench.colorCustomizations": {
-		"activityBar.background": "#01579b"
+		"activityBar.background": "#01579b",
+		"activityBar.activeBorder": "#546e7a",
+		"activityBar.inactiveForeground": "#546e7a"
 	}
 }

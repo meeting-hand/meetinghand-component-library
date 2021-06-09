@@ -12,11 +12,21 @@
 
 	&.alignment-right {
 		flex-direction: row-reverse;
+		.mh-icon {
+			margin-left: 12px;
+		}
+	}
+
+	&.alignment-left {
+		.mh-icon {
+			margin-right: 12px;
+		}
 	}
 
 	.mh-icon {
 		fill: $color-mono-white;
-		margin: $spacing-xxsmall 12px;
+		margin-top: $spacing-xxsmall;
+		margin-bottom: $spacing-xxsmall;
 	}
 }
 
