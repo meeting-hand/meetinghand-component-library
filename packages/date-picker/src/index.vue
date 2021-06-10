@@ -1,6 +1,7 @@
 <template>
   <component
     :is="type"
+    :id="id"
     :format="format"
     :disabled="disabled"
     :placeholder="placeholder"
@@ -51,6 +52,10 @@ export default {
     type: {
       type: String,
       default: "default",
+    },
+    id: {
+      type: String,
+      default: "_" + Math.random().toString(36).substr(2, 9),
     },
   },
   computed: {

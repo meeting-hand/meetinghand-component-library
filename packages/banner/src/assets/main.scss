@@ -8,7 +8,8 @@
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: center;
-	padding: $spacing-large !important;
+	//padding: $spacing-large !important;
+	padding: 13px $spacing-default !important;
 	border-radius: $border-radius-default;
 
 	&.ant-alert-info {

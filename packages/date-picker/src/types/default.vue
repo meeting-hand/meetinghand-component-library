@@ -7,6 +7,7 @@
     :disabled="disabled"
     :placeholder="placeholder"
     :suffix-icon="icon"
+    :id="id"
     :allowClear="false"
   />
 </template>
@@ -43,6 +44,10 @@ export default {
     placeholder: {
       type: String,
       default: "",
+    },
+    id: {
+      type: String,
+      default: "_" + Math.random().toString(36).substr(2, 9),
     },
   },
   computed: {

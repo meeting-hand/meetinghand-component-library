@@ -19,7 +19,7 @@ import Section from "./types/section.vue";
 import FullWidth from "./types/fullWidth.vue";
 
 export default {
-  name: "Banner",
+  name: "MhBanner",
   components: {
     [Banner.name]: Banner,
     Section,
