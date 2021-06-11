@@ -72,7 +72,10 @@ export default {
 
     const setCleave = async (dialCode) => {
       const country = CountryPhoneCodes.find((_c) => _c.dialCode === dialCode);
-      await require(`cleave.js/dist/addons/cleave-phone.${country.countryCode.toLowerCase()}`);
+
+      await import(
+        `../utils/cleave-country-formats/cleave-phone.${country.countryCode.toLowerCase()}.js`
+      );
 
       cleave = new Cleave(document.getElementById(props.id), {
         phone: true,
