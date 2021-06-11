@@ -1,7 +1,7 @@
 <template>
   <component
     :is="type"
-    :id="id"
+    :id="elemId"
     :format="format"
     :disabled="disabled"
     :placeholder="placeholder"
@@ -20,6 +20,11 @@ import Range from "./types/range.vue";
 // TODO: disabled dates
 export default {
   name: "MhDatePicker",
+  data() {
+    return {
+      elemId: "_" + Math.random().toString(36).substr(2, 9),
+    };
+  },
   components: {
     Default,
     Range,
@@ -55,7 +60,7 @@ export default {
     },
     id: {
       type: String,
-      default: "_" + Math.random().toString(36).substr(2, 9),
+      default: null,
     },
   },
   computed: {
@@ -67,6 +72,9 @@ export default {
         this.$emit("update:modelValue", value);
       },
     },
+  },
+  created() {
+    this.elemId = this.id ? this.id : this.elemId;
   },
 };
 </script>
