@@ -3,6 +3,7 @@
 
 .ant-modal {
 	top: $spacing-xxlarge;
+	max-width: 2000px !important; // added for mobile
 }
 
 .ant-modal-content {
