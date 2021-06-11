@@ -5,7 +5,7 @@ storiesOf("InputNumber", module).add("Default", () => ({
 	components: { MhInputNumber },
 	data() {
 		return {
-			number1: null,
+			number1: 0,
 			number2: 16,
 			number3: 24,
 		};
