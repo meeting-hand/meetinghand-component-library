@@ -9,7 +9,7 @@
     :rightIcon="rightIcon"
     :allowClear="allowClear"
     :email="email"
-    :id="id"
+    :id="elId"
     v-model="value"
   />
 </template>
@@ -47,8 +47,14 @@ export default {
         emit("update:modelValue", data);
       },
     });
+
+    const elId = props.id
+      ? props.id
+      : "_" + Math.random().toString(36).substr(2, 9);
+
     return {
       value,
+      elId,
     };
   },
 };
