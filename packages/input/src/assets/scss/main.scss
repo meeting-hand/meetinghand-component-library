@@ -172,9 +172,13 @@
 			height: auto !important;
 		}
 		.ant-select-arrow {
+			width: 16px;
+			height: 16px;
+			top: 50%;
+			margin-top: -8px;
 			svg {
 				fill: $color-mono-grey-2;
-				width: 14px;
+				width: 16px;
 			}
 		}
 	}

@@ -10,7 +10,7 @@
     :show-search="searchable"
     v-model:value="value"
     :size="size"
-    :icon="suffixIcon"
+    :suffixIcon="suffixIcon"
   >
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">

@@ -55,9 +55,13 @@
 	&.ant-select-open {
 		.ant-select-arrow {
 			margin-right: 14px;
+			width: 20px;
+			height: 20px;
+			top: 50%;
+			margin-top: -10px;
 			svg {
-				width: 14px;
-				height: 14px;
+				width: 20px;
+				height: 20px;
 				fill: $color-primary-blue;
 				transform: rotate(180deg);
 			}
@@ -76,13 +80,14 @@
 		}
 	}
 	.ant-select-arrow {
-		display: flex;
-		align-items: center;
 		margin-right: 14px;
-
+		width: 20px;
+		height: 20px;
+		top: 50%;
+		margin-top: -10px;
 		svg {
-			width: 14px;
-			height: 14px;
+			width: 20px;
+			height: 20px;
 			fill: $color-mono-grey-2;
 		}
 	}
@@ -100,8 +105,8 @@
 		}
 		.ant-select-arrow {
 			svg {
-				width: 14px;
-				height: 14px;
+				width: 20px;
+				height: 20px;
 				fill: $color-primary-red;
 			}
 		}
@@ -111,8 +116,8 @@
 			border-radius: $border-radius-default;
 			.ant-select-arrow {
 				svg {
-					width: 14px;
-					height: 14px;
+					width: 20px;
+					height: 20px;
 					fill: $color-primary-red;
 				}
 			}

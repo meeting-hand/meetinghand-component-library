@@ -5,7 +5,7 @@ storiesOf("DatePicker", module).add("Default", () => ({
 	components: { MhDatePicker },
 	data() {
 		return {
-			date1: "",
+			date1: null,
 			date2: "05.15.2021",
 			date3: null,
 			date4: "25.01.2021",
@@ -51,6 +51,6 @@ storiesOf("DatePicker", module).add("Range", () => ({
 			<h1>Disabled</h1>
       <mh-date-picker v-model="date4" type="range" disabled :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" />
 			<hr />
-		
+
     `,
 }));

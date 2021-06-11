@@ -7,7 +7,7 @@ storiesOf("Input", module).add("Input", () => ({
 	components: { MhInput },
 	data() {
 		return {
-			value1: "",
+			value1: null,
 			value2: "",
 			value3: "",
 			value4: "",
@@ -49,7 +49,7 @@ storiesOf("Input", module).add("Password", () => ({
 	components: { MhInput },
 	data() {
 		return {
-			pass1: "",
+			pass1: null,
 			pass2: "",
 			pass3: "",
 			pass4: "",
@@ -81,7 +81,7 @@ storiesOf("Input", module).add("Tel", () => ({
 	data() {
 		return {
 			tel1: "(+90) 506 900 04 91",
-			tel2: "",
+			tel2: null,
 			tel3: "",
 		};
 	},
