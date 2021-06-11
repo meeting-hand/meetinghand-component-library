@@ -8,7 +8,7 @@ import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
 
-import { h } from "vue";
+import { h, onBeforeUnmount } from "vue";
 
 export default {
   name: "MhNotification",
@@ -39,6 +39,8 @@ export default {
   },
 
   setup(props, { emit }) {
+    const key = Math.random().toString(36).substr(2, 9);
+
     const openNotification = () => {
       const icons = {
         success: StatusSuccess,
@@ -54,12 +56,17 @@ export default {
         class: props.type,
         icon: h(icons[props.type]),
         placement: props.placement,
+        key: key,
         onClose: () => {
           emit("close", true);
         },
         closeIcon: h(SystemClose),
       });
     };
+
+    onBeforeUnmount(() => {
+      Notification.close(key);
+    });
 
     return {
       openNotification,

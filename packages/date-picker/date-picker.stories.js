@@ -43,7 +43,7 @@ storiesOf("DatePicker", module).add("Range", () => ({
       <mh-date-picker v-model="date1" type="range" :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" /> <span style="margin-left: 40px;">{{ date1 }}</span>
 			 <br />
 			<br />
-      <!--<mh-date-picker v-model="date2" type="range" :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" /> <span style="margin-left: 40px;">{{ date2 }}</span>
+     <mh-date-picker v-model="date2" type="range" :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" /> <span style="margin-left: 40px;">{{ date2 }}</span>
 			<hr />
 			<h1>Error</h1>
       <mh-date-picker v-model="date3" type="range" has-error error-message="Field is required" :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" />
@@ -51,6 +51,6 @@ storiesOf("DatePicker", module).add("Range", () => ({
 			<h1>Disabled</h1>
       <mh-date-picker v-model="date4" type="range" disabled :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" />
 			<hr />
-			-->
+		
     `,
 }));
