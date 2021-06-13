@@ -2,6 +2,9 @@
 <script>
 import Notification from "ant-design-vue/lib/notification";
 
+import "ant-design-vue/lib/notification/style/index.less";
+import "./assets/main.scss";
+
 import StatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
@@ -77,6 +80,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "./assets/main.scss";
-</style>

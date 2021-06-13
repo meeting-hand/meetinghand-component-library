@@ -33,6 +33,8 @@
 import Input from "ant-design-vue/lib/input";
 import Select from "ant-design-vue/lib/select";
 
+import "ant-design-vue/lib/select/style/index.less";
+
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 

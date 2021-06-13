@@ -12,6 +12,9 @@
 <script>
 import Tooltip from "ant-design-vue/lib/tooltip";
 
+import "ant-design-vue/lib/tooltip/style/index.less";
+import "./assets/main.scss";
+
 export default {
   name: "Tooltip",
   components: {
@@ -30,7 +33,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@import "./assets/main.scss";
-</style>

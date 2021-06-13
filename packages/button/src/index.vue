@@ -17,6 +17,9 @@
 <script>
 import Button from "ant-design-vue/lib/button";
 
+import "ant-design-vue/lib/button/style/index.less";
+import "./assets/scss/main.scss";
+
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
 import Small from "./types/small.vue";
@@ -94,6 +97,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "./assets/scss/main.scss";
-</style>

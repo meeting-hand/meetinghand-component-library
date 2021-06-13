@@ -14,6 +14,8 @@
 
 <script>
 import Banner from "ant-design-vue/lib/alert";
+import "ant-design-vue/lib/alert/style/index.less";
+import "./assets/main.scss";
 
 import Section from "./types/section.vue";
 import FullWidth from "./types/fullWidth.vue";
@@ -52,6 +54,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "./assets/main.scss";
-</style>

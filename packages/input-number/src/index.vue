@@ -16,6 +16,9 @@
 import Default from "./types/default.vue";
 import Currency from "./types/currency.vue";
 
+import "ant-design-vue/lib/input-number/style/index.less";
+import "./assets/scss/main.scss";
+
 export default {
   name: "InputNumber",
   components: {
@@ -73,6 +76,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "./assets/scss/main.scss";
-</style>

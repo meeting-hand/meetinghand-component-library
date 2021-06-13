@@ -19,6 +19,9 @@
 import TextArea from "ant-design-vue/lib/input/TextArea";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 
+import "ant-design-vue/lib/input/style/index.less";
+import "./assets/main.scss";
+
 export default {
   name: "MhTextArea",
   components: {
@@ -76,7 +79,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@import "./assets/main.scss";
-</style>

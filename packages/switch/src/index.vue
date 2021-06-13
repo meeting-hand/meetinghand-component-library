@@ -5,6 +5,9 @@
 <script>
 import Switch from "ant-design-vue/lib/switch";
 
+import "ant-design-vue/lib/switch/style/index.less";
+import "./assets/main.scss";
+
 export default {
   name: "MhSwitch",
   components: {
@@ -32,7 +35,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@import "./assets/main.scss";
-</style>

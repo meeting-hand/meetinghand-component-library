@@ -22,6 +22,9 @@
 import Select from "ant-design-vue/lib/select";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 
+import "ant-design-vue/lib/select/style/index.less";
+import "./assets/main.scss";
+
 import { computed, h } from "vue";
 
 export default {
@@ -92,6 +95,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "./assets/main.scss";
-</style>

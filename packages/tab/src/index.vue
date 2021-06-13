@@ -10,6 +10,8 @@
 
 <script>
 import Tab from "ant-design-vue/lib/tabs";
+import "ant-design-vue/lib/tabs/style/index.less";
+import "./assets/main.scss";
 
 import { ref } from "vue";
 
