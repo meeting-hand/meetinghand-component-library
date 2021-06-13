@@ -16,7 +16,7 @@
 		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
 	},
 	"author": "Fatih Sinan Yaman",
-	"main": "./index",
+	"main": "./dist/index",
 	"module": "./index",
 	"publishConfig": {
 		"access": "public"
