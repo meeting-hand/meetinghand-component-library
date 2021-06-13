@@ -60,11 +60,11 @@ export default {
       default: "_" + Math.random().toString(36).substr(2, 9),
     },
     disabledStartDate: {
-      type: String,
+      type: [String, Date],
       default: null,
     },
     disabledEndDate: {
-      type: String,
+      type: [String, Date],
       default: null,
     },
   },
@@ -80,3 +80,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

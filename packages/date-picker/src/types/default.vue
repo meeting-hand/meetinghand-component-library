@@ -51,10 +51,10 @@ export default {
       default: "_" + Math.random().toString(36).substr(2, 9),
     },
     disabledStartDate: {
-      type: String,
+      type: [String, Date],
     },
     disabledEndDate: {
-      type: String,
+      type: [String, Date],
     },
   },
   setup(props, { emit }) {
