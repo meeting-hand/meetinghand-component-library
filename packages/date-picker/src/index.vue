@@ -1,11 +1,13 @@
 <template>
   <component
     :is="type"
-    :id="elemId"
+    :id="id"
     :format="format"
     :disabled="disabled"
     :placeholder="placeholder"
     :hasError="hasError"
+    :disabledStartDate="disabledStartDate"
+    :disabledEndDate="disabledEndDate"
     v-model="value"
   />
   <span v-if="errorMessage" class="mh-input__error">
@@ -20,11 +22,6 @@ import Range from "./types/range.vue";
 // TODO: disabled dates
 export default {
   name: "MhDatePicker",
-  data() {
-    return {
-      elemId: "_" + Math.random().toString(36).substr(2, 9),
-    };
-  },
   components: {
     Default,
     Range,
@@ -60,6 +57,14 @@ export default {
     },
     id: {
       type: String,
+      default: "_" + Math.random().toString(36).substr(2, 9),
+    },
+    disabledStartDate: {
+      type: String,
+      default: null,
+    },
+    disabledEndDate: {
+      type: String,
       default: null,
     },
   },
@@ -72,9 +77,6 @@ export default {
         this.$emit("update:modelValue", value);
       },
     },
-  },
-  created() {
-    this.elemId = this.id ? this.id : this.elemId;
   },
 };
 </script>

@@ -9,6 +9,7 @@ storiesOf("DatePicker", module).add("Default", () => ({
 			date2: "05.15.2021",
 			date3: null,
 			date4: "25.01.2021",
+			date5: "",
 		};
 	},
 	template: `
@@ -24,6 +25,9 @@ storiesOf("DatePicker", module).add("Default", () => ({
 			<hr />
 			<h1>Disabled</h1>
       <mh-date-picker v-model="date4" disabled placeholder="Disabled Date Placeholder" />
+			<hr />
+			<h1>Disabled Dates</h1>
+      <mh-date-picker v-model="date5" disabledStartDate="2021-06-10" disabledEndDate="2021-06-23" placeholder="Disabled Start & End Date" />
 			<hr />
     `,
 }));

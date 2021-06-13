@@ -53,7 +53,13 @@ export default {
     },
     id: {
       type: String,
-      default: null,
+      default: "_" + Math.random().toString(36).substr(2, 9),
+    },
+    disabledStartDate: {
+      type: String,
+    },
+    disabledEndDate: {
+      type: String,
     },
   },
   computed: {
