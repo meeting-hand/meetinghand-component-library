@@ -5,17 +5,14 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 
 .ant-btn {
-	line-height: 1.5715;
-	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-weight: 400;
 	white-space: nowrap;
 	text-align: center;
 	text-shadow: none;
 	background-image: none;
-	border: 1px solid transparent;
+	border: $border-size-default solid transparent;
 	box-shadow: none;
 	cursor: pointer;
 	transition: background-color 0.5s ease;
@@ -24,14 +21,15 @@
 	-ms-user-select: none;
 	user-select: none;
 	touch-action: manipulation;
-	height: 32px;
-	padding: 0 15px;
-	font-size: 14px;
+	height: 44px;
+	padding: $spacing-medium $spacing-default;
 	border-radius: 6px;
-	color: rgba(0, 0, 0, 0.85);
 	background-color: #fff;
 	border-color: #d9d9d9;
 	outline: 0;
+	font-weight: $font-weight-large;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
 	> .anticon {
 		line-height: 1;
 		+ {
@@ -43,13 +41,13 @@
 	&.alignment-right {
 		flex-direction: row-reverse;
 		.mh-icon {
-			margin-left: 12px;
+			margin-left: 4px;
 		}
 	}
 
 	&.alignment-left {
 		.mh-icon {
-			margin-right: 12px;
+			margin-right: 4px;
 		}
 	}
 
@@ -60,11 +58,11 @@
 	}
 	&:active {
 		outline: 0;
-		color: #096dd9;
-		background-color: #fff;
-		border-color: #096dd9;
+		// color: #096dd9;
+		// background-color: #fff;
+		// border-color: #096dd9;
 		text-decoration: none;
-		background: #fff;
+		// background: #fff;
 		> a {
 			&:only-child {
 				color: currentColor;
@@ -85,11 +83,11 @@
 	}
 	&:focus {
 		outline: 0;
-		color: #40a9ff;
-		background-color: #fff;
-		border-color: #40a9ff;
+		// color: #40a9ff;
+		// background-color: #fff;
+		// border-color: #40a9ff;
 		text-decoration: none;
-		background: #fff;
+		// background: #fff;
 		> a {
 			&:only-child {
 				color: currentColor;
@@ -132,11 +130,11 @@
 		}
 	}
 	&:hover {
-		color: #40a9ff;
-		background-color: #fff;
-		border-color: #40a9ff;
+		// color: #40a9ff;
+		// background-color: #fff;
+		// border-color: #40a9ff;
 		text-decoration: none;
-		background: #fff;
+		// background: #fff;
 		> a {
 			&:only-child {
 				color: currentColor;
@@ -4469,21 +4467,19 @@ a.ant-btn-sm {
 /* PRIMARY */
 .ant-btn-primary {
 	background-color: $color-primary-blue;
-	font-weight: $font-weight-large;
-	font-size: $font-size-large;
-	line-height: $line-height-default;
-	padding: $spacing-default $spacing-xlarge;
-	height: auto;
-	min-height: 52px;
-	border-radius: $border-radius-default;
+	// min-height: 44px;
+	border: none;
 
 	&:hover {
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
+		background: #1987df;
+	}
+	&:focus {
+		background: #147acb;
 	}
 
 	&.disabled {
 		border: none;
-		background-color: $color-mono-light-grey-4;
+		background: $transparent-hover;
 		color: $color-mono-grey;
 
 		.mh-icon {
@@ -4508,9 +4504,17 @@ a.ant-btn-sm {
 		}
 	}
 	&.green {
-		background: #0ead88;
+		background: $color-primary-participant;
+		border: none;
 		&:hover {
 			background: #15c299;
+		}
+	}
+	&.red {
+		background-color: $color-primary-red;
+		border: none;
+		&:hover {
+			background-color: rgb(248, 74, 74);
 		}
 	}
 }
@@ -4519,14 +4523,7 @@ a.ant-btn-sm {
 
 /* SECONDARY */
 .ant-btn-default {
-	border: $border-size-default solid $color-primary-blue;
-	font-weight: $font-weight-large;
-	font-size: $font-size-large;
-	line-height: $line-height-default;
-	padding: $spacing-default $spacing-xlarge;
-	height: auto;
-	min-height: 52px;
-	border-radius: $border-radius-default;
+	border-color: $transparent-hover-3;
 	color: $color-primary-blue;
 
 	.mh-icon {
@@ -4534,19 +4531,18 @@ a.ant-btn-sm {
 	}
 
 	&:hover {
-		background: $color-secondary-blue;
-		border-color: $color-primary-blue;
 		color: $color-primary-blue;
+		background: rgba(0, 0, 0, 0.04);
+		border-color: rgba(0, 0, 0, 0.08);
 	}
-	&:active {
-		background: $color-secondary-blue;
-	}
+
 	&:focus {
-		color: $color-primary-blue;
+		background: rgba(0, 0, 0, 0.08);
+		border-color: rgba(0, 0, 0, 0.08);
 	}
 
 	&.disabled {
-		border: $border-size-default solid $color-mono-light-grey-4;
+		border: $border-size-default solid rgba(0, 0, 0, 0.08);
 		background-color: transparent;
 		color: $color-mono-grey;
 
@@ -4576,26 +4572,58 @@ a.ant-btn-sm {
 			fill: none !important;
 		}
 	}
+	&.red {
+		border-color: #f44336;
+		color: #f44336;
+		.mh-icon {
+			fill: #f44336;
+		}
+		&:hover {
+			background: rgba(0, 0, 0, 0.04);
+		}
+		&:focus {
+			background: rgba(0, 0, 0, 0.08);
+		}
+	}
 }
 /* SECONDARY END */
 
 /* TEXT */
 .text-btn {
 	border: none;
-	padding: $spacing-small $spacing-default;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	&:hover {
-		background: rgba($color-mono-black, 0.04);
+	color: #565656;
+	padding: 4px $spacing-xsmall;
+	height: 28px;
+	.mh-icon {
+		fill: #565656;
 	}
+	&:hover {
+		background: rgba(0, 0, 0, 0.04);
+		color: #565656;
+	}
+	&:focus {
+		background: rgba(0, 0, 0, 0.08);
+		color: #565656;
+	}
+
 	&.disabled {
 		border: none;
 	}
 	&.wait {
 		background: none;
 		&:hover {
-			background: rgba($color-mono-black, 0.04);
+			background: rgba(0, 0, 0, 0.04);
+		}
+	}
+	&.red {
+		&:hover {
+			color: #f44336;
+		}
+		&:active {
+			color: #f44336;
+		}
+		&:focus {
+			color: #f44336;
 		}
 	}
 }
@@ -4644,10 +4672,7 @@ a.ant-btn-sm {
 .ant-btn {
 	&.iconic-btn {
 		background: none;
-		border: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		border: 1px solid rgba(0, 0, 0, 0.08);
 
 		.mh-icon {
 			height: 20px;
@@ -4664,8 +4689,8 @@ a.ant-btn-sm {
 			}
 		}
 		&.size-normal {
-			width: 52px;
-			height: 52px;
+			width: 44px;
+			height: 44px;
 		}
 		&.size-small {
 			width: 32px;
@@ -4682,38 +4707,38 @@ a.ant-btn-sm {
 		}
 		.mh-icon {
 			margin: $spacing-xxsmall;
-			fill: $color-mono-grey-2;
+			fill: $color-mono-grey-3;
 		}
 		&:hover {
-			background: rgba($color-mono-black, 0.04);
-			border-color: $color-mono-light-grey-5;
+			background: rgba(0, 0, 0, 0.04);
+		}
+		&:focus {
+			background: rgba(0, 0, 0, 0.08);
+		}
+		&.red {
+			border-color: $color-primary-red;
+			.mh-icon {
+				fill: $color-primary-red;
+			}
 		}
 	}
 }
 
 /* ICONIC END */
+
 /* SOCIAL */
 .social-btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 360px;
-	height: 52px;
-	background: $transparent-hover;
+	width: 128px;
+	height: 44px;
 	border-radius: $border-radius-default;
 	&.ant-btn-default {
-		border: none;
+		border: 1px solid $color-mono-light-grey-5;
 	}
 	&:focus {
 		background: $transparent-hover;
 	}
 	span {
-		font-style: normal;
-		font-weight: $font-weight-large;
-		font-size: $font-size-large;
-		line-height: $line-height-default;
-
-		color: $color-mono-grey-3;
+		color: $color-mono-black;
 	}
 	svg {
 		height: 20px;
@@ -4742,6 +4767,7 @@ a.ant-btn-sm {
 	}
 
 	&:hover {
+		border: 1px solid transparent;
 		span {
 			color: $color-mono-white;
 		}
