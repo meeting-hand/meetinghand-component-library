@@ -12,7 +12,7 @@
 	box-shadow: none;
 
 	&::placeholder {
-		color: $color-mono-grey;
+		color: $color-mono-grey-2;
 	}
 
 	&:hover {
@@ -36,8 +36,8 @@
 
 .ant-input,
 .ant-input-affix-wrapper {
-	border: $border-size-default solid $color-mono-grey;
-	border-radius: $border-radius-default;
+	border: $border-size-default solid $color-mono-grey-2;
+	border-radius: $border-radius-default !important;
 	background: transparent;
 	transition: background-color 0.5s ease, border 0.5s ease !important;
 }

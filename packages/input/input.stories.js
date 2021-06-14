@@ -1,8 +1,5 @@
 import { storiesOf } from "@storybook/vue3";
 import MhInput from "./index";
-import "./src/assets/scss/main.scss";
-
-import "../../assets/storybook/input.css";
 
 storiesOf("Input", module).add("Input", () => ({
 	components: { MhInput },
@@ -20,7 +17,7 @@ storiesOf("Input", module).add("Input", () => ({
 	},
 	template: `
       <h1>Standart</h1>
-      <mh-input v-model="value1" email />
+      <mh-input v-model="value1" email placeholder="e-mail address" />
       <br />
       <br />
       <mh-input v-model="value2" left-icon="arrow-down" right-icon="arrow-up" />

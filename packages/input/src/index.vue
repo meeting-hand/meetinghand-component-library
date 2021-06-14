@@ -15,12 +15,11 @@
 </template>
 
 <script>
-//import "ant-design-vue/lib/input/style/index.less";
-//import "./assets/scss/main.scss";
-
 import Default from "./types/default.vue";
 import Password from "./types/password.vue";
 import Tel from "./types/tel.vue";
+
+import "./assets/scss/main.scss";
 
 import props from "./utils/props";
 
