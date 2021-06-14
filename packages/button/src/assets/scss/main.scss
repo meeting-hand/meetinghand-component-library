@@ -8,7 +8,7 @@
 	box-shadow: none;
 	border: none;
 	outline: none;
-	transition: background-color 0.5s ease !important;
+	transition: background-color 0.5s ease;
 
 	&.alignment-right {
 		flex-direction: row-reverse;

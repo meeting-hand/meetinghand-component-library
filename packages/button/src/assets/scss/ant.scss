@@ -2,18 +2,23 @@
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable */
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
+@import "@meetinghand/style/lib/scss/variables.scss";
+
 .ant-btn {
 	line-height: 1.5715;
 	position: relative;
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-weight: 400;
 	white-space: nowrap;
 	text-align: center;
+	text-shadow: none;
 	background-image: none;
 	border: 1px solid transparent;
-	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+	box-shadow: none;
 	cursor: pointer;
-	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	transition: background-color 0.5s ease;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -22,7 +27,7 @@
 	height: 32px;
 	padding: 0 15px;
 	font-size: 14px;
-	border-radius: 2px;
+	border-radius: 6px;
 	color: rgba(0, 0, 0, 0.85);
 	background-color: #fff;
 	border-color: #d9d9d9;
@@ -34,6 +39,24 @@
 				margin-left: 8px;
 			}
 		}
+	}
+	&.alignment-right {
+		flex-direction: row-reverse;
+		.mh-icon {
+			margin-left: 12px;
+		}
+	}
+
+	&.alignment-left {
+		.mh-icon {
+			margin-right: 12px;
+		}
+	}
+
+	.mh-icon {
+		fill: $color-mono-white;
+		margin-top: $spacing-xxsmall;
+		margin-bottom: $spacing-xxsmall;
 	}
 	&:active {
 		outline: 0;
@@ -4441,4 +4464,296 @@ a.ant-btn-lg {
 }
 a.ant-btn-sm {
 	line-height: 22px;
+}
+
+/* PRIMARY */
+.ant-btn-primary {
+	background-color: $color-primary-blue;
+	font-weight: $font-weight-large;
+	font-size: $font-size-large;
+	line-height: $line-height-default;
+	padding: $spacing-default $spacing-xlarge;
+	height: auto;
+	min-height: 52px;
+	border-radius: $border-radius-default;
+
+	&:hover {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
+	}
+
+	&.disabled {
+		border: none;
+		background-color: $color-mono-light-grey-4;
+		color: $color-mono-grey;
+
+		.mh-icon {
+			fill: $color-mono-grey;
+		}
+	}
+	&.wait {
+		border: none;
+		background-color: rgba($color-primary-blue, 0.4);
+		&:hover {
+			background: rgba($color-primary-blue, 0.5);
+		}
+		span {
+			display: none;
+		}
+		.mh-icon:not(.wait-spinner) {
+			display: none;
+		}
+		.wait-spinner {
+			stroke: $color-mono-white;
+			fill: none !important;
+		}
+	}
+	&.green {
+		background: #0ead88;
+		&:hover {
+			background: #15c299;
+		}
+	}
+}
+
+/* PRIMARY END */
+
+/* SECONDARY */
+.ant-btn-default {
+	border: $border-size-default solid $color-primary-blue;
+	font-weight: $font-weight-large;
+	font-size: $font-size-large;
+	line-height: $line-height-default;
+	padding: $spacing-default $spacing-xlarge;
+	height: auto;
+	min-height: 52px;
+	border-radius: $border-radius-default;
+	color: $color-primary-blue;
+
+	.mh-icon {
+		fill: $color-primary-blue;
+	}
+
+	&:hover {
+		background: $color-secondary-blue;
+		border-color: $color-primary-blue;
+		color: $color-primary-blue;
+	}
+	&:active {
+		background: $color-secondary-blue;
+	}
+	&:focus {
+		color: $color-primary-blue;
+	}
+
+	&.disabled {
+		border: $border-size-default solid $color-mono-light-grey-4;
+		background-color: transparent;
+		color: $color-mono-grey;
+
+		&:hover {
+			background-color: transparent;
+			border-color: $color-mono-light-grey-4;
+		}
+
+		.mh-icon {
+			fill: $color-mono-grey;
+		}
+	}
+	&.wait {
+		border: none;
+		background-color: rgba($color-secondary-blue, 0.4);
+		&:hover {
+			background: rgba($color-secondary-blue, 0.5);
+		}
+		span {
+			display: none;
+		}
+		.mh-icon:not(.wait-spinner) {
+			display: none;
+		}
+		.wait-spinner {
+			stroke: $color-primary-blue;
+			fill: none !important;
+		}
+	}
+}
+/* SECONDARY END */
+
+/* TEXT */
+.text-btn {
+	border: none;
+	padding: $spacing-small $spacing-default;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:hover {
+		background: rgba($color-mono-black, 0.04);
+	}
+	&.disabled {
+		border: none;
+	}
+	&.wait {
+		background: none;
+		&:hover {
+			background: rgba($color-mono-black, 0.04);
+		}
+	}
+}
+/* TEXT END */
+
+/* SMALL */
+.small-btn {
+	font-weight: $font-weight-large;
+	font-size: $font-size-large;
+	line-height: $line-height-default;
+	padding: 2px $spacing-xsmall;
+	.mh-icon {
+		max-width: 12px;
+		max-height: 12px;
+		margin: $spacing-xxsmall $spacing-xsmall;
+	}
+}
+/* SMALL END */
+
+/* ROW */
+.row-btn {
+	background: none;
+	border: $border-size-default solid $color-mono-light-grey-5;
+	min-width: 360px;
+	justify-content: flex-start;
+
+	&.alignment-right {
+		justify-content: space-between;
+	}
+
+	&:hover {
+		background: rgba($color-mono-black, 0.04);
+		border-color: $color-mono-light-grey-5;
+	}
+	&.wait {
+		background: none;
+		border: $border-size-default solid $color-mono-light-grey-5;
+		&:hover {
+			background: rgba($color-mono-black, 0.04);
+		}
+	}
+}
+/* ROW END */
+
+/* ICONIC */
+.ant-btn {
+	&.iconic-btn {
+		background: none;
+		border: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.mh-icon {
+			height: 20px;
+			min-width: 20px;
+		}
+
+		&.size-circular {
+			width: 52px;
+			height: 52px;
+			border-radius: $border-radius-xxlarge;
+			.mh-icon {
+				height: 30px;
+				min-width: 30px;
+			}
+		}
+		&.size-normal {
+			width: 52px;
+			height: 52px;
+		}
+		&.size-small {
+			width: 32px;
+			height: 32px;
+		}
+		&.size-tiny {
+			width: 24px;
+			height: 24px;
+
+			&:hover {
+				width: 24px;
+				height: 24px;
+			}
+		}
+		.mh-icon {
+			margin: $spacing-xxsmall;
+			fill: $color-mono-grey-2;
+		}
+		&:hover {
+			background: rgba($color-mono-black, 0.04);
+			border-color: $color-mono-light-grey-5;
+		}
+	}
+}
+
+/* ICONIC END */
+/* SOCIAL */
+.social-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 360px;
+	height: 52px;
+	background: $transparent-hover;
+	border-radius: $border-radius-default;
+	&.ant-btn-default {
+		border: none;
+	}
+	&:focus {
+		background: $transparent-hover;
+	}
+	span {
+		font-style: normal;
+		font-weight: $font-weight-large;
+		font-size: $font-size-large;
+		line-height: $line-height-default;
+
+		color: $color-mono-grey-3;
+	}
+	svg {
+		height: 20px;
+		width: 30px;
+	}
+
+	.mh-icon {
+		margin-right: $spacing-xxsmall !important;
+		margin-left: -10px !important;
+	}
+
+	&.google {
+		&:hover {
+			background: #518ef8;
+		}
+	}
+	&.facebook {
+		&:hover {
+			background: #314f8b;
+		}
+	}
+	&.apple {
+		&:hover {
+			background: $color-mono-black;
+		}
+	}
+
+	&:hover {
+		span {
+			color: $color-mono-white;
+		}
+		svg {
+			path {
+				fill: $color-mono-white;
+			}
+		}
+	}
+}
+/* SOCIAL END */
+
+.size-large {
+	width: 100%;
 }

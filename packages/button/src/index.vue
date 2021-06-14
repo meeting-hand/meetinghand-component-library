@@ -17,7 +17,7 @@
 <script>
 import Button from "ant-design-vue/lib/button";
 
-import "./assets/scss/main.scss";
+import "./assets/scss/ant.scss";
 
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
