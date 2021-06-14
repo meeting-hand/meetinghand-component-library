@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Tab from "ant-design-vue/lib/tabs";
+import { Tabs } from "ant-design-vue";
 import "ant-design-vue/lib/tabs/style/index.less";
 import "./assets/main.scss";
 
@@ -18,8 +18,8 @@ import { ref } from "vue";
 export default {
   name: "MhTab",
   components: {
-    [Tab.name]: Tab,
-    "a-tab-pane": Tab.TabPane,
+    [Tabs.name]: Tabs,
+    "a-tab-pane": Tabs.TabPane,
   },
   props: {
     color: {

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Button from "ant-design-vue/lib/button";
+import { Button } from "ant-design-vue";
 
 import "./assets/scss/ant.scss";
 

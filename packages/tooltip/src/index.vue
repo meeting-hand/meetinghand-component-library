@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Tooltip from "ant-design-vue/lib/tooltip";
+import { Tooltip } from "ant-design-vue";
 
 import "ant-design-vue/lib/tooltip/style/index.less";
 import "./assets/main.scss";

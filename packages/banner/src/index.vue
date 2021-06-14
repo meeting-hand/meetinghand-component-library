@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Banner from "ant-design-vue/lib/alert";
+import { Alert } from "ant-design-vue";
 import "ant-design-vue/lib/alert/style/index.less";
 import "./assets/main.scss";
 
@@ -23,7 +23,7 @@ import FullWidth from "./types/fullWidth.vue";
 export default {
   name: "MhBanner",
   components: {
-    [Banner.name]: Banner,
+    [Alert.name]: Alert,
     Section,
     FullWidth,
   },
