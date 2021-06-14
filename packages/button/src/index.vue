@@ -17,7 +17,7 @@
 <script>
 import Button from "ant-design-vue/lib/button";
 
-import "ant-design-vue/lib/button/style/index.less";
+//import "ant-design-vue/lib/button/style/index.less";
 import "./assets/scss/main.scss";
 
 import Primary from "./types/primary.vue";
