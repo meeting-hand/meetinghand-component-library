@@ -11,7 +11,7 @@ storiesOf("Input", module).add("Input", () => ({
 			value4: "",
 			value5: "",
 			value6: "",
-			value7: "lorem ipsum",
+			value7: "git config branch.master.mergeoption",
 		};
 	},
 	template: `
