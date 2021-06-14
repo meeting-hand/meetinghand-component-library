@@ -6,7 +6,7 @@
 import Switch from "ant-design-vue/lib/switch";
 
 import "ant-design-vue/lib/switch/style/index.less";
-import "./assets/main.scss";
+import "./assets/ant.scss";
 
 export default {
   name: "MhSwitch",
