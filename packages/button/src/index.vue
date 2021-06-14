@@ -17,8 +17,7 @@
 <script>
 import Button from "ant-design-vue/lib/button";
 
-//import "ant-design-vue/lib/button/style/index.less";
-import "./assets/scss/main.scss";
+import "./assets/scss/ant.scss";
 
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
@@ -92,7 +91,7 @@ export default {
     color: {
       type: String,
       default: null,
-      validator: (_v) => ["blue", "green"].includes(_v),
+      validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
   },
 };

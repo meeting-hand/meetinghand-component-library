@@ -11,16 +11,18 @@ storiesOf("Button", module).add("primary", () => ({
       <mh-button type="primary" size="large">
         Large
       </mh-button>
+      <br/>
       <mh-button type="primary" size="large" icon="arrow-up">
         Large Left Icon
       </mh-button>
+      <br/>
       <mh-button type="primary" size="large" icon="arrow-up" icon-alignment="right">
         Large Right Icon
       </mh-button>
       <hr />
       <h1>Default</h1>
       <mh-button type="primary">
-        Default size
+        Button
       </mh-button>
       <mh-button type="primary" icon="arrow-down">
         Icon Left
@@ -55,7 +57,16 @@ storiesOf("Button", module).add("primary", () => ({
       <mh-button type="primary" size="large" color="green">
         Green
       </mh-button>
+      <hr />
+      <h1>Alert</h1>
+      <mh-button type="primary"  color="red">
+        Alert
+      </mh-button>
+      <mh-button type="primary" icon="arrow-up" icon-alignment="right" color="red">
+        Alert
+      </mh-button>
       <br/><br />
+
     `,
 }));
 
@@ -106,6 +117,9 @@ storiesOf("Button", module).add("secondary", () => ({
         Default size
       </mh-button>
       <br /><br />
+      <mh-button type="secondary" icon="arrow-up" icon-alignment="right" color="red">
+      Icon Right
+    </mh-button>
     `,
 }));
 
@@ -139,6 +153,9 @@ storiesOf("Button", module).add("text", () => ({
         Default size
       </mh-button>
       <br/><br/>
+      <mh-button type="text" icon="arrow-up" icon-alignment="right" color="red">
+        Icon Right
+      </mh-button>
     `,
 }));
 
@@ -217,6 +234,10 @@ storiesOf("Button", module).add("iconic", () => ({
       <h1>Tiny</h1>
       <mh-button type="iconic" icon="system-close" size="tiny" />
 			<br/><br />
+      <mh-button type="iconic" icon="system-other-options" size="normal" color="red" />
+      <mh-button type="iconic" icon="system-other-options" size="normal" disabled />
+
+
     `,
 }));
 

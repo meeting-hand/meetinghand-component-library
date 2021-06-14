@@ -26,7 +26,7 @@ import Radio from "ant-design-vue/lib/radio";
 import MhButton from "@meetinghand/button/src/index.vue";
 
 import "ant-design-vue/lib/radio/style/index.less";
-import "./assets/main.scss";
+import "./assets/ant.scss";
 
 export default {
   name: "MhRadio",
