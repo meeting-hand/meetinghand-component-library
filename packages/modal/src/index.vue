@@ -4,7 +4,7 @@
     :closable="closable"
     :destroyOnClose="true"
     @cancel="close()"
-    :class="[`mh-modal-${size}`]"
+    :class="[`mh-modal-${size}`, modalType]"
     :width="width"
     :footer="modalFooterProp"
     :title="dialogTitle"
@@ -41,7 +41,6 @@ export default {
       const widths = {
         default: 420,
         large: 640,
-        center: 410,
       };
       return widths[this.size];
     },
@@ -56,7 +55,7 @@ export default {
     size: {
       type: String,
       default: "default",
-      validator: (_v) => ["default", "large", "center"].includes(_v),
+      validator: (_v) => ["default", "large"].includes(_v),
     },
     modelValue: {
       type: Boolean,
@@ -79,6 +78,11 @@ export default {
     keyboard: {
       type: Boolean,
       default: true,
+    },
+    modalType: {
+      type: String,
+      default: "modal",
+      validator: (_v) => ["modal", "dialog"].includes(_v),
     },
   },
   emits: {

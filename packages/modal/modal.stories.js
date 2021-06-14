@@ -14,7 +14,7 @@ storiesOf("Modal", module).add("Dialog", () => ({
 	template: `
     <div class="story-modals">
 				<h1 class="mh-heading-2 fw-bold">Headline</h1>
-				<mh-modal v-model="modal1Status" :closable="false">
+				<mh-modal modal-type="dialog" v-model="modal1Status" :closable="false">
 					<h1 class="mh-heading-2 fw-bold">Headline</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 					<template v-slot:footer>
@@ -25,7 +25,7 @@ storiesOf("Modal", module).add("Dialog", () => ({
 				<mh-button @click="modal1Status=true">Default Modal</mh-button>
 
 				<h1 class="mh-heading-2 fw-bold" style="margin-top: 16px;">Headline Icon</h1>
-				<mh-modal v-model="modal2Status" :closable="false" icon="success">
+				<mh-modal modal-type="dialog" v-model="modal2Status" :closable="false" icon="success">
 					<h1 class="mh-heading-2 fw-bold">Headline</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 					<template v-slot:footer>
@@ -36,7 +36,7 @@ storiesOf("Modal", module).add("Dialog", () => ({
 				<mh-button @click="modal2Status=true">Default Modal 2</mh-button>
 
 				<h1 class="mh-heading-2 fw-bold" style="margin-top: 16px;">Headline Icon Error</h1>
-				<mh-modal v-model="modal3Status" :closable="false" icon="warning">
+				<mh-modal modal-type="dialog" v-model="modal3Status" :closable="false" icon="warning">
 					<h1 class="mh-heading-2 fw-bold">Headline</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
 					<template v-slot:footer>
@@ -63,12 +63,25 @@ storiesOf("Modal", module).add("Modal", () => ({
 				<mh-modal class="modal1" v-model="modal1Status" :closable="true" dialog-title="Modal Title">
 					<p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.      </p>
 					<template v-slot:footer>
-						<mh-button type="text" style="margin-right: 16px;">Text</mh-button>
+						<mh-button type="secondary" style="margin-right: 16px;">Text</mh-button>
 						<mh-button >Primary</mh-button>
 					</template>
 				</mh-modal>
 
 				<mh-button @click="modal1Status=true">Default Modal</mh-button>
+
+				<br />
+				<br />
+
+				<mh-modal v-model="modal2Status" dialog-title="Modal Title" size="large">
+					<p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.      </p>
+					<template v-slot:footer>
+						<mh-button type="secondary" >Text</mh-button>
+						<mh-button >Primary</mh-button>
+					</template>
+				</mh-modal>
+
+				<mh-button @click="modal2Status=true">Large Modal</mh-button>
 		</div>
     `,
 }));

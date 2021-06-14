@@ -126,6 +126,26 @@
 	width: 100%;
 	padding-top: $spacing-xxlarge;
 }
+.ant-modal {
+	&.modal {
+		.ant-modal-footer {
+			@include flex-row;
+			height: 76px;
+			padding: 0;
+			margin-top: $spacing-xxlarge;
+			margin-bottom: -$spacing-xxlarge;
+			&::before {
+				content: "";
+				height: $border-size-default;
+				background-color: $transparent-hover-3;
+				width: 100%;
+				position: absolute;
+				bottom: 77px;
+				left: 0;
+			}
+		}
+	}
+}
 .ant-modal.zoom-enter {
 	transform: none;
 	opacity: 0;
@@ -155,7 +175,7 @@
 	z-index: 1000;
 	height: 100%;
 	background: $color-mono-black;
-	opacity: 0.8;
+	opacity: 0.72;
 }
 .ant-modal-mask-hidden {
 	display: none;
@@ -178,10 +198,6 @@
 		text-align: left;
 		vertical-align: middle;
 	}
-}
-
-.mh-modal-center {
-	text-align: center;
 }
 
 @media (max-width: 767px) {
