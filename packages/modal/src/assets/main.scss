@@ -1,26 +1,18 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/mixins.scss";
 
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable no-duplicate-selectors */
-/* stylelint-disable */
-/* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 .ant-modal {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	color: rgba(0, 0, 0, 0.85);
-	font-size: 14px;
 	font-variant: tabular-nums;
-	line-height: 1.5715;
 	list-style: none;
-	font-feature-settings: "tnum";
 	position: relative;
-	top: 100px;
+	top: 80px;
 	width: auto;
 	margin: 0 auto;
-	padding-bottom: 24px;
 	pointer-events: none;
+	max-width: 5000px !important; // added for mobile
 }
 .ant-modal-wrap {
 	position: fixed;
@@ -33,85 +25,106 @@
 	outline: 0;
 	-webkit-overflow-scrolling: touch;
 }
-.ant-modal-title {
-	margin: 0;
-	color: rgba(0, 0, 0, 0.85);
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 22px;
-	word-wrap: break-word;
-}
 .ant-modal-content {
 	position: relative;
-	background-color: #fff;
-	background-clip: padding-box;
-	border: 0;
-	border-radius: 2px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 	pointer-events: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	position: relative;
+	background: $color-mono-white;
+	border: $border-size-default solid $color-mono-light-grey-5;
+	box-sizing: border-box;
+	box-shadow: 0px 12px 16px $shadow-1;
+	border-radius: $border-radius-xxlarge;
+	padding: $spacing-xxlarge;
 }
 .ant-modal-close {
 	position: absolute;
-	top: 0;
-	right: 0;
 	z-index: 10;
 	padding: 0;
-	color: rgba(0, 0, 0, 0.45);
-	font-weight: 700;
-	line-height: 1;
-	text-decoration: none;
-	background: transparent;
 	border: 0;
 	outline: 0;
 	cursor: pointer;
 	transition: color 0.3s;
-	&:focus {
-		color: rgba(0, 0, 0, 0.75);
-		text-decoration: none;
-	}
-	&:hover {
-		color: rgba(0, 0, 0, 0.75);
-		text-decoration: none;
-	}
-}
-.ant-modal-close-x {
-	display: block;
-	width: 56px;
-	height: 56px;
-	font-size: 16px;
-	font-style: normal;
-	line-height: 56px;
-	text-align: center;
-	text-transform: none;
-	text-rendering: auto;
-}
-.ant-modal-header {
-	padding: 16px 24px;
-	color: rgba(0, 0, 0, 0.85);
-	background: #fff;
-	border-bottom: 1px solid #f0f0f0;
-	border-radius: 2px 2px 0 0;
-}
-.ant-modal-body {
-	padding: 24px;
-	font-size: 14px;
-	line-height: 1.5715;
-	word-wrap: break-word;
-}
-.ant-modal-footer {
-	padding: 10px 16px;
-	text-align: right;
-	background: transparent;
-	border-top: 1px solid #f0f0f0;
-	border-radius: 0 0 2px 2px;
-	button {
-		+ {
-			button {
-				margin-bottom: 0;
-				margin-left: 8px;
-			}
+	width: 44px;
+	height: 44px;
+	border-radius: $border-radius-default;
+	border: $border-size-default solid $transparent-hover-3;
+	box-sizing: border-box;
+	border-radius: $border-radius-default;
+	background-color: transparent;
+	top: 8px;
+	right: 8px;
+
+	span {
+		width: auto;
+		height: auto;
+		line-height: 1;
+		svg {
+			@include transition-cubic();
+			width: 20px;
+			height: 20px;
+			fill: $color-mono-grey;
+			position: relative;
+			fill: $color-mono-black;
 		}
 	}
+	&:hover {
+		background-color: $transparent-hover-2;
+		svg {
+			@include transition-cubic-rotate();
+		}
+	}
+}
+
+.ant-modal-header {
+	@include flex-row(center, center);
+	height: 61px;
+	width: 100%;
+	text-align: center;
+	color: $color-mono-black;
+	margin-top: -$spacing-xxlarge;
+	margin-bottom: $spacing-xxlarge;
+	&::after {
+		content: "";
+		height: $border-size-default;
+		background-color: $transparent-hover-3;
+		width: 100%;
+		position: absolute;
+		top: 60px;
+	}
+	.ant-modal-title {
+		font-size: $font-size-xlarge;
+		line-height: $line-height-large;
+	}
+}
+.ant-modal-body {
+	word-wrap: break-word;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	color: $color-mono-black;
+	width: 100%;
+	.warning {
+		.mh-icon {
+			width: 48px;
+			height: 42px;
+			margin-left: $spacing-xxsmall;
+			margin-top: $spacing-xxsmall;
+		}
+	}
+	.success {
+		padding-bottom: $spacing-default;
+		.mh-icon {
+			width: $spacing-xxxlarge;
+			height: $spacing-xxxlarge;
+		}
+	}
+}
+.ant-modal-footer {
+	@include flex-row(flex-end, center);
+	width: 100%;
+	padding-top: $spacing-xxlarge;
 }
 .ant-modal.zoom-enter {
 	transform: none;
@@ -141,8 +154,8 @@
 	left: 0;
 	z-index: 1000;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.45);
-	filter: alpha(opacity=50);
+	background: $color-mono-black;
+	opacity: 0.8;
 }
 .ant-modal-mask-hidden {
 	display: none;
@@ -166,102 +179,11 @@
 		vertical-align: middle;
 	}
 }
-.ant-modal-confirm {
-	.ant-modal-header {
-		display: none;
-	}
-	.ant-modal-body {
-		padding: 32px 32px 24px;
-	}
-	.ant-modal-confirm-btns {
-		float: right;
-		margin-top: 24px;
-		button {
-			+ {
-				button {
-					margin-bottom: 0;
-					margin-left: 8px;
-				}
-			}
-		}
-	}
+
+.mh-modal-center {
+	text-align: center;
 }
-.ant-modal-confirm-body-wrapper {
-	zoom: 1;
-	&::before {
-		display: table;
-		content: "";
-	}
-	&::after {
-		display: table;
-		content: "";
-		clear: both;
-	}
-}
-.ant-modal-confirm-body {
-	.ant-modal-confirm-title {
-		display: block;
-		overflow: hidden;
-		color: rgba(0, 0, 0, 0.85);
-		font-weight: 500;
-		font-size: 16px;
-		line-height: 1.4;
-	}
-	.ant-modal-confirm-content {
-		margin-top: 8px;
-		color: rgba(0, 0, 0, 0.85);
-		font-size: 14px;
-	}
-	> .anticon {
-		float: left;
-		margin-right: 16px;
-		font-size: 22px;
-		+ {
-			.ant-modal-confirm-title {
-				+ {
-					.ant-modal-confirm-content {
-						margin-left: 38px;
-					}
-				}
-			}
-		}
-	}
-}
-.ant-modal-confirm-error {
-	.ant-modal-confirm-body {
-		> .anticon {
-			color: #ff4d4f;
-		}
-	}
-}
-.ant-modal-confirm-warning {
-	.ant-modal-confirm-body {
-		> .anticon {
-			color: #faad14;
-		}
-	}
-}
-.ant-modal-confirm-confirm {
-	.ant-modal-confirm-body {
-		> .anticon {
-			color: #faad14;
-		}
-	}
-}
-.ant-modal-confirm-info {
-	.ant-modal-confirm-body {
-		> .anticon {
-			color: #1890ff;
-		}
-	}
-}
-.ant-modal-confirm-success {
-	.ant-modal-confirm-body {
-		> .anticon {
-			color: #52c41a;
-		}
-	}
-}
+
 @media (max-width: 767px) {
 	.ant-modal {
 		max-width: calc(100vw - 16px);
@@ -272,110 +194,4 @@
 			flex: 1;
 		}
 	}
-}
-
-.ant-modal {
-	top: $spacing-xxlarge;
-	max-width: 5000px !important; // added for mobile
-}
-
-.ant-modal-content {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	padding-top: 12px;
-
-	position: relative;
-
-	background: $color-mono-white;
-
-	border: $border-size-default solid $color-mono-light-grey-5;
-	box-sizing: border-box;
-	box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
-	border-radius: $border-radius-large;
-	.ant-modal-header {
-		height: $spacing-xlarge;
-		left: 48px;
-		top: 48px;
-		padding: $spacing-xxsmall;
-		width: 100%;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 17px;
-		line-height: $line-height-large;
-		text-align: center;
-		color: $color-mono-black;
-	}
-
-	.ant-modal-body {
-		padding: 48px;
-		padding-top: 33px;
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-		color: $color-mono-black;
-		width: 100%;
-
-		h1 {
-			font-weight: bold;
-			font-size: 20px !important;
-			line-height: 28px;
-			color: $color-mono-black;
-			margin: $spacing-default $spacing-xxsmall !important;
-		}
-		.warning {
-			.mh-icon {
-				width: 48px;
-				height: 42px;
-				margin-left: $spacing-xxsmall;
-				margin-top: $spacing-xxsmall;
-			}
-		}
-		.success {
-			padding: $spacing-default $spacing-xxsmall;
-			.mh-icon {
-				width: 77px;
-				height: 77px;
-			}
-		}
-	}
-	.ant-modal-footer {
-		border-top: none;
-		padding: 24px 48px;
-		width: 100%;
-	}
-	.ant-modal-close {
-		width: 24px;
-		height: 24px;
-		right: $spacing-default;
-		border-radius: $border-radius-default;
-		top: 12px;
-		span {
-			width: auto;
-			height: auto;
-			line-height: 1;
-			svg {
-				@include transition-cubic();
-				width: 14px;
-				height: 14px;
-				fill: $color-mono-grey;
-				position: relative;
-				fill: $color-mono-black;
-			}
-		}
-		&:hover {
-			background-color: $transparent-hover-2;
-			svg {
-				@include transition-cubic-rotate();
-			}
-		}
-	}
-}
-
-.mh-modal-center {
-	text-align: center;
-}
-
-.ant-modal-mask {
-	background: $color-mono-black;
-	opacity: 0.8;
 }

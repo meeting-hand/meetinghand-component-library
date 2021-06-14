@@ -14,10 +14,7 @@
     <div :class="icon">
       <mh-icon :name="icon" v-if="icon" />
     </div>
-
-    <h1 v-if="title">{{ title }}</h1>
     <slot></slot>
-
     <template v-slot:footer>
       <slot name="footer"></slot>
     </template>
@@ -26,7 +23,6 @@
 
 <script>
 import Modal from "ant-design-vue/lib/modal";
-
 import "./assets/main.scss";
 
 import MHIcon from "@meetinghand/style/icons/index.vue";
@@ -65,9 +61,6 @@ export default {
     modelValue: {
       type: Boolean,
       required: true,
-    },
-    title: {
-      type: String,
     },
     icon: {
       type: String,

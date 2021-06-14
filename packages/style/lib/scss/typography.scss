@@ -8,18 +8,6 @@ body,
 	line-height: 20px;
 }
 
-fw-bold {
-	font-weight: bold;
-}
-
-fw-medium {
-	font-weight: 500;
-}
-
-fw-semi {
-	font-weight: 600;
-}
-
 .mh-display {
 	font-family: $primaryFont;
 	font-style: normal;
@@ -42,6 +30,7 @@ fw-semi {
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 24px;
+	margin-bottom: $spacing-small;
 }
 
 .mh-caption {
@@ -59,4 +48,16 @@ fw-semi {
 	margin-left: 8px;
 	margin-top: 8px;
 	display: block;
+}
+
+.fw-bold {
+	font-weight: bold;
+}
+
+.fw-medium {
+	font-weight: 500;
+}
+
+.fw-semi {
+	font-weight: 600;
 }
