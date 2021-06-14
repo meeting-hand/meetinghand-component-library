@@ -23,7 +23,7 @@
 	touch-action: manipulation;
 	height: 44px;
 	padding: $spacing-medium $spacing-default;
-	border-radius: 6px;
+	border-radius: $border-radius-default;
 	background-color: #fff;
 	border-color: #d9d9d9;
 	outline: 0;
@@ -58,11 +58,7 @@
 	}
 	&:active {
 		outline: 0;
-		// color: #096dd9;
-		// background-color: #fff;
-		// border-color: #096dd9;
 		text-decoration: none;
-		// background: #fff;
 		> a {
 			&:only-child {
 				color: currentColor;
@@ -83,11 +79,7 @@
 	}
 	&:focus {
 		outline: 0;
-		// color: #40a9ff;
-		// background-color: #fff;
-		// border-color: #40a9ff;
 		text-decoration: none;
-		// background: #fff;
 		> a {
 			&:only-child {
 				color: currentColor;
@@ -130,11 +122,7 @@
 		}
 	}
 	&:hover {
-		// color: #40a9ff;
-		// background-color: #fff;
-		// border-color: #40a9ff;
 		text-decoration: none;
-		// background: #fff;
 		> a {
 			&:only-child {
 				color: currentColor;
@@ -4467,7 +4455,6 @@ a.ant-btn-sm {
 /* PRIMARY */
 .ant-btn-primary {
 	background-color: $color-primary-blue;
-	// min-height: 44px;
 	border: none;
 
 	&:hover {
@@ -4532,17 +4519,17 @@ a.ant-btn-sm {
 
 	&:hover {
 		color: $color-primary-blue;
-		background: rgba(0, 0, 0, 0.04);
-		border-color: rgba(0, 0, 0, 0.08);
+		background: $transparent-hover;
+		border-color: $transparent-hover-3;
 	}
 
 	&:focus {
-		background: rgba(0, 0, 0, 0.08);
-		border-color: rgba(0, 0, 0, 0.08);
+		background: $transparent-hover-3;
+		border-color: $transparent-hover-3;
 	}
 
 	&.disabled {
-		border: $border-size-default solid rgba(0, 0, 0, 0.08);
+		border: $border-size-default solid $transparent-hover-3;
 		background-color: transparent;
 		color: $color-mono-grey;
 
@@ -4573,16 +4560,16 @@ a.ant-btn-sm {
 		}
 	}
 	&.red {
-		border-color: #f44336;
-		color: #f44336;
+		border-color: $color-primary-red;
+		color: $color-primary-red;
 		.mh-icon {
-			fill: #f44336;
+			fill: $color-primary-red;
 		}
 		&:hover {
-			background: rgba(0, 0, 0, 0.04);
+			background: $transparent-hover;
 		}
 		&:focus {
-			background: rgba(0, 0, 0, 0.08);
+			background: $transparent-hover-3;
 		}
 	}
 }
@@ -4591,19 +4578,19 @@ a.ant-btn-sm {
 /* TEXT */
 .text-btn {
 	border: none;
-	color: #565656;
+	color: $color-mono-grey-3;
 	padding: 4px $spacing-xsmall;
 	height: 28px;
 	.mh-icon {
-		fill: #565656;
+		fill: $color-mono-grey-3;
 	}
 	&:hover {
-		background: rgba(0, 0, 0, 0.04);
-		color: #565656;
+		background: $transparent-hover;
+		color: $color-mono-grey-3;
 	}
 	&:focus {
-		background: rgba(0, 0, 0, 0.08);
-		color: #565656;
+		background: $transparent-hover-3;
+		color: $color-mono-grey-3;
 	}
 
 	&.disabled {
@@ -4612,18 +4599,18 @@ a.ant-btn-sm {
 	&.wait {
 		background: none;
 		&:hover {
-			background: rgba(0, 0, 0, 0.04);
+			background: $transparent-hover;
 		}
 	}
 	&.red {
 		&:hover {
-			color: #f44336;
+			color: $color-primary-red;
 		}
 		&:active {
-			color: #f44336;
+			color: $color-primary-red;
 		}
 		&:focus {
-			color: #f44336;
+			color: $color-primary-red;
 		}
 	}
 }
@@ -4672,11 +4659,11 @@ a.ant-btn-sm {
 .ant-btn {
 	&.iconic-btn {
 		background: none;
-		border: 1px solid rgba(0, 0, 0, 0.08);
+		border: $border-size-default solid $transparent-hover-3;
 
 		.mh-icon {
-			height: 20px;
-			min-width: 20px;
+			height: $icon-size-default;
+			min-width: $icon-size-default;
 		}
 
 		&.size-circular {
@@ -4710,10 +4697,10 @@ a.ant-btn-sm {
 			fill: $color-mono-grey-3;
 		}
 		&:hover {
-			background: rgba(0, 0, 0, 0.04);
+			background: $transparent-hover;
 		}
 		&:focus {
-			background: rgba(0, 0, 0, 0.08);
+			background: $transparent-hover-3;
 		}
 		&.red {
 			border-color: $color-primary-red;
@@ -4732,7 +4719,7 @@ a.ant-btn-sm {
 	height: 44px;
 	border-radius: $border-radius-default;
 	&.ant-btn-default {
-		border: 1px solid $color-mono-light-grey-5;
+		border: $border-size-default solid $color-mono-light-grey-5;
 	}
 	&:focus {
 		background: $transparent-hover;
@@ -4767,7 +4754,7 @@ a.ant-btn-sm {
 	}
 
 	&:hover {
-		border: 1px solid transparent;
+		border: $border-size-default solid transparent;
 		span {
 			color: $color-mono-white;
 		}
