@@ -16,7 +16,7 @@
 
 <script>
 //import "ant-design-vue/lib/input/style/index.less";
-import "./assets/scss/main.scss";
+//import "./assets/scss/main.scss";
 
 import Default from "./types/default.vue";
 import Password from "./types/password.vue";

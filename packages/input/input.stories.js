@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/vue3";
 import MhInput from "./index";
+import "./src/assets/scss/main.scss";
 
 import "../../assets/storybook/input.css";
 
