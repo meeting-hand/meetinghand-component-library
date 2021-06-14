@@ -52,7 +52,6 @@ export default {
     },
     placeholder: {
       type: [String, Array],
-      default: "",
     },
     type: {
       type: String,
