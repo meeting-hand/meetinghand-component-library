@@ -23,7 +23,7 @@
 	height: 20px;
 	border: $border-size-default solid $color-primary-blue;
 	box-sizing: border-box;
-	border-radius: $border-radius-xxlarge;
+	border-radius: $border-radius-giant;
 	border-color: $color-primary-blue;
 	&:hover {
 		background-color: $color-secondary-blue;
@@ -45,7 +45,7 @@
 
 	border: $border-size-default solid $color-mono-grey;
 	box-sizing: border-box;
-	border-radius: $border-radius-xxlarge;
+	border-radius: $border-radius-giant;
 	background-color: none;
 	&:hover {
 		background-color: none;
