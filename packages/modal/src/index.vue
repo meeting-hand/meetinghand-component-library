@@ -27,7 +27,6 @@
 <script>
 import Modal from "ant-design-vue/lib/modal";
 
-import "ant-design-vue/lib/modal/style/index.less";
 import "./assets/main.scss";
 
 import MHIcon from "@meetinghand/style/icons/index.vue";
