@@ -31,7 +31,7 @@ export default {
     },
     placement: {
       type: String,
-      default: "bottomRight",
+      default: "topRight",
       validator: (_v) =>
         ["topRight", "topLeft", "bottomRight", "bottomLeft"].includes(_v),
     },
