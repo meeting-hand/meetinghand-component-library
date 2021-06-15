@@ -8,14 +8,18 @@ storiesOf("Style", module).add("Style!", () => ({
 	components: { MhIcon },
 	template: `
     <h1>MeetingHand Base Style Library</h1>
-    <p>Common scss variables & styles</p>
-
-    <p>assets/colors.scss</p>
-    <p>assets/icons.scss</p>
-    <p>assets/icons.scss</p>
-    <p>assets/reset.scss</p>
-    <p>assets/typography.scss</p>
-    <p>assets/variables.scss</p>
+    <ul>
+			<li>assets/scss/colors.scss</li>
+			<li>assets/scss/icons.scss</li>
+			<li>assets/scss/reset.scss</li>
+			<li>assets/scss/typography.scss</li>
+			<li>assets/scss/variables.scss</li>
+			<li>assets/scss/mixins.scss</li>
+			<li>assets/scss/icons.scss</li>
+			<li>assets/scss/ant.scss</li>
+			<li>assets/scss/component/*</li>
+			<li>assets/scss/ant/*</li>
+		</ul>
     `,
 }));
 
