@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MHIcon from "@meetinghand/style/icons/index.vue";
+import MHIcon from "@meetinghand/style/icons";
 import "./assets/main.scss";
 
 export default {
