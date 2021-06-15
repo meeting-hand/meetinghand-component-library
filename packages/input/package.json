@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"@meetinghand/style": "file:../style",
+		"@meetinghand/select": "file:../select",
 		"cleave.js": "^1.6.0"
 	}
 }

@@ -14,7 +14,6 @@
 
 <script>
 import { Alert } from "ant-design-vue";
-import "ant-design-vue/lib/alert/style/index.less";
 import "./assets/main.scss";
 
 import Section from "./types/section.vue";
