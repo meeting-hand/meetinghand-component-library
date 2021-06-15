@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { Alert } from "ant-design-vue";
+import Alert from "ant-design-vue/lib/alert";
 import "./assets/main.scss";
 
 import Section from "./types/section.vue";
