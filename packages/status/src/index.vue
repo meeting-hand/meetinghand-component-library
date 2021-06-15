@@ -1,7 +1,7 @@
 <template>
   <div :class="['mh-status', { disabled: disabled }, color]">
     <div class="mh-status-container">
-      <mh-icon v-if="icon" name="ui-time" />
+      <mh-icon v-if="icon" :name="icon" />
       <p>{{ message }}</p>
     </div>
   </div>
@@ -19,8 +19,8 @@ export default {
 
   props: {
     icon: {
-      type: Boolean,
-      default: false,
+      type: String,
+      default: null,
     },
     disabled: {
       type: Boolean,
