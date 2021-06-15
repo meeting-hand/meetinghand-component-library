@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { Checkbox } from "ant-design-vue";
+import Checkbox from "ant-design-vue/lib/checkbox";
 
 export default {
   name: "MhCheckboxMultiple",
