@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/vue3";
 import MhNotification from "./index";
-import MHIcon from "@meetinghand/style/icons/index.vue";
+import MHIcon from "@meetinghand/style/icons";
 
 storiesOf("Notification", module).add("All", () => ({
 	components: { MHIcon, MhNotification },
