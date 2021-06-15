@@ -9,14 +9,14 @@
   />
 </template>
 <script>
-import Banner from "ant-design-vue/lib/alert";
+import { Alert } from "ant-design-vue";
 import SystemInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 
 import { h, computed } from "vue";
 
 export default {
   components: {
-    [Banner.name]: Banner,
+    [Alert.name]: Alert,
   },
   props: {
     button: {

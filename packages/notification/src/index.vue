@@ -1,7 +1,7 @@
 <template></template>
 <script>
 import Notification from "ant-design-vue/lib/notification";
-import Button from "@meetinghand/button/src/index.vue";
+import Button from "@meetinghand/button";
 
 import "./assets/main.scss";
 
@@ -31,7 +31,7 @@ export default {
     },
     placement: {
       type: String,
-      default: "bottomRight",
+      default: "topRight",
       validator: (_v) =>
         ["topRight", "topLeft", "bottomRight", "bottomLeft"].includes(_v),
     },

@@ -21,7 +21,6 @@ import Range from "./types/range.vue";
 
 import "./assets/main.scss";
 
-// TODO: disabled dates
 export default {
   name: "MhDatePicker",
   components: {
