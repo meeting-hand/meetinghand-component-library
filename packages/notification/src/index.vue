@@ -1,9 +1,8 @@
 <template></template>
 <script>
 import Notification from "ant-design-vue/lib/notification";
-import Button from "../../button/src/index.vue";
+import Button from "@meetinghand/button/src/index.vue";
 
-import "ant-design-vue/lib/notification/style/index.less";
 import "./assets/ant.scss";
 
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
@@ -69,7 +68,7 @@ export default {
               emit("close", true);
             },
           },
-          "Dismiss"
+          () => "Dismiss"
         ),
       });
     };
