@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { Input } from "ant-design-vue";
+import Input from "ant-design-vue/lib/input";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import inputProps from "../utils/props";

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { Radio } from "ant-design-vue";
+import Radio from "ant-design-vue/lib/radio";
 import MhButton from "@meetinghand/button/src/index.vue";
 
 import "./assets/main.scss";

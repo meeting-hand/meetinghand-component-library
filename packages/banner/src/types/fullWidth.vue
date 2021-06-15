@@ -7,7 +7,7 @@
   </a-alert>
 </template>
 <script>
-import { Alert } from "ant-design-vue";
+import Alert from "ant-design-vue/lib/alert";
 
 export default {
   components: {
