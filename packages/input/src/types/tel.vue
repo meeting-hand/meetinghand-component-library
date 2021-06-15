@@ -30,10 +30,7 @@
 </template>
 
 <script>
-import { Input } from "ant-design-vue";
-import Select from "ant-design-vue/lib/select";
-
-import "ant-design-vue/lib/select/style/index.less";
+import { Input, Select } from "ant-design-vue";
 
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
@@ -43,6 +40,8 @@ import Cleave from "cleave.js";
 import { h, ref, onMounted, computed } from "vue";
 
 import inputProps from "../utils/props";
+
+import "@meetinghand/select/src/assets/ant-select.scss";
 
 export default {
   name: "MhInputTel",
