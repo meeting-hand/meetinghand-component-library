@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Switch from "ant-design-vue/lib/switch";
+import { Switch } from "ant-design-vue";
 
 import "ant-design-vue/lib/switch/style/index.less";
 import "./assets/ant.scss";

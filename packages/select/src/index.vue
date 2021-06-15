@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Select from "ant-design-vue/lib/select";
+import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 
 import "ant-design-vue/lib/select/style/index.less";

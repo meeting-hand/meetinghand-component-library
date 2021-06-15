@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Input from "ant-design-vue/lib/input";
+import { Input } from "ant-design-vue";
 import Select from "ant-design-vue/lib/select";
 
 import "ant-design-vue/lib/select/style/index.less";
