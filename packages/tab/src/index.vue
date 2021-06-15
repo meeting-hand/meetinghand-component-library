@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { Tabs } from "ant-design-vue";
+import Tabs from "ant-design-vue/lib/tabs";
 import "./assets/main.scss";
 
 import { ref } from "vue";

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { Input } from "ant-design-vue";
+import Textarea from "ant-design-vue/lib/input/TextArea";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 
 import "./assets/main.scss";
@@ -24,7 +24,7 @@ import "./assets/main.scss";
 export default {
   name: "MhTextArea",
   components: {
-    [Input.TextArea.name]: Input.TextArea,
+    [Textarea.name]: Textarea,
     "mh-icon": MHIcon,
   },
   props: {

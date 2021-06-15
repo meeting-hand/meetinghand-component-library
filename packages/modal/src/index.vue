@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { Modal } from "ant-design-vue";
+import Modal from "ant-design-vue/lib/modal";
 import "./assets/main.scss";
 
 import MHIcon from "@meetinghand/style/icons/index.vue";

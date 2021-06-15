@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { InputNumber } from "ant-design-vue";
+import InputNumber from "ant-design-vue/lib/input-number";
 
 import { computed } from "vue";
 
