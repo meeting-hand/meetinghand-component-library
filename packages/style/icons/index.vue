@@ -346,9 +346,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-svg {
-  width: 12px;
-  height: 14px;
-}
-</style>
