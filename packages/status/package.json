@@ -1,43 +1,22 @@
 {
-    "name": "@meetinghand/status",
-    "description": "Meetinghand Component Library Component for status",
-    "version": "0.0.2-alpha.0",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-    },
-    "keywords": [
-        "vue3",
-        "component",
-        "library",
-        "vue3",
-        "lerna",
-        "storybook"
-    ],
-    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-    "bugs": {
-        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-    },
-    "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/status.umd.js",
-    "module": "./dist/@meetinghand/status.es.js",
-    "exports": {
-        ".": {
-            "import": "./dist/@meetinghand/status.es.js",
-            "require": "./dist/@meetinghand/status.umd.js"
-        }
-    },
-    "scripts": {
-        "build": "vite build"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "files": [
-        "dist/*"
-    ],
-    "dependencies": {
-        "@meetinghand/style": "file:../style",
-        "vue": "^3.0.5"
-    }
+	"name": "@meetinghand/status",
+	"description": "Meetinghand Component Library Component for status",
+	"version": "0.0.2-alpha.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+	},
+	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+	"bugs": {
+		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+	},
+	"author": "Fatih Sinan Yaman",
+	"main": "./dist/index.js",
+	"module": "./index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@meetinghand/style": "file:../style"
+	}
 }
