@@ -17,7 +17,7 @@
   </a-button>
 </template>
 <script>
-import { Button } from "ant-design-vue";
+import Button from "ant-design-vue/lib/button";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 export default {
   name: "MhButtonSmall",
