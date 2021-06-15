@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/vue3";
 
 import MhIcon from "./icons/index";
 
-import "../../assets/storybook/style.css";
+import "../../assets/storybook/storybook.css";
 
 storiesOf("Style", module).add("Style!", () => ({
 	components: { MhIcon },

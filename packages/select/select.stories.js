@@ -1,6 +1,9 @@
 import { storiesOf } from "@storybook/vue3";
 import MhSelect from "./index";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("Select", module).add("All", () => ({
 	components: { MhSelect },
 	data() {
@@ -33,6 +36,7 @@ storiesOf("Select", module).add("All", () => ({
 		};
 	},
 	template: `
+	<div class="storybook-select">
 			<h1>Default</h1>
       <mh-select v-model="select1" :options="selectOpts" placeholder="Birini seciniz" /> <span v-if="select1" style="margin-left: 30px;">Value: {{ select1 }}</span>
 			<hr />
@@ -51,6 +55,7 @@ storiesOf("Select", module).add("All", () => ({
       		<mh-select v-model="select2" disabled :options="selectOpts" placeholder="Birini seciniz" size="small"/> <span v-if="select2" style="margin-left: 30px;">Value: {{ select2 }}</span>
 			<hr />
       		<mh-select v-model="select3" has-error error-message="this field is required" :options="selectOpts" placeholder="Birini seciniz" size="small"/> <span v-if="select3" style="margin-left: 30px;">Value: {{ select3 }}</span>
-			<hr />
+			<br /><br />
+	</div>
     `,
 }));

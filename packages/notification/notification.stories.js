@@ -2,6 +2,9 @@ import { storiesOf } from "@storybook/vue3";
 import MhNotification from "./index";
 import MHIcon from "@meetinghand/style/icons";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("Notification", module).add("All", () => ({
 	components: { MHIcon, MhNotification },
 	data() {
@@ -37,6 +40,7 @@ storiesOf("Notification", module).add("All", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-notification">
       <mh-notification
       :placement="notificationSuccess.placement"
       :duration="notificationSuccess.duration"
@@ -81,5 +85,6 @@ storiesOf("Notification", module).add("All", () => ({
       <a @click="notificationHintStatus=true">Open Hint</a>
       <h1>{{notificationHintStatus}}</h1>
       <hr />
+    </div>
     `,
 }));

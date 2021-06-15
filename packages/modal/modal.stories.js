@@ -2,6 +2,9 @@ import { storiesOf } from "@storybook/vue3";
 import MhModal from "./index";
 import MhButton from "../button/index";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("Modal", module).add("Dialog", () => ({
 	components: { MhModal, MhButton },
 	data() {
@@ -23,6 +26,7 @@ storiesOf("Modal", module).add("Dialog", () => ({
 					</template>
 				</mh-modal>
 				<mh-button @click="modal1Status=true">Default Modal</mh-button>
+				<hr/>
 
 				<h1 class="mh-heading-2 fw-bold" style="margin-top: 16px;">Headline Icon</h1>
 				<mh-modal modal-type="dialog" v-model="modal2Status" :closable="false" icon="success">
@@ -34,7 +38,7 @@ storiesOf("Modal", module).add("Dialog", () => ({
 					</template>
 				</mh-modal>
 				<mh-button @click="modal2Status=true">Default Modal 2</mh-button>
-
+				<hr/>
 				<h1 class="mh-heading-2 fw-bold" style="margin-top: 16px;">Headline Icon Error</h1>
 				<mh-modal modal-type="dialog" v-model="modal3Status" :closable="false" icon="warning">
 					<h1 class="mh-heading-2 fw-bold">Headline</h1>
@@ -71,6 +75,7 @@ storiesOf("Modal", module).add("Modal", () => ({
 				<mh-button @click="modal1Status=true">Default Modal</mh-button>
 
 				<br />
+				<hr/>
 				<br />
 
 				<mh-modal v-model="modal2Status" dialog-title="Modal Title" size="large">
