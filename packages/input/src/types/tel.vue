@@ -41,7 +41,7 @@ import { h, ref, onMounted, computed } from "vue";
 
 import inputProps from "../utils/props";
 
-import "@meetinghand/select/src/assets/ant-select.scss";
+import "@meetinghand/style/lib/scss/ant/select.scss";
 
 export default {
   name: "MhInputTel",
