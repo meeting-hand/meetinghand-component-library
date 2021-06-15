@@ -1,5 +1,5 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
-@import "./ant-tooltip.scss";
+@import "@meetinghand/style/lib/scss/ant/tooltip.scss";
 
 .mh-tooltip {
 	background-color: $color-mono-black;

@@ -1,4 +1,75 @@
-@import "@meetinghand/style/lib/scss/variables.scss";
+@-webkit-keyframes NotificationFadeIn {
+	0% {
+		left: 384px;
+		opacity: 0;
+	}
+	100% {
+		left: 0;
+		opacity: 1;
+	}
+}
+@keyframes NotificationFadeIn {
+	0% {
+		left: 384px;
+		opacity: 0;
+	}
+	100% {
+		left: 0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes NotificationLeftFadeIn {
+	0% {
+		right: 384px;
+		opacity: 0;
+	}
+	100% {
+		right: 0;
+		opacity: 1;
+	}
+}
+@keyframes NotificationLeftFadeIn {
+	0% {
+		right: 384px;
+		opacity: 0;
+	}
+	100% {
+		right: 0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes NotificationFadeOut {
+	0% {
+		max-height: 150px;
+		margin-bottom: 16px;
+		padding-top: 16px 24px;
+		padding-bottom: 16px 24px;
+		opacity: 1;
+	}
+	100% {
+		max-height: 0;
+		margin-bottom: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		opacity: 0;
+	}
+}
+@keyframes NotificationFadeOut {
+	0% {
+		max-height: 150px;
+		margin-bottom: 16px;
+		padding-top: 16px 24px;
+		padding-bottom: 16px 24px;
+		opacity: 1;
+	}
+	100% {
+		max-height: 0;
+		margin-bottom: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		opacity: 0;
+	}
+}
 
 .ant-notification {
 	box-sizing: border-box;
@@ -178,121 +249,4 @@
 	animation-name: NotificationFadeOut;
 	-webkit-animation-play-state: running;
 	animation-play-state: running;
-}
-
-//***************************
-
-.ant-notification-notice {
-	background: $color-mono-white;
-	border: $border-size-default solid $transparent-hover;
-	box-sizing: border-box;
-	box-shadow: $spacing-xxsmall $spacing-medium $spacing-default $shadow-1;
-	border-radius: $border-radius-xxlarge;
-
-	svg {
-		margin-top: $spacing-xxsmall;
-		margin-left: $spacing-xxsmall;
-		width: $icon-size-default;
-		height: $icon-size-default;
-		fill: $color-primary-green;
-	}
-
-	.ant-notification-notice-content {
-		margin: $spacing-xxsmall;
-		padding: $spacing-xxsmall;
-	}
-	.ant-notification-notice-icon {
-		margin-left: $spacing-xxsmall;
-		width: 20px;
-		height: 20px;
-	}
-	.ant-notification-notice-message {
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-		// margin-left: 30px;
-	}
-	.ant-notification-notice-description {
-		font-style: normal;
-		font-weight: normal;
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-		margin-left: $spacing-xxsmall;
-
-		color: $color-mono-black;
-		width: 298px;
-	}
-	.anticon-close {
-		svg {
-			margin-top: $spacing-xxsmall;
-			margin-right: $spacing-xxsmall;
-			width: $spacing-default;
-			height: $spacing-default;
-			fill: $color-mono-grey;
-
-			background: $color-mono-white;
-		}
-	}
-	&.success {
-		.ant-notification-notice-message {
-			color: $color-primary-green;
-		}
-		svg {
-			fill: $color-primary-green;
-		}
-		.anticon-close {
-			svg {
-				fill: $color-mono-grey-2;
-			}
-		}
-	}
-	&.error {
-		.ant-notification-notice-message {
-			color: $color-primary-red;
-		}
-		svg {
-			fill: $color-primary-red;
-		}
-		.anticon-close {
-			svg {
-				fill: $color-mono-grey-2;
-			}
-		}
-	}
-	&.info {
-		.ant-notification-notice-message {
-			color: $color-primary-blue;
-		}
-		svg {
-			fill: $color-primary-blue;
-		}
-		.anticon-close {
-			svg {
-				fill: $color-mono-grey-2;
-			}
-		}
-	}
-	&.hint {
-		.ant-notification-notice-message {
-			color: $color-primary-onsite;
-		}
-		svg {
-			fill: $color-primary-onsite;
-		}
-		.anticon-close {
-			svg {
-				fill: $color-mono-grey-2;
-			}
-		}
-	}
-}
-
-.ant-notification-close-x {
-	display: none;
-}
-
-.ant-btn-default {
-	color: $color-mono-black;
-	&:hover {
-		color: $color-mono-black;
-	}
 }

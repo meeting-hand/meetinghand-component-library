@@ -1,0 +1,116 @@
+@import "@meetinghand/style/lib/scss/variables.scss";
+@import "@meetinghand/style/lib/scss/ant/notification.scss";
+
+.ant-notification-notice {
+    background: $color-mono-white;
+    border: $border-size-default solid $transparent-hover;
+    box-sizing: border-box;
+    box-shadow: $spacing-xxsmall $spacing-medium $spacing-default $shadow-1;
+    border-radius: $border-radius-xxlarge;
+
+    svg {
+        margin-top: $spacing-xxsmall;
+        margin-left: $spacing-xxsmall;
+        width: $icon-size-default;
+        height: $icon-size-default;
+        fill: $color-primary-green;
+    }
+
+    .ant-notification-notice-content {
+        margin: $spacing-xxsmall;
+        padding: $spacing-xxsmall;
+        .ant-btn-default {
+            color: $color-mono-black;
+            &:hover {
+                color: $color-mono-black;
+            }
+        }
+    }
+    .ant-notification-notice-icon {
+        margin-left: $spacing-xxsmall;
+        width: 20px;
+        height: 20px;
+    }
+    .ant-notification-notice-message {
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        // margin-left: 30px;
+    }
+    .ant-notification-notice-description {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        margin-left: $spacing-xxsmall;
+
+        color: $color-mono-black;
+        width: 298px;
+    }
+    .anticon-close {
+        svg {
+            margin-top: $spacing-xxsmall;
+            margin-right: $spacing-xxsmall;
+            width: $spacing-default;
+            height: $spacing-default;
+            fill: $color-mono-grey;
+
+            background: $color-mono-white;
+        }
+    }
+    &.success {
+        .ant-notification-notice-message {
+            color: $color-primary-green;
+        }
+        svg {
+            fill: $color-primary-green;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.error {
+        .ant-notification-notice-message {
+            color: $color-primary-red;
+        }
+        svg {
+            fill: $color-primary-red;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.info {
+        .ant-notification-notice-message {
+            color: $color-primary-blue;
+        }
+        svg {
+            fill: $color-primary-blue;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.hint {
+        .ant-notification-notice-message {
+            color: $color-primary-onsite;
+        }
+        svg {
+            fill: $color-primary-onsite;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+}
+
+.ant-notification-close-x {
+    display: none;
+}

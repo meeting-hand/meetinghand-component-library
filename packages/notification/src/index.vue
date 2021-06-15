@@ -3,7 +3,7 @@
 import Notification from "ant-design-vue/lib/notification";
 import Button from "@meetinghand/button/src/index.vue";
 
-import "./assets/ant.scss";
+import "./assets/main.scss";
 
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";

@@ -1,6 +1,6 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
-@import "./ant-select.scss";
+@import "@meetinghand/style/lib/scss/ant/select.scss";
 
 .mh-dropdown {
 	&.ant-select {
