@@ -10,7 +10,7 @@
 </template>
 <script>
 import { Button } from "ant-design-vue";
-import MHIcon from "@meetinghand/style/icons";
+import MHIcon from "@meetinghand/style/icons/index.vue";
 export default {
   name: "MhButtonSocial",
   components: {
