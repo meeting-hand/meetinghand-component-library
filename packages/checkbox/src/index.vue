@@ -17,7 +17,7 @@ import Single from "./types/single.vue";
 import Multiple from "./types/multiple.vue";
 
 import "ant-design-vue/lib/checkbox/style/index.less";
-import "./assets/main.scss";
+import "./assets/ant.scss";
 
 export default {
   name: "MhCheckbox",
