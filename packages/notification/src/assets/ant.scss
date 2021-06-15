@@ -1,0 +1,295 @@
+@import "@meetinghand/style/lib/scss/variables.scss";
+
+.ant-notification {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: fixed;
+    z-index: 1010;
+    width: 460px;
+    max-width: calc(100vw - 32px);
+    margin-right: 24px;
+    .notification-fade-effect {
+        -webkit-animation-duration: 0.24s;
+        animation-duration: 0.24s;
+        -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+}
+.ant-notification-topLeft {
+    margin-right: 0;
+    margin-left: 24px;
+    .ant-notification-fade-enter.ant-notification-fade-enter-active {
+        -webkit-animation-name: NotificationLeftFadeIn;
+        animation-name: NotificationLeftFadeIn;
+    }
+    .ant-notification-fade-appear.ant-notification-fade-appear-active {
+        -webkit-animation-name: NotificationLeftFadeIn;
+        animation-name: NotificationLeftFadeIn;
+    }
+}
+.ant-notification-bottomLeft {
+    margin-right: 0;
+    margin-left: 24px;
+    .ant-notification-fade-enter.ant-notification-fade-enter-active {
+        -webkit-animation-name: NotificationLeftFadeIn;
+        animation-name: NotificationLeftFadeIn;
+    }
+    .ant-notification-fade-appear.ant-notification-fade-appear-active {
+        -webkit-animation-name: NotificationLeftFadeIn;
+        animation-name: NotificationLeftFadeIn;
+    }
+}
+.ant-notification-close-icon {
+    font-size: 14px;
+    cursor: pointer;
+}
+.ant-notification-notice {
+    position: relative;
+    margin-bottom: 16px;
+    padding-left: $spacing-medium;
+    padding-right: $spacing-medium;
+    overflow: hidden;
+    line-height: 1.5;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.ant-notification-notice-message {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 16px;
+    line-height: 24px;
+}
+.ant-notification-notice-message-single-line-auto-margin {
+    display: block;
+    width: calc(384px - 24px * 2 - 24px - 48px - 100%);
+    max-width: 4px;
+    background-color: transparent;
+    pointer-events: none;
+    &::before {
+        display: block;
+        content: "";
+    }
+}
+.ant-notification-notice-description {
+    font-size: 14px;
+}
+.ant-notification-notice-closable {
+    .ant-notification-notice-message {
+        padding-right: 24px;
+    }
+}
+.ant-notification-notice-with-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .ant-notification-notice-message {
+        margin-bottom: 4px;
+        margin-left: 16px;
+        font-size: 16px;
+    }
+    .ant-notification-notice-description {
+        margin-left: 48px;
+        font-size: 14px;
+    }
+}
+.ant-notification-notice-icon {
+    position: absolute;
+    margin-left: 4px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.ant-notification-notice-close {
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    color: rgba(0, 0, 0, 0.45);
+    outline: none;
+    &:hover {
+        color: rgba(0, 0, 0, 0.67);
+    }
+}
+.ant-notification-notice-btn {
+    float: right;
+    margin-top: 0px;
+}
+.ant-notification-fade-enter {
+    opacity: 0;
+    -webkit-animation-duration: 0.24s;
+    animation-duration: 0.24s;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.ant-notification-fade-appear {
+    opacity: 0;
+    -webkit-animation-duration: 0.24s;
+    animation-duration: 0.24s;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.ant-notification-fade-leave {
+    -webkit-animation-duration: 0.24s;
+    animation-duration: 0.24s;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.ant-notification-fade-enter.ant-notification-fade-enter-active {
+    -webkit-animation-name: NotificationFadeIn;
+    animation-name: NotificationFadeIn;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+.ant-notification-fade-appear.ant-notification-fade-appear-active {
+    -webkit-animation-name: NotificationFadeIn;
+    animation-name: NotificationFadeIn;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+.ant-notification-fade-leave.ant-notification-fade-leave-active {
+    -webkit-animation-name: NotificationFadeOut;
+    animation-name: NotificationFadeOut;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+
+//***************************
+
+.ant-notification-notice {
+    background: $color-mono-white;
+    border: $border-size-default solid $transparent-hover;
+    box-sizing: border-box;
+    box-shadow: $spacing-xxsmall $spacing-medium $spacing-default $shadow-1;
+    border-radius: $border-radius-xxlarge;
+
+    svg {
+        margin-top: $spacing-xxsmall;
+        margin-left: $spacing-xxsmall;
+        width: $icon-size-default;
+        height: $icon-size-default;
+        fill: $color-primary-green;
+    }
+
+    .ant-notification-notice-content {
+        margin: $spacing-xxsmall;
+        padding: $spacing-xxsmall;
+    }
+    .ant-notification-notice-icon {
+        margin-left: $spacing-xxsmall;
+        width: 20px;
+        height: 20px;
+    }
+    .ant-notification-notice-message {
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        // margin-left: 30px;
+    }
+    .ant-notification-notice-description {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        margin-left: $spacing-xxsmall;
+
+        color: $color-mono-black;
+        width: 298px;
+    }
+    .anticon-close {
+        svg {
+            margin-top: $spacing-xxsmall;
+            margin-right: $spacing-xxsmall;
+            width: $spacing-default;
+            height: $spacing-default;
+            fill: $color-mono-grey;
+
+            background: $color-mono-white;
+        }
+    }
+    &.success {
+        .ant-notification-notice-message {
+            color: $color-primary-green;
+        }
+        svg {
+            fill: $color-primary-green;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.error {
+        .ant-notification-notice-message {
+            color: $color-primary-red;
+        }
+        svg {
+            fill: $color-primary-red;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.info {
+        .ant-notification-notice-message {
+            color: $color-primary-blue;
+        }
+        svg {
+            fill: $color-primary-blue;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.hint {
+        .ant-notification-notice-message {
+            color: $color-primary-onsite;
+        }
+        svg {
+            fill: $color-primary-onsite;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+}
+
+.ant-notification-close-x {
+    display: none;
+}
+
+.ant-btn-default {
+    color: $color-mono-black;
+    &:hover {
+        color: $color-mono-black;
+    }
+}
