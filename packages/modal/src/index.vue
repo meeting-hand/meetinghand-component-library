@@ -25,7 +25,7 @@
 import { Modal } from "ant-design-vue";
 import "./assets/main.scss";
 
-import MHIcon from "@meetinghand/style/icons";
+import MHIcon from "@meetinghand/style/icons/index.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
 
 import { h } from "vue";
