@@ -14,7 +14,5 @@ storiesOf("Divider", module).add("All", () => ({
       <divider size="medium"/>
       <h1>Bold</h1>
       <divider size="bold"/>
-      <h1>XXBold</h1>
-      <divider size="xxbold" />
     `,
 }));
