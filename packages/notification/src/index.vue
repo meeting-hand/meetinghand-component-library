@@ -1,7 +1,7 @@
 <template></template>
 <script>
 import Notification from "ant-design-vue/lib/notification";
-import Button from "@meetinghand/button/src/index.vue";
+import Button from "@meetinghand/button";
 
 import "./assets/main.scss";
 
