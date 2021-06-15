@@ -19,6 +19,12 @@
     .ant-notification-notice-content {
         margin: $spacing-xxsmall;
         padding: $spacing-xxsmall;
+        .ant-btn-default {
+            color: $color-mono-black;
+            &:hover {
+                color: $color-mono-black;
+            }
+        }
     }
     .ant-notification-notice-icon {
         margin-left: $spacing-xxsmall;
@@ -107,11 +113,4 @@
 
 .ant-notification-close-x {
     display: none;
-}
-
-.ant-btn-default {
-    color: $color-mono-black;
-    &:hover {
-        color: $color-mono-black;
-    }
 }
