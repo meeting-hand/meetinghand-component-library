@@ -7,10 +7,10 @@
     border: none;
 
     &:hover {
-        background: #1987df;
+        background: $color-button-hover-blue;
     }
     &:focus {
-        background: #147acb;
+        background: $color-button-focus-blue;
     }
 
     &.disabled {
@@ -43,14 +43,14 @@
         background: $color-primary-participant;
         border: none;
         &:hover {
-            background: #15c299;
+            background: $color-button-hover-green;
         }
     }
     &.red {
         background-color: $color-primary-red;
         border: none;
         &:hover {
-            background-color: rgb(248, 74, 74);
+            background-color: $color-button-hover-red;
         }
     }
 }
