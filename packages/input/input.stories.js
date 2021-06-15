@@ -1,6 +1,9 @@
 import { storiesOf } from "@storybook/vue3";
 import MhInput from "./index";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("Input", module).add("Input", () => ({
 	components: { MhInput },
 	data() {
@@ -15,6 +18,7 @@ storiesOf("Input", module).add("Input", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-input">
       <h1>Standart</h1>
       <mh-input v-model="value1" email placeholder="e-mail address" />
       <br />
@@ -37,6 +41,7 @@ storiesOf("Input", module).add("Input", () => ({
       <mh-input v-model="value6" allow-clear />
       <br />
       <br />
+    </div>
     `,
 }));
 storiesOf("Input", module).add("Password", () => ({
@@ -51,6 +56,7 @@ storiesOf("Input", module).add("Password", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-input">
       <h1>Standart</h1>
       <mh-input v-model="pass1" input-type="password" />
       <br />
@@ -68,6 +74,9 @@ storiesOf("Input", module).add("Password", () => ({
       <br />
       <br />
       <mh-input input-type="password" disabled />
+      <br />
+      <br />
+    </div>
     `,
 }));
 storiesOf("Input", module).add("Tel", () => ({
@@ -80,6 +89,7 @@ storiesOf("Input", module).add("Tel", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-input">
 			<h1>Standart</h1>
       <mh-input v-model="tel1" input-type="tel" id="tel1" />
 			<hr />
@@ -88,6 +98,8 @@ storiesOf("Input", module).add("Tel", () => ({
 			<hr />
 			<h1>Disabled</h1>
       <mh-input v-model="tel3" input-type="tel" disabled id="tel3" />
-			<hr />
+			<br />
+      <br />
+    </div>
     `,
 }));

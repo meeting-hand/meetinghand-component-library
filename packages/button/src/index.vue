@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import Button from "ant-design-vue/lib/button";
+import { Button } from "ant-design-vue";
 
-import "./assets/scss/ant.scss";
+import "./assets/scss/main.scss";
 
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";

@@ -1,9 +1,16 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
+@import "@meetinghand/style/lib/scss/ant/date-picker.scss";
 
+/* MH Styles */
 .ant-calendar-picker {
 	div:first-of-type {
 		position: relative;
+	}
+
+	.ant-calendar-picker-input {
+		height: 44px;
+		border-radius: $border-radius-default;
 	}
 
 	&.error {
@@ -40,10 +47,10 @@
 	}
 	.ant-calendar-picker-icon {
 		fill: $color-mono-grey;
-		width: $spacing-large;
-		height: $spacing-large;
-		margin-top: -9px;
-		right: $spacing-default;
+		width: $icon-size-small;
+		height: $icon-size-small;
+		margin-top: -7px;
+		right: $spacing-medium;
 	}
 }
 
@@ -151,6 +158,11 @@
 						color: $color-mono-grey;
 					}
 				}
+				.ant-calendar-disabled-cell {
+					.ant-calendar-date {
+						color: $color-mono-grey;
+					}
+				}
 			}
 			.ant-calendar-footer {
 				display: none;
@@ -224,22 +236,22 @@
 		&::before {
 			@include arrow-icon();
 			content: "";
-			width: 14px;
-			height: 8px;
+			width: $icon-size-small;
+			height: $icon-size-small;
 			display: block;
 			position: absolute;
 			right: 41px;
-			top: 22px;
+			top: 15px;
 		}
 		&::after {
 			@include arrow-icon();
 			content: "";
-			width: 14px;
-			height: 8px;
+			width: $icon-size-small;
+			height: $icon-size-small;
 			display: block;
 			position: absolute;
 			left: 251px;
-			top: 22px;
+			top: 15px;
 		}
 	}
 

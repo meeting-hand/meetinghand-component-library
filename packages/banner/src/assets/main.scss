@@ -1,5 +1,7 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
+@import "@meetinghand/style/lib/scss/ant/alert.scss";
+
 .mh-banner {
 	display: flex;
 }
@@ -9,7 +11,7 @@
 	align-items: flex-start;
 	justify-content: center;
 	//padding: $spacing-large !important;
-	padding: 13px $spacing-default !important;
+	padding: $spacing-medium !important;
 	border-radius: $border-radius-default;
 
 	&.ant-alert-info {
@@ -22,7 +24,7 @@
 		font-size: $font-size-default;
 		line-height: $line-height-default;
 		color: $color-mono-grey-3;
-		margin: $spacing-xxsmall $spacing-large;
+		margin: $spacing-xxsmall $spacing-medium;
 	}
 
 	svg {
@@ -98,6 +100,13 @@
 		}
 		&:hover {
 			background: $transparent-hover-3;
+		}
+	}
+	&.ant-alert-warning {
+		&.ant-alert-no-icon {
+			.ant-alert-message {
+				margin: 0;
+			}
 		}
 	}
 }

@@ -1,6 +1,9 @@
 import { storiesOf } from "@storybook/vue3";
 import MhInputNumber from "./index";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("InputNumber", module).add("Default", () => ({
 	components: { MhInputNumber },
 	data() {
@@ -11,6 +14,8 @@ storiesOf("InputNumber", module).add("Default", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-input-number">
+
       <h1>Number Default</h1>
       <mh-input-number v-model="number1" :max="10000000000" :min="5" />
       <hr>
@@ -20,6 +25,7 @@ storiesOf("InputNumber", module).add("Default", () => ({
       <h1>Number Disabled</h1>
       <mh-input-number v-model="number3" disabled />
       <hr>
+    </div>
     `,
 }));
 
@@ -37,6 +43,8 @@ storiesOf("InputNumber", module).add("Currency", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-divider">
+
       <h1>Currency Default</h1>
       <mh-input-number v-model="currency" type="currency" currency="USD" :max="100000" />
 			<br />
@@ -59,6 +67,7 @@ storiesOf("InputNumber", module).add("Currency", () => ({
       <hr>
       <h1>Currency Disabled</h1>
       <mh-input-number v-model="currency6" disabled type="currency" />
-      <hr>
+      <br/><br/>
+    </div>
     `,
 }));

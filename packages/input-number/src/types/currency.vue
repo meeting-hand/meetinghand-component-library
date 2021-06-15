@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import InputNumber from "ant-design-vue/lib/input-number";
+import { InputNumber } from "ant-design-vue";
 import accounting from "accounting-js";
 import { convertCurrencyFormat } from "../utils/currency";
 

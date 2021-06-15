@@ -19,10 +19,8 @@
 import Default from "./types/default.vue";
 import Range from "./types/range.vue";
 
-import "ant-design-vue/lib/date-picker/style/index.less";
 import "./assets/main.scss";
 
-// TODO: disabled dates
 export default {
   name: "MhDatePicker",
   components: {

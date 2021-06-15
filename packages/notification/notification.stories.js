@@ -1,6 +1,9 @@
 import { storiesOf } from "@storybook/vue3";
 import MhNotification from "./index";
-import MHIcon from "@meetinghand/style/icons/index.vue";
+import MHIcon from "@meetinghand/style/icons";
+
+import "../../assets/storybook/storybook.css";
+
 
 storiesOf("Notification", module).add("All", () => ({
 	components: { MHIcon, MhNotification },
@@ -10,42 +13,38 @@ storiesOf("Notification", module).add("All", () => ({
 			notificationSuccess: {
 				type: "success",
 				description: "Lorem ipsum dolor sit amet.",
-				title: "Title",
 				duration: 0,
-				placement: "bottomRight",
+				placement: "topRight",
 			},
 			notificationErrorStatus: false,
 			notificationError: {
 				type: "error",
 				description: "Lorem ipsum dolor sit amet.",
-				title: "Title",
 				duration: 0,
-				placement: "bottomRight",
+				placement: "topRight",
 			},
 			notificationInfoStatus: false,
 			notificationInfo: {
 				type: "info",
 				description: "Lorem ipsum dolor sit amet.",
-				title: "Title",
 				duration: 0,
-				placement: "bottomRight",
+				placement: "topRight",
 			},
 			notificationHintStatus: false,
 			notificationHint: {
 				type: "hint",
 				description: "Lorem ipsum dolor sit amet.",
-				title: "Title",
 				duration: 0,
-				placement: "bottomRight",
+				placement: "topRight",
 			},
 		};
 	},
 	template: `
+  <div class="storybook-notification">
       <mh-notification
       :placement="notificationSuccess.placement"
       :duration="notificationSuccess.duration"
       :description="notificationSuccess.description"
-      :title="notificationSuccess.title"
       :type="notificationSuccess.type"
       v-if="notificationSuccessStatus"
       @close="notificationSuccessStatus = false"
@@ -57,7 +56,6 @@ storiesOf("Notification", module).add("All", () => ({
       :placement="notificationError.placement"
       :duration="notificationError.duration"
       :description="notificationError.description"
-      :title="notificationError.title"
       :type="notificationError.type"
       v-if="notificationErrorStatus"
       @close="notificationErrorStatus = false"
@@ -69,7 +67,6 @@ storiesOf("Notification", module).add("All", () => ({
       :placement="notificationInfo.placement"
       :duration="notificationInfo.duration"
       :description="notificationInfo.description"
-      :title="notificationInfo.title"
       :type="notificationInfo.type"
       v-if="notificationInfoStatus"
       @close="notificationInfoStatus = false"
@@ -81,7 +78,6 @@ storiesOf("Notification", module).add("All", () => ({
       :placement="notificationHint.placement"
       :duration="notificationHint.duration"
       :description="notificationHint.description"
-      :title="notificationHint.title"
       :type="notificationHint.type"
       v-if="notificationHintStatus"
       @close="notificationHintStatus = false"
@@ -89,5 +85,6 @@ storiesOf("Notification", module).add("All", () => ({
       <a @click="notificationHintStatus=true">Open Hint</a>
       <h1>{{notificationHintStatus}}</h1>
       <hr />
+    </div>
     `,
 }));

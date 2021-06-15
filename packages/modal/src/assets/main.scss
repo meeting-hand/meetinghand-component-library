@@ -58,13 +58,14 @@
 	right: 8px;
 
 	span {
-		width: auto;
-		height: auto;
-		line-height: 1;
+		width: $icon-size-default;
+		height: $icon-size-default;
+		display: block;
+		margin: 0 auto;
 		svg {
 			@include transition-cubic();
-			width: 20px;
-			height: 20px;
+			width: $icon-size-default;
+			height: $icon-size-default;
 			fill: $color-mono-grey;
 			position: relative;
 			fill: $color-mono-black;

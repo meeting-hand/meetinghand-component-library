@@ -16,16 +16,15 @@
 </template>
 
 <script>
-import TextArea from "ant-design-vue/lib/input/TextArea";
-import MHIcon from "@meetinghand/style/icons/index.vue";
+import { Input } from "ant-design-vue";
+import MHIcon from "@meetinghand/style/icons";
 
-import "ant-design-vue/lib/input/style/index.less";
 import "./assets/main.scss";
 
 export default {
   name: "MhTextArea",
   components: {
-    [TextArea.name]: TextArea,
+    [Input.TextArea.name]: Input.TextArea,
     "mh-icon": MHIcon,
   },
   props: {

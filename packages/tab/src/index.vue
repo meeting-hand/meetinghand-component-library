@@ -1,5 +1,5 @@
 <template>
-  <a-tabs v-model:activeKey="activeKey" :class="color">
+  <a-tabs v-model:activeKey="activeKey" :class="type">
     <a-tab-pane key="1" tab="Tab 1">Content of Tab Pane 1</a-tab-pane>
     <a-tab-pane key="2" tab="Tab 2" force-render
       >Content of Tab Pane 2</a-tab-pane
@@ -9,8 +9,7 @@
 </template>
 
 <script>
-import Tab from "ant-design-vue/lib/tabs";
-import "ant-design-vue/lib/tabs/style/index.less";
+import { Tabs } from "ant-design-vue";
 import "./assets/main.scss";
 
 import { ref } from "vue";
@@ -18,14 +17,14 @@ import { ref } from "vue";
 export default {
   name: "MhTab",
   components: {
-    [Tab.name]: Tab,
-    "a-tab-pane": Tab.TabPane,
+    [Tabs.name]: Tabs,
+    "a-tab-pane": Tabs.TabPane,
   },
   props: {
-    color: {
+    type: {
       type: String,
-      default: "blue",
-      validator: (_v) => ["blue", "black"].includes(_v),
+      default: "default",
+      validator: (_v) => ["default", "rounded"].includes(_v),
     },
   },
   setup() {

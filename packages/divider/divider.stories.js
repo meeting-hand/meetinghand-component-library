@@ -1,11 +1,12 @@
 import { storiesOf } from "@storybook/vue3";
 import Divider from "./index";
 
-import "../../assets/storybook/divider.css";
+import "../../assets/storybook/storybook.css";
 
 storiesOf("Divider", module).add("All", () => ({
 	components: { Divider },
 	template: `
+    <div class="storybook-divider">
       <h1>Thin</h1>
       <divider size="thin"/>
       <h1>Normal</h1>
@@ -14,7 +15,6 @@ storiesOf("Divider", module).add("All", () => ({
       <divider size="medium"/>
       <h1>Bold</h1>
       <divider size="bold"/>
-      <h1>XXBold</h1>
-      <divider size="xxbold" />
+    </div>
     `,
 }));

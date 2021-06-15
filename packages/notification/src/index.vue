@@ -1,15 +1,15 @@
 <template></template>
 <script>
 import Notification from "ant-design-vue/lib/notification";
+import Button from "@meetinghand/button";
 
-import "ant-design-vue/lib/notification/style/index.less";
 import "./assets/main.scss";
 
-import StatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
+import UiCheck from "@meetinghand/style/icons/uiCheck.vue";
 
 import { h, onBeforeUnmount } from "vue";
 
@@ -25,17 +25,13 @@ export default {
       type: String,
       default: "",
     },
-    title: {
-      type: String,
-      default: "",
-    },
     duration: {
       type: Number,
       default: 3,
     },
     placement: {
       type: String,
-      default: "bottomRight",
+      default: "topRight",
       validator: (_v) =>
         ["topRight", "topLeft", "bottomRight", "bottomLeft"].includes(_v),
     },
@@ -46,14 +42,13 @@ export default {
 
     const openNotification = () => {
       const icons = {
-        success: StatusSuccess,
+        success: UiCheck,
         error: StatusError,
         info: StatusInfo,
         hint: StatusHint,
       };
 
       Notification.open({
-        message: props.title,
         description: props.description,
         duration: props.duration,
         class: props.type,
@@ -64,6 +59,17 @@ export default {
           emit("close", true);
         },
         closeIcon: h(SystemClose),
+        btn: h(
+          Button,
+          {
+            type: "secondary",
+            onClick: () => {
+              Notification.close(key);
+              emit("close", true);
+            },
+          },
+          () => "Dismiss"
+        ),
       });
     };
 
