@@ -19,7 +19,6 @@
 import { Input } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 
-import "ant-design-vue/lib/input/style/index.less";
 import "./assets/main.scss";
 
 export default {
