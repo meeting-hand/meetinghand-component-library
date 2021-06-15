@@ -22,7 +22,6 @@
 import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 
-import "ant-design-vue/lib/select/style/index.less";
 import "./assets/main.scss";
 
 import { computed, h } from "vue";
