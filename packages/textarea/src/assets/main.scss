@@ -8,6 +8,7 @@ textarea.ant-input {
 	box-sizing: border-box;
 	border-radius: $border-radius-default;
 	background-color: none;
+	padding: $spacing-medium;
 
 	font-size: $font-size-default;
 	line-height: $line-height-default;
@@ -26,7 +27,7 @@ textarea.ant-input {
 		font-weight: normal;
 		font-size: $font-size-default;
 		line-height: $line-height-default;
-		color: $color-mono-black;
+		color: $color-mono-grey-2;
 	}
 	&.ant-input-disabled {
 		background: $color-mono-light-grey;
@@ -38,6 +39,7 @@ textarea.ant-input {
 	}
 	&.error {
 		caret-color: $color-primary-red;
+		border-color: $color-primary-red;
 	}
 }
 

@@ -214,7 +214,6 @@ textarea.ant-input-affix-wrapper {
 		border-color: $color-primary-blue;
 		border-right-width: 1px !important;
 		outline: 0;
-		box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 	}
 }
 .ant-input-disabled {
@@ -367,12 +366,12 @@ textarea.ant-input {
 	}
 	.ant-select-open {
 		.ant-select-selector {
-			color: #1890ff;
+			color: $color-primary-blue;
 		}
 	}
 	.ant-select-focused {
 		.ant-select-selector {
-			color: #1890ff;
+			color: $color-primary-blue;
 		}
 	}
 	> i {
