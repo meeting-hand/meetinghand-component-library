@@ -1,6 +1,9 @@
 import { storiesOf } from "@storybook/vue3";
 import MhRadio from "./index";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("Radio", module).add("Default", () => ({
 	components: { MhRadio },
 	data() {
@@ -10,6 +13,7 @@ storiesOf("Radio", module).add("Default", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-radio">
       <h1>Default</h1>
       <mh-radio v-model="value1" text="Ahmet Ozturk" data="Ahmet" />
       <br />
@@ -24,6 +28,7 @@ storiesOf("Radio", module).add("Default", () => ({
       <mh-radio v-model="value2" text="Mehmet Ozturk" data="Mehmet" disabled />
       <br />
       <br />
+    </div>
     `,
 }));
 storiesOf("Radio", module).add("Button", () => ({
@@ -35,6 +40,7 @@ storiesOf("Radio", module).add("Button", () => ({
 		};
 	},
 	template: `
+  <div class="storybook-radio">
       <h1>Default</h1>
       <mh-radio v-model="value1" text="Ahmet Ozturk" data="Ahmet" type="button" />
       <br />
@@ -49,5 +55,6 @@ storiesOf("Radio", module).add("Button", () => ({
       <mh-radio v-model="value2" text="Mehmet Ozturk" data="Mehmet" type="button" disabled />
       <br />
       <br />
+  </div>
     `,
 }));
