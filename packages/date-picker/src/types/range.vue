@@ -55,6 +55,12 @@ export default {
       type: String,
       default: "_" + Math.random().toString(36).substr(2, 9),
     },
+    disabledStartDate: {
+      type: [String, Date],
+    },
+    disabledEndDate: {
+      type: [String, Date],
+    },
   },
   computed: {
     value: {

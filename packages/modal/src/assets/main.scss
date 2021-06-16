@@ -2,106 +2,213 @@
 @import "@meetinghand/style/lib/scss/mixins.scss";
 
 .ant-modal {
-	top: $spacing-xxlarge;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-variant: tabular-nums;
+	list-style: none;
+	position: relative;
+	top: 80px;
+	width: auto;
+	margin: 0 auto;
+	pointer-events: none;
+	max-width: 5000px !important; // added for mobile
 }
-
+.ant-modal-wrap {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	overflow: auto;
+	outline: 0;
+	-webkit-overflow-scrolling: touch;
+}
 .ant-modal-content {
+	position: relative;
+	pointer-events: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding-top: 12px;
-
 	position: relative;
-
 	background: $color-mono-white;
-
 	border: $border-size-default solid $color-mono-light-grey-5;
 	box-sizing: border-box;
-	box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.16);
-	border-radius: $border-radius-large;
-	.ant-modal-header {
-		height: $spacing-xlarge;
-		left: 48px;
-		top: 48px;
-		padding: $spacing-xxsmall;
-		width: 100%;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 17px;
-		line-height: $line-height-large;
-		text-align: center;
-		color: $color-mono-black;
-	}
+	box-shadow: 0px 12px 16px $shadow-1;
+	border-radius: $border-radius-xxlarge;
+	padding: $spacing-xxlarge;
+}
+.ant-modal-close {
+	position: absolute;
+	z-index: 10;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	transition: color 0.3s;
+	width: 44px;
+	height: 44px;
+	border-radius: $border-radius-default;
+	border: $border-size-default solid $transparent-hover-3;
+	box-sizing: border-box;
+	border-radius: $border-radius-default;
+	background-color: transparent;
+	top: 8px;
+	right: 8px;
 
-	.ant-modal-body {
-		padding: 48px;
-		padding-top: 33px;
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-		color: $color-mono-black;
-		width: 100%;
-
-		h1 {
-			font-weight: bold;
-			font-size: 20px !important;
-			line-height: 28px;
-			color: $color-mono-black;
-			margin: $spacing-default $spacing-xxsmall !important;
-		}
-		.warning {
-			.mh-icon {
-				width: 48px;
-				height: 42px;
-				margin-left: $spacing-xxsmall;
-				margin-top: $spacing-xxsmall;
-			}
-		}
-		.success {
-			padding: $spacing-default $spacing-xxsmall;
-			.mh-icon {
-				width: 77px;
-				height: 77px;
-			}
+	span {
+		width: $icon-size-default;
+		height: $icon-size-default;
+		display: block;
+		margin: 0 auto;
+		svg {
+			@include transition-cubic();
+			width: $icon-size-default;
+			height: $icon-size-default;
+			fill: $color-mono-grey;
+			position: relative;
+			fill: $color-mono-black;
 		}
 	}
-	.ant-modal-footer {
-		border-top: none;
-		padding: 24px 48px;
-		width: 100%;
-	}
-	.ant-modal-close {
-		width: 24px;
-		height: 24px;
-		right: $spacing-default;
-		border-radius: $border-radius-default;
-		top: 12px;
-		span {
-			width: auto;
-			height: auto;
-			line-height: 1;
-			svg {
-				@include transition-cubic();
-				width: 14px;
-				height: 14px;
-				fill: $color-mono-grey;
-				position: relative;
-				fill: $color-mono-black;
-			}
-		}
-		&:hover {
-			background-color: $transparent-hover-2;
-			svg {
-				@include transition-cubic-rotate();
-			}
+	&:hover {
+		background-color: $transparent-hover-2;
+		svg {
+			@include transition-cubic-rotate();
 		}
 	}
 }
 
-.mh-modal-center {
+.ant-modal-header {
+	@include flex-row(center, center);
+	height: 61px;
+	width: 100%;
 	text-align: center;
+	color: $color-mono-black;
+	margin-top: -$spacing-xxlarge;
+	margin-bottom: $spacing-xxlarge;
+	&::after {
+		content: "";
+		height: $border-size-default;
+		background-color: $transparent-hover-3;
+		width: 100%;
+		position: absolute;
+		top: 60px;
+	}
+	.ant-modal-title {
+		font-size: $font-size-xlarge;
+		line-height: $line-height-large;
+	}
+}
+.ant-modal-body {
+	word-wrap: break-word;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	color: $color-mono-black;
+	width: 100%;
+	.warning {
+		.mh-icon {
+			width: 48px;
+			height: 42px;
+			margin-left: $spacing-xxsmall;
+			margin-top: $spacing-xxsmall;
+		}
+	}
+	.success {
+		padding-bottom: $spacing-default;
+		.mh-icon {
+			width: $spacing-xxxlarge;
+			height: $spacing-xxxlarge;
+		}
+	}
+}
+.ant-modal-footer {
+	@include flex-row(flex-end, center);
+	width: 100%;
+	padding-top: $spacing-xxlarge;
+}
+.ant-modal {
+	&.modal {
+		.ant-modal-footer {
+			@include flex-row;
+			height: 76px;
+			padding: 0;
+			margin-top: $spacing-xxlarge;
+			margin-bottom: -$spacing-xxlarge;
+			&::before {
+				content: "";
+				height: $border-size-default;
+				background-color: $transparent-hover-3;
+				width: 100%;
+				position: absolute;
+				bottom: 77px;
+				left: 0;
+			}
+		}
+	}
+}
+.ant-modal.zoom-enter {
+	transform: none;
+	opacity: 0;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.ant-modal.zoom-appear {
+	transform: none;
+	opacity: 0;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.ant-modal-mask {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	height: 100%;
+	background: $color-mono-black;
+	opacity: 0.72;
+}
+.ant-modal-mask-hidden {
+	display: none;
+}
+.ant-modal-open {
+	overflow: hidden;
+}
+.ant-modal-centered {
+	text-align: center;
+	&::before {
+		display: inline-block;
+		width: 0;
+		height: 100%;
+		vertical-align: middle;
+		content: "";
+	}
+	.ant-modal {
+		top: 0;
+		display: inline-block;
+		text-align: left;
+		vertical-align: middle;
+	}
 }
 
-.ant-modal-mask {
-	background: $color-mono-black;
-	opacity: 0.8;
+@media (max-width: 767px) {
+	.ant-modal {
+		max-width: calc(100vw - 16px);
+		margin: 8px auto;
+	}
+	.ant-modal-centered {
+		.ant-modal {
+			flex: 1;
+		}
+	}
 }

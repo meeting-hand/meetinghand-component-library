@@ -1,4 +1,7 @@
 <template>
+  <label :for="elId" v-if="label" class="mh-input-label">
+    {{ label }}
+  </label>
   <component
     :is="inputType"
     :hasError="hasError"
@@ -9,7 +12,7 @@
     :rightIcon="rightIcon"
     :allowClear="allowClear"
     :email="email"
-    :id="id"
+    :id="elId"
     v-model="value"
   />
 </template>
@@ -18,6 +21,8 @@
 import Default from "./types/default.vue";
 import Password from "./types/password.vue";
 import Tel from "./types/tel.vue";
+
+import "./assets/scss/main.scss";
 
 import props from "./utils/props";
 
@@ -37,6 +42,10 @@ export default {
       default: "default",
       validator: (_v) => ["default", "tel", "password"].includes(_v),
     },
+    label: {
+      type: String,
+      default: null,
+    },
   },
   setup(props, { emit }) {
     const value = computed({
@@ -47,8 +56,14 @@ export default {
         emit("update:modelValue", data);
       },
     });
+
+    const elId = props.id
+      ? props.id
+      : "_" + Math.random().toString(36).substr(2, 9);
+
     return {
       value,
+      elId,
     };
   },
 };

@@ -1,6 +1,9 @@
 import { storiesOf } from "@storybook/vue3";
 import MhSwitch from "./index";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("Switch", module).add("All", () => ({
   components: { MhSwitch },
   data(){
@@ -10,6 +13,7 @@ storiesOf("Switch", module).add("All", () => ({
     }
   },
   template: `
+  <div class="storybook-switch">
       <h1>Default</h1>
       <mh-switch v-model="value1" />
       <br />
@@ -21,6 +25,7 @@ storiesOf("Switch", module).add("All", () => ({
       <br />
       <br />
       {{ value2 }}
+  </div>
     `,
 }));
 

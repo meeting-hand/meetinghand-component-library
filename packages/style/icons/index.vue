@@ -85,6 +85,7 @@ import UiFullScreenZoom from "./uiFullScreenZoom.vue";
 import UiResizeVideo from "./uiResizeVideo.vue";
 import UiSponsor from "./uiSponsor.vue";
 import UiEmoji from "./uiEmoji.vue";
+import UiBuilding from "./uiBuilding.vue";
 import SystemSendUp from "./systemSendUp.vue";
 import SystemLike from "./systemLike.vue";
 import SystemLiked from "./systemLiked.vue";
@@ -196,6 +197,7 @@ const iconList = [
   "ui-resize-video",
   "ui-sponsor",
   "ui-emoji",
+  "ui-building",
   "system-send-up",
   "system-like",
   "system-liked",
@@ -310,6 +312,7 @@ export default {
     UiResizeVideo,
     UiSponsor,
     UiEmoji,
+    UiBuilding,
     SystemSendUp,
     SystemLike,
     SystemLiked,
@@ -346,9 +349,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-svg {
-  width: 12px;
-  height: 14px;
-}
-</style>

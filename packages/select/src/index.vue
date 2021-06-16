@@ -10,7 +10,7 @@
     :show-search="searchable"
     v-model:value="value"
     :size="size"
-    :icon="suffixIcon"
+    :suffixIcon="suffixIcon"
   >
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
@@ -21,6 +21,8 @@
 <script>
 import Select from "ant-design-vue/lib/select";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
+
+import "./assets/main.scss";
 
 import { computed, h } from "vue";
 

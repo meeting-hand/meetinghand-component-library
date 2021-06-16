@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Input from "ant-design-vue/lib/input/Password";
+import Password from "ant-design-vue/lib/input/Password";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import inputProps from "../utils/props";
@@ -30,7 +30,7 @@ export default {
   name: "MhInputPassword",
   props: inputProps,
   components: {
-    [Input.name]: Input,
+    [Password.name]: Password,
     MhIcon,
   },
   setup(props, { emit }) {

@@ -1,101 +1,100 @@
 @import "@vueup/vue-quill/dist/vue-quill.snow.css";
-@import "@meetinghand/style/lib/scss/reset.scss";
 @import "@meetinghand/style/lib/scss/colors.scss";
-@import "@meetinghand/style/lib/scss/typography.scss";
+@import "@meetinghand/style/lib/scss/variables.scss";
 .mh-text-editor {
-    width: 928px;
+	width: 928px;
 
-    border: $border-size-default solid $color-mono-grey;
-    box-sizing: border-box;
-    border-radius: 5px;
+	border: $border-size-default solid $color-mono-grey;
+	box-sizing: border-box;
+	border-radius: 5px;
 
-    &.error {
-        border: $border-size-default solid $color-primary-red;
-        &:focus-within {
-            border: $border-size-default solid $color-primary-red;
-            box-sizing: border-box;
-            border-top-left-radius: $border-radius-default;
-            border-top-right-radius: $border-radius-default;
-        }
-    }
-    &.disabled {
-        opacity: 0.6;
-    }
-    .ql-toolbar {
-        &.ql-snow {
-            background: $color-mono-white;
-            border: none;
-            border-bottom: $border-size-default solid $color-mono-light-grey-5;
-            padding: 20px $spacing-xxsmall;
-            margin: $spacing-xxsmall $spacing-default;
-        }
-        button {
-            svg {
-                height: 20px;
-            }
-        }
-    }
-    .ql-container {
-        &.ql-snow {
-            border: none;
-            box-sizing: border-box;
-            border-bottom-left-radius: $border-radius-default;
-            border-bottom-right-radius: $border-radius-default;
-        }
-    }
-    .ql-editor {
-        height: 337px;
-        &.ql-blank {
-            width: 928px;
-        }
-        p {
-            font-style: normal;
-            font-weight: normal;
-            font-size: $font-size-large;
-            line-height: $line-height-default;
-            color: $color-mono-black;
-        }
-        &::before {
-            font-style: normal;
-            color: $color-mono-grey;
-            font-size: $font-size-large;
-            line-height: $line-height-default;
-        }
-    }
-    &:focus-within {
-        border: $border-size-default solid $color-primary-blue;
-        box-sizing: border-box;
-        border-top-left-radius: $border-radius-default;
-        border-top-right-radius: $border-radius-default;
-    }
-    .editor-footer {
-        border-top: $border-size-default solid $color-mono-light-grey-5;
-        margin: 0 $spacing-default;
-        padding: $spacing-small 0;
-        color: $color-mono-grey-2;
-        font-size: $font-size-small;
-        line-height: $line-height-small;
-        text-align: right;
-    }
+	&.error {
+		border: $border-size-default solid $color-primary-red;
+		&:focus-within {
+			border: $border-size-default solid $color-primary-red;
+			box-sizing: border-box;
+			border-top-left-radius: $border-radius-default;
+			border-top-right-radius: $border-radius-default;
+		}
+	}
+	&.disabled {
+		opacity: 0.6;
+	}
+	.ql-toolbar {
+		&.ql-snow {
+			background: $color-mono-white;
+			border: none;
+			border-bottom: $border-size-default solid $color-mono-light-grey-5;
+			padding: 20px $spacing-xxsmall;
+			margin: $spacing-xxsmall $spacing-default;
+		}
+		button {
+			svg {
+				height: 20px;
+			}
+		}
+	}
+	.ql-container {
+		&.ql-snow {
+			border: none;
+			box-sizing: border-box;
+			border-bottom-left-radius: $border-radius-default;
+			border-bottom-right-radius: $border-radius-default;
+		}
+	}
+	.ql-editor {
+		height: 337px;
+		&.ql-blank {
+			width: 928px;
+		}
+		p {
+			font-style: normal;
+			font-weight: normal;
+			font-size: $font-size-large;
+			line-height: $line-height-default;
+			color: $color-mono-black;
+		}
+		&::before {
+			font-style: normal;
+			color: $color-mono-grey;
+			font-size: $font-size-large;
+			line-height: $line-height-default;
+		}
+	}
+	&:focus-within {
+		border: $border-size-default solid $color-primary-blue;
+		box-sizing: border-box;
+		border-top-left-radius: $border-radius-default;
+		border-top-right-radius: $border-radius-default;
+	}
+	.editor-footer {
+		border-top: $border-size-default solid $color-mono-light-grey-5;
+		margin: 0 $spacing-default;
+		padding: $spacing-small 0;
+		color: $color-mono-grey-2;
+		font-size: $font-size-small;
+		line-height: $line-height-small;
+		text-align: right;
+	}
 }
 
 .ql-snow.ql-toolbar button.ql-active {
-    background: $transparent-hover-2;
-    border-radius: $border-radius-default;
+	background: $transparent-hover-2;
+	border-radius: $border-radius-default;
 }
 
 .ql-snow.ql-toolbar button.ql-active .ql-fill {
-    fill: $color-mono-grey-3;
+	fill: $color-mono-grey-3;
 }
 
 .ql-snow.ql-toolbar button.ql-active .ql-stroke {
-    stroke: $color-mono-grey-3;
+	stroke: $color-mono-grey-3;
 }
 
 strong {
-    font-weight: bold !important;
+	font-weight: bold !important;
 }
 
 em {
-    font-style: italic !important;
+	font-style: italic !important;
 }

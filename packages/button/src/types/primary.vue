@@ -55,7 +55,7 @@ export default {
     color: {
       type: String,
       default: null,
-      validator: (_v) => ["blue", "green"].includes(_v),
+      validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
   },
 };

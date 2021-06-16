@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Input from "ant-design-vue/lib/input";
+import Input from "ant-design-vue/lib/input/Input";
 import Select from "ant-design-vue/lib/select";
 
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
@@ -41,6 +41,8 @@ import Cleave from "cleave.js";
 import { h, ref, onMounted, computed } from "vue";
 
 import inputProps from "../utils/props";
+
+import "@meetinghand/style/lib/scss/ant/select.scss";
 
 export default {
   name: "MhInputTel",
@@ -72,7 +74,10 @@ export default {
 
     const setCleave = async (dialCode) => {
       const country = CountryPhoneCodes.find((_c) => _c.dialCode === dialCode);
-      await require(`cleave.js/dist/addons/cleave-phone.${country.countryCode.toLowerCase()}`);
+
+      await import(
+        `../utils/cleave-country-formats/cleave-phone.${country.countryCode.toLowerCase()}.js`
+      );
 
       cleave = new Cleave(document.getElementById(props.id), {
         phone: true,

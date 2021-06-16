@@ -16,6 +16,8 @@
 import Default from "./types/default.vue";
 import Currency from "./types/currency.vue";
 
+import "./assets/scss/main.scss";
+
 export default {
   name: "InputNumber",
   components: {

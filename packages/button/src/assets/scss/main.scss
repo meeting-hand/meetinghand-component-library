@@ -1,53 +1,21 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
-
-.ant-btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-shadow: none;
-	box-shadow: none;
-	border: none;
-	outline: none;
-	transition: background-color 0.5s ease !important;
-
-	&.alignment-right {
-		flex-direction: row-reverse;
-		.mh-icon {
-			margin-left: 12px;
-		}
-	}
-
-	&.alignment-left {
-		.mh-icon {
-			margin-right: 12px;
-		}
-	}
-
-	.mh-icon {
-		fill: $color-mono-white;
-		margin-top: $spacing-xxsmall;
-		margin-bottom: $spacing-xxsmall;
-	}
-}
+@import "@meetinghand/style/lib/scss/ant/button.scss";
 
 /* PRIMARY */
 .ant-btn-primary {
 	background-color: $color-primary-blue;
-	font-weight: $font-weight-large;
-	font-size: $font-size-large;
-	line-height: $line-height-default;
-	padding: $spacing-default $spacing-xlarge;
-	height: auto;
-	min-height: 52px;
-	border-radius: $border-radius-default;
+	border: none;
 
 	&:hover {
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), $color-primary-blue;
+		background: $color-button-hover-blue;
+	}
+	&:focus {
+		background: $color-button-focus-blue;
 	}
 
 	&.disabled {
 		border: none;
-		background-color: $color-mono-light-grey-4;
+		background: $transparent-hover;
 		color: $color-mono-grey;
 
 		.mh-icon {
@@ -72,9 +40,17 @@
 		}
 	}
 	&.green {
-		background: #0ead88;
+		background: $color-primary-participant;
+		border: none;
 		&:hover {
-			background: #15c299;
+			background: $color-button-hover-green;
+		}
+	}
+	&.red {
+		background-color: $color-primary-red;
+		border: none;
+		&:hover {
+			background-color: $color-button-hover-red;
 		}
 	}
 }
@@ -83,14 +59,7 @@
 
 /* SECONDARY */
 .ant-btn-default {
-	border: $border-size-default solid $color-primary-blue;
-	font-weight: $font-weight-large;
-	font-size: $font-size-large;
-	line-height: $line-height-default;
-	padding: $spacing-default $spacing-xlarge;
-	height: auto;
-	min-height: 52px;
-	border-radius: $border-radius-default;
+	border-color: $transparent-hover-3;
 	color: $color-primary-blue;
 
 	.mh-icon {
@@ -98,19 +67,18 @@
 	}
 
 	&:hover {
-		background: $color-secondary-blue;
-		border-color: $color-primary-blue;
 		color: $color-primary-blue;
+		background: $transparent-hover;
+		border-color: $transparent-hover-3;
 	}
-	&:active {
-		background: $color-secondary-blue;
-	}
+
 	&:focus {
-		color: $color-primary-blue;
+		background: $transparent-hover-3;
+		border-color: $transparent-hover-3;
 	}
 
 	&.disabled {
-		border: $border-size-default solid $color-mono-light-grey-4;
+		border: $border-size-default solid $transparent-hover-3;
 		background-color: transparent;
 		color: $color-mono-grey;
 
@@ -140,26 +108,58 @@
 			fill: none !important;
 		}
 	}
+	&.red {
+		border-color: $color-primary-red;
+		color: $color-primary-red;
+		.mh-icon {
+			fill: $color-primary-red;
+		}
+		&:hover {
+			background: $transparent-hover;
+		}
+		&:focus {
+			background: $transparent-hover-3;
+		}
+	}
 }
 /* SECONDARY END */
 
 /* TEXT */
 .text-btn {
 	border: none;
-	padding: $spacing-small $spacing-default;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	&:hover {
-		background: rgba($color-mono-black, 0.04);
+	color: $color-mono-grey-3;
+	padding: 4px $spacing-xsmall;
+	height: 28px;
+	.mh-icon {
+		fill: $color-mono-grey-3;
 	}
+	&:hover {
+		background: $transparent-hover;
+		color: $color-mono-grey-3;
+	}
+	&:focus {
+		background: $transparent-hover-3;
+		color: $color-mono-grey-3;
+	}
+
 	&.disabled {
 		border: none;
 	}
 	&.wait {
 		background: none;
 		&:hover {
-			background: rgba($color-mono-black, 0.04);
+			background: $transparent-hover;
+		}
+	}
+	&.red {
+		&:hover {
+			color: $color-primary-red;
+		}
+		&:active {
+			color: $color-primary-red;
+		}
+		&:focus {
+			color: $color-primary-red;
 		}
 	}
 }
@@ -208,28 +208,25 @@
 .ant-btn {
 	&.iconic-btn {
 		background: none;
-		border: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		border: $border-size-default solid $transparent-hover-3;
 
 		.mh-icon {
-			height: 20px;
-			min-width: 20px;
+			height: $icon-size-default;
+			min-width: $icon-size-default;
 		}
 
 		&.size-circular {
 			width: 52px;
 			height: 52px;
-			border-radius: $border-radius-xxlarge;
+			border-radius: $border-radius-giant;
 			.mh-icon {
 				height: 30px;
 				min-width: 30px;
 			}
 		}
 		&.size-normal {
-			width: 52px;
-			height: 52px;
+			width: 44px;
+			height: 44px;
 		}
 		&.size-small {
 			width: 32px;
@@ -246,47 +243,47 @@
 		}
 		.mh-icon {
 			margin: $spacing-xxsmall;
-			fill: $color-mono-grey-2;
+			fill: $color-mono-grey-3;
 		}
 		&:hover {
-			background: rgba($color-mono-black, 0.04);
-			border-color: $color-mono-light-grey-5;
+			background: $transparent-hover;
+		}
+		&:focus {
+			background: $transparent-hover-3;
+		}
+		&.red {
+			border-color: $color-primary-red;
+			.mh-icon {
+				fill: $color-primary-red;
+			}
 		}
 	}
 }
 
 /* ICONIC END */
+
 /* SOCIAL */
 .social-btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 360px;
-	height: 52px;
-	background: $transparent-hover;
+	max-width: 128px;
+	height: 44px;
 	border-radius: $border-radius-default;
 	&.ant-btn-default {
-		border: none;
+		border: $border-size-default solid $color-mono-light-grey-5;
 	}
 	&:focus {
 		background: $transparent-hover;
 	}
 	span {
-		font-style: normal;
-		font-weight: $font-weight-large;
-		font-size: $font-size-large;
-		line-height: $line-height-default;
-
-		color: $color-mono-grey-3;
+		color: $color-mono-black;
+		margin-left: 4px;
 	}
 	svg {
 		height: 20px;
-		width: 30px;
+		width: 20px;
 	}
 
 	.mh-icon {
 		margin-right: $spacing-xxsmall !important;
-		margin-left: -10px !important;
 	}
 
 	&.google {
@@ -306,6 +303,7 @@
 	}
 
 	&:hover {
+		border: $border-size-default solid transparent;
 		span {
 			color: $color-mono-white;
 		}

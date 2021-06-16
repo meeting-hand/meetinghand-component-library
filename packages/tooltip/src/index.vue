@@ -11,6 +11,7 @@
 
 <script>
 import Tooltip from "ant-design-vue/lib/tooltip";
+import "./assets/main.scss";
 
 export default {
   name: "Tooltip",

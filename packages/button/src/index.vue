@@ -17,6 +17,8 @@
 <script>
 import Button from "ant-design-vue/lib/button";
 
+import "./assets/scss/main.scss";
+
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
 import Small from "./types/small.vue";
@@ -89,7 +91,7 @@ export default {
     color: {
       type: String,
       default: null,
-      validator: (_v) => ["blue", "green"].includes(_v),
+      validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
   },
 };

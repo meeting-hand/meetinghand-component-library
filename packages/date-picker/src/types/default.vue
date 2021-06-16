@@ -8,6 +8,7 @@
     :placeholder="placeholder"
     :suffix-icon="icon"
     :id="id"
+    :disabledDate="disabledDate"
     :allowClear="false"
   />
 </template>
@@ -16,7 +17,7 @@
 import DatePicker from "ant-design-vue/lib/date-picker";
 
 import MhDate from "@meetinghand/style/icons/uiDate.vue";
-import { h } from "vue";
+import { computed, h } from "vue";
 
 export default {
   name: "MhDatePickerDefault",
@@ -49,21 +50,46 @@ export default {
       type: String,
       default: "_" + Math.random().toString(36).substr(2, 9),
     },
-  },
-  computed: {
-    value: {
-      get() {
-        return this.modelValue;
-      },
-      set(value) {
-        this.$emit("update:modelValue", value);
-      },
+    disabledStartDate: {
+      type: [String, Date],
+    },
+    disabledEndDate: {
+      type: [String, Date],
     },
   },
-  setup() {
+  setup(props, { emit }) {
     const icon = h(MhDate);
+
+    const value = computed({
+      get() {
+        return props.modelValue;
+      },
+      set(value) {
+        emit("update:modelValue", value);
+      },
+    });
+
+    const disabledDate = (_d) => {
+      _d = _d.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+      if (
+        props.disabledStartDate &&
+        new Date(props.disabledStartDate).getTime() >= new Date(_d).getTime()
+      ) {
+        return true;
+      }
+      if (
+        props.disabledEndDate &&
+        new Date(_d).getTime() > new Date(props.disabledEndDate).getTime()
+      ) {
+        return true;
+      }
+      return false;
+    };
+
     return {
       icon,
+      value,
+      disabledDate,
     };
   },
 };
