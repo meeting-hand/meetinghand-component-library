@@ -19,8 +19,6 @@
 import Default from "./types/default.vue";
 import Range from "./types/range.vue";
 
-import "./assets/main.scss";
-
 export default {
   name: "MhDatePicker",
   components: {
@@ -80,3 +78,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

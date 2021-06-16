@@ -3,8 +3,6 @@
 import Notification from "ant-design-vue/lib/notification";
 import Button from "@meetinghand/button";
 
-import "./assets/main.scss";
-
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
@@ -87,3 +85,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

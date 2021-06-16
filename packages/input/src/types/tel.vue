@@ -30,8 +30,7 @@
 </template>
 
 <script>
-import { Input } from "ant-design-vue";
-import Select from "ant-design-vue/lib/select";
+import { Input, Select } from "ant-design-vue";
 
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";

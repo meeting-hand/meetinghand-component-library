@@ -22,8 +22,7 @@
 </template>
 
 <script>
-import Modal from "ant-design-vue/lib/modal";
-import "./assets/main.scss";
+import { Modal } from "ant-design-vue";
 
 import MHIcon from "@meetinghand/style/icons/index.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
@@ -95,3 +94,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import "./assets/main.scss";
+</style>
