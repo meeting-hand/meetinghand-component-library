@@ -4,6 +4,7 @@
 
 <script>
 import Switch from "ant-design-vue/lib/switch";
+import "./assets/main.scss";
 
 export default {
   name: "MhSwitch",
@@ -32,6 +33,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

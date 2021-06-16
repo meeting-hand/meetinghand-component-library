@@ -22,12 +22,12 @@ export default {
       type: String,
       default: "social-google",
       validator: (_v) =>
-        ["social-google", "social-facebook", "social-linkedin"].includes(_v),
+        ["social-google", "social-facebook", "social-apple"].includes(_v),
     },
     socialMedia: {
       type: String,
       default: "google",
-      validator: (_v) => ["google", "facebook", "linkedin"].includes(_v),
+      validator: (_v) => ["google", "facebook", "apple"].includes(_v),
     },
     submit: {
       type: Boolean,

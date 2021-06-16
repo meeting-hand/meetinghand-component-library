@@ -1,11 +1,11 @@
 import { storiesOf } from "@storybook/vue3";
 import MhBanner from "./index";
-import "../../assets/storybook/banner.css";
+import "../../assets/storybook/storybook.css";
 
 storiesOf("Banner", module).add("All", () => ({
 	components: { MhBanner },
 	template: `
-  <div class="banner-wrapper">
+  <div class="storybook-banner">
       <h1>Banner Section Text</h1>
       <mh-banner type="section" text="Lorem ipsum dolor sit amet."/>
       <hr/>

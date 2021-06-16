@@ -1,0 +1,66 @@
+@import "@meetinghand/style/lib/scss/variables.scss";
+
+.mh-status {
+    display: inline-block;
+    border-radius: $border-radius-large;
+    height: 28px;
+    .mh-status-container {
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        p {
+            font-weight: $font-weight-large;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+        }
+        .mh-icon {
+            width: $icon-size-default;
+            height: $icon-size-default;
+            margin-right: 4px;
+        }
+    }
+    &.green {
+        background: $color-secondary-green;
+        .mh-status-container {
+            p {
+                color: $color-primary-green;
+            }
+            .mh-icon {
+                fill: $color-primary-green;
+            }
+        }
+    }
+    &.red {
+        background: $color-secondary-red;
+        .mh-status-container {
+            p {
+                color: $color-primary-red;
+            }
+            .mh-icon {
+                fill: $color-primary-red;
+            }
+        }
+    }
+    &.yellow {
+        background: $color-secondary-onsite;
+        .mh-status-container {
+            p {
+                color: $color-primary-onsite;
+            }
+            .mh-icon {
+                fill: $color-primary-onsite;
+            }
+        }
+    }
+    &.disabled {
+        background: $transparent-hover;
+        .mh-status-container {
+            p {
+                color: $color-mono-grey;
+            }
+            .mh-icon {
+                fill: $color-mono-grey;
+            }
+        }
+    }
+}

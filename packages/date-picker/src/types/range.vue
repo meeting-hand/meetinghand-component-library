@@ -11,6 +11,7 @@
     :disabled="disabled"
     :placeholder="placeholder"
     :allowClear="false"
+    :id="id"
     @openChange="openChange"
     separator=""
   />
@@ -49,6 +50,16 @@ export default {
     placeholder: {
       type: Array,
       default: () => ["", ""],
+    },
+    id: {
+      type: String,
+      default: "_" + Math.random().toString(36).substr(2, 9),
+    },
+    disabledStartDate: {
+      type: [String, Date],
+    },
+    disabledEndDate: {
+      type: [String, Date],
     },
   },
   computed: {

@@ -1,16 +1,11 @@
 {
 	"name": "@meetinghand/input",
 	"description": "Meetinghand Component Library Component for input",
-	"version": "0.0.9-alpha.0",
+	"version": "0.0.33-alpha.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
 	},
-	"keywords": [
-		"vue3",
-		"meetinghand",
-		"input"
-	],
 	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
 	"bugs": {
 		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
@@ -22,6 +17,7 @@
 		"access": "public"
 	},
 	"dependencies": {
+		"@meetinghand/select": "file:../select",
 		"@meetinghand/style": "file:../style",
 		"cleave.js": "^1.6.0"
 	}

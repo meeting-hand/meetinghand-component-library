@@ -4,19 +4,17 @@
     :closable="closable"
     :destroyOnClose="true"
     @cancel="close()"
-    :class="[`mh-modal-${size}`]"
+    :class="[`mh-modal-${size}`, modalType]"
     :width="width"
     :footer="modalFooterProp"
     :title="dialogTitle"
     :closeIcon="closeIcon"
+    :keyboard="keyboard"
   >
     <div :class="icon">
       <mh-icon :name="icon" v-if="icon" />
     </div>
-
-    <h1 v-if="title">{{ title }}</h1>
     <slot></slot>
-
     <template v-slot:footer>
       <slot name="footer"></slot>
     </template>
@@ -25,8 +23,11 @@
 
 <script>
 import Modal from "ant-design-vue/lib/modal";
+import "./assets/main.scss";
+
 import MHIcon from "@meetinghand/style/icons/index.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
+
 import { h } from "vue";
 
 export default {
@@ -40,7 +41,6 @@ export default {
       const widths = {
         default: 420,
         large: 640,
-        center: 410,
       };
       return widths[this.size];
     },
@@ -55,14 +55,11 @@ export default {
     size: {
       type: String,
       default: "default",
-      validator: (_v) => ["default", "large", "center"].includes(_v),
+      validator: (_v) => ["default", "large"].includes(_v),
     },
     modelValue: {
       type: Boolean,
       required: true,
-    },
-    title: {
-      type: String,
     },
     icon: {
       type: String,
@@ -77,6 +74,15 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    keyboard: {
+      type: Boolean,
+      default: true,
+    },
+    modalType: {
+      type: String,
+      default: "modal",
+      validator: (_v) => ["modal", "dialog"].includes(_v),
     },
   },
   emits: {

@@ -16,6 +16,8 @@
 import Single from "./types/single.vue";
 import Multiple from "./types/multiple.vue";
 
+import "./assets/main.scss";
+
 export default {
   name: "MhCheckbox",
   props: {

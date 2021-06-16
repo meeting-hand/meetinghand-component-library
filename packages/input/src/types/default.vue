@@ -6,6 +6,7 @@
       :disabled="disabled"
       :allow-clear="allowClear"
       :type="inputType"
+      :id="id"
       v-model:value="value"
     >
       <template #prefix v-if="leftIcon">
@@ -22,7 +23,7 @@
 </template>
 
 <script>
-import Input from "ant-design-vue/lib/input";
+import Input from "ant-design-vue/lib/input/Input";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import inputProps from "../utils/props";

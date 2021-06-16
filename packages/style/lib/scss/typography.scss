@@ -4,32 +4,41 @@
 body,
 * {
 	font-family: $primaryFont;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 20px;
 }
 
-.text-message {
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
+.mh-display {
+	font-family: $primaryFont;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 36px;
 }
 
-.text-message-xs {
-	font-weight: 400;
+.mh-heading-1 {
+	font-family: $primaryFont;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+}
+
+.mh-heading-2 {
+	font-family: $primaryFont;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 24px;
+	margin-bottom: $spacing-small;
+}
+
+.mh-caption {
+	font-family: $primaryFont;
+	font-style: normal;
+	font-weight: normal;
 	font-size: 12px;
 	line-height: 16px;
-}
-
-.text-title {
-	font-weight: 700;
-	font-size: 32px;
-	line-height: 42px;
-}
-
-.text-subtitle {
-	//font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
 }
 
 .mh-input__error {
@@ -41,8 +50,14 @@ body,
 	display: block;
 }
 
-/* New */
-.title-bold {
-	font-size: 17px;
-	line-height: 24px;
+.fw-bold {
+	font-weight: bold;
+}
+
+.fw-medium {
+	font-weight: 500;
+}
+
+.fw-semi {
+	font-weight: 600;
 }

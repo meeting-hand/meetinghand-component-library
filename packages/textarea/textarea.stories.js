@@ -1,6 +1,9 @@
 import { storiesOf } from "@storybook/vue3";
 import MhTextArea from "./index";
 
+import "../../assets/storybook/storybook.css";
+
+
 storiesOf("TextArea", module).add("All", () => ({
   data() {
     return {
@@ -9,6 +12,8 @@ storiesOf("TextArea", module).add("All", () => ({
   },
   components: { MhTextArea },
   template: `
+  <div class="storybook">
+
       <h1>Default</h1>
       <mh-text-area 
         v-model="text1" 
@@ -21,7 +26,6 @@ storiesOf("TextArea", module).add("All", () => ({
       <hr/>
       {{ text1 }}
       <h1> Error </h1>
-      <br/>
       <mh-text-area 
         v-model="text1" 
         placeholder="Placeholder" 
@@ -31,12 +35,12 @@ storiesOf("TextArea", module).add("All", () => ({
     />
     <hr/>
       <h1>Disabled</h1>
-      <br/>
       <mh-text-area 
         v-model="text1" 
         placeholder="Placeholder"
         disabled      
       />
+  </div>
       
       
     `,

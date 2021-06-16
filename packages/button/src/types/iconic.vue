@@ -1,6 +1,6 @@
 <template>
   <a-button
-    :class="[`size-${size}`, { disabled: disabled }, 'iconic-btn']"
+    :class="[`size-${size}`, { disabled: disabled }, 'iconic-btn', color]"
     :disabled="disabled"
     :htmlType="submit ? 'submit' : 'button'"
   >
@@ -33,6 +33,11 @@ export default {
     submit: {
       type: Boolean,
       default: false,
+    },
+    color: {
+      type: String,
+      default: null,
+      validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
   },
 };
