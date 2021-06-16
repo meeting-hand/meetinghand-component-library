@@ -26,6 +26,8 @@ import Text from "./types/text.vue";
 import Row from "./types/row.vue";
 import Iconic from "./types/iconic.vue";
 import Social from "./types/social.vue";
+import Menu from "./types/menu.vue";
+import List from "./types/list.vue";
 
 export default {
   name: "MhButton",
@@ -38,6 +40,8 @@ export default {
     Row,
     Iconic,
     Social,
+    Menu,
+    List,
   },
   props: {
     type: {
@@ -52,6 +56,8 @@ export default {
           "row",
           "iconic",
           "social",
+          "menu",
+          "list",
         ].includes(_v),
     },
     size: {
