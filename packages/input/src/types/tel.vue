@@ -52,17 +52,14 @@ export default {
   },
   props: inputProps,
   setup(props, { emit }) {
-    // phone dialCode
     const phoneCodes = CountryPhoneCodes.map((_c) => {
       return {
         value: _c.dialCode,
-        //label: `(${_c.dialCode}) ${_c.countryCode}`,
         label: `${_c.dialCode}`,
       };
     });
 
     const dialCode = ref("+1");
-    //const id = ref("_" + Math.random().toString(36).substr(2, 9));
     let cleave;
 
     //filter
