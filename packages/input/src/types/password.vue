@@ -7,10 +7,6 @@
       :id="id"
       v-model:value="value"
     >
-      <!-- <template #addonAfter>
-      <mh-icon name="system-show" />
-      <mh-icon name="system-hide" />
-    </template> -->
     </a-input-password>
     <span v-if="errorMessage" class="mh-input__error">
       {{ errorMessage }}
