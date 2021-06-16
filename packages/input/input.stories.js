@@ -3,7 +3,6 @@ import MhInput from "./index";
 
 import "../../assets/storybook/storybook.css";
 
-
 storiesOf("Input", module).add("Input", () => ({
 	components: { MhInput },
 	data() {
@@ -15,6 +14,7 @@ storiesOf("Input", module).add("Input", () => ({
 			value5: "",
 			value6: "",
 			value7: "git config branch.master.mergeoption 212312312",
+			value8: "",
 		};
 	},
 	template: `
@@ -23,7 +23,11 @@ storiesOf("Input", module).add("Input", () => ({
       <mh-input v-model="value1" email placeholder="e-mail address" />
       <br />
       <br />
-      <mh-input v-model="value2" left-icon="arrow-down" right-icon="arrow-up" />
+      <h1>Label</h1>
+      <mh-input v-model="value8" email placeholder="input with label" label="E-mail" />
+      <br />
+      <br />
+      <mh-input v-model="value2" left-icon="system-mail" right-icon="ui-building" />
       <hr />
       <h1>Error</h1>
       <mh-input v-model="value3" has-error error-message="this field is required" />
@@ -35,7 +39,7 @@ storiesOf("Input", module).add("Input", () => ({
       <mh-input v-model="value7" disabled />
       <br />
       <br />
-      <mh-input v-model="value5" disabled left-icon="arrow-down" right-icon="arrow-up" />
+      <mh-input v-model="value5" disabled left-icon="ui-home" right-icon="arrow-up" />
       <hr />
       <h1>Clear</h1>
       <mh-input v-model="value6" allow-clear />

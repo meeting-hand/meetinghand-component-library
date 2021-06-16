@@ -2,9 +2,19 @@
 @import "@meetinghand/style/lib/scss/icons.scss";
 @import "@meetinghand/style/lib/scss/ant/input.scss";
 
+.mh-input-label {
+	font-weight: $font-weight-default;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	color: $color-mono-black;
+	margin-bottom: 6px;
+	display: block;
+	cursor: pointer;
+}
+
 .mh-input {
 	.ant-input {
-		min-width: 200px;
+		min-width: 100px;
 		max-width: 100%;
 		padding: 11px $spacing-medium !important;
 		font-size: $font-size-default;
@@ -65,6 +75,8 @@
 				margin: $spacing-xxsmall;
 			}
 			svg {
+				width: $icon-size-default;
+				height: $icon-size-default;
 				fill: $color-mono-grey-3;
 			}
 		}

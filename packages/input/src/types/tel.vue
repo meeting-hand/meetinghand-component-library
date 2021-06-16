@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Input from "ant-design-vue/lib/input";
+import Input from "ant-design-vue/lib/input/Input";
 import Select from "ant-design-vue/lib/select";
 
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
