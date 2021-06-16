@@ -581,44 +581,6 @@
 			}
 		}
 	}
-	&:focus {
-		color: #fff;
-		background-color: #40a9ff;
-		border-color: #40a9ff;
-		> a {
-			&:only-child {
-				color: currentColor;
-				&::after {
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
-					background: transparent;
-					content: "";
-				}
-			}
-		}
-	}
-	&:active {
-		color: #fff;
-		background-color: #096dd9;
-		border-color: #096dd9;
-		> a {
-			&:only-child {
-				color: currentColor;
-				&::after {
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
-					background: transparent;
-					content: "";
-				}
-			}
-		}
-	}
 }
 .ant-btn-primary.active {
 	color: #fff;

@@ -9,9 +9,6 @@
 	&:hover {
 		background: $color-button-hover-blue;
 	}
-	&:focus {
-		background: $color-button-focus-blue;
-	}
 
 	&.disabled {
 		border: none;
@@ -72,11 +69,6 @@
 		border-color: $transparent-hover-3;
 	}
 
-	&:focus {
-		background: $transparent-hover-3;
-		border-color: $transparent-hover-3;
-	}
-
 	&.disabled {
 		border: $border-size-default solid $transparent-hover-3;
 		background-color: transparent;
@@ -117,9 +109,6 @@
 		&:hover {
 			background: $transparent-hover;
 		}
-		&:focus {
-			background: $transparent-hover-3;
-		}
 	}
 }
 /* SECONDARY END */
@@ -137,10 +126,6 @@
 		background: $transparent-hover;
 		color: $color-mono-grey-3;
 	}
-	&:focus {
-		background: $transparent-hover-3;
-		color: $color-mono-grey-3;
-	}
 
 	&.disabled {
 		border: none;
@@ -153,12 +138,6 @@
 	}
 	&.red {
 		&:hover {
-			color: $color-primary-red;
-		}
-		&:active {
-			color: $color-primary-red;
-		}
-		&:focus {
 			color: $color-primary-red;
 		}
 	}
@@ -248,9 +227,6 @@
 		&:hover {
 			background: $transparent-hover;
 		}
-		&:focus {
-			background: $transparent-hover-3;
-		}
 		&.red {
 			border-color: $color-primary-red;
 			.mh-icon {
@@ -264,52 +240,52 @@
 
 /* SOCIAL */
 .social-btn {
-	max-width: 128px;
-	height: 44px;
-	border-radius: $border-radius-default;
-	&.ant-btn-default {
-		border: $border-size-default solid $color-mono-light-grey-5;
-	}
-	&:focus {
-		background: $transparent-hover;
-	}
-	span {
-		color: $color-mono-black;
-		margin-left: 4px;
-	}
-	svg {
-		height: 20px;
-		width: 20px;
-	}
-
-	.mh-icon {
-		margin-right: $spacing-xxsmall !important;
-	}
-
-	&.google {
-		&:hover {
-			background: #518ef8;
+	&.ant-btn {
+		max-width: 128px;
+		height: 44px;
+		border-radius: $border-radius-default;
+		&.ant-btn-default {
+			border: $border-size-default solid $color-mono-light-grey-5;
 		}
-	}
-	&.facebook {
-		&:hover {
-			background: #314f8b;
-		}
-	}
-	&.apple {
-		&:hover {
-			background: $color-mono-black;
-		}
-	}
 
-	&:hover {
-		border: $border-size-default solid transparent;
 		span {
-			color: $color-mono-white;
+			color: $color-mono-black;
+			margin-left: 4px;
 		}
 		svg {
-			path {
-				fill: $color-mono-white;
+			height: 20px;
+			width: 20px;
+		}
+
+		.mh-icon {
+			margin-right: $spacing-xxsmall !important;
+		}
+
+		&.google {
+			&:hover {
+				background: #518ef8;
+			}
+		}
+		&.facebook {
+			&:hover {
+				background: #314f8b;
+			}
+		}
+		&.apple {
+			&:hover {
+				background: $color-mono-black;
+			}
+		}
+
+		&:hover {
+			border: $border-size-default solid transparent;
+			span {
+				color: $color-mono-white;
+			}
+			svg {
+				path {
+					fill: $color-mono-white;
+				}
 			}
 		}
 	}
@@ -329,13 +305,16 @@
 		fill: $color-primary-blue;
 		width: 20px;
 		height: 20px;
+		margin-right: 8px;
 	}
-	&:hover {
+
+	&.alignment-right {
 		.mh-icon {
-			fill: $color-mono-white;
+			margin-left: 8px;
+			margin-right: 0px;
 		}
 	}
-	&:focus {
+	&:hover {
 		.mh-icon {
 			fill: $color-mono-white;
 		}
@@ -346,43 +325,40 @@
 /* LIST */
 
 .list-btn {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	background: none;
-	color: $color-mono-black;
-	height: 44px;
-	min-width: 144px;
 	&.ant-btn {
-		font-weight: 500;
-	}
-	&.alignment-left {
-		.mh-icon {
-			margin-right: 16px;
-		}
-	}
-	&.alignment-right {
 		display: flex;
-		justify-content: flex-end;
-		.mh-icon {
-			margin-left: 16px;
+		flex-direction: row;
+		justify-content: flex-start;
+		background: none;
+		color: $color-mono-black;
+		height: 44px;
+		min-width: 144px;
+		font-weight: 500;
+
+		&.alignment-left {
+			.mh-icon {
+				margin-right: 16px;
+			}
 		}
-	}
-	.mh-icon {
-		fill: $color-primary-blue;
-		width: 20px;
-		height: 20px;
-	}
-	&:hover {
-		background: $transparent-hover;
-		color: $color-mono-black;
-	}
-	&:focus {
-		background: rgba(0, 0, 0, 0.06);
-		color: $color-mono-black;
+		&.alignment-right {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+			.mh-icon {
+				margin-left: 16px;
+			}
+		}
+		.mh-icon {
+			fill: $color-primary-blue;
+			width: 20px;
+			height: 20px;
+		}
+		&:hover {
+			background: $transparent-hover;
+			color: $color-mono-black;
+		}
 	}
 }
-
 /* LIST END */
 
 .size-large {
