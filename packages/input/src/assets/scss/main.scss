@@ -75,6 +75,8 @@
 				margin: $spacing-xxsmall;
 			}
 			svg {
+				width: $icon-size-default;
+				height: $icon-size-default;
 				fill: $color-mono-grey-3;
 			}
 		}
