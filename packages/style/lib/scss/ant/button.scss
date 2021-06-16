@@ -35,13 +35,17 @@
 	&.alignment-right {
 		flex-direction: row-reverse;
 		.mh-icon {
-			margin-left: 4px;
+			width: $icon-size-small;
+			height: $icon-size-small;
+			margin-left: 7px;
 		}
 	}
 
 	&.alignment-left {
 		.mh-icon {
-			margin-right: 4px;
+			width: $icon-size-small;
+			height: $icon-size-small;
+			margin-right: 7px;
 		}
 	}
 
