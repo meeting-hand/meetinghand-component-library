@@ -10,66 +10,9 @@
 	flex-direction: column;
 }
 
-@each $space, $value in $pixels {
-	//Margin
-	.m-#{$space} {
-		margin: $value !important;
-	}
-
-	.mt-#{$space} {
-		margin-top: $value !important;
-	}
-
-	.mr-#{$space} {
-		margin-right: $value !important;
-	}
-
-	.mb-#{$space} {
-		margin-bottom: $value !important;
-	}
-
-	.ml-#{$space} {
-		margin-left: $value !important;
-	}
-
-	.mx-#{$space} {
-		margin-left: $value !important;
-		margin-right: $value !important;
-	}
-
-	.my-#{$space} {
-		margin-top: $value !important;
-		margin-bottom: $value !important;
-	}
-
-	// Padding
-	.p-#{$space} {
-		padding: $value !important;
-	}
-
-	.pt-#{$space} {
-		padding-top: $value !important;
-	}
-
-	.pr-#{$space} {
-		padding-right: $value !important;
-	}
-
-	.pb-#{$space} {
-		padding-bottom: $value !important;
-	}
-
-	.pl-#{$space} {
-		padding-left: $value !important;
-	}
-
-	.px-#{$space} {
-		padding-left: $value !important;
-		padding-right: $value !important;
-	}
-
-	.py-#{$space} {
-		padding-top: $value !important;
-		padding-bottom: $value !important;
-	}
+@mixin transition-cubic() {
+	transition: 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+@mixin transition-cubic-rotate() {
+	transform: rotate(90deg);
 }

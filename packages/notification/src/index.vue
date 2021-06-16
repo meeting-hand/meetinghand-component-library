@@ -1,21 +1,20 @@
 <template></template>
-
 <script>
 import Notification from "ant-design-vue/lib/notification";
-import MHIcon from "@meetinghand/style/icons/index.vue";
-import StatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
+import Button from "@meetinghand/button";
+
+import "./assets/main.scss";
+
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
-import { h } from "vue";
+import UiCheck from "@meetinghand/style/icons/uiCheck.vue";
+
+import { h, onBeforeUnmount } from "vue";
 
 export default {
   name: "MhNotification",
-  components: {
-    "mh-icon": MHIcon,
-    "status-success": StatusSuccess,
-  },
   props: {
     type: {
       type: String,
@@ -24,48 +23,59 @@ export default {
     },
     description: {
       type: String,
-      default: null,
-    },
-    title: {
-      type: String,
-      default: null,
-    },
-    modelValue: {
-      type: Boolean,
-      required: true,
+      default: "",
     },
     duration: {
       type: Number,
+      default: 3,
     },
     placement: {
       type: String,
+      default: "topRight",
       validator: (_v) =>
         ["topRight", "topLeft", "bottomRight", "bottomLeft"].includes(_v),
     },
   },
 
   setup(props, { emit }) {
+    const key = Math.random().toString(36).substr(2, 9);
+
     const openNotification = () => {
       const icons = {
-        success: StatusSuccess,
+        success: UiCheck,
         error: StatusError,
         info: StatusInfo,
         hint: StatusHint,
       };
 
       Notification.open({
-        message: `${props.title}`,
-        description: `${props.description}`,
-        duration: Number(`${props.duration}`),
-        class: `${props.type}`,
+        description: props.description,
+        duration: props.duration,
+        class: props.type,
         icon: h(icons[props.type]),
-        placement: `${props.placement}`,
+        placement: props.placement,
+        key: key,
         onClose: () => {
-          emit("update:modelValue", false);
+          emit("close", true);
         },
         closeIcon: h(SystemClose),
+        btn: h(
+          Button,
+          {
+            type: "secondary",
+            onClick: () => {
+              Notification.close(key);
+              emit("close", true);
+            },
+          },
+          () => "Dismiss"
+        ),
       });
     };
+
+    onBeforeUnmount(() => {
+      Notification.close(key);
+    });
 
     return {
       openNotification,
@@ -76,7 +86,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>
-

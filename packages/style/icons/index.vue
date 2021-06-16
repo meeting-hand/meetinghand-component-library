@@ -85,6 +85,7 @@ import UiFullScreenZoom from "./uiFullScreenZoom.vue";
 import UiResizeVideo from "./uiResizeVideo.vue";
 import UiSponsor from "./uiSponsor.vue";
 import UiEmoji from "./uiEmoji.vue";
+import UiBuilding from "./uiBuilding.vue";
 import SystemSendUp from "./systemSendUp.vue";
 import SystemLike from "./systemLike.vue";
 import SystemLiked from "./systemLiked.vue";
@@ -110,6 +111,7 @@ import MobileAppBox from "./mobileAppBox.vue";
 import Warning from "./warning.vue";
 import Success from "./success.vue";
 import Claps from "./claps.vue";
+import SocialApple from "./socialApple.vue";
 
 const iconList = [
   "arrow-down",
@@ -195,6 +197,7 @@ const iconList = [
   "ui-resize-video",
   "ui-sponsor",
   "ui-emoji",
+  "ui-building",
   "system-send-up",
   "system-like",
   "system-liked",
@@ -220,9 +223,11 @@ const iconList = [
   "warning",
   "success",
   "claps",
+  "social-apple",
 ];
 
 export default {
+  name: "MhIcon",
   components: {
     ArrowDown,
     ArrowUp,
@@ -307,6 +312,7 @@ export default {
     UiResizeVideo,
     UiSponsor,
     UiEmoji,
+    UiBuilding,
     SystemSendUp,
     SystemLike,
     SystemLiked,
@@ -332,6 +338,7 @@ export default {
     Warning,
     Success,
     Claps,
+    SocialApple,
   },
   props: {
     name: {
@@ -342,9 +349,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-svg {
-  width: 12px;
-  height: 14px;
-}
-</style>

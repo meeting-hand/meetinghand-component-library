@@ -6,6 +6,7 @@
       `alignment-${iconAlignment}`,
       { wait: wait },
       { disabled: disabled },
+      color,
     ]"
     :disabled="disabled || wait"
     :htmlType="submit ? 'submit' : 'button'"
@@ -50,6 +51,11 @@ export default {
     submit: {
       type: Boolean,
       default: false,
+    },
+    color: {
+      type: String,
+      default: null,
+      validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
   },
 };

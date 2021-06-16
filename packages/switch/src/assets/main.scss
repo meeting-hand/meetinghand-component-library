@@ -1,16 +1,10 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
+@import "@meetinghand/style/lib/scss/ant/switch.scss";
 
 .ant-switch {
-    min-width: 40px;
-    height: 23.5px;
-
-    border: 1.5px solid $color-primary-blue;
-    box-sizing: border-box;
-    border-radius: $border-radius-xxlarge;
-    background: none;
-
     &::after {
         background-color: $color-primary-blue;
+        top: 1.5px;
     }
 
     &:hover {
@@ -19,7 +13,7 @@
 }
 .ant-switch-checked {
     background: $color-primary-blue;
-    border-radius: $border-radius-xxlarge;
+    border-radius: $border-radius-giant;
     &::after {
         background-color: $color-mono-white;
     }
@@ -30,13 +24,19 @@
 
 .ant-switch-disabled {
     border: $border-size-default solid $color-mono-grey;
-    box-sizing: border-box;
-    border-radius: $border-radius-xxlarge;
-    background: none;
     border-color: $color-mono-grey;
-    height: 22.5px;
+    &.ant-switch-checked {
+        background: #b6b6b6;
+        &::after {
+            background-color: $color-mono-light-grey-5;
+        }
+        &:hover {
+            background-color: $color-mono-grey;
+        }
+    }
     &::after {
         background: $color-mono-grey;
+        top: 1.5px;
     }
     &:hover {
         background: none;

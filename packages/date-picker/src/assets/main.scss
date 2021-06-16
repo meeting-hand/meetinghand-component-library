@@ -1,9 +1,16 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
+@import "@meetinghand/style/lib/scss/ant/date-picker.scss";
 
+/* MH Styles */
 .ant-calendar-picker {
 	div:first-of-type {
 		position: relative;
+	}
+
+	.ant-calendar-picker-input {
+		height: 44px;
+		border-radius: $border-radius-default;
 	}
 
 	&.error {
@@ -13,13 +20,37 @@
 		svg {
 			fill: $color-primary-red;
 		}
+		.ant-calendar-range-picker-input {
+			border-color: $color-primary-red;
+		}
+		.ant-calendar-range-picker-input {
+			background-color: $color-secondary-red;
+		}
+		.ant-calendar-range-picker-separator {
+			width: 24px;
+			position: relative;
+			&::before {
+				@include arrow-icon("%23f44336");
+			}
+			&::after {
+				@include arrow-icon("%23f44336");
+			}
+		}
+		&.mh-range-picker-opened {
+			.ant-calendar-range-picker-separator {
+				&::before,
+				&::after {
+					@include arrow-icon("%23f44336");
+				}
+			}
+		}
 	}
 	.ant-calendar-picker-icon {
 		fill: $color-mono-grey;
-		width: $spacing-large;
-		height: $spacing-large;
-		margin-top: -9px;
-		right: $spacing-default;
+		width: $icon-size-small;
+		height: $icon-size-small;
+		margin-top: -7px;
+		right: $spacing-medium;
 	}
 }
 
@@ -127,6 +158,11 @@
 						color: $color-mono-grey;
 					}
 				}
+				.ant-calendar-disabled-cell {
+					.ant-calendar-date {
+						color: $color-mono-grey;
+					}
+				}
 			}
 			.ant-calendar-footer {
 				display: none;
@@ -200,22 +236,22 @@
 		&::before {
 			@include arrow-icon();
 			content: "";
-			width: 14px;
-			height: 8px;
+			width: $icon-size-small;
+			height: $icon-size-small;
 			display: block;
 			position: absolute;
 			right: 41px;
-			top: 22px;
+			top: 15px;
 		}
 		&::after {
 			@include arrow-icon();
 			content: "";
-			width: 14px;
-			height: 8px;
+			width: $icon-size-small;
+			height: $icon-size-small;
 			display: block;
 			position: absolute;
 			left: 251px;
-			top: 22px;
+			top: 15px;
 		}
 	}
 
@@ -240,4 +276,18 @@
 
 .ant-calendar-year-panel-cell {
 	vertical-align: middle;
+}
+
+.ant-input-disabled {
+	.ant-calendar-range-picker-input:active {
+		border-color: $color-mono-light-grey-5 !important;
+		background-color: $color-mono-light-grey !important;
+	}
+}
+
+.error {
+	.ant-calendar-range-picker-input:active {
+		border-color: $color-primary-red !important;
+		background-color: $color-secondary-red !important;
+	}
 }

@@ -5,6 +5,8 @@
     :label="label"
     :disabled="disabled"
     :data="data"
+    :hasError="hasError"
+    :errorMessage="errorMessage"
   >
     <slot></slot>
   </component>
@@ -13,6 +15,8 @@
 <script>
 import Single from "./types/single.vue";
 import Multiple from "./types/multiple.vue";
+
+import "./assets/main.scss";
 
 export default {
   name: "MhCheckbox",
@@ -31,6 +35,14 @@ export default {
     },
     data: {
       type: [String, Number],
+      default: null,
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    errorMessage: {
+      type: String,
       default: null,
     },
   },

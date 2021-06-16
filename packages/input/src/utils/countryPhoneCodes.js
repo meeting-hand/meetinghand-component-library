@@ -136,10 +136,6 @@ export default [
 		dialCode: "+267",
 	},
 	{
-		countryCode: "BV",
-		dialCode: "",
-	},
-	{
 		countryCode: "BR",
 		dialCode: "+55",
 	},

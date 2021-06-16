@@ -2,14 +2,12 @@ import { storiesOf } from "@storybook/vue3";
 import MhTab from "./index";
 
 storiesOf("Tab", module).add("All", () => ({
-  components: { MhTab },
-  template: `
+	components: { MhTab },
+	template: `
       <h1>Blue</h1>
-      <mh-tab color="blue"/>
+      <mh-tab />
       <hr/>
-      <h1>Black</h1>
-      <mh-tab color="black"/>
+      <h1>Rounded</h1>
+      <mh-tab type="rounded"/>
     `,
 }));
-
-    

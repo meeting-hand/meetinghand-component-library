@@ -7,11 +7,11 @@
   </a-alert>
 </template>
 <script>
-import Banner from "ant-design-vue/lib/alert";
+import Alert from "ant-design-vue/lib/alert";
 
 export default {
   components: {
-    [Banner.name]: Banner,
+    [Alert.name]: Alert,
   },
   props: {
     text: {
