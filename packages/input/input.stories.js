@@ -3,7 +3,6 @@ import MhInput from "./index";
 
 import "../../assets/storybook/storybook.css";
 
-
 storiesOf("Input", module).add("Input", () => ({
 	components: { MhInput },
 	data() {
@@ -15,12 +14,17 @@ storiesOf("Input", module).add("Input", () => ({
 			value5: "",
 			value6: "",
 			value7: "git config branch.master.mergeoption 212312312",
+			value8: "",
 		};
 	},
 	template: `
   <div class="storybook-input">
       <h1>Standart</h1>
       <mh-input v-model="value1" email placeholder="e-mail address" />
+      <br />
+      <br />
+      <h1>Label</h1>
+      <mh-input v-model="value8" email placeholder="input with label" label="E-mail" />
       <br />
       <br />
       <mh-input v-model="value2" left-icon="arrow-down" right-icon="arrow-up" />

@@ -1,4 +1,7 @@
 <template>
+  <label :for="elId" v-if="label" class="mh-input-label">
+    {{ label }}
+  </label>
   <component
     :is="inputType"
     :hasError="hasError"
@@ -38,6 +41,10 @@ export default {
       type: String,
       default: "default",
       validator: (_v) => ["default", "tel", "password"].includes(_v),
+    },
+    label: {
+      type: String,
+      default: null,
     },
   },
   setup(props, { emit }) {
