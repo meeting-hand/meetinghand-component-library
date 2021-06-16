@@ -11,7 +11,7 @@ storiesOf("Button", module).add("primary", () => ({
       <mh-button type="primary" size="large">
         Large
       </mh-button>
-      <mh-button type="primary" size="large" icon="arrow-up">
+      <mh-button type="primary" size="large" icon="system-plus">
         Large Left Icon
       </mh-button>
       <mh-button type="primary" size="large" icon="arrow-up" icon-alignment="right">
@@ -286,3 +286,54 @@ storiesOf("Button", module).add("social", () => ({
 
     `,
 }));
+
+storiesOf("Button", module).add("menu", () => ({
+	components: { MhButton },
+	template: `
+  <div class="storybook-button"> 
+
+      <h1>Aligment Left</h1>
+      <mh-button type="menu" icon="system-plus">
+        Button
+      </mh-button>
+			<hr />
+      <h1>Aligment Right</h1>
+      <mh-button type="menu" icon="system-plus" icon-alignment="right">
+        Button
+      </mh-button>
+			<hr />
+      <h1>Disabled</h1>
+      <mh-button type="menu" icon="system-plus" icon-alignment="right" disabled>
+        Button
+      </mh-button>
+			<hr />
+      </div>
+
+    `,
+}));
+
+storiesOf("Button", module).add("list", () => ({
+	components: { MhButton },
+	template: `
+  <div class="storybook-button"> 
+
+      <h1>Aligment Left</h1>
+      <mh-button type="list" icon="system-plus">
+        Button
+      </mh-button>
+			<hr />
+      <h1>Aligment Right</h1>
+      <mh-button type="list" icon="system-plus" icon-alignment="right">
+        Button
+      </mh-button>
+			<hr />
+      <h1>Disabled</h1>
+      <mh-button type="list" icon="system-plus" icon-alignment="right" disabled>
+        Button
+      </mh-button>
+			<hr />
+      </div>
+
+    `,
+}));
+

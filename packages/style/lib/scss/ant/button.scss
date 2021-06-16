@@ -35,16 +35,16 @@
 	&.alignment-right {
 		flex-direction: row-reverse;
 		.mh-icon {
-			width: $icon-size-small;
-			height: $icon-size-small;
+			width: $icon-size-default;
+			height: $icon-size-default;
 			margin-left: 7px;
 		}
 	}
 
 	&.alignment-left {
 		.mh-icon {
-			width: $icon-size-small;
-			height: $icon-size-small;
+			width: $icon-size-default;
+			height: $icon-size-default;
 			margin-right: 7px;
 		}
 	}
@@ -54,6 +54,7 @@
 		margin-top: $spacing-xxsmall;
 		margin-bottom: $spacing-xxsmall;
 	}
+
 	&:active {
 		outline: 0;
 		text-decoration: none;
