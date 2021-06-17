@@ -9,10 +9,8 @@
 </template>
 
 <script>
-import Tabs from "ant-design-vue/lib/tabs";
-import "./assets/main.scss";
-
 import { ref } from "vue";
+import { Tabs } from "ant-design-vue";
 
 export default {
   name: "MhTab",
@@ -35,5 +33,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+@import "./assets/main.scss";
 </style>

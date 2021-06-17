@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import DatePicker from "ant-design-vue/lib/date-picker";
+import { DatePicker } from "ant-design-vue";
 
 export default {
   name: "MhDatePickerRange",

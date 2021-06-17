@@ -15,10 +15,6 @@
 </template>
 
 <script>
-import Button from "ant-design-vue/lib/button";
-
-import "./assets/scss/main.scss";
-
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
 import Small from "./types/small.vue";
@@ -26,11 +22,12 @@ import Text from "./types/text.vue";
 import Row from "./types/row.vue";
 import Iconic from "./types/iconic.vue";
 import Social from "./types/social.vue";
+import Menu from "./types/menu.vue";
+import List from "./types/list.vue";
 
 export default {
   name: "MhButton",
   components: {
-    [Button.name]: Button,
     Primary,
     Secondary,
     Small,
@@ -38,6 +35,8 @@ export default {
     Row,
     Iconic,
     Social,
+    Menu,
+    List,
   },
   props: {
     type: {
@@ -52,6 +51,8 @@ export default {
           "row",
           "iconic",
           "social",
+          "menu",
+          "list",
         ].includes(_v),
     },
     size: {
@@ -96,3 +97,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/scss/main.scss";
+</style>

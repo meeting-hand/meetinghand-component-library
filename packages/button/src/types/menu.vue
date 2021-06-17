@@ -2,11 +2,10 @@
   <a-button
     type="primary"
     :class="[
-      `size-${size}`,
+      `menu-btn`,
       `alignment-${iconAlignment}`,
       { wait: wait },
       { disabled: disabled },
-      color,
     ]"
     :disabled="disabled || wait"
     :htmlType="submit ? 'submit' : 'button'"
@@ -26,11 +25,6 @@ export default {
     "mh-icon": MHIcon,
   },
   props: {
-    size: {
-      type: String,
-      default: "default",
-      validator: (_v) => ["default", "large"].includes(_v),
-    },
     icon: {
       type: String,
       default: null,
@@ -51,11 +45,6 @@ export default {
     submit: {
       type: Boolean,
       default: false,
-    },
-    color: {
-      type: String,
-      default: null,
-      validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
   },
 };

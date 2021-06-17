@@ -16,8 +16,6 @@
 import Single from "./types/single.vue";
 import Multiple from "./types/multiple.vue";
 
-import "./assets/main.scss";
-
 export default {
   name: "MhCheckbox",
   props: {
@@ -65,3 +63,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

@@ -3,8 +3,7 @@
 </template>
 
 <script>
-import Switch from "ant-design-vue/lib/switch";
-import "./assets/main.scss";
+import { Switch } from "ant-design-vue";
 
 export default {
   name: "MhSwitch",
@@ -33,3 +32,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>
