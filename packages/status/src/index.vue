@@ -9,7 +9,6 @@
 
 <script>
 import MHIcon from "@meetinghand/style/icons/index.vue";
-import "./assets/main.scss";
 
 export default {
   name: "Status",
@@ -42,5 +41,6 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
+@import "./assets/main.scss";
 </style>

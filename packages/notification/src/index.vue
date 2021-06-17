@@ -3,15 +3,13 @@
 import Notification from "ant-design-vue/lib/notification";
 import Button from "@meetinghand/button";
 
-import "./assets/main.scss";
-
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
 import UiCheck from "@meetinghand/style/icons/uiCheck.vue";
 
-import { h, onBeforeUnmount } from "vue";
+import { h, onBeforeUnmount, onMounted } from "vue";
 
 export default {
   name: "MhNotification",
@@ -73,6 +71,10 @@ export default {
       });
     };
 
+    onMounted(async () => {
+      openNotification();
+    });
+
     onBeforeUnmount(() => {
       Notification.close(key);
     });
@@ -81,8 +83,9 @@ export default {
       openNotification,
     };
   },
-  created() {
-    this.openNotification();
-  },
 };
 </script>
+
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

@@ -13,16 +13,12 @@
 </template>
 
 <script>
-import Alert from "ant-design-vue/lib/alert";
-import "./assets/main.scss";
-
 import Section from "./types/section.vue";
 import FullWidth from "./types/fullWidth.vue";
 
 export default {
   name: "MhBanner",
   components: {
-    [Alert.name]: Alert,
     Section,
     FullWidth,
   },
@@ -53,3 +49,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

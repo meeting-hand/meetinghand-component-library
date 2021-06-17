@@ -15,10 +15,6 @@
 </template>
 
 <script>
-import Button from "ant-design-vue/lib/button";
-
-import "./assets/scss/main.scss";
-
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
 import Small from "./types/small.vue";
@@ -32,7 +28,6 @@ import List from "./types/list.vue";
 export default {
   name: "MhButton",
   components: {
-    [Button.name]: Button,
     Primary,
     Secondary,
     Small,
@@ -102,3 +97,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/scss/main.scss";
+</style>

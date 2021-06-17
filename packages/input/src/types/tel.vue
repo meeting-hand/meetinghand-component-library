@@ -30,8 +30,7 @@
 </template>
 
 <script>
-import Input from "ant-design-vue/lib/input/Input";
-import Select from "ant-design-vue/lib/select";
+import { Input, Select } from "ant-design-vue";
 
 import CountryPhoneCodes from "../utils/countryPhoneCodes";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
@@ -52,17 +51,14 @@ export default {
   },
   props: inputProps,
   setup(props, { emit }) {
-    // phone dialCode
     const phoneCodes = CountryPhoneCodes.map((_c) => {
       return {
         value: _c.dialCode,
-        //label: `(${_c.dialCode}) ${_c.countryCode}`,
         label: `${_c.dialCode}`,
       };
     });
 
     const dialCode = ref("+1");
-    //const id = ref("_" + Math.random().toString(36).substr(2, 9));
     let cleave;
 
     //filter

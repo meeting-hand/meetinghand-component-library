@@ -7,10 +7,6 @@
       :id="id"
       v-model:value="value"
     >
-      <!-- <template #addonAfter>
-      <mh-icon name="system-show" />
-      <mh-icon name="system-hide" />
-    </template> -->
     </a-input-password>
     <span v-if="errorMessage" class="mh-input__error">
       {{ errorMessage }}
@@ -19,7 +15,7 @@
 </template>
 
 <script>
-import Password from "ant-design-vue/lib/input/Password";
+import { Input } from "ant-design-vue";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import inputProps from "../utils/props";
@@ -30,7 +26,7 @@ export default {
   name: "MhInputPassword",
   props: inputProps,
   components: {
-    [Password.name]: Password,
+    [Input.Password.name]: Input.Password,
     MhIcon,
   },
   setup(props, { emit }) {

@@ -19,10 +19,8 @@
 </template>
 
 <script>
-import Select from "ant-design-vue/lib/select";
+import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
-
-import "./assets/main.scss";
 
 import { computed, h } from "vue";
 
@@ -94,3 +92,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>
