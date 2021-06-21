@@ -24,6 +24,7 @@ import Iconic from "./types/iconic.vue";
 import Social from "./types/social.vue";
 import Menu from "./types/menu.vue";
 import List from "./types/list.vue";
+import Tab from "./types/tab.vue";
 
 export default {
   name: "MhButton",
@@ -37,6 +38,7 @@ export default {
     Social,
     Menu,
     List,
+    Tab,
   },
   props: {
     type: {
@@ -53,6 +55,7 @@ export default {
           "social",
           "menu",
           "list",
+          "tab",
         ].includes(_v),
     },
     size: {

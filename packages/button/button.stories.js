@@ -337,3 +337,23 @@ storiesOf("Button", module).add("list", () => ({
     `,
 }));
 
+storiesOf("Button", module).add("tab", () => ({
+	components: { MhButton },
+	template: `
+  <div class="storybook-button"> 
+
+      <h1>Tab Rounded</h1>
+      <mh-button type="tab">
+        Button
+      </mh-button>
+			<hr />
+      <h1>Disabled</h1>
+      <mh-button type="tab"  disabled>
+        Button
+      </mh-button>
+			<hr />
+      </div>
+
+    `,
+}));
+
