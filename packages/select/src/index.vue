@@ -1,6 +1,10 @@
 <template>
+  <label :for="elId" v-if="label" class="mh-select-label">
+    {{ label }}
+  </label>
   <component
     :is="inputType"
+    :id="elId"
     :hasError="hasError"
     :errorMessage="errorMessage"
     :disabled="disabled"
@@ -36,6 +40,10 @@ export default {
       default: "default",
       validator: (_v) => ["default", "country"].includes(_v),
     },
+    label: {
+      type: String,
+      default: null,
+    },
   },
   setup(props, { emit }) {
     const value = computed({
@@ -47,8 +55,11 @@ export default {
       },
     });
 
+    const elId = props.id || "_" + Math.random().toString(36).substr(2, 9);
+
     return {
       value,
+      elId,
     };
   },
 };

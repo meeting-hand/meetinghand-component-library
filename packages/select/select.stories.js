@@ -47,6 +47,9 @@ storiesOf("Select", module).add("Default", () => ({
 			<h1>Error</h1>
       <mh-select v-model="select1" :options="selectOpts" placeholder="Birini seciniz" has-error error-message="this field is required"/> <span v-if="select1" style="margin-left: 30px;">Value: {{ select1 }}</span>
 			<hr />
+			<h1>Label</h1>
+      <mh-select v-model="select1" :options="selectOpts" placeholder="Birini seciniz" label="Choose" /> <span v-if="select1" style="margin-left: 30px;">Value: {{ select1 }}</span>
+			<hr />
 			<h1>Small</h1>
       		<mh-select v-model="select1" :options="selectOpts" placeholder="Birini seciniz" size="small"/> <span v-if="select1" style="margin-left: 30px;">Value: {{ select1 }}</span>
 			<hr />

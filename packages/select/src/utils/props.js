@@ -36,4 +36,8 @@ export default {
         default: "default",
         validator: (_v) => ["default", "small"].includes(_v),
     },
+    id: {
+        type: String,
+        default: null,
+    },
 };

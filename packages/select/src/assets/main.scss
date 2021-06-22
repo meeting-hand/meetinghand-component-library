@@ -1,190 +1,183 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
 @import "@meetinghand/style/lib/scss/ant/select.scss";
-
 .mh-dropdown {
-	&.ant-select {
-		min-width: 168px;
-
-		font-style: normal;
-		font-weight: normal;
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-		&.ant-select-disabled {
-			.ant-select-selector {
-				background-color: $color-mono-light-grey !important;
-			}
-		}
-
-		.ant-select-selector {
-			display: flex;
-			align-items: center;
-			box-shadow: none !important;
-			border: $border-size-default solid $color-mono-grey-2;
-			border-radius: $border-radius-default;
-			width: auto !important;
-			height: 44px !important;
-			padding: $spacing-xxsmall !important;
-			background-color: transparent;
-			&:hover {
-				background-color: $transparent-hover;
-				border-color: $color-mono-grey !important;
-			}
-
-			.ant-select-selection-item {
-				padding: $spacing-medium;
-				display: flex;
-				align-items: center;
-			}
-			.ant-select-selection-search {
-				left: $spacing-xxsmall;
-				width: 100%;
-				display: flex;
-				align-items: center;
-				padding: $spacing-xxsmall $spacing-medium;
-
-				.ant-select-selection-search-input {
-					height: $spacing-default;
-					color: $color-mono-black;
-				}
-			}
-			.ant-select-selection-placeholder {
-				padding: $spacing-default $spacing-medium;
-				color: $color-mono-grey-2;
-			}
-		}
-		&.ant-select-open {
-			.ant-select-arrow {
-				width: $icon-size-small;
-				height: $icon-size-small;
-				top: 50%;
-				svg {
-					width: $icon-size-small;
-					height: $icon-size-small;
-					fill: $color-primary-blue;
-					transform: rotate(180deg);
-				}
-				.anticon-search {
-					svg {
-						transform: none;
-					}
-				}
-			}
-			&:hover {
-				background: none;
-			}
-			.ant-select-selector {
-				background-color: $color-secondary-blue;
-				border-color: $color-primary-blue !important;
-			}
-		}
-		.ant-select-arrow {
-			right: $spacing-medium;
-			width: $icon-size-small;
-			height: $icon-size-small;
-			top: 50%;
-			svg {
-				width: $icon-size-small;
-				height: $icon-size-small;
-				fill: $color-mono-grey-2;
-			}
-		}
-		&.disabled {
-			.ant-select-selection {
-				background-color: $color-primary-red;
-			}
-		}
-		&.error {
-			.ant-select-selector {
-				background: $color-secondary-red;
-				border: $border-size-default solid $color-primary-red !important;
-				box-sizing: border-box;
-				border-radius: $border-radius-default;
-			}
-			.ant-select-arrow {
-				svg {
-					width: $icon-size-small;
-					height: $icon-size-small;
-					fill: $color-primary-red;
-				}
-			}
-			&.ant-select-open {
-				background-color: $color-secondary-blue;
-				box-sizing: border-box;
-				border-radius: $border-radius-default;
-				.ant-select-arrow {
-					svg {
-						width: 20px;
-						height: 20px;
-						fill: $color-primary-red;
-					}
-				}
-				&:hover {
-					background: $color-secondary-red;
-				}
-				.ant-select-selector {
-					background-color: $color-secondary-red;
-					border: $border-size-default solid $color-primary-red;
-				}
-			}
-		}
-	}
+    &.ant-select {
+        min-width: 168px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        &.ant-select-disabled {
+            .ant-select-selector {
+                background-color: $color-mono-light-grey !important;
+            }
+        }
+        .ant-select-selector {
+            display: flex;
+            align-items: center;
+            box-shadow: none !important;
+            border: $border-size-default solid $color-mono-grey-2;
+            border-radius: $border-radius-default;
+            width: auto !important;
+            height: 44px !important;
+            padding: $spacing-xxsmall !important;
+            background-color: transparent;
+            &:hover {
+                background-color: $transparent-hover;
+                border-color: $color-mono-grey !important;
+            }
+            .ant-select-selection-item {
+                padding: $spacing-medium;
+                display: flex;
+                align-items: center;
+            }
+            .ant-select-selection-search {
+                left: $spacing-xxsmall;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: $spacing-xxsmall $spacing-medium;
+                .ant-select-selection-search-input {
+                    height: $spacing-default;
+                    color: $color-mono-black;
+                }
+            }
+            .ant-select-selection-placeholder {
+                padding: $spacing-default $spacing-medium;
+                color: $color-mono-grey-2;
+            }
+        }
+        &.ant-select-open {
+            .ant-select-arrow {
+                width: $icon-size-small;
+                height: $icon-size-small;
+                top: 50%;
+                svg {
+                    width: $icon-size-small;
+                    height: $icon-size-small;
+                    fill: $color-primary-blue;
+                    transform: rotate(180deg);
+                }
+                .anticon-search {
+                    svg {
+                        transform: none;
+                    }
+                }
+            }
+            &:hover {
+                background: none;
+            }
+            .ant-select-selector {
+                background-color: $color-secondary-blue;
+                border-color: $color-primary-blue !important;
+            }
+        }
+        .ant-select-arrow {
+            right: $spacing-medium;
+            width: $icon-size-small;
+            height: $icon-size-small;
+            top: 50%;
+            svg {
+                width: $icon-size-small;
+                height: $icon-size-small;
+                fill: $color-mono-grey-2;
+            }
+        }
+        &.disabled {
+            .ant-select-selection {
+                background-color: $color-primary-red;
+            }
+        }
+        &.error {
+            .ant-select-selector {
+                background: $color-secondary-red;
+                border: $border-size-default solid $color-primary-red !important;
+                box-sizing: border-box;
+                border-radius: $border-radius-default;
+            }
+            .ant-select-arrow {
+                svg {
+                    width: $icon-size-small;
+                    height: $icon-size-small;
+                    fill: $color-primary-red;
+                }
+            }
+            &.ant-select-open {
+                background-color: $color-secondary-blue;
+                box-sizing: border-box;
+                border-radius: $border-radius-default;
+                .ant-select-arrow {
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                        fill: $color-primary-red;
+                    }
+                }
+                &:hover {
+                    background: $color-secondary-red;
+                }
+                .ant-select-selector {
+                    background-color: $color-secondary-red;
+                    border: $border-size-default solid $color-primary-red;
+                }
+            }
+        }
+    }
 }
 
 .ant-select-dropdown {
-	width: 206px;
-	height: auto;
-
-	background: $color-mono-white;
-
-	border: $border-size-default solid $color-mono-light-grey-5;
-	box-sizing: border-box;
-
-	box-shadow: $spacing-xxsmall 12px $spacing-default $transparent-hover-2;
-	border-radius: $border-radius-default;
-
-	.ant-select-item-option {
-		font-style: normal;
-		font-weight: normal;
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-
-		padding: $spacing-medium $spacing-small;
-		color: $color-mono-black;
-		margin-left: $spacing-small;
-		margin-right: $spacing-small;
-		border-radius: $border-radius-default;
-		// margin-bottom: 2px;
-		// margin-top: 2px;
-	}
-	.ant-select-item-option-selected {
-		padding: $spacing-medium $spacing-small;
-		background: $transparent-hover;
-		border-radius: $border-radius-default;
-
-		font-style: normal;
-		font-weight: normal;
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-
-		color: $color-mono-black;
-
-		margin-left: $spacing-small;
-		margin-right: $spacing-small;
-		margin-bottom: 2px;
-		margin-top: 2px;
-	}
+    width: 206px;
+    height: auto;
+    background: $color-mono-white;
+    border: $border-size-default solid $color-mono-light-grey-5;
+    box-sizing: border-box;
+    box-shadow: $spacing-xxsmall 12px $spacing-default $transparent-hover-2;
+    border-radius: $border-radius-default;
+    .ant-select-item-option {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        padding: $spacing-medium $spacing-small;
+        color: $color-mono-black;
+        margin-left: $spacing-small;
+        margin-right: $spacing-small;
+        border-radius: $border-radius-default;
+        // margin-bottom: 2px;
+        // margin-top: 2px;
+    }
+    .ant-select-item-option-selected {
+        padding: $spacing-medium $spacing-small;
+        background: $transparent-hover;
+        border-radius: $border-radius-default;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        margin-left: $spacing-small;
+        margin-right: $spacing-small;
+        margin-bottom: 2px;
+        margin-top: 2px;
+    }
 }
 
 .ant-select-sm {
-	&.mh-dropdown {
-		.ant-select-selector {
-			min-height: auto !important;
-			height: 48px !important;
-			padding: $spacing-xxsmall !important;
-			.ant-select-selection-search {
-				padding: $spacing-xxsmall !important;
-			}
-		}
-	}
+    &.mh-dropdown {
+        .ant-select-selector {
+            min-height: auto !important;
+            height: 48px !important;
+            padding: $spacing-xxsmall !important;
+            .ant-select-selection-search {
+                padding: $spacing-xxsmall !important;
+            }
+        }
+    }
+}
+
+.mh-select-label {
+    font-weight: $font-weight-default;
+    display: block;
+    margin-bottom: $spacing-xsmall;
 }

@@ -11,6 +11,7 @@
     v-model:value="value"
     :size="size"
     :suffixIcon="suffixIcon"
+    :id="id"
   >
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
