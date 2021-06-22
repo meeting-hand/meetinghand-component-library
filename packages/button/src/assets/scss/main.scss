@@ -361,6 +361,34 @@
 }
 /* LIST END */
 
+/* TAB*/
+.tab-btn {
+	font-weight: $font-weight-default;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	color: $color-mono-black;
+	border-radius: $border-radius-giant;
+	border: $border-size-default solid $transparent-hover-3;
+	box-sizing: border-box;
+	&:hover {
+		background: $transparent-hover;
+		color: $color-mono-black;
+		border: $border-size-default solid transparent;
+	}
+	&:focus {
+		background: $color-mono-white;
+		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+		border: $border-size-default solid transparent;
+	}
+	&:active {
+		background: $color-secondary-blue;
+		border: $border-size-default solid $color-primary-blue;
+		box-sizing: border-box;
+		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+	}
+}
+/* TAB END */
+
 .size-large {
 	width: 100%;
 }
