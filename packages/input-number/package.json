@@ -17,9 +17,10 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@meetinghand/style": "file:../style"
+		"@meetinghand/style": "file:../style",
+		"accounting": "^0.4.1"
 	},
 	"devDependencies": {
-		"accounting-js": "^1.1.1"
+		"@types/accounting": "^0.4.1"
 	}
 }
