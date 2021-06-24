@@ -1,7 +1,14 @@
 <template>
-  <label :for="elId" v-if="label" class="mh-input-label">
-    {{ label }}
-  </label>
+  <div class="mh-input-label">
+    <label :for="elId" v-if="label">
+      {{ label }}
+    </label>
+
+    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+      <mh-icon name="system-info" />
+    </tooltip>
+  </div>
+
   <component
     :is="inputType"
     :hasError="hasError"
@@ -21,7 +28,8 @@
 import Default from "./types/default.vue";
 import Password from "./types/password.vue";
 import Tel from "./types/tel.vue";
-
+import Tooltip from "../../tooltip/src/index.vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 import props from "./utils/props";
 
 import { computed } from "vue";
@@ -32,6 +40,8 @@ export default {
     Default,
     Password,
     Tel,
+    Tooltip,
+    MhIcon,
   },
   props: {
     ...props,
@@ -41,6 +51,10 @@ export default {
       validator: (_v) => ["default", "tel", "password"].includes(_v),
     },
     label: {
+      type: String,
+      default: null,
+    },
+    tooltip: {
       type: String,
       default: null,
     },

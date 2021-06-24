@@ -63,6 +63,10 @@ storiesOf("Button", module).add("primary", () => ({
       <mh-button type="primary" icon="arrow-up" icon-alignment="right" color="red">
         Alert
       </mh-button>
+      <mh-button type="primary"  color="red" disabled>
+      Alert
+      </mh-button>
+
       <br/><br />
       </div>
     `,

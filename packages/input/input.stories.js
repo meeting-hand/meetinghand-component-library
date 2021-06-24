@@ -26,6 +26,9 @@ storiesOf("Input", module).add("Input", () => ({
       <h1>Label</h1>
       <mh-input v-model="value8" email placeholder="input with label" label="E-mail" />
       <br />
+      <h1>Label with tooltip</h1>
+      <mh-input v-model="value1" email placeholder="e-mail address" label="Label" tooltip="Lorem ipsum"/>
+      <br />
       <br />
       <mh-input v-model="value2" left-icon="system-mail" right-icon="ui-building" />
       <hr />

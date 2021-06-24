@@ -49,6 +49,9 @@
 		&:hover {
 			background-color: $color-button-hover-red;
 		}
+		&.disabled {
+			color: $color-mono-white;
+		}
 	}
 }
 
@@ -58,6 +61,7 @@
 .ant-btn-default {
 	border-color: $transparent-hover-3;
 	color: $color-primary-blue;
+	background-color: transparent;
 
 	.mh-icon {
 		fill: $color-primary-blue;
