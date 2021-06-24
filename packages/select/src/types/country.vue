@@ -8,6 +8,7 @@
     show-search
     v-model:value="value"
     :size="size"
+    :id="id"
     :suffixIcon="suffixIcon"
   >
     <a-select-option
