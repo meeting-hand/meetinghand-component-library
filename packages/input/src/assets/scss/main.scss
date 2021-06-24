@@ -3,13 +3,24 @@
 @import "@meetinghand/style/lib/scss/ant/input.scss";
 
 .mh-input-label {
-	font-weight: $font-weight-default;
-	font-size: $font-size-default;
-	line-height: $line-height-default;
-	color: $color-mono-black;
-	margin-bottom: 6px;
-	display: block;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	label {
+		font-weight: $font-weight-default;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
+		color: $color-mono-black;
+		margin-right: $spacing-small;
+	}
+	margin-bottom: $spacing-xsmall;
 	cursor: pointer;
+	.mh-icon {
+		width: $icon-size-default;
+		height: $icon-size-default;
+		fill: $color-mono-grey;
+	}
 }
 
 .mh-input {
@@ -159,7 +170,7 @@
 
 /* Tel */
 .mh-tel-input {
-	border: $border-size-default solid $color-mono-grey;
+	border: $border-size-default solid $color-mono-grey-2;
 	border-radius: $border-radius-default;
 
 	.ant-input-group-addon {
