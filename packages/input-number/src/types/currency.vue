@@ -16,7 +16,7 @@
 
 <script>
 import { InputNumber } from "ant-design-vue";
-import accounting from "accounting-js";
+import accounting from "accounting";
 import { convertCurrencyFormat } from "../utils/currency";
 
 export default {
