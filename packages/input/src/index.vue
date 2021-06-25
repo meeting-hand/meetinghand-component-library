@@ -1,9 +1,8 @@
 <template>
-  <div class="mh-input-label">
-    <label :for="elId" v-if="label">
+  <div class="mh-input-label" v-if="label">
+    <label :for="elId">
       {{ label }}
     </label>
-
     <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
       <mh-icon name="system-info" />
     </tooltip>
