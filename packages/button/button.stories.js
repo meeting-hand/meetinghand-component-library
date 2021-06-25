@@ -352,10 +352,14 @@ storiesOf("Button", module).add("tab", () => ({
       </mh-button>
       <hr />
       <h1>Disabled</h1>
-      <mh-button type="tab"  disabled>
+      <mh-button type="tab" disabled>
         Button
       </mh-button>
       <hr />
+      <mh-button type="tab" isActive>
+      Button
+      </mh-button>
+
       </div>
 
     `,
