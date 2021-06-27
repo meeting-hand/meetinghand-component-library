@@ -5,6 +5,7 @@
     v-model:checked="value"
   >
     {{ text }}
+    <slot></slot>
   </a-radio>
   <mh-button
     @click="set()"

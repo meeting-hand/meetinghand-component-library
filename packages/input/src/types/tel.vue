@@ -102,6 +102,8 @@ export default {
         (_c) => _c.dialCode === dialCode
       );
 
+      if (!country) return;
+
       await includeFile(
         `https://meetinghand.s3.eu-central-1.amazonaws.com/assets/resources/cleave-country-formats/cleave-phone.${country.countryCode.toLowerCase()}.js`
       );
