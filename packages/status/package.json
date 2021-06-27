@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/status",
 	"description": "Meetinghand Component Library Component for status",
-	"version": "0.0.18-alpha.0",
+	"version": "0.0.19-alpha.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
