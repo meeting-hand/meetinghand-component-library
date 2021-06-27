@@ -384,11 +384,14 @@
 		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
 		border: $border-size-default solid transparent;
 	}
-	&:active {
+	&.active {
 		background: $color-secondary-blue;
 		border: $border-size-default solid $color-primary-blue;
 		box-sizing: border-box;
 		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+		&:hover {
+			color: $color-primary-blue;
+		}
 	}
 }
 /* TAB END */

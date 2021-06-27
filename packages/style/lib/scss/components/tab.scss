@@ -40,13 +40,16 @@
 
 	&.rounded {
 		.ant-tabs-tab {
-			font-weight: $font-weight-large;
+			font-weight: $font-weight-default;
 			font-size: $font-size-default;
 			line-height: $line-height-default;
 			color: $color-mono-black;
 			margin: $spacing-small $spacing-small $spacing-small 0;
 			padding: $spacing-default;
 			border-radius: $border-radius-giant;
+			border: $border-size-default solid $transparent-hover-3;
+			transition: background-color 0.5s ease;
+
 			&:hover {
 				color: $color-mono-black;
 				background-color: $transparent-hover;
@@ -54,12 +57,21 @@
 		}
 		.ant-tabs-tab-active {
 			font-weight: $font-weight-large;
-			background-color: $transparent-hover-3;
+			background: $color-mono-white;
+			box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
 			&:hover {
-				background-color: $transparent-hover-3;
+				background-color: $transparent-hover;
 			}
 		}
-
+		.ant-tabs-tab-disabled {
+			border: $border-size-default solid $transparent-hover-3;
+			background-color: transparent;
+			color: $color-mono-grey;
+			&:hover {
+				background-color: transparent;
+				color: $color-mono-grey;
+			}
+		}
 		.ant-tabs-ink-bar {
 			display: none !important;
 		}
