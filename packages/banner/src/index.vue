@@ -4,17 +4,12 @@
       :is="type"
       :button="button"
       :text="text"
+      :message="message"
       :bannerType="bannerType"
       :customText="customText"
       :sectionType="sectionType"
       :title="title"
       :icon="icon"
-      :primaryButtonColor="primaryButtonColor"
-      :primaryButtonText="primaryButtonText"
-      :secondaryButtonColor="secondaryButtonColor"
-      :secondaryButtonText="secondaryButtonText"
-      @primaryButtonClick="primaryButtonClick()"
-      @secondaryButtonClick="secondaryButtonClick()"
     >
       <slot></slot>
     </component>
@@ -38,16 +33,7 @@ export default {
     ...props,
   },
   setup() {
-    const primaryButtonClick = () => {
-      console.log("clicked");
-    };
-    const secondaryButtonClick = () => {
-      console.log("clicked");
-    };
-    return {
-      primaryButtonClick,
-      secondaryButtonClick,
-    };
+    return {};
   },
 };
 </script>

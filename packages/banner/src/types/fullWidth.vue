@@ -12,26 +12,13 @@
             {{ title }}
           </div>
           <div class="banner-text-message">
-            <slot></slot>
+            {{ message }}
           </div>
         </div>
       </div>
 
       <div class="banner-buttons">
-        <mh-button
-          v-if="primaryButtonText"
-          type="primary"
-          :color="primaryButtonColor"
-          @click="primaryButtonClick()"
-          >{{ primaryButtonText }}</mh-button
-        >
-        <mh-button
-          v-if="secondaryButtonText"
-          type="secondary"
-          :color="secondaryButtonColor"
-          @click="secondaryButtonClick()"
-          >{{ secondaryButtonText }}</mh-button
-        >
+        <slot></slot>
       </div>
     </div>
   </div>
@@ -54,37 +41,15 @@ export default {
     title: {
       type: String,
     },
-    primaryButtonColor: {
-      type: String,
-      validator: (_v) => ["green", "red"].includes(_v),
-    },
-    primaryButtonText: {
-      type: String,
-    },
-
-    secondaryButtonColor: {
-      type: String,
-      validator: (_v) => ["green", "red"].includes(_v),
-    },
-    secondaryButtonText: {
-      type: String,
-    },
     icon: {
       type: String,
     },
+    message: {
+      type: String,
+    },
   },
-  emits: ["primaryButtonClick", "secondaryButtonClick"],
-  setup(props, { emit }) {
-    const primaryButtonClick = () => {
-      emit("primaryButtonClick", true);
-    };
-    const secondaryButtonClick = () => {
-      emit("secondaryButtonClick", true);
-    };
-    return {
-      primaryButtonClick,
-      secondaryButtonClick,
-    };
+  setup() {
+    return {};
   },
 };
 </script>

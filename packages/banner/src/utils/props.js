@@ -30,19 +30,10 @@ export default {
       title: {
         type: String,
       },
-      primaryButtonColor: {
-        type: String,
-      },
-      primaryButtonText: {
-        type: String,
-      },
-      secondaryButtonColor: {
-        type: String,
-      },
-      secondaryButtonText: {
-        type: String,
-      },
       icon: {
+        type: String,
+      },
+      message: {
         type: String,
       },
 }

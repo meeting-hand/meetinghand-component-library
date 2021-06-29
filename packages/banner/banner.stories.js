@@ -25,13 +25,31 @@ storiesOf("Banner", module).add("All", () => ({
       <mh-banner type="section" text="Lorem ipsum dolor sit amet." button="close" />
       <hr/>
       <h1>Banner Full-Width Warning</h1>
-      <mh-banner type="fullWidth" banner-type="warning" title="Title" primaryButtonColor="red" primaryButtonText="Primary" secondaryButtonText="Secondary" secondaryButtonColor="red" icon="warning">
-			Lorem ipsum dolor sit amet
+      <mh-banner type="fullWidth" banner-type="warning" title="Title" message="Lorem ipsum" icon="warning">
+      <mh-button
+      type="primary"
+      color="red"
+      >primary</mh-button
+    >
+    <mh-button
+      type="secondary"
+      color="red"
+      >secondary</mh-button
+    >
 			</mh-banner>
       <hr/>
       <h1>Banner Full-Width Success</h1>
-      <mh-banner type="fullWidth" banner-type="success" title="Title" primaryButtonColor="green" primaryButtonText="Primary" secondaryButtonText="Secondary" secondaryButtonColor="green" icon="gift">
-			Lorem ipsum dolor sit amet
+      <mh-banner type="fullWidth" banner-type="success" title="Title" message="Lorem ipsum" icon="gift">
+      <mh-button
+      type="primary"
+      color="green"
+      >primary</mh-button
+    >
+    <mh-button
+      type="secondary"
+      color="green"
+      >secondary</mh-button
+    >
 			</mh-banner>
       <hr/>
   </div>
