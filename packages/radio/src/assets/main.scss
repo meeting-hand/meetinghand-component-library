@@ -49,6 +49,7 @@
 /* Button Type */
 .mh-btn-radio {
     border: $border-size-default solid $color-mono-grey;
+    border-radius: $border-radius-giant;
     color: $color-mono-black;
     font-weight: normal;
     font-size: $font-size-default;

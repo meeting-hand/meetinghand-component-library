@@ -125,6 +125,10 @@ storiesOf("Button", module).add("secondary", () => ({
       <mh-button type="secondary" icon="arrow-up" icon-alignment="right" color="red">
       Icon Right
     </mh-button>
+    <h1>Green</h1>
+      <mh-button type="secondary" icon="arrow-up" icon-alignment="right" color="green">
+      Icon Right
+    </mh-button>
     <br /><br />
     </div>
     `,

@@ -105,10 +105,20 @@
 		}
 	}
 	&.red {
-		border-color: $color-primary-red;
+		border-color: $transparent-hover-3;
 		color: $color-primary-red;
 		.mh-icon {
 			fill: $color-primary-red;
+		}
+		&:hover {
+			background: $transparent-hover;
+		}
+	}
+	&.green {
+		border-color: $transparent-hover-3;
+		color: $color-primary-participant;
+		.mh-icon {
+			fill: $color-primary-participant;
 		}
 		&:hover {
 			background: $transparent-hover;
