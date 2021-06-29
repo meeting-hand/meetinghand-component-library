@@ -247,7 +247,7 @@ storiesOf("Button", module).add("iconic", () => ({
   <div class="storybook-button"> 
 
       <h1>Normal</h1>
-      <mh-button type="iconic" icon="system-other-options" size="normal" />
+      <mh-button type="iconic" icon="system-other-options" size="default" />
         <hr/>
       <h1>Circular</h1>
       <mh-button type="iconic" icon="system-other-options" size="circular" />
@@ -259,10 +259,10 @@ storiesOf("Button", module).add("iconic", () => ({
       <mh-button type="iconic" icon="system-close" size="tiny" />
 			<hr/>
       <h1>Error</h1>
-      <mh-button type="iconic" icon="system-other-options" size="normal" color="red" />
+      <mh-button type="iconic" icon="system-other-options" size="default" color="red" />
       <hr/>
       <h1>Disabled</h1>
-      <mh-button type="iconic" icon="system-other-options" size="normal" disabled />
+      <mh-button type="iconic" icon="system-other-options" size="default" disabled />
       <br/><br />
       </div>
 
