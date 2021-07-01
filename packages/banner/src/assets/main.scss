@@ -100,8 +100,7 @@
 		line-height: $line-height-default;
 		color: $color-mono-black;
 		margin-left: $spacing-small;
-		margin-bottom: 4px;
-		margin-top: 4px;
+		margin-bottom: $spacing-xsmall;
 	}
 	&.ant-alert-success {
 		background: $color-secondary-participant;

@@ -8,16 +8,16 @@ storiesOf("Radio", module).add("Default", () => ({
 	components: { MhRadio },
 	data() {
 		return {
-			value1: "Ahmet",
-			value2: "Mehmet",
+			value1: true,
+			value2: false,
 		};
 	},
 	template: `
   <div class="storybook-radio">
       <h1>Default</h1>
-      <mh-radio v-model="value1" text="Ahmet Ozturk" data="Ahmet" />
+      <mh-radio v-model="value1" text="Ahmet Ozturk"  :data="true"/>
       <br />
-      <mh-radio v-model="value1" text="Mehmet Ozturk" data="Mehmet" />
+      <mh-radio v-model="value1" text="Mehmet Ozturk" :data="false"/>
       <br />
       <br />
       {{ value1 }}

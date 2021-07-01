@@ -10,7 +10,18 @@
     border-radius: $border-radius-default;
     background-color: transparent;
     &.currency-input {
-        min-width: 180px;
+        width: 121px;
+        .ant-input-number-handler-wrap {
+            .ant-input-number-handler-down {
+                display: none;
+            }
+            .ant-input-number-handler-up {
+                display: none;
+            }
+        }
+        .ant-input-number-input-wrap {
+            width: calc(100% - 20px);
+        }
     }
     &:hover {
         background-color: $transparent-hover;

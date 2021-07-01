@@ -1,7 +1,9 @@
 <template>
   <div class="mh-input-text">
     <span v-if="title" class="mh-input__title">{{ title }}</span>
-    <mh-icon :name="icon" v-if="icon" />
+    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+      <mh-icon name="system-info" />
+    </tooltip>
   </div>
   <a-textarea
     v-model:value="value"
@@ -18,12 +20,14 @@
 <script>
 import { Input } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
+import Tooltip from "../../tooltip/src/index.vue";
 
 export default {
   name: "MhTextArea",
   components: {
     [Input.TextArea.name]: Input.TextArea,
     "mh-icon": MHIcon,
+    Tooltip,
   },
   props: {
     modelValue: {
@@ -62,6 +66,10 @@ export default {
     maxRows: {
       type: String,
       default: "7",
+    },
+    tooltip: {
+      type: String,
+      default: null,
     },
   },
   computed: {

@@ -35,7 +35,7 @@ export default {
     },
     max: {
       type: Number,
-      default: 10000,
+      default: 999999,
     },
     step: {
       type: Number,
