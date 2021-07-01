@@ -11,6 +11,7 @@
     :auto-size="{ minRows: Number(minRows), maxRows: Number(maxRows) }"
     :disabled="disabled"
     :class="[{ error: hasError }]"
+    :hasError="hasError"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
