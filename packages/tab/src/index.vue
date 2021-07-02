@@ -22,7 +22,7 @@ export default {
     type: {
       type: String,
       default: "default",
-      validator: (_v) => ["default", "rounded"].includes(_v),
+      validator: (_v) => ["default", "rounded", "roundedBlue"].includes(_v),
     },
   },
   setup() {
