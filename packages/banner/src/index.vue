@@ -4,8 +4,12 @@
       :is="type"
       :button="button"
       :text="text"
+      :message="message"
       :bannerType="bannerType"
       :customText="customText"
+      :sectionType="sectionType"
+      :title="title"
+      :icon="icon"
     >
       <slot></slot>
     </component>
@@ -15,37 +19,21 @@
 <script>
 import Section from "./types/section.vue";
 import FullWidth from "./types/fullWidth.vue";
+import MhButton from "../../button/src/index.vue";
+import props from "./utils/props";
 
 export default {
   name: "MhBanner",
   components: {
     Section,
     FullWidth,
+    MhButton,
   },
   props: {
-    type: {
-      type: String,
-      default: "section",
-      validator: (_v) => ["section", "fullWidth"].includes(_v),
-    },
-    button: {
-      type: String,
-      default: null,
-      validator: (_v) => [null, "custom", "close"].includes(_v),
-    },
-    text: {
-      type: String,
-      default: "",
-    },
-    bannerType: {
-      type: String,
-      default: "warning",
-      validator: (_v) => ["warning", "success"].includes(_v),
-    },
-    customText: {
-      type: String,
-      default: null,
-    },
+    ...props,
+  },
+  setup() {
+    return {};
   },
 };
 </script>

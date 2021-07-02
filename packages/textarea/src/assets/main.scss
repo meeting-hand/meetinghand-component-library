@@ -40,6 +40,9 @@ textarea.ant-input {
 	&.error {
 		caret-color: $color-primary-red;
 		border-color: $color-primary-red;
+		&::after {
+			border-color: $color-primary-red;
+		}
 	}
 }
 

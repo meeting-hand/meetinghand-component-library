@@ -43,11 +43,11 @@ export default {
       default: false,
     },
     modelValue: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       required: true,
     },
     data: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       required: true,
     },
     text: {

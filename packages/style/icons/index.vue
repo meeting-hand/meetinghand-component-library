@@ -112,6 +112,7 @@ import Warning from "./warning.vue";
 import Success from "./success.vue";
 import Claps from "./claps.vue";
 import SocialApple from "./socialApple.vue";
+import UiGift from "./uiGift.vue";
 
 const iconList = [
   "arrow-down",
@@ -224,6 +225,7 @@ const iconList = [
   "success",
   "claps",
   "social-apple",
+  "ui-gift",
 ];
 
 export default {
@@ -339,6 +341,7 @@ export default {
     Success,
     Claps,
     SocialApple,
+    UiGift,
   },
   props: {
     name: {

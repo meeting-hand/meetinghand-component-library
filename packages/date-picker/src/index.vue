@@ -9,6 +9,8 @@
     :disabledStartDate="disabledStartDate"
     :disabledEndDate="disabledEndDate"
     v-model="value"
+    :labelLeft="labelLeft"
+    :labelRight="labelRight"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -63,6 +65,14 @@ export default {
     },
     disabledEndDate: {
       type: [String, Date],
+      default: null,
+    },
+    labelLeft: {
+      type: String,
+      default: null,
+    },
+    labelRight: {
+      type: String,
       default: null,
     },
   },
