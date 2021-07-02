@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/tab",
 	"description": "Meetinghand Component Library Component for tab",
-	"version": "0.0.42-alpha.0",
+	"version": "0.0.43-alpha.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
