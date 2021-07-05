@@ -46,7 +46,7 @@ storiesOf("InputNumber", module).add("Currency", () => ({
   <div class="storybook-divider">
 
       <h1>Currency Default</h1>
-      <mh-input-number v-model="currency" type="currency" currency="USD" :max="100000" />
+      <mh-input-number v-model="currency" type="currency" currency="USD" :max="100000" title="Min. amount"/>
 			<br />
       <br />
       <mh-input-number v-model="currency1" type="currency" currency="USD" :max="100000" />

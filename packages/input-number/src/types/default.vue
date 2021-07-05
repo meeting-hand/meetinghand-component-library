@@ -55,6 +55,14 @@ export default {
     currency: {
       type: String,
     },
+    title: {
+      type: String,
+      default: null,
+    },
+    tooltip: {
+      type: String,
+      default: null,
+    },
   },
 
   setup(props, { emit }) {

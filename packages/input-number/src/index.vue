@@ -9,6 +9,8 @@
     :disabled="disabled"
     :currency="currency"
     :errorMessage="errorMessage"
+    :title="title"
+    :tooltip="tooltip"
   />
 </template>
 
@@ -59,6 +61,14 @@ export default {
     currency: {
       type: String,
       default: "USD",
+    },
+    title: {
+      type: String,
+      default: null,
+    },
+    tooltip: {
+      type: String,
+      default: null,
     },
   },
   computed: {
