@@ -10,8 +10,7 @@
     :placeholder="placeholder"
     :auto-size="{ minRows: Number(minRows), maxRows: Number(maxRows) }"
     :disabled="disabled"
-    :class="[{ error: hasError }]"
-    :hasError="hasError"
+    :class="[{ error: errorStatus }]"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -74,6 +73,9 @@ export default {
     },
   },
   computed: {
+    errorStatus: function (props) {
+      return props.hasError || props.errorMessage;
+    },
     value: {
       get() {
         return this.modelValue;

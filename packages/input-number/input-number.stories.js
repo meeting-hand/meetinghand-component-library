@@ -17,7 +17,7 @@ storiesOf("InputNumber", module).add("Default", () => ({
   <div class="storybook-input-number">
 
       <h1>Number Default</h1>
-      <mh-input-number v-model="number1" :max="10000000000" :min="5" />
+      <mh-input-number v-model="number1" :max="10000000000" :min="5" title="Label" tooltip="Lorem ipsum"/>
       <hr>
       <h1>Number Error</h1>
       <mh-input-number v-model="number2" has-error error-message="Field is required" />
@@ -46,7 +46,7 @@ storiesOf("InputNumber", module).add("Currency", () => ({
   <div class="storybook-divider">
 
       <h1>Currency Default</h1>
-      <mh-input-number v-model="currency" type="currency" currency="USD" :max="100000" />
+      <mh-input-number v-model="currency" type="currency" currency="USD" :max="100000" title="Min. amount"/>
 			<br />
       <br />
       <mh-input-number v-model="currency1" type="currency" currency="USD" :max="100000" />
