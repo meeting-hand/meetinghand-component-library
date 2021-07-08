@@ -2,7 +2,7 @@
 @import "@meetinghand/style/lib/scss/colors.scss";
 @import "@meetinghand/style/lib/scss/variables.scss";
 .mh-text-editor {
-	width: 876px;
+	width: 832px;
 	border: $border-size-default solid $color-mono-grey;
 	box-sizing: border-box;
 	border-radius: $border-radius-xxlarge;
@@ -59,7 +59,7 @@
 
 		.ql-preview {
 			width: 67px;
-			margin-right: 73px;
+			margin-right: 42px;
 		}
 		.ql-redo {
 			margin-right: $spacing-xxlarge;
@@ -68,7 +68,7 @@
 				position: absolute;
 				width: 1px;
 				height: $icon-size-default;
-				left: 306px;
+				left: 276px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -80,7 +80,7 @@
 				position: absolute;
 				width: 1px;
 				height: $icon-size-default;
-				left: 486px;
+				left: 456px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -92,7 +92,7 @@
 				position: absolute;
 				width: 1px;
 				height: $icon-size-default;
-				left: 606px;
+				left: 580px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -104,7 +104,7 @@
 				position: absolute;
 				width: 1px;
 				height: $icon-size-default;
-				left: 726px;
+				left: 700px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -113,7 +113,7 @@
 			margin-left: 20px;
 			&::after {
 				content: "";
-				position: absolute;
+				position: relative;
 				width: 1px;
 				height: 20px;
 				left: 816px;
@@ -133,7 +133,7 @@
 	.ql-editor {
 		min-height: 171px;
 		&.ql-blank {
-			width: 876px;
+			width: 832px;
 		}
 		p {
 			font-style: normal;
