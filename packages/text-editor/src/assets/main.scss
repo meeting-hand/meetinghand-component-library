@@ -19,6 +19,7 @@
 	&.disabled {
 		background: $color-mono-light-grey-3;
 		cursor: not-allowed;
+		pointer-events: none;
 		.ql-toolbar {
 			background: $color-mono-light-grey-3 !important;
 		}
@@ -59,16 +60,16 @@
 
 		.ql-preview {
 			width: 67px;
-			margin-right: 42px;
+			margin-right: 36px;
 		}
 		.ql-redo {
 			margin-right: $spacing-xxlarge;
 			&::after {
 				content: "";
-				position: absolute;
+				position: relative;
 				width: 1px;
 				height: $icon-size-default;
-				left: 276px;
+				left: 24px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -77,10 +78,10 @@
 			margin-right: $spacing-xxlarge;
 			&::after {
 				content: "";
-				position: absolute;
+				position: relative;
 				width: 1px;
 				height: $icon-size-default;
-				left: 456px;
+				left: 24px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -89,10 +90,10 @@
 			margin-right: $spacing-xxlarge;
 			&::after {
 				content: "";
-				position: absolute;
+				position: relative;
 				width: 1px;
 				height: $icon-size-default;
-				left: 580px;
+				left: 24px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -101,10 +102,10 @@
 			margin-left: $spacing-xxlarge;
 			&::after {
 				content: "";
-				position: absolute;
+				position: relative;
 				width: 1px;
 				height: $icon-size-default;
-				left: 700px;
+				left: -36px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
@@ -116,7 +117,7 @@
 				position: relative;
 				width: 1px;
 				height: 20px;
-				left: 816px;
+				left: -30px;
 				border-right: $border-size-default solid $transparent-hover-3;
 				pointer-events: none;
 			}
