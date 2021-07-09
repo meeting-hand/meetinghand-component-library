@@ -63,7 +63,7 @@ storiesOf("DatePicker", module).add("Range", () => ({
       <mh-date-picker v-model="date4" type="range" disabled :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" />
 			<hr />
 				<h1>Disabled Dates</h1>
-      <mh-date-picker v-model="date5" type="range" disabledStartDate="2021-07-10" disabledEndDate="2021-07-23" placeholder="Disabled Start & End Date" />
+      <mh-date-picker v-model="date5" type="range" :disabledStartDate="new Date()" disabledEndDate="2021-07-23" placeholder="Disabled Start & End Date" />
 			<hr />
 	</div>
 
