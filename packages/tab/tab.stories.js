@@ -9,5 +9,9 @@ storiesOf("Tab", module).add("All", () => ({
       <hr/>
       <h1>Rounded</h1>
       <mh-tab type="rounded"/>
+      <hr/>
+      <h1>Rounded Blue</h1>
+      <mh-tab type="roundedBlue"/>
+
     `,
 }));

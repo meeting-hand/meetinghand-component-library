@@ -28,13 +28,12 @@
     }
     .ant-notification-notice-icon {
         margin-left: $spacing-xxsmall;
-        width: 20px;
-        height: 20px;
+        width: $icon-size-default;
+        height: $icon-size-default;
     }
     .ant-notification-notice-message {
         font-size: $font-size-default;
         line-height: $line-height-default;
-        // margin-left: 30px;
     }
     .ant-notification-notice-description {
         font-style: normal;
@@ -58,6 +57,7 @@
         }
     }
     &.success {
+        background-color: $color-secondary-participant;
         .ant-notification-notice-message {
             color: $color-primary-green;
         }
@@ -71,6 +71,7 @@
         }
     }
     &.error {
+        background-color: $color-secondary-red;
         .ant-notification-notice-message {
             color: $color-primary-red;
         }
@@ -84,6 +85,7 @@
         }
     }
     &.info {
+        background-color: $color-secondary-blue;
         .ant-notification-notice-message {
             color: $color-primary-blue;
         }
@@ -97,6 +99,7 @@
         }
     }
     &.hint {
+        background-color: $color-secondary-yellow;
         .ant-notification-notice-message {
             color: $color-primary-onsite;
         }

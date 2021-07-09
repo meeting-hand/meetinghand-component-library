@@ -13,6 +13,7 @@
 		line-height: $line-height-default;
 		color: $color-mono-black;
 		margin-right: $spacing-small;
+		cursor: pointer;
 	}
 	margin-bottom: $spacing-xsmall;
 	cursor: pointer;
@@ -20,6 +21,7 @@
 		width: $icon-size-default;
 		height: $icon-size-default;
 		fill: $color-mono-grey;
+		outline: none;
 	}
 }
 

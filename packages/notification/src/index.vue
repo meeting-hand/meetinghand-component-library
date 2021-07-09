@@ -60,13 +60,13 @@ export default {
         btn: h(
           Button,
           {
-            type: "secondary",
+            type: "text",
             onClick: () => {
               Notification.close(key);
               emit("close", true);
             },
           },
-          () => "Dismiss"
+          () => "Close"
         ),
       });
     };

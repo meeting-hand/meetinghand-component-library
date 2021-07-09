@@ -10,6 +10,7 @@
 
   <component
     :is="inputType"
+    :class="className"
     :hasError="hasError"
     :errorMessage="errorMessage"
     :disabled="disabled"

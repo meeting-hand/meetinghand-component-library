@@ -9,6 +9,8 @@
     :disabled="disabled"
     :currency="currency"
     :errorMessage="errorMessage"
+    :title="title"
+    :tooltip="tooltip"
   />
 </template>
 
@@ -33,7 +35,7 @@ export default {
     },
     max: {
       type: Number,
-      default: 100,
+      default: 999999,
     },
     step: {
       type: Number,
@@ -59,6 +61,14 @@ export default {
     currency: {
       type: String,
       default: "USD",
+    },
+    title: {
+      type: String,
+      default: null,
+    },
+    tooltip: {
+      type: String,
+      default: null,
     },
   },
   computed: {

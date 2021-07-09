@@ -40,6 +40,9 @@ textarea.ant-input {
 	&.error {
 		caret-color: $color-primary-red;
 		border-color: $color-primary-red;
+		&::after {
+			border-color: $color-primary-red;
+		}
 	}
 }
 
@@ -47,7 +50,7 @@ textarea.ant-input {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin-bottom: 10px;
+	margin-bottom: 6px;
 	.mh-input__title {
 		font-style: normal;
 		font-weight: $font-weight-default;

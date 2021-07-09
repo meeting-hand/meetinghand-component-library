@@ -1,4 +1,10 @@
 <template>
+  <div class="mh-input-number-text">
+    <span v-if="title" class="mh-input__title">{{ title }}</span>
+    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+      <mh-icon name="system-info" />
+    </tooltip>
+  </div>
   <a-input-number
     v-model:value="value"
     :min="min"
@@ -19,10 +25,15 @@ import { InputNumber } from "ant-design-vue";
 import accounting from "accounting";
 import { convertCurrencyFormat } from "../utils/currency";
 
+import MhIcon from "@meetinghand/style/icons/index.vue";
+import Tooltip from "../../../tooltip/src/index.vue";
+
 export default {
   name: "InputNumberCurrency",
   components: {
     [InputNumber.name]: InputNumber,
+    MhIcon,
+    Tooltip,
   },
   props: {
     modelValue: {
@@ -35,7 +46,7 @@ export default {
     },
     max: {
       type: Number,
-      default: 10000,
+      default: 999999,
     },
     step: {
       type: Number,
@@ -56,6 +67,14 @@ export default {
     currency: {
       type: String,
       required: true,
+    },
+    title: {
+      type: String,
+      default: null,
+    },
+    tooltip: {
+      type: String,
+      default: null,
     },
   },
   computed: {

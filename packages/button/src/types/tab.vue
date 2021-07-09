@@ -1,8 +1,9 @@
 <template>
   <a-button
     type="default"
-    :class="[{ disabled: disabled }, `tab-btn`]"
+    :class="[{ disabled: disabled }, { active: isActive }, `tab-btn`]"
     :htmlType="submit ? 'submit' : 'button'"
+    :disabled="disabled"
   >
     <slot></slot>
   </a-button>
@@ -20,6 +21,10 @@ export default {
       default: false,
     },
     submit: {
+      type: Boolean,
+      default: false,
+    },
+    isActive: {
       type: Boolean,
       default: false,
     },

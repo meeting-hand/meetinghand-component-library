@@ -21,7 +21,7 @@ storiesOf("TextArea", module).add("All", () => ({
         minRows= "5"
         maxRows= "7"
         title="Title"
-        icon="system-info"
+        tooltip="Lorem ipsum"
       />
       <hr/>
       {{ text1 }}

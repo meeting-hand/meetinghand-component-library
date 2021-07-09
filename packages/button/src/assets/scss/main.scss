@@ -105,13 +105,24 @@
 		}
 	}
 	&.red {
-		border-color: $color-primary-red;
+		border-color: $transparent-hover-3;
 		color: $color-primary-red;
 		.mh-icon {
 			fill: $color-primary-red;
 		}
 		&:hover {
 			background: $transparent-hover;
+		}
+	}
+	&.green {
+		border-color: $transparent-hover-3;
+		color: $color-primary-participant;
+		.mh-icon {
+			fill: $color-primary-participant;
+		}
+		&:hover {
+			background: $transparent-hover;
+			color: $color-primary-participant;
 		}
 	}
 }
@@ -207,7 +218,7 @@
 				min-width: 30px;
 			}
 		}
-		&.size-normal {
+		&.size-default {
 			width: 44px;
 			height: 44px;
 		}
@@ -384,11 +395,14 @@
 		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
 		border: $border-size-default solid transparent;
 	}
-	&:active {
+	&.active {
 		background: $color-secondary-blue;
 		border: $border-size-default solid $color-primary-blue;
 		box-sizing: border-box;
 		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+		&:hover {
+			color: $color-primary-blue;
+		}
 	}
 }
 /* TAB END */

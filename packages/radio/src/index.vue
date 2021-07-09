@@ -5,6 +5,7 @@
     v-model:checked="value"
   >
     {{ text }}
+    <slot></slot>
   </a-radio>
   <mh-button
     @click="set()"
@@ -42,11 +43,11 @@ export default {
       default: false,
     },
     modelValue: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       required: true,
     },
     data: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       required: true,
     },
     text: {

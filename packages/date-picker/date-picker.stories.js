@@ -51,7 +51,7 @@ storiesOf("DatePicker", module).add("Range", () => ({
 	<div class="storybook-datepicker">
 
 			<h1>Default</h1>
-      <mh-date-picker v-model="date1" type="range" :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" /> <span style="margin-left: 40px;">{{ date1 }}</span>
+      <mh-date-picker v-model="date1" type="range" :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" label-left="Start Date" label-right="End date"/> <span style="margin-left: 40px;">{{ date1 }}</span>
 			 <br />
 			<br />
      <mh-date-picker v-model="date2" type="range" :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" /> <span style="margin-left: 40px;">{{ date2 }}</span>

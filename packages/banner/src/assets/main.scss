@@ -4,15 +4,81 @@
 
 .mh-banner {
 	display: flex;
+	.full-width-banner {
+		width: 100%;
+		.full-width-banner-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding: $spacing-medium 120px;
+			.banner-left {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.banner-icon {
+					.mh-icon {
+						width: $icon-size-medium;
+						height: $icon-size-medium;
+						margin-right: $spacing-medium;
+					}
+				}
+				.banner-text {
+					.banner-text-title {
+						font-weight: $font-weight-large;
+						font-size: $font-size-xlarge;
+						line-height: $line-height-large;
+					}
+					.banner-text-message {
+						font-weight: normal;
+						font-size: $font-size-default;
+						line-height: $line-height-default;
+						color: $color-mono-black;
+					}
+				}
+			}
+
+			.banner-buttons {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.ant-btn:last-child {
+					margin-left: $spacing-default;
+				}
+			}
+		}
+		&.warning {
+			background-color: $color-secondary-red;
+			.banner-text {
+				color: $color-primary-red;
+			}
+			.mh-icon {
+				fill: $color-primary-red;
+			}
+		}
+		&.success {
+			background-color: $color-secondary-participant;
+			.banner-text {
+				color: $color-primary-participant;
+			}
+			.mh-icon {
+				fill: $color-primary-participant;
+			}
+		}
+	}
 }
 .ant-alert {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
-	//padding: $spacing-large !important;
 	padding: $spacing-medium !important;
-	border-radius: $border-radius-default;
+	border: none;
+	min-width: 312px;
+	.mh-icon {
+		width: $icon-size-default;
+		height: $icon-size-default;
+	}
 
 	&.ant-alert-info {
 		display: flex;
@@ -21,56 +87,54 @@
 		border-color: $color-mono-light-grey-2;
 	}
 	.ant-alert-message {
+		font-weight: $font-weight-large;
 		font-size: $font-size-default;
 		line-height: $line-height-default;
-		color: $color-mono-grey-3;
-		margin: $spacing-xxsmall $spacing-medium;
+		margin-left: $spacing-small;
+		margin-bottom: 4px;
+		margin-top: 4px;
+	}
+
+	.ant-alert-description {
+		font-size: $font-size-default;
+		line-height: $line-height-default;
+		color: $color-mono-black;
+		margin-left: $spacing-small;
+		margin-bottom: 4px;
+	}
+	&.ant-alert-success {
+		background: $color-secondary-participant;
+		.mh-icon {
+			fill: $color-primary-participant;
+		}
+	}
+	&.ant-alert-info {
+		background: $color-secondary-blue;
+		.mh-icon {
+			fill: $color-primary-blue;
+		}
+	}
+	&.ant-alert-warning {
+		background: $color-secondary-yellow;
+		.mh-icon {
+			fill: $color-primary-onsite;
+		}
+	}
+	&.ant-alert-error {
+		background: $color-secondary-red;
+		.mh-icon {
+			fill: $color-primary-red;
+		}
 	}
 
 	svg {
 		&.ant-alert-icon {
 			width: $icon-size-default;
 			height: $icon-size-default;
-			fill: $color-primary-blue;
 			margin-right: $spacing-xxsmall;
 		}
 	}
 
-	&.ant-alert-banner {
-		width: 100%;
-		&.ant-alert-warning {
-			background-color: $color-secondary-red;
-			.ant-alert-message {
-				font-style: normal;
-				font-weight: normal;
-				font-size: $font-size-default;
-				line-height: $line-height-default;
-
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				text-align: center;
-
-				color: $color-mono-black;
-			}
-		}
-		&.ant-alert-success {
-			background-color: $color-secondary-green;
-			.ant-alert-message {
-				font-style: normal;
-				font-weight: normal;
-				font-size: $font-size-default;
-				line-height: $line-height-default;
-
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				text-align: center;
-
-				color: $color-mono-black;
-			}
-		}
-	}
 	.ant-alert-close-icon {
 		padding: $spacing-xsmall;
 		border-radius: $border-radius-default;
@@ -105,7 +169,7 @@
 	&.ant-alert-warning {
 		&.ant-alert-no-icon {
 			.ant-alert-message {
-				margin: 0;
+				margin: $spacing-xxsmall;
 			}
 		}
 	}
