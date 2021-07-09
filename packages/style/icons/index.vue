@@ -201,6 +201,7 @@ const iconList = [
   "ui-sponsor",
   "ui-emoji",
   "ui-building",
+  "system-attachment",
   "system-send-up",
   "system-like",
   "system-liked",
