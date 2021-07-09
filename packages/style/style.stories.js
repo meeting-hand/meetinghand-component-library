@@ -5,8 +5,8 @@ import MhIcon from "./icons/index";
 import "../../assets/storybook/storybook.css";
 
 storiesOf("Style", module).add("Style!", () => ({
-	components: { MhIcon },
-	template: `
+    components: { MhIcon },
+    template: `
     <h1>MeetingHand Base Style Library</h1>
     <ul>
 			<li>assets/scss/colors.scss</li>
@@ -24,8 +24,8 @@ storiesOf("Style", module).add("Style!", () => ({
 }));
 
 storiesOf("Style", module).add("icons", () => ({
-	components: { MhIcon },
-	template: `
+    components: { MhIcon },
+    template: `
     <div class="mh-style">
 			<h1>Icons</h1>
 			<mh-icon name="arrow-down" />
@@ -115,6 +115,7 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="system-person" />
 			<mh-icon name="system-slide" />
 			<mh-icon name="system-settings" />
+			<mh-icon name="system-attachment" />
 			<h1>Social</h1>
 			<mh-icon name="social-google" />
 			<mh-icon name="social-facebook" />
