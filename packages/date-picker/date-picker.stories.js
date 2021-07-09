@@ -3,19 +3,18 @@ import MhDatePicker from "./index";
 
 import "../../assets/storybook/storybook.css";
 
-
 storiesOf("DatePicker", module).add("Default", () => ({
-	components: { MhDatePicker },
-	data() {
-		return {
-			date1: null,
-			date2: "05.15.2021",
-			date3: null,
-			date4: "25.01.2021",
-			date5: "",
-		};
-	},
-	template: `
+    components: { MhDatePicker },
+    data() {
+        return {
+            date1: null,
+            date2: "05.15.2021",
+            date3: null,
+            date4: "25.01.2021",
+            date5: "",
+        };
+    },
+    template: `
 	<div class="storybook-datepicker">
 			<h1>Default (DD.MM.YYYY)</h1>
       <mh-date-picker v-model="date1" placeholder="Default Empty Date" /> <span style="margin-left: 40px;">{{ date1 }}</span>
@@ -38,16 +37,17 @@ storiesOf("DatePicker", module).add("Default", () => ({
 }));
 
 storiesOf("DatePicker", module).add("Range", () => ({
-	components: { MhDatePicker },
-	data() {
-		return {
-			date1: ["", ""],
-			date2: ["15.01.2021", "18.01.2021"],
-			date3: ["15.01.2021", "18.01.2021"],
-			date4: ["15.01.2021", "18.01.2021"],
-		};
-	},
-	template: `
+    components: { MhDatePicker },
+    data() {
+        return {
+            date1: ["", ""],
+            date2: ["15.01.2021", "18.01.2021"],
+            date3: ["15.01.2021", "18.01.2021"],
+            date4: ["15.01.2021", "18.01.2021"],
+            date5: ["", ""],
+        };
+    },
+    template: `
 	<div class="storybook-datepicker">
 
 			<h1>Default</h1>
@@ -61,6 +61,9 @@ storiesOf("DatePicker", module).add("Range", () => ({
 			<hr />
 			<h1>Disabled</h1>
       <mh-date-picker v-model="date4" type="range" disabled :placeholder="['Start Date', 'End Date']" :format="['DD.MM.YYYY', 'DD.MM.YYYY']" />
+			<hr />
+				<h1>Disabled Dates</h1>
+      <mh-date-picker v-model="date5" type="range" disabledStartDate="2021-07-10" disabledEndDate="2021-07-23" placeholder="Disabled Start & End Date" />
 			<hr />
 	</div>
 
