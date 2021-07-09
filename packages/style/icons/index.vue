@@ -86,6 +86,7 @@ import UiResizeVideo from "./uiResizeVideo.vue";
 import UiSponsor from "./uiSponsor.vue";
 import UiEmoji from "./uiEmoji.vue";
 import UiBuilding from "./uiBuilding.vue";
+import SystemAttachment from "./systemAttachment.vue";
 import SystemSendUp from "./systemSendUp.vue";
 import SystemLike from "./systemLike.vue";
 import SystemLiked from "./systemLiked.vue";
@@ -200,6 +201,7 @@ const iconList = [
   "ui-sponsor",
   "ui-emoji",
   "ui-building",
+  "system-attachment",
   "system-send-up",
   "system-like",
   "system-liked",
@@ -317,6 +319,7 @@ export default {
     UiSponsor,
     UiEmoji,
     UiBuilding,
+    SystemAttachment,
     SystemSendUp,
     SystemLike,
     SystemLiked,
