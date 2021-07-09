@@ -2,35 +2,123 @@
 @import "@meetinghand/style/lib/scss/colors.scss";
 @import "@meetinghand/style/lib/scss/variables.scss";
 .mh-text-editor {
-	width: 928px;
-
+	width: 832px;
 	border: $border-size-default solid $color-mono-grey;
 	box-sizing: border-box;
-	border-radius: 5px;
+	border-radius: $border-radius-xxlarge;
 
 	&.error {
 		border: $border-size-default solid $color-primary-red;
 		&:focus-within {
 			border: $border-size-default solid $color-primary-red;
 			box-sizing: border-box;
-			border-top-left-radius: $border-radius-default;
-			border-top-right-radius: $border-radius-default;
+			border-top-left-radius: $border-radius-xxlarge;
+			border-top-right-radius: $border-radius-xxlarge;
 		}
 	}
 	&.disabled {
-		opacity: 0.6;
+		background: $color-mono-light-grey-3;
+		cursor: not-allowed;
+		.ql-toolbar {
+			background: $color-mono-light-grey-3 !important;
+		}
+		.ql-snow {
+			background: $color-mono-light-grey-3;
+		}
+		button {
+			pointer-events: none;
+		}
 	}
 	.ql-toolbar {
 		&.ql-snow {
 			background: $color-mono-white;
 			border: none;
-			border-bottom: $border-size-default solid $color-mono-light-grey-5;
-			padding: 20px $spacing-xxsmall;
-			margin: $spacing-xxsmall $spacing-default;
+			border-bottom: $border-size-default solid $color-mono-grey;
+			padding: 14px 0px 14px 16px;
+			border-top-left-radius: $border-radius-xxlarge;
+			border-top-right-radius: $border-radius-xxlarge;
+		}
+		.ql-formats {
+			margin-right: $spacing-xxsmall;
 		}
 		button {
+			display: flex;
+			justify-content: center;
+			border-radius: $border-radius-default;
 			svg {
+				height: $icon-size-default;
+			}
+			&:hover {
+				background: $transparent-hover-2;
+			}
+		}
+		.ql-write {
+			width: 49px;
+			margin-right: $spacing-small;
+		}
+
+		.ql-preview {
+			width: 67px;
+			margin-right: 42px;
+		}
+		.ql-redo {
+			margin-right: $spacing-xxlarge;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 1px;
+				height: $icon-size-default;
+				left: 276px;
+				border-right: $border-size-default solid $transparent-hover-3;
+				pointer-events: none;
+			}
+		}
+		.ql-blockquote {
+			margin-right: $spacing-xxlarge;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 1px;
+				height: $icon-size-default;
+				left: 456px;
+				border-right: $border-size-default solid $transparent-hover-3;
+				pointer-events: none;
+			}
+		}
+		.ql-table {
+			margin-right: $spacing-xxlarge;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 1px;
+				height: $icon-size-default;
+				left: 580px;
+				border-right: $border-size-default solid $transparent-hover-3;
+				pointer-events: none;
+			}
+		}
+		button:nth-of-type(16) {
+			margin-left: $spacing-xxlarge;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 1px;
+				height: $icon-size-default;
+				left: 700px;
+				border-right: $border-size-default solid $transparent-hover-3;
+				pointer-events: none;
+			}
+		}
+		.ql-code-block {
+			margin-left: 20px;
+			&::after {
+				content: "";
+				position: relative;
+				width: 1px;
 				height: 20px;
+				left: 816px;
+				border-right: $border-size-default solid $transparent-hover-3;
+				pointer-events: none;
 			}
 		}
 	}
@@ -38,14 +126,14 @@
 		&.ql-snow {
 			border: none;
 			box-sizing: border-box;
-			border-bottom-left-radius: $border-radius-default;
-			border-bottom-right-radius: $border-radius-default;
+			border-bottom-left-radius: $border-radius-xxlarge;
+			border-bottom-right-radius: $border-radius-xxlarge;
 		}
 	}
 	.ql-editor {
-		height: 337px;
+		min-height: 171px;
 		&.ql-blank {
-			width: 928px;
+			width: 832px;
 		}
 		p {
 			font-style: normal;
@@ -64,13 +152,13 @@
 	&:focus-within {
 		border: $border-size-default solid $color-primary-blue;
 		box-sizing: border-box;
-		border-top-left-radius: $border-radius-default;
-		border-top-right-radius: $border-radius-default;
+		border-top-left-radius: $border-radius-xxlarge;
+		border-top-right-radius: $border-radius-xxlarge;
 	}
 	.editor-footer {
 		border-top: $border-size-default solid $color-mono-light-grey-5;
-		margin: 0 $spacing-default;
-		padding: $spacing-small 0;
+		margin: $spacing-xxsmall $spacing-default;
+		padding: $spacing-small $spacing-xxsmall;
 		color: $color-mono-grey-2;
 		font-size: $font-size-small;
 		line-height: $line-height-small;
@@ -80,7 +168,6 @@
 
 .ql-snow.ql-toolbar button.ql-active {
 	background: $transparent-hover-2;
-	border-radius: $border-radius-default;
 }
 
 .ql-snow.ql-toolbar button.ql-active .ql-fill {
