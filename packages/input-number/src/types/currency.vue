@@ -1,6 +1,6 @@
 <template>
-  <div class="mh-input-number-text">
-    <span v-if="title" class="mh-input__title">{{ title }}</span>
+  <div v-if="title" class="mh-input-number-text">
+    <span class="mh-input__title">{{ title }}</span>
     <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
       <mh-icon name="system-info" />
     </tooltip>
