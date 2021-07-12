@@ -21,6 +21,7 @@
       { 'mh-range-picker-opened': status },
     ]"
     :disabled="disabled"
+    :disabledDate="disabledDate"
     :placeholder="placeholder"
     :allowClear="false"
     :id="id"
@@ -96,6 +97,23 @@ export default {
       },
     });
 
+    const disabledDate = (_d) => {
+      _d = _d.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+      if (
+        props.disabledStartDate &&
+        new Date(props.disabledStartDate).getTime() >= new Date(_d).getTime()
+      ) {
+        return true;
+      }
+      if (
+        props.disabledEndDate &&
+        new Date(_d).getTime() > new Date(props.disabledEndDate).getTime()
+      ) {
+        return true;
+      }
+      return false;
+    };
+
     const openChange = (newStatus) => {
       status.value = newStatus;
     };
@@ -105,6 +123,7 @@ export default {
       openChange,
       status,
       icon,
+      disabledDate,
     };
   },
 };
