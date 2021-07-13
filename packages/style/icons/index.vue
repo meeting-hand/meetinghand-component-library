@@ -115,6 +115,10 @@ import Claps from "./claps.vue";
 import SocialApple from "./socialApple.vue";
 import UiGift from "./uiGift.vue";
 import UiFlag from "./uiFlag.vue";
+import PackageAbstract from "./packageAbstract.vue";
+import PackageMobile from "./packageMobile.vue";
+import PackageParticipant from "./packageParticipant.vue";
+import PackageVirtual from "./packageVirtual.vue";
 
 const iconList = [
   "arrow-down",
@@ -230,6 +234,10 @@ const iconList = [
   "social-apple",
   "ui-gift",
   "ui-flag",
+  "package-abstract",
+  "package-mobile",
+  "package-participant",
+  "package-virtual",
 ];
 
 export default {
@@ -348,6 +356,10 @@ export default {
     SocialApple,
     UiGift,
     UiFlag,
+    PackageAbstract,
+    PackageMobile,
+    PackageParticipant,
+    PackageVirtual,
   },
   props: {
     name: {

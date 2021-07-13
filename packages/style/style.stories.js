@@ -136,6 +136,11 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="success" />
 			<mh-icon name="claps" />
 			<mh-icon name="ui-flag" />
+			<h1>Package</h1>
+			<mh-icon name="package-participant" />
+			<mh-icon name="package-abstract" />
+			<mh-icon name="package-virtual" />
+			<mh-icon name="package-mobile" />
 		</div>
     `,
 }));
