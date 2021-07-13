@@ -116,6 +116,11 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="system-slide" />
 			<mh-icon name="system-settings" />
 			<mh-icon name="system-attachment" />
+			<mh-icon name="ui-dashboard" />
+			<mh-icon name="ui-report" />
+			<mh-icon name="ui-event-program" />
+			<mh-icon name="ui-engagement" />
+			<mh-icon name="editor-link" />
 			<h1>Social</h1>
 			<mh-icon name="social-google" />
 			<mh-icon name="social-facebook" />
