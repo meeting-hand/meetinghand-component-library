@@ -124,6 +124,7 @@ import PackageMobile from "./packageMobile.vue";
 import PackageParticipant from "./packageParticipant.vue";
 import PackageVirtual from "./packageVirtual.vue";
 import EditorLink from "./editorLink.vue";
+import EditorUndo from "./editorUndo.vue";
 
 const iconList = [
   "arrow-down",
@@ -248,6 +249,7 @@ const iconList = [
   "package-participant",
   "package-virtual",
   "editor-link",
+  "editor-undo",
 ];
 
 export default {
@@ -375,6 +377,7 @@ export default {
     PackageParticipant,
     PackageVirtual,
     EditorLink,
+    EditorUndo,
   },
   props: {
     name: {
