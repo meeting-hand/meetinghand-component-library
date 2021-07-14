@@ -10,17 +10,19 @@ storiesOf("Notification", module).add("All", () => ({
 		return {
 			notificationSuccessStatus: false,
 			notificationSuccess: {
-				type: "success",
+				type: "success title",
 				description: "Lorem ipsum dolor sit amet.",
 				duration: 0,
 				placement: "topRight",
+        message: "Title"
 			},
 			notificationErrorStatus: false,
 			notificationError: {
-				type: "error",
+				type: "error title",
 				description: "Lorem ipsum dolor sit amet.",
 				duration: 0,
 				placement: "topRight",
+        message: "Title"
 			},
 			notificationInfoStatus: false,
 			notificationInfo: {
@@ -28,6 +30,7 @@ storiesOf("Notification", module).add("All", () => ({
 				description: "Lorem ipsum dolor sit amet.",
 				duration: 0,
 				placement: "topRight",
+        message: "message"
 			},
 			notificationHintStatus: false,
 			notificationHint: {
@@ -35,6 +38,7 @@ storiesOf("Notification", module).add("All", () => ({
 				description: "Lorem ipsum dolor sit amet.",
 				duration: 0,
 				placement: "topRight",
+        message: "message"
 			},
 		};
 	},
@@ -44,6 +48,7 @@ storiesOf("Notification", module).add("All", () => ({
       :placement="notificationSuccess.placement"
       :duration="notificationSuccess.duration"
       :description="notificationSuccess.description"
+      :message="notificationSuccess.message"
       :type="notificationSuccess.type"
       v-if="notificationSuccessStatus"
       @close="notificationSuccessStatus = false"
@@ -55,6 +60,7 @@ storiesOf("Notification", module).add("All", () => ({
       :placement="notificationError.placement"
       :duration="notificationError.duration"
       :description="notificationError.description"
+      :message="notificationError.message"
       :type="notificationError.type"
       v-if="notificationErrorStatus"
       @close="notificationErrorStatus = false"
