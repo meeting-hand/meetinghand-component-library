@@ -115,6 +115,16 @@ import Claps from "./claps.vue";
 import SocialApple from "./socialApple.vue";
 import UiGift from "./uiGift.vue";
 import UiFlag from "./uiFlag.vue";
+import UiDashboard from "./uiDashboard.vue";
+import UiReport from "./uiReport.vue";
+import UiEventProgram from "./uiEventProgram.vue";
+import UiEngagement from "./uiEngagement.vue";
+import PackageAbstract from "./packageAbstract.vue";
+import PackageMobile from "./packageMobile.vue";
+import PackageParticipant from "./packageParticipant.vue";
+import PackageVirtual from "./packageVirtual.vue";
+import EditorLink from "./editorLink.vue";
+import EditorUndo from "./editorUndo.vue";
 
 const iconList = [
   "arrow-down",
@@ -201,6 +211,10 @@ const iconList = [
   "ui-sponsor",
   "ui-emoji",
   "ui-building",
+  "ui-dashboard",
+  "ui-report",
+  "ui-event-program",
+  "ui-engagement",
   "system-attachment",
   "system-send-up",
   "system-like",
@@ -230,6 +244,12 @@ const iconList = [
   "social-apple",
   "ui-gift",
   "ui-flag",
+  "package-abstract",
+  "package-mobile",
+  "package-participant",
+  "package-virtual",
+  "editor-link",
+  "editor-undo",
 ];
 
 export default {
@@ -319,6 +339,10 @@ export default {
     UiSponsor,
     UiEmoji,
     UiBuilding,
+    UiDashboard,
+    UiReport,
+    UiEventProgram,
+    UiEngagement,
     SystemAttachment,
     SystemSendUp,
     SystemLike,
@@ -348,6 +372,12 @@ export default {
     SocialApple,
     UiGift,
     UiFlag,
+    PackageAbstract,
+    PackageMobile,
+    PackageParticipant,
+    PackageVirtual,
+    EditorLink,
+    EditorUndo,
   },
   props: {
     name: {
