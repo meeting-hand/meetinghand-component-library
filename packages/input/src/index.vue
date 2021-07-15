@@ -1,27 +1,29 @@
 <template>
-  <div class="mh-input-label" v-if="label">
-    <label :for="elId">
-      {{ label }}
-    </label>
-    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
-      <mh-icon name="system-info" />
-    </tooltip>
-  </div>
+  <div class="mh-input">
+    <div class="mh-input-label" v-if="label">
+      <label :for="elId">
+        {{ label }}
+      </label>
+      <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+        <mh-icon name="system-info" />
+      </tooltip>
+    </div>
 
-  <component
-    :is="inputType"
-    :class="className"
-    :hasError="hasError"
-    :errorMessage="errorMessage"
-    :disabled="disabled"
-    :placeholder="placeholder"
-    :leftIcon="leftIcon"
-    :rightIcon="rightIcon"
-    :allowClear="allowClear"
-    :email="email"
-    :id="elId"
-    v-model="value"
-  />
+    <component
+      :is="inputType"
+      :class="className"
+      :hasError="hasError"
+      :errorMessage="errorMessage"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      :leftIcon="leftIcon"
+      :rightIcon="rightIcon"
+      :allowClear="allowClear"
+      :email="email"
+      :id="elId"
+      v-model="value"
+    />
+  </div>
 </template>
 
 <script>

@@ -1,17 +1,19 @@
 <template>
-  <component
-    :is="type"
-    v-model="value"
-    :min="min"
-    :max="max"
-    :step="step"
-    :hasError="hasError"
-    :disabled="disabled"
-    :currency="currency"
-    :errorMessage="errorMessage"
-    :title="title"
-    :tooltip="tooltip"
-  />
+  <div class="mh-input-number">
+    <component
+      :is="type"
+      v-model="value"
+      :min="min"
+      :max="max"
+      :step="step"
+      :hasError="hasError"
+      :disabled="disabled"
+      :currency="currency"
+      :errorMessage="errorMessage"
+      :title="title"
+      :tooltip="tooltip"
+    />
+  </div>
 </template>
 
 <script>
