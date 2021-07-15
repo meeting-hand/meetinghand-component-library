@@ -39,7 +39,7 @@ export default {
 		type: String,
 		default: null,
 	},
-	className: {
+	class: {
 		type: String,
 		default: null,
 	},

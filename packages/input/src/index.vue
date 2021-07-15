@@ -11,7 +11,7 @@
 
     <component
       :is="inputType"
-      :class="className"
+      :class="class"
       :hasError="hasError"
       :errorMessage="errorMessage"
       :disabled="disabled"
