@@ -1,20 +1,22 @@
 <template>
-  <div v-if="title" class="mh-input-text">
-    <span class="mh-input__title">{{ title }}</span>
-    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
-      <mh-icon name="system-info" />
-    </tooltip>
+  <div class="mh-text-area">
+    <div v-if="title" class="mh-input-text">
+      <span class="mh-input__title">{{ title }}</span>
+      <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+        <mh-icon name="system-info" />
+      </tooltip>
+    </div>
+    <a-textarea
+      v-model:value="value"
+      :placeholder="placeholder"
+      :auto-size="{ minRows: Number(minRows), maxRows: Number(maxRows) }"
+      :disabled="disabled"
+      :class="[{ error: errorStatus }]"
+    />
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
   </div>
-  <a-textarea
-    v-model:value="value"
-    :placeholder="placeholder"
-    :auto-size="{ minRows: Number(minRows), maxRows: Number(maxRows) }"
-    :disabled="disabled"
-    :class="[{ error: errorStatus }]"
-  />
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
 </template>
 
 <script>
