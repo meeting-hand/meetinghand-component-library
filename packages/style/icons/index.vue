@@ -125,6 +125,7 @@ import PackageParticipant from "./packageParticipant.vue";
 import PackageVirtual from "./packageVirtual.vue";
 import EditorLink from "./editorLink.vue";
 import EditorUndo from "./editorUndo.vue";
+import Speakers from "./speakers.vue";
 
 const iconList = [
   "arrow-down",
@@ -250,6 +251,7 @@ const iconList = [
   "package-virtual",
   "editor-link",
   "editor-undo",
+  "speakers",
 ];
 
 export default {
@@ -378,6 +380,7 @@ export default {
     PackageVirtual,
     EditorLink,
     EditorUndo,
+    Speakers,
   },
   props: {
     name: {

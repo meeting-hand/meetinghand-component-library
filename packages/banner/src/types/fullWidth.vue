@@ -11,9 +11,7 @@
           <div class="banner-text-title">
             {{ title }}
           </div>
-          <div class="banner-text-message">
-            {{ message }}
-          </div>
+          <div class="banner-text-message" v-html="message"></div>
         </div>
       </div>
 

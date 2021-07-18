@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/banner",
 	"description": "Meetinghand Component Library Component for banner",
-	"version": "0.0.56-alpha.0",
+	"version": "0.0.61-alpha.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"

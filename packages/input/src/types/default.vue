@@ -1,25 +1,23 @@
 <template>
-  <div class="mh-input">
-    <a-input
-      :placeholder="placeholder"
-      :class="[{ error: errorStatus, 'allow-clear': allowClear }]"
-      :disabled="disabled"
-      :allow-clear="allowClear"
-      :type="inputType"
-      :id="id"
-      v-model:value="value"
-    >
-      <template #prefix v-if="leftIcon">
-        <mh-icon :name="leftIcon" />
-      </template>
-      <template #suffix v-if="rightIcon">
-        <mh-icon :name="rightIcon" />
-      </template>
-    </a-input>
-    <span v-if="errorMessage" class="mh-input__error">
-      {{ errorMessage }}
-    </span>
-  </div>
+  <a-input
+    :placeholder="placeholder"
+    :class="[{ error: errorStatus, 'allow-clear': allowClear }]"
+    :disabled="disabled"
+    :allow-clear="allowClear"
+    :type="inputType"
+    :id="id"
+    v-model:value="value"
+  >
+    <template #prefix v-if="leftIcon">
+      <mh-icon :name="leftIcon" />
+    </template>
+    <template #suffix v-if="rightIcon">
+      <mh-icon :name="rightIcon" />
+    </template>
+  </a-input>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
