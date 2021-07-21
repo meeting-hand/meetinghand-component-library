@@ -126,6 +126,7 @@ import PackageVirtual from "./packageVirtual.vue";
 import EditorLink from "./editorLink.vue";
 import EditorUndo from "./editorUndo.vue";
 import Speakers from "./speakers.vue";
+import EditorImage from "./editorImage.vue";
 
 const iconList = [
   "arrow-down",
@@ -252,6 +253,7 @@ const iconList = [
   "editor-link",
   "editor-undo",
   "speakers",
+  "editor-image",
 ];
 
 export default {
@@ -381,6 +383,7 @@ export default {
     EditorLink,
     EditorUndo,
     Speakers,
+    EditorImage,
   },
   props: {
     name: {

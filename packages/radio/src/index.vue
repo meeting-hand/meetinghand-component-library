@@ -52,7 +52,7 @@ export default {
     },
     text: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   computed: {
