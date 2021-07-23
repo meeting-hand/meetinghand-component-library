@@ -1,5 +1,5 @@
 <template>
-  <div class="mh-input">
+  <div :class="['mh-input', className]">
     <div class="mh-input-label" v-if="label">
       <label :for="elId">
         {{ label }}
@@ -11,7 +11,6 @@
 
     <component
       :is="inputType"
-      :class="class"
       :hasError="hasError"
       :errorMessage="errorMessage"
       :disabled="disabled"
@@ -71,6 +70,8 @@ export default {
       },
     });
 
+    const className = props.class;
+
     const elId = props.id
       ? props.id
       : "_" + Math.random().toString(36).substr(2, 9);
@@ -78,6 +79,7 @@ export default {
     return {
       value,
       elId,
+      className,
     };
   },
 };
