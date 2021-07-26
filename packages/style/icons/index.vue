@@ -127,6 +127,7 @@ import EditorLink from "./editorLink.vue";
 import EditorUndo from "./editorUndo.vue";
 import Speakers from "./speakers.vue";
 import EditorImage from "./editorImage.vue";
+import VmYoutube from "./vmYoutube.vue";
 
 const iconList = [
   "arrow-down",
@@ -254,6 +255,7 @@ const iconList = [
   "editor-undo",
   "speakers",
   "editor-image",
+  "vm-youtube",
 ];
 
 export default {
@@ -384,6 +386,7 @@ export default {
     EditorUndo,
     Speakers,
     EditorImage,
+    VmYoutube,
   },
   props: {
     name: {
