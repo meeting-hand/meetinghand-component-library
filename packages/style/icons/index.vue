@@ -128,6 +128,9 @@ import EditorUndo from "./editorUndo.vue";
 import Speakers from "./speakers.vue";
 import EditorImage from "./editorImage.vue";
 import VmYoutube from "./vmYoutube.vue";
+import VmZoom from "./vmZoom.vue";
+import VmVimeo from "./vmVimeo.vue";
+import VmGoogleMeet from "./vmGoogleMeet.vue";
 
 const iconList = [
   "arrow-down",
@@ -256,6 +259,9 @@ const iconList = [
   "speakers",
   "editor-image",
   "vm-youtube",
+  "vm-zoom",
+  "vm-vimeo",
+  "vm-google-meet",
 ];
 
 export default {
@@ -387,6 +393,9 @@ export default {
     Speakers,
     EditorImage,
     VmYoutube,
+    VmZoom,
+    VmVimeo,
+    VmGoogleMeet,
   },
   props: {
     name: {

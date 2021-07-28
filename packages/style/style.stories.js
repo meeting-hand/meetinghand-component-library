@@ -123,6 +123,8 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="editor-link" />
 			<mh-icon name="editor-undo" />
 			<mh-icon name="editor-image" />
+			<mh-icon name="vm-youtube" />
+
 
 			<h1>Social</h1>
 			<mh-icon name="social-google" />
