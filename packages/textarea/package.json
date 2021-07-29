@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/paragraph",
 	"description": "Meetinghand Component Library Component for paragraph",
-	"version": "0.0.63-alpha.0",
+	"version": "0.0.64-alpha.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
