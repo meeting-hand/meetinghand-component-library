@@ -11,6 +11,8 @@ storiesOf("InputNumber", module).add("Default", () => ({
 			number1: 0,
 			number2: 16,
 			number3: 24,
+			number4: 100,
+			number5: 100,
 		};
 	},
 	template: `
@@ -24,6 +26,10 @@ storiesOf("InputNumber", module).add("Default", () => ({
       <hr>
       <h1>Number Disabled</h1>
       <mh-input-number v-model="number3" disabled />
+      <hr>
+      <h1>Number Symbol</h1>
+      <mh-input-number v-model="number4" symbol="%" />
+      <mh-input-number v-model="number5" symbol="%" symbolAlignment="left" />
       <hr>
     </div>
     `,

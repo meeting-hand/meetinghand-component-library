@@ -76,6 +76,14 @@ export default {
       type: String,
       default: null,
     },
+    symbol: {
+      type: String,
+      default: null,
+    },
+    symbolAlignment: {
+      type: String,
+      default: "right",
+    },
   },
   computed: {
     value: {
