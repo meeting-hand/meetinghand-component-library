@@ -113,6 +113,11 @@
 		&:hover {
 			background: $transparent-hover;
 		}
+		&.disabled {
+			&:hover {
+				color: $color-primary-red;
+			}
+		}
 	}
 	&.green {
 		border-color: $transparent-hover-3;
