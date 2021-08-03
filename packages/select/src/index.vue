@@ -1,20 +1,22 @@
 <template>
-  <label :for="elId" v-if="label" class="mh-select-label">
-    {{ label }}
-  </label>
-  <component
-    :is="inputType"
-    :id="elId"
-    :hasError="hasError"
-    :errorMessage="errorMessage"
-    :disabled="disabled"
-    :placeholder="placeholder"
-    :options="options"
-    :searchable="searchable"
-    v-model="value"
-    :size="size"
-  >
-  </component>
+  <div class="mh-select">
+    <label :for="elId" v-if="label" class="mh-select-label">
+      {{ label }}
+    </label>
+    <component
+      :is="inputType"
+      :id="elId"
+      :hasError="hasError"
+      :errorMessage="errorMessage"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      :options="options"
+      :searchable="searchable"
+      v-model="value"
+      :size="size"
+    >
+    </component>
+  </div>
 </template>
 
 <script>
