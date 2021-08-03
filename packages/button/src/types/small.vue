@@ -6,6 +6,8 @@
       `alignment-${iconAlignment}`,
       { wait: wait },
       { disabled: disabled },
+      `${color}`,
+      `icon-${iconColor}`,
       'text-btn small-btn',
     ]"
     :disabled="disabled || wait"
@@ -51,6 +53,16 @@ export default {
     submit: {
       type: Boolean,
       default: false,
+    },
+    color: {
+      type: String,
+      default: null,
+      validator: (_v) => ["red"].includes(_v),
+    },
+    iconColor: {
+      type: String,
+      default: null,
+      validator: (_v) => ["red"].includes(_v),
     },
   },
 };

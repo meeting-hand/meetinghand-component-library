@@ -13,6 +13,7 @@
     :class="[{ error: hasError }]"
     :disabled="disabled"
     :parser="parser"
+    :formatter="formatter"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -73,6 +74,14 @@ export default {
       type: String,
       default: null,
     },
+    symbol: {
+      type: String,
+      default: null,
+    },
+    symbolAlignment: {
+      type: String,
+      default: "right",
+    },
   },
 
   setup(props, { emit }) {
@@ -85,7 +94,17 @@ export default {
       },
     });
 
+    const formatter = (e) => {
+      if (props.symbol) {
+        return props.symbolAlignment === "left"
+          ? `${props.symbol}${e}`
+          : `${e}${props.symbol}`;
+      }
+      return e;
+    };
+
     const parser = (e) => {
+      e = e.toString().replace(props.symbol, "");
       if (e == "") {
         e = props.min;
       }
@@ -99,6 +118,7 @@ export default {
     return {
       value,
       parser,
+      formatter,
     };
   },
 };

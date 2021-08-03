@@ -12,6 +12,8 @@
       :errorMessage="errorMessage"
       :title="title"
       :tooltip="tooltip"
+      :symbol="symbol"
+      :symbolAlignment="symbolAlignment"
     />
   </div>
 </template>
@@ -71,6 +73,15 @@ export default {
     tooltip: {
       type: String,
       default: null,
+    },
+    symbol: {
+      type: String,
+      default: null,
+    },
+    symbolAlignment: {
+      type: String,
+      default: "right",
+      validator: (data) => ["left", "right"].includes(data),
     },
   },
   computed: {

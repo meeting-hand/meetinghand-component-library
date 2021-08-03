@@ -9,6 +9,7 @@
     :socialMedia="socialMedia"
     :submit="submit"
     :color="color"
+    :iconColor="iconColor"
   >
     <slot></slot>
   </component>
@@ -96,6 +97,11 @@ export default {
       type: String,
       default: null,
       validator: (_v) => ["blue", "green", "red"].includes(_v),
+    },
+    iconColor: {
+      type: String,
+      default: null,
+      validator: (_v) => ["red"].includes(_v),
     },
   },
 };
