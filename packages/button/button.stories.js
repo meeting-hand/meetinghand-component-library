@@ -189,6 +189,9 @@ storiesOf("Button", module).add("small", () => ({
       <mh-button type="small" icon="arrow-up" icon-alignment="right">
         Icon Right
       </mh-button>
+      <mh-button type="small" icon="ui-delete" icon-color="red">
+      Icon Red 
+      </mh-button>
       <hr />
       <h1>Disabled</h1>
       <mh-button type="small" disabled>
@@ -204,6 +207,11 @@ storiesOf("Button", module).add("small", () => ({
       <h1>Wait</h1>
       <mh-button type="small" wait>
         Default size
+      </mh-button>
+      <hr />
+      <h1>Red</h1>
+      <mh-button type="small" icon="arrow-down" color="red">
+      Red Small 
       </mh-button>
       <br /><br />
       </div>

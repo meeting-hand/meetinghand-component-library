@@ -171,9 +171,14 @@
 	line-height: $line-height-default;
 	padding: 2px $spacing-xsmall;
 	.mh-icon {
-		max-width: 12px;
-		max-height: 12px;
+		max-width: 20px;
+		max-height: 20px;
 		margin: $spacing-xxsmall $spacing-xsmall;
+	}
+	&.icon-red {
+		.mh-icon {
+			fill: red;
+		}
 	}
 }
 /* SMALL END */
