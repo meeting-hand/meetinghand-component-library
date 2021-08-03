@@ -1,5 +1,5 @@
 <template>
-  <div class="mh-select">
+  <div :class="['mh-select', className]">
     <label :for="elId" v-if="label" class="mh-select-label">
       {{ label }}
     </label>
@@ -43,6 +43,10 @@ export default {
       validator: (_v) => ["default", "country"].includes(_v),
     },
     label: {
+      type: String,
+      default: null,
+    },
+    className: {
       type: String,
       default: null,
     },
