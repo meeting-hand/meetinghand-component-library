@@ -124,6 +124,7 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="editor-undo" />
 			<mh-icon name="editor-image" />
 			<mh-icon name="vm-youtube" />
+			<mh-icon name="ui-coffee" />
 
 
 			<h1>Social</h1>

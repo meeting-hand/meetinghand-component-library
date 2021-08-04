@@ -86,6 +86,7 @@ import UiResizeVideo from "./uiResizeVideo.vue";
 import UiSponsor from "./uiSponsor.vue";
 import UiEmoji from "./uiEmoji.vue";
 import UiBuilding from "./uiBuilding.vue";
+import UiCoffee from "./uiCoffee.vue";
 import SystemAttachment from "./systemAttachment.vue";
 import SystemSendUp from "./systemSendUp.vue";
 import SystemLike from "./systemLike.vue";
@@ -217,6 +218,7 @@ const iconList = [
   "ui-sponsor",
   "ui-emoji",
   "ui-building",
+  "ui-coffee",
   "ui-dashboard",
   "ui-report",
   "ui-event-program",
@@ -351,6 +353,7 @@ export default {
     UiSponsor,
     UiEmoji,
     UiBuilding,
+    UiCoffee,
     UiDashboard,
     UiReport,
     UiEventProgram,
