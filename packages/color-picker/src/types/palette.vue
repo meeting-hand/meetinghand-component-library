@@ -53,12 +53,16 @@ export default defineComponent({
         "#C336F4",
       ],
     },
+    modelValue: {
+      type: String,
+      required: true,
+    },
   },
   emits: ["update:modelValue"],
   setup(props, { emit }) {
     const popoverStatus = ref(false);
 
-    const selectedColor = ref([props.colors[0]]);
+    const selectedColor = ref([props.modelValue]);
 
     const colorSelect = (colorNumber) => {
       selectedColor.value = [];
