@@ -4,11 +4,11 @@
 
 .mh-text-editor {
 	.mh-text-editor-label {
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 20px;
-		color: #000000;
-		margin-bottom: 16px;
+		font-weight: $font-weight-default;
+		font-size: $font-size-default;
+		line-height: $line-height-default;
+		color: $color-mono-black;
+		margin-bottom: $spacing-xsmall;
 		display: block;
 	}
 	.mh-text-editor-container {
