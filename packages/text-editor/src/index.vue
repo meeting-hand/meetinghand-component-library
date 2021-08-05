@@ -1,22 +1,29 @@
 <template>
-  <div
-    :class="[{ error: errorStatus }, 'mh-text-editor', { disabled: readOnly }]"
-  >
-    <quill-editor
-      :toolbar="toolbar"
-      :placeholder="placeholder"
-      v-model:content="value"
-      contentType="html"
-      :readOnly="readOnly"
+  <div class="mh-text-editor">
+    <label class="mh-text-editor-label" v-if="label">{{ label }}</label>
+    <div
+      :class="[
+        { error: errorStatus },
+        'mh-text-editor-container',
+        { disabled: readOnly },
+      ]"
     >
-    </quill-editor>
-    <div class="editor-footer" v-if="maxWordCount">
-      {{ wordCount }} / {{ maxWordCount }}
+      <quill-editor
+        :toolbar="toolbar"
+        :placeholder="placeholder"
+        v-model:content="value"
+        contentType="html"
+        :readOnly="readOnly"
+      >
+      </quill-editor>
+      <div class="editor-footer" v-if="maxWordCount">
+        {{ wordCount }} / {{ maxWordCount }}
+      </div>
     </div>
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
   </div>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
 </template>
 
 <script>
@@ -55,6 +62,10 @@ export default {
     readOnly: {
       type: Boolean,
       default: false,
+    },
+    label: {
+      type: String,
+      required: false,
     },
     toolbar: {
       type: Array,
