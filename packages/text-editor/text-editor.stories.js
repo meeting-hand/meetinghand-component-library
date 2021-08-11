@@ -33,7 +33,7 @@ storiesOf("TextEditor", module).add("All", () => ({
 },
 	template: `
       <h1>Default</h1>
-	  <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" />
+	  <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" label="Lorem ipsum" />
       <br /><br />
 	  <h1>Default with word counter</h1>
 

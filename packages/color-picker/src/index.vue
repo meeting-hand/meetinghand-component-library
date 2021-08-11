@@ -1,33 +1,29 @@
 <template>
-  <div class="mh-color-picker" ref="color-picker">
-    <a
-      class="color-trigger"
-      @click="toggle()"
-      :style="{ 'background-color': value }"
-    ></a>
-    <sketch
-      v-model="value"
-      v-if="active"
-      :presetColors="palette"
-      disableAlpha
-    />
-  </div>
+  <component :is="type" :colors="colors">
+    <slot></slot>
+  </component>
 </template>
 
 <script>
-import { Sketch } from "@ckpack/vue-color";
-
-import "./assets/main.scss";
+import Default from "./types/default.vue";
+import Palette from "./types/palette.vue";
 
 export default {
-  name: "MhColorPicker",
+  name: "MhButton",
   components: {
-    Sketch,
+    Default,
+    Palette,
   },
-  data() {
-    return {
-      palette: [
-        "#2196F3",
+  props: {
+    type: {
+      type: String,
+      default: "default",
+      validator: (_v) => ["default", "palette"].includes(_v),
+    },
+    colors: {
+      type: Array,
+      default: () => [
+        "#6421F3",
         "#3F51B5",
         "#4CAF50",
         "#2A535D",
@@ -36,37 +32,14 @@ export default {
         "#0EAD88",
         "#FF9800",
         "#FFC700",
+        "#3FA0B5",
+        "#00D1FF",
+        "#C336F4",
       ],
-      active: false,
-    };
-  },
-  props: {
-    modelValue: {
-      type: String,
-      required: true,
-    },
-  },
-  computed: {
-    value: {
-      get() {
-        return this.modelValue;
-      },
-      set(data) {
-        this.setCssVariable(data.hex);
-        this.$emit("update:modelValue", data.hex);
-      },
-    },
-  },
-  methods: {
-    hide() {
-      this.active = false;
-    },
-    toggle() {
-      this.active = !this.active;
-    },
-    setCssVariable(hex) {
-      document.documentElement.style.setProperty("--mh-color-picker", hex);
     },
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>
