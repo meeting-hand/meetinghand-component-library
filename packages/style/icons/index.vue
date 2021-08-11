@@ -132,6 +132,7 @@ import VmYoutube from "./vmYoutube.vue";
 import VmZoom from "./vmZoom.vue";
 import VmVimeo from "./vmVimeo.vue";
 import VmGoogleMeet from "./vmGoogleMeet.vue";
+import UiClipboard from "./uiClipboard.vue";
 
 const iconList = [
   "arrow-down",
@@ -264,6 +265,7 @@ const iconList = [
   "vm-zoom",
   "vm-vimeo",
   "vm-google-meet",
+  "ui-clipboard",
 ];
 
 export default {
@@ -399,6 +401,7 @@ export default {
     VmZoom,
     VmVimeo,
     VmGoogleMeet,
+    UiClipboard,
   },
   props: {
     name: {
