@@ -1,22 +1,26 @@
 <template>
-  <component
-    :is="type"
-    v-model="value"
-    :min="min"
-    :max="max"
-    :step="step"
-    :hasError="hasError"
-    :disabled="disabled"
-    :currency="currency"
-    :errorMessage="errorMessage"
-  />
+  <div class="mh-input-number">
+    <component
+      :is="type"
+      v-model="value"
+      :min="min"
+      :max="max"
+      :step="step"
+      :hasError="hasError"
+      :disabled="disabled"
+      :currency="currency"
+      :errorMessage="errorMessage"
+      :title="title"
+      :tooltip="tooltip"
+      :symbol="symbol"
+      :symbolAlignment="symbolAlignment"
+    />
+  </div>
 </template>
 
 <script>
 import Default from "./types/default.vue";
 import Currency from "./types/currency.vue";
-
-import "./assets/scss/main.scss";
 
 export default {
   name: "InputNumber",
@@ -35,7 +39,7 @@ export default {
     },
     max: {
       type: Number,
-      default: 100,
+      default: 999999,
     },
     step: {
       type: Number,
@@ -62,6 +66,23 @@ export default {
       type: String,
       default: "USD",
     },
+    title: {
+      type: String,
+      default: null,
+    },
+    tooltip: {
+      type: String,
+      default: null,
+    },
+    symbol: {
+      type: String,
+      default: null,
+    },
+    symbolAlignment: {
+      type: String,
+      default: "right",
+      validator: (data) => ["left", "right"].includes(data),
+    },
   },
   computed: {
     value: {
@@ -75,3 +96,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/scss/main.scss";
+</style>

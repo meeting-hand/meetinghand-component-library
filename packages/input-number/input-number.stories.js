@@ -11,19 +11,25 @@ storiesOf("InputNumber", module).add("Default", () => ({
 			number1: 0,
 			number2: 16,
 			number3: 24,
+			number4: 100,
+			number5: 100,
 		};
 	},
 	template: `
   <div class="storybook-input-number">
 
       <h1>Number Default</h1>
-      <mh-input-number v-model="number1" :max="10000000000" :min="5" />
+      <mh-input-number v-model="number1" :max="10000000000" :min="5" title="Label" tooltip="Lorem ipsum"/>
       <hr>
       <h1>Number Error</h1>
       <mh-input-number v-model="number2" has-error error-message="Field is required" />
       <hr>
       <h1>Number Disabled</h1>
       <mh-input-number v-model="number3" disabled />
+      <hr>
+      <h1>Number Symbol</h1>
+      <mh-input-number v-model="number4" symbol="%" />
+      <mh-input-number v-model="number5" symbol="%" symbolAlignment="left" />
       <hr>
     </div>
     `,
@@ -46,7 +52,7 @@ storiesOf("InputNumber", module).add("Currency", () => ({
   <div class="storybook-divider">
 
       <h1>Currency Default</h1>
-      <mh-input-number v-model="currency" type="currency" currency="USD" :max="100000" />
+      <mh-input-number v-model="currency" type="currency" currency="USD" :max="100000" title="Min. amount"/>
 			<br />
       <br />
       <mh-input-number v-model="currency1" type="currency" currency="USD" :max="100000" />

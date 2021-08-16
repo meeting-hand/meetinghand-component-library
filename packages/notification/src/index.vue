@@ -3,15 +3,13 @@
 import Notification from "ant-design-vue/lib/notification";
 import Button from "@meetinghand/button";
 
-import "./assets/main.scss";
-
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
-import UiCheck from "@meetinghand/style/icons/uiCheck.vue";
+import SystemStatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
 
-import { h, onBeforeUnmount } from "vue";
+import { h, onBeforeUnmount, onMounted } from "vue";
 
 export default {
   name: "MhNotification",
@@ -22,6 +20,10 @@ export default {
       validator: (_v) => ["success", "error", "info", "hint"].includes(_v),
     },
     description: {
+      type: String,
+      default: "",
+    },
+    message: {
       type: String,
       default: "",
     },
@@ -42,7 +44,7 @@ export default {
 
     const openNotification = () => {
       const icons = {
-        success: UiCheck,
+        success: SystemStatusSuccess,
         error: StatusError,
         info: StatusInfo,
         hint: StatusHint,
@@ -50,6 +52,7 @@ export default {
 
       Notification.open({
         description: props.description,
+        message: props.message,
         duration: props.duration,
         class: props.type,
         icon: h(icons[props.type]),
@@ -62,16 +65,20 @@ export default {
         btn: h(
           Button,
           {
-            type: "secondary",
+            type: "text",
             onClick: () => {
               Notification.close(key);
               emit("close", true);
             },
           },
-          () => "Dismiss"
+          () => "Close"
         ),
       });
     };
+
+    onMounted(async () => {
+      openNotification();
+    });
 
     onBeforeUnmount(() => {
       Notification.close(key);
@@ -81,8 +88,9 @@ export default {
       openNotification,
     };
   },
-  created() {
-    this.openNotification();
-  },
 };
 </script>
+
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

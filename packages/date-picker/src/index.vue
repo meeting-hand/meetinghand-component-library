@@ -1,25 +1,27 @@
 <template>
-  <component
-    :is="type"
-    :id="id"
-    :format="format"
-    :disabled="disabled"
-    :placeholder="placeholder"
-    :hasError="hasError"
-    :disabledStartDate="disabledStartDate"
-    :disabledEndDate="disabledEndDate"
-    v-model="value"
-  />
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
+  <div class="mh-date-picker">
+    <component
+      :is="type"
+      :id="id"
+      :format="format"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      :hasError="hasError"
+      :disabledStartDate="disabledStartDate"
+      :disabledEndDate="disabledEndDate"
+      v-model="value"
+      :labelLeft="labelLeft"
+      :labelRight="labelRight"
+    />
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
+  </div>
 </template>
 
 <script>
 import Default from "./types/default.vue";
 import Range from "./types/range.vue";
-
-import "./assets/main.scss";
 
 export default {
   name: "MhDatePicker",
@@ -67,6 +69,14 @@ export default {
       type: [String, Date],
       default: null,
     },
+    labelLeft: {
+      type: String,
+      default: null,
+    },
+    labelRight: {
+      type: String,
+      default: null,
+    },
   },
   computed: {
     value: {
@@ -80,3 +90,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

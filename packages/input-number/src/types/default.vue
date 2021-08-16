@@ -1,4 +1,10 @@
 <template>
+  <div v-if="title" class="mh-input-number-text">
+    <span class="mh-input__title">{{ title }}</span>
+    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+      <mh-icon name="system-info" />
+    </tooltip>
+  </div>
   <a-input-number
     v-model:value="value"
     :min="min"
@@ -7,6 +13,7 @@
     :class="[{ error: hasError }]"
     :disabled="disabled"
     :parser="parser"
+    :formatter="formatter"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -14,14 +21,18 @@
 </template>
 
 <script>
-import InputNumber from "ant-design-vue/lib/input-number";
-
+import { InputNumber } from "ant-design-vue";
 import { computed } from "vue";
+
+import MhIcon from "@meetinghand/style/icons/index.vue";
+import Tooltip from "../../../tooltip/src/index.vue";
 
 export default {
   name: "InputNumberDefault",
   components: {
     [InputNumber.name]: InputNumber,
+    MhIcon,
+    Tooltip,
   },
   props: {
     modelValue: {
@@ -34,7 +45,7 @@ export default {
     },
     max: {
       type: Number,
-      default: 100,
+      default: 999999,
     },
     step: {
       type: Number,
@@ -55,6 +66,22 @@ export default {
     currency: {
       type: String,
     },
+    title: {
+      type: String,
+      default: null,
+    },
+    tooltip: {
+      type: String,
+      default: null,
+    },
+    symbol: {
+      type: String,
+      default: null,
+    },
+    symbolAlignment: {
+      type: String,
+      default: "right",
+    },
   },
 
   setup(props, { emit }) {
@@ -67,7 +94,17 @@ export default {
       },
     });
 
+    const formatter = (e) => {
+      if (props.symbol) {
+        return props.symbolAlignment === "left"
+          ? `${props.symbol}${e}`
+          : `${e}${props.symbol}`;
+      }
+      return e;
+    };
+
     const parser = (e) => {
+      e = e.toString().replace(props.symbol, "");
       if (e == "") {
         e = props.min;
       }
@@ -81,6 +118,7 @@ export default {
     return {
       value,
       parser,
+      formatter,
     };
   },
 };

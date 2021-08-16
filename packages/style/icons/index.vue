@@ -86,6 +86,8 @@ import UiResizeVideo from "./uiResizeVideo.vue";
 import UiSponsor from "./uiSponsor.vue";
 import UiEmoji from "./uiEmoji.vue";
 import UiBuilding from "./uiBuilding.vue";
+import UiCoffee from "./uiCoffee.vue";
+import SystemAttachment from "./systemAttachment.vue";
 import SystemSendUp from "./systemSendUp.vue";
 import SystemLike from "./systemLike.vue";
 import SystemLiked from "./systemLiked.vue";
@@ -112,6 +114,26 @@ import Warning from "./warning.vue";
 import Success from "./success.vue";
 import Claps from "./claps.vue";
 import SocialApple from "./socialApple.vue";
+import UiGift from "./uiGift.vue";
+import UiFlag from "./uiFlag.vue";
+import UiDashboard from "./uiDashboard.vue";
+import UiReport from "./uiReport.vue";
+import UiEventProgram from "./uiEventProgram.vue";
+import UiEngagement from "./uiEngagement.vue";
+import PackageAbstract from "./packageAbstract.vue";
+import PackageMobile from "./packageMobile.vue";
+import PackageParticipant from "./packageParticipant.vue";
+import PackageVirtual from "./packageVirtual.vue";
+import EditorLink from "./editorLink.vue";
+import EditorUndo from "./editorUndo.vue";
+import Speakers from "./speakers.vue";
+import EditorImage from "./editorImage.vue";
+import VmYoutube from "./vmYoutube.vue";
+import VmZoom from "./vmZoom.vue";
+import VmVimeo from "./vmVimeo.vue";
+import VmGoogleMeet from "./vmGoogleMeet.vue";
+import UiClipboard from "./uiClipboard.vue";
+import SystemMobilePhone from "./systemMobilePhone.vue";
 
 const iconList = [
   "arrow-down",
@@ -198,6 +220,12 @@ const iconList = [
   "ui-sponsor",
   "ui-emoji",
   "ui-building",
+  "ui-coffee",
+  "ui-dashboard",
+  "ui-report",
+  "ui-event-program",
+  "ui-engagement",
+  "system-attachment",
   "system-send-up",
   "system-like",
   "system-liked",
@@ -224,6 +252,22 @@ const iconList = [
   "success",
   "claps",
   "social-apple",
+  "ui-gift",
+  "ui-flag",
+  "package-abstract",
+  "package-mobile",
+  "package-participant",
+  "package-virtual",
+  "editor-link",
+  "editor-undo",
+  "speakers",
+  "editor-image",
+  "vm-youtube",
+  "vm-zoom",
+  "vm-vimeo",
+  "vm-google-meet",
+  "ui-clipboard",
+  "system-mobile-phone",
 ];
 
 export default {
@@ -313,6 +357,12 @@ export default {
     UiSponsor,
     UiEmoji,
     UiBuilding,
+    UiCoffee,
+    UiDashboard,
+    UiReport,
+    UiEventProgram,
+    UiEngagement,
+    SystemAttachment,
     SystemSendUp,
     SystemLike,
     SystemLiked,
@@ -339,6 +389,22 @@ export default {
     Success,
     Claps,
     SocialApple,
+    UiGift,
+    UiFlag,
+    PackageAbstract,
+    PackageMobile,
+    PackageParticipant,
+    PackageVirtual,
+    EditorLink,
+    EditorUndo,
+    Speakers,
+    EditorImage,
+    VmYoutube,
+    VmZoom,
+    VmVimeo,
+    VmGoogleMeet,
+    UiClipboard,
+    SystemMobilePhone,
   },
   props: {
     name: {

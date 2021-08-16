@@ -7,13 +7,12 @@
     box-sizing: border-box;
     box-shadow: $spacing-xxsmall $spacing-medium $spacing-default $shadow-1;
     border-radius: $border-radius-xxlarge;
-
+    min-height: 54px;
     svg {
         margin-top: $spacing-xxsmall;
         margin-left: $spacing-xxsmall;
         width: $icon-size-default;
         height: $icon-size-default;
-        fill: $color-primary-green;
     }
 
     .ant-notification-notice-content {
@@ -28,23 +27,25 @@
     }
     .ant-notification-notice-icon {
         margin-left: $spacing-xxsmall;
-        width: 20px;
-        height: 20px;
+        width: $icon-size-default;
+        height: $icon-size-default;
     }
     .ant-notification-notice-message {
         font-size: $font-size-default;
         line-height: $line-height-default;
-        // margin-left: 30px;
     }
     .ant-notification-notice-description {
         font-style: normal;
         font-weight: normal;
         font-size: $font-size-default;
         line-height: $line-height-default;
-        margin-left: $spacing-xxsmall;
-
+        margin-left: -10px;
+        margin-right: 16px;
         color: $color-mono-black;
-        width: 298px;
+        margin-top: $spacing-default;
+        margin-bottom: $spacing-default;
+        max-width: 360px;
+        text-align: start;
     }
     .anticon-close {
         svg {
@@ -57,12 +58,17 @@
             background: $color-mono-white;
         }
     }
+    .ant-notification-notice-btn {
+        position: absolute;
+        left: 400px;
+    }
     &.success {
+        background-color: $color-secondary-participant;
         .ant-notification-notice-message {
             color: $color-primary-green;
         }
         svg {
-            fill: $color-primary-green;
+            fill: $color-primary-participant;
         }
         .anticon-close {
             svg {
@@ -70,7 +76,29 @@
             }
         }
     }
+    &.title {
+        min-height: 68px;
+        .ant-notification-notice-message {
+            position: absolute;
+            top: 8px;
+            left: 48px;
+            margin: 0px;
+            font-weight: $font-weight-large;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+        }
+        .ant-notification-notice-icon {
+            position: absolute;
+            top: 8px;
+            left: 24px;
+        }
+        .ant-notification-notice-description {
+            margin-left: 12px;
+            margin-top: 30px;
+        }
+    }
     &.error {
+        background-color: $color-secondary-red;
         .ant-notification-notice-message {
             color: $color-primary-red;
         }
@@ -84,6 +112,7 @@
         }
     }
     &.info {
+        background-color: $color-secondary-blue;
         .ant-notification-notice-message {
             color: $color-primary-blue;
         }
@@ -97,6 +126,7 @@
         }
     }
     &.hint {
+        background-color: $color-secondary-yellow;
         .ant-notification-notice-message {
             color: $color-primary-onsite;
         }

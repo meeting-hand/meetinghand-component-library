@@ -7,6 +7,8 @@ storiesOf("TextEditor", module).add("All", () => ({
 	return {
 		text1: "",
 		toolbar: [
+			"write",
+			"preview",
 			"undo",
 			"redo",
 			"bold",
@@ -23,14 +25,18 @@ storiesOf("TextEditor", module).add("All", () => ({
 			{ list: "ordered" },
 			{ list: "bullet" },
 			"code-block",
-			{ script: "sub" },
-			{ script: "super" },
+			// { script: "sub" },
+			// { script: "super" },
 			
 		],
 	};
 },
 	template: `
       <h1>Default</h1>
+	  <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" label="Lorem ipsum" />
+      <br /><br />
+	  <h1>Default with word counter</h1>
+
       <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" />
       <br /><br />
       <p>{{text1}}</p>
@@ -39,7 +45,7 @@ storiesOf("TextEditor", module).add("All", () => ({
       <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" has-error error-message="this field is required"/>
       <hr />
       <h1>Disabled</h1>
-      <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15"  :readOnly="true"/>
+      <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :readOnly="true"/>
 
     `,
 }));

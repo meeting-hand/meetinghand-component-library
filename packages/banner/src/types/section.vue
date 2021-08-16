@@ -1,22 +1,32 @@
 <template>
   <a-alert
-    :message="text"
-    type="info"
-    show-icon
+    :message="title"
+    :description="text"
+    :type="sectionType"
     :closable="closable"
     :closeText="customText"
-    :icon="infoIcon"
-  />
+    showIcon
+  >
+    <template #icon>
+      <mh-icon name="system-status-info" v-if="sectionType === 'info'" />
+      <mh-icon name="system-status-success" v-if="sectionType === 'success'" />
+      <mh-icon name="system-status-hint" v-if="sectionType === 'warning'" />
+      <mh-icon name="system-status-error" v-if="sectionType === 'error'" />
+    </template>
+  </a-alert>
 </template>
-<script>
-import Alert from "ant-design-vue/lib/alert";
-import SystemInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 
+<script>
+import { Alert } from "ant-design-vue";
+import MHIcon from "@meetinghand/style/icons/index.vue";
+
+import systemStatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import { h, computed } from "vue";
 
 export default {
   components: {
     [Alert.name]: Alert,
+    "mh-icon": MHIcon,
   },
   props: {
     button: {
@@ -32,22 +42,26 @@ export default {
       type: String,
       default: null,
     },
-    bannerType: {
+    sectionType: {
       type: String,
       default: "warning",
-      validator: (_v) => ["warning", "success"].includes(_v),
+      validator: (_v) => ["warning", "success", "info", "error"].includes(_v),
+    },
+    title: {
+      type: String,
     },
   },
   setup(props) {
-    const infoIcon = h(SystemInfo);
+    const StatusInfo = h(systemStatusInfo);
+    // const StatusSuccess = h(StatusSuccess);
 
     const closable = computed(() => {
       return props.button !== null;
     });
 
     return {
-      infoIcon,
       closable,
+      StatusInfo,
     };
   },
 };

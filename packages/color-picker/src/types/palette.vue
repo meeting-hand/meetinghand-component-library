@@ -1,0 +1,105 @@
+<template>
+  <a-popover
+    placement="bottomLeft"
+    trigger="click"
+    v-model:visible="popoverStatus"
+  >
+    <template #content>
+      <div class="palette-color-picker">
+        <div
+          v-for="(color, key) in colors"
+          :key="key"
+          :class="['color', { 'selected-color': selectedColor == color }]"
+          :style="[`background: ${color}`]"
+          @click="colorSelect(color)"
+        >
+          <mh-icon name="ui-check" v-if="selectedColor == color" />
+        </div>
+      </div>
+    </template>
+    <div :class="['selected-color', { 'popover-active': popoverStatus }]">
+      <div class="color" :style="[`background: ${selectedColor}`]"></div>
+      <mh-icon :name="popoverStatus ? 'chevron-up' : 'chevron-down'" />
+    </div>
+  </a-popover>
+</template>
+
+<script>
+import { defineComponent, ref } from "vue";
+
+import { Popover } from "ant-design-vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
+
+export default defineComponent({
+  components: {
+    [Popover.name]: Popover,
+    MhIcon,
+  },
+  props: {
+    colors: {
+      type: Array,
+      default: () => [
+        "#6421F3",
+        "#3F51B5",
+        "#4CAF50",
+        "#2A535D",
+        "#9C27B0",
+        "#F44336",
+        "#0EAD88",
+        "#FF9800",
+        "#FFC700",
+        "#3FA0B5",
+        "#00D1FF",
+        "#C336F4",
+      ],
+    },
+    modelValue: {
+      type: String,
+      required: true,
+    },
+  },
+  emits: ["update:modelValue"],
+  setup(props, { emit }) {
+    const popoverStatus = ref(false);
+
+    const selectedColor = ref([props.modelValue]);
+
+    const colorSelect = (colorNumber) => {
+      selectedColor.value = [];
+      emit("update:modelValue", colorNumber);
+      selectedColor.value.push(colorNumber);
+      popoverStatus.value = false;
+    };
+
+    return {
+      popoverStatus,
+      colorSelect,
+      selectedColor,
+    };
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+@import "@meetinghand/style/lib/scss/variables.scss";
+
+.popover-select {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    margin: $spacing-small 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: $border-radius-giant;
+  }
+  width: 328px;
+  height: 400px;
+  overflow-y: scroll;
+  background-color: $color-mono-white;
+  border: $border-size-default solid $transparent-hover-3;
+  border-radius: $border-radius-xxlarge;
+  box-shadow: 0px 12px 16px $shadow-1;
+}
+</style>

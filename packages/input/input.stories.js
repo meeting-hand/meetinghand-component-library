@@ -4,27 +4,30 @@ import MhInput from "./index";
 import "../../assets/storybook/storybook.css";
 
 storiesOf("Input", module).add("Input", () => ({
-	components: { MhInput },
-	data() {
-		return {
-			value1: null,
-			value2: "",
-			value3: "",
-			value4: "",
-			value5: "",
-			value6: "",
-			value7: "git config branch.master.mergeoption 212312312",
-			value8: "",
-		};
-	},
-	template: `
+    components: { MhInput },
+    data() {
+        return {
+            value1: null,
+            value2: "",
+            value3: "",
+            value4: "",
+            value5: "",
+            value6: "",
+            value7: "git config branch.master.mergeoption 212312312",
+            value8: "",
+        };
+    },
+    template: `
   <div class="storybook-input">
       <h1>Standart</h1>
-      <mh-input v-model="value1" email placeholder="e-mail address" />
+      <mh-input v-model="value1" email placeholder="e-mail address" class="deneme" />
       <br />
       <br />
       <h1>Label</h1>
       <mh-input v-model="value8" email placeholder="input with label" label="E-mail" />
+      <br />
+      <h1>Label with tooltip</h1>
+      <mh-input v-model="value1" email placeholder="e-mail address" label="Label" tooltip="Lorem ipsum"/>
       <br />
       <br />
       <mh-input v-model="value2" left-icon="system-mail" right-icon="ui-building" />
@@ -49,17 +52,17 @@ storiesOf("Input", module).add("Input", () => ({
     `,
 }));
 storiesOf("Input", module).add("Password", () => ({
-	components: { MhInput },
-	data() {
-		return {
-			pass1: null,
-			pass2: "",
-			pass3: "",
-			pass4: "",
-			pass5: "",
-		};
-	},
-	template: `
+    components: { MhInput },
+    data() {
+        return {
+            pass1: null,
+            pass2: "",
+            pass3: "",
+            pass4: "",
+            pass5: "",
+        };
+    },
+    template: `
   <div class="storybook-input">
       <h1>Standart</h1>
       <mh-input v-model="pass1" input-type="password" />
@@ -84,15 +87,15 @@ storiesOf("Input", module).add("Password", () => ({
     `,
 }));
 storiesOf("Input", module).add("Tel", () => ({
-	components: { MhInput },
-	data() {
-		return {
-			tel1: "(+90) 506 900 04 91",
-			tel2: null,
-			tel3: "",
-		};
-	},
-	template: `
+    components: { MhInput },
+    data() {
+        return {
+            tel1: "(+90) 506 900 04 91",
+            tel2: null,
+            tel3: "",
+        };
+    },
+    template: `
   <div class="storybook-input">
 			<h1>Standart</h1>
       <mh-input v-model="tel1" input-type="tel" id="tel1" />

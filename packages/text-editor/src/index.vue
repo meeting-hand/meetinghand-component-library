@@ -1,29 +1,36 @@
 <template>
-  <div
-    :class="[{ error: hasError }, 'mh-text-editor', { readOnly: hasDisabled }]"
-  >
-    <quill-editor
-      :toolbar="toolbar"
-      :placeholder="placeholder"
-      v-model:content="value"
-      contentType="html"
-      :readOnly="readOnly"
+  <div class="mh-text-editor">
+    <label class="mh-text-editor-label" v-if="label">{{ label }}</label>
+    <div
+      :class="[
+        { error: errorStatus },
+        'mh-text-editor-container',
+        { disabled: readOnly },
+      ]"
     >
-    </quill-editor>
-    <div class="editor-footer" v-if="maxWordCount">
-      {{ wordCount }} / {{ maxWordCount }}
+      <quill-editor
+        :toolbar="toolbar"
+        :placeholder="placeholder"
+        v-model:content="value"
+        contentType="html"
+        :readOnly="readOnly"
+      >
+      </quill-editor>
+      <div class="editor-footer" v-if="maxWordCount">
+        {{ wordCount }} / {{ maxWordCount }}
+      </div>
     </div>
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
   </div>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
 </template>
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
 import MhEditorIcons from "./assets/icons";
 
-// TODO: Undo, redo and table buttons will be added
+// TODO: Undo, redo, preview, write and table buttons will be added
 export default {
   name: "TextEditor",
 
@@ -55,6 +62,10 @@ export default {
     readOnly: {
       type: Boolean,
       default: false,
+    },
+    label: {
+      type: String,
+      required: false,
     },
     toolbar: {
       type: Array,
@@ -89,6 +100,9 @@ export default {
     QuillEditor,
   },
   computed: {
+    errorStatus: function (props) {
+      return props.hasError || props.errorMessage;
+    },
     value: {
       get() {
         return this.modelValue;
@@ -115,12 +129,16 @@ export default {
     icons.image = MhEditorIcons.image;
     icons.table = MhEditorIcons.table;
     icons["code-block"] = MhEditorIcons.codeblock;
-    icons.ordered = MhEditorIcons.ordered;
+    icons.list.ordered = MhEditorIcons.ordered;
+    icons.list.bullet = MhEditorIcons.bullet;
+
     icons.align.center = MhEditorIcons.center;
     icons.align.left = MhEditorIcons.left;
     icons.align.right = MhEditorIcons.right;
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
+    icons.write = MhEditorIcons.write;
+    icons.preview = MhEditorIcons.preview;
   },
 };
 </script>

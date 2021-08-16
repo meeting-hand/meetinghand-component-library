@@ -1,21 +1,13 @@
 <template>
-  <svg
-    width="8"
-    height="12"
-    viewBox="0 0 8 12"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
-      d="M7 8L4 11L1 8"
-      stroke="#B6B6B6"
+      d="M13 12L10 15L7 12"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
     <path
-      d="M7 4L4 1L0.999999 4"
-      stroke="#565656"
+      d="M13 8L10 5L7 8"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"

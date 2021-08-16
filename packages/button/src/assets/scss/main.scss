@@ -49,6 +49,9 @@
 		&:hover {
 			background-color: $color-button-hover-red;
 		}
+		&.disabled {
+			color: $color-mono-white;
+		}
 	}
 }
 
@@ -58,6 +61,7 @@
 .ant-btn-default {
 	border-color: $transparent-hover-3;
 	color: $color-primary-blue;
+	background-color: transparent;
 
 	.mh-icon {
 		fill: $color-primary-blue;
@@ -101,13 +105,29 @@
 		}
 	}
 	&.red {
-		border-color: $color-primary-red;
+		border-color: $transparent-hover-3;
 		color: $color-primary-red;
 		.mh-icon {
 			fill: $color-primary-red;
 		}
 		&:hover {
 			background: $transparent-hover;
+		}
+		&.disabled {
+			&:hover {
+				color: $color-primary-red;
+			}
+		}
+	}
+	&.green {
+		border-color: $transparent-hover-3;
+		color: $color-primary-participant;
+		.mh-icon {
+			fill: $color-primary-participant;
+		}
+		&:hover {
+			background: $transparent-hover;
+			color: $color-primary-participant;
 		}
 	}
 }
@@ -151,9 +171,14 @@
 	line-height: $line-height-default;
 	padding: 2px $spacing-xsmall;
 	.mh-icon {
-		max-width: 12px;
-		max-height: 12px;
+		max-width: 20px;
+		max-height: 20px;
 		margin: $spacing-xxsmall $spacing-xsmall;
+	}
+	&.icon-red {
+		.mh-icon {
+			fill: red;
+		}
 	}
 }
 /* SMALL END */
@@ -203,7 +228,7 @@
 				min-width: 30px;
 			}
 		}
-		&.size-normal {
+		&.size-default {
 			width: 44px;
 			height: 44px;
 		}
@@ -358,8 +383,56 @@
 			color: $color-mono-black;
 		}
 	}
+	&.wait {
+		border: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		span {
+			display: none;
+		}
+		.mh-icon:not(.wait-spinner) {
+			display: none;
+		}
+		.wait-spinner {
+			stroke: $color-primary-blue;
+			fill: none !important;
+		}
+	}
 }
 /* LIST END */
+
+/* TAB*/
+.tab-btn {
+	font-weight: $font-weight-default;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	color: $color-mono-black;
+	border-radius: $border-radius-giant;
+	border: $border-size-default solid $transparent-hover-3;
+	box-sizing: border-box;
+	&:hover {
+		background: $transparent-hover;
+		color: $color-mono-black;
+		border: $border-size-default solid transparent;
+	}
+	&:focus {
+		background: $color-mono-white;
+		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+		border: $border-size-default solid transparent;
+	}
+	&.active {
+		background: $color-secondary-blue;
+		border: $border-size-default solid $color-primary-blue;
+		box-sizing: border-box;
+		box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+		&:hover {
+			color: $color-primary-blue;
+		}
+	}
+}
+/* TAB END */
 
 .size-large {
 	width: 100%;

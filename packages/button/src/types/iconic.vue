@@ -8,7 +8,7 @@
   </a-button>
 </template>
 <script>
-import Button from "ant-design-vue/lib/button";
+import { Button } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 export default {
   name: "MhButtonRow",
@@ -19,8 +19,8 @@ export default {
   props: {
     size: {
       type: String,
-      default: "normal",
-      validator: (_v) => ["normal", "circular", "small", "tiny"].includes(_v),
+      default: "default",
+      validator: (_v) => ["default", "circular", "small", "tiny"].includes(_v),
     },
     icon: {
       type: String,

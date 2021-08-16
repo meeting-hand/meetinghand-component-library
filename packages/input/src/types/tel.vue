@@ -1,39 +1,36 @@
 <template>
-  <div class="mh-input">
-    <a-input
-      :placeholder="placeholder"
-      :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
-      :disabled="disabled"
-      ref="telInput"
-      :id="id"
-      :defaultValue="defaultValue"
-      @change="inputChanged"
-    >
-      <template #addonBefore>
-        <a-select
-          v-model:value="dialCode"
-          :options="phoneCodes"
-          :suffixIcon="suffixIcon"
-          option-filter-prop="label"
-          :filter-option="filterOption"
-          show-search
-          @change="setCleave"
-          :disabled="disabled"
-        >
-        </a-select>
-      </template>
-    </a-input>
-    <span v-if="errorMessage" class="mh-input__error">
-      {{ errorMessage }}
-    </span>
-  </div>
+  <a-input
+    :placeholder="placeholder"
+    :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
+    :disabled="disabled"
+    ref="telInput"
+    :id="id"
+    :defaultValue="defaultValue"
+    @change="inputChanged"
+    v-if="loaded"
+  >
+    <template #addonBefore>
+      <a-select
+        v-model:value="dialCode"
+        :options="phoneCodes"
+        :suffixIcon="suffixIcon"
+        option-filter-prop="label"
+        :filter-option="filterOption"
+        show-search
+        @change="setCleave"
+        :disabled="disabled"
+      >
+      </a-select>
+    </template>
+  </a-input>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
-import Input from "ant-design-vue/lib/input/Input";
-import Select from "ant-design-vue/lib/select";
+import { Input, Select } from "ant-design-vue";
 
-import CountryPhoneCodes from "../utils/countryPhoneCodes";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 
 import Cleave from "cleave.js";
@@ -52,18 +49,45 @@ export default {
   },
   props: inputProps,
   setup(props, { emit }) {
-    // phone dialCode
-    const phoneCodes = CountryPhoneCodes.map((_c) => {
-      return {
-        value: _c.dialCode,
-        //label: `(${_c.dialCode}) ${_c.countryCode}`,
-        label: `${_c.dialCode}`,
-      };
-    });
+    const loaded = ref(false);
+    const phoneCodes = ref([]);
+    const countryPhoneCodes = ref([]);
 
     const dialCode = ref("+1");
-    //const id = ref("_" + Math.random().toString(36).substr(2, 9));
     let cleave;
+
+    const loadPhoneCodes = async () => {
+      try {
+        const response = await fetch(
+          "https://meetinghand.s3.eu-central-1.amazonaws.com/assets/resources/countryPhoneCodes.json"
+        );
+
+        countryPhoneCodes.value = await response.json();
+
+        phoneCodes.value = countryPhoneCodes.value.map((_c) => {
+          return {
+            value: _c.dialCode,
+            label: `${_c.dialCode}`,
+          };
+        });
+      } catch (error) {
+        console.log(error);
+      }
+
+      loaded.value = true;
+    };
+
+    const includeFile = (url) => {
+      return new Promise((resolve) => {
+        var head = document.head;
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = url;
+        script.onreadystatechange = () => resolve(true);
+        script.onload = () => resolve(true);
+        head.appendChild(script);
+      });
+    };
 
     //filter
     const filterOption = (input, option) => {
@@ -73,16 +97,21 @@ export default {
     const suffixIcon = h(ArrowIcon);
 
     const setCleave = async (dialCode) => {
-      const country = CountryPhoneCodes.find((_c) => _c.dialCode === dialCode);
+      const country = countryPhoneCodes.value.find(
+        (_c) => _c.dialCode === dialCode
+      );
 
-      await import(
-        `../utils/cleave-country-formats/cleave-phone.${country.countryCode.toLowerCase()}.js`
+      if (!country) return;
+
+      await includeFile(
+        `https://meetinghand.s3.eu-central-1.amazonaws.com/assets/resources/cleave-country-formats/cleave-phone.${country.countryCode.toLowerCase()}.js`
       );
 
       cleave = new Cleave(document.getElementById(props.id), {
         phone: true,
         phoneRegionCode: country.countryCode.toLowerCase(),
       });
+
       inputChanged(value.value);
     };
 
@@ -120,14 +149,14 @@ export default {
       return props.hasError || props.errorMessage;
     });
 
-    onMounted(() => {
+    onMounted(async () => {
+      await loadPhoneCodes();
+
       if (valueDialCode.value) {
         dialCode.value = valueDialCode.value;
       }
-      // TODO: refactor
-      setTimeout(() => {
-        setCleave(dialCode.value);
-      }, 500);
+
+      setCleave(dialCode.value);
     });
 
     return {
@@ -143,6 +172,7 @@ export default {
       valueDialCode,
       defaultValue,
       errorStatus,
+      loaded,
     };
   },
 };

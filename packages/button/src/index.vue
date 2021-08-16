@@ -9,16 +9,13 @@
     :socialMedia="socialMedia"
     :submit="submit"
     :color="color"
+    :iconColor="iconColor"
   >
     <slot></slot>
   </component>
 </template>
 
 <script>
-import Button from "ant-design-vue/lib/button";
-
-import "./assets/scss/main.scss";
-
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
 import Small from "./types/small.vue";
@@ -28,11 +25,11 @@ import Iconic from "./types/iconic.vue";
 import Social from "./types/social.vue";
 import Menu from "./types/menu.vue";
 import List from "./types/list.vue";
+import Tab from "./types/tab.vue";
 
 export default {
   name: "MhButton",
   components: {
-    [Button.name]: Button,
     Primary,
     Secondary,
     Small,
@@ -42,6 +39,7 @@ export default {
     Social,
     Menu,
     List,
+    Tab,
   },
   props: {
     type: {
@@ -58,6 +56,7 @@ export default {
           "social",
           "menu",
           "list",
+          "tab",
         ].includes(_v),
     },
     size: {
@@ -99,6 +98,14 @@ export default {
       default: null,
       validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
+    iconColor: {
+      type: String,
+      default: null,
+      validator: (_v) => ["red"].includes(_v),
+    },
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/scss/main.scss";
+</style>

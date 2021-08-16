@@ -1,82 +1,57 @@
 <template>
-  <a-select
-    class="mh-dropdown"
-    :class="[{ error: hasError }, 'mh-dropdown', { disabled: disabled }]"
-    :disabled="disabled"
-    :filter-option="filterOption"
-    :placeholder="placeholder"
-    :options="options"
-    option-filter-prop="label"
-    :show-search="searchable"
-    v-model:value="value"
-    :size="size"
-    :suffixIcon="suffixIcon"
-  >
-  </a-select>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
+  <div :class="['mh-select', className]">
+    <label :for="elId" v-if="label" class="mh-select-label">
+      {{ label }}
+    </label>
+    <component
+      :is="inputType"
+      :id="elId"
+      :hasError="hasError"
+      :errorMessage="errorMessage"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      :options="options"
+      :searchable="searchable"
+      v-model="value"
+      :size="size"
+    >
+    </component>
+  </div>
 </template>
 
 <script>
-import Select from "ant-design-vue/lib/select";
-import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
+import { computed } from "vue";
 
-import "./assets/main.scss";
+import { Select } from "ant-design-vue";
+import Default from "./types/default.vue";
+import Country from "./types/country.vue";
 
-import { computed, h } from "vue";
+import defaultProps from "./utils/props";
 
 export default {
   name: "MhSelect",
   components: {
     [Select.name]: Select,
+    Default,
+    Country,
   },
   props: {
-    modelValue: {
-      type: [String, Number],
-      default: null,
-    },
-    options: {
-      type: Array,
-      default: () => [],
-      validator: (_o) =>
-        _o.every(
-          (_i) => _i.hasOwnProperty("value") && _i.hasOwnProperty("label")
-        ),
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    searchable: {
-      type: Boolean,
-      default: false,
-    },
-    placeholder: {
-      type: String,
-      default: "",
-    },
-    hasError: {
-      type: Boolean,
-      default: false,
-    },
-    errorMessage: {
-      type: String,
-      default: null,
-    },
-    size: {
+    ...defaultProps,
+    inputType: {
       type: String,
       default: "default",
-      validator: (_v) => ["default", "small"].includes(_v),
+      validator: (_v) => ["default", "country"].includes(_v),
+    },
+    label: {
+      type: String,
+      default: null,
+    },
+    className: {
+      type: String,
+      default: null,
     },
   },
   setup(props, { emit }) {
-    const suffixIcon = h(ArrowIcon);
-
-    const filterOption = (input, option) => {
-      return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
-    };
-
     const value = computed({
       get() {
         return props.modelValue;
@@ -86,11 +61,15 @@ export default {
       },
     });
 
+    const elId = props.id || "_" + Math.random().toString(36).substr(2, 9);
+
     return {
       value,
-      filterOption,
-      suffixIcon,
+      elId,
     };
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

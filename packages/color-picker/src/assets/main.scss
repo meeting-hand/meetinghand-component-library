@@ -110,3 +110,70 @@
 		border-radius: $border-radius-default;
 	}
 }
+
+.palette-color-picker {
+	width: 160px;
+	height: 208px;
+	background: $color-mono-white;
+	border: $border-size-default solid $transparent-hover-3;
+	box-sizing: border-box;
+	box-shadow: $spacing-xxsmall $spacing-medium $spacing-default $shadow-1;
+	border-radius: $border-radius-xxlarge;
+	padding: $spacing-default;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.color {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: $spacing-xxlarge;
+		height: $spacing-xxlarge;
+		border-radius: $border-radius-giant;
+		cursor: pointer;
+		.mh-icon-ui-check {
+			width: $icon-size-default;
+			height: $icon-size-default;
+			fill: $color-mono-white;
+		}
+	}
+}
+
+.selected-color {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border: $border-size-default solid $color-mono-grey-2;
+	box-sizing: border-box;
+	border-radius: $border-radius-default;
+	width: 73px;
+	height: 44px;
+	cursor: pointer;
+	.color {
+		width: 20px;
+		height: 20px;
+		border-radius: $border-radius-giant;
+		margin-left: $spacing-medium;
+	}
+	.selected-color {
+		border: 3px solid $transparent-hover-3;
+	}
+	.mh-icon {
+		width: $icon-size-default;
+		height: $icon-size-default;
+	}
+	.mh-icon-chevron-down {
+		fill: $color-mono-grey-2;
+		margin-right: $spacing-medium;
+	}
+	.mh-icon-chevron-up {
+		fill: $color-primary-blue;
+		margin-right: $spacing-medium;
+	}
+	&.popover-active {
+		border-color: $color-primary-blue;
+	}
+}

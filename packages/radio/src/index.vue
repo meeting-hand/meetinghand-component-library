@@ -5,6 +5,7 @@
     v-model:checked="value"
   >
     {{ text }}
+    <slot></slot>
   </a-radio>
   <mh-button
     @click="set()"
@@ -22,10 +23,8 @@
 </template>
 
 <script>
-import Radio from "ant-design-vue/lib/radio";
+import { Radio } from "ant-design-vue";
 import MhButton from "@meetinghand/button/src/index.vue";
-
-import "./assets/main.scss";
 
 export default {
   name: "MhRadio",
@@ -44,16 +43,16 @@ export default {
       default: false,
     },
     modelValue: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       required: true,
     },
     data: {
-      type: [String, Number],
+      type: [String, Number, Boolean],
       required: true,
     },
     text: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   computed: {
@@ -74,3 +73,6 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+@import "./assets/main.scss";
+</style>

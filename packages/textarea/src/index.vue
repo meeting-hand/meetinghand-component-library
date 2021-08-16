@@ -1,31 +1,35 @@
 <template>
-  <div class="mh-input-text">
-    <span v-if="title" class="mh-input__title">{{ title }}</span>
-    <mh-icon :name="icon" v-if="icon" />
+  <div class="mh-text-area">
+    <div v-if="title" class="mh-input-text">
+      <span class="mh-input__title">{{ title }}</span>
+      <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+        <mh-icon name="system-info" />
+      </tooltip>
+    </div>
+    <a-textarea
+      v-model:value="value"
+      :placeholder="placeholder"
+      :auto-size="{ minRows: Number(minRows), maxRows: Number(maxRows) }"
+      :disabled="disabled"
+      :class="[{ error: errorStatus }]"
+    />
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
   </div>
-  <a-textarea
-    v-model:value="value"
-    :placeholder="placeholder"
-    :auto-size="{ minRows: Number(minRows), maxRows: Number(maxRows) }"
-    :disabled="disabled"
-    :class="[{ error: hasError }]"
-  />
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
 </template>
 
 <script>
-import Textarea from "ant-design-vue/lib/input/TextArea";
+import { Input } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
-
-import "./assets/main.scss";
+import Tooltip from "../../tooltip/src/index.vue";
 
 export default {
   name: "MhTextArea",
   components: {
-    [Textarea.name]: Textarea,
+    [Input.TextArea.name]: Input.TextArea,
     "mh-icon": MHIcon,
+    Tooltip,
   },
   props: {
     modelValue: {
@@ -65,8 +69,15 @@ export default {
       type: String,
       default: "7",
     },
+    tooltip: {
+      type: String,
+      default: null,
+    },
   },
   computed: {
+    errorStatus: function (props) {
+      return props.hasError || props.errorMessage;
+    },
     value: {
       get() {
         return this.modelValue;
@@ -78,3 +89,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import "./assets/main.scss";
+</style>
