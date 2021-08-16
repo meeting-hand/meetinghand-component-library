@@ -383,6 +383,23 @@
 			color: $color-mono-black;
 		}
 	}
+	&.wait {
+		border: none;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		span {
+			display: none;
+		}
+		.mh-icon:not(.wait-spinner) {
+			display: none;
+		}
+		.wait-spinner {
+			stroke: $color-primary-blue;
+			fill: none !important;
+		}
+	}
 }
 /* LIST END */
 

@@ -132,6 +132,8 @@ import VmYoutube from "./vmYoutube.vue";
 import VmZoom from "./vmZoom.vue";
 import VmVimeo from "./vmVimeo.vue";
 import VmGoogleMeet from "./vmGoogleMeet.vue";
+import UiClipboard from "./uiClipboard.vue";
+import SystemMobilePhone from "./systemMobilePhone.vue";
 
 const iconList = [
   "arrow-down",
@@ -264,6 +266,8 @@ const iconList = [
   "vm-zoom",
   "vm-vimeo",
   "vm-google-meet",
+  "ui-clipboard",
+  "system-mobile-phone",
 ];
 
 export default {
@@ -399,6 +403,8 @@ export default {
     VmZoom,
     VmVimeo,
     VmGoogleMeet,
+    UiClipboard,
+    SystemMobilePhone,
   },
   props: {
     name: {
