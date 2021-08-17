@@ -1,19 +1,18 @@
 <template>
   <div class="question-text">
-    <mh-input
-      :label="question.label"
-      :errorMessage="errorMessage"
+    <mh-select
       v-model="question.value"
-      :tooltip="question.information"
+      input-type="country"
+      :label="question.label"
     />
   </div>
 </template>
 <script>
-import MhInput from "@meetinghand/input";
+import MhSelect from "@meetinghand/select";
 
 export default {
   components: {
-    MhInput,
+    MhSelect,
   },
   props: {
     question: {

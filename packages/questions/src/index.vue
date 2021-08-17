@@ -12,11 +12,23 @@
 
 <script>
 import TextQuestion from "./types/textQuestion.vue";
+import TelQuestion from "./types/telQuestion.vue";
+import TextareaQuestion from "./types/textareaQuestion.vue";
+import EmailQuestion from "./types/emailQuestion.vue";
+import CountryQuestion from "./types/countryQuestion.vue";
+import InformationQuestion from "./types/informationQuestion.vue";
+import FileQuestion from "./types/fileQuestion.vue";
 
 export default {
   name: "Questions",
   components: {
     TextQuestion,
+    TelQuestion,
+    TextareaQuestion,
+    EmailQuestion,
+    CountryQuestion,
+    InformationQuestion,
+    FileQuestion,
   },
   props: {
     questions: {
@@ -34,5 +46,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.questions {
+  .question-text:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
 </style>

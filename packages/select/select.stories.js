@@ -73,7 +73,7 @@ storiesOf("Select", module).add("Country", () => ({
     template: `
 	<div class="storybook-select">
 			<h1>Default</h1>
-      <mh-select v-model="select1" input-type="country" placeholder="Birini seciniz" />
+      <mh-select v-model="select1" input-type="country" placeholder="Birini seciniz" label="Country"/>
 			{{ select1 }}
 			<hr />
 			<h1>Disabled</h1>

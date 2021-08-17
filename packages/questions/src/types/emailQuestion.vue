@@ -5,6 +5,7 @@
       :errorMessage="errorMessage"
       v-model="question.value"
       :tooltip="question.information"
+      email
     />
   </div>
 </template>
@@ -28,4 +29,3 @@ export default {
   setup() {},
 };
 </script>
-
