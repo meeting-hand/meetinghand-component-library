@@ -22,8 +22,6 @@ import EmailQuestion from "./types/emailQuestion.vue";
 import CountryQuestion from "./types/countryQuestion.vue";
 import InformationQuestion from "./types/informationQuestion.vue";
 import FileQuestion from "./types/fileQuestion.vue";
-import RadioQuestion from "./types/radioQuestions.vue";
-import SelectQuestion from "./types/selectQuestion.vue";
 import DatepickerQuestion from "./types/datepickerQuestion.vue";
 
 export default {
@@ -39,8 +37,12 @@ export default {
     CheckboxQuestion: defineAsyncComponent(() =>
       import("./types/checkboxQuestion.vue")
     ),
-    RadioQuestion,
-    SelectQuestion,
+    RadioQuestion: defineAsyncComponent(() =>
+      import("./types/radioQuestions.vue")
+    ),
+    SelectQuestion: defineAsyncComponent(() =>
+      import("./types/selectQuestion.vue")
+    ),
     DatepickerQuestion,
   },
   props: {
