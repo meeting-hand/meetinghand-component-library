@@ -12,6 +12,7 @@
       v-model="value"
       :labelLeft="labelLeft"
       :labelRight="labelRight"
+      :label="label"
     />
     <span v-if="errorMessage" class="mh-input__error">
       {{ errorMessage }}
@@ -74,6 +75,10 @@ export default {
       default: null,
     },
     labelRight: {
+      type: String,
+      default: null,
+    },
+    label: {
       type: String,
       default: null,
     },

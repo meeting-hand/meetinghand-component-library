@@ -9,7 +9,7 @@
         >
           {{ question.label }}
         </mh-button>
-        <span v-if="errorMessage">{{ errorMessage }}</span>
+        <p v-if="errorMessage">{{ errorMessage }}</p>
         <input
           type="file"
           style="opacity: 0; position: absolute"

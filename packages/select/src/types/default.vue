@@ -10,6 +10,7 @@
     :show-search="searchable"
     :size="size"
     :suffixIcon="suffixIcon"
+    :removeIcon="removeIcon"
     :id="id"
     :mode="mode"
     v-model:value="value"
@@ -25,6 +26,7 @@ import { computed, h } from "vue";
 
 import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
+import SystemClose from "@meetinghand/style/icons/systemClose.vue";
 
 import defaultProps from "../utils/props";
 
@@ -38,6 +40,8 @@ export default {
   },
   setup(props, { emit }) {
     const suffixIcon = h(ArrowIcon);
+
+    const removeIcon = h(SystemClose);
 
     const filterOption = (input, option) => {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
@@ -59,6 +63,7 @@ export default {
       filterOption,
       suffixIcon,
       mode,
+      removeIcon,
     };
   },
 };

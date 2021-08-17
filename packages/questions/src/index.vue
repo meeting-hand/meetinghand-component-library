@@ -54,18 +54,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.questions {
-  .question:not(:last-child) {
-    margin-bottom: 16px;
-  }
-  .question-checkbox {
-    label {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 20px;
-      color: #000000;
-    }
-  }
-}
+<style lang="scss">
+@import "./assets/main.scss";
 </style>

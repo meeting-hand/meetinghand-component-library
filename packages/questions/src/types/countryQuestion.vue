@@ -4,6 +4,7 @@
       v-model="question.value"
       input-type="country"
       :label="question.label"
+      :error-message="errorMessage"
     />
   </div>
 </template>
