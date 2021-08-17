@@ -8,10 +8,11 @@
     :options="options"
     option-filter-prop="label"
     :show-search="searchable"
-    v-model:value="value"
     :size="size"
     :suffixIcon="suffixIcon"
     :id="id"
+    :mode="mode"
+    v-model:value="value"
   >
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
@@ -42,6 +43,8 @@ export default {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
     };
 
+    const mode = Array.isArray(props.modelValue) ? "multiple" : undefined;
+
     const value = computed({
       get() {
         return props.modelValue;
@@ -55,6 +58,7 @@ export default {
       value,
       filterOption,
       suffixIcon,
+      mode,
     };
   },
 };
