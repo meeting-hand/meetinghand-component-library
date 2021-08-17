@@ -7,6 +7,7 @@
           v-model="question.value"
           :text="option.label"
           :data="option.id"
+          :error-message="errorMessage"
         />
       </li>
     </ul>
