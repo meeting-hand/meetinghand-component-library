@@ -1,7 +1,7 @@
 {
-    "name": "@meetinghand/button",
-    "description": "MeetingHand Buttons",
-    "version": "0.0.98-alpha.0",
+    "name": "@meetinghand/questions",
+    "description": "Meetinghand Component Library Component for questions",
+    "version": "0.0.2-alpha.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -17,6 +17,7 @@
         "access": "public"
     },
     "dependencies": {
+        "@meetinghand/input": "file:../input",
         "@meetinghand/style": "file:../style"
     }
 }
