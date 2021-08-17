@@ -4,6 +4,7 @@
       v-model="question.value"
       :placeholder="question.information"
       format="MM.DD.YYYY"
+      :error-message="errorMessage"
     />
   </div>
 </template>

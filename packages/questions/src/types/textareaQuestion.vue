@@ -6,6 +6,7 @@
       :maxRows="String(question.textareaRows)"
       :title="question.label"
       :tooltip="question.information"
+      :error-message="errorMessage"
     />
   </div>
 </template>

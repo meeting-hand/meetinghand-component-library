@@ -5,6 +5,7 @@
       :placeholder="question.information"
       :label="question.label"
       :searchable="question.selectMultiple"
+      :error-message="errorMessage"
       v-model="question.value"
     />
   </div>

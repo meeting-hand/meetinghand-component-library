@@ -2,7 +2,7 @@
   <div class="question question-tel">
     <mh-input
       :label="question.label"
-      :errorMessage="errorMessage"
+      :error-message="errorMessage"
       v-model="question.value"
       :tooltip="question.information"
       input-type="tel"
