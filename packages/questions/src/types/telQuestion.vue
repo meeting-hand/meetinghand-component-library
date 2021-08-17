@@ -1,10 +1,11 @@
 <template>
-  <div class="question question-text">
+  <div class="question question-tel">
     <mh-input
       :label="question.label"
       :errorMessage="errorMessage"
       v-model="question.value"
       :tooltip="question.information"
+      input-type="tel"
     />
   </div>
 </template>
@@ -28,4 +29,3 @@ export default {
   setup() {},
 };
 </script>
-

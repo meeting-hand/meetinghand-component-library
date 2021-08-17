@@ -1,19 +1,19 @@
 <template>
-  <div class="question question-text">
-    <mh-input
-      :label="question.label"
-      :errorMessage="errorMessage"
-      v-model="question.value"
-      :tooltip="question.information"
+  <div class="question question-information">
+    <mh-banner
+      type="section"
+      :text="question.information"
+      :section-type="question.informationIcon"
+      :title="question.label"
     />
   </div>
 </template>
 <script>
-import MhInput from "@meetinghand/input";
+import MhBanner from "@meetinghand/banner";
 
 export default {
   components: {
-    MhInput,
+    MhBanner,
   },
   props: {
     question: {
@@ -28,4 +28,3 @@ export default {
   setup() {},
 };
 </script>
-

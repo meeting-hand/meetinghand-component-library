@@ -1,19 +1,20 @@
 <template>
-  <div class="question question-text">
-    <mh-input
-      :label="question.label"
-      :errorMessage="errorMessage"
+  <div class="question question-textarea">
+    <mh-text-area
       v-model="question.value"
+      :minRows="String(question.textareaRows)"
+      :maxRows="String(question.textareaRows)"
+      :title="question.label"
       :tooltip="question.information"
     />
   </div>
 </template>
 <script>
-import MhInput from "@meetinghand/input";
+import MhTextArea from "@meetinghand/textarea";
 
 export default {
   components: {
-    MhInput,
+    MhTextArea,
   },
   props: {
     question: {
@@ -25,7 +26,8 @@ export default {
       default: "",
     },
   },
-  setup() {},
+  setup(props) {
+    console.log(props.question);
+  },
 };
 </script>
-
