@@ -1,10 +1,11 @@
 <template>
   <div class="question question-select">
     <mh-select
-      v-model="question.value"
       :options="question.eventFormFieldOptions"
       :placeholder="question.information"
       :label="question.label"
+      :searchable="question.selectMultiple"
+      v-model="question.value"
     />
   </div>
 </template>
