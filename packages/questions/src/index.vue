@@ -1,9 +1,11 @@
 <template>
-  <div class="questions">
+  <div :class="['questions', { ['deep-' + deep]: deep > 1 }]">
     <component
       :is="`${question.type}Question`"
       :key="question.id"
       :errorMessage="errors[question.id]"
+      :errors="errors"
+      :deep="deep"
       v-for="(question, keyQuestion) in questions"
       v-model:question="questions[keyQuestion]"
     />
@@ -11,6 +13,8 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from "vue";
+
 import TextQuestion from "./types/textQuestion.vue";
 import TelQuestion from "./types/telQuestion.vue";
 import TextareaQuestion from "./types/textareaQuestion.vue";
@@ -18,7 +22,6 @@ import EmailQuestion from "./types/emailQuestion.vue";
 import CountryQuestion from "./types/countryQuestion.vue";
 import InformationQuestion from "./types/informationQuestion.vue";
 import FileQuestion from "./types/fileQuestion.vue";
-import CheckboxQuestion from "./types/checkboxQuestion.vue";
 import RadioQuestion from "./types/radioQuestions.vue";
 import SelectQuestion from "./types/selectQuestion.vue";
 import DatepickerQuestion from "./types/datepickerQuestion.vue";
@@ -33,7 +36,9 @@ export default {
     CountryQuestion,
     InformationQuestion,
     FileQuestion,
-    CheckboxQuestion,
+    CheckboxQuestion: defineAsyncComponent(() =>
+      import("./types/checkboxQuestion.vue")
+    ),
     RadioQuestion,
     SelectQuestion,
     DatepickerQuestion,
@@ -41,16 +46,18 @@ export default {
   props: {
     questions: {
       type: Array,
-      default: [],
+      default: () => [],
     },
     errors: {
       type: Object,
-      default: {},
+      default: () => {},
+    },
+    deep: {
+      type: Number,
+      default: 1,
     },
   },
-  setup() {
-    // your code
-  },
+  setup() {},
 };
 </script>
 

@@ -25,6 +25,14 @@ export default {
       type: String,
       default: "",
     },
+    errors: {
+      type: Object,
+      default: () => {},
+    },
+    deep: {
+      type: Number,
+      default: 1,
+    },
   },
   setup() {},
 };
