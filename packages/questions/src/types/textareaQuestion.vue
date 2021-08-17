@@ -1,12 +1,12 @@
 <template>
   <div class="question question-textarea">
     <mh-text-area
-      v-model="question.value"
       :minRows="String(question.textareaRows)"
       :maxRows="String(question.textareaRows)"
       :title="question.label"
       :tooltip="question.information"
       :error-message="errorMessage"
+      v-model="question.value"
     />
   </div>
 </template>
@@ -26,9 +26,15 @@ export default {
       type: String,
       default: "",
     },
+    errors: {
+      type: Object,
+      default: () => {},
+    },
+    deep: {
+      type: Number,
+      default: 1,
+    },
   },
-  setup(props) {
-    console.log(props.question);
-  },
+  setup() {},
 };
 </script>
