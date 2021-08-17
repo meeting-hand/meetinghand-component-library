@@ -7,17 +7,6 @@ storiesOf("Questions", module).add("Questions!", () => ({
         return {
             errors: {
                 1463: "this field is required",
-                1464: "this field is required",
-                1465: "this field is required",
-                1466: "this field is required",
-                1467: "this field is required",
-                1468: "this field is required",
-                1469: "this field is required",
-                1470: "this field is required",
-                1471: "this field is required",
-                1472: "this field is required",
-                1231: "this field is required",
-                1473: "this field is required",
             },
             questions: [{
                     id: 1463,
