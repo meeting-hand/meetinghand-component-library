@@ -5,6 +5,7 @@
       :placeholder="question.information"
       format="MM.DD.YYYY"
       :error-message="errorMessage"
+      :label="question.label"
     />
   </div>
 </template>

@@ -7,6 +7,7 @@
           :label="option.label"
           :data="option.id"
           v-model="question.value"
+          :error-message="errorMessage"
         />
         <mh-questions
           :errors="errors"

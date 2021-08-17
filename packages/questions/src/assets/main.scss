@@ -1,0 +1,62 @@
+@import "@meetinghand/style/lib/scss/variables.scss";
+
+.questions {
+    .question:not(:last-child) {
+        margin-bottom: $spacing-default;
+    }
+    .question-checkbox {
+        label {
+            font-weight: $font-weight-default;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
+    }
+}
+
+.question-file {
+    p {
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        color: $color-primary-red;
+        margin-left: $spacing-small;
+        margin-top: 4px;
+        display: block;
+    }
+}
+
+.question-radio {
+    label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+    }
+    .ant-radio-wrapper {
+        margin-top: $spacing-default;
+        span {
+            font-weight: normal;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
+    }
+}
+
+.question-checkbox {
+    label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+    }
+    .ant-checkbox-wrapper {
+        margin-top: $spacing-default;
+        span {
+            font-weight: normal;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
+    }
+}
