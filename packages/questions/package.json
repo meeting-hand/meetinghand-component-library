@@ -20,8 +20,11 @@
         "@meetinghand/input": "file:../input",
         "@meetinghand/style": "file:../style",
         "@meetinghand/textarea": "file:../textarea",
-        "@meetinghand/select": "file:../select",
         "@meetinghand/banner": "file:../banner",
-        "@meetinghand/button": "file:../button"
+        "@meetinghand/button": "file:../button",
+        "@meetinghand/checkbox": "file:../checkbox",
+        "@meetinghand/radio": "file:../radio",
+        "@meetinghand/select": "file:../select",
+        "@meetinghand/date-picker": "file:../date-picker"
     }
 }

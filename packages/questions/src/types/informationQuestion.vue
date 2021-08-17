@@ -1,5 +1,5 @@
 <template>
-  <div class="question-text">
+  <div class="question question-information">
     <mh-banner
       type="section"
       :text="question.information"

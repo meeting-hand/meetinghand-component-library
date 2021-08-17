@@ -1,5 +1,5 @@
 <template>
-  <div class="question-text">
+  <div class="question question-textarea">
     <mh-text-area
       v-model="question.value"
       :minRows="String(question.textareaRows)"

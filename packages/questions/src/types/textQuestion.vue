@@ -1,5 +1,5 @@
 <template>
-  <div class="question-text">
+  <div class="question question-text">
     <mh-input
       :label="question.label"
       :errorMessage="errorMessage"

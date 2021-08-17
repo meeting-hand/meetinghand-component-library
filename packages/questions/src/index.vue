@@ -18,6 +18,10 @@ import EmailQuestion from "./types/emailQuestion.vue";
 import CountryQuestion from "./types/countryQuestion.vue";
 import InformationQuestion from "./types/informationQuestion.vue";
 import FileQuestion from "./types/fileQuestion.vue";
+import CheckboxQuestion from "./types/checkboxQuestion.vue";
+import RadioQuestion from "./types/radioQuestions.vue";
+import SelectQuestion from "./types/selectQuestion.vue";
+import DatepickerQuestion from "./types/datepickerQuestion.vue";
 
 export default {
   name: "Questions",
@@ -29,6 +33,10 @@ export default {
     CountryQuestion,
     InformationQuestion,
     FileQuestion,
+    CheckboxQuestion,
+    RadioQuestion,
+    SelectQuestion,
+    DatepickerQuestion,
   },
   props: {
     questions: {
@@ -48,8 +56,16 @@ export default {
 
 <style lang="scss" scoped>
 .questions {
-  .question-text:not(:last-child) {
+  .question:not(:last-child) {
     margin-bottom: 16px;
+  }
+  .question-checkbox {
+    label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: #000000;
+    }
   }
 }
 </style>

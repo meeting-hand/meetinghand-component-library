@@ -1,8 +1,9 @@
 <template>
-  <div class="question question-country">
+  <div class="question question-select">
     <mh-select
       v-model="question.value"
-      input-type="country"
+      :options="question.eventFormFieldOptions"
+      :placeholder="question.information"
       :label="question.label"
     />
   </div>
@@ -27,4 +28,3 @@ export default {
   setup() {},
 };
 </script>
-

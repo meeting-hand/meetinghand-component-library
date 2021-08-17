@@ -1,18 +1,18 @@
 <template>
-  <div class="question question-country">
-    <mh-select
+  <div class="question question-select">
+    <mh-datepicker
       v-model="question.value"
-      input-type="country"
-      :label="question.label"
+      :placeholder="question.information"
+      format="MM.DD.YYYY"
     />
   </div>
 </template>
 <script>
-import MhSelect from "@meetinghand/select";
+import MhDatepicker from "@meetinghand/date-picker";
 
 export default {
   components: {
-    MhSelect,
+    MhDatepicker,
   },
   props: {
     question: {
@@ -27,4 +27,3 @@ export default {
   setup() {},
 };
 </script>
-
