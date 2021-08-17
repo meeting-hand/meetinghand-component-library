@@ -9,16 +9,24 @@
           :data="option.id"
           :error-message="errorMessage"
         />
+        <mh-questions
+          :errors="errors"
+          :deep="deep + 1"
+          v-if="question.value == option.id"
+          v-model:questions="option.eventFormFields"
+        />
       </li>
     </ul>
   </div>
 </template>
 <script>
 import MhRadio from "@meetinghand/radio";
+import MhQuestions from "../index.vue";
 
 export default {
   components: {
     MhRadio,
+    MhQuestions,
   },
   props: {
     question: {
