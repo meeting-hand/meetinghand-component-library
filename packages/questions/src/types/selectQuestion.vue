@@ -52,7 +52,7 @@ export default {
   setup(props) {
     const subFieldedOptions = computed(() => {
       return props.question.eventFormFieldOptions.filter((_o) =>
-        props.question.selectMultiple
+        props.question.selectMultiple && Array.isArray(props.question.value)
           ? props.question.value.find((optionID) => optionID == _o.id)
           : props.question.value === _o.id
       );

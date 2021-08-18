@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import MhTextArea from "@meetinghand/textarea";
+import MhTextArea from "@meetinghand/paragraph";
 
 export default {
   components: {
