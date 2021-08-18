@@ -21,7 +21,6 @@ export default {
   props: {
     modelValue: {
       type: [Boolean, Array],
-      required: true,
     },
     label: {
       type: String,

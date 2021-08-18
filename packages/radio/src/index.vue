@@ -47,7 +47,6 @@ export default {
     },
     modelValue: {
       type: [String, Number, Boolean],
-      required: true,
     },
     data: {
       type: [String, Number, Boolean],

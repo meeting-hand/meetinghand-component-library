@@ -15,7 +15,7 @@ storiesOf("Radio", module).add("Default", () => ({
 	template: `
   <div class="storybook-radio">
       <h1>Default</h1>
-      <mh-radio v-model="value1" text="Ahmet Ozturk"  :data="true" error-message="test"/>
+      <mh-radio v-model="value1" text="Ahmet Ozturk"  :data="true" error-message="this field is required"/>
       <br />
       <mh-radio v-model="value1" text="Mehmet Ozturk" :data="false"/>
       <br />

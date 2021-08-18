@@ -7,7 +7,7 @@ import "../../assets/storybook/storybook.css";
 storiesOf("TextArea", module).add("All", () => ({
   data() {
     return {
-      text1: ""
+      text1: null
     }
   },
   components: { MhTextArea },
