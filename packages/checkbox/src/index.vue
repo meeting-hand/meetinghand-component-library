@@ -21,7 +21,6 @@ export default {
   props: {
     modelValue: {
       type: [Boolean, Array],
-      required: true,
     },
     label: {
       type: String,
@@ -58,7 +57,7 @@ export default {
       },
     },
     componentType() {
-      return Array.isArray(this.modelValue) ? "multiple" : "single";
+      return this.data !== null ? "multiple" : "single";
     },
   },
 };
