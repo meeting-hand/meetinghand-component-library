@@ -51,7 +51,9 @@ export default {
     },
     value: {
       get() {
-        return this.modelValue.includes(this.data);
+        return (
+          Array.isArray(this.modelValue) && this.modelValue.includes(this.data)
+        );
       },
       set(value) {
         if (!value) {
@@ -60,7 +62,12 @@ export default {
             this.modelValue.filter((_v) => _v !== this.data)
           );
         } else {
-          this.$emit("update:modelValue", this.modelValue.concat([this.data]));
+          this.$emit(
+            "update:modelValue",
+            Array.isArray(this.modelValue)
+              ? [...this.modelValue, this.data]
+              : [this.data]
+          );
         }
       },
     },

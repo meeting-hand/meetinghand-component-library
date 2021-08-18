@@ -18,6 +18,7 @@
       :leftIcon="leftIcon"
       :rightIcon="rightIcon"
       :allowClear="allowClear"
+      :textTransform="textTransform"
       :email="email"
       :id="elId"
       v-model="value"

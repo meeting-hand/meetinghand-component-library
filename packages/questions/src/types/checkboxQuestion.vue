@@ -12,7 +12,9 @@
         <mh-questions
           :errors="errors"
           :deep="deep + 1"
-          v-if="question.value !== null && question.value.includes(option.id)"
+          v-if="
+            Array.isArray(question.value) && question.value.includes(option.id)
+          "
           v-model:questions="option.eventFormFields"
         />
       </li>

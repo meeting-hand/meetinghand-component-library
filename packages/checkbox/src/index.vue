@@ -57,7 +57,7 @@ export default {
       },
     },
     componentType() {
-      return Array.isArray(this.modelValue) ? "multiple" : "single";
+      return this.data !== null ? "multiple" : "single";
     },
   },
 };
