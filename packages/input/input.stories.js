@@ -15,6 +15,8 @@ storiesOf("Input", module).add("Input", () => ({
             value6: "",
             value7: "git config branch.master.mergeoption 212312312",
             value8: "",
+            value9: "",
+            value10: "",
         };
     },
     template: `
@@ -46,6 +48,12 @@ storiesOf("Input", module).add("Input", () => ({
       <hr />
       <h1>Clear</h1>
       <mh-input v-model="value6" allow-clear />
+      <br />
+      <br />
+			<hr />
+			<h1>Text Transform</h1>
+			<mh-input v-model="value9" text-transform="capitalize" label="capitalize" />
+			<mh-input v-model="value10" text-transform="uppercase" label="uppercase"/>
       <br />
       <br />
     </div>

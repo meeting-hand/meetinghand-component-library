@@ -41,6 +41,16 @@ export default {
         return props.modelValue;
       },
       set(data) {
+        //Text Transform
+        if (props.textTransform === "capitalize") {
+          data = data
+            .split(" ")
+            .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
+            .join(" ");
+        } else if (props.textTransform === "uppercase") {
+          data = data.toUpperCase();
+        }
+
         emit("update:modelValue", data);
       },
     });

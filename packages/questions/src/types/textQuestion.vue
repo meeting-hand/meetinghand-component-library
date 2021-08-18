@@ -3,8 +3,9 @@
     <mh-input
       :label="question.label"
       :errorMessage="errorMessage"
-      v-model="question.value"
       :tooltip="question.information"
+      :textTransform="question.textTransform"
+      v-model="question.value"
     />
   </div>
 </template>
