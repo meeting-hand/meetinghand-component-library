@@ -20,6 +20,9 @@
   >
     {{ text }}
   </mh-button>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
@@ -53,6 +56,14 @@ export default {
     text: {
       type: String,
       required: false,
+    },
+    errorMessage: {
+      type: String,
+      default: null,
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

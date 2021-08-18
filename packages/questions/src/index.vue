@@ -38,7 +38,7 @@ export default {
       import("./types/checkboxQuestion.vue")
     ),
     RadioQuestion: defineAsyncComponent(() =>
-      import("./types/radioQuestions.vue")
+      import("./types/radioQuestion.vue")
     ),
     SelectQuestion: defineAsyncComponent(() =>
       import("./types/selectQuestion.vue")
