@@ -37,7 +37,6 @@ export default {
   props: {
     modelValue: {
       type: Number,
-      required: true,
     },
     min: {
       type: Number,
