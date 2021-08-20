@@ -1,6 +1,7 @@
 <template>
   <a-radio
     :disabled="disabled"
+    :id="id"
     v-if="type === 'default'"
     v-model:checked="value"
   >
@@ -63,6 +64,10 @@ export default {
     hasError: {
       type: Boolean,
       default: false,
+    },
+    id: {
+      type: String,
+      default: () => "_" + Math.random().toString(36).substr(2, 9),
     },
   },
   computed: {
