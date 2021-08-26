@@ -2,9 +2,9 @@
   <div class="question question-information">
     <mh-banner
       type="section"
-      :text="question.information"
+      :text="question.label"
       :section-type="question.informationIcon"
-      :title="question.label"
+      :title="question.information"
     />
   </div>
 </template>

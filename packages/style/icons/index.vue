@@ -136,6 +136,7 @@ import UiClipboard from "./uiClipboard.vue";
 import SystemMobilePhone from "./systemMobilePhone.vue";
 import UiUpset from "./uiUpset.vue";
 import UiSmile from "./uiSmile.vue";
+import ShareScreen from "./shareScreen.vue";
 
 const iconList = [
   "arrow-down",
@@ -272,6 +273,7 @@ const iconList = [
   "system-mobile-phone",
   "ui-upset",
   "ui-smile",
+  "share-screen",
 ];
 
 export default {
@@ -411,6 +413,7 @@ export default {
     SystemMobilePhone,
     UiUpset,
     UiSmile,
+    ShareScreen,
   },
   props: {
     name: {

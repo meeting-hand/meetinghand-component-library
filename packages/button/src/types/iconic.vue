@@ -1,10 +1,11 @@
 <template>
   <a-button
     :class="[`size-${size}`, { disabled: disabled }, 'iconic-btn', color]"
-    :disabled="disabled"
+    :disabled="disabled || wait"
     :htmlType="submit ? 'submit' : 'button'"
   >
-    <mh-icon :name="icon" v-if="icon" />
+    <mh-icon name="wait" class="wait-spinner" v-if="wait" />
+    <mh-icon :name="icon" v-else-if="icon" />
   </a-button>
 </template>
 <script>
@@ -38,6 +39,10 @@ export default {
       type: String,
       default: null,
       validator: (_v) => ["blue", "green", "red"].includes(_v),
+    },
+    wait: {
+      type: Boolean,
+      default: false,
     },
   },
 };

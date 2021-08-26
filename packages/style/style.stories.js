@@ -127,6 +127,7 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="ui-coffee" />
 			<mh-icon name="ui-clipboard" />
 			<mh-icon name="system-mobile-phone" />
+			<mh-icon name="share-screen" />
 
 
 
