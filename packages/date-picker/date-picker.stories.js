@@ -17,7 +17,7 @@ storiesOf("DatePicker", module).add("Default", () => ({
     template: `
 	<div class="storybook-datepicker">
 			<h1>Default (DD.MM.YYYY)</h1>
-      <mh-date-picker v-model="date1" placeholder="Default Empty Date" /> <span style="margin-left: 40px;">{{ date1 }}</span>
+      <mh-date-picker v-model="date1" placeholder="Default Empty Date" label="Lorem"/> <span style="margin-left: 40px;">{{ date1 }}</span>
 			<br />
 			<br />
 			<h1>Default (MM.DD.YYYY)</h1>
