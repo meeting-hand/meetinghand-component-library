@@ -273,6 +273,10 @@ storiesOf("Button", module).add("iconic", () => ({
       <br/><br />
       </div>
 			<mh-button icon="package-participant" type="iconic" size="default" />
+			<br/><br />
+			<h1>Wait</h1>
+      <mh-button type="iconic" icon="system-other-options" size="default" wait />
+      <br/><br />
 
 
     `,
