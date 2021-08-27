@@ -1,5 +1,5 @@
 <template>
-  <div class="mh-range-picker-label" v-if="label">
+  <div class="mh-date-picker-label" v-if="label">
     <label>
       {{ label }}
     </label>
