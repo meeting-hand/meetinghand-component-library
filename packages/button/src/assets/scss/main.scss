@@ -226,14 +226,8 @@
             height: $icon-size-default;
             min-width: $icon-size-default;
         }
-        &.size-circular {
-            width: 52px;
-            height: 52px;
+        &.circular-btn {
             border-radius: $border-radius-giant;
-            .mh-icon {
-                height: 30px;
-                min-width: 30px;
-            }
         }
         &.size-default {
             width: 44px;
@@ -257,6 +251,7 @@
         }
         &:hover {
             background: $transparent-hover;
+            border: none;
         }
         &.red {
             border-color: $color-primary-red;
