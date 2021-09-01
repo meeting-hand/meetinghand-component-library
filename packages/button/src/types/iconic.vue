@@ -1,6 +1,12 @@
 <template>
   <a-button
-    :class="[`size-${size}`, { disabled: disabled }, 'iconic-btn', color]"
+    :class="[
+      `size-${size}`,
+      { disabled: disabled },
+      { 'circular-btn': circular },
+      'iconic-btn',
+      color,
+    ]"
     :disabled="disabled || wait"
     :htmlType="submit ? 'submit' : 'button'"
   >
@@ -41,6 +47,10 @@ export default {
       validator: (_v) => ["blue", "green", "red"].includes(_v),
     },
     wait: {
+      type: Boolean,
+      default: false,
+    },
+    circular: {
       type: Boolean,
       default: false,
     },

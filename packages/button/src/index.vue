@@ -10,6 +10,7 @@
     :submit="submit"
     :color="color"
     :iconColor="iconColor"
+    :circular="circular"
   >
     <slot></slot>
   </component>
@@ -63,9 +64,7 @@ export default {
       type: String,
       default: "default",
       validator: (_v) =>
-        ["default", "large", "normal", "circular", "small", "tiny"].includes(
-          _v
-        ),
+        ["default", "large", "normal", "small", "tiny"].includes(_v),
     },
     icon: {
       type: String,
@@ -102,6 +101,10 @@ export default {
       type: String,
       default: null,
       validator: (_v) => ["red"].includes(_v),
+    },
+    circular: {
+      type: Boolean,
+      default: false,
     },
   },
 };
