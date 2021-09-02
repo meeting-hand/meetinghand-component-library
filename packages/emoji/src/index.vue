@@ -1,5 +1,5 @@
 <template>
-  <a-popover placement="left" trigger="click" v-model:visible="popoverStatus">
+  <a-popover placement="left" trigger="click" v-model:visible="visibleStatus">
     <template #content>
       <div class="list-emoji-wrapper">
         <span
@@ -14,7 +14,7 @@
     </template>
     <mh-button
       type="iconic"
-      :icon="popoverStatus ? 'system-close' : 'ui-emoji-add'"
+      :icon="visible ? 'system-close' : 'ui-emoji-add'"
       size="small"
       circular
     />
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, computed } from "vue";
 
 import { Popover } from "ant-design-vue";
 import MhButton from "@meetinghand/button";
@@ -38,20 +38,31 @@ export default defineComponent({
   props: {
     emojis: {
       type: Array,
-      default: ["&#x1F600;", "&#x1F44F;", "&#x1F44D;", "&#x2764;"],
+      default: () => ["&#x1F600;", "&#x1F44F;", "&#x1F44D;", "&#x2764;"],
+    },
+    visible: {
+      type: Boolean,
+      default: false,
     },
   },
+  emits: ["selected", "update:visible"],
   setup(props, { emit }) {
-    const popoverStatus = ref(false);
-
+    const visibleStatus = computed({
+      get() {
+        return props.visible;
+      },
+      set(data) {
+        emit("update:visible", data);
+      },
+    });
     const selectEmoji = (emoji) => {
-      emit("update:modelValue", emoji);
-      popoverStatus.value = false;
+      emit("selected", emoji);
+      visibleStatus.value = false;
     };
 
     return {
       selectEmoji,
-      popoverStatus,
+      visibleStatus,
     };
   },
 });

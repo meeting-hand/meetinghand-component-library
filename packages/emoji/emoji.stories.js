@@ -5,14 +5,13 @@ storiesOf("Emoji", module).add("Emoji!", () => ({
   components: { MhEmoji },
   data() {
     return {
-      emoji: null,
+      visible: false,
       
     };
   },
   template: `
-      <mh-emoji v-model="emoji"/>
+  v-model:visible="emojiPopoverStatus"
       {{emoji}}
-      
     `,
 }));
 
