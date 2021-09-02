@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/emoji",
     "description": "Meetinghand Component Library Component for emoji",
-    "version": "0.0.0",
+    "version": "0.0.1-alpha.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -37,8 +37,8 @@
         "dist/*"
     ],
     "dependencies": {
-        "vue": "^3.0.5",
+        "@meetinghand/button": "file:../button",
         "@meetinghand/style": "file:../style",
-        "@meetinghand/button": "file:../button"
+        "vue": "^3.0.5"
     }
 }
