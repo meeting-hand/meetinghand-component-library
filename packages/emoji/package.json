@@ -6,36 +6,16 @@
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
     },
-    "keywords": [
-        "vue3",
-        "component",
-        "library",
-        "vue3",
-        "lerna",
-        "storybook"
-    ],
     "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
     "bugs": {
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/emoji.umd.js",
-    "module": "./dist/@meetinghand/emoji.es.js",
-    "exports": {
-        ".": {
-            "import": "./dist/@meetinghand/emoji.es.js",
-            "require": "./dist/@meetinghand/emoji.umd.js"
-        }
-    },
-    "scripts": {
-        "build": "vite build"
-    },
+    "main": "./dist/index.js",
+	"module": "./index.js",
     "publishConfig": {
         "access": "public"
     },
-    "files": [
-        "dist/*"
-    ],
     "dependencies": {
         "@meetinghand/button": "file:../button",
         "@meetinghand/style": "file:../style",

@@ -1,24 +1,22 @@
 <template>
-  <div class="mh-emoji">
+  
     <a-popover
       placement="left"
       trigger="click"
-      class="dsada"
-      v-model:visible="visible"
+      overlayClassName="list-emoji-wrapper"
     >
       <template #content>
-        <div class="list-emoji-wrapper">
-          <slot></slot>
-        </div>
+        <span class="emoji" v-for="emoji,index in emojis" :key="index" v-html="emoji" @click="selectEmoji(emoji)">
+        </span>
       </template>
       <mh-button
         type="iconic"
-        :icon="visible ? 'system-close' : 'ui-emoji-add'"
+        icon="ui-emoji-add"
         size="small"
         circular
       />
     </a-popover>
-  </div>
+  
 </template>
 
 <script>
@@ -34,14 +32,24 @@ export default {
     MhIcon,
   },
   props: {
-    visible: {
-      type: Boolean,
-      default: true,
-    },
+    emojis: {
+      type: Array,
+      default: ["&#x1F600;", "&#x1F44F;", "&#x1F44D;" , "&#x2764;"]
+    }
   },
-  setup() {},
+  setup(props, {emit}) {
+
+     const selectEmoji = (emoji) => {
+           emit("selectEmoji", emoji);       
+     }
+    return {
+      selectEmoji,
+    }
+  },
 };
 </script>
+
+
 
 <style lang="scss">
 @import "./assets/main.scss";

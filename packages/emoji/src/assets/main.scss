@@ -1,12 +1,12 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
-.ant-popover-inner-content {
     .list-emoji-wrapper {
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: $spacing-medium;
         height: 44px;
+        max-width: 100%;
         background: $color-mono-white;
         box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
         border-radius: $border-radius-giant;
@@ -25,4 +25,4 @@
             margin-right: $spacing-medium;
         }
     }
-}
+
