@@ -3,9 +3,15 @@ import MhEmoji from "./index";
 
 storiesOf("Emoji", module).add("Emoji!", () => ({
   components: { MhEmoji },
- 
+  data() {
+    return {
+      emoji: null,
+      
+    };
+  },
   template: `
-      <mh-emoji/>
+      <mh-emoji v-model="emoji"/>
+      {{emoji}}
       
     `,
 }));
