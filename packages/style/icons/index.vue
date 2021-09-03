@@ -139,6 +139,7 @@ import UiSmile from "./uiSmile.vue";
 import ShareScreen from "./shareScreen.vue";
 import SystemGroupChat from "./systemGroupChat.vue";
 import UiEmojiAdd from "./uiEmojiAdd.vue";
+import SystemPoll from "./systemPoll.vue";
 
 const iconList = [
   "arrow-down",
@@ -278,6 +279,7 @@ const iconList = [
   "share-screen",
   "system-group-chat",
   "ui-emoji-add",
+  "system-poll",
 ];
 
 export default {
@@ -420,6 +422,7 @@ export default {
     ShareScreen,
     SystemGroupChat,
     UiEmojiAdd,
+    SystemPoll,
   },
   props: {
     name: {
