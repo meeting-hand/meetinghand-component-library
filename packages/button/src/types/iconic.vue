@@ -12,6 +12,7 @@
   >
     <mh-icon name="wait" class="wait-spinner" v-if="wait" />
     <mh-icon :name="icon" v-else-if="icon" />
+    <slot></slot>
   </a-button>
 </template>
 <script>
@@ -27,7 +28,8 @@ export default {
     size: {
       type: String,
       default: "default",
-      validator: (_v) => ["default", "circular", "small", "tiny"].includes(_v),
+      validator: (_v) =>
+        ["default", "circular", "small", "tiny", "text"].includes(_v),
     },
     icon: {
       type: String,

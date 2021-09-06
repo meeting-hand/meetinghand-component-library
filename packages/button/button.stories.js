@@ -280,6 +280,10 @@ storiesOf("Button", module).add("iconic", () => ({
       <mh-button type="iconic" icon="system-other-options" size="default" wait />
 			<br />
 			<mh-button type="iconic" icon="system-other-options" circular wait />
+      <br />
+			<mh-button type="iconic" size="text" icon="system-like" circular >
+      Text
+      </mh-button>
       <br/><br />
 
 
