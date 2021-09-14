@@ -53,9 +53,7 @@
     }
 }
 
-
 /* PRIMARY END */
-
 
 /* SECONDARY */
 
@@ -128,9 +126,7 @@
     }
 }
 
-
 /* SECONDARY END */
-
 
 /* TEXT */
 
@@ -162,9 +158,7 @@
     }
 }
 
-
 /* TEXT END */
-
 
 /* SMALL */
 
@@ -185,9 +179,7 @@
     }
 }
 
-
 /* SMALL END */
-
 
 /* ROW */
 
@@ -212,9 +204,7 @@
     }
 }
 
-
 /* ROW END */
-
 
 /* ICONIC */
 
@@ -245,13 +235,24 @@
                 height: 24px;
             }
         }
+        &.size-text {
+            .mh-icon {
+                margin-right: 4px;
+            }
+            span {
+                font-weight: $font-weight-large;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-grey-3;
+            }
+        }
         .mh-icon {
             margin: $spacing-xxsmall;
             fill: $color-mono-grey-3;
         }
         &:hover {
             background: $transparent-hover;
-            border: none;
+            border: $border-size-default solid transparent;
         }
         &.red {
             border-color: $color-primary-red;
@@ -266,9 +267,7 @@
     }
 }
 
-
 /* ICONIC END */
-
 
 /* SOCIAL */
 
@@ -320,9 +319,7 @@
     }
 }
 
-
 /* SOCIAL END */
-
 
 /* MENU */
 
@@ -353,9 +350,7 @@
     }
 }
 
-
 /* MENU END */
-
 
 /* LIST */
 
@@ -411,9 +406,7 @@
     }
 }
 
-
 /* LIST END */
-
 
 /* TAB*/
 
@@ -445,7 +438,6 @@
         }
     }
 }
-
 
 /* TAB END */
 

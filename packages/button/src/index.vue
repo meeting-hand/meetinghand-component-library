@@ -64,7 +64,7 @@ export default {
       type: String,
       default: "default",
       validator: (_v) =>
-        ["default", "large", "normal", "small", "tiny"].includes(_v),
+        ["default", "large", "normal", "small", "tiny", "text"].includes(_v),
     },
     icon: {
       type: String,

@@ -137,6 +137,9 @@ import SystemMobilePhone from "./systemMobilePhone.vue";
 import UiUpset from "./uiUpset.vue";
 import UiSmile from "./uiSmile.vue";
 import ShareScreen from "./shareScreen.vue";
+import SystemGroupChat from "./systemGroupChat.vue";
+import UiEmojiAdd from "./uiEmojiAdd.vue";
+import SystemPoll from "./systemPoll.vue";
 
 const iconList = [
   "arrow-down",
@@ -274,6 +277,9 @@ const iconList = [
   "ui-upset",
   "ui-smile",
   "share-screen",
+  "system-group-chat",
+  "ui-emoji-add",
+  "system-poll",
 ];
 
 export default {
@@ -414,6 +420,9 @@ export default {
     UiUpset,
     UiSmile,
     ShareScreen,
+    SystemGroupChat,
+    UiEmojiAdd,
+    SystemPoll,
   },
   props: {
     name: {
