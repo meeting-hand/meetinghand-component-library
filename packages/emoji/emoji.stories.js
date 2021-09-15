@@ -10,8 +10,7 @@ storiesOf("Emoji", module).add("Emoji!", () => ({
     };
   },
   template: `
-  v-model:visible="emojiPopoverStatus"
-      {{emoji}}
+      <mh-emoji v-model:visible="visible"/>
     `,
 }));
 
