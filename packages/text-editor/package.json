@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/text-editor",
 	"description": "Meetinghand Component Library Component for text-editor",
-	"version": "0.0.78-alpha.0",
+	"version": "0.0.79-alpha.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"

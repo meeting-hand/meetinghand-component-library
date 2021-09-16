@@ -38,7 +38,12 @@ export default defineComponent({
   props: {
     emojis: {
       type: Array,
-      default: () => ["&#x1F600;", "&#x1F44F;", "&#x1F44D;", "&#x2665;"],
+      default: () => [
+        "&#x1F600;",
+        "&#x1F44F;",
+        "&#x1F44D;",
+        "&#10084;&#65039;",
+      ],
     },
     visible: {
       type: Boolean,
