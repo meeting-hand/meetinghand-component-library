@@ -2,6 +2,7 @@
   <a-modal
     v-model:visible="modelValue"
     :closable="closable"
+    :maskClosable="maskClosable"
     :destroyOnClose="true"
     @cancel="close()"
     :class="[`mh-modal-${size}`, modalType]"
@@ -66,7 +67,10 @@ export default {
     },
     closable: {
       type: Boolean,
-      required: false,
+      default: true,
+    },
+    maskClosable: {
+      type: Boolean,
       default: true,
     },
     dialogTitle: {
