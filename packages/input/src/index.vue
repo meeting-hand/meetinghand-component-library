@@ -20,6 +20,7 @@
       :allowClear="allowClear"
       :textTransform="textTransform"
       :email="email"
+      :autocomplete="autocomplete"
       :id="elId"
       v-model="value"
     />

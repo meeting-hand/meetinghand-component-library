@@ -5,6 +5,7 @@
     :disabled="disabled"
     :allow-clear="allowClear"
     :type="inputType"
+    :autocomplete="autocomplete"
     :id="id"
     v-model:value="value"
   >

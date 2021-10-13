@@ -48,4 +48,8 @@ export default {
         default: null,
         validator: (value) => ["capitalize", "uppercase"].includes(value),
     },
+    autocomplete: {
+        type: String,
+        default: null,
+    },
 };
