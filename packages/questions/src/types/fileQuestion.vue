@@ -9,7 +9,6 @@
         >
           {{ question.label }}
         </mh-button>
-        <p v-if="errorMessage">{{ errorMessage }}</p>
         <input
           type="file"
           style="opacity: 0; position: absolute"
@@ -28,6 +27,7 @@
         </mh-button>
       </div>
     </transition>
+    <span v-if="errorMessage" class="mh-input__error">{{ errorMessage }}</span>
   </div>
 </template>
 <script>
@@ -124,10 +124,7 @@ export default {
     };
 
     const updateValue = (value) => {
-      emit("update:question", {
-        ...props.question,
-        value,
-      });
+      props.question.value = value;
     };
 
     return {
@@ -136,6 +133,7 @@ export default {
       fileInput,
       acceptedTypes,
       removeFile,
+      updateValue,
     };
   },
 };
