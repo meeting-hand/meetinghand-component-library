@@ -25,6 +25,7 @@
         "@meetinghand/paragraph": "file:../textarea",
         "@meetinghand/radio": "file:../radio",
         "@meetinghand/select": "file:../select",
-        "@meetinghand/style": "file:../style"
+        "@meetinghand/style": "file:../style",
+        "@meetinghand/tooltip": "file:../tooltip"
     }
 }
