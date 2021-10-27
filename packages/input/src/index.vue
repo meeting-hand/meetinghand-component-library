@@ -21,6 +21,8 @@
       :textTransform="textTransform"
       :email="email"
       :autocomplete="autocomplete"
+      :maxLength="maxLength"
+      :mask="mask"
       :id="elId"
       v-model="value"
     />

@@ -52,4 +52,11 @@ export default {
         type: String,
         default: null,
     },
+    maxLength: {
+        type: Number,
+        default: null,
+    },
+    mask: {
+        type: Object,
+    },
 };
