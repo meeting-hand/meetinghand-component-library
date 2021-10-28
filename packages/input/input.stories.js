@@ -67,8 +67,8 @@ storiesOf("Input", module).add("Input", () => ({
 			<hr />
 			<h1>Mask</h1>
 			{{ value12 }}
-			<mh-input v-model="value12" :mask="{creditCard: true}" />
-			<mh-input v-model="value13" :mask="{ time: true, timePattern: ['h', 'm'] }" />
+			<mh-input v-model="value12" :mask="{creditCard: true}" label="creditcard" />
+			<mh-input v-model="value13" :mask="{ time: true, timePattern: ['h', 'm'] }" label="time" />
       <br />
       <br />
 			<hr />
