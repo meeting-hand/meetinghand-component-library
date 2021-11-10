@@ -17,15 +17,6 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/banner": "file:../banner",
-        "@meetinghand/button": "file:../button",
-        "@meetinghand/checkbox": "file:../checkbox",
-        "@meetinghand/date-picker": "file:../date-picker",
-        "@meetinghand/input": "file:../input",
-        "@meetinghand/paragraph": "file:../textarea",
-        "@meetinghand/radio": "file:../radio",
-        "@meetinghand/select": "file:../select",
-        "@meetinghand/style": "file:../style",
-        "@meetinghand/tooltip": "file:../tooltip"
+        "@meetinghand/style": "file:../style"
     }
 }

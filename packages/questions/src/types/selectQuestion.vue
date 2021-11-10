@@ -23,7 +23,7 @@
 <script>
 import { computed } from "vue";
 
-import MhSelect from "@meetinghand/select";
+import MhSelect from "../../../select";
 import MhQuestions from "../index.vue";
 
 export default {

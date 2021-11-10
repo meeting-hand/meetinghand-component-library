@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import MhSelect from "@meetinghand/select";
+import MhSelect from "../../../select";
 
 export default {
   components: {

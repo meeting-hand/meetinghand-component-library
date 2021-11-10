@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import MhRadio from "@meetinghand/radio";
+import MhRadio from "../../../radio";
 import MhQuestions from "../index.vue";
 
 export default {

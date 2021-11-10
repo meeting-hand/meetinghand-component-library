@@ -33,8 +33,8 @@
 <script>
 import { ref } from "vue";
 
-import MhInput from "@meetinghand/input";
-import MhButton from "@meetinghand/button";
+import MhInput from "../../../input";
+import MhButton from "../../../button";
 
 export default {
   components: {

@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import MhInput from "@meetinghand/input";
+import MhInput from "../../../input";
 
 export default {
   components: {
