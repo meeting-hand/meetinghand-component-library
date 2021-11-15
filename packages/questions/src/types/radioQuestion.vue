@@ -12,6 +12,7 @@
         <mh-questions
           :errors="errors"
           :deep="deep + 1"
+          :fieldPrefix="fieldPrefix"
           v-if="question.value == option.id"
           v-model:questions="option.eventFormFields"
         />
@@ -44,6 +45,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup() {},

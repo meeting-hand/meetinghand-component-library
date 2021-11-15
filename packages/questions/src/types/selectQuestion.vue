@@ -15,6 +15,7 @@
       <mh-questions
         :errors="errors"
         :deep="deep + 1"
+        :fieldPrefix="fieldPrefix"
         v-model:questions="subFieldedOptions[keySubField].eventFormFields"
       />
     </div>
@@ -47,6 +48,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup(props) {

@@ -34,6 +34,10 @@ export default {
       type: Number,
       default: 1,
     },
+    fieldPrefix: {
+      type: String,
+      default: null,
+    },
   },
   setup() {},
 };

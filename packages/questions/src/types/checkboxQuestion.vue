@@ -12,6 +12,7 @@
         <mh-questions
           :errors="errors"
           :deep="deep + 1"
+          :fieldPrefix="fieldPrefix"
           v-if="
             Array.isArray(question.value) && question.value.includes(option.id)
           "
@@ -46,6 +47,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup() {},

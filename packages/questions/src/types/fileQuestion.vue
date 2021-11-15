@@ -58,6 +58,10 @@ export default {
       type: Number,
       default: 1,
     },
+    fieldPrefix: {
+      type: String,
+      default: null,
+    },
   },
   emits: ["update:question"],
   setup(props, { emit }) {
@@ -116,7 +120,7 @@ export default {
         ];
       }
 
-      return acceptedExtensions;
+      return acceptedExtensions.flat();
     };
 
     const removeFile = () => {
