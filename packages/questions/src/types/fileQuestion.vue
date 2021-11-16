@@ -9,7 +9,6 @@
         >
           {{ question.label }}
         </mh-button>
-        <p v-if="errorMessage">{{ errorMessage }}</p>
         <input
           type="file"
           style="opacity: 0; position: absolute"
@@ -28,13 +27,14 @@
         </mh-button>
       </div>
     </transition>
+    <span v-if="errorMessage" class="mh-input__error">{{ errorMessage }}</span>
   </div>
 </template>
 <script>
 import { ref } from "vue";
 
-import MhInput from "@meetinghand/input";
-import MhButton from "@meetinghand/button";
+import MhInput from "../../../input";
+import MhButton from "../../../button";
 
 export default {
   components: {
@@ -57,6 +57,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   emits: ["update:question"],
@@ -116,7 +120,7 @@ export default {
         ];
       }
 
-      return acceptedExtensions;
+      return acceptedExtensions.flat();
     };
 
     const removeFile = () => {
@@ -124,10 +128,7 @@ export default {
     };
 
     const updateValue = (value) => {
-      emit("update:question", {
-        ...props.question,
-        value,
-      });
+      props.question.value = value;
     };
 
     return {
@@ -136,6 +137,7 @@ export default {
       fileInput,
       acceptedTypes,
       removeFile,
+      updateValue,
     };
   },
 };

@@ -3,8 +3,9 @@
     <component
       :is="`${question.type}Question`"
       :key="question.id"
-      :errorMessage="errors[question.id]"
+      :errorMessage="errors[`${fieldPrefix}${question.id}`]"
       :errors="errors"
+      :fieldPrefix="fieldPrefix"
       :deep="deep"
       v-for="(question, keyQuestion) in questions"
       v-model:question="questions[keyQuestion]"
@@ -57,6 +58,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup() {},

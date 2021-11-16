@@ -17,6 +17,9 @@ storiesOf("Input", module).add("Input", () => ({
             value8: "",
             value9: "",
             value10: "",
+            value11: "",
+            value12: "",
+            value13: "",
         };
     },
     template: `
@@ -56,6 +59,19 @@ storiesOf("Input", module).add("Input", () => ({
 			<mh-input v-model="value10" text-transform="uppercase" label="uppercase"/>
       <br />
       <br />
+			<hr />
+			<h1>Max Length</h1>
+			<mh-input v-model="value11" :max-length="2" />
+      <br />
+      <br />
+			<hr />
+			<h1>Mask</h1>
+			{{ value12 }}
+			<mh-input v-model="value12" :mask="{creditCard: true}" label="creditcard" />
+			<mh-input v-model="value13" :mask="{ time: true, timePattern: ['h', 'm'] }" label="time" />
+      <br />
+      <br />
+			<hr />
     </div>
     `,
 }));

@@ -12,6 +12,7 @@
         <mh-questions
           :errors="errors"
           :deep="deep + 1"
+          :fieldPrefix="fieldPrefix"
           v-if="
             Array.isArray(question.value) && question.value.includes(option.id)
           "
@@ -22,7 +23,7 @@
   </div>
 </template>
 <script>
-import MhCheckbox from "@meetinghand/checkbox";
+import MhCheckbox from "../../../checkbox";
 import MhQuestions from "../index.vue";
 
 export default {
@@ -46,6 +47,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup() {},

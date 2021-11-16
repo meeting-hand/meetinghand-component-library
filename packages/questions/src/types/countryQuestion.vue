@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import MhSelect from "@meetinghand/select";
+import MhSelect from "../../../select";
 
 export default {
   components: {
@@ -31,6 +31,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup() {},

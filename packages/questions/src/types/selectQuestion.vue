@@ -15,6 +15,7 @@
       <mh-questions
         :errors="errors"
         :deep="deep + 1"
+        :fieldPrefix="fieldPrefix"
         v-model:questions="subFieldedOptions[keySubField].eventFormFields"
       />
     </div>
@@ -23,7 +24,7 @@
 <script>
 import { computed } from "vue";
 
-import MhSelect from "@meetinghand/select";
+import MhSelect from "../../../select";
 import MhQuestions from "../index.vue";
 
 export default {
@@ -47,6 +48,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup(props) {

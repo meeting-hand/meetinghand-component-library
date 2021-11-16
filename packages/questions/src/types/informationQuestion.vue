@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import MhBanner from "@meetinghand/banner";
+import MhBanner from "../../../banner";
 
 export default {
   components: {
@@ -31,6 +31,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup() {},

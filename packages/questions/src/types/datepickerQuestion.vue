@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import MhDatepicker from "@meetinghand/date-picker";
+import MhDatepicker from "../../../date-picker";
 
 export default {
   components: {
@@ -32,6 +32,10 @@ export default {
     deep: {
       type: Number,
       default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
     },
   },
   setup() {},
