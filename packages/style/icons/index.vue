@@ -141,6 +141,7 @@ import SystemGroupChat from "./systemGroupChat.vue";
 import UiEmojiAdd from "./uiEmojiAdd.vue";
 import SystemPoll from "./systemPoll.vue";
 import UiCamCheck from "./uiCamCheck.vue";
+import UiHearth from "./uiHearth.vue";
 
 const iconList = [
   "arrow-down",
@@ -282,6 +283,7 @@ const iconList = [
   "ui-emoji-add",
   "system-poll",
   "ui-cam-check",
+  "ui-hearth",
 ];
 
 export default {
@@ -426,6 +428,7 @@ export default {
     UiEmojiAdd,
     SystemPoll,
     UiCamCheck,
+    UiHearth,
   },
   props: {
     name: {
