@@ -40,4 +40,8 @@ export default {
         type: String,
         default: null,
     },
+    multiple: {
+        type: Boolean,
+        default: false,
+    },
 };

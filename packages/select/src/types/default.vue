@@ -47,16 +47,25 @@ export default {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
     };
 
-    const mode = Array.isArray(props.modelValue) ? "multiple" : undefined;
+    const mode =
+      Array.isArray(props.modelValue) || props.multiple
+        ? "multiple"
+        : undefined;
 
     const value = computed({
       get() {
-        return props.modelValue;
+        return props.multiple && !Array.isArray(props.modelValue)
+          ? []
+          : props.modelValue;
       },
       set(data) {
         emit("update:modelValue", data);
       },
     });
+
+    if (mode === "multiple" && !Array.isArray(props.modelValue)) {
+      value.value = [];
+    }
 
     return {
       value,
