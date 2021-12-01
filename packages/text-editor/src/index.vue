@@ -11,9 +11,12 @@
       <quill-editor
         :toolbar="toolbar"
         :placeholder="placeholder"
-        v-model:content="value"
         contentType="html"
         :readOnly="readOnly"
+        ref="deneme"
+        @selectionChange="selectionChange($event)"
+        @editorChange="editorChange($event)"
+        v-model:content="value"
       >
       </quill-editor>
       <div class="editor-footer" v-if="maxWordCount">
@@ -139,6 +142,18 @@ export default {
     icons.script.super = MhEditorIcons.super;
     icons.write = MhEditorIcons.write;
     icons.preview = MhEditorIcons.preview;
+  },
+  methods: {
+    selectionChange(e) {
+      this.$emit("selectionChange", e.range.index);
+    },
+    editorChange(e) {
+      if (e.name === "text-change") {
+        if (e.delta.ops.length > 0 && e.delta.ops[0].retain) {
+          this.$emit("selectionChange", e.delta.ops[0].retain + 1);
+        }
+      }
+    },
   },
 };
 </script>
