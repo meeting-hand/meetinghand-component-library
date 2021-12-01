@@ -6,6 +6,7 @@
       :label="question.label"
       :searchable="question.selectMultiple"
       :error-message="errorMessage"
+      :multiple="question.selectMultiple"
       v-model="question.value"
     />
     <div

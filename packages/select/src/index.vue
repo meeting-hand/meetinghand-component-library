@@ -12,6 +12,7 @@
       :placeholder="placeholder"
       :options="options"
       :searchable="searchable"
+      :multiple="multiple"
       v-model="value"
       :size="size"
     >
