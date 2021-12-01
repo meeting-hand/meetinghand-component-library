@@ -3,37 +3,37 @@ export default {
         type: String,
         default: "section",
         validator: (_v) => ["section", "fullWidth"].includes(_v),
-      },
-      button: {
+    },
+    button: {
         type: String,
         default: null,
         validator: (_v) => [null, "custom", "close"].includes(_v),
-      },
-      text: {
+    },
+    text: {
         type: String,
         default: "",
-      },
-      bannerType: {
+    },
+    bannerType: {
         type: String,
         default: "warning",
-        validator: (_v) => ["warning", "success"].includes(_v),
-      },
-      customText: {
+        validator: (_v) => ["warning", "success", "info"].includes(_v),
+    },
+    customText: {
         type: String,
         default: null,
-      },
-      sectionType: {
+    },
+    sectionType: {
         type: String,
         default: "warning",
         validator: (_v) => ["warning", "success", "info", "error"].includes(_v),
-      },
-      title: {
+    },
+    title: {
         type: String,
-      },
-      icon: {
+    },
+    icon: {
         type: String,
-      },
-      message: {
+    },
+    message: {
         type: String,
-      },
+    },
 }

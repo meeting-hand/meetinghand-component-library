@@ -1,179 +1,179 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
 @import "@meetinghand/style/lib/scss/ant/alert.scss";
-
 .mh-banner {
-	display: flex;
-	.full-width-banner {
-		width: 100%;
-		.full-width-banner-container {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-			padding: $spacing-default 0px;
-			padding-left: 120px;
-			max-width: 1440px;
-
-			.banner-left {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				.banner-icon {
-					.mh-icon {
-						width: $icon-size-medium;
-						height: $icon-size-medium;
-						margin-right: $spacing-medium;
-					}
-				}
-				.banner-text {
-					.banner-text-title {
-						font-weight: $font-weight-large;
-						font-size: $font-size-xlarge;
-						line-height: $line-height-large;
-					}
-					.banner-text-message {
-						font-weight: normal;
-						font-size: $font-size-default;
-						line-height: $line-height-default;
-						color: $color-mono-black;
-					}
-				}
-			}
-
-			.banner-buttons {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				.ant-btn:last-child {
-					margin-left: $spacing-default;
-				}
-			}
-		}
-		&.warning {
-			background-color: $color-secondary-red;
-			.banner-text {
-				color: $color-primary-red;
-			}
-			.mh-icon {
-				fill: $color-primary-red;
-			}
-		}
-		&.success {
-			background-color: $color-secondary-participant;
-			.banner-text {
-				color: $color-primary-participant;
-			}
-			.mh-icon {
-				fill: $color-primary-participant;
-			}
-		}
-	}
+    display: flex;
+    .full-width-banner {
+        width: 100%;
+        .full-width-banner-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: $spacing-default 0px;
+            padding-left: 120px;
+            max-width: 1440px;
+            .banner-left {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .banner-icon {
+                    .mh-icon {
+                        width: $icon-size-medium;
+                        height: $icon-size-medium;
+                        margin-right: $spacing-medium;
+                    }
+                }
+                .banner-text {
+                    .banner-text-title {
+                        font-weight: $font-weight-large;
+                        font-size: $font-size-xlarge;
+                        line-height: $line-height-large;
+                    }
+                    .banner-text-message {
+                        font-weight: normal;
+                        font-size: $font-size-default;
+                        line-height: $line-height-default;
+                        color: $color-mono-black;
+                    }
+                }
+            }
+            .banner-buttons {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .ant-btn:last-child {
+                    margin-left: $spacing-default;
+                }
+            }
+        }
+        &.warning {
+            background-color: $color-secondary-red;
+            .banner-text {
+                color: $color-primary-red;
+            }
+            .mh-icon {
+                fill: $color-primary-red;
+            }
+        }
+        &.success {
+            background-color: $color-secondary-participant;
+            .banner-text {
+                color: $color-primary-participant;
+            }
+            .mh-icon {
+                fill: $color-primary-participant;
+            }
+        }
+        &.info {
+            background-color: $color-secondary-yellow;
+            .banner-text {
+                color: $color-mono-black;
+            }
+            .mh-icon {
+                fill: $color-secondary-yellow;
+            }
+        }
+    }
 }
+
 .ant-alert {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	padding: $spacing-medium !important;
-	border: none;
-	min-width: 312px;
-	.mh-icon {
-		width: $icon-size-default;
-		height: $icon-size-default;
-	}
-
-	&.ant-alert-info {
-		display: flex;
-		align-items: center;
-		background: $color-mono-light-grey-2;
-		border-color: $color-mono-light-grey-2;
-	}
-	.ant-alert-message {
-		font-weight: $font-weight-large;
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-		margin-left: $spacing-small;
-		margin-bottom: 4px;
-		margin-top: 4px;
-	}
-
-	.ant-alert-description {
-		font-size: $font-size-default;
-		line-height: $line-height-default;
-		color: $color-mono-black;
-		margin-left: $spacing-small;
-		margin-bottom: 4px;
-	}
-	&.ant-alert-success {
-		background: $color-secondary-participant;
-		.mh-icon {
-			fill: $color-primary-participant;
-		}
-	}
-	&.ant-alert-info {
-		background: $color-secondary-blue;
-		.mh-icon {
-			fill: $color-primary-blue;
-		}
-	}
-	&.ant-alert-warning {
-		background: $color-secondary-yellow;
-		.mh-icon {
-			fill: $color-primary-onsite;
-		}
-	}
-	&.ant-alert-error {
-		background: $color-secondary-red;
-		.mh-icon {
-			fill: $color-primary-red;
-		}
-	}
-
-	svg {
-		&.ant-alert-icon {
-			width: $icon-size-default;
-			height: $icon-size-default;
-			margin-right: $spacing-xxsmall;
-		}
-	}
-
-	.ant-alert-close-icon {
-		padding: $spacing-xsmall;
-		border-radius: $border-radius-default;
-		.anticon-close {
-			svg {
-				display: none;
-			}
-
-			&::before {
-				@include close-icon("%232196f3");
-				content: "";
-				width: $icon-size-default;
-				height: $icon-size-default;
-				display: block;
-			}
-		}
-		.ant-alert-close-text {
-			text-align: center;
-
-			color: $color-primary-blue;
-			font-weight: $font-weight-default;
-			font-size: $font-size-small;
-			line-height: $line-height-small;
-			padding: 2px $spacing-xsmall;
-
-			border-radius: $border-radius-default;
-		}
-		&:hover {
-			background: $transparent-hover-3;
-		}
-	}
-	&.ant-alert-warning {
-		&.ant-alert-no-icon {
-			.ant-alert-message {
-				margin: $spacing-xxsmall;
-			}
-		}
-	}
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-medium !important;
+    border: none;
+    min-width: 312px;
+    .mh-icon {
+        width: $icon-size-default;
+        height: $icon-size-default;
+    }
+    &.ant-alert-info {
+        display: flex;
+        align-items: center;
+        background: $color-mono-light-grey-2;
+        border-color: $color-mono-light-grey-2;
+    }
+    .ant-alert-message {
+        font-weight: $font-weight-large;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        margin-left: $spacing-small;
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+    .ant-alert-description {
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        margin-left: $spacing-small;
+        margin-bottom: 4px;
+    }
+    &.ant-alert-success {
+        background: $color-secondary-participant;
+        .mh-icon {
+            fill: $color-primary-participant;
+        }
+    }
+    &.ant-alert-info {
+        background: $color-secondary-blue;
+        .mh-icon {
+            fill: $color-primary-blue;
+        }
+    }
+    &.ant-alert-warning {
+        background: $color-secondary-yellow;
+        .mh-icon {
+            fill: $color-primary-onsite;
+        }
+    }
+    &.ant-alert-error {
+        background: $color-secondary-red;
+        .mh-icon {
+            fill: $color-primary-red;
+        }
+    }
+    svg {
+        &.ant-alert-icon {
+            width: $icon-size-default;
+            height: $icon-size-default;
+            margin-right: $spacing-xxsmall;
+        }
+    }
+    .ant-alert-close-icon {
+        padding: $spacing-xsmall;
+        border-radius: $border-radius-default;
+        .anticon-close {
+            svg {
+                display: none;
+            }
+            &::before {
+                @include close-icon("%232196f3");
+                content: "";
+                width: $icon-size-default;
+                height: $icon-size-default;
+                display: block;
+            }
+        }
+        .ant-alert-close-text {
+            text-align: center;
+            color: $color-primary-blue;
+            font-weight: $font-weight-default;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
+            padding: 2px $spacing-xsmall;
+            border-radius: $border-radius-default;
+        }
+        &:hover {
+            background: $transparent-hover-3;
+        }
+    }
+    &.ant-alert-warning {
+        &.ant-alert-no-icon {
+            .ant-alert-message {
+                margin: $spacing-xxsmall;
+            }
+        }
+    }
 }
