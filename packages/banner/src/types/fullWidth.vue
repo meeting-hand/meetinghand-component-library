@@ -5,6 +5,7 @@
         <div class="banner-icon">
           <mh-icon name="system-status-error" v-if="icon === 'warning'" />
           <mh-icon name="system-status-success" v-if="icon === 'success'" />
+          <mh-icon name="system-status-hint" v-if="icon === 'hint'" />
           <mh-icon name="ui-gift" v-if="icon === 'gift'" />
         </div>
         <div class="banner-text">
@@ -34,7 +35,7 @@ export default {
     bannerType: {
       type: String,
       default: "warning",
-      validator: (_v) => ["warning", "success"].includes(_v),
+      validator: (_v) => ["warning", "success", "info"].includes(_v),
     },
     title: {
       type: String,
