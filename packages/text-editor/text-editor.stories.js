@@ -5,7 +5,7 @@ storiesOf("TextEditor", module).add("All", () => ({
     components: { MhTextEditor },
     data() {
         return {
-            text1: "",
+            text1: "<p><b>Gandalf</b> the grey</p>",
             toolbar: [
                 "write",
                 "preview",
