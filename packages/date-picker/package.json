@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/date-picker",
 	"description": "Meetinghand Component Library Component for date-picker",
-	"version": "0.0.91-alpha.0",
+	"version": "0.0.92-alpha.0",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
