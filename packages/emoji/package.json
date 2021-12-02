@@ -18,7 +18,6 @@
     },
     "dependencies": {
         "@meetinghand/button": "file:../button",
-        "@meetinghand/style": "file:../style",
-        "vue": "^3.0.5"
+        "@meetinghand/style": "file:../style"
     }
 }
