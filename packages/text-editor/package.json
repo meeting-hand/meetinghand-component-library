@@ -1,23 +1,23 @@
 {
-	"name": "@meetinghand/text-editor",
-	"description": "Meetinghand Component Library Component for text-editor",
-	"version": "0.0.65-alpha.0",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-	},
-	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-	"bugs": {
-		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-	},
-	"author": "Fatih Sinan Yaman",
-	"main": "./dist/index.js",
-	"module": "./index.js",
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"@meetinghand/style": "file:../style",
-		"@vueup/vue-quill": "^1.0.0-beta.5"
-	}
+    "name": "@meetinghand/text-editor",
+    "description": "Meetinghand Component Library Component for text-editor",
+    "version": "0.0.87-alpha.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "main": "./dist/index.js",
+    "module": "./index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@meetinghand/style": "file:../style",
+        "@vueup/vue-quill": "^1.0.0-beta.7"
+    }
 }

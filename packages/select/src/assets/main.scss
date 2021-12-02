@@ -27,11 +27,6 @@
                 background-color: $transparent-hover;
                 border-color: $color-mono-grey !important;
             }
-            .ant-select-selection-item {
-                padding: $spacing-medium;
-                display: flex;
-                align-items: center;
-            }
             .ant-select-selection-search {
                 left: $spacing-xxsmall;
                 width: 100%;
@@ -109,8 +104,8 @@
                 border-radius: $border-radius-default;
                 .ant-select-arrow {
                     svg {
-                        width: 20px;
-                        height: 20px;
+                        width: $icon-size-default;
+                        height: $icon-size-default;
                         fill: $color-primary-red;
                     }
                 }
@@ -122,6 +117,35 @@
                     border: $border-size-default solid $color-primary-red;
                 }
             }
+        }
+    }
+    &.ant-select-single {
+        .ant-select-selection-item {
+            padding: $spacing-medium;
+            display: flex;
+            align-items: center;
+        }
+    }
+    &.ant-select-multiple {
+        .ant-select-selection-item {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            padding-right: $spacing-xxsmall;
+            .ant-select-selection-item-remove {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg {
+                    width: $icon-size-default;
+                    height: $icon-size-default;
+                    fill: $color-mono-grey-2;
+                }
+            }
+        }
+        .ant-select-selection-item:not(:first-child) {
+            padding-left: $spacing-xxsmall;
         }
     }
 }
@@ -146,6 +170,14 @@
         border-radius: $border-radius-default;
         // margin-bottom: 2px;
         // margin-top: 2px;
+        .ant-select-item-option-state {
+            svg {
+                display: none;
+            }
+        }
+        &.select-item-option-disabled {
+            opacity: 0.7;
+        }
     }
     .ant-select-item-option-selected {
         padding: $spacing-medium $spacing-small;

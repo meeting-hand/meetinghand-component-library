@@ -6,6 +6,7 @@
     ref="telInput"
     :id="id"
     :defaultValue="defaultValue"
+    :autocomplete="autocomplete"
     @change="inputChanged"
     v-if="loaded"
   >

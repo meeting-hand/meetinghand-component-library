@@ -26,7 +26,7 @@ import accounting from "accounting";
 import { convertCurrencyFormat } from "../utils/currency";
 
 import MhIcon from "@meetinghand/style/icons/index.vue";
-import Tooltip from "../../../tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
 
 export default {
   name: "InputNumberCurrency",
@@ -38,7 +38,6 @@ export default {
   props: {
     modelValue: {
       type: Number,
-      required: true,
     },
     min: {
       type: Number,

@@ -257,22 +257,34 @@ storiesOf("Button", module).add("iconic", () => ({
       <mh-button type="iconic" icon="system-other-options" size="default" />
         <hr/>
       <h1>Circular</h1>
-      <mh-button type="iconic" icon="system-other-options" size="circular" />
+      <mh-button type="iconic" icon="system-other-options" circular />
       <hr/>
       <h1>Small</h1>
       <mh-button type="iconic" icon="system-other-options" size="small" />
+			<mh-button type="iconic" icon="system-other-options" circular size="small" />
       <hr/>
       <h1>Tiny</h1>
       <mh-button type="iconic" icon="system-close" size="tiny" />
 			<hr/>
       <h1>Error</h1>
       <mh-button type="iconic" icon="system-other-options" size="default" color="red" />
+			<mh-button type="iconic" icon="system-other-options" circular color="red" />
       <hr/>
       <h1>Disabled</h1>
       <mh-button type="iconic" icon="system-other-options" size="default" disabled />
       <br/><br />
       </div>
 			<mh-button icon="package-participant" type="iconic" size="default" />
+			<br/><br />
+			<h1>Wait</h1>
+      <mh-button type="iconic" icon="system-other-options" size="default" wait />
+			<br />
+			<mh-button type="iconic" icon="system-other-options" circular wait />
+      <br />
+			<mh-button type="iconic" size="text" icon="system-like" circular >
+      Text
+      </mh-button>
+      <br/><br />
 
 
     `,

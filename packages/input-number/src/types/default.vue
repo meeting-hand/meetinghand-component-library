@@ -25,7 +25,7 @@ import { InputNumber } from "ant-design-vue";
 import { computed } from "vue";
 
 import MhIcon from "@meetinghand/style/icons/index.vue";
-import Tooltip from "../../../tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip/src/index.vue";
 
 export default {
   name: "InputNumberDefault",
@@ -37,7 +37,6 @@ export default {
   props: {
     modelValue: {
       type: Number,
-      required: true,
     },
     min: {
       type: Number,

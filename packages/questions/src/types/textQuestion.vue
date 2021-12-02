@@ -1,14 +1,16 @@
 <template>
-  <div class="question-text">
+  <div class="question question-text">
     <mh-input
       :label="question.label"
       :errorMessage="errorMessage"
+      :tooltip="question.information"
+      :textTransform="question.textTransform"
       v-model="question.value"
     />
   </div>
 </template>
 <script>
-import MhInput from "@meetinghand/input";
+import MhInput from "../../../input";
 
 export default {
   components: {
@@ -23,7 +25,20 @@ export default {
       type: String,
       default: "",
     },
+    errors: {
+      type: Object,
+      default: () => {},
+    },
+    deep: {
+      type: Number,
+      default: 1,
+    },
+    fieldPrefix: {
+      type: String,
+      default: null,
+    },
   },
   setup() {},
 };
 </script>
+

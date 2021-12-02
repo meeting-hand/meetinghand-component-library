@@ -11,9 +11,10 @@
       <quill-editor
         :toolbar="toolbar"
         :placeholder="placeholder"
-        v-model:content="value"
         contentType="html"
         :readOnly="readOnly"
+        v-model:content="value"
+        ref="MHEditor"
       >
       </quill-editor>
       <div class="editor-footer" v-if="maxWordCount">
@@ -41,7 +42,7 @@ export default {
     },
     modelValue: {
       type: String,
-      required: true,
+      default: "",
     },
     hasError: {
       type: Boolean,

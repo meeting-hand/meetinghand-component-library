@@ -134,6 +134,15 @@ import VmVimeo from "./vmVimeo.vue";
 import VmGoogleMeet from "./vmGoogleMeet.vue";
 import UiClipboard from "./uiClipboard.vue";
 import SystemMobilePhone from "./systemMobilePhone.vue";
+import UiUpset from "./uiUpset.vue";
+import UiSmile from "./uiSmile.vue";
+import ShareScreen from "./shareScreen.vue";
+import SystemGroupChat from "./systemGroupChat.vue";
+import UiEmojiAdd from "./uiEmojiAdd.vue";
+import SystemPoll from "./systemPoll.vue";
+import UiCamCheck from "./uiCamCheck.vue";
+import UiHearth from "./uiHearth.vue";
+import UiMailNotification from "./uiMailNotification.vue";
 
 const iconList = [
   "arrow-down",
@@ -268,6 +277,15 @@ const iconList = [
   "vm-google-meet",
   "ui-clipboard",
   "system-mobile-phone",
+  "ui-upset",
+  "ui-smile",
+  "share-screen",
+  "system-group-chat",
+  "ui-emoji-add",
+  "system-poll",
+  "ui-cam-check",
+  "ui-hearth",
+  "ui-mail-notification",
 ];
 
 export default {
@@ -405,6 +423,15 @@ export default {
     VmGoogleMeet,
     UiClipboard,
     SystemMobilePhone,
+    UiUpset,
+    UiSmile,
+    ShareScreen,
+    SystemGroupChat,
+    UiEmojiAdd,
+    SystemPoll,
+    UiCamCheck,
+    UiHearth,
+    UiMailNotification,
   },
   props: {
     name: {

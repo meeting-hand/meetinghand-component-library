@@ -4,6 +4,7 @@
     :class="[{ error: errorStatus }]"
     :disabled="disabled"
     :id="id"
+    :autocomplete="autocomplete"
     v-model:value="value"
   >
   </a-input-password>

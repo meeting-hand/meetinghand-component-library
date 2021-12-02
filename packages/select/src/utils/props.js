@@ -1,6 +1,6 @@
 export default {
     modelValue: {
-        type: [String, Number],
+        type: [String, Number, Array],
         default: null,
     },
     options: {
@@ -39,5 +39,9 @@ export default {
     id: {
         type: String,
         default: null,
+    },
+    multiple: {
+        type: Boolean,
+        default: false,
     },
 };

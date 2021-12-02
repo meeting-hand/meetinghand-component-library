@@ -8,10 +8,12 @@
     :options="options"
     option-filter-prop="label"
     :show-search="searchable"
-    v-model:value="value"
     :size="size"
     :suffixIcon="suffixIcon"
+    :removeIcon="removeIcon"
     :id="id"
+    :mode="mode"
+    v-model:value="value"
   >
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
@@ -24,6 +26,7 @@ import { computed, h } from "vue";
 
 import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
+import SystemClose from "@meetinghand/style/icons/systemClose.vue";
 
 import defaultProps from "../utils/props";
 
@@ -38,23 +41,38 @@ export default {
   setup(props, { emit }) {
     const suffixIcon = h(ArrowIcon);
 
+    const removeIcon = h(SystemClose);
+
     const filterOption = (input, option) => {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
     };
 
+    const mode =
+      Array.isArray(props.modelValue) || props.multiple
+        ? "multiple"
+        : undefined;
+
     const value = computed({
       get() {
-        return props.modelValue;
+        return props.multiple && !Array.isArray(props.modelValue)
+          ? []
+          : props.modelValue;
       },
       set(data) {
         emit("update:modelValue", data);
       },
     });
 
+    if (mode === "multiple" && !Array.isArray(props.modelValue)) {
+      value.value = [];
+    }
+
     return {
       value,
       filterOption,
       suffixIcon,
+      mode,
+      removeIcon,
     };
   },
 };

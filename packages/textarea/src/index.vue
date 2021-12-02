@@ -22,7 +22,7 @@
 <script>
 import { Input } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
-import Tooltip from "../../tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip/src/index.vue";
 
 export default {
   name: "MhTextArea",
@@ -34,7 +34,7 @@ export default {
   props: {
     modelValue: {
       type: String,
-      required: true,
+      default: "",
     },
     placeholder: {
       type: String,

@@ -18,7 +18,11 @@
       :leftIcon="leftIcon"
       :rightIcon="rightIcon"
       :allowClear="allowClear"
+      :textTransform="textTransform"
       :email="email"
+      :autocomplete="autocomplete"
+      :maxLength="maxLength"
+      :mask="mask"
       :id="elId"
       v-model="value"
     />
@@ -29,7 +33,7 @@
 import Default from "./types/default.vue";
 import Password from "./types/password.vue";
 import Tel from "./types/tel.vue";
-import Tooltip from "../../tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 import props from "./utils/props";
 
