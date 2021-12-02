@@ -142,6 +142,7 @@ import UiEmojiAdd from "./uiEmojiAdd.vue";
 import SystemPoll from "./systemPoll.vue";
 import UiCamCheck from "./uiCamCheck.vue";
 import UiHearth from "./uiHearth.vue";
+import UiMailNotification from "./uiMailNotification.vue";
 
 const iconList = [
   "arrow-down",
@@ -284,6 +285,7 @@ const iconList = [
   "system-poll",
   "ui-cam-check",
   "ui-hearth",
+  "ui-mail-notification",
 ];
 
 export default {
@@ -429,6 +431,7 @@ export default {
     SystemPoll,
     UiCamCheck,
     UiHearth,
+    UiMailNotification,
   },
   props: {
     name: {
