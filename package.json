@@ -24,9 +24,9 @@
         "@storybook/addon-essentials": "^6.3.7",
         "@storybook/addon-links": "^6.3.7",
         "@storybook/addon-postcss": "^2.0.0",
-        "@storybook/vue3": "^6.3.7",
+        "@storybook/vue3": "^6.4.4",
         "@vitejs/plugin-vue": "^1.1.1",
-        "@vue/compiler-sfc": "^3.0.5",
+        "@vue/compiler-sfc": "^3.2.23",
         "babel-loader": "^8.2.2",
         "chalk": "^4.1.1",
         "css-loader": "^5.2.4",
@@ -35,12 +35,12 @@
         "resolve-url-loader": "^4.0.0",
         "sass": "^1.32.13",
         "sass-loader": "^10",
-        "vite": "^2.0.0-beta.44",
+        "vite": "^2.6.14",
         "vue-loader": "^16.2.0",
         "yargs": "^16.2.0"
     },
     "dependencies": {
         "ant-design-vue": "2.1.4",
-        "vue": "^3.2.1"
+        "vue": "^3.2.23"
     }
 }
