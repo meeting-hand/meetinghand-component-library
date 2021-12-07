@@ -1,5 +1,5 @@
-module.exports =  ({ packageName }) => {
-  return `{
+module.exports = ({ packageName }) => {
+    return `{
     "name": "@meetinghand/${packageName}",
     "description": "Meetinghand Component Library Component for ${packageName}",
     "version": "0.0.0",
@@ -38,7 +38,6 @@ module.exports =  ({ packageName }) => {
         "dist/*"
     ],
     "dependencies": {
-        "vue": "^3.0.5",
         "@meetinghand/style": "file:../style"
     }
 }
