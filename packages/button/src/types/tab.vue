@@ -5,15 +5,18 @@
     :htmlType="submit ? 'submit' : 'button'"
     :disabled="disabled"
   >
+    <mh-icon :name="icon" v-if="icon" />
     <slot></slot>
   </a-button>
 </template>
 <script>
 import { Button } from "ant-design-vue";
+import MHIcon from "@meetinghand/style/icons/index.vue";
 export default {
   name: "MhButtonTab",
   components: {
     [Button.name]: Button,
+    "mh-icon": MHIcon,
   },
   props: {
     disabled: {
@@ -27,6 +30,10 @@ export default {
     isActive: {
       type: Boolean,
       default: false,
+    },
+    icon: {
+      type: String,
+      default: null,
     },
   },
 };

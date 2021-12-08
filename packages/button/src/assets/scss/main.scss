@@ -53,7 +53,9 @@
     }
 }
 
+
 /* PRIMARY END */
+
 
 /* SECONDARY */
 
@@ -126,7 +128,9 @@
     }
 }
 
+
 /* SECONDARY END */
+
 
 /* TEXT */
 
@@ -158,7 +162,9 @@
     }
 }
 
+
 /* TEXT END */
+
 
 /* SMALL */
 
@@ -179,7 +185,9 @@
     }
 }
 
+
 /* SMALL END */
+
 
 /* ROW */
 
@@ -204,7 +212,9 @@
     }
 }
 
+
 /* ROW END */
+
 
 /* ICONIC */
 
@@ -267,7 +277,9 @@
     }
 }
 
+
 /* ICONIC END */
+
 
 /* SOCIAL */
 
@@ -319,7 +331,9 @@
     }
 }
 
+
 /* SOCIAL END */
+
 
 /* MENU */
 
@@ -350,7 +364,9 @@
     }
 }
 
+
 /* MENU END */
+
 
 /* LIST */
 
@@ -406,7 +422,9 @@
     }
 }
 
+
 /* LIST END */
+
 
 /* TAB*/
 
@@ -437,7 +455,14 @@
             color: $color-primary-blue;
         }
     }
+    .mh-icon {
+        width: $icon-size-default;
+        height: $icon-size-default;
+        fill: $color-mono-black;
+        margin-right: $spacing-small;
+    }
 }
+
 
 /* TAB END */
 
