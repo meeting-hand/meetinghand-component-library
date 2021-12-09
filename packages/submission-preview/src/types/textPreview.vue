@@ -12,7 +12,7 @@
         :key="index"
       >
         <p>{{ author.firstname }} {{ author.lastname }}</p>
-        <sup v-if="submission.authors.length > 1">{{ index + 1 }}</sup>
+        <sup v-if="authors.length > 1">{{ index + 1 }}</sup>
       </div>
     </div>
     <div class="abstract-flex-col">
