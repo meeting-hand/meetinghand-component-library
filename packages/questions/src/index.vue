@@ -61,7 +61,7 @@ export default {
     },
     fieldPrefix: {
       type: String,
-      default: null,
+      default: "",
     },
   },
   setup() {},
