@@ -11,8 +11,8 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/submission-preview.umd.js",
-    "module": "./dist/@meetinghand/submission-preview.es.js",
+    "main": "./dist/index.js",
+    "module": "./index.js",
     "publishConfig": {
         "access": "public"
     },
