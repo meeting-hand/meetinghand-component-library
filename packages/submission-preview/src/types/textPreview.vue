@@ -37,13 +37,13 @@
         <div v-html="abstract.value"></div>
       </div>
     </div>
-    <div class="abstract-keywords" v-if="keywords">
+    <div class="abstract-keywords" v-if="keywords.length > 0">
       <p>{{ labels.keywords }}:</p>
       <span v-for="(keyword, index) in keywords" :key="index">
         {{ keyword }}
       </span>
     </div>
-    <div class="abstract-references" v-if="references">
+    <div class="abstract-references" v-if="references.length > 0">
       <h2 class="file-preview-title">{{ labels.references }}:</h2>
       <ul>
         <li v-for="(reference, index) in references" :key="index">

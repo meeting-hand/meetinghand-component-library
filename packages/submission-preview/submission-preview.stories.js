@@ -12,8 +12,8 @@ storiesOf("SubmissionPreview", module).add("SubmissionPreview!", () => ({
         };
     },
     template: `
-      <SubmissionPreview type="textPreview" topic="Topdasdsajflajjklfafjlaiccc" title="Title" :authors="authors" :body="body" :keywords="keywords" :references="references"/>
+      <SubmissionPreview type="text" topic="Topdasdsajflajjklfafjlaiccc" title="Title" :authors="authors" :body="body" :keywords="keywords" :references="references"/>
       <br/>
-      <SubmissionPreview type="filePreview" :body="body"/>
+      <SubmissionPreview type="file" :body="body"/>
     `,
 }));
