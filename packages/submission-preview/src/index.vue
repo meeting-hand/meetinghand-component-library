@@ -16,20 +16,20 @@
 <script >
 import { defineComponent } from "vue";
 
-import TextPreview from "./types/textPreview.vue";
-import FilePreview from "./types/filePreview.vue";
+import Text from "./types/textPreview.vue";
+import File from "./types/filePreview.vue";
 
 export default defineComponent({
   name: "SubmissionPreview",
   components: {
-    TextPreview,
-    FilePreview,
+    Text,
+    File,
   },
   props: {
     type: {
       type: String,
-      default: "textPreview",
-      validator: (_v) => ["textPreview", "filePreview"].includes(_v),
+      default: "text",
+      validator: (_v) => ["text", "file"].includes(_v),
     },
     topic: {
       type: String,
