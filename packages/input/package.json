@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/input",
     "description": "Meetinghand Component Library Component for input",
-    "version": "0.0.103-alpha.0",
+    "version": "0.0.104-alpha.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
