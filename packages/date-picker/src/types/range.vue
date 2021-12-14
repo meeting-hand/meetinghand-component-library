@@ -49,8 +49,8 @@ export default {
       default: () => ["", ""],
     },
     format: {
-      type: Array,
-      default: () => ["DD.MM.YYYY", "DD.MM.YYYY"],
+      type: String,
+      default: "DD.MM.YYYY",
     },
     hasError: {
       type: Boolean,
