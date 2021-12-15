@@ -86,12 +86,12 @@
     border: none;
     min-width: 312px;
     .mh-icon {
-        width: 28px;
-        height: 28px;
+        width: $icon-size-medium;
+        height: $icon-size-medium;
     }
     .ant-alert-icon {
-        width: 28px;
-        height: 28px;
+        width: $icon-size-medium;
+        height: $icon-size-medium;
     }
     &.ant-alert-info {
         display: flex;
@@ -101,9 +101,9 @@
     }
     .ant-alert-message {
         font-weight: $font-weight-large;
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        margin-left: $spacing-small;
+        font-size: $font-size-xlarge;
+        line-height: $line-height-large;
+        color: $color-mono-black;
         margin-bottom: 4px;
         margin-top: 4px;
     }
@@ -139,8 +139,8 @@
     }
     svg {
         &.ant-alert-icon {
-            width: 28px;
-            height: 28px;
+            width: $icon-size-medium;
+            height: $icon-size-medium;
             margin-right: $spacing-xxsmall;
         }
     }
