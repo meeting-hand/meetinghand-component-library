@@ -36,7 +36,7 @@ export default {
       default: "",
     },
     format: {
-      type: [String, Array],
+      type: String,
       default: "DD.MM.YYYY",
     },
     hasError: {
