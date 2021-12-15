@@ -86,8 +86,12 @@
     border: none;
     min-width: 312px;
     .mh-icon {
-        width: $icon-size-default;
-        height: $icon-size-default;
+        width: 28px;
+        height: 28px;
+    }
+    .ant-alert-icon {
+        width: 28px;
+        height: 28px;
     }
     &.ant-alert-info {
         display: flex;
@@ -107,7 +111,6 @@
         font-size: $font-size-default;
         line-height: $line-height-default;
         color: $color-mono-black;
-        margin-left: $spacing-small;
         margin-bottom: 4px;
     }
     &.ant-alert-success {
@@ -136,8 +139,8 @@
     }
     svg {
         &.ant-alert-icon {
-            width: $icon-size-default;
-            height: $icon-size-default;
+            width: 28px;
+            height: 28px;
             margin-right: $spacing-xxsmall;
         }
     }
