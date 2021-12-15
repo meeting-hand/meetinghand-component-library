@@ -1,5 +1,4 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
-
 .questions {
     .question:not(:last-child) {
         margin-bottom: $spacing-default;
@@ -40,6 +39,9 @@
             line-height: $line-height-default;
             color: $color-mono-black;
         }
+    }
+    .other-input {
+        margin-top: $spacing-medium;
     }
 }
 

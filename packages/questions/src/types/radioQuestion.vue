@@ -24,7 +24,11 @@
           :data="true"
           @update:modelValue="question.value = null"
         />
-        <mh-input v-model="question.value" v-if="otherOption" />
+        <mh-input
+          v-model="question.value"
+          v-if="otherOption"
+          class="other-input"
+        />
       </li>
     </ul>
     <span v-if="errorMessage" class="mh-input__error">
