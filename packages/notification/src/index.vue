@@ -54,7 +54,7 @@ export default {
         description: props.description,
         message: props.message,
         duration: props.duration,
-        class: props.type,
+        class: [props.type, { title: props.message }],
         icon: h(icons[props.type]),
         placement: props.placement,
         key: key,

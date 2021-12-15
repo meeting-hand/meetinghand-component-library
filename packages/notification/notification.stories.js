@@ -5,44 +5,44 @@ import MHIcon from "@meetinghand/style/icons/index.vue";
 import "../../assets/storybook/storybook.css";
 
 storiesOf("Notification", module).add("All", () => ({
-	components: { MHIcon, MhNotification },
-	data() {
-		return {
-			notificationSuccessStatus: false,
-			notificationSuccess: {
-				type: "success title",
-				description: "Lorem ipsum dolor sit amet.",
-				duration: 0,
-				placement: "topRight",
-        message: "Title"
-			},
-			notificationErrorStatus: false,
-			notificationError: {
-				type: "error title",
-				description: "Lorem ipsum dolor sit amet.",
-				duration: 0,
-				placement: "topRight",
-        message: "Title"
-			},
-			notificationInfoStatus: false,
-			notificationInfo: {
-				type: "info",
-				description: "Lorem ipsum dolor sit amet.",
-				duration: 0,
-				placement: "topRight",
-        message: "message"
-			},
-			notificationHintStatus: false,
-			notificationHint: {
-				type: "hint",
-				description: "Lorem ipsum dolor sit amet.",
-				duration: 0,
-				placement: "topRight",
-        message: "message"
-			},
-		};
-	},
-	template: `
+    components: { MHIcon, MhNotification },
+    data() {
+        return {
+            notificationSuccessStatus: false,
+            notificationSuccess: {
+                type: "success",
+                description: "Lorem ipsum dolor sit amet.",
+                duration: 0,
+                placement: "topRight",
+                message: "Title"
+            },
+            notificationErrorStatus: false,
+            notificationError: {
+                type: "error",
+                description: "Lorem ipsum dolor sit amet.",
+                duration: 0,
+                placement: "topRight",
+                message: "Title"
+            },
+            notificationInfoStatus: false,
+            notificationInfo: {
+                type: "info",
+                description: "Lorem ipsum dolor sit amet.",
+                duration: 0,
+                placement: "topRight",
+                message: "message"
+            },
+            notificationHintStatus: false,
+            notificationHint: {
+                type: "hint",
+                description: "Lorem ipsum dolor sit amet.",
+                duration: 0,
+                placement: "topRight",
+                message: "message"
+            },
+        };
+    },
+    template: `
   <div class="storybook-notification">
       <mh-notification
       :placement="notificationSuccess.placement"
