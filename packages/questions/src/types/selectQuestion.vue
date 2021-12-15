@@ -4,9 +4,7 @@
       :options="selectOptions"
       :placeholder="question.information"
       :label="question.label"
-      :searchable="question.selectMultiple"
       :error-message="errorMessage"
-      :multiple="question.selectMultiple"
       v-model="question.value"
     />
     <div
@@ -57,10 +55,8 @@ export default {
   },
   setup(props) {
     const subFieldedOptions = computed(() => {
-      return props.question.eventFormFieldOptions.filter((_o) =>
-        props.question.selectMultiple && Array.isArray(props.question.value)
-          ? props.question.value.find((optionID) => optionID == _o.id)
-          : props.question.value === _o.id
+      return props.question.eventFormFieldOptions.filter(
+        (_o) => props.question.value === _o.id
       );
     });
 
