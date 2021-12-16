@@ -957,11 +957,12 @@ storiesOf("Questions", module).add("Questions!", () => ({
                     information_icon: "info",
                     order: 3,
                     fieldable_id: [143, 144, 264],
+                    value: "2021-12-01",
                 },
             ],
         };
     },
     template: `
-      <questions v-model:questions="questions" :errors="errors" dateFormat="US" />
+      <questions v-model:questions="questions" :errors="errors" dateFormat="EU" />
     `,
 }));
