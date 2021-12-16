@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { defineAsyncComponent } from "vue";
+import { defineAsyncComponent, provide } from "vue";
 
 import TextQuestion from "./types/textQuestion.vue";
 import TelQuestion from "./types/telQuestion.vue";
@@ -63,8 +63,15 @@ export default {
       type: String,
       default: "",
     },
+    dateFormat: {
+      type: String,
+      default: "US",
+      validator: (value) => ["EU", "US"].includes(value),
+    },
   },
-  setup() {},
+  setup(props) {
+    provide("dateFormat", props.dateFormat);
+  },
 };
 </script>
 

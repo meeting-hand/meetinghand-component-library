@@ -12,6 +12,8 @@
 <script>
 import MhDatepicker from "../../../date-picker";
 
+import { inject } from "vue";
+
 export default {
   components: {
     MhDatepicker,
@@ -38,6 +40,15 @@ export default {
       default: null,
     },
   },
-  setup() {},
+  setup() {
+    const dateFormatLocation = inject("dateFormat");
+
+    const dateFormat =
+      dateFormatLocation === "US" ? "MM.DD.YYYY" : "DD.MM.YYYY";
+
+    return {
+      dateFormat,
+    };
+  },
 };
 </script>
