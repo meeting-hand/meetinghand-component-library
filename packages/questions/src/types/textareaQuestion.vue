@@ -6,6 +6,7 @@
       :title="question.label"
       :tooltip="question.information"
       :error-message="errorMessage"
+      :placeholder="question.hint"
       v-model="question.value"
     />
   </div>

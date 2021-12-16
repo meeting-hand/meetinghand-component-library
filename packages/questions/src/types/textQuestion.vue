@@ -5,6 +5,7 @@
       :errorMessage="errorMessage"
       :tooltip="question.information"
       :textTransform="question.textTransform"
+      :placeholder="question.hint"
       v-model="question.value"
     />
   </div>
