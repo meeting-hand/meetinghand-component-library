@@ -3,7 +3,7 @@
     <mh-datepicker
       v-model="question.value"
       :placeholder="question.information"
-      format="MM.DD.YYYY"
+      :format="dateFormat"
       :error-message="errorMessage"
       :label="question.label"
     />
@@ -11,6 +11,8 @@
 </template>
 <script>
 import MhDatepicker from "../../../date-picker";
+
+import { inject } from "vue";
 
 export default {
   components: {
@@ -38,6 +40,15 @@ export default {
       default: null,
     },
   },
-  setup() {},
+  setup() {
+    const dateFormatLocation = inject("dateFormat");
+
+    const dateFormat =
+      dateFormatLocation === "US" ? "MM.DD.YYYY" : "DD.MM.YYYY";
+
+    return {
+      dateFormat,
+    };
+  },
 };
 </script>

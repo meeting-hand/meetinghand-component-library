@@ -932,10 +932,36 @@ storiesOf("Questions", module).add("Questions!", () => ({
                         },
                     ],
                 },
+                {
+                    id: 1824,
+                    type: "datepicker",
+                    required: true,
+                    label: "Date Picker",
+                    information: "",
+                    text_transform: null,
+                    text_min_char: null,
+                    text_max_char: null,
+                    textarea_rows: 2,
+                    textarea_min_char: null,
+                    textarea_max_char: null,
+                    number_initial: null,
+                    number_min: null,
+                    number_max: null,
+                    number_step_count: 5,
+                    file_accept_image: false,
+                    file_accept_text: false,
+                    file_accept_spreadsheet: false,
+                    file_accept_presentation: false,
+                    file_accept_compressed: false,
+                    radio_other_option: false,
+                    information_icon: "info",
+                    order: 3,
+                    fieldable_id: [143, 144, 264],
+                },
             ],
         };
     },
     template: `
-      <questions v-model:questions="questions" :errors="errors" />
+      <questions v-model:questions="questions" :errors="errors" dateFormat="US" />
     `,
 }));
