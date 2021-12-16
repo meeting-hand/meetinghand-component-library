@@ -24,6 +24,12 @@
         {{ country.label }}
       </span>
     </a-select-option>
+    <template v-slot:notFoundContent>
+      <div class="mh-select-empty-state">
+        <status-error />
+        <span>{{ emptyStateDescription }}</span>
+      </div>
+    </template>
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -36,6 +42,7 @@ import { computed, h, ref } from "vue";
 import { Select } from "ant-design-vue";
 
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
+import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 
 import defaultProps from "../utils/props";
 
@@ -44,6 +51,7 @@ export default {
   components: {
     [Select.name]: Select,
     ASelectOption: Select.Option,
+    StatusError,
   },
   props: {
     ...defaultProps,

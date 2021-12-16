@@ -46,6 +46,6 @@ export default {
     },
     emptyStateDescription: {
         type: String,
-        default: "no results were found"
+        default: "No data"
     }
 };
