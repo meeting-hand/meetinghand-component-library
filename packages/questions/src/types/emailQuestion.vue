@@ -5,6 +5,7 @@
       :errorMessage="errorMessage"
       v-model="question.value"
       :tooltip="question.information"
+      :placeholder="question.hint"
       email
     />
   </div>
