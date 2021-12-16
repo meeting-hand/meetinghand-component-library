@@ -7,8 +7,6 @@ storiesOf("TextEditor", module).add("All", () => ({
         return {
             text1: "<p><b>Gandalf</b> the grey</p>",
             toolbar: [
-                "write",
-                "preview",
                 "undo",
                 "redo",
                 "bold",

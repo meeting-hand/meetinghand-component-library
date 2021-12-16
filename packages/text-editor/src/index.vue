@@ -138,8 +138,6 @@ export default {
     icons.align.right = MhEditorIcons.right;
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
-    icons.write = MhEditorIcons.write;
-    icons.preview = MhEditorIcons.preview;
   },
 };
 </script>
