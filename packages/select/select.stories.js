@@ -39,7 +39,7 @@ storiesOf("Select", module).add("Default", () => ({
       <mh-select v-model="select1" :options="selectOpts" placeholder="Birini seciniz" /> <span v-if="select1" style="margin-left: 30px;">Value: {{ select1 }}</span>
 			<hr />
 			<h1>Searchable</h1>
-      <mh-select v-model="select2" :options="selectOpts" searchable placeholder="Birini seciniz" /> <span v-if="select2" style="margin-left: 30px;">Value: {{ select2 }}</span>
+      <mh-select v-model="select2" :options="selectOpts" searchable placeholder="Birini seciniz" /> <span v-if="select2" style="margin-left: 30px;" image="dsad">Value: {{ select2 }}</span>
 			<hr />
 			<h1>Disabled</h1>
       <mh-select v-model="select3" :options="selectOpts" searchable placeholder="Birini seciniz" disabled /> <span v-if="select3" style="margin-left: 30px;">Value: {{ select3 }}</span>

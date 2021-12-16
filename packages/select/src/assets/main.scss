@@ -214,3 +214,18 @@
     margin-bottom: $spacing-xsmall;
     cursor: pointer;
 }
+
+.mh-select-empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $color-mono-grey;
+    text-align: center;
+    svg {
+        fill: $color-mono-grey;
+        width: 28px;
+        height: 28px;
+        margin-top: 4px;
+    }
+}

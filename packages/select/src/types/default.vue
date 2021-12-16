@@ -13,8 +13,15 @@
     :removeIcon="removeIcon"
     :id="id"
     :mode="mode"
+    :image="image"
     v-model:value="value"
   >
+    <template v-slot:notFoundContent>
+      <div class="mh-select-empty-state">
+        <status-error />
+        <span>{{ emptyStateDescription }}</span>
+      </div>
+    </template>
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -27,6 +34,7 @@ import { computed, h } from "vue";
 import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
+import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 
 import defaultProps from "../utils/props";
 
@@ -34,6 +42,7 @@ export default {
   name: "default",
   components: {
     [Select.name]: Select,
+    StatusError,
   },
   props: {
     ...defaultProps,
