@@ -962,6 +962,6 @@ storiesOf("Questions", module).add("Questions!", () => ({
         };
     },
     template: `
-      <questions v-model:questions="questions" :errors="errors" dateFormat="EU" />
+      <questions v-model:questions="questions" :errors="errors" dateFormat="US" />
     `,
 }));

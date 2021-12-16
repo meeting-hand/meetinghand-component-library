@@ -3,7 +3,7 @@
     <mh-datepicker
       v-model="question.value"
       :placeholder="question.information"
-      format="MM.DD.YYYY"
+      :format="dateFormat"
       :error-message="errorMessage"
       :label="question.label"
     />
