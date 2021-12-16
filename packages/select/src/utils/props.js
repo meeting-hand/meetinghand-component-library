@@ -44,4 +44,8 @@ export default {
         type: Boolean,
         default: false,
     },
+    emptyStateDescription: {
+        type: String,
+        default: "No data"
+    }
 };

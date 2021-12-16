@@ -15,6 +15,7 @@
       :multiple="multiple"
       v-model="value"
       :size="size"
+      :emptyStateDescription="emptyStateDescription"
     >
     </component>
   </div>
