@@ -53,9 +53,15 @@ export default defineComponent({
       type: Array,
       default: [],
     },
+    dateFormat: {
+      type: String,
+      default: "US",
+      validator: (value) => ["EU", "US"].includes(value),
+    },
   },
   setup(props) {
     provide("questionSetupData", readonly(props.questionSetupData));
+    provide("dateFormat", props.dateFormat);
   },
 });
 </script>

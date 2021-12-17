@@ -3,12 +3,11 @@
     <label>{{ question.label }}</label>
     <div class="value">
       <span>{{ question.value }}</span>
-      <!-- TODO: date should be converted -->
     </div>
   </div>
 </template>
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, inject } from "vue";
 
 export default defineComponent({
   props: {
@@ -17,7 +16,30 @@ export default defineComponent({
       default: "",
     },
   },
-  setup() {
+  setup(props) {
+    const dateFormatLocation = inject("dateFormat");
+
+    if (
+      props.question.value &&
+      new Date(props.question.value) instanceof Date
+    ) {
+      let value = props.question.value;
+      const day = new Date(props.question.value)
+        .getDate()
+        .toString()
+        .padStart(2, "0");
+      const month = (new Date(props.question.value).getMonth() + 1)
+        .toString()
+        .padStart(2, "0");
+      const year = new Date(props.question.value).getFullYear();
+      if (dateFormatLocation === "US") {
+        value = `${month}.${day}.${year}`;
+      } else {
+        value = `${day}.${month}.${year}`;
+      }
+      props.question.value = value;
+    }
+
     return {};
   },
 });
