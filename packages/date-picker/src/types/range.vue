@@ -14,7 +14,7 @@
   <a-range-picker
     v-model:value="value"
     :format="format"
-    :valueFormat="format[0]"
+    :valueFormat="format"
     :class="[
       { error: hasError },
       'mh-range-picker',
