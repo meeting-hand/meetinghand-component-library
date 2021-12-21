@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/questions",
     "description": "Meetinghand Component Library Component for questions",
-    "version": "0.0.50-alpha.0",
+    "version": "0.0.51-alpha.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -17,8 +17,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/style": "file:../style",
-        "@meetinghand/checkbox": "file:../checkbox"
-
+        "@meetinghand/checkbox": "file:../checkbox",
+        "@meetinghand/style": "file:../style"
     }
 }
