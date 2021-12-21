@@ -17,6 +17,8 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/style": "file:../style"
+        "@meetinghand/style": "file:../style",
+        "@meetinghand/checkbox": "file:../checkbox"
+
     }
 }
