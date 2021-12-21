@@ -6,7 +6,7 @@
       <div
         :class="[
           'abstract-authors-names',
-          author.isPresenter ? 'presenter-author' : '',
+          { 'presenter-author': author.isPresenter },
         ]"
         v-for="(author, index) in authors"
         :key="index"
@@ -21,10 +21,18 @@
         v-for="(author, index) in authors"
         :key="index"
       >
-        <sup v-if="authors.length > 1">{{ index + 1 }}</sup>
-        <span>{{ author.institution }}</span>
-        <span>{{ author.city }}</span>
-        <span>{{ author.country }}</span>
+        <sup
+          v-if="
+            (authors.length > 1 && author.institution) ||
+            author.city ||
+            author.country
+          "
+        >
+          {{ index + 1 }}
+        </sup>
+        <span v-if="author.institution">{{ author.institution }}</span>
+        <span v-if="author.city">{{ author.city }}</span>
+        <span v-if="author.country">{{ author.country }}</span>
       </div>
     </div>
     <div class="abstract-body">
@@ -57,7 +65,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
 
 export default defineComponent({
   props: {
