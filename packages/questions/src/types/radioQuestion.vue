@@ -32,7 +32,7 @@
       </li>
     </ul>
     <span v-if="errorMessage" class="mh-input__error">
-      {{ errorMessage }} hey
+      {{ errorMessage }}
     </span>
   </div>
 </template>

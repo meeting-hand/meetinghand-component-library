@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { provide } from "vue";
+import { defineAsyncComponent, provide } from "vue";
 
 import TextQuestion from "./types/textQuestion.vue";
 import TelQuestion from "./types/telQuestion.vue";
@@ -24,9 +24,6 @@ import CountryQuestion from "./types/countryQuestion.vue";
 import InformationQuestion from "./types/informationQuestion.vue";
 import FileQuestion from "./types/fileQuestion.vue";
 import DatepickerQuestion from "./types/datepickerQuestion.vue";
-import CheckboxQuestion from "./types/checkboxQuestion.vue";
-import RadioQuestion from "./types/radioQuestion.vue";
-import SelectQuestion from "./types/selectQuestion.vue";
 
 export default {
   name: "Questions",
@@ -38,9 +35,15 @@ export default {
     CountryQuestion,
     InformationQuestion,
     FileQuestion,
-    CheckboxQuestion,
-    RadioQuestion,
-    SelectQuestion,
+    CheckboxQuestion: defineAsyncComponent(() =>
+      import("./types/checkboxQuestion.vue")
+    ),
+    RadioQuestion: defineAsyncComponent(() =>
+      import("./types/radioQuestion.vue")
+    ),
+    SelectQuestion: defineAsyncComponent(() =>
+      import("./types/selectQuestion.vue")
+    ),
     DatepickerQuestion,
   },
   props: {
