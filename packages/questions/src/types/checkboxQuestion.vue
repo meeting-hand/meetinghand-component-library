@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import MhCheckbox from "@meetinghand/checkbox";
+import MhCheckbox from "../../../checkbox";
 import MhQuestions from "../index.vue";
 
 export default {
