@@ -15,6 +15,7 @@
         :errors="errors"
         :deep="deep + 1"
         :fieldPrefix="fieldPrefix"
+        :dateFormat="dateFormatLocation"
         v-model:questions="subFieldedOptions[keySubField].eventFormFields"
       />
     </div>
@@ -25,6 +26,8 @@ import { computed } from "vue";
 
 import MhSelect from "../../../select";
 import MhQuestions from "../index.vue";
+
+import { inject } from "vue";
 
 export default {
   components: {
@@ -69,9 +72,12 @@ export default {
       });
     });
 
+    const dateFormatLocation = inject("dateFormat");
+
     return {
       subFieldedOptions,
       selectOptions,
+      dateFormatLocation,
     };
   },
 };

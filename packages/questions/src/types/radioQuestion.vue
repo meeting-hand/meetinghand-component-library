@@ -13,6 +13,7 @@
           :errors="errors"
           :deep="deep + 1"
           :fieldPrefix="fieldPrefix"
+          :dateFormat="dateFormatLocation"
           v-if="question.value == option.id"
           v-model:questions="option.eventFormFields"
         />
@@ -41,7 +42,7 @@ import MhRadio from "../../../radio";
 import MhInput from "../../../input";
 import MhQuestions from "../index.vue";
 
-import { ref, computed } from "vue";
+import { ref, inject } from "vue";
 
 export default {
   components: {
@@ -73,8 +74,10 @@ export default {
   },
   setup(props) {
     const otherOption = ref(typeof props.question.value === "string");
+    const dateFormatLocation = inject("dateFormat");
     return {
       otherOption,
+      dateFormatLocation,
     };
   },
 };
