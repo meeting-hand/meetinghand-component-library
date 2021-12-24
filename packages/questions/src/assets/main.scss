@@ -1,8 +1,6 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 .questions {
-    .question:not(:last-child) {
-        margin-bottom: $spacing-default;
-    }
+    margin-bottom: $spacing-default;
     .question-checkbox {
         label {
             font-weight: $font-weight-default;
