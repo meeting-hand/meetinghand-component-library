@@ -4,7 +4,7 @@
 .questions {
     margin-bottom: $spacing-default;
     .question {
-        margin-top: 16px;
+        margin-top: $spacing-default;
     }
     .question-checkbox {
         label {
@@ -19,7 +19,7 @@
 .question {
     margin-bottom: $spacing-default;
     &.questions {
-        margin-top: 16px;
+        margin-top: $spacing-default;
     }
 }
 
