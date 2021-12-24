@@ -3,6 +3,9 @@
 @import "@meetinghand/style/lib/scss/ant/checkbox.scss";
 .questions {
     margin-bottom: $spacing-default;
+    .question {
+        margin-top: 16px;
+    }
     .question-checkbox {
         label {
             font-weight: $font-weight-default;
@@ -15,6 +18,9 @@
 
 .question {
     margin-bottom: $spacing-default;
+    &.questions {
+        margin-top: 16px;
+    }
 }
 
 .question-file {
