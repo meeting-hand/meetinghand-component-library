@@ -13,6 +13,7 @@
           :errors="errors"
           :deep="deep + 1"
           :fieldPrefix="fieldPrefix"
+          :dateFormat="dateFormatLocation"
           v-if="
             Array.isArray(question.value) && question.value.includes(option.id)
           "
@@ -25,6 +26,8 @@
 <script>
 import MhCheckbox from "../../../checkbox";
 import MhQuestions from "../index.vue";
+
+import { inject } from "vue";
 
 export default {
   components: {
@@ -53,7 +56,13 @@ export default {
       default: null,
     },
   },
-  setup() {},
+  setup() {
+    const dateFormatLocation = inject("dateFormat");
+
+    return {
+      dateFormatLocation,
+    };
+  },
 };
 </script>
 
