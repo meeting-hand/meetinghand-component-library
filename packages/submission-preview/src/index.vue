@@ -9,6 +9,7 @@
       :keywords="keywords"
       :references="references"
       :labels="labels"
+      :authorStatus="authorStatus"
     />
   </div>
 </template>
