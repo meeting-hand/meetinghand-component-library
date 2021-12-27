@@ -55,6 +55,10 @@ export default defineComponent({
       type: Array,
       default: [],
     },
+    authorStatus: {
+      type: Boolean,
+      default: true,
+    },
     labels: {
       type: Object,
       default: {
