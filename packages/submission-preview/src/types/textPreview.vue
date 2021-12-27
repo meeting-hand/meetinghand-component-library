@@ -2,7 +2,7 @@
   <div class="abstract-text-preview">
     <h3>{{ topic }}</h3>
     <h1>{{ title }}</h1>
-    <div class="abstract-flex-row">
+    <div class="abstract-flex-row" v-if="authorStatus && authors.length > 0">
       <div
         :class="[
           'abstract-authors-names',
@@ -15,7 +15,7 @@
         <sup v-if="authors.length > 1">{{ index + 1 }}</sup>
       </div>
     </div>
-    <div class="abstract-flex-col">
+    <div class="abstract-flex-col" v-if="authorStatus && authors.length > 0">
       <div
         class="abstract-authors-info"
         v-for="(author, index) in authors"
@@ -92,6 +92,10 @@ export default defineComponent({
     references: {
       type: Array,
       default: [],
+    },
+    authorStatus: {
+      type: Boolean,
+      default: true,
     },
     labels: {
       type: Object,

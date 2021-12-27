@@ -2,8 +2,9 @@
 @import "@meetinghand/style/lib/scss/icons.scss";
 @import "@meetinghand/style/lib/scss/ant/checkbox.scss";
 .questions {
-    .question:not(:last-child) {
-        margin-bottom: $spacing-default;
+    margin-bottom: $spacing-default;
+    .question {
+        margin-top: $spacing-default;
     }
     .question-checkbox {
         label {
@@ -12,6 +13,13 @@
             line-height: $line-height-default;
             color: $color-mono-black;
         }
+    }
+}
+
+.question {
+    margin-bottom: $spacing-default;
+    &.questions {
+        margin-top: $spacing-default;
     }
 }
 

@@ -4,7 +4,10 @@
       <h2 class="file-preview-title">{{ labels.abstract }}</h2>
       <p>{{ title }}</p>
     </div>
-    <div class="file-preview-authors abstract-bb">
+    <div
+      class="file-preview-authors abstract-bb"
+      v-if="authors.length > 0 && authorStatus"
+    >
       <h2 class="file-preview-title">{{ labels.authors }}</h2>
       <div
         class="author-row disc-list"
@@ -69,6 +72,10 @@ export default defineComponent({
     references: {
       type: Array,
       default: [],
+    },
+    authorStatus: {
+      type: Boolean,
+      default: true,
     },
     labels: {
       type: Object,

@@ -9,6 +9,7 @@
       :keywords="keywords"
       :references="references"
       :labels="labels"
+      :authorStatus="authorStatus"
     />
   </div>
 </template>
@@ -54,6 +55,10 @@ export default defineComponent({
     references: {
       type: Array,
       default: [],
+    },
+    authorStatus: {
+      type: Boolean,
+      default: true,
     },
     labels: {
       type: Object,
