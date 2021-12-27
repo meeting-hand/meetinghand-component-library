@@ -454,6 +454,10 @@
     border-bottom: $border-radius-small solid transparent;
     padding-bottom: $spacing-default;
     width: fit-content;
+    cursor: pointer;
+    pointer-events: unset;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border 0.2s ease;
     span {
         font-weight: $font-weight-default;
         font-size: $font-size-default;
