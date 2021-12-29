@@ -27,6 +27,7 @@ import Social from "./types/social.vue";
 import Menu from "./types/menu.vue";
 import List from "./types/list.vue";
 import Tab from "./types/tab.vue";
+import TabBar from "./types/tabBar.vue";
 
 export default {
   name: "MhButton",
@@ -41,6 +42,7 @@ export default {
     Menu,
     List,
     Tab,
+    TabBar,
   },
   props: {
     type: {
@@ -58,6 +60,7 @@ export default {
           "menu",
           "list",
           "tab",
+          "tabBar",
         ].includes(_v),
     },
     size: {

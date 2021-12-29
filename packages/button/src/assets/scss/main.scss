@@ -53,9 +53,7 @@
     }
 }
 
-
 /* PRIMARY END */
-
 
 /* SECONDARY */
 
@@ -128,9 +126,7 @@
     }
 }
 
-
 /* SECONDARY END */
-
 
 /* TEXT */
 
@@ -162,9 +158,7 @@
     }
 }
 
-
 /* TEXT END */
-
 
 /* SMALL */
 
@@ -185,9 +179,7 @@
     }
 }
 
-
 /* SMALL END */
-
 
 /* ROW */
 
@@ -212,9 +204,7 @@
     }
 }
 
-
 /* ROW END */
-
 
 /* ICONIC */
 
@@ -277,9 +267,7 @@
     }
 }
 
-
 /* ICONIC END */
-
 
 /* SOCIAL */
 
@@ -331,9 +319,7 @@
     }
 }
 
-
 /* SOCIAL END */
-
 
 /* MENU */
 
@@ -364,9 +350,7 @@
     }
 }
 
-
 /* MENU END */
-
 
 /* LIST */
 
@@ -422,9 +406,7 @@
     }
 }
 
-
 /* LIST END */
-
 
 /* TAB*/
 
@@ -463,8 +445,35 @@
     }
 }
 
-
 /* TAB END */
+
+/* TAB BAR */
+
+.tab-bar-btn {
+    display: block;
+    border-bottom: $border-radius-small solid transparent;
+    padding-bottom: $spacing-default;
+    width: fit-content;
+    cursor: pointer;
+    pointer-events: unset;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border 0.2s ease;
+    span {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+    }
+    &.active {
+        border-color: $color-primary-blue;
+        span {
+            font-weight: $font-weight-large;
+            color: $color-primary-blue;
+        }
+    }
+}
+
+/* TAB BAR END */
 
 .size-large {
     width: 100%;

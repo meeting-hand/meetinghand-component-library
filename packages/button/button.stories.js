@@ -393,3 +393,17 @@ storiesOf("Button", module).add("tab", () => ({
 
     `,
 }));
+
+storiesOf("Button", module).add("tabBar", () => ({
+  components: { MhButton },
+  template: `
+<div class="storybook-button">
+
+    <h1>Tab Bar</h1>
+    <mh-button type="tabBar" isActive>
+      Button
+    </mh-button>
+      
+</div>
+  `,
+}));

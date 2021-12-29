@@ -143,6 +143,11 @@ import SystemPoll from "./systemPoll.vue";
 import UiCamCheck from "./uiCamCheck.vue";
 import UiHearth from "./uiHearth.vue";
 import UiMailNotification from "./uiMailNotification.vue";
+import EditorBulletList from "./editorBulletList.vue";
+import UiLineGraph from "./uiLineGraph.vue";
+import EditorTable from "./editorTable.vue";
+import SystemIncrease from "./systemIncrease.vue";
+import SystemDecrease from "./systemDecrease.vue";
 
 const iconList = [
   "arrow-down",
@@ -286,6 +291,11 @@ const iconList = [
   "ui-cam-check",
   "ui-hearth",
   "ui-mail-notification",
+  "editor-bullet-list",
+  "ui-line-graph",
+  "editor-table",
+  "system-increase",
+  "system-decrease",
 ];
 
 export default {
@@ -432,6 +442,11 @@ export default {
     UiCamCheck,
     UiHearth,
     UiMailNotification,
+    EditorBulletList,
+    UiLineGraph,
+    EditorTable,
+    SystemIncrease,
+    SystemDecrease,
   },
   props: {
     name: {
