@@ -54,7 +54,7 @@ export default {
     },
     maxLength: {
         type: Number,
-        default: null,
+        default: 255,
     },
     mask: {
         type: Object,
