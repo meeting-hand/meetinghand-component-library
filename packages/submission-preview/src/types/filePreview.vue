@@ -77,6 +77,14 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    keywordLabel: {
+      type: String,
+      default: "Keywords",
+    },
+    referenceLabel: {
+      type: String,
+      default: "References",
+    },
     labels: {
       type: Object,
       default: {

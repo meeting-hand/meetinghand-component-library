@@ -39,8 +39,8 @@ storiesOf("SubmissionPreview", module).add("SubmissionPreview!", () => ({
                 title: "Dr"
             }],
             body: [{ value: { name: 'File' } }],
-            keywords: [],
-            references: []
+            keywords: ["example"],
+            references: ["example"]
 
         };
     },

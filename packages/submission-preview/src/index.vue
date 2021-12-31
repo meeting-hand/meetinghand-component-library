@@ -9,6 +9,8 @@
       :keywords="keywords"
       :references="references"
       :labels="labels"
+      :keywordLabel="keywordLabel"
+      :referenceLabel="referenceLabel"
       :authorStatus="authorStatus"
     />
   </div>
@@ -59,6 +61,14 @@ export default defineComponent({
     authorStatus: {
       type: Boolean,
       default: true,
+    },
+    keywordLabel: {
+      type: String,
+      default: "Keywords",
+    },
+    referenceLabel: {
+      type: String,
+      default: "References",
     },
     labels: {
       type: Object,
