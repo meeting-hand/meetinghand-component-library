@@ -7,8 +7,6 @@ storiesOf("TextEditor", module).add("All", () => ({
         return {
             text1: "<p><b>Gandalf</b> the grey</p>",
             toolbar: [
-                "undo",
-                "redo",
                 "bold",
                 "italic",
                 "underline",
@@ -23,8 +21,8 @@ storiesOf("TextEditor", module).add("All", () => ({
                 { list: "ordered" },
                 { list: "bullet" },
                 "code-block",
-                // { script: "sub" },
-                // { script: "super" },
+                { script: "sub" },
+                { script: "super" },
             ],
         };
     },

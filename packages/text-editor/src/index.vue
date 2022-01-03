@@ -9,6 +9,7 @@
       ]"
     >
       <quill-editor
+        :modules="modules"
         :toolbar="toolbar"
         :placeholder="placeholder"
         contentType="html"
@@ -16,6 +17,7 @@
         v-model:content="value"
         ref="MHEditor"
       >
+        <template #toolbar> hey!! </template>
       </quill-editor>
       <div class="editor-footer" v-if="maxWordCount">
         {{ wordCount }} / {{ maxWordCount }}
@@ -29,7 +31,15 @@
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
+import QuillBetterTable from "quill-better-table";
 import MhEditorIcons from "./assets/icons";
+
+Quill.register(
+  {
+    "modules/better-table": QuillBetterTable,
+  },
+  true
+);
 
 // TODO: Undo, redo, preview, write and table buttons will be added
 export default {
@@ -72,8 +82,6 @@ export default {
       type: Array,
       default() {
         return [
-          "undo",
-          "redo",
           "bold",
           "italic",
           "underline",
@@ -95,6 +103,25 @@ export default {
     },
     maxWordCount: {
       type: Number,
+    },
+    modules: {
+      "better-table": {
+        operationMenu: {
+          items: {
+            unmergeCells: {
+              text: "Another unmerge cells name",
+            },
+          },
+        },
+      },
+      keyboard: {
+        bindings: QuillBetterTable.keyboardBindings,
+      },
+      handlers: {
+        table: () => {
+          console.log("table handler!!");
+        },
+      },
     },
   },
   components: {
@@ -122,8 +149,8 @@ export default {
     icons.bold = MhEditorIcons.bold;
     icons.italic = MhEditorIcons.italic;
     icons.underline = MhEditorIcons.underline;
-    icons.undo = MhEditorIcons.undo;
-    icons.redo = MhEditorIcons.redo;
+    // icons.undo = MhEditorIcons.undo;
+    // icons.redo = MhEditorIcons.redo;
     icons.strike = MhEditorIcons.strike;
     icons.link = MhEditorIcons.link;
     icons.blockquote = MhEditorIcons.blockquote;
