@@ -2,37 +2,29 @@
   <div class="abstract-text-preview">
     <h3>{{ topic }}</h3>
     <h1>{{ title }}</h1>
-    <div class="abstract-flex-row" v-if="authorStatus && authors.length > 0">
+    <div class="abstract-flex-row" v-if="authorStatus && authorList.length > 0">
       <div
         :class="[
           'abstract-authors-names',
           { 'presenter-author': author.isPresenter },
         ]"
-        v-for="(author, index) in authors"
+        v-for="(author, index) in authorList"
         :key="index"
       >
         <p>{{ author.firstname }} {{ author.lastname }}</p>
-        <sup v-if="authors.length > 1">{{ index + 1 }}</sup>
+        <sup v-if="author.authorNumber !== 0">{{ author.authorNumber }}</sup>
       </div>
     </div>
-    <div class="abstract-flex-col" v-if="authorStatus && authors.length > 0">
+    <div class="abstract-flex-col" v-if="authorStatus && authorList.length > 0">
       <div
         class="abstract-authors-info"
-        v-for="(author, index) in authors"
+        v-for="(authorLocation, index) in authorLocations"
         :key="index"
       >
-        <sup
-          v-if="
-            (authors.length > 1 && author.institution) ||
-            author.city ||
-            author.country
-          "
-        >
-          {{ index + 1 }}
+        <sup>
+          {{ authorLocation.authorNumber }}
         </sup>
-        <span v-if="author.institution">{{ author.institution }}</span>
-        <span v-if="author.city">{{ author.city }}</span>
-        <span v-if="author.country">{{ author.country }}</span>
+        <span>{{ authorLocation.location }}</span>
       </div>
     </div>
     <div class="abstract-body">
@@ -116,20 +108,58 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const authorLocation = computed(() => {
-      let data = props.authors.flatMap((_a) => [
-        {
-          location: `${_a.institution ? _a.institution + "," : ""} ${
-            _a.city ? _a.city + "," : ""
-          } ${_a.country ? _a.country : ""}`,
-        },
-      ]);
+    let authorList = [];
+    let lastNumber = 0;
 
-      return [...new Set(data.map((item) => item.location))];
+    props.authors.forEach((author) => {
+      if (author?.city || author?.country || author?.institution) {
+        const previousItem = authorList.find(
+          (_a, _i) =>
+            [author.city, author.country, author.institution].toString() ===
+            [_a.city, _a.country, _a.institution].toString()
+        );
+        if (previousItem) {
+          author.authorNumber = previousItem.authorNumber;
+        } else {
+          author.authorNumber = lastNumber + 1;
+          lastNumber++;
+        }
+      } else {
+        author.authorNumber = 0;
+      }
+      authorList.push(author);
     });
 
-    console.log("authorLocation", authorLocation);
-    return {};
+    authorList = authorList.sort((a, b) => {
+      if (a.authorNumber === 0) {
+        return 1;
+      } else if (b.authorNumber === 0) {
+        return -1;
+      }
+      return a.authorNumber - b.authorNumber;
+    });
+
+    const authorLocations = authorList
+      .filter(
+        (_a, _i) =>
+          _i ===
+            authorList.findIndex(
+              (__a) => __a.authorNumber === _a.authorNumber
+            ) && _a.authorNumber > 0
+      )
+      .map((_a) => {
+        return {
+          authorNumber: _a.authorNumber,
+          location: [_a?.city, _a?.country, _a?.institution]
+            .filter((_l) => typeof _l === "string")
+            .join(),
+        };
+      });
+
+    return {
+      authorList,
+      authorLocations,
+    };
   },
 });
 </script>
