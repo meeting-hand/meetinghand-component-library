@@ -9,7 +9,6 @@
       ]"
     >
       <quill-editor
-        :modules="modules"
         :toolbar="toolbar"
         :placeholder="placeholder"
         contentType="html"
@@ -17,7 +16,6 @@
         v-model:content="value"
         ref="MHEditor"
       >
-        <template #toolbar> hey!! </template>
       </quill-editor>
       <div class="editor-footer" v-if="maxWordCount">
         {{ wordCount }} / {{ maxWordCount }}
@@ -31,20 +29,13 @@
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
-import QuillBetterTable from "quill-better-table";
 import MhEditorIcons from "./assets/icons";
 
-Quill.register(
-  {
-    "modules/better-table": QuillBetterTable,
-  },
-  true
-);
-
-// TODO: Undo, redo, preview, write and table buttons will be added
 export default {
   name: "TextEditor",
-
+  data() {
+    return {};
+  },
   props: {
     placeholder: {
       type: String,
@@ -89,39 +80,20 @@ export default {
           "blockquote",
           "link",
           "image",
-          "table",
+          //"table",
           { align: "left" },
           { align: "center" },
           { align: "right" },
           { list: "ordered" },
           { list: "bullet" },
           "code-block",
-          { script: "sub" },
-          { script: "super" },
+          // { script: "sub" },
+          // { script: "super" },
         ];
       },
     },
     maxWordCount: {
       type: Number,
-    },
-    modules: {
-      "better-table": {
-        operationMenu: {
-          items: {
-            unmergeCells: {
-              text: "Another unmerge cells name",
-            },
-          },
-        },
-      },
-      keyboard: {
-        bindings: QuillBetterTable.keyboardBindings,
-      },
-      handlers: {
-        table: () => {
-          console.log("table handler!!");
-        },
-      },
     },
   },
   components: {
