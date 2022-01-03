@@ -187,9 +187,6 @@
         }
     }
     .abstract-keywords {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         margin-top: $spacing-xxlarge;
         p {
             font-weight: $font-weight-default;
@@ -197,16 +194,16 @@
             line-height: $line-height-default;
             color: $color-mono-black;
             margin-right: 4px;
-        }
-        span {
-            font-weight: $font-weight-small;
-            font-size: $font-size-default;
-            line-height: $line-height-default;
-            color: $color-mono-black;
-            &:not(:last-child) {
-                &::after {
-                    content: ",";
-                    margin-right: 4px;
+            span {
+                font-weight: $font-weight-small;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-black;
+                &:not(:last-child) {
+                    &::after {
+                        content: ",";
+                        margin-right: 4px;
+                    }
                 }
             }
         }
