@@ -115,7 +115,20 @@ export default defineComponent({
       },
     },
   },
-  setup() {
+  setup(props) {
+    const authorLocation = computed(() => {
+      let data = props.authors.flatMap((_a) => [
+        {
+          location: `${_a.institution ? _a.institution + "," : ""} ${
+            _a.city ? _a.city + "," : ""
+          } ${_a.country ? _a.country : ""}`,
+        },
+      ]);
+
+      return [...new Set(data.map((item) => item.location))];
+    });
+
+    console.log("authorLocation", authorLocation);
     return {};
   },
 });
