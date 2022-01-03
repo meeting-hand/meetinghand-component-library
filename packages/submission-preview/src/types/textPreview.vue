@@ -38,10 +38,12 @@
       </div>
     </div>
     <div class="abstract-keywords" v-if="keywords && keywords.length > 0">
-      <p>{{ keywordLabel }}:</p>
-      <span v-for="(keyword, index) in keywords" :key="index">
-        {{ keyword }}
-      </span>
+      <p>
+        {{ keywordLabel }}:
+        <span v-for="(keyword, index) in keywords" :key="index">
+          {{ keyword }}
+        </span>
+      </p>
     </div>
     <div class="abstract-references" v-if="references && references.length > 0">
       <h2 class="file-preview-title">{{ referenceLabel }}:</h2>
@@ -131,12 +133,7 @@ export default defineComponent({
     });
 
     authorList = authorList.sort((a, b) => {
-      if (a.authorNumber === 0) {
-        return 1;
-      } else if (b.authorNumber === 0) {
-        return -1;
-      }
-      return a.authorNumber - b.authorNumber;
+      return a.order - b.order;
     });
 
     const authorLocations = authorList
@@ -150,9 +147,9 @@ export default defineComponent({
       .map((_a) => {
         return {
           authorNumber: _a.authorNumber,
-          location: [_a?.city, _a?.country, _a?.institution]
+          location: [_a?.institution, _a?.city, _a?.country]
             .filter((_l) => typeof _l === "string")
-            .join(),
+            .join(", "),
         };
       });
 
