@@ -4,11 +4,13 @@ export const questions2Flat = (questions) => {
             [
                 ...all,
                 {...question, eventFormFields: [] },
-                ...questions2Flat(
-                    question.eventFormFieldOptions
-                    .map((_o) => _o.eventFormFields)
-                    .flat()
-                ),
+                ...(Array.isArray(question.eventFormFields) ?
+                    questions2Flat(
+                        question.eventFormFieldOptions
+                        .map((_o) => _o.eventFormFields)
+                        .flat()
+                    ) :
+                    []),
             ] :
             [...all, {...question }];
     }, []);
