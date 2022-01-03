@@ -14,21 +14,21 @@ storiesOf("TextEditor", module).add("All", () => ({
                 "blockquote",
                 "link",
                 "image",
-                "table",
+                //"table",
                 { align: "left" },
                 { align: "center" },
                 { align: "right" },
                 { list: "ordered" },
                 { list: "bullet" },
                 "code-block",
-                { script: "sub" },
-                { script: "super" },
+                // { script: "sub" },
+                // { script: "super" },
             ],
         };
     },
     template: `
       <h1>Default</h1>
-	  <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" label="Lorem ipsum"/>
+	  <mh-text-editor v-model="text1" placeholder="Placeholder" label="Lorem ipsum"/>
       <br /><br />
 	  <h1>Default with word counter</h1>
 
