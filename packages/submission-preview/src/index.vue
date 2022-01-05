@@ -74,11 +74,10 @@ export default defineComponent({
       type: Object,
       default: {
         abstractBody: "Abstract body",
-        keywords: "Keywords",
-        references: "References",
         abstract: "Abstract",
         authors: "Authors",
         abstractFiles: "Abstract files",
+        fileName: "Abstract File",
       },
     },
   },

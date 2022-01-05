@@ -1,11 +1,8 @@
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 
-
 /* stylelint-disable no-duplicate-selectors */
 
-
 /* stylelint-disable */
-
 
 /* stylelint-disable declaration-bang-space-before,no-duplicate-selectors,string-no-newline */
 
@@ -1062,7 +1059,7 @@
     }
     .ant-calendar-selected-start-date {
         .ant-calendar-date {
-            color: $color-mono-white;
+            color: $color-mono-white !important;
             background: #1890ff;
             border: 1px solid transparent;
             &:hover {
@@ -1261,7 +1258,7 @@
     .ant-calendar-in-range-cell {
         position: relative;
         border-radius: 0;
-        >div {
+        > div {
             position: relative;
             z-index: 1;
         }
@@ -1420,7 +1417,7 @@ textarea.ant-calendar-range {
 
 div.ant-calendar-range-quick-selector {
     text-align: left;
-    >a {
+    > a {
         margin-right: 8px;
     }
 }
@@ -1603,7 +1600,7 @@ li.ant-calendar-time-picker-select-option-disabled {
     background: $color-mono-white;
     border-radius: 2px;
     outline: none;
-    >div {
+    > div {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -2162,7 +2159,7 @@ li.ant-calendar-time-picker-select-option-disabled {
     background: $color-mono-white;
     border-radius: 2px;
     outline: none;
-    >div {
+    > div {
         display: flex;
         flex-direction: column;
         height: 100%;

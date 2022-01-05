@@ -2,126 +2,6 @@
 .abstract-preview-content {
     background: $color-mono-light-grey;
     padding: $spacing-xxlarge;
-}
-
-.abstract-file-preview {
-    .abstract-bb:not(:last-child) {
-        border-bottom: $border-size-default solid $transparent-hover-3;
-        padding-bottom: $spacing-default;
-        margin-bottom: $spacing-default;
-    }
-    .file-preview-title {
-        font-style: normal;
-        font-weight: $font-weight-default;
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        color: $color-mono-black;
-        margin-bottom: $spacing-default;
-    }
-    .file-preview-header {
-        .file-preview-title {
-            text-align: center;
-            margin-bottom: $spacing-small;
-        }
-        p {
-            font-weight: normal;
-            font-size: $font-size-xlarge;
-            line-height: $line-height-large;
-            text-align: center;
-            color: $color-mono-black;
-        }
-    }
-    .file-preview-authors {
-        display: flex;
-        flex-direction: column;
-        .author-row {
-            ul {
-                li {
-                    .author-info {
-                        span:not(:last-child) {
-                            &::after {
-                                content: ",";
-                                margin-right: 4px;
-                            }
-                        }
-                    }
-                    &:not(:last-child) {
-                        margin-bottom: $spacing-xxsmall;
-                    }
-                }
-            }
-            &:not(:last-child) {
-                margin-bottom: $spacing-default;
-            }
-        }
-    }
-    .abstract-files {
-        .file-row {
-            &:not(:last-child) {
-                margin-bottom: $spacing-default;
-            }
-        }
-    }
-    .disc-list {
-        ul {
-            margin-left: $spacing-default;
-            li {
-                list-style: disc;
-                p {
-                    font-weight: $font-weight-default;
-                    font-size: $font-size-default;
-                    line-height: $line-height-default;
-                    color: $color-mono-black;
-                }
-                span {
-                    font-weight: normal;
-                    font-size: $font-size-default;
-                    line-height: $line-height-default;
-                    color: $color-mono-black;
-                }
-                &:not(:last-child) {
-                    margin-bottom: $spacing-small;
-                }
-            }
-        }
-    }
-}
-
-.abstract-text-preview {
-    .file-preview-title {
-        font-style: normal;
-        font-weight: $font-weight-default;
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        color: $color-mono-black;
-        margin-bottom: $spacing-default;
-    }
-    h3 {
-        font-weight: $font-weight-large;
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        margin-bottom: $spacing-xxlarge;
-        text-align: left;
-    }
-    h1 {
-        font-weight: $font-weight-large;
-        font-size: $font-size-xxlarge;
-        line-height: $line-height-xlarge;
-        margin-bottom: $spacing-xxlarge;
-        text-align: center;
-    }
-    .abstract-flex-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .abstract-flex-col {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
     .abstract-authors-names {
         display: flex;
         flex-direction: row;
@@ -177,46 +57,173 @@
             margin-bottom: $spacing-xxxlarge;
         }
     }
-    .abstract-body {
-        h2 {
-            font-weight: $font-weight-large;
-            font-size: $font-size-large;
-            line-height: $line-height-default;
-            margin-bottom: $spacing-default;
-            margin-bottom: $spacing-xxlarge;
-        }
+    .abstract-flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
-    .abstract-keywords {
-        margin-top: $spacing-xxlarge;
-        p {
+    .abstract-flex-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .abstract-file-preview {
+        .abstract-bb:not(:last-child) {
+            border-bottom: $border-size-default solid $transparent-hover-3;
+            padding-bottom: $spacing-default;
+            margin-bottom: $spacing-default;
+        }
+        .file-preview-title {
+            font-style: normal;
             font-weight: $font-weight-default;
             font-size: $font-size-default;
             line-height: $line-height-default;
             color: $color-mono-black;
-            margin-right: 4px;
-            span {
-                font-weight: $font-weight-small;
-                font-size: $font-size-default;
-                line-height: $line-height-default;
+            margin-bottom: $spacing-default;
+        }
+        .file-preview-header {
+            .file-preview-title {
+                text-align: center;
+                margin-bottom: $spacing-small;
+            }
+            p {
+                font-weight: normal;
+                font-size: $font-size-xlarge;
+                line-height: $line-height-large;
+                text-align: center;
                 color: $color-mono-black;
+            }
+        }
+        .file-preview-authors {
+            display: flex;
+            flex-direction: column;
+            .author-row {
+                ul {
+                    li {
+                        .author-info {
+                            span:not(:last-child) {
+                                &::after {
+                                    content: ",";
+                                    margin-right: 4px;
+                                }
+                            }
+                        }
+                        &:not(:last-child) {
+                            margin-bottom: $spacing-xxsmall;
+                        }
+                    }
+                }
                 &:not(:last-child) {
-                    &::after {
-                        content: ",";
-                        margin-right: 4px;
+                    margin-bottom: $spacing-default;
+                }
+            }
+        }
+        .abstract-files {
+            .file-row {
+                &:not(:last-child) {
+                    margin-bottom: $spacing-default;
+                }
+                .ant-btn {
+                    a {
+                        color: unset;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .disc-list {
+            ul {
+                margin-left: $spacing-default;
+                li {
+                    list-style: disc;
+                    p {
+                        font-weight: $font-weight-default;
+                        font-size: $font-size-default;
+                        line-height: $line-height-default;
+                        color: $color-mono-black;
+                    }
+                    span {
+                        font-weight: normal;
+                        font-size: $font-size-default;
+                        line-height: $line-height-default;
+                        color: $color-mono-black;
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: $spacing-small;
                     }
                 }
             }
         }
     }
-    .abstract-references {
-        h2 {
-            margin-bottom: $spacing-small;
+
+    .abstract-text-preview {
+        .file-preview-title {
+            font-style: normal;
+            font-weight: $font-weight-default;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+            margin-bottom: $spacing-default;
         }
-        margin-top: $spacing-default;
-        ul {
-            margin-left: $spacing-default;
-            li {
-                list-style: decimal;
+        h3 {
+            font-weight: $font-weight-large;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            margin-bottom: $spacing-xxlarge;
+            text-align: left;
+        }
+        h1 {
+            font-weight: $font-weight-large;
+            font-size: $font-size-xxlarge;
+            line-height: $line-height-xlarge;
+            margin-bottom: $spacing-xxlarge;
+            text-align: center;
+        }
+
+        .abstract-body {
+            h2 {
+                font-weight: $font-weight-large;
+                font-size: $font-size-large;
+                line-height: $line-height-default;
+                margin-bottom: $spacing-default;
+                margin-bottom: $spacing-xxlarge;
+            }
+        }
+        .abstract-keywords {
+            margin-top: $spacing-xxlarge;
+            p {
+                font-weight: $font-weight-default;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-black;
+                margin-right: 4px;
+                span {
+                    font-weight: $font-weight-small;
+                    font-size: $font-size-default;
+                    line-height: $line-height-default;
+                    color: $color-mono-black;
+                    &:not(:last-child) {
+                        &::after {
+                            content: ",";
+                            margin-right: 4px;
+                        }
+                    }
+                }
+            }
+        }
+        .abstract-references {
+            h2 {
+                margin-bottom: $spacing-small;
+            }
+            margin-top: $spacing-default;
+            ul {
+                margin-left: $spacing-default;
+                li {
+                    list-style: decimal;
+                }
             }
         }
     }
