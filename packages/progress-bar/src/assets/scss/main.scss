@@ -1,0 +1,16 @@
+@import "@meetinghand/style/lib/scss/variables.scss";
+.mh-progress-bar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    .progress-bar {
+        width: 0%;
+        height: 4px;
+        background-color: $color-primary-blue;
+        -webkit-transition: width 0.3s linear;
+        -moz-transition: width 0.3s linear;
+        -o-transition: width 0.3s linear;
+        transition: width 0.3s linear;
+    }
+}
