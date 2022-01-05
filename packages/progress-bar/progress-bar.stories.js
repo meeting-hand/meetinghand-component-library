@@ -9,6 +9,6 @@ storiesOf("ProgressBar", module).add("ProgressBar", () => ({
     },
     components: { ProgressBar },
     template: `
-      <propgress-bar :status="status" />
+      <progress-bar :status="status" style="margin-top: 20px" />
     `,
 }));
