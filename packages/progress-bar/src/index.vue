@@ -20,6 +20,8 @@ export default defineComponent({
     const progressBar = ref(null);
 
     const start = () => {
+      progressBar.value.style.width = "0";
+      progressBar.value.style.opacity = "1";
       progressInterval.value = setInterval(() => {
         currentProgress.value += step.value;
         const progress =
@@ -37,7 +39,7 @@ export default defineComponent({
 
     const stop = () => {
       clearInterval(progressInterval.value);
-      progressBar.value.style.width = "0";
+      progressBar.value.style.opacity = "0";
     };
 
     onMounted(() => {
