@@ -10,10 +10,9 @@ storiesOf("ProgressBar", module).add("ProgressBar", () => ({
     components: { ProgressBar },
     template: `
       <progress-bar :status="status" style="margin-top: 20px" />
+			<div style="margin-top: 20px">
+			<button @click="status=true">start</button>
+			<button @click="status=false">stop</button>
+			</div>
     `,
-    mounted() {
-        setTimeout(() => {
-            this.status = false;
-        }, 2000);
-    },
 }));
