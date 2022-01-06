@@ -1,7 +1,7 @@
 {
-    "name": "@meetinghand/input",
-    "description": "Meetinghand Component Library Component for input",
-    "version": "0.0.123-alpha.0",
+    "name": "@meetinghand/progress-bar",
+    "description": "Meetinghand Component Library Component for progress bar",
+    "version": "0.0.1-alpha.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -17,9 +17,6 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/select": "file:../select",
-        "@meetinghand/style": "file:../style",
-        "@meetinghand/tooltip": "file:../tooltip",
-        "cleave.js": "^1.6.0"
+        "@meetinghand/style": "file:../style"
     }
 }
