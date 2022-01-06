@@ -11,4 +11,9 @@ storiesOf("ProgressBar", module).add("ProgressBar", () => ({
     template: `
       <progress-bar :status="status" style="margin-top: 20px" />
     `,
+    mounted() {
+        setTimeout(() => {
+            this.status = false;
+        }, 2000);
+    },
 }));
