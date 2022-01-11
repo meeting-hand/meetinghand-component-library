@@ -16,7 +16,7 @@ export default defineComponent({
   setup(props) {
     const progressInterval = ref(null);
     const currentProgress = ref(0);
-    const step = ref(0.5); // the smaller this is the slower the progress bar
+    const step = ref(0.9); // as the step gets smaller the progress slows down.
     const progressBar = ref(null);
 
     const start = () => {
