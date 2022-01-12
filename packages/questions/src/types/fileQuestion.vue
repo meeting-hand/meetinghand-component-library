@@ -75,7 +75,7 @@ export default {
 
     const onChangeFileUpload = (e) => {
       if (e.target.files[0].size > maxFileSize) {
-        alert(`Your file must be less than ${maxFileSize / 1000000} MegaByt`);
+        alert(`Your file must be less than ${maxFileSize / 1000000} MegaByte`);
         e.target.value = null;
         return;
       }
