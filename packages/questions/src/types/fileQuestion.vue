@@ -31,7 +31,7 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, inject } from "vue";
 
 import MhInput from "../../../input";
 import MhButton from "../../../button";
@@ -65,6 +65,8 @@ export default {
   },
   emits: ["update:question"],
   setup(props, { emit }) {
+    const maxFileSize = inject("maxFileSize");
+
     const fileInput = ref(null);
 
     const onFileUploadClick = () => {
@@ -72,6 +74,11 @@ export default {
     };
 
     const onChangeFileUpload = (e) => {
+      if (e.target.files[0].size > maxFileSize) {
+        alert(`Your file must be less than ${maxFileSize / 1000000} MegaByte`);
+        e.target.value = null;
+        return;
+      }
       updateValue(e.target.files[0]);
     };
 

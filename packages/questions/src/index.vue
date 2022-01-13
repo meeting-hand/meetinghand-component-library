@@ -68,9 +68,14 @@ export default {
       default: "US",
       validator: (value) => ["EU", "US"].includes(value),
     },
+    maxFileSize: {
+      type: Number,
+      default: 5000000,
+    },
   },
   setup(props) {
     provide("dateFormat", props.dateFormat);
+    provide("maxFileSize", props.maxFileSize);
   },
 };
 </script>
