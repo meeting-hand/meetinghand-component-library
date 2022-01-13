@@ -32,7 +32,10 @@
       <h2 class="file-preview-title">{{ labels.abstractFiles }}</h2>
       <div class="file-row" v-for="(file, index) in body" :key="index">
         <mh-button type="list" icon="system-attachment" v-if="file.value">
-          <a :href="file.value" target="_blank">
+          <a
+            :href="typeof file.value === 'string' ? file.value : null"
+            target="_blank"
+          >
             {{ labels.fileName }} {{ index + 1 }}
           </a>
         </mh-button>
