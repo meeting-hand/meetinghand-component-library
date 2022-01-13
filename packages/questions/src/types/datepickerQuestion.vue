@@ -48,14 +48,10 @@ export default {
       new Date(props.question.value) instanceof Date
     ) {
       let value = "";
-      const day = new Date(props.question.value)
-        .getDate()
-        .toString()
-        .padStart(2, "0");
-      const month = (new Date(props.question.value).getMonth() + 1)
-        .toString()
-        .padStart(2, "0");
-      const year = new Date(props.question.value).getFullYear();
+      const currentDate = new Date(`${props.question.value} 00:00:00`);
+      const day = currentDate.getDate().toString().padStart(2, "0");
+      const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+      const year = currentDate.getFullYear();
       if (dateFormatLocation === "US") {
         value = `${month}.${day}.${year}`;
       } else {
