@@ -1,4 +1,5 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
+@import "@meetinghand/style/lib/scss/mixins.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
 @import "@meetinghand/style/lib/scss/ant/checkbox.scss";
 .questions {
@@ -31,6 +32,12 @@
         margin-left: $spacing-small;
         margin-top: 4px;
         display: block;
+    }
+    div {
+        @include flex-row(flex-start, flex-start);
+        .download-button {
+            margin-left: $spacing-default;
+        }
     }
 }
 

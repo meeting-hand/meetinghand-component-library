@@ -23,8 +23,22 @@
           color="red"
           @click="removeFile()"
           icon="system-close"
-          >{{ question.value.name }}
+        >
+          {{ question.value.name || question.label }}
         </mh-button>
+        <a
+          :href="question.value"
+          v-if="typeof question.value === 'string' && isFilePath()"
+          target="_blank"
+          class="download-button"
+        >
+          <mh-button
+            type="iconic"
+            icon="ui-download-file"
+            size="default"
+            color="blue"
+          />
+        </a>
       </div>
     </transition>
     <span v-if="errorMessage" class="mh-input__error">{{ errorMessage }}</span>
@@ -81,6 +95,11 @@ export default {
       }
       updateValue(e.target.files[0]);
     };
+
+    const isFilePath = () =>
+      /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/.test(
+        props.question.value
+      );
 
     const acceptedTypes = () => {
       let acceptedExtensions = [];
@@ -145,6 +164,7 @@ export default {
       acceptedTypes,
       removeFile,
       updateValue,
+      isFilePath,
     };
   },
 };

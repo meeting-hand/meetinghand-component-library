@@ -254,7 +254,7 @@ storiesOf("Button", module).add("iconic", () => ({
   <div class="storybook-button">
 
       <h1>Normal</h1>
-      <mh-button type="iconic" icon="system-other-options" size="default" />
+      <mh-button type="iconic" icon="system-other-options" size="default"/>
         <hr/>
       <h1>Circular</h1>
       <mh-button type="iconic" icon="system-other-options" circular />
@@ -395,8 +395,8 @@ storiesOf("Button", module).add("tab", () => ({
 }));
 
 storiesOf("Button", module).add("tabBar", () => ({
-  components: { MhButton },
-  template: `
+    components: { MhButton },
+    template: `
 <div class="storybook-button">
 
     <h1>Tab Bar</h1>
