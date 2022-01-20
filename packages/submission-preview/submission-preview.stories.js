@@ -133,7 +133,7 @@ storiesOf("SubmissionPreview", module).add("SubmissionPreview!", () => ({
                 },
             ],
             body: [{ eventSubmissionFieldId: 106, value: "https://s3.eu-central-1.amazonaws.com/cdn.meetinghand.net/amdsiottasp-lcn4yap5us/submissionFiles/8wQSeBBnLz6ImZC4wCrVQknMKRYuqpd5Z9EFwYVy.pdf" }],
-            keywords: ["imply dummimply dummimply dummimply dumm imply dumm imply dumm imply dummimply dumm", "imply dumm imply dumm imply dumm", "imply dumm imply dumm imply dummimply dummimply dummimply dumm"],
+            keywords: ["Donec sit amet maximus justo", "Interdum et malesuada fames ac", "Sedintellusvitaelacusvenenatisdignissimvitaeaccumsannisi Sedintellusvitaelacusvenenatisdignissimvitaeaccumsannisi Sedintellusvitaelacusvenenatisdignissimvitaeaccumsannisi", ],
             references: ["Lorem ipsumLorem ipsummLorem ipsum Lorem ipsum Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
         };
     },
