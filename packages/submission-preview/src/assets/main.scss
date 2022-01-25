@@ -199,6 +199,7 @@
                     font-size: $font-size-default;
                     line-height: $line-height-default;
                     color: $color-mono-black;
+                    word-break: keep-all;
                     &:not(:last-child) {
                         &::after {
                             content: ",";

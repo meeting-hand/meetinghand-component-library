@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" :colors="colors">
+  <component :is="type" :colors="colors" :paletteWidth="paletteWidth">
     <slot></slot>
   </component>
 </template>
@@ -36,6 +36,10 @@ export default {
         "#00D1FF",
         "#C336F4",
       ],
+    },
+    paletteWidth: {
+      type: String,
+      default: "160px",
     },
   },
 };
