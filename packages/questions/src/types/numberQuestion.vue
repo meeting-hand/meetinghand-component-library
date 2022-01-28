@@ -39,6 +39,10 @@ export default {
       props.fieldPrefix
     );
 
+    if (typeof value.value === "string") {
+      value.value = parseInt(value.value);
+    }
+
     return {
       value,
       errorMessage,

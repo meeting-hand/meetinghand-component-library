@@ -57,7 +57,7 @@ export default {
     },
     fieldPrefix: {
       type: String,
-      default: "questions.",
+      default: "questions.id_",
     },
     dateFormat: {
       type: String,
