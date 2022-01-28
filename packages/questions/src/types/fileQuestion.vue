@@ -152,8 +152,8 @@ export default {
       updateValue(null);
     };
 
-    const updateValue = (value) => {
-      value.value = value;
+    const updateValue = (data) => {
+      value.value = data;
     };
 
     return {
