@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/checkbox",
 	"description": "Meetinghand Component Library Component for checkbox",
-	"version": "0.0.113",
+	"version": "0.0.114",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
