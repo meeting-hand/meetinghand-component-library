@@ -5,14 +5,13 @@
       :placeholder="question.information"
       :label="question.label"
       :error-message="errorMessage"
-      v-model="question.value"
+      v-model="value"
     />
     <div
       :key="subField.id"
       v-for="(subField, keySubField) in subFieldedOptions"
     >
       <mh-questions
-        :errors="errors"
         :deep="deep + 1"
         :fieldPrefix="fieldPrefix"
         :dateFormat="dateFormatLocation"
@@ -28,6 +27,7 @@ import MhSelect from "../../../select";
 import MhQuestions from "../index.vue";
 
 import { inject } from "vue";
+import { questionValidation } from "../composables/validations";
 
 export default {
   components: {
@@ -39,14 +39,6 @@ export default {
       type: Object,
       required: true,
     },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    errors: {
-      type: Object,
-      default: () => {},
-    },
     deep: {
       type: Number,
       default: 1,
@@ -57,9 +49,14 @@ export default {
     },
   },
   setup(props) {
+    const { value, errorMessage } = questionValidation(
+      props.question,
+      props.fieldPrefix
+    );
+
     const subFieldedOptions = computed(() => {
       return props.question.eventFormFieldOptions.filter(
-        (_o) => props.question.value === _o.id
+        (_o) => value.value === _o.id
       );
     });
 
@@ -78,6 +75,8 @@ export default {
       subFieldedOptions,
       selectOptions,
       dateFormatLocation,
+      value,
+      errorMessage,
     };
   },
 };

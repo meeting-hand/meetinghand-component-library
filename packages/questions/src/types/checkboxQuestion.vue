@@ -6,17 +6,14 @@
         <mh-checkbox
           :label="option.label"
           :data="option.id"
-          v-model="question.value"
+          v-model="value"
           :error-message="errorMessage"
         />
         <mh-questions
-          :errors="errors"
           :deep="deep + 1"
           :fieldPrefix="fieldPrefix"
           :dateFormat="dateFormatLocation"
-          v-if="
-            Array.isArray(question.value) && question.value.includes(option.id)
-          "
+          v-if="Array.isArray(value) && value.includes(option.id)"
           v-model:questions="option.eventFormFields"
         />
       </li>
@@ -28,6 +25,7 @@ import MhCheckbox from "../../../checkbox";
 import MhQuestions from "../index.vue";
 
 import { inject } from "vue";
+import { questionValidation } from "../composables/validations";
 
 export default {
   components: {
@@ -39,14 +37,6 @@ export default {
       type: Object,
       required: true,
     },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    errors: {
-      type: Object,
-      default: () => {},
-    },
     deep: {
       type: Number,
       default: 1,
@@ -56,10 +46,17 @@ export default {
       default: null,
     },
   },
-  setup() {
+  setup(props) {
     const dateFormatLocation = inject("dateFormat");
 
+    const { value, errorMessage } = questionValidation(
+      props.question,
+      props.fieldPrefix
+    );
+
     return {
+      value,
+      errorMessage,
       dateFormatLocation,
     };
   },

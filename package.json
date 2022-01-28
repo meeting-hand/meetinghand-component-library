@@ -40,7 +40,10 @@
         "yargs": "^16.2.0"
     },
     "dependencies": {
+        "@vee-validate/rules": "^4.5.7",
         "ant-design-vue": "2.1.4",
-        "vue": "^3.2.23"
+        "vee-validate": "^4.5.8",
+        "vue": "^3.2.23",
+        "yup": "^0.32.11"
     }
 }

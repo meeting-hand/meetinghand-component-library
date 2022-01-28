@@ -20,14 +20,6 @@ export default {
       type: Object,
       required: true,
     },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    errors: {
-      type: Object,
-      default: () => {},
-    },
     deep: {
       type: Number,
       default: 1,
