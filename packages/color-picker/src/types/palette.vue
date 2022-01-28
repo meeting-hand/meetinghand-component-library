@@ -5,7 +5,7 @@
     v-model:visible="popoverStatus"
   >
     <template #content>
-      <div class="palette-color-picker">
+      <div class="palette-color-picker" :style="[`width: ${paletteWidth}`]">
         <div
           v-for="(color, key) in colors"
           :key="key"
@@ -56,6 +56,10 @@ export default defineComponent({
     modelValue: {
       type: String,
       required: true,
+    },
+    paletteWidth: {
+      type: String,
+      default: "160px",
     },
   },
   emits: ["update:modelValue"],

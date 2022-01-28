@@ -37,7 +37,7 @@ storiesOf("ColorPicker", module).add("palette", () => ({
         };
     },
     template: `
-      <mh-color-picker type="palette" v-model="color1" :colors="colors"/>
+      <mh-color-picker type="palette" v-model="color1" :colors="colors" />
       <br />
       {{ color1 }}
     `,
