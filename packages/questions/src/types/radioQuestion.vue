@@ -6,15 +6,14 @@
         <mh-radio
           :text="option.label"
           :data="option.id"
-          v-model="question.value"
+          v-model="value"
           @update:modelValue="otherOption = false"
         />
         <mh-questions
-          :errors="errors"
           :deep="deep + 1"
           :fieldPrefix="fieldPrefix"
           :dateFormat="dateFormatLocation"
-          v-if="question.value == option.id"
+          v-if="value == option.id"
           v-model:questions="option.eventFormFields"
         />
       </li>
@@ -23,13 +22,9 @@
           v-model="otherOption"
           text="Other"
           :data="true"
-          @update:modelValue="question.value = null"
+          @update:modelValue="value = null"
         />
-        <mh-input
-          v-model="question.value"
-          v-if="otherOption"
-          class="other-input"
-        />
+        <mh-input v-model="value" v-if="otherOption" class="other-input" />
       </li>
     </ul>
     <span v-if="errorMessage" class="mh-input__error">
@@ -43,6 +38,7 @@ import MhInput from "../../../input";
 import MhQuestions from "../index.vue";
 
 import { ref, inject } from "vue";
+import { questionValidation } from "../composables/validations";
 
 export default {
   components: {
@@ -55,14 +51,6 @@ export default {
       type: Object,
       required: true,
     },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    errors: {
-      type: Object,
-      default: () => {},
-    },
     deep: {
       type: Number,
       default: 1,
@@ -73,11 +61,20 @@ export default {
     },
   },
   setup(props) {
-    const otherOption = ref(typeof props.question.value === "string");
+    const { value, errorMessage } = questionValidation(
+      props.question,
+      props.fieldPrefix
+    );
+
+    const otherOption = ref(typeof value.value === "string");
+
     const dateFormatLocation = inject("dateFormat");
+
     return {
       otherOption,
       dateFormatLocation,
+      value,
+      errorMessage,
     };
   },
 };

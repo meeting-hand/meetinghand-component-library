@@ -3,8 +3,6 @@
     <component
       :is="`${question.type}Question`"
       :key="question.id"
-      :errorMessage="errors[`${fieldPrefix}${question.id}`]"
-      :errors="errors"
       :fieldPrefix="fieldPrefix"
       :deep="deep"
       v-for="(question, keyQuestion) in questions"
@@ -17,6 +15,7 @@
 import { defineAsyncComponent, provide } from "vue";
 
 import TextQuestion from "./types/textQuestion.vue";
+import NumberQuestion from "./types/numberQuestion.vue";
 import TelQuestion from "./types/telQuestion.vue";
 import TextareaQuestion from "./types/textareaQuestion.vue";
 import EmailQuestion from "./types/emailQuestion.vue";
@@ -28,6 +27,7 @@ import DatepickerQuestion from "./types/datepickerQuestion.vue";
 export default {
   name: "Questions",
   components: {
+    NumberQuestion,
     TextQuestion,
     TelQuestion,
     TextareaQuestion,
@@ -51,17 +51,13 @@ export default {
       type: Array,
       default: () => [],
     },
-    errors: {
-      type: Object,
-      default: () => {},
-    },
     deep: {
       type: Number,
       default: 1,
     },
     fieldPrefix: {
       type: String,
-      default: "",
+      default: "questions.",
     },
     dateFormat: {
       type: String,

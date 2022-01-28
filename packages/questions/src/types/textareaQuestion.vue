@@ -7,12 +7,14 @@
       :tooltip="question.information"
       :error-message="errorMessage"
       :placeholder="question.hint"
-      v-model="question.value"
+      v-model="value"
     />
   </div>
 </template>
 <script>
 import MhTextArea from "../../../textarea";
+
+import { questionValidation } from "../composables/validations";
 
 export default {
   components: {
@@ -23,14 +25,6 @@ export default {
       type: Object,
       required: true,
     },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    errors: {
-      type: Object,
-      default: () => {},
-    },
     deep: {
       type: Number,
       default: 1,
@@ -40,6 +34,16 @@ export default {
       default: null,
     },
   },
-  setup() {},
+  setup(props) {
+    const { value, errorMessage } = questionValidation(
+      props.question,
+      props.fieldPrefix
+    );
+
+    return {
+      value,
+      errorMessage,
+    };
+  },
 };
 </script>

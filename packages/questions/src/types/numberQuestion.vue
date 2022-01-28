@@ -1,21 +1,23 @@
 <template>
-  <div class="question question-country">
-    <mh-select
-      v-model="value"
-      input-type="country"
+  <div class="question question-text">
+    <mh-input-number
       :label="question.label"
-      :error-message="errorMessage"
+      :errorMessage="errorMessage"
+      :tooltip="question.information"
+      :textTransform="question.textTransform"
+      :placeholder="question.hint"
+      v-model="value"
     />
   </div>
 </template>
 <script>
-import MhSelect from "../../../select";
+import MhInputNumber from "../../../input-number";
 
 import { questionValidation } from "../composables/validations";
 
 export default {
   components: {
-    MhSelect,
+    MhInputNumber,
   },
   props: {
     question: {
@@ -36,6 +38,7 @@ export default {
       props.question,
       props.fieldPrefix
     );
+
     return {
       value,
       errorMessage,

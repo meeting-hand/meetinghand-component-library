@@ -1,7 +1,7 @@
 <template>
   <div class="question question-file">
     <transition name="fade" mode="out-in">
-      <div v-if="!question.value">
+      <div v-if="!value">
         <mh-button
           type="secondary"
           icon="ui-download-file"
@@ -24,11 +24,11 @@
           @click="removeFile()"
           icon="system-close"
         >
-          {{ question.value.name || question.label }}
+          {{ value.name || question.label }}
         </mh-button>
         <a
-          :href="question.value"
-          v-if="typeof question.value === 'string' && isFilePath()"
+          :href="value"
+          v-if="typeof value === 'string' && isFilePath()"
           target="_blank"
           class="download-button"
         >
@@ -50,6 +50,8 @@ import { ref, inject } from "vue";
 import MhInput from "../../../input";
 import MhButton from "../../../button";
 
+import { questionValidation } from "../composables/validations";
+
 export default {
   components: {
     MhInput,
@@ -59,14 +61,6 @@ export default {
     question: {
       type: Object,
       required: true,
-    },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    errors: {
-      type: Object,
-      default: () => {},
     },
     deep: {
       type: Number,
@@ -80,6 +74,11 @@ export default {
   emits: ["update:question"],
   setup(props, { emit }) {
     const maxFileSize = inject("maxFileSize");
+
+    const { value, errorMessage } = questionValidation(
+      props.question,
+      props.fieldPrefix
+    );
 
     const fileInput = ref(null);
 
@@ -98,7 +97,7 @@ export default {
 
     const isFilePath = () =>
       /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/.test(
-        props.question.value
+        value.value
       );
 
     const acceptedTypes = () => {
@@ -154,7 +153,7 @@ export default {
     };
 
     const updateValue = (value) => {
-      props.question.value = value;
+      value.value = value;
     };
 
     return {
@@ -165,6 +164,8 @@ export default {
       removeFile,
       updateValue,
       isFilePath,
+      value,
+      errorMessage,
     };
   },
 };

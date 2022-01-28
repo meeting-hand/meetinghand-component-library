@@ -3,7 +3,7 @@
     <mh-input
       :label="question.label"
       :error-message="errorMessage"
-      v-model="question.value"
+      v-model="value"
       :tooltip="question.information"
       input-type="tel"
     />
@@ -11,6 +11,8 @@
 </template>
 <script>
 import MhInput from "../../../input";
+
+import { questionValidation } from "../composables/validations";
 
 export default {
   components: {
@@ -21,14 +23,6 @@ export default {
       type: Object,
       required: true,
     },
-    errorMessage: {
-      type: String,
-      default: "",
-    },
-    errors: {
-      type: Object,
-      default: () => {},
-    },
     deep: {
       type: Number,
       default: 1,
@@ -38,6 +32,16 @@ export default {
       default: null,
     },
   },
-  setup() {},
+  setup(props) {
+    const { value, errorMessage } = questionValidation(
+      props.question,
+      props.fieldPrefix
+    );
+
+    return {
+      value,
+      errorMessage,
+    };
+  },
 };
 </script>
