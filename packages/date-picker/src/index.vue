@@ -39,10 +39,6 @@ export default {
       type: String,
       default: "DD.MM.YYYY",
     },
-    valueFormat: {
-      type: String,
-      default: null,
-    },
     hasError: {
       type: Boolean,
       default: false,

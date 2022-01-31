@@ -7,7 +7,7 @@
   <a-date-picker
     v-model:value="value"
     :format="format"
-    :valueFormat="valueFormat || format"
+    :valueFormat="format"
     :class="[{ error: hasError }]"
     :disabled="disabled"
     :placeholder="placeholder"
@@ -38,10 +38,6 @@ export default {
       type: String,
       default: "DD.MM.YYYY",
       validator: (_v) => ["DD.MM.YYYY", "MM.DD.YYYY"].includes(_v),
-    },
-    valueFormat: {
-      type: String,
-      default: null,
     },
     hasError: {
       type: Boolean,
