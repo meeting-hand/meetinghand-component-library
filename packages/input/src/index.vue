@@ -23,6 +23,7 @@
       :autocomplete="autocomplete"
       :maxLength="maxLength"
       :mask="mask"
+      :countryCode="countryCode"
       :id="elId"
       v-model="value"
     />

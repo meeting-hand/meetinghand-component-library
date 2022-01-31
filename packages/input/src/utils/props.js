@@ -59,4 +59,8 @@ export default {
     mask: {
         type: Object,
     },
+    countryCode: {
+        type: String,
+        default: "US",
+    },
 };

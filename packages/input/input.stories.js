@@ -117,12 +117,16 @@ storiesOf("Input", module).add("Tel", () => ({
             tel1: "(+90) 506 900 04 91",
             tel2: null,
             tel3: "",
+            tel4: "",
         };
     },
     template: `
   <div class="storybook-input">
 			<h1>Standart</h1>
       <mh-input v-model="tel1" input-type="tel" id="tel1" />
+			<hr />
+			<h1>Standart Default Country Code</h1>
+      <mh-input v-model="tel4" input-type="tel" country-code="tr" />
 			<hr />
 			<h1>Error</h1>
 			<mh-input v-model="tel2" input-type="tel" has-error error-message="this field is required" id="tel2" />
