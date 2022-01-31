@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { watch } from "vue";
 import { Input, Select } from "ant-design-vue";
 
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
@@ -150,14 +151,35 @@ export default {
       return props.hasError || props.errorMessage;
     });
 
+    const setDefaultCountry = () => {
+      const defaultCountry = countryPhoneCodes.value.find(
+        (country) =>
+          country.countryCode.toLowerCase() === props.countryCode.toLowerCase()
+      );
+      if (defaultCountry) {
+        dialCode.value = defaultCountry.dialCode;
+      }
+    };
+
     onMounted(async () => {
       await loadPhoneCodes();
 
       if (valueDialCode.value) {
         dialCode.value = valueDialCode.value;
+      } else if (props.countryCode) {
+        setDefaultCountry();
       }
 
       setCleave(dialCode.value);
+
+      watch(
+        () => props.countryCode,
+        () => {
+          if (!cleave.getFormattedValue()) {
+            setDefaultCountry();
+          }
+        }
+      );
     });
 
     return {
