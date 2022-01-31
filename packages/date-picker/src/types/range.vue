@@ -14,7 +14,7 @@
   <a-range-picker
     v-model:value="value"
     :format="format"
-    :valueFormat="format"
+    :valueFormat="valueFormat || format"
     :class="[
       { error: hasError },
       'mh-range-picker',
@@ -51,6 +51,10 @@ export default {
     format: {
       type: String,
       default: "DD.MM.YYYY",
+    },
+    valueFormat: {
+      type: String,
+      default: null,
     },
     hasError: {
       type: Boolean,
