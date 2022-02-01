@@ -145,16 +145,10 @@ export default {
       {
         name: "QuillImageDropAndPaste",
         module: QuillImageDropAndPaste,
-        options: {
-          /* options */
-        },
       },
       {
         name: "BlotFormatter",
         module: BlotFormatter,
-        options: {
-          /* options */
-        },
       },
     ];
 
