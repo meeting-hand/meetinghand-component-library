@@ -31,7 +31,7 @@
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
 import QuillImageDropAndPaste from "quill-image-drop-and-paste";
-import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
+import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter.js";
 import MhEditorIcons from "./assets/icons";
 
 export default {
