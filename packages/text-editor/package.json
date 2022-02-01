@@ -21,6 +21,8 @@
         "@vueup/vue-quill": "^1.0.0-beta.7",
         "install": "^0.13.0",
         "npm": "^8.3.0",
-        "quill-better-table": "^1.2.10"
+        "quill-better-table": "^1.2.10",
+        "quill-blot-formatter": "^1.0.5",
+        "quill-image-drop-and-paste": "^1.2.9"
     }
 }
