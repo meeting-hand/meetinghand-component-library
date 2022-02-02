@@ -11,11 +11,11 @@
       <quill-editor
         :toolbar="toolbar"
         :placeholder="placeholder"
-        contentType="html"
         :readOnly="readOnly"
         :modules="toolbar.some((_t) => _t === 'image') ? modules : null"
         v-model:content="value"
-        :ref="'_' + Math.random().toString(36).substr(2, 9)"
+        contentType="html"
+        ref="MHEditor"
       >
       </quill-editor>
       <div class="editor-footer" v-if="maxWordCount">
@@ -31,7 +31,7 @@
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
 import QuillImageDropAndPaste from "quill-image-drop-and-paste";
-import BlotFormatter from "quill-blot-formatter/dist";
+import BlotFormatter from "quill-blot-formatter";
 import MhEditorIcons from "./assets/icons";
 
 export default {

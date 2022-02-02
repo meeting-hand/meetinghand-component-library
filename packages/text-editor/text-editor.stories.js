@@ -31,6 +31,7 @@ storiesOf("TextEditor", module).add("All", () => ({
     template: `
       <h1>Default</h1>
 	  <mh-text-editor v-model="text1" placeholder="Placeholder" label="Lorem ipsum"/>
+      {{text1}}
       <br /><br />
 	  <h1>Default with word counter</h1>
 
