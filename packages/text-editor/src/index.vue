@@ -12,7 +12,6 @@
         :toolbar="toolbar"
         :placeholder="placeholder"
         :readOnly="readOnly"
-        :modules="toolbar.some((_t) => _t === 'image') ? modules : null"
         v-model:content="value"
         contentType="html"
         ref="MHEditor"
@@ -30,8 +29,7 @@
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
-import QuillImageDropAndPaste from "quill-image-drop-and-paste";
-import BlotFormatter from "quill-blot-formatter";
+
 import MhEditorIcons from "./assets/icons";
 
 export default {
@@ -140,21 +138,6 @@ export default {
     icons.align.right = MhEditorIcons.right;
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
-
-    const modules = [
-      {
-        name: "QuillImageDropAndPaste",
-        module: QuillImageDropAndPaste,
-      },
-      {
-        name: "BlotFormatter",
-        module: BlotFormatter,
-      },
-    ];
-
-    return {
-      modules,
-    };
   },
 };
 </script>
