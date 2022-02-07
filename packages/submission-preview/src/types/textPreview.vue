@@ -28,7 +28,6 @@
       </div>
     </div>
     <div class="abstract-body">
-      <h2>{{ labels.abstractBody }}</h2>
       <div
         class="abstract-body-content"
         v-for="(abstract, index) in body"
@@ -102,7 +101,6 @@ export default defineComponent({
     labels: {
       type: Object,
       default: {
-        abstractBody: "Abstract body",
         abstract: "Abstract",
         authors: "Authors",
         abstractFiles: "Abstract files",

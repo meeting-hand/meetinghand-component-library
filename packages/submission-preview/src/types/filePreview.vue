@@ -95,7 +95,6 @@ export default defineComponent({
     labels: {
       type: Object,
       default: {
-        abstractBody: "Abstract body",
         abstract: "Abstract",
         authors: "Authors",
         abstractFiles: "Abstract files",
