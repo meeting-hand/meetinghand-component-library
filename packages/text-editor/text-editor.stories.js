@@ -6,6 +6,9 @@ storiesOf("TextEditor", module).add("All", () => ({
     data() {
         return {
             text1: "<p><b>Gandalf</b> the grey</p>",
+            text2: "",
+            text3: "",
+            text4: "",
             toolbar: [
                 "bold",
                 "italic",
@@ -13,7 +16,6 @@ storiesOf("TextEditor", module).add("All", () => ({
                 "strike",
                 "blockquote",
                 "link",
-                "image",
                 //"table",
                 { align: "left" },
                 { align: "center" },
@@ -29,18 +31,19 @@ storiesOf("TextEditor", module).add("All", () => ({
     template: `
       <h1>Default</h1>
 	  <mh-text-editor v-model="text1" placeholder="Placeholder" label="Lorem ipsum"/>
+      {{text1}}
       <br /><br />
 	  <h1>Default with word counter</h1>
 
-      <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" />
+      <mh-text-editor v-model="text2" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" />
       <br /><br />
-      <p>{{text1}}</p>
+      <p>{{text2}}</p>
       <hr />
       <h1>Error</h1>
-      <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" has-error error-message="this field is required"/>
+      <mh-text-editor v-model="text3" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" has-error error-message="this field is required"/>
       <hr />
       <h1>Disabled</h1>
-      <mh-text-editor v-model="text1" placeholder="Placeholder" :toolbar="toolbar" :readOnly="true"/>
+      <mh-text-editor v-model="text4" placeholder="Placeholder" :toolbar="toolbar" :readOnly="true"/>
 
     `,
 }));

@@ -11,9 +11,9 @@
       <quill-editor
         :toolbar="toolbar"
         :placeholder="placeholder"
-        contentType="html"
         :readOnly="readOnly"
         v-model:content="value"
+        contentType="html"
         ref="MHEditor"
       >
       </quill-editor>
@@ -29,6 +29,7 @@
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
+
 import MhEditorIcons from "./assets/icons";
 
 export default {
