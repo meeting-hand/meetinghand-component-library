@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/text-editor",
     "description": "Meetinghand Component Library Component for text-editor",
-    "version": "0.0.120",
+    "version": "0.0.123",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -19,8 +19,7 @@
     "dependencies": {
         "@meetinghand/style": "file:../style",
         "@vueup/vue-quill": "^1.0.0-beta.7",
-        "install": "^0.13.0",
-        "npm": "^8.3.0",
-        "quill-better-table": "^1.2.10"
+        "quill-better-table": "^1.2.10",
+        "quill-blot-formatter": "^1.0.5"
     }
 }

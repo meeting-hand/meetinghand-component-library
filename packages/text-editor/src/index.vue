@@ -10,6 +10,7 @@
     >
       <quill-editor
         :toolbar="toolbar"
+        :modules="modules"
         :placeholder="placeholder"
         :readOnly="readOnly"
         v-model:content="value"
@@ -29,6 +30,7 @@
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
+import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
 
 import MhEditorIcons from "./assets/icons";
 
@@ -138,6 +140,18 @@ export default {
     icons.align.right = MhEditorIcons.right;
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
+
+    const modules = {
+      name: "blotFormatter",
+      module: BlotFormatter,
+      options: {
+        /* options */
+      },
+    };
+
+    return {
+      modules,
+    };
   },
 };
 </script>
