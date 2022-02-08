@@ -30,7 +30,7 @@
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
-import BlotFormatter from "quill-blot-formatter";
+import BlotFormatter from "quill-blot-formatter/dist";
 
 import MhEditorIcons from "./assets/icons";
 
