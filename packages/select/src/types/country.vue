@@ -20,6 +20,7 @@
       <span class="country-wrapper">
         <img
           :src="`https://meetinghand.s3.eu-central-1.amazonaws.com/assets/imgs/svg/flags/${country.value}.svg`"
+          crossorigin="anonymous"
         />
         {{ country.label }}
       </span>
