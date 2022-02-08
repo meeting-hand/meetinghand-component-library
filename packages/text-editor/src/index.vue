@@ -15,7 +15,7 @@
         :readOnly="readOnly"
         v-model:content="value"
         contentType="html"
-        ref="MHEditor"
+        :ref="elementRef"
       >
       </quill-editor>
       <div class="editor-footer" v-if="maxWordCount">
@@ -30,7 +30,9 @@
 
 <script>
 import { QuillEditor, Quill } from "@vueup/vue-quill";
+
 import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
+import { ImageDrop } from "quill-image-drop-module";
 
 import MhEditorIcons from "./assets/icons";
 
@@ -83,7 +85,7 @@ export default {
           "blockquote",
           "link",
           "image",
-          //"table",
+          // "table",
           { align: "left" },
           { align: "center" },
           { align: "right" },
@@ -97,6 +99,10 @@ export default {
     },
     maxWordCount: {
       type: Number,
+    },
+    elementRef: {
+      type: String,
+      default: "MHEditor",
     },
   },
   components: {
@@ -141,13 +147,22 @@ export default {
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
 
-    const modules = {
-      name: "blotFormatter",
-      module: BlotFormatter,
-      options: {
-        /* options */
+    const modules = [
+      {
+        name: "ImageDrop",
+        module: ImageDrop,
+        options: {
+          /* options */
+        },
       },
-    };
+      {
+        name: "BlotFormatter",
+        module: BlotFormatter,
+        options: {
+          /* options */
+        },
+      },
+    ];
 
     return {
       modules,
