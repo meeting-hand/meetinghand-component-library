@@ -8,7 +8,7 @@ export default defineComponent({
   props: {
     question: {
       type: Object,
-      default: "",
+      required: true,
     },
   },
   setup() {},

@@ -1,18 +1,24 @@
 export const questions2Flat = (questions) => {
     return questions.reduce((all, question) => {
-        return Array.isArray(question.eventFormFieldOptions) ?
-            [
+        if (Array.isArray(question.eventFormFieldOptions)) {
+            return [
                 ...all,
-                {...question, eventFormFields: [] },
-                ...(Array.isArray(question.eventFormFields) ?
-                    questions2Flat(
+                question,
+                ...[
+                    ...questions2Flat(
                         question.eventFormFieldOptions
+                        .filter(
+                            (_o) =>
+                            Array.isArray(_o.eventFormFields) &&
+                            _o.eventFormFields.length > 0
+                        )
                         .map((_o) => _o.eventFormFields)
                         .flat()
-                    ) :
-                    []),
-            ] :
-            [...all, {...question }];
+                    ),
+                ],
+            ];
+        }
+        return [...all, question];
     }, []);
 };
 
@@ -20,6 +26,8 @@ export const getQuestionLabelValue = (allQuestions, questionValue) => {
     allQuestions = questions2Flat(allQuestions);
 
     const question = allQuestions.find((_q) => _q.id === questionValue.id);
+
+    console.log(allQuestions);
     if (question) {
         if (Array.isArray(questionValue.value)) {
             return question.eventFormFieldOptions
