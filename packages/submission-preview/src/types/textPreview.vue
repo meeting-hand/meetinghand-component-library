@@ -111,7 +111,7 @@ export default defineComponent({
     const countryOptions = ref([]);
     let authorList = [];
     let lastNumber = 0;
-    let authorLocations = [];
+    let authorLocations = ref([]);
 
     props.authors.forEach((author) => {
       if (author?.city || author?.country || author?.institution) {
@@ -144,14 +144,9 @@ export default defineComponent({
         );
         countries = await response.json();
       } catch (error) {
-        console.log(error);
+        console.warn(error);
       }
-
-      console.log(countries);
-
-      console.table(authorList);
-
-      authorLocations = authorList
+      authorLocations.value = authorList
         .filter(
           (_a, _i) =>
             _i ===
