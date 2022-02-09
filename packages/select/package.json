@@ -17,6 +17,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@meetinghand/style": "file:../style"
+		"@meetinghand/style": "file:../style",
+		"lodash": "^4.17.21"
 	}
 }

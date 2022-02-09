@@ -22,7 +22,12 @@
           :src="`https://meetinghand.s3.eu-central-1.amazonaws.com/assets/imgs/svg/flags/${country.value}.svg`"
           crossorigin="anonymous"
         />
-        {{ country.label }}
+        {{
+          truncate(country.label, {
+            length: Number(truncateLength),
+            separator: ",",
+          })
+        }}
       </span>
     </a-select-option>
     <template v-slot:notFoundContent>
@@ -45,6 +50,7 @@ import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 
+import { truncate } from "lodash";
 import defaultProps from "../utils/props";
 
 export default {
@@ -98,6 +104,7 @@ export default {
       filterOption,
       suffixIcon,
       countryOptions,
+      truncate,
     };
   },
 };
