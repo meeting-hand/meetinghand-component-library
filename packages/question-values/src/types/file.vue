@@ -3,7 +3,8 @@
     <label>{{ question.label }}</label>
     <div class="value">
       <a :href="question.value" target="_blank">
-        {{ $t("button.download") }}
+        <!-- {{ $t("button.download") }} -->
+        Download
       </a>
     </div>
   </div>
@@ -15,7 +16,7 @@ export default defineComponent({
   props: {
     question: {
       type: Object,
-      default: "",
+      required: true,
     },
   },
   setup() {},
