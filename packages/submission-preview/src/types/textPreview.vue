@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { computed, defineComponent } from "vue";
+import { defineComponent, nextTick, onBeforeMount, onMounted, ref } from "vue";
 
 export default defineComponent({
   props: {
@@ -108,8 +108,10 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const countryOptions = ref([]);
     let authorList = [];
     let lastNumber = 0;
+    let authorLocations = [];
 
     props.authors.forEach((author) => {
       if (author?.city || author?.country || author?.institution) {
@@ -134,26 +136,52 @@ export default defineComponent({
       return a.order - b.order;
     });
 
-    const authorLocations = authorList
-      .filter(
-        (_a, _i) =>
-          _i ===
-            authorList.findIndex(
-              (__a) => __a.authorNumber === _a.authorNumber
-            ) && _a.authorNumber > 0
-      )
-      .map((_a) => {
-        return {
-          authorNumber: _a.authorNumber,
-          location: [_a?.institution, _a?.city, _a?.country]
-            .filter((_l) => typeof _l === "string")
-            .join(", "),
-        };
-      });
+    const fetchCountries = async () => {
+      let countries = [];
+      try {
+        const response = await fetch(
+          "https://meetinghand.s3.eu-central-1.amazonaws.com/assets/resources/countries.json"
+        );
+        countries = await response.json();
+      } catch (error) {
+        console.log(error);
+      }
+
+      console.log(countries);
+
+      console.table(authorList);
+
+      authorLocations = authorList
+        .filter(
+          (_a, _i) =>
+            _i ===
+              authorList.findIndex(
+                (__a) => __a.authorNumber === _a.authorNumber
+              ) && _a.authorNumber > 0
+        )
+        .map((_a) => {
+          const country = countries.find(
+            (_c) =>
+              _a?.country && _c.code.toUpperCase() === _a.country.toUpperCase()
+          );
+          if (country) {
+            _a.country = country.name;
+          }
+          return {
+            authorNumber: _a.authorNumber,
+            location: [_a?.institution, _a?.city, _a?.country]
+              .filter((_l) => typeof _l === "string")
+              .join(", "),
+          };
+        });
+    };
+
+    fetchCountries();
 
     return {
       authorList,
       authorLocations,
+      countryOptions,
     };
   },
 });
