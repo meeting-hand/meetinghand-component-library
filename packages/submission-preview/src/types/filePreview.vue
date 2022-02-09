@@ -45,7 +45,9 @@
 </template>
 
 <script >
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+
+import { fetchCountries, sortAuthors } from "../composables/author";
 
 import MhButton from "@meetinghand/button";
 import MhIcon from "@meetinghand/style/icons/index.vue";
@@ -105,46 +107,11 @@ export default defineComponent({
   setup(props) {
     let authorList = [];
     let lastNumber = 0;
+    let authorLocations = ref([]);
 
-    props.authors.forEach((author) => {
-      if (author?.city || author?.country || author?.institution) {
-        const previousItem = authorList.find(
-          (_a, _i) =>
-            [author.city, author.country, author.institution].toString() ===
-            [_a.city, _a.country, _a.institution].toString()
-        );
-        if (previousItem) {
-          author.authorNumber = previousItem.authorNumber;
-        } else {
-          author.authorNumber = lastNumber + 1;
-          lastNumber++;
-        }
-      } else {
-        author.authorNumber = 0;
-      }
-      authorList.push(author);
-    });
+    sortAuthors(props.authors, authorList, lastNumber);
 
-    authorList = authorList.sort((a, b) => {
-      return a.order - b.order;
-    });
-
-    const authorLocations = authorList
-      .filter(
-        (_a, _i) =>
-          _i ===
-            authorList.findIndex(
-              (__a) => __a.authorNumber === _a.authorNumber
-            ) && _a.authorNumber > 0
-      )
-      .map((_a) => {
-        return {
-          authorNumber: _a.authorNumber,
-          location: [_a?.institution, _a?.city, _a?.country]
-            .filter((_l) => typeof _l === "string")
-            .join(", "),
-        };
-      });
+    fetchCountries(authorLocations, authorList);
 
     return {
       authorList,
