@@ -30,20 +30,20 @@ storiesOf("TextEditor", module).add("All", () => ({
     },
     template: `
       <h1>Default</h1>
-	  <mh-text-editor v-model="text1" placeholder="Placeholder" label="Lorem ipsum"/>
-      {{text1}}
-      <br /><br />
-	  <h1>Default with word counter</h1>
+	  		<mh-text-editor elementRef="text1" v-model="text1" placeholder="Placeholder" label="Lorem ipsum"/>
+      	{{text1}}
+      	<br /><br />
 
-      <mh-text-editor v-model="text2" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" />
-      <br /><br />
-      <p>{{text2}}</p>
+			<h1>Default with word counter</h1>
+      	<mh-text-editor elementRef="text2" v-model="text2" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" />
+      	<br /><br />
+      	<p>{{text2}}</p>
       <hr />
       <h1>Error</h1>
-      <mh-text-editor v-model="text3" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" has-error error-message="this field is required"/>
+      <mh-text-editor elementRef="text3" v-model="text3" placeholder="Placeholder" :toolbar="toolbar" :max-word-count="15" has-error error-message="this field is required"/>
       <hr />
       <h1>Disabled</h1>
-      <mh-text-editor v-model="text4" placeholder="Placeholder" :toolbar="toolbar" :readOnly="true"/>
+      <mh-text-editor elementRef="text4" v-model="text4" placeholder="Placeholder" :toolbar="toolbar" :readOnly="true"/>
 
     `,
 }));
