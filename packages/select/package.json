@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/select",
 	"description": "Meetinghand Component Library Component for select",
-	"version": "0.0.118",
+	"version": "0.0.119",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
