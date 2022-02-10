@@ -1,121 +1,120 @@
 .storybook-banner {
-    width: 50%;
+	width: 50%;
 }
 
 .storybook-banner h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-banner hr {
-    margin: 15px 0px;
-
+	margin: 15px 0px;
 }
 
 .storybook-button h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
-.storybook-button .ant-btn {
-    margin-bottom: 15px;
+.storybook-button .mh-primary-button {
+	margin-bottom: 15px;
 }
 
 .storybook-checkbox hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-datepicker h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-datepicker hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-divider h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-divider .mh-divider {
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .storybook-input-number h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-input-number hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-input h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-input hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-select h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-select hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .story-modals hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-notification hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-notification h1 {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-radio h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-radio hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-status h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-status hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook-switch h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook-switch hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .storybook h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }
 
 .storybook hr {
-    margin: 15px 0px;
+	margin: 15px 0px;
 }
 
 .mh-style svg {
@@ -131,6 +130,6 @@
 }
 
 .mh-style h1 {
-    margin-bottom: 15px;
-    font-weight: 500;
+	margin-bottom: 15px;
+	font-weight: 500;
 }

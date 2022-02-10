@@ -53,6 +53,95 @@
     }
 }
 
+.mh-primary-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: $color-primary-blue;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+    &.size-default {
+        width: fit-content;
+    }
+    &.size-lager {
+        width: 100%;
+    }
+    &:hover {
+        background: #1987df;
+    }
+    &:active {
+        background: #147acb;
+    }
+    &.red {
+        background: #f44336;
+        &:hover {
+            background: #dc3c31;
+        }
+        &:active {
+            background: #c3362b;
+        }
+    }
+    &.disabled {
+        cursor: not-allowed;
+    }
+    &.wait {
+        border: none;
+        background-color: rgba($color-primary-blue, 0.4);
+        cursor: wait;
+        &:hover {
+            background: rgba($color-primary-blue, 0.5);
+        }
+        span {
+            display: none;
+        }
+        .mh-icon:not(.wait-spinner) {
+            display: none;
+        }
+        .wait-spinner {
+            stroke: $color-mono-white;
+            fill: none !important;
+        }
+    }
+    &.alignment-left {
+        .mh-icon {
+            margin-right: 4px;
+        }
+    }
+    &.alignment-right {
+        flex-direction: row-reverse;
+        .mh-icon {
+            margin-left: 4px;
+        }
+    }
+    .mh-icon {
+        width: 20px;
+        height: 20px;
+        fill: #ffffff;
+    }
+}
+
+/* Ripple effect */
+// .mh-button {
+//     background-position: center;
+//     transition: background 0.5s;
+// }
+// .mh-button:hover {
+//     background: radial-gradient(circle, transparent 1%, 1%) center/15000%;
+// }
+// .mh-button:active {
+//     // background-color: #147acb;
+//     background-size: 100%;
+//     transition: background 0s;
+// }
+
 /* PRIMARY END */
 
 /* SECONDARY */
