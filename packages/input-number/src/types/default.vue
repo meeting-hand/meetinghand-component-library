@@ -1,6 +1,6 @@
 <template>
-  <div v-if="title" class="mh-input-number-text">
-    <span class="mh-input__title">{{ title }}</span>
+  <div v-if="label" class="mh-input-number-text">
+    <span class="mh-input__title">{{ label }}</span>
     <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
       <mh-icon name="system-info" />
     </tooltip>
@@ -65,7 +65,7 @@ export default {
     currency: {
       type: String,
     },
-    title: {
+    label: {
       type: String,
       default: null,
     },

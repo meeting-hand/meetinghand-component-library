@@ -3,7 +3,6 @@ import MhInputNumber from "./index";
 
 import "../../assets/storybook/storybook.css";
 
-
 storiesOf("InputNumber", module).add("Default", () => ({
 	components: { MhInputNumber },
 	data() {
@@ -19,7 +18,7 @@ storiesOf("InputNumber", module).add("Default", () => ({
   <div class="storybook-input-number">
 
       <h1>Number Default</h1>
-      <mh-input-number v-model="number1" :max="10000000000" :min="5" title="Label" tooltip="Lorem ipsum"/>
+      <mh-input-number v-model="number1" :max="10000000000" :min="5" label="Label" tooltip="Lorem ipsum"/>
       <hr>
       <h1>Number Error</h1>
       <mh-input-number v-model="number2" has-error error-message="Field is required" />
