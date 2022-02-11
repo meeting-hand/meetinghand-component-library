@@ -4,8 +4,8 @@ import MhButton from "./index";
 import "../../assets/storybook/storybook.css";
 
 storiesOf("Button", module).add("primary", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
     <h1>Large</h1>
       <mh-button type="primary" size="large">
@@ -72,8 +72,8 @@ storiesOf("Button", module).add("primary", () => ({
 }));
 
 storiesOf("Button", module).add("secondary", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Large</h1>
@@ -124,6 +124,9 @@ storiesOf("Button", module).add("secondary", () => ({
       <mh-button type="secondary" icon="arrow-up" icon-alignment="right" color="red">
       Icon Right
     </mh-button>
+      <mh-button type="secondary" icon="arrow-up" icon-alignment="right" color="red" disabled>
+      Icon Right
+    </mh-button>
     <h1>Green</h1>
       <mh-button type="secondary" icon="arrow-up" icon-alignment="right" color="green">
       Icon Right
@@ -134,8 +137,8 @@ storiesOf("Button", module).add("secondary", () => ({
 }));
 
 storiesOf("Button", module).add("text", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Default</h1>
@@ -175,8 +178,8 @@ storiesOf("Button", module).add("text", () => ({
 }));
 
 storiesOf("Button", module).add("small", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Default</h1>
@@ -219,8 +222,8 @@ storiesOf("Button", module).add("small", () => ({
 }));
 
 storiesOf("Button", module).add("row", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Default</h1>
@@ -249,8 +252,8 @@ storiesOf("Button", module).add("row", () => ({
 }));
 
 storiesOf("Button", module).add("iconic", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Normal</h1>
@@ -291,8 +294,8 @@ storiesOf("Button", module).add("iconic", () => ({
 }));
 
 storiesOf("Button", module).add("social", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Google</h1>
@@ -316,8 +319,8 @@ storiesOf("Button", module).add("social", () => ({
 }));
 
 storiesOf("Button", module).add("menu", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Aligment Left</h1>
@@ -341,8 +344,8 @@ storiesOf("Button", module).add("menu", () => ({
 }));
 
 storiesOf("Button", module).add("list", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Aligment Left</h1>
@@ -366,8 +369,8 @@ storiesOf("Button", module).add("list", () => ({
 }));
 
 storiesOf("Button", module).add("tab", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
   <div class="storybook-button">
 
       <h1>Tab Rounded</h1>
@@ -395,8 +398,8 @@ storiesOf("Button", module).add("tab", () => ({
 }));
 
 storiesOf("Button", module).add("tabBar", () => ({
-    components: { MhButton },
-    template: `
+	components: { MhButton },
+	template: `
 <div class="storybook-button">
 
     <h1>Tab Bar</h1>

@@ -1,54 +1,39 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/ant/button.scss";
 
-/* PRIMARY */
-
-.ant-btn-primary {
-    background-color: $color-primary-blue;
-    border: none;
-    &:hover {
-        background: $color-button-hover-blue;
+.mh-button {
+    cursor: pointer;
+    &.size-default {
+        width: fit-content;
+    }
+    &.size-lager {
+        width: 100%;
+    }
+    .mh-icon {
+        width: 20px;
+        height: 20px;
     }
     &.disabled {
-        border: none;
-        background: $transparent-hover;
-        color: $color-mono-grey;
-        .mh-icon {
-            fill: $color-mono-grey;
-        }
+        cursor: not-allowed;
     }
     &.wait {
-        border: none;
-        background-color: rgba($color-primary-blue, 0.4);
-        &:hover {
-            background: rgba($color-primary-blue, 0.5);
-        }
+        cursor: wait;
         span {
             display: none;
         }
         .mh-icon:not(.wait-spinner) {
             display: none;
         }
-        .wait-spinner {
-            stroke: $color-mono-white;
-            fill: none !important;
+    }
+    &.alignment-left {
+        .mh-icon {
+            margin-right: 4px;
         }
     }
-    &.green {
-        background: $color-primary-participant;
-        border: none;
-        &:hover {
-            background: $color-button-hover-green;
-        }
-    }
-    &.red {
-        background-color: $color-primary-red;
-        border: none;
-        &:hover {
-            background-color: $color-button-hover-red;
-        }
-        &.disabled {
-            color: $color-mono-white;
+    &.alignment-right {
+        flex-direction: row-reverse;
+        .mh-icon {
+            margin-left: 4px;
         }
     }
 }
@@ -67,13 +52,6 @@
     line-height: 20px;
     align-items: center;
     color: #ffffff;
-    cursor: pointer;
-    &.size-default {
-        width: fit-content;
-    }
-    &.size-lager {
-        width: 100%;
-    }
     &:hover {
         background: #1987df;
     }
@@ -83,51 +61,112 @@
     &.red {
         background: #f44336;
         &:hover {
-            background: #dc3c31;
+            background: $color-button-hover-red;
         }
         &:active {
             background: #c3362b;
         }
+        &.disabled {
+            background-color: #f5564a;
+            color: #ffffff;
+            .mh-icon {
+                fill: #ffffff;
+            }
+        }
+    }
+    &.green {
+        background: $color-primary-participant;
+        &:hover {
+            background: $color-button-hover-green;
+        }
+        &.disabled {
+            background-color: #f5564a;
+            color: #ffffff;
+            .mh-icon {
+                fill: #ffffff;
+            }
+        }
     }
     &.disabled {
-        cursor: not-allowed;
+        background: rgba(0, 0, 0, 0.04);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #b6b6b6;
+        .mh-icon {
+            fill: #b6b6b6;
+        }
     }
     &.wait {
         border: none;
         background-color: rgba($color-primary-blue, 0.4);
-        cursor: wait;
         &:hover {
             background: rgba($color-primary-blue, 0.5);
-        }
-        span {
-            display: none;
-        }
-        .mh-icon:not(.wait-spinner) {
-            display: none;
         }
         .wait-spinner {
             stroke: $color-mono-white;
             fill: none !important;
         }
     }
-    &.alignment-left {
-        .mh-icon {
-            margin-right: 4px;
-        }
-    }
-    &.alignment-right {
-        flex-direction: row-reverse;
-        .mh-icon {
-            margin-left: 4px;
-        }
-    }
     .mh-icon {
-        width: 20px;
-        height: 20px;
         fill: #ffffff;
     }
 }
 
+.mh-secondary-button {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2196f3;
+    background-color: transparent;
+    .mh-icon {
+        fill: #2196f3;
+    }
+    &:hover {
+        background: rgba(0, 0, 0, 0.04);
+    }
+    &:active {
+        background: rgba(0, 0, 0, 0.06);
+    }
+    &.wait {
+        &:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        .wait-spinner {
+            stroke: #2196f3;
+            fill: none !important;
+        }
+    }
+    &.disabled {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #b6b6b6;
+        .mh-icon {
+            fill: #b6b6b6;
+        }
+    }
+    &.red {
+        color: #f44336;
+        .mh-icon {
+            fill: #f44336;
+        }
+    }
+    &.green {
+        color: $color-primary-green;
+        .mh-icon {
+            fill: $color-primary-green;
+        }
+    }
+}
 /* Ripple effect */
 // .mh-button {
 //     background-position: center;
@@ -141,81 +180,6 @@
 //     background-size: 100%;
 //     transition: background 0s;
 // }
-
-/* PRIMARY END */
-
-/* SECONDARY */
-
-.ant-btn-default {
-    border-color: $transparent-hover-3;
-    color: $color-primary-blue;
-    background-color: transparent;
-    .mh-icon {
-        fill: $color-primary-blue;
-    }
-    &:hover {
-        color: $color-primary-blue;
-        background: $transparent-hover;
-        border-color: $transparent-hover-3;
-    }
-    &.disabled {
-        border: $border-size-default solid $transparent-hover-3;
-        background-color: transparent;
-        color: $color-mono-grey;
-        &:hover {
-            background-color: transparent;
-            border-color: $color-mono-light-grey-4;
-        }
-        .mh-icon {
-            fill: $color-mono-grey;
-        }
-    }
-    &.wait {
-        border: none;
-        background-color: rgba($color-secondary-blue, 0.4);
-        &:hover {
-            background: rgba($color-secondary-blue, 0.5);
-        }
-        span {
-            display: none;
-        }
-        .mh-icon:not(.wait-spinner) {
-            display: none;
-        }
-        .wait-spinner {
-            stroke: $color-primary-blue;
-            fill: none !important;
-        }
-    }
-    &.red {
-        border-color: $transparent-hover-3;
-        color: $color-primary-red;
-        .mh-icon {
-            fill: $color-primary-red;
-        }
-        &:hover {
-            background: $transparent-hover;
-        }
-        &.disabled {
-            &:hover {
-                color: $color-primary-red;
-            }
-        }
-    }
-    &.green {
-        border-color: $transparent-hover-3;
-        color: $color-primary-participant;
-        .mh-icon {
-            fill: $color-primary-participant;
-        }
-        &:hover {
-            background: $transparent-hover;
-            color: $color-primary-participant;
-        }
-    }
-}
-
-/* SECONDARY END */
 
 /* TEXT */
 

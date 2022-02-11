@@ -1,7 +1,9 @@
 <template>
-  <a-button
-    type="default"
+  <button
+    :type="submit ? 'submit' : 'button'"
     :class="[
+      `mh-secondary-button`,
+      `mh-button`,
       `size-${size}`,
       `alignment-${iconAlignment}`,
       { wait: wait },
@@ -9,12 +11,11 @@
       color,
     ]"
     :disabled="disabled || wait"
-    :htmlType="submit ? 'submit' : 'button'"
   >
     <mh-icon :name="icon" v-if="icon" />
-    <slot></slot>
+    <slot v-if="!wait"></slot>
     <mh-icon name="wait" class="wait-spinner" v-if="wait" />
-  </a-button>
+  </button>
 </template>
 <script>
 import { Button } from "ant-design-vue";
