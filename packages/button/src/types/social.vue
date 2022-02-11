@@ -1,12 +1,11 @@
 <template>
-  <a-button
-    type="default"
-    :class="[`${socialMedia}`, `social-btn`]"
-    :htmlType="submit ? 'submit' : 'button'"
+  <button
+    :type="submit ? 'submit' : 'button'"
+    :class="[`${socialMedia}`, `mh-social-button`, `mh-button`]"
   >
     <mh-icon :name="icon" v-if="icon" />
     <slot></slot>
-  </a-button>
+  </button>
 </template>
 <script>
 import { Button } from "ant-design-vue";
