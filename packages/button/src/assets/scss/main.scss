@@ -89,9 +89,6 @@
     }
     &.disabled {
         background: rgba(0, 0, 0, 0.04);
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 20px;
         color: #b6b6b6;
         .mh-icon {
             fill: #b6b6b6;
@@ -146,9 +143,6 @@
         }
     }
     &.disabled {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 20px;
         color: #b6b6b6;
         .mh-icon {
             fill: #b6b6b6;
@@ -164,6 +158,51 @@
         color: $color-primary-green;
         .mh-icon {
             fill: $color-primary-green;
+        }
+    }
+}
+
+.mh-text-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    padding: 4px $spacing-xsmall;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #565656;
+    background: transparent;
+    .mh-icon {
+        fill: #979797;
+    }
+    &:hover {
+        background: rgba(0, 0, 0, 0.04);
+    }
+    &:active {
+        background: rgba(0, 0, 0, 0.06);
+    }
+    &.wait {
+        &:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        .wait-spinner {
+            stroke: #979797;
+            fill: none !important;
+        }
+    }
+    &.disabled {
+        color: #b6b6b6;
+        .mh-icon {
+            fill: #b6b6b6;
+        }
+    }
+    &.red {
+        color: #f44336;
+        .mh-icon {
+            fill: #f44336;
         }
     }
 }
