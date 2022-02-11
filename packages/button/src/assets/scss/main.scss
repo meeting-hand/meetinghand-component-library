@@ -319,6 +319,60 @@
     }
 }
 
+.mh-list-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: transparent;
+    min-width: 144px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    border-radius: 6px;
+    border: none;
+    padding: 12px 16px;
+    .mh-icon {
+        fill: $color-primary-blue;
+    }
+    &.alignment-left {
+        .mh-icon {
+            margin-right: 16px;
+        }
+    }
+    &.alignment-right {
+        justify-content: flex-end;
+        .mh-icon {
+            margin-left: 16px;
+        }
+    }
+    &:hover {
+        background: $transparent-hover;
+    }
+    &:active {
+        background: rgba(0, 0, 0, 0.08);
+    }
+    &.wait {
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+        .wait-spinner {
+            stroke: #2196f3;
+            fill: none !important;
+            margin: 0;
+        }
+    }
+    &.disabled {
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        color: #b6b6b6;
+        .mh-icon {
+            fill: #b6b6b6;
+        }
+    }
+}
 // default", "circular", "small", "tiny", "text
 /* Ripple effect */
 // .mh-button {
@@ -333,104 +387,6 @@
 //     background-size: 100%;
 //     transition: background 0s;
 // }
-
-/* SMALL */
-
-.small-btn {
-    font-weight: $font-weight-large;
-    font-size: $font-size-large;
-    line-height: $line-height-default;
-    padding: 2px $spacing-xsmall;
-    .mh-icon {
-        max-width: 20px;
-        max-height: 20px;
-        margin: $spacing-xxsmall $spacing-xsmall;
-    }
-    &.icon-red {
-        .mh-icon {
-            fill: red;
-        }
-    }
-}
-
-/* SMALL END */
-
-/* ROW */
-
-.row-btn {
-    background: none;
-    border: $border-size-default solid $color-mono-light-grey-5;
-    min-width: 360px;
-    justify-content: flex-start;
-    &.alignment-right {
-        justify-content: space-between;
-    }
-    &:hover {
-        background: rgba($color-mono-black, 0.04);
-        border-color: $color-mono-light-grey-5;
-    }
-    &.wait {
-        background: none;
-        border: $border-size-default solid $color-mono-light-grey-5;
-        &:hover {
-            background: rgba($color-mono-black, 0.04);
-        }
-    }
-}
-
-/* ROW END */
-
-/* SOCIAL */
-
-.social-btn {
-    &.ant-btn {
-        max-width: 128px;
-        height: 44px;
-        border-radius: $border-radius-default;
-        &.ant-btn-default {
-            border: $border-size-default solid $color-mono-light-grey-5;
-        }
-        span {
-            color: $color-mono-black;
-            margin-left: 4px;
-        }
-        svg {
-            height: 20px;
-            width: 20px;
-        }
-        .mh-icon {
-            margin-right: $spacing-xxsmall !important;
-        }
-        &.google {
-            &:hover {
-                background: #518ef8;
-            }
-        }
-        &.facebook {
-            &:hover {
-                background: #314f8b;
-            }
-        }
-        &.apple {
-            &:hover {
-                background: $color-mono-black;
-            }
-        }
-        &:hover {
-            border: $border-size-default solid transparent;
-            span {
-                color: $color-mono-white;
-            }
-            svg {
-                path {
-                    fill: $color-mono-white;
-                }
-            }
-        }
-    }
-}
-
-/* SOCIAL END */
 
 /* MENU */
 
@@ -462,62 +418,6 @@
 }
 
 /* MENU END */
-
-/* LIST */
-
-.list-btn {
-    &.ant-btn {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        background: none;
-        color: $color-mono-black;
-        height: 44px;
-        min-width: 144px;
-        font-weight: 500;
-        &.alignment-left {
-            .mh-icon {
-                margin-right: 16px;
-            }
-        }
-        &.alignment-right {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: flex-end;
-            .mh-icon {
-                margin-left: 16px;
-            }
-        }
-        .mh-icon {
-            fill: $color-primary-blue;
-            width: 20px;
-            height: 20px;
-        }
-        &:hover {
-            background: $transparent-hover;
-            color: $color-mono-black;
-        }
-    }
-    &.wait {
-        border: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        span {
-            display: none;
-        }
-        .mh-icon:not(.wait-spinner) {
-            display: none;
-        }
-        .wait-spinner {
-            stroke: $color-primary-blue;
-            fill: none !important;
-        }
-    }
-}
-
-/* LIST END */
 
 /* TAB*/
 

@@ -362,6 +362,9 @@ storiesOf("Button", module).add("list", () => ({
       <mh-button type="list" icon="system-plus" icon-alignment="right" disabled>
         Button
       </mh-button>
+      <mh-button type="list" icon="system-plus" icon-alignment="right" wait>
+        Button
+      </mh-button>
 			<hr />
       </div>
 
