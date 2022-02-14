@@ -118,6 +118,7 @@ export default defineComponent({
       return this.value.split(/\b\S+\b/).length - 1;
     },
   },
+  emits: ["update:modelValue", "setQuill"],
   setup(props, { emit }) {
     var icons = Quill.import("ui/icons");
 
@@ -143,23 +144,6 @@ export default defineComponent({
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
 
-    // const modules = [
-    //   {
-    //     name: "ImageDrop",
-    //     module: ImageDrop,
-    //     options: {
-    //       /* options */
-    //     },
-    //   },
-    //   {
-    //     name: "BlotFormatter",
-    //     module: BlotFormatter,
-    //     options: {
-    //       /* options */
-    //     },
-    //   },
-    // ];
-
     const setupEditor = () => {
       var quill = new Quill(`#${props.elementRef}`, {
         theme: "snow",
@@ -169,6 +153,8 @@ export default defineComponent({
           imageDrop: true,
         },
       });
+
+      emit("setQuill", quill);
 
       quill.on(
         "text-change",
