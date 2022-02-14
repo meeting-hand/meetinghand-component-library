@@ -10,7 +10,7 @@
       :disabled="disabled"
       :currency="currency"
       :errorMessage="errorMessage"
-      :title="title"
+      :label="label"
       :tooltip="tooltip"
       :symbol="symbol"
       :symbolAlignment="symbolAlignment"
@@ -65,7 +65,7 @@ export default {
       type: String,
       default: "USD",
     },
-    title: {
+    label: {
       type: String,
       default: null,
     },
