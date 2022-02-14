@@ -2,36 +2,35 @@ import { storiesOf } from "@storybook/vue3";
 import MhTextEditor from "./index";
 
 storiesOf("TextEditor", module).add("All", () => ({
-    components: { MhTextEditor },
-    data() {
-        return {
-            text1: "<p><b>Gandalf</b> the grey</p>",
-            text2: "",
-            text3: "",
-            text4: "",
-            toolbar: [
-                "bold",
-                "italic",
-                "underline",
-                "strike",
-                "blockquote",
-                "link",
-                //"table",
-                { align: "left" },
-                { align: "center" },
-                { align: "right" },
-                { list: "ordered" },
-                { list: "bullet" },
-                "code-block",
-                // { script: "sub" },
-                // { script: "super" },
-            ],
-        };
-    },
-    template: `
+	components: { MhTextEditor },
+	data() {
+		return {
+			text1: "<p><b>Gandalf</b> the grey</p>",
+			text2: "",
+			text3: "",
+			text4: "",
+			toolbar: [
+				"bold",
+				"italic",
+				"underline",
+				"strike",
+				"blockquote",
+				"link",
+				//"table",
+				{ align: "left" },
+				{ align: "center" },
+				{ align: "right" },
+				{ list: "ordered" },
+				{ list: "bullet" },
+				"code-block",
+				// { script: "sub" },
+				// { script: "super" },
+			],
+		};
+	},
+	template: `
       <h1>Default</h1>
 	  		<mh-text-editor elementRef="text1" v-model="text1" placeholder="Placeholder" label="Lorem ipsum"/>
-      	{{text1}}
       	<br /><br />
 
 			<h1>Default with word counter</h1>

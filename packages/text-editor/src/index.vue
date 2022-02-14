@@ -8,16 +8,7 @@
         { disabled: readOnly },
       ]"
     >
-      <quill-editor
-        :toolbar="toolbar"
-        :modules="modules"
-        :placeholder="placeholder"
-        :readOnly="readOnly"
-        v-model:content="value"
-        contentType="html"
-        :ref="elementRef"
-      >
-      </quill-editor>
+      <div :id="elementRef" v-html="initialValue"></div>
       <div class="editor-footer" v-if="maxWordCount">
         {{ wordCount }} / {{ maxWordCount }}
       </div>
@@ -29,14 +20,20 @@
 </template>
 
 <script>
-import { QuillEditor, Quill } from "@vueup/vue-quill";
+import Quill from "quill";
 
-import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
+import { defineComponent, onMounted, ref } from "vue";
+
+import BlotFormatter from "quill-blot-formatter";
 import { ImageDrop } from "quill-image-drop-module";
 
-import MhEditorIcons from "./assets/icons";
+Quill.register("modules/blotFormatter", BlotFormatter);
+Quill.register("modules/imageDrop", ImageDrop);
 
-export default {
+import MhEditorIcons from "./assets/icons";
+import { debounce } from "lodash";
+
+export default defineComponent({
   name: "TextEditor",
   data() {
     return {};
@@ -105,9 +102,6 @@ export default {
       default: "MHEditor",
     },
   },
-  components: {
-    QuillEditor,
-  },
   computed: {
     errorStatus: function (props) {
       return props.hasError || props.errorMessage;
@@ -124,8 +118,10 @@ export default {
       return this.value.split(/\b\S+\b/).length - 1;
     },
   },
-  setup() {
+  setup(props, { emit }) {
     var icons = Quill.import("ui/icons");
+
+    const initialValue = props.modelValue;
 
     icons.bold = MhEditorIcons.bold;
     icons.italic = MhEditorIcons.italic;
@@ -147,28 +143,55 @@ export default {
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
 
-    const modules = [
-      {
-        name: "ImageDrop",
-        module: ImageDrop,
-        options: {
-          /* options */
+    // const modules = [
+    //   {
+    //     name: "ImageDrop",
+    //     module: ImageDrop,
+    //     options: {
+    //       /* options */
+    //     },
+    //   },
+    //   {
+    //     name: "BlotFormatter",
+    //     module: BlotFormatter,
+    //     options: {
+    //       /* options */
+    //     },
+    //   },
+    // ];
+
+    const setupEditor = () => {
+      var quill = new Quill(`#${props.elementRef}`, {
+        theme: "snow",
+        modules: {
+          toolbar: props.toolbar,
+          blotFormatter: {},
+          imageDrop: true,
         },
-      },
-      {
-        name: "BlotFormatter",
-        module: BlotFormatter,
-        options: {
-          /* options */
-        },
-      },
-    ];
+      });
+
+      quill.on(
+        "text-change",
+        debounce(() => {
+          emit(
+            "update:modelValue",
+            document
+              .getElementById(props.elementRef)
+              .getElementsByClassName("ql-editor")[0].innerHTML
+          );
+        }, 300)
+      );
+    };
+
+    onMounted(() => {
+      setupEditor();
+    });
 
     return {
-      modules,
+      initialValue,
     };
   },
-};
+});
 </script>
 <style lang="scss">
 @import "./assets/main.scss";
