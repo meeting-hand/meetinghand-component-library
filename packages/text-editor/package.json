@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/text-editor",
 	"description": "Meetinghand Component Library Component for text-editor",
-	"version": "0.0.128",
+	"version": "0.0.129",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -18,10 +18,10 @@
 	},
 	"dependencies": {
 		"@meetinghand/style": "file:../style",
+		"lodash": "^4.17.21",
 		"quill": "^1.3.6",
 		"quill-better-table": "^1.2.10",
 		"quill-blot-formatter": "^1.0.5",
-		"quill-image-drop-module": "^1.0.3",
-		"lodash": "^4.17.21"
+		"quill-image-drop-module": "^1.0.3"
 	}
 }
