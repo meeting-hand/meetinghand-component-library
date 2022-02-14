@@ -24,7 +24,7 @@ import Quill from "quill";
 
 import { defineComponent, onMounted, ref } from "vue";
 
-import BlotFormatter from "quill-blot-formatter";
+import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
 import { ImageDrop } from "quill-image-drop-module";
 
 Quill.register("modules/blotFormatter", BlotFormatter);
