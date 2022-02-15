@@ -17,6 +17,14 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/style": "file:../style"
+        "@meetinghand/style": "file:../style",
+        "@meetinghand/checkbox": "file:../checkbox",
+        "@meetinghand/select": "file:../select",
+        "@meetinghand/date-picker": "file:../date-picker",
+        "@meetinghand/input": "file:../input",
+        "@meetinghand/banner": "file:../banner",
+        "@meetinghand/radio": "file:../radio",
+        "@meetinghand/input-number": "file:../input-number",
+        "@meetinghand/textarea": "file:../textarea"
     }
 }
