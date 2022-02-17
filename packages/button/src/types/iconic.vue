@@ -17,13 +17,13 @@
     <mh-icon name="wait" class="wait-spinner" v-if="wait" />
   </button>
 </template>
+
 <script>
-import { Button } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
+
 export default {
   name: "MhButtonRow",
   components: {
-    [Button.name]: Button,
     "mh-icon": MHIcon,
   },
   props: {

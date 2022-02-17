@@ -1,12 +1,11 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
-@import "@meetinghand/style/lib/scss/ant/button.scss";
 
 .mh-button {
     cursor: pointer;
     &.size-default {
         width: fit-content;
     }
-    &.size-lager {
+    &.size-large {
         width: 100%;
     }
     .mh-icon {
@@ -373,7 +372,6 @@
         }
     }
 }
-// default", "circular", "small", "tiny", "text
 /* Ripple effect */
 // .mh-button {
 //     background-position: center;
@@ -383,7 +381,7 @@
 //     background: radial-gradient(circle, transparent 1%, 1%) center/15000%;
 // }
 // .mh-button:active {
-//     // background-color: #147acb;
+//     background-color: #147acb;
 //     background-size: 100%;
 //     transition: background 0s;
 // }
@@ -485,7 +483,3 @@
 }
 
 /* TAB BAR END */
-
-.size-large {
-    width: 100%;
-}
