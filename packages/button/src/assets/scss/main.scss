@@ -341,7 +341,7 @@
         }
     }
     &.alignment-right {
-        justify-content: flex-end;
+        justify-content: space-between;
         .mh-icon {
             margin-left: 16px;
         }
@@ -388,29 +388,53 @@
 
 /* MENU */
 
-.menu-btn {
-    background: $color-mono-white;
-    color: $color-mono-black;
-    height: 52px;
-    min-width: 113px;
-    &.ant-btn {
-        font-weight: 500;
-    }
+.mh-menu-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    padding: 16px 20px;
     .mh-icon {
         fill: $color-primary-blue;
         width: 20px;
         height: 20px;
-        margin-right: 8px;
+    }
+    &:hover {
+        background: $transparent-hover;
+    }
+    &:active {
+        background: rgba(0, 0, 0, 0.08);
+    }
+    &.alignment-left {
+        .mh-icon {
+            margin-right: 16px;
+        }
     }
     &.alignment-right {
         .mh-icon {
-            margin-left: 8px;
-            margin-right: 0px;
+            margin-left: 16px;
         }
     }
-    &:hover {
+    &.wait {
+        .wait-spinner {
+            stroke: #2196f3;
+            fill: none !important;
+            margin: 0;
+        }
+    }
+    &.disabled {
+        color: #b6b6b6;
         .mh-icon {
-            fill: $color-mono-white;
+            fill: #b6b6b6;
         }
     }
 }

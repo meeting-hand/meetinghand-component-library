@@ -264,6 +264,10 @@ storiesOf("Button", module).add("menu", () => ({
         Button
       </mh-button>
 			<hr />
+      <h1>Wait</h1>
+      <mh-button type="menu" icon="system-plus" icon-alignment="right" wait>
+        Button
+      </mh-button>
       </div>
 
     `,
