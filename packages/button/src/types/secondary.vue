@@ -24,7 +24,6 @@ import MHIcon from "@meetinghand/style/icons/index.vue";
 export default {
   name: "MhButtonSecondary",
   components: {
-    [Button.name]: Button,
     "mh-icon": MHIcon,
   },
   props: {
