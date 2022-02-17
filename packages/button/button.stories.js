@@ -177,50 +177,6 @@ storiesOf("Button", module).add("text", () => ({
     `,
 }));
 
-storiesOf("Button", module).add("small", () => ({
-	components: { MhButton },
-	template: `
-  <div class="storybook-button">
-
-      <h1>Default</h1>
-      <mh-button type="small">
-        Default size
-      </mh-button>
-      <mh-button type="small" icon="arrow-down">
-        Icon Left
-      </mh-button>
-      <mh-button type="small" icon="arrow-up" icon-alignment="right">
-        Icon Right
-      </mh-button>
-      <mh-button type="small" icon="ui-delete" icon-color="red">
-      Icon Red 
-      </mh-button>
-      <hr />
-      <h1>Disabled</h1>
-      <mh-button type="small" disabled>
-        Default size
-      </mh-button>
-      <mh-button type="small" icon="arrow-down" disabled>
-        Icon Left
-      </mh-button>
-      <mh-button type="small" icon="arrow-up" icon-alignment="right" disabled>
-        Icon Right
-      </mh-button>
-      <hr />
-      <h1>Wait</h1>
-      <mh-button type="small" wait>
-        Default size
-      </mh-button>
-      <hr />
-      <h1>Red</h1>
-      <mh-button type="small" icon="arrow-down" color="red">
-      Red Small 
-      </mh-button>
-      <br /><br />
-      </div>
-    `,
-}));
-
 storiesOf("Button", module).add("iconic", () => ({
 	components: { MhButton },
 	template: `

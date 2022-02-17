@@ -19,7 +19,6 @@
 <script>
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
-import Small from "./types/small.vue";
 import Text from "./types/text.vue";
 import Iconic from "./types/iconic.vue";
 import Social from "./types/social.vue";
@@ -33,7 +32,6 @@ export default {
   components: {
     Primary,
     Secondary,
-    Small,
     Text,
     Iconic,
     Social,
@@ -50,7 +48,6 @@ export default {
         [
           "primary",
           "secondary",
-          "small",
           "text",
           "iconic",
           "social",
