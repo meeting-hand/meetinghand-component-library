@@ -122,9 +122,10 @@ export default {
         return props.modelValue;
       },
       set() {
+        const formattedValue = cleave.getFormattedValue();
         emit(
           "update:modelValue",
-          `(${dialCode._value}) ${cleave.getFormattedValue()}`
+          formattedValue ? `(${dialCode._value}) ${formattedValue}` : ""
         );
       },
     });
