@@ -1,5 +1,5 @@
 <template>
-  <a :class="[{ active: isActive }, `tab-bar-btn`]">
+  <a :class="[{ active: isActive }, `mh-tab-bar-button`]">
     <span>
       <slot></slot>
     </span>

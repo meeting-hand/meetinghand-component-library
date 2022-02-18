@@ -386,8 +386,6 @@
 //     transition: background 0s;
 // }
 
-/* MENU */
-
 .mh-menu-button {
     display: flex;
     flex-direction: row;
@@ -439,50 +437,46 @@
     }
 }
 
-/* MENU END */
-
-/* TAB*/
-
-.tab-btn {
-    font-weight: $font-weight-default;
-    font-size: $font-size-default;
-    line-height: $line-height-default;
-    color: $color-mono-black;
-    border-radius: $border-radius-giant;
-    border: $border-size-default solid $transparent-hover-3;
+.mh-tab-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    &:hover {
-        background: $transparent-hover;
-        color: $color-mono-black;
-        border: $border-size-default solid transparent;
-    }
-    &:focus {
-        background: $color-mono-white;
-        box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
-        border: $border-size-default solid transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: transparent;
+    padding: 12px 16px;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    .mh-icon {
+        fill: #000000;
+        margin-right: 4px;
     }
     &.active {
-        background: $color-secondary-blue;
-        border: $border-size-default solid $color-primary-blue;
-        box-sizing: border-box;
-        box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+        background: #eff8ff;
+        border: 1px solid #2196f3;
+        color: #2196f3;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
         &:hover {
-            color: $color-primary-blue;
+            background: #e2f2fd;
+        }
+        .mh-icon {
+            fill: #2196f3;
         }
     }
-    .mh-icon {
-        width: $icon-size-default;
-        height: $icon-size-default;
-        fill: $color-mono-black;
-        margin-right: $spacing-small;
+    &.disabled {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        font-weight: 500;
+        color: #b6b6b6;
+    }
+    &:hover {
+        background: rgba(0, 0, 0, 0.04);
     }
 }
 
-/* TAB END */
-
-/* TAB BAR */
-
-.tab-bar-btn {
+.mh-tab-bar-button {
     display: block;
     border-bottom: $border-radius-small solid transparent;
     padding-bottom: $spacing-default;
@@ -505,5 +499,3 @@
         }
     }
 }
-
-/* TAB BAR END */
