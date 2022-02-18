@@ -2,6 +2,7 @@
 
 .mh-button {
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     &.size-default {
         width: fit-content;
     }
@@ -9,8 +10,8 @@
         width: 100%;
     }
     .mh-icon {
-        width: 20px;
-        height: 20px;
+        width: $icon-size-default;
+        height: $icon-size-default;
     }
     &.disabled {
         cursor: not-allowed;
@@ -44,21 +45,21 @@
     justify-content: center;
     background: $color-primary-blue;
     border: none;
-    border-radius: 6px;
-    padding: 12px 16px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
+    border-radius: $border-radius-default;
+    padding: $spacing-medium $spacing-default;
+    font-weight: $font-weight-large;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
     align-items: center;
-    color: #ffffff;
+    color: $color-mono-white;
     &:hover {
-        background: #1987df;
+        background: $color-button-hover-blue;
     }
     &:active {
-        background: #147acb;
+        background: $color-button-focus-blue;
     }
     &.red {
-        background: #f44336;
+        background: $color-primary-red;
         &:hover {
             background: $color-button-hover-red;
         }
@@ -67,9 +68,9 @@
         }
         &.disabled {
             background-color: #f5564a;
-            color: #ffffff;
+            color: $color-mono-white;
             .mh-icon {
-                fill: #ffffff;
+                fill: $color-mono-white;
             }
         }
     }
@@ -80,17 +81,17 @@
         }
         &.disabled {
             background-color: #f5564a;
-            color: #ffffff;
+            color: $color-mono-white;
             .mh-icon {
-                fill: #ffffff;
+                fill: $color-mono-white;
             }
         }
     }
     &.disabled {
-        background: rgba(0, 0, 0, 0.04);
-        color: #b6b6b6;
+        background: $transparent-hover;
+        color: $color-mono-grey;
         .mh-icon {
-            fill: #b6b6b6;
+            fill: $color-mono-grey;
         }
     }
     &.wait {
@@ -105,7 +106,7 @@
         }
     }
     .mh-icon {
-        fill: #ffffff;
+        fill: $color-mono-white;
     }
 }
 
@@ -114,43 +115,43 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: $border-size-default solid $transparent-hover-3;
     box-sizing: border-box;
-    border-radius: 6px;
-    padding: 12px 16px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #2196f3;
+    border-radius: $border-radius-default;
+    padding: $spacing-medium $spacing-default;
+    font-weight: $font-weight-large;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-primary-blue;
     background-color: transparent;
     .mh-icon {
-        fill: #2196f3;
+        fill: $color-primary-blue;
     }
     &:hover {
-        background: rgba(0, 0, 0, 0.04);
+        background: $transparent-hover;
     }
     &:active {
-        background: rgba(0, 0, 0, 0.06);
+        background: $transparent-hover-2;
     }
     &.wait {
         &:hover {
-            background: rgba(0, 0, 0, 0.04);
+            background: $transparent-hover;
         }
         .wait-spinner {
-            stroke: #2196f3;
+            stroke: $color-primary-blue;
             fill: none !important;
         }
     }
     &.disabled {
-        color: #b6b6b6;
+        color: $color-mono-grey;
         .mh-icon {
-            fill: #b6b6b6;
+            fill: $color-mono-grey;
         }
     }
     &.red {
-        color: #f44336;
+        color: $color-primary-red;
         .mh-icon {
-            fill: #f44336;
+            fill: $color-primary-red;
         }
     }
     &.green {
@@ -167,41 +168,41 @@
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 6px;
+    border-radius: $border-radius-default;
     padding: 4px $spacing-xsmall;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #565656;
+    font-weight: $font-weight-large;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-mono-grey-3;
     background: transparent;
     .mh-icon {
-        fill: #979797;
+        fill: $color-mono-grey-2;
     }
     &:hover {
-        background: rgba(0, 0, 0, 0.04);
+        background: $transparent-hover;
     }
     &:active {
-        background: rgba(0, 0, 0, 0.06);
+        background: $transparent-hover-2;
     }
     &.wait {
         &:hover {
-            background: rgba(0, 0, 0, 0.04);
+            background: $transparent-hover;
         }
         .wait-spinner {
-            stroke: #979797;
+            stroke: $color-mono-grey-2;
             fill: none !important;
         }
     }
     &.disabled {
-        color: #b6b6b6;
+        color: $color-mono-grey;
         .mh-icon {
-            fill: #b6b6b6;
+            fill: $color-mono-grey;
         }
     }
     &.red {
-        color: #f44336;
+        color: $color-primary-red;
         .mh-icon {
-            fill: #f44336;
+            fill: $color-primary-red;
         }
     }
 }
@@ -210,12 +211,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: $border-size-default solid $transparent-hover-3;
     box-sizing: border-box;
-    border-radius: 6px;
+    border-radius: $border-radius-default;
     background: transparent;
     .mh-icon {
-        fill: #979797;
+        fill: $color-mono-grey-2;
     }
     &.size-default {
         width: 44px;
@@ -245,30 +246,30 @@
         border-radius: $border-radius-giant;
     }
     &:hover {
-        background: rgba(0, 0, 0, 0.04);
+        background: $transparent-hover;
     }
     &:active {
-        background: rgba(0, 0, 0, 0.08);
+        background: $transparent-hover-3;
     }
     &.wait {
         &:hover {
-            background: rgba(0, 0, 0, 0.04);
+            background: $transparent-hover;
         }
         .wait-spinner {
-            stroke: #979797;
+            stroke: $color-mono-grey-2;
             fill: none !important;
         }
     }
     &.disabled {
-        border: 1px solid rgba(0, 0, 0, 0.04);
+        border: $border-size-default solid $transparent-hover;
         .mh-icon {
-            fill: #b6b6b6;
+            fill: $color-mono-grey;
         }
     }
     &.red {
-        color: #f44336;
+        color: $color-primary-red;
         .mh-icon {
-            fill: #f44336;
+            fill: $color-primary-red;
         }
     }
 }
@@ -281,15 +282,13 @@
     width: 128px;
     border-radius: $border-radius-default;
     border: $border-size-default solid $color-mono-light-grey-5;
-    padding: 12px 16px;
+    padding: $spacing-medium $spacing-default;
     background: transparent;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #000000;
+    font-weight: $font-weight-large;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-mono-black;
     .mh-icon {
-        height: 20px;
-        width: 20px;
         margin-right: 4px;
     }
     &.google {
@@ -325,114 +324,99 @@
     align-items: center;
     background: transparent;
     min-width: 144px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: #000000;
-    border-radius: 6px;
+    font-weight: $font-weight-default;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-mono-black;
+    border-radius: $border-radius-default;
     border: none;
-    padding: 12px 16px;
+    padding: $spacing-medium $spacing-default;
     .mh-icon {
         fill: $color-primary-blue;
     }
     &.alignment-left {
         .mh-icon {
-            margin-right: 16px;
+            margin-right: $spacing-default;
         }
     }
     &.alignment-right {
         justify-content: space-between;
         .mh-icon {
-            margin-left: 16px;
+            margin-left: $spacing-default;
         }
     }
     &:hover {
         background: $transparent-hover;
     }
     &:active {
-        background: rgba(0, 0, 0, 0.08);
+        background: $transparent-hover-3;
     }
     &.wait {
         align-items: center;
         justify-content: center;
         &:hover {
-            background: rgba(0, 0, 0, 0.04);
+            background: $transparent-hover;
         }
         .wait-spinner {
-            stroke: #2196f3;
+            stroke: $color-primary-blue;
             fill: none !important;
-            margin: 0;
+            margin: $spacing-xxsmall;
         }
     }
     &.disabled {
-        border: 1px solid rgba(0, 0, 0, 0.04);
-        color: #b6b6b6;
+        border: $border-size-default solid $transparent-hover;
+        color: $color-mono-grey;
         .mh-icon {
-            fill: #b6b6b6;
+            fill: $color-mono-grey;
         }
     }
 }
-/* Ripple effect */
-// .mh-button {
-//     background-position: center;
-//     transition: background 0.8s;
-// }
-// .mh-button:hover {
-//     background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
-// }
-// .mh-button:active {
-//     background-color: #6eb9f7;
-//     background-size: 100%;
-//     transition: background 0s;
-// }
 
 .mh-menu-button {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: $color-mono-white;
+    border: $border-size-default solid $transparent-hover-3;
     box-sizing: border-box;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: #000000;
-    padding: 16px 20px;
+    box-shadow: 0px 4px 8px $transparent-hover-3;
+    border-radius: $border-radius-default;
+    font-weight: $font-weight-default;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-mono-black;
+    padding: $spacing-default 20px;
     .mh-icon {
         fill: $color-primary-blue;
-        width: 20px;
-        height: 20px;
     }
     &:hover {
         background: $transparent-hover;
     }
     &:active {
-        background: rgba(0, 0, 0, 0.08);
+        background: $transparent-hover-3;
     }
     &.alignment-left {
         .mh-icon {
-            margin-right: 16px;
+            margin-right: $spacing-default;
         }
     }
     &.alignment-right {
         .mh-icon {
-            margin-left: 16px;
+            margin-left: $spacing-default;
         }
     }
     &.wait {
         .wait-spinner {
-            stroke: #2196f3;
+            stroke: $color-primary-blue;
             fill: none !important;
-            margin: 0;
+            margin: $spacing-xxsmall;
         }
     }
     &.disabled {
-        color: #b6b6b6;
+        color: $color-mono-grey;
         .mh-icon {
-            fill: #b6b6b6;
+            fill: $color-mono-grey;
         }
     }
 }
@@ -442,37 +426,37 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: $border-size-default solid $transparent-hover-3;
     background-color: transparent;
-    padding: 12px 16px;
-    border-radius: 99px;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #000000;
+    padding: $spacing-medium $spacing-default;
+    border-radius: $border-radius-giant;
+    font-weight: $font-weight-large;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-mono-black;
     .mh-icon {
-        fill: #000000;
+        fill: $color-mono-black;
         margin-right: 4px;
     }
     &.active {
-        background: #eff8ff;
-        border: 1px solid #2196f3;
-        color: #2196f3;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+        background: $color-secondary-blue;
+        border: $border-size-default solid $color-primary-blue;
+        color: $color-primary-blue;
+        box-shadow: 0px 4px 8px $transparent-hover-3;
         &:hover {
             background: #e2f2fd;
         }
         .mh-icon {
-            fill: #2196f3;
+            fill: $color-primary-blue;
         }
     }
     &.disabled {
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        font-weight: 500;
-        color: #b6b6b6;
+        border: $border-size-default solid $transparent-hover-3;
+        font-weight: $font-weight-default;
+        color: $color-mono-grey;
     }
     &:hover {
-        background: rgba(0, 0, 0, 0.04);
+        background: $transparent-hover;
     }
 }
 
@@ -499,3 +483,17 @@
         }
     }
 }
+
+/* Ripple effect */
+// .mh-button {
+//     background-position: center;
+//     transition: background 0.8s;
+// }
+// .mh-button:hover {
+//     background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+// }
+// .mh-button:active {
+//     background-color: #6eb9f7;
+//     background-size: 100%;
+//     transition: background 0s;
+// }
