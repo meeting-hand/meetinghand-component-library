@@ -4,7 +4,6 @@
     :class="[
       `mh-tab-button`,
       `mh-button`,
-      { wait: wait },
       { disabled: disabled },
       { active: isActive },
     ]"

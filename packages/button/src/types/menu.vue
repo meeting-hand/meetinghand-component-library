@@ -8,7 +8,6 @@
       `alignment-${iconAlignment}`,
       { wait: wait },
       { disabled: disabled },
-      color,
     ]"
     :disabled="disabled || wait"
   >
@@ -25,6 +24,11 @@ export default {
     "mh-icon": MHIcon,
   },
   props: {
+    size: {
+      type: String,
+      default: "default",
+      validator: (_v) => ["default", "large"].includes(_v),
+    },
     icon: {
       type: String,
       default: null,
