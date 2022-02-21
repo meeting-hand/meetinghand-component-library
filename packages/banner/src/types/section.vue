@@ -16,12 +16,10 @@
 
 <script>
 import MhIcon from "@meetinghand/style/icons/index.vue";
-import MhButton from "@meetinghand/button";
 
 export default {
   components: {
     MhIcon,
-    MhButton,
   },
   props: {
     message: {
