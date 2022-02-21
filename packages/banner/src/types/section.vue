@@ -1,44 +1,37 @@
 <template>
-  <a-alert
-    :message="title"
-    :description="text"
-    :type="sectionType"
-    :closable="closable"
-    :closeText="customText"
-    showIcon
-  >
-    <template #icon>
+  <div :class="[`section-banner`, sectionType]">
+    <div class="banner-content">
       <mh-icon name="system-status-info" v-if="sectionType === 'info'" />
       <mh-icon name="system-status-success" v-if="sectionType === 'success'" />
       <mh-icon name="system-status-hint" v-if="sectionType === 'warning'" />
       <mh-icon name="system-status-error" v-if="sectionType === 'error'" />
-    </template>
-  </a-alert>
+      <div class="banner-text">
+        <p v-if="title">{{ title }}</p>
+        <span>{{ message }}</span>
+      </div>
+    </div>
+    <slot />
+  </div>
 </template>
 
 <script>
-import { Alert } from "ant-design-vue";
-import MHIcon from "@meetinghand/style/icons/index.vue";
-
-import systemStatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
-import { h, computed } from "vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
+import MhButton from "@meetinghand/button";
 
 export default {
   components: {
-    [Alert.name]: Alert,
-    "mh-icon": MHIcon,
+    MhIcon,
+    MhButton,
   },
   props: {
-    button: {
-      type: String,
-      default: null,
-      validator: (_v) => [null, "custom", "close"].includes(_v),
-    },
-    text: {
+    message: {
       type: String,
       required: true,
     },
-    customText: {
+    title: {
+      type: String,
+    },
+    buttonText: {
       type: String,
       default: null,
     },
@@ -47,22 +40,7 @@ export default {
       default: "warning",
       validator: (_v) => ["warning", "success", "info", "error"].includes(_v),
     },
-    title: {
-      type: String,
-    },
   },
-  setup(props) {
-    const StatusInfo = h(systemStatusInfo);
-    // const StatusSuccess = h(StatusSuccess);
-
-    const closable = computed(() => {
-      return props.button !== null;
-    });
-
-    return {
-      closable,
-      StatusInfo,
-    };
-  },
+  setup() {},
 };
 </script>

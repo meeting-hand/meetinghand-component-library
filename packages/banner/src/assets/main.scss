@@ -1,50 +1,47 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
 @import "@meetinghand/style/lib/scss/icons.scss";
-@import "@meetinghand/style/lib/scss/ant/alert.scss";
+
 .mh-banner {
     display: flex;
     .full-width-banner {
         width: 100%;
-        .full-width-banner-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1440px;
+        padding: 16px 120px;
+        .banner-left {
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-between;
-            padding: $spacing-default 0px;
-            padding-left: 120px;
-            max-width: 1440px;
-            .banner-left {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                .banner-icon {
-                    .mh-icon {
-                        width: $icon-size-medium;
-                        height: $icon-size-medium;
-                        margin-right: $spacing-medium;
-                    }
-                }
-                .banner-text {
-                    .banner-text-title {
-                        font-weight: $font-weight-large;
-                        font-size: $font-size-xlarge;
-                        line-height: $line-height-large;
-                    }
-                    .banner-text-message {
-                        font-weight: normal;
-                        font-size: $font-size-default;
-                        line-height: $line-height-default;
-                        color: $color-mono-black;
-                    }
+            .banner-icon {
+                .mh-icon {
+                    width: $icon-size-medium;
+                    height: $icon-size-medium;
+                    margin-right: $spacing-medium;
                 }
             }
-            .banner-buttons {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                .ant-btn:last-child {
-                    margin-left: $spacing-default;
+            .banner-text {
+                .banner-text-title {
+                    font-weight: $font-weight-large;
+                    font-size: $font-size-xlarge;
+                    line-height: $line-height-large;
                 }
+                .banner-text-message {
+                    font-weight: normal;
+                    font-size: $font-size-default;
+                    line-height: $line-height-default;
+                    color: $color-mono-black;
+                }
+            }
+        }
+        .banner-buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .ant-btn:last-child {
+                margin-left: $spacing-default;
             }
         }
         &.warning {
@@ -77,106 +74,112 @@
     }
 }
 
-.ant-alert {
+.section-banner {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding: $spacing-medium !important;
+    justify-content: space-between;
+    padding: 12px;
     border: none;
     width: 100%;
-    .mh-icon {
-        width: $icon-size-medium;
-        height: $icon-size-medium;
-    }
-    .ant-alert-icon {
-        width: $icon-size-medium;
-        height: $icon-size-medium;
-    }
-    &.ant-alert-info {
+    .banner-content {
         display: flex;
+        flex-direction: row;
         align-items: center;
-        background: $color-mono-light-grey-2;
-        border-color: $color-mono-light-grey-2;
+        .mh-icon {
+            width: $icon-size-medium;
+            height: $icon-size-medium;
+            margin-right: 8px;
+        }
+        .banner-text {
+            p {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 24px;
+                color: #000000;
+                margin-bottom: 8px;
+            }
+            span {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 20px;
+                color: #000000;
+            }
+        }
     }
-    .ant-alert-message {
-        font-weight: $font-weight-large;
-        font-size: $font-size-xlarge;
-        line-height: $line-height-large;
-        color: $color-mono-black;
-        margin-bottom: 4px;
-        margin-top: 4px;
-    }
-    .ant-alert-description {
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        color: $color-mono-black;
-        margin-bottom: 4px;
-    }
-    &.ant-alert-success {
+    &.success {
         background: $color-secondary-participant;
         .mh-icon {
             fill: $color-primary-participant;
         }
+        .mh-primary-button {
+            background: #0ead88;
+        }
     }
-    &.ant-alert-info {
+    &.info {
         background: $color-secondary-blue;
         .mh-icon {
             fill: $color-primary-blue;
         }
     }
-    &.ant-alert-warning {
+    &.warning {
         background: $color-secondary-yellow;
         .mh-icon {
             fill: $color-primary-onsite;
         }
+        .mh-primary-button {
+            background: #ff9800;
+        }
     }
-    &.ant-alert-error {
+    &.error {
         background: $color-secondary-red;
         .mh-icon {
             fill: $color-primary-red;
         }
-    }
-    svg {
-        &.ant-alert-icon {
-            width: $icon-size-medium;
-            height: $icon-size-medium;
-            margin-right: $spacing-xxsmall;
+        .mh-primary-button {
+            background: #f44336;
         }
     }
-    .ant-alert-close-icon {
-        padding: $spacing-xsmall;
-        border-radius: $border-radius-default;
-        .anticon-close {
-            svg {
-                display: none;
-            }
-            &::before {
-                @include close-icon("%232196f3");
-                content: "";
-                width: $icon-size-default;
-                height: $icon-size-default;
-                display: block;
-            }
-        }
-        .ant-alert-close-text {
-            text-align: center;
-            color: $color-primary-blue;
-            font-weight: $font-weight-default;
-            font-size: $font-size-small;
-            line-height: $line-height-small;
-            padding: 2px $spacing-xsmall;
-            border-radius: $border-radius-default;
-        }
-        &:hover {
-            background: $transparent-hover-3;
-        }
-    }
-    &.ant-alert-warning {
-        &.ant-alert-no-icon {
-            .ant-alert-message {
-                margin: $spacing-xxsmall;
-            }
-        }
-    }
+    // svg {
+    //     &.ant-alert-icon {
+    //         width: $icon-size-medium;
+    //         height: $icon-size-medium;
+    //         margin-right: $spacing-xxsmall;
+    //     }
+    // }
+    // .ant-alert-close-icon {
+    //     padding: $spacing-xsmall;
+    //     border-radius: $border-radius-default;
+    //     .anticon-close {
+    //         svg {
+    //             display: none;
+    //         }
+    //         &::before {
+    //             @include close-icon("%232196f3");
+    //             content: "";
+    //             width: $icon-size-default;
+    //             height: $icon-size-default;
+    //             display: block;
+    //         }
+    //     }
+    //     .ant-alert-close-text {
+    //         text-align: center;
+    //         color: $color-primary-blue;
+    //         font-weight: $font-weight-default;
+    //         font-size: $font-size-small;
+    //         line-height: $line-height-small;
+    //         padding: 2px $spacing-xsmall;
+    //         border-radius: $border-radius-default;
+    //     }
+    //     &:hover {
+    //         background: $transparent-hover-3;
+    //     }
+    // }
+    // &.ant-alert-warning {
+    //     &.ant-alert-no-icon {
+    //         .ant-alert-message {
+    //             margin: $spacing-xxsmall;
+    //         }
+    //     }
+    // }
 }
