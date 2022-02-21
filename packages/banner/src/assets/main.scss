@@ -10,7 +10,7 @@
         align-items: center;
         justify-content: space-between;
         max-width: 1440px;
-        padding: 16px 120px;
+        padding: $spacing-default 120px;
         .banner-left {
             display: flex;
             flex-direction: row;
@@ -40,7 +40,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            .ant-btn:last-child {
+            .mh-button:not(:first-child) {
                 margin-left: $spacing-default;
             }
         }
@@ -79,7 +79,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 12px;
+    padding: $spacing-medium;
     border: none;
     width: 100%;
     .banner-content {
@@ -89,21 +89,21 @@
         .mh-icon {
             width: $icon-size-medium;
             height: $icon-size-medium;
-            margin-right: 8px;
+            margin-right: $spacing-small;
         }
         .banner-text {
             p {
-                font-weight: 600;
-                font-size: 18px;
-                line-height: 24px;
-                color: #000000;
-                margin-bottom: 8px;
+                font-weight: $font-weight-large;
+                font-size: $font-size-xlarge;
+                line-height: $line-height-large;
+                color: $color-mono-black;
+                margin-bottom: $spacing-small;
             }
             span {
                 font-weight: normal;
-                font-size: 14px;
-                line-height: 20px;
-                color: #000000;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-black;
             }
         }
     }
@@ -113,7 +113,7 @@
             fill: $color-primary-participant;
         }
         .mh-primary-button {
-            background: #0ead88;
+            background: $color-primary-participant;
         }
     }
     &.info {
@@ -128,7 +128,7 @@
             fill: $color-primary-onsite;
         }
         .mh-primary-button {
-            background: #ff9800;
+            background: $color-primary-onsite;
         }
     }
     &.error {
@@ -137,49 +137,7 @@
             fill: $color-primary-red;
         }
         .mh-primary-button {
-            background: #f44336;
+            background: $color-primary-red;
         }
     }
-    // svg {
-    //     &.ant-alert-icon {
-    //         width: $icon-size-medium;
-    //         height: $icon-size-medium;
-    //         margin-right: $spacing-xxsmall;
-    //     }
-    // }
-    // .ant-alert-close-icon {
-    //     padding: $spacing-xsmall;
-    //     border-radius: $border-radius-default;
-    //     .anticon-close {
-    //         svg {
-    //             display: none;
-    //         }
-    //         &::before {
-    //             @include close-icon("%232196f3");
-    //             content: "";
-    //             width: $icon-size-default;
-    //             height: $icon-size-default;
-    //             display: block;
-    //         }
-    //     }
-    //     .ant-alert-close-text {
-    //         text-align: center;
-    //         color: $color-primary-blue;
-    //         font-weight: $font-weight-default;
-    //         font-size: $font-size-small;
-    //         line-height: $line-height-small;
-    //         padding: 2px $spacing-xsmall;
-    //         border-radius: $border-radius-default;
-    //     }
-    //     &:hover {
-    //         background: $transparent-hover-3;
-    //     }
-    // }
-    // &.ant-alert-warning {
-    //     &.ant-alert-no-icon {
-    //         .ant-alert-message {
-    //             margin: $spacing-xxsmall;
-    //         }
-    //     }
-    // }
 }
