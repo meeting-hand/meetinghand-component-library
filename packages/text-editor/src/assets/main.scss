@@ -194,3 +194,14 @@ strong {
 em {
 	font-style: italic !important;
 }
+
+.ql-snow {
+	.ql-header {
+		color: $color-mono-grey-2;
+	}
+	.ql-picker-label {
+		.ql-stroke {
+			stroke: $color-mono-grey-2;
+		}
+	}
+}
