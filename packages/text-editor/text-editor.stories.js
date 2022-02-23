@@ -16,21 +16,54 @@ storiesOf("TextEditor", module).add("All", () => ({
 				"strike",
 				"blockquote",
 				"link",
-				//"table",
+				"image",
 				{ align: "left" },
 				{ align: "center" },
 				{ align: "right" },
 				{ list: "ordered" },
 				{ list: "bullet" },
 				"code-block",
-				// { script: "sub" },
-				// { script: "super" },
+				{ script: "sub" },
+				{ script: "super" },
+				{ header: [1, 2, 3, 4, 5, 6, false] },
+				{
+					color: [
+						"#3FA0B5",
+						"#2A535D",
+						"#0EAD88",
+						"#3F51B5",
+						"#FF9800",
+						"#4CAF50",
+						"#FFC700",
+						"#C336F4",
+						"#9C27B0",
+						"#6421F3",
+						"#00D1FF",
+						"#F44336",
+					],
+				},
+				{
+					background: [
+						"#3FA0B5",
+						"#2A535D",
+						"#0EAD88",
+						"#3F51B5",
+						"#FF9800",
+						"#4CAF50",
+						"#FFC700",
+						"#C336F4",
+						"#9C27B0",
+						"#6421F3",
+						"#00D1FF",
+						"#F44336",
+					],
+				},
 			],
 		};
 	},
 	template: `
       <h1>Default</h1>
-	  		<mh-text-editor elementRef="text1" v-model="text1" placeholder="Placeholder" label="Lorem ipsum"/>
+	  		<mh-text-editor elementRef="text1" v-model="text1" placeholder="Placeholder" label="Lorem ipsum" />
       	<br /><br />
 
 			<h1>Default with word counter</h1>
@@ -46,29 +79,3 @@ storiesOf("TextEditor", module).add("All", () => ({
 
     `,
 }));
-
-// data() {
-// 	return {
-// 		text1: "",
-// 		toolbar: [
-// 			"undo",
-// 			"redo",
-// 			"bold",
-// 			"italic",
-// 			"underline",
-// 			"strike",
-// 			"blockquote",
-// 			"link",
-// 			"image",
-// 			"table",
-// 			{ align: "left" },
-// 			{ align: "center" },
-// 			{ align: "right" },
-// 			{ list: "ordered" },
-// 			{ list: "bullet" },
-// 			"code-block",
-// 			{ script: "sub" },
-// 			{ script: "super" },
-// 		],
-// 	};
-// },
