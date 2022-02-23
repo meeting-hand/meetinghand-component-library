@@ -152,6 +152,7 @@ export default defineComponent({
           blotFormatter: {},
           imageDrop: true,
         },
+        placeholder: props.placeholder,
       });
 
       emit("setQuill", quill);
