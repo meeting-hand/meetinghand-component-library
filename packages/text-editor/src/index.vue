@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div class="mh-text-editor">
     <label class="mh-text-editor-label" v-if="label">{{ label }}</label>
     <div
@@ -82,15 +82,12 @@ export default defineComponent({
           "blockquote",
           "link",
           "image",
-          // "table",
           { align: "left" },
           { align: "center" },
           { align: "right" },
           { list: "ordered" },
           { list: "bullet" },
           "code-block",
-          // { script: "sub" },
-          // { script: "super" },
         ];
       },
     },
@@ -127,8 +124,6 @@ export default defineComponent({
     icons.bold = MhEditorIcons.bold;
     icons.italic = MhEditorIcons.italic;
     icons.underline = MhEditorIcons.underline;
-    // icons.undo = MhEditorIcons.undo;
-    // icons.redo = MhEditorIcons.redo;
     icons.strike = MhEditorIcons.strike;
     icons.link = MhEditorIcons.link;
     icons.blockquote = MhEditorIcons.blockquote;
@@ -152,6 +147,7 @@ export default defineComponent({
           blotFormatter: {},
           imageDrop: true,
         },
+        placeholder: props.placeholder,
       });
 
       emit("setQuill", quill);
