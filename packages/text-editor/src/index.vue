@@ -155,13 +155,15 @@ export default defineComponent({
       quill.on(
         "text-change",
         debounce(() => {
-          emit(
-            "update:modelValue",
-            document
-              .getElementById(props.elementRef)
-              .getElementsByClassName("ql-editor")[0].innerHTML
-          );
-        }, 300)
+          if (document.getElementById(props.elementRef)) {
+            emit(
+              "update:modelValue",
+              document
+                .getElementById(props.elementRef)
+                .getElementsByClassName("ql-editor")[0].innerHTML
+            );
+          }
+        }, 100)
       );
     };
 
