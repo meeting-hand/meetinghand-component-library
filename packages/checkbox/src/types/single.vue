@@ -1,19 +1,4 @@
 <template>
-  <!-- <a-checkbox
-    :class="{ error: errorStatus }"
-    v-model:checked="value"
-    :disabled="disabled"
-  >
-    {{ label }}
-    <slot> </slot>
-  </a-checkbox>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span> -->
-  <!-- <label class="checkbox-wrapper">
-    <input type="checkbox" name="checkbox" />
-    Checkbox
-  </label> -->
   <label
     :class="[
       'mh-checkbox',
@@ -28,6 +13,7 @@
       :disabled="disabled"
     />
     {{ label }}
+    <slot> </slot>
   </label>
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
