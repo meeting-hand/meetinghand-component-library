@@ -1,10 +1,7 @@
 <template>
   <div :class="[`section-banner`, sectionType]">
     <div class="banner-content">
-      <mh-icon name="system-status-info" v-if="sectionType === 'info'" />
-      <mh-icon name="system-status-success" v-if="sectionType === 'success'" />
-      <mh-icon name="system-status-hint" v-if="sectionType === 'warning'" />
-      <mh-icon name="system-status-error" v-if="sectionType === 'error'" />
+      <mh-icon :name="'system-status-' + sectionType" />
       <div class="banner-text">
         <p v-if="title">{{ title }}</p>
         <span>{{ message }}</span>
@@ -15,11 +12,15 @@
 </template>
 
 <script>
-import MhIcon from "@meetinghand/style/icons/index.vue";
+import { defineComponent } from "vue";
 
-export default {
+import MhIcon from "@meetinghand/style/icons/index.vue";
+import MhButton from "@meetinghand/button";
+
+export default defineComponent({
   components: {
     MhIcon,
+    MhButton,
   },
   props: {
     message: {
@@ -29,16 +30,15 @@ export default {
     title: {
       type: String,
     },
-    buttonText: {
-      type: String,
-      default: null,
-    },
     sectionType: {
       type: String,
-      default: "warning",
-      validator: (_v) => ["warning", "success", "info", "error"].includes(_v),
+      default: "hint",
+      validator: (_v) => ["hint", "success", "info", "error"].includes(_v),
     },
   },
-  setup() {},
-};
+  setup() {
+    return {};
+  },
+});
 </script>
+
