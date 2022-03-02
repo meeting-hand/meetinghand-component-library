@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import DatePicker from "ant-design-vue/es/date-picker";
+import DatePicker from "ant-design-vue/lib/date-picker";
 import { computed, ref, h } from "vue";
 import MhDate from "@meetinghand/style/icons/uiDate.vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";

@@ -1,7 +1,6 @@
 const path = require("path");
 const { defineConfig } = require("vite");
 const vue = require("@vitejs/plugin-vue");
-import vitePluginImport from "vite-plugin-babel-import";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,12 +21,5 @@ export default defineConfig({
             },
         },
     },
-    plugins: [
-        vue(),
-        // vitePluginImport([{
-        //     libraryName: "ant-design-vue",
-        //     libraryDirectory: "es",
-        //     ignoreStyles: [],
-        // }, ]),
-    ],
+    plugins: [vue()],
 });
