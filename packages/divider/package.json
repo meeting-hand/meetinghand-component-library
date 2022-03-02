@@ -12,7 +12,8 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist"
+        "dist",
+        "index.d.ts"
     ],
     "main": "./dist/lib.umd.js",
     "module": "./dist/lib.es.js",
