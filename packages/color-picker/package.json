@@ -11,12 +11,20 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./index.js",
+    "files": [
+        "dist",
+        "index.d.ts"
+    ],
+    "main": "./dist/lib.umd.js",
+    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@ckpack/vue-color": "0.0.3",
         "@meetinghand/style": "file:../style"
+    },
+    "scripts": {
+        "build": "vite build"
     }
 }
