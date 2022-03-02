@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/color-picker",
     "description": "Meetinghand Component Library Component for color-picker",
-    "version": "0.0.117",
+    "version": "0.0.118",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -15,16 +15,12 @@
         "dist",
         "index.d.ts"
     ],
-    "main": "./dist/lib.umd.js",
-    "module": "./dist/lib.es.js",
+    "main": "./index.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@ckpack/vue-color": "0.0.3",
         "@meetinghand/style": "file:../style"
-    },
-    "scripts": {
-        "build": "vite build"
     }
 }

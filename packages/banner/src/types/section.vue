@@ -15,12 +15,10 @@
 import { defineComponent } from "vue";
 
 import MhIcon from "@meetinghand/style/icons/index.vue";
-import MhButton from "@meetinghand/button";
 
 export default defineComponent({
   components: {
     MhIcon,
-    MhButton,
   },
   props: {
     message: {
