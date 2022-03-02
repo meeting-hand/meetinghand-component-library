@@ -6,18 +6,15 @@ export default {
 	},
 	bannerType: {
 		type: String,
-		default: "warning",
-		validator: (_v) => ["warning", "success", "info"].includes(_v),
+		default: "error",
+		validator: (_v) => ["error", "success", "info", "gift"].includes(_v),
 	},
 	sectionType: {
 		type: String,
-		default: "warning",
-		validator: (_v) => ["warning", "success", "info", "error"].includes(_v),
+		default: "hint",
+		validator: (_v) => ["hint", "success", "info", "error"].includes(_v),
 	},
 	title: {
-		type: String,
-	},
-	icon: {
 		type: String,
 	},
 	message: {

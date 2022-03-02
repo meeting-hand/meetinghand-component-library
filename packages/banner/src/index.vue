@@ -4,7 +4,6 @@
       :is="type"
       :bannerType="bannerType"
       :title="title"
-      :icon="icon"
       :message="message"
       :sectionType="sectionType"
     >

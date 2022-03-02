@@ -26,7 +26,7 @@ storiesOf("Banner", module).add("All", () => ({
       <h1>Banner Section Text + Title</h1>
       <mh-banner type="section" message="Lorem ipsum dolor sit amet." section-type="info" title="Lorem ipsum"/>
       <hr/>
-      <mh-banner type="section" message="Lorem ipsum dolor sit amet." section-type="warning" title="Lorem ipsum"/>
+      <mh-banner type="section" message="Lorem ipsum dolor sit amet." section-type="hint" title="Lorem ipsum"/>
       <hr/>
       <mh-banner type="section" message="Lorem ipsum dolor sit amet." section-type="error" title="Lorem ipsum"/>
       <hr/>
@@ -35,8 +35,8 @@ storiesOf("Banner", module).add("All", () => ({
       <mh-button type="iconic" icon="system-close" size="small" />
       </mh-banner>
       <hr/>
-      <h1>Banner Full-Width Warning</h1>
-      <mh-banner type="fullWidth" banner-type="warning" title="Title" message="Lorem ipsum" icon="warning">
+      <h1>Banner Full-Width Error</h1>
+      <mh-banner type="fullWidth" banner-type="error" title="Title" message="Lorem ipsum">
       <mh-button
       type="primary"
       color="red"
@@ -49,8 +49,8 @@ storiesOf("Banner", module).add("All", () => ({
     >
 			</mh-banner>
       <hr/>
-      <h1>Banner Full-Width Success</h1>
-      <mh-banner type="fullWidth" banner-type="success" title="Title" message="Lorem ipsum" icon="gift">
+      <h1>Banner Full-Width Gift</h1>
+      <mh-banner type="fullWidth" banner-type="gift" title="Title" message="Lorem ipsum">
       <mh-button
       type="primary"
       color="green"

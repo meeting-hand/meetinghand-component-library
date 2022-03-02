@@ -21,8 +21,6 @@
 </template>
 
 <script>
-import { Checkbox } from "ant-design-vue";
-
 export default {
   name: "MhCheckboxSingle",
   props: {
@@ -49,9 +47,6 @@ export default {
       type: String,
       default: null,
     },
-  },
-  components: {
-    [Checkbox.name]: Checkbox,
   },
   computed: {
     errorStatus: function (props) {

@@ -44,7 +44,7 @@
                 margin-left: $spacing-default;
             }
         }
-        &.warning {
+        &.error {
             background-color: $color-secondary-red;
             .banner-text {
                 color: $color-primary-red;
@@ -53,7 +53,8 @@
                 fill: $color-primary-red;
             }
         }
-        &.success {
+        &.success,
+        &.gift {
             background-color: $color-secondary-participant;
             .banner-text {
                 color: $color-primary-participant;
@@ -122,7 +123,7 @@
             fill: $color-primary-blue;
         }
     }
-    &.warning {
+    &.hint {
         background: $color-secondary-yellow;
         .mh-icon {
             fill: $color-primary-onsite;
