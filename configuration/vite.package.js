@@ -1,19 +1,20 @@
-import vue from '@vitejs/plugin-vue'
+import vue from "@vitejs/plugin-vue";
 
 /**
  * Build configuration for client code, executed in the browser
  */
 export default {
-  plugins: [vue()],
+    plugins: [vue()],
 
-  build: {
-    lib: {
-      entry: "index.js",
+    build: {
+        lib: {
+            entry: "index.js",
+            fileName: (format) => `lib.${format}.js`,
+        },
+        external: ["vue", "vuex", "vue-router"],
+        minify: "eslint",
     },
-    external: ["vue", "vuex", "vue-router"],
-    minify: "eslint",
-  },
-  // resolve: {
-  //   dedupe: ["vue"],
-  // },
+    // resolve: {
+    //   dedupe: ["vue"],
+    // },
 };
