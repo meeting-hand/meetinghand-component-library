@@ -21,7 +21,6 @@
         "access": "public"
     },
     "dependencies": {
-        "@ckpack/vue-color": "0.0.3",
         "@meetinghand/style": "file:../style"
     },
     "scripts": {

@@ -36,6 +36,7 @@
         "sass": "^1.32.13",
         "sass-loader": "^10",
         "vite": "^2.6.14",
+        "vite-plugin-babel-import": "^2.0.5",
         "vue-loader": "^16.2.0",
         "yargs": "^16.2.0"
     },
