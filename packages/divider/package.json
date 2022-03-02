@@ -16,12 +16,6 @@
     ],
     "main": "./dist/my-lib.umd.js",
     "module": "./dist/my-lib.es.js",
-    "exports": {
-        ".": {
-            "import": "./dist/mh-divider.es.js",
-            "require": "./dist/mh-divider.umd.js"
-        }
-    },
     "publishConfig": {
         "access": "public"
     },
