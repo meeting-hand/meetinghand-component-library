@@ -24,10 +24,10 @@ export default defineConfig({
     },
     plugins: [
         vue(),
-        vitePluginImport([{
-            libraryName: "ant-design-vue",
-            libraryDirectory: "es",
-            ignoreStyles: [],
-        }, ]),
+        // vitePluginImport([{
+        //     libraryName: "ant-design-vue",
+        //     libraryDirectory: "es",
+        //     ignoreStyles: [],
+        // }, ]),
     ],
 });
