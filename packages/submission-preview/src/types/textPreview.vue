@@ -29,7 +29,7 @@
     </div>
     <div class="abstract-body">
       <div
-        class="abstract-body-content"
+        class="abstract-body-content ql-preview"
         v-for="(abstract, index) in body"
         :key="index"
       >

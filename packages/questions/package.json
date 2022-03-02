@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/questions",
     "description": "Meetinghand Component Library Component for questions",
-    "version": "0.0.77",
+    "version": "0.0.91",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -17,6 +17,14 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/style": "file:../style"
+        "@meetinghand/banner": "file:../banner",
+        "@meetinghand/checkbox": "file:../checkbox",
+        "@meetinghand/date-picker": "file:../date-picker",
+        "@meetinghand/input": "file:../input",
+        "@meetinghand/input-number": "file:../input-number",
+        "@meetinghand/radio": "file:../radio",
+        "@meetinghand/select": "file:../select",
+        "@meetinghand/style": "file:../style",
+        "@meetinghand/textarea": "file:../textarea"
     }
 }

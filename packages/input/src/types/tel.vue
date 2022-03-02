@@ -41,7 +41,7 @@ import { h, ref, onMounted, computed } from "vue";
 
 import inputProps from "../utils/props";
 
-import "@meetinghand/style/lib/scss/ant/select.scss";
+//import "@meetinghand/style/lib/scss/ant/select.scss";
 
 export default {
   name: "MhInputTel",
@@ -122,9 +122,10 @@ export default {
         return props.modelValue;
       },
       set() {
+        const formattedValue = cleave.getFormattedValue();
         emit(
           "update:modelValue",
-          `(${dialCode._value}) ${cleave.getFormattedValue()}`
+          formattedValue ? `(${dialCode._value}) ${formattedValue}` : ""
         );
       },
     });
