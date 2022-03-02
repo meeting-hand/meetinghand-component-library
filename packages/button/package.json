@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/button",
     "description": "MeetingHand Buttons",
-    "version": "0.0.154",
+    "version": "0.0.155",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -11,12 +11,19 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/index.js",
-    "module": "./index.js",
+    "files": [
+        "dist",
+        "index.d.ts"
+    ],
+    "main": "./dist/lib.umd.js",
+    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@meetinghand/style": "file:../style"
+    },
+    "scripts": {
+        "build": "vite build"
     }
 }
