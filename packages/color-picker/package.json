@@ -11,10 +11,6 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "files": [
-        "dist",
-        "index.d.ts"
-    ],
     "main": "./index.js",
     "publishConfig": {
         "access": "public"
