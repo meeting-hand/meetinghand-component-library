@@ -23,12 +23,11 @@
 </template>
 
 <script>
-import { Modal } from "ant-design-vue";
+import { h } from "vue";
 
+import Modal from "ant-design-vue/es/modal";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
-
-import { h } from "vue";
 
 export default {
   name: "MhModal",
