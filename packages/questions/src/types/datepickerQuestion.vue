@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import MhDatepicker from "../../../date-picker";
+import MhDatepicker from "@meetinghand/date-picker/src/index.vue";
 
 import { inject } from "vue";
 import { questionValidation } from "../composables/validations";
