@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import { provide, readonly } from "vue";
+import { provide, readonly, defineComponent } from "vue";
 
 import NoAnswer from "./noAnswer.vue";
 import Text from "./types/text.vue";
