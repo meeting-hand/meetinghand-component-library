@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/button",
     "description": "MeetingHand Buttons",
-    "version": "0.0.157",
+    "version": "0.0.158",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
