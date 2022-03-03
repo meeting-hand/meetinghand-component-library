@@ -7,7 +7,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: path.resolve(__dirname, "index.js"),
-            name: "MhSelect",
+            name: "MhSubmissionPreview",
             fileName: (format) => `lib.${format}.js`,
         },
         rollupOptions: {
