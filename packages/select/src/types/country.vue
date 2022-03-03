@@ -45,7 +45,7 @@
 <script>
 import { computed, h, ref } from "vue";
 
-import Select from "ant-design-vue/es/select";
+import { Select } from "ant-design-vue";
 
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";

@@ -30,7 +30,7 @@
 <script>
 import { computed, h } from "vue";
 
-import Select from "ant-design-vue/es/select";
+import { Select } from "ant-design-vue";
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
