@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { Input } from "ant-design-vue";
+import Input from "ant-design-vue/es/input";
 
 import inputProps from "../utils/props";
 import Cleave from "cleave.js";
