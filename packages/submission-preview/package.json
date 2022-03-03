@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/submission-preview",
     "description": "Meetinghand Component Library Component for submission-preview",
-    "version": "0.0.47",
+    "version": "0.0.48",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
