@@ -7,7 +7,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: path.resolve(__dirname, "index.js"),
-            name: "MhInput",
+            name: "MhNotification",
             fileName: (format) => `lib.${format}.js`,
         },
         rollupOptions: {
@@ -22,11 +22,4 @@ export default defineConfig({
         },
     },
     plugins: [vue()],
-    css: {
-        preprocessorOptions: {
-            scss: {
-                charset: false,
-            },
-        },
-    },
 });
