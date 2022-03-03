@@ -371,7 +371,6 @@
         }
     }
     &.disabled {
-        border: $border-size-default solid $transparent-hover;
         color: $color-mono-grey;
         .mh-icon {
             fill: $color-mono-grey;
