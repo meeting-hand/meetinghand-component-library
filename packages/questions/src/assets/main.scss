@@ -75,13 +75,11 @@
         line-height: $line-height-default;
         color: $color-mono-black;
     }
-    .ant-checkbox-wrapper {
+    .mh-checkbox {
         margin-top: $spacing-default;
-        span {
-            font-weight: normal;
-            font-size: $font-size-default;
-            line-height: $line-height-default;
-            color: $color-mono-black;
-        }
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
     }
 }
