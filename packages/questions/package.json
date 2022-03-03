@@ -12,11 +12,8 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
-    "main": "./index.js",
-    "module": "./dist/index.js",
     "publishConfig": {
         "access": "public"
     },
