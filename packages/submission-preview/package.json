@@ -23,8 +23,5 @@
     "dependencies": {
         "@meetinghand/button": "file:../button",
         "@meetinghand/style": "file:../style"
-    },
-    "scripts": {
-        "build": "vite build"
     }
 }
