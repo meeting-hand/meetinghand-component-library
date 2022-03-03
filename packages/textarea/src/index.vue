@@ -22,7 +22,7 @@
 <script>
 import Input from "ant-design-vue/es/input";
 import MHIcon from "@meetinghand/style/icons/index.vue";
-import Tooltip from "@meetinghand/tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
 
 export default {
   name: "MhTextArea",
