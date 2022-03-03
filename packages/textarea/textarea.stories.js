@@ -3,23 +3,21 @@ import MhTextArea from "./index";
 
 import "../../assets/storybook/storybook.css";
 
-
 storiesOf("TextArea", module).add("All", () => ({
-  data() {
-    return {
-      text1: null
-    }
-  },
-  components: { MhTextArea },
-  template: `
+	data() {
+		return {
+			text1: null,
+		};
+	},
+	components: { MhTextArea },
+	template: `
   <div class="storybook">
 
       <h1>Default</h1>
       <mh-text-area 
         v-model="text1" 
         placeholder="Placeholder" 
-        minRows= "5"
-        maxRows= "7"
+        :rows="10"
         title="Title"
         tooltip="Lorem ipsum"
       />
@@ -45,5 +43,3 @@ storiesOf("TextArea", module).add("All", () => ({
       
     `,
 }));
-
-    
