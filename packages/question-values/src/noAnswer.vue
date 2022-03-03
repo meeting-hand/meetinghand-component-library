@@ -7,9 +7,8 @@
   </div>
 </template>
 <script>
-import { defineComponent } from "vue";
 
-export default defineComponent({
+export default {
   props: {
     question: {
       type: Object,
@@ -17,5 +16,5 @@ export default defineComponent({
     },
   },
   setup() {},
-});
+};
 </script>

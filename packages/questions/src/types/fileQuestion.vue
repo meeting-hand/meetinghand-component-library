@@ -47,8 +47,8 @@
 <script>
 import { ref, inject } from "vue";
 
-import MhInput from "../../../input";
-import MhButton from "../../../button";
+import MhInput from "@meetinghand/input";
+import MhButton from "@meetinghand/button";
 
 import { questionValidation } from "../composables/validations";
 

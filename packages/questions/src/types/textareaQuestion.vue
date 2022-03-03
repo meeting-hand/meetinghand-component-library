@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import MhTextArea from "../../../textarea";
+import MhTextArea from "@meetinghand/textarea";
 
 import { questionValidation } from "../composables/validations";
 

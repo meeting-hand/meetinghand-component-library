@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import MhBanner from "../../../banner";
+import MhBanner from "@meetinghand/banner";
 
 export default {
   components: {

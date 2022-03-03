@@ -11,8 +11,12 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/index.js",
-    "module": "./index.js",
+    "files": [
+        "dist",
+        "index.d.ts"
+    ],
+    "main": "./index.js",
+    "module": "./dist/index.js",
     "publishConfig": {
         "access": "public"
     },
@@ -25,6 +29,7 @@
         "@meetinghand/radio": "file:../radio",
         "@meetinghand/select": "file:../select",
         "@meetinghand/style": "file:../style",
-        "@meetinghand/textarea": "file:../textarea"
+        "@meetinghand/textarea": "file:../textarea",
+        "@meetinghand/button": "file:../button"
     }
 }

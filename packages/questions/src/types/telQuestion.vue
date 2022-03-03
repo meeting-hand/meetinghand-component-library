@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import MhInput from "../../../input";
+import MhInput from "@meetinghand/input";
 
 import { questionValidation } from "../composables/validations";
 

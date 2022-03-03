@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import MhInputNumber from "../../../input-number";
+import MhInputNumber from "@meetinghand/input-number";
 
 import { questionValidation } from "../composables/validations";
 

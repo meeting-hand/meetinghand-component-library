@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import MhSelect from "../../../select";
+import MhSelect from "@meetinghand/select";
 
 import { questionValidation } from "../composables/validations";
 
