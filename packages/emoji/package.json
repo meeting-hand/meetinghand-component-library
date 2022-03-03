@@ -12,19 +12,13 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
-    "main": "./dist/lib.umd.js",
-    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@meetinghand/button": "file:../button",
         "@meetinghand/style": "file:../style"
-    },
-    "scripts": {
-        "build": "vite build"
     }
 }
