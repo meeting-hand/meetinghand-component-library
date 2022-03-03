@@ -24,7 +24,7 @@
 <script>
 import { defineComponent, computed } from "vue";
 
-import { Popover } from "ant-design-vue";
+import Popover from "ant-design-vue/es/popover";
 import MhButton from "@meetinghand/button";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 

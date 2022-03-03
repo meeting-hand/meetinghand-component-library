@@ -31,7 +31,8 @@
 
 <script>
 import { watch } from "vue";
-import { Input, Select } from "ant-design-vue";
+import Input from "ant-design-vue/es/input";
+import Select from "ant-design-vue/es/select";
 
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
 

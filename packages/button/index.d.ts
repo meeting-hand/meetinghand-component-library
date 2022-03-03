@@ -1,1 +1,1 @@
-declare module "@meetinghand/banner";
+declare module "@meetinghand/button";

@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/input",
     "description": "Meetinghand Component Library Component for input",
-    "version": "0.0.138",
+    "version": "0.0.139",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -11,8 +11,12 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/index.js",
-    "module": "./index.js",
+    "files": [
+        "dist",
+        "index.d.ts"
+    ],
+    "main": "./dist/lib.umd.js",
+    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
@@ -21,5 +25,8 @@
         "@meetinghand/style": "file:../style",
         "@meetinghand/tooltip": "file:../tooltip",
         "cleave.js": "^1.6.0"
+    },
+    "scripts": {
+        "build": "vite build"
     }
 }

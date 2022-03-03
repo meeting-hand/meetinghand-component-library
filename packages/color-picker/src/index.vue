@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import Default from "./types/default.vue";
+// NOT USED!! => @ckpack/vue-color
+//import Default from "./types/default.vue";
 import Palette from "./types/palette.vue";
 
 import "./assets/main.scss";
@@ -13,13 +14,13 @@ import "./assets/main.scss";
 export default {
   name: "MhButton",
   components: {
-    Default,
+    //Default,
     Palette,
   },
   props: {
     type: {
       type: String,
-      default: "default",
+      default: "palette",
       validator: (_v) => ["default", "palette"].includes(_v),
     },
     colors: {
