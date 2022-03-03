@@ -1,67 +1,69 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
-@import "@meetinghand/style/lib/scss/ant/input.scss";
 
-textarea.ant-input {
+.mh-text-area {
 	width: 360px;
 	height: auto;
-	border: $border-size-default solid $color-mono-grey;
-	box-sizing: border-box;
-	border-radius: $border-radius-default;
-	background-color: transparent;
-	padding: $spacing-medium;
-
-	font-size: $font-size-default;
-	line-height: $line-height-default;
-	color: $color-mono-black;
-	caret-color: $color-primary-blue;
-
-	&::after {
-		border: $border-size-default solid $color-primary-blue;
+	.mh-text-area-label {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 6px;
+		.mh-text-area-title {
+			font-style: normal;
+			font-weight: $font-weight-default;
+			font-size: $font-size-default !important;
+			line-height: $line-height-default;
+			color: $color-mono-black;
+		}
+		img {
+			margin-left: 8px;
+		}
+	}
+	textarea {
+		width: 100%;
+		border: $border-size-default solid $color-mono-grey;
 		box-sizing: border-box;
 		border-radius: $border-radius-default;
-	}
-	&:hover {
-		background-color: none;
-	}
-	&::placeholder {
-		font-weight: normal;
+		background-color: transparent;
+		padding: $spacing-medium;
 		font-size: $font-size-default;
 		line-height: $line-height-default;
-		color: $color-mono-grey-2;
-	}
-	&.ant-input-disabled {
-		background: $color-mono-light-grey;
-		border: $border-size-default solid $color-mono-light-grey-5;
-
-		&::placeholder {
-			color: $color-mono-grey;
-		}
-	}
-	&.error {
-		caret-color: $color-primary-red;
-		border-color: $color-primary-red;
-		&::after {
-			border-color: $color-primary-red;
-		}
-	}
-}
-
-.mh-input-text {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin-bottom: 6px;
-	.mh-input__title {
-		font-style: normal;
-		font-weight: $font-weight-default;
-		font-size: $font-size-default !important;
-		line-height: $line-height-default;
 		color: $color-mono-black;
-	}
-	svg {
-		fill: $color-mono-grey;
-		margin-left: 11px;
-		width: 20px;
-		height: 20px;
+		resize: none;
+		&::after {
+			border: $border-size-default solid $color-primary-blue;
+			box-sizing: border-box;
+			border-radius: $border-radius-default;
+		}
+		&:hover {
+			background-color: none;
+		}
+		&::placeholder {
+			font-weight: normal;
+			font-size: $font-size-default;
+			line-height: $line-height-default;
+			color: $color-mono-grey-2;
+		}
+		&.disabled {
+			background: $color-mono-light-grey;
+			border: $border-size-default solid $color-mono-light-grey-5;
+			cursor: not-allowed;
+			&::placeholder {
+				color: $color-mono-grey;
+			}
+		}
+		&.error {
+			border-color: $color-primary-red;
+			&::after {
+				border-color: $color-primary-red;
+			}
+			&:focus {
+				border-color: $color-primary-red;
+			}
+		}
+		&:focus {
+			outline: none !important;
+			border: 1px solid $color-primary-blue;
+		}
 	}
 }
