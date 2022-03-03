@@ -1,22 +1,29 @@
 {
-	"name": "@meetinghand/status",
-	"description": "Meetinghand Component Library Component for status",
-	"version": "0.0.97",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-	},
-	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-	"bugs": {
-		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-	},
-	"author": "Fatih Sinan Yaman",
-	"main": "./dist/index.js",
-	"module": "./index.js",
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"@meetinghand/style": "file:../style"
-	}
+    "name": "@meetinghand/status",
+    "description": "Meetinghand Component Library Component for status",
+    "version": "0.0.97",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "files": [
+        "dist",
+        "index.d.ts"
+    ],
+    "main": "./dist/lib.umd.js",
+    "module": "./dist/lib.es.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@meetinghand/style": "file:../style"
+    },
+    "scripts": {
+        "build": "vite build"
+    }
 }
