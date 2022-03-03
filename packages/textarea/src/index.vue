@@ -12,7 +12,7 @@
       :disabled="disabled"
       :rows="rows"
       :class="[{ error: errorStatus }, { disabled: disabled }]"
-    />2
+    />
     <span v-if="errorMessage" class="mh-input__error">
       {{ errorMessage }}
     </span>
