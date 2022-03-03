@@ -8,7 +8,7 @@
         "refresh": "lerna bootstrap",
         "new": "node ./scripts/new ",
         "build": "lerna run build --stream",
-        "publish": "lerna publish",
+        "publish": "npm run build && lerna publish",
         "storybook": "start-storybook -p 6006",
         "initialize-packages": "cd ./packages/banner && npm i && cd ../button && npm i && cd ../checkbox && npm i && cd ../color-picker && npm i && cd ../date-picker && npm i && cd ../divider && npm i && cd ../input && npm i && cd ../input-number && npm i && cd ../modal && npm i && cd ../notification && npm i && cd ../radio && npm i && cd ../select && npm i && cd ../style && npm i && cd ../switch && npm i && cd ../tab && npm i && cd ../text-editor && npm i && cd ../textarea && npm i && cd ../tooltip && npm i && cd ../status && npm i && cd ../emoji && npm i && cd ../progress-bar && npm i && cd ../submission-preview && npm i && cd ../questions && npm i && cd ../question-values && npm i && cd ../../",
         "build-storybook": "build-storybook"

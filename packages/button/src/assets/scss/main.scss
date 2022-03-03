@@ -58,6 +58,7 @@
     line-height: $line-height-default;
     align-items: center;
     color: $color-mono-white;
+    height: 44px;
     &:hover {
         background: $color-button-hover-blue;
     }
@@ -103,6 +104,8 @@
     &.wait {
         border: none;
         background-color: rgba($color-primary-blue, 0.4);
+        padding: $spacing-medium $spacing-default;
+
         &:hover {
             background: rgba($color-primary-blue, 0.5);
         }
@@ -130,6 +133,7 @@
     line-height: $line-height-default;
     color: $color-primary-blue;
     background-color: transparent;
+    height: 44px;
     .mh-icon {
         fill: $color-primary-blue;
     }
@@ -181,6 +185,7 @@
     line-height: $line-height-default;
     color: $color-mono-grey-3;
     background: transparent;
+    height: 28px;
     .mh-icon {
         fill: $color-mono-grey-2;
     }
