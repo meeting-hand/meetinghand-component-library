@@ -27,7 +27,7 @@
 <script>
 import { ref } from "vue";
 
-import Popover from "ant-design-vue/es/popover";
+import { Popover } from "ant-design-vue";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
 export default {

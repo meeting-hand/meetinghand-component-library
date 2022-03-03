@@ -12,11 +12,8 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
-    "main": "./dist/lib.umd.js",
-    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
@@ -25,8 +22,5 @@
         "@meetinghand/style": "file:../style",
         "@meetinghand/tooltip": "file:../tooltip",
         "cleave.js": "^1.6.0"
-    },
-    "scripts": {
-        "build": "vite build"
     }
 }
