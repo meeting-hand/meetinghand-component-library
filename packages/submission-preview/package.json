@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/submission-preview",
     "description": "Meetinghand Component Library Component for submission-preview",
-    "version": "0.0.48",
+    "version": "0.0.51",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -12,8 +12,7 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
     "main": "./dist/lib.umd.js",
     "module": "./dist/lib.es.js",
@@ -23,8 +22,5 @@
     "dependencies": {
         "@meetinghand/button": "file:../button",
         "@meetinghand/style": "file:../style"
-    },
-    "scripts": {
-        "build": "vite build"
     }
 }

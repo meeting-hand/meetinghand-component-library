@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/input-number",
     "description": "Meetinghand Component Library Component for input-number",
-    "version": "0.0.127",
+    "version": "0.0.130",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -12,11 +12,8 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
-    "main": "./dist/lib.umd.js",
-    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
@@ -27,8 +24,5 @@
     },
     "devDependencies": {
         "@types/accounting": "^0.4.1"
-    },
-    "scripts": {
-        "build": "vite build"
     }
 }

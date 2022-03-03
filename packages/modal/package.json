@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/modal",
     "description": "Meetinghand Component Library Component for modal",
-    "version": "0.0.125",
+    "version": "0.0.126",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -12,18 +12,12 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
-    "main": "./dist/lib.umd.js",
-    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@meetinghand/style": "file:../style"
-    },
-    "scripts": {
-        "build": "vite build"
     }
 }

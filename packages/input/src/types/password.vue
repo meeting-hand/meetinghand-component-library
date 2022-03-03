@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Input from "ant-design-vue/es/input";
+import { Input } from "ant-design-vue";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import inputProps from "../utils/props";

@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/select",
     "description": "Meetinghand Component Library Component for select",
-    "version": "0.0.127",
+    "version": "0.0.130",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -12,19 +12,14 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
-    "main": "./dist/lib.umd.js",
-    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/style": "file:../style",
+        "@meetinghand/style": "^0.0.116",
         "lodash": "^4.17.21"
     },
-    "scripts": {
-        "build": "vite build"
-    }
+    "gitHead": "6d570f3a1355c59938e5ca75264f753d4e6fb285"
 }

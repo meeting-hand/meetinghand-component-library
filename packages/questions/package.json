@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/questions",
     "description": "Meetinghand Component Library Component for questions",
-    "version": "0.0.106",
+    "version": "0.0.115",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -12,24 +12,22 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist",
-        "index.d.ts"
+        "src"
     ],
-    "main": "./index.js",
-    "module": "./dist/index.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/banner": "file:../banner",
-        "@meetinghand/button": "file:../button",
-        "@meetinghand/checkbox": "file:../checkbox",
-        "@meetinghand/date-picker": "file:../date-picker",
-        "@meetinghand/input": "file:../input",
-        "@meetinghand/input-number": "file:../input-number",
-        "@meetinghand/radio": "file:../radio",
-        "@meetinghand/select": "file:../select",
-        "@meetinghand/style": "file:../style",
-        "@meetinghand/textarea": "file:../textarea"
-    }
+        "@meetinghand/banner": "^0.0.131",
+        "@meetinghand/button": "^0.0.158",
+        "@meetinghand/checkbox": "^0.0.123",
+        "@meetinghand/date-picker": "^0.0.133",
+        "@meetinghand/input": "^0.0.148",
+        "@meetinghand/input-number": "^0.0.130",
+        "@meetinghand/radio": "^0.0.136",
+        "@meetinghand/select": "^0.0.130",
+        "@meetinghand/style": "^0.0.116",
+        "@meetinghand/textarea": "^0.0.128"
+    },
+    "gitHead": "6d570f3a1355c59938e5ca75264f753d4e6fb285"
 }
