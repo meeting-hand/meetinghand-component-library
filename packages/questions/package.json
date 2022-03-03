@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/questions",
     "description": "Meetinghand Component Library Component for questions",
-    "version": "0.0.102",
+    "version": "0.0.104",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -11,13 +11,18 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/index.js",
-    "module": "./index.js",
+    "files": [
+        "dist",
+        "index.d.ts"
+    ],
+    "main": "./index.js",
+    "module": "./dist/index.js",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@meetinghand/banner": "file:../banner",
+        "@meetinghand/button": "file:../button",
         "@meetinghand/checkbox": "file:../checkbox",
         "@meetinghand/date-picker": "file:../date-picker",
         "@meetinghand/input": "file:../input",
