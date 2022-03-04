@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/divider",
     "description": "Meetinghand Component Library Component for divider",
-    "version": "1.0.2",
+    "version": "1.0.8",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -12,10 +12,11 @@
     },
     "author": "Fatih Sinan Yaman",
     "files": [
-        "dist"
+        "dist",
+        "index.d.ts"
     ],
-    "main": "./dist/my-lib.umd.js",
-    "module": "./dist/my-lib.es.js",
+    "main": "./dist/lib.umd.js",
+    "module": "./dist/lib.es.js",
     "publishConfig": {
         "access": "public"
     },

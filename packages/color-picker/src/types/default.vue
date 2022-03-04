@@ -16,7 +16,6 @@
 
 <script>
 import { Sketch } from "@ckpack/vue-color";
-
 export default {
   name: "MhColorPicker",
   components: {

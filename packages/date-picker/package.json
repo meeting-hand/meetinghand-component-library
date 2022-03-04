@@ -1,22 +1,23 @@
 {
-	"name": "@meetinghand/date-picker",
-	"description": "Meetinghand Component Library Component for date-picker",
-	"version": "0.0.124",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-	},
-	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-	"bugs": {
-		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-	},
-	"author": "Fatih Sinan Yaman",
-	"main": "./dist/index.js",
-	"module": "./index.js",
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"@meetinghand/style": "file:../style"
-	}
+    "name": "@meetinghand/date-picker",
+    "description": "Meetinghand Component Library Component for date-picker",
+    "version": "0.0.134",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "files": [
+        "src"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@meetinghand/style": "file:../style"
+    }
 }

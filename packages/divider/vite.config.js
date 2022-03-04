@@ -8,7 +8,7 @@ export default defineConfig({
         lib: {
             entry: path.resolve(__dirname, "index.js"),
             name: "MhDivider",
-            fileName: (format) => `mh-divider.${format}.js`,
+            fileName: (format) => `lib.${format}.js`,
         },
         rollupOptions: {
             external: ["vue"],

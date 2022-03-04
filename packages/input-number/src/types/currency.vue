@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import { InputNumber } from "ant-design-vue";
-import accounting from "accounting";
 import { convertCurrencyFormat } from "../utils/currency";
 
+import InputNumber from "ant-design-vue/es/input-number";
+import accounting from "accounting";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 import Tooltip from "@meetinghand/tooltip";
 

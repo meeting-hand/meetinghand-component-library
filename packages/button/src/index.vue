@@ -19,9 +19,7 @@
 <script>
 import Primary from "./types/primary.vue";
 import Secondary from "./types/secondary.vue";
-import Small from "./types/small.vue";
 import Text from "./types/text.vue";
-import Row from "./types/row.vue";
 import Iconic from "./types/iconic.vue";
 import Social from "./types/social.vue";
 import Menu from "./types/menu.vue";
@@ -34,9 +32,7 @@ export default {
   components: {
     Primary,
     Secondary,
-    Small,
     Text,
-    Row,
     Iconic,
     Social,
     Menu,
@@ -52,9 +48,7 @@ export default {
         [
           "primary",
           "secondary",
-          "small",
           "text",
-          "row",
           "iconic",
           "social",
           "menu",

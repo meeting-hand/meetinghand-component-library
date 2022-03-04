@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { Switch } from "ant-design-vue";
+import Switch from "ant-design-vue/es/switch";
 
 export default {
   name: "MhSwitch",

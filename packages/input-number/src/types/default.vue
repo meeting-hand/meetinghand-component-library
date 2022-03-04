@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import { InputNumber } from "ant-design-vue";
 import { computed } from "vue";
 
+import InputNumber from "ant-design-vue/es/input-number";
 import MhIcon from "@meetinghand/style/icons/index.vue";
-import Tooltip from "@meetinghand/tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
 
 export default {
   name: "InputNumberDefault",

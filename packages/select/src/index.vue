@@ -25,7 +25,6 @@
 <script>
 import { computed } from "vue";
 
-import { Select } from "ant-design-vue";
 import Default from "./types/default.vue";
 import Country from "./types/country.vue";
 
@@ -34,7 +33,6 @@ import defaultProps from "./utils/props";
 export default {
   name: "MhSelect",
   components: {
-    [Select.name]: Select,
     Default,
     Country,
   },

@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import MhSelect from "../../../select";
+import MhSelect from "@meetinghand/select/src/index.vue";
 
 import { questionValidation } from "../composables/validations";
 

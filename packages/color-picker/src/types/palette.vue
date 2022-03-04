@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { ref } from "vue";
 
 import { Popover } from "ant-design-vue";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 
-export default defineComponent({
+export default {
   components: {
     [Popover.name]: Popover,
     MhIcon,
@@ -81,7 +81,7 @@ export default defineComponent({
       selectedColor,
     };
   },
-});
+};
 </script>
 
 <style lang="scss" scoped>

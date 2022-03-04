@@ -1,20 +1,26 @@
 <template>
-  <a-checkbox
-    :class="{ error: errorStatus }"
-    v-model:checked="value"
-    :disabled="disabled"
+  <label
+    :class="[
+      'mh-checkbox',
+      { 'mh-checkbox-disabled': disabled },
+      { 'mh-checkbox-error': errorStatus },
+    ]"
   >
+    <input
+      type="checkbox"
+      name="checkbox"
+      v-model="value"
+      :disabled="disabled"
+    />
     {{ label }}
     <slot> </slot>
-  </a-checkbox>
+  </label>
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
   </span>
 </template>
 
 <script>
-import { Checkbox } from "ant-design-vue";
-
 export default {
   name: "MhCheckboxSingle",
   props: {
@@ -41,9 +47,6 @@ export default {
       type: String,
       default: null,
     },
-  },
-  components: {
-    [Checkbox.name]: Checkbox,
   },
   computed: {
     errorStatus: function (props) {

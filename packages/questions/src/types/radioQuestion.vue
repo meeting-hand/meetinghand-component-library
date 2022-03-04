@@ -33,8 +33,8 @@
   </div>
 </template>
 <script>
-import MhRadio from "../../../radio";
-import MhInput from "../../../input";
+import MhRadio from "@meetinghand/radio";
+import MhInput from "@meetinghand/input/src/index.vue";
 import MhQuestions from "../index.vue";
 
 import { ref, inject } from "vue";
