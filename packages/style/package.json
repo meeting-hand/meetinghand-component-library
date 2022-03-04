@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/style",
 	"description": "MeetingHand Base Styles",
-	"version": "0.0.115",
+	"version": "0.0.117",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"

@@ -1,8 +1,7 @@
 <template>
   <div class="question question-textarea">
     <mh-text-area
-      :minRows="String(question.textareaRows)"
-      :maxRows="String(question.textareaRows)"
+      :rows="question.textareaRows"
       :title="question.label"
       :tooltip="question.information"
       :error-message="errorMessage"
@@ -12,7 +11,7 @@
   </div>
 </template>
 <script>
-import MhTextArea from "../../../textarea";
+import MhTextArea from "@meetinghand/textarea";
 
 import { questionValidation } from "../composables/validations";
 
