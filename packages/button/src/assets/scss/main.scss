@@ -246,12 +246,10 @@
         .mh-icon {
             margin-right: 4px;
         }
-        span {
-            font-weight: $font-weight-large;
-            font-size: $font-size-default;
-            line-height: $line-height-default;
-            color: $color-mono-grey-3;
-        }
+        font-weight: $font-weight-large;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-grey-3;
     }
     &.iconic-circular {
         border-radius: $border-radius-giant;
