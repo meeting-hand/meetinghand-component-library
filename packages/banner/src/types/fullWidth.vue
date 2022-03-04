@@ -1,47 +1,40 @@
 <template>
   <div :class="[`full-width-banner`, bannerType]">
-    <div class="full-width-banner-container">
-      <div class="banner-left">
-        <div class="banner-icon">
-          <mh-icon name="system-status-error" v-if="icon === 'warning'" />
-          <mh-icon name="system-status-success" v-if="icon === 'success'" />
-          <mh-icon name="ui-gift" v-if="icon === 'gift'" />
+    <div class="banner-left">
+      <mh-icon
+        :name="
+          bannerType === 'gift' ? 'ui-gift' : 'system-status-' + bannerType
+        "
+      />
+      <div class="banner-text">
+        <div class="banner-text-title">
+          {{ title }}
         </div>
-        <div class="banner-text">
-          <div class="banner-text-title">
-            {{ title }}
-          </div>
-          <div class="banner-text-message">
-            {{ message }}
-          </div>
-        </div>
+        <div class="banner-text-message" v-html="message"></div>
       </div>
-
-      <div class="banner-buttons">
-        <slot></slot>
-      </div>
+    </div>
+    <div class="banner-buttons">
+      <slot></slot>
     </div>
   </div>
 </template>
-<script>
-import MHIcon from "@meetinghand/style/icons/index.vue";
-import MhButton from "../../../button/index";
 
-export default {
+<script>
+import { defineComponent } from "vue";
+
+import MhIcon from "@meetinghand/style/icons/index.vue";
+
+export default defineComponent({
   components: {
-    "mh-icon": MHIcon,
-    MhButton,
+    MhIcon,
   },
   props: {
     bannerType: {
       type: String,
-      default: "warning",
-      validator: (_v) => ["warning", "success"].includes(_v),
+      default: "error",
+      validator: (_v) => ["error", "success", "info", "gift"].includes(_v),
     },
     title: {
-      type: String,
-    },
-    icon: {
       type: String,
     },
     message: {
@@ -51,5 +44,5 @@ export default {
   setup() {
     return {};
   },
-};
+});
 </script>

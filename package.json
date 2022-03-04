@@ -1,48 +1,49 @@
 {
-	"name": "meetinghand-component-library",
-	"version": "1.0.0",
-	"description": "MeetingHand Component Library",
-	"scripts": {
-		"initialize": "npm install && npm run clean && lerna bootstrap && npm run initialize-packages",
-		"clean": "lerna clean --yes && lerna exec -- rm -rf dist",
-		"refresh": "lerna bootstrap",
-		"new": "node ./scripts/new ",
-		"build": "lerna run build --stream",
-		"publish": "lerna publish",
-		"storybook": "start-storybook -p 6006",
-		"initialize-packages": "cd ./packages/banner && npm i && cd ../button && npm i && cd ../checkbox && npm i && cd ../color-picker && npm i && cd ../date-picker && npm i && cd ../divider && npm i && cd ../input && npm i && cd ../input-number && npm i && cd ../modal && npm i && cd ../notification && npm i && cd ../radio && npm i && cd ../select && npm i && cd ../style && npm i && cd ../switch && npm i && cd ../tab && npm i && cd ../text-editor && npm i && cd ../textarea && npm i && cd ../tooltip && npm i && cd ../status && npm i &&  cd ../../",
-		"build-storybook": "build-storybook"
-	},
-	"author": {
-		"name": "Fatih Sinan Yaman",
-		"email": "info@sinanyaman.net",
-		"url": "https://sinanyaman.net"
-	},
-	"license": "MIT",
-	"devDependencies": {
-		"@babel/core": "^7.14.0",
-		"@storybook/addon-actions": "^6.3.0-alpha.17",
-		"@storybook/addon-essentials": "^6.3.0-alpha.17",
-		"@storybook/addon-links": "^6.3.0-alpha.17",
-		"@storybook/vue3": "^6.3.0-alpha.17",
-		"@vitejs/plugin-vue": "^1.1.1",
-		"@vue/compiler-sfc": "^3.0.5",
-		"babel-loader": "^8.2.2",
-		"chalk": "^4.1.1",
-		"css-loader": "^5.2.4",
-		"lerna": "^3.22.1",
-		"less": "^4.1.1",
-		"less-loader": "^5.0.0",
-		"node-sass": "^6.0.0",
-		"resolve-url-loader": "^4.0.0",
-		"sass": "^1.32.13",
-		"sass-loader": "^10",
-		"vite": "^2.0.0-beta.44",
-		"vue-loader": "^16.2.0",
-		"yargs": "^16.2.0"
-	},
-	"dependencies": {
-		"ant-design-vue": "2.1.4",
-		"vue": "^3.0.11"
-	}
+    "name": "meetinghand-component-library",
+    "version": "1.0.0",
+    "description": "MeetingHand Component Library",
+    "scripts": {
+        "initialize": "npm install && npm run clean && lerna bootstrap",
+        "clean": "lerna clean --yes && lerna exec -- rm -rf dist",
+        "refresh": "lerna bootstrap",
+        "new": "node ./scripts/new ",
+        "build": "lerna run build --stream",
+        "publish": "npm run build && lerna publish",
+        "storybook": "start-storybook -p 6006",
+        "initialize-packages": "cd ./packages/banner && npm i && cd ../button && npm i && cd ../checkbox && npm i && cd ../color-picker && npm i && cd ../date-picker && npm i && cd ../divider && npm i && cd ../input && npm i && cd ../input-number && npm i && cd ../modal && npm i && cd ../notification && npm i && cd ../radio && npm i && cd ../select && npm i && cd ../style && npm i && cd ../switch && npm i && cd ../tab && npm i && cd ../text-editor && npm i && cd ../textarea && npm i && cd ../tooltip && npm i && cd ../status && npm i && cd ../emoji && npm i && cd ../progress-bar && npm i && cd ../submission-preview && npm i && cd ../questions && npm i && cd ../question-values && npm i && cd ../../",
+        "build-storybook": "build-storybook"
+    },
+    "author": {
+        "name": "Fatih Sinan Yaman",
+        "email": "info@sinanyaman.net",
+        "url": "https://sinanyaman.net"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.14.0",
+        "@storybook/addon-essentials": "^6.3.7",
+        "@storybook/addon-links": "^6.3.7",
+        "@storybook/addon-postcss": "^2.0.0",
+        "@storybook/vue3": "^6.4.4",
+        "@vitejs/plugin-vue": "^1.1.1",
+        "@vue/compiler-sfc": "^3.2.23",
+        "babel-loader": "^8.2.2",
+        "chalk": "^4.1.1",
+        "css-loader": "^5.2.4",
+        "lerna": "^3.22.1",
+        "node-sass": "^6.0.1",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.32.13",
+        "sass-loader": "^10",
+        "vite": "^2.6.14",
+        "vue-loader": "^16.2.0",
+        "yargs": "^16.2.0"
+    },
+    "dependencies": {
+        "@vee-validate/rules": "^4.5.7",
+        "ant-design-vue": "2.1.4",
+        "vee-validate": "^4.5.8",
+        "vue": "^3.2.23",
+        "yup": "^0.32.11"
+    }
 }

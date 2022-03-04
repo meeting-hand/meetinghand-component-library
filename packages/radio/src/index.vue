@@ -1,6 +1,7 @@
 <template>
   <a-radio
     :disabled="disabled"
+    :id="id"
     v-if="type === 'default'"
     v-model:checked="value"
   >
@@ -20,11 +21,16 @@
   >
     {{ text }}
   </mh-button>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
-import { Radio } from "ant-design-vue";
+import Radio from "ant-design-vue/es/radio";
 import MhButton from "@meetinghand/button/src/index.vue";
+
+import "./assets/main.scss";
 
 export default {
   name: "MhRadio",
@@ -44,7 +50,6 @@ export default {
     },
     modelValue: {
       type: [String, Number, Boolean],
-      required: true,
     },
     data: {
       type: [String, Number, Boolean],
@@ -52,7 +57,19 @@ export default {
     },
     text: {
       type: String,
-      required: true,
+      required: false,
+    },
+    errorMessage: {
+      type: String,
+      default: null,
+    },
+    hasError: {
+      type: Boolean,
+      default: false,
+    },
+    id: {
+      type: String,
+      default: () => "_" + Math.random().toString(36).substr(2, 9),
     },
   },
   computed: {
@@ -73,6 +90,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-@import "./assets/main.scss";
-</style>

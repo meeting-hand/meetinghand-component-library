@@ -1,26 +1,31 @@
 <template>
-  <a-checkbox
-    :class="{ error: errorStatus }"
-    v-model:checked="value"
-    :disabled="disabled"
+  <label
+    :class="[
+      'mh-checkbox',
+      { 'mh-checkbox-disabled': disabled },
+      { 'mh-checkbox-error': errorStatus },
+    ]"
   >
+    <input
+      type="checkbox"
+      name="checkbox"
+      v-model="value"
+      :disabled="disabled"
+    />
     {{ label }}
     <slot> </slot>
-  </a-checkbox>
+  </label>
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
   </span>
 </template>
 
 <script>
-import { Checkbox } from "ant-design-vue";
-
 export default {
   name: "MhCheckboxMultiple",
   props: {
     modelValue: {
       type: Array,
-      required: true,
     },
     label: {
       type: String,
@@ -43,16 +48,15 @@ export default {
       default: null,
     },
   },
-  components: {
-    [Checkbox.name]: Checkbox,
-  },
   computed: {
     errorStatus: function (props) {
       return props.hasError || props.errorMessage;
     },
     value: {
       get() {
-        return this.modelValue.includes(this.data);
+        return (
+          Array.isArray(this.modelValue) && this.modelValue.includes(this.data)
+        );
       },
       set(value) {
         if (!value) {
@@ -61,7 +65,12 @@ export default {
             this.modelValue.filter((_v) => _v !== this.data)
           );
         } else {
-          this.$emit("update:modelValue", this.modelValue.concat([this.data]));
+          this.$emit(
+            "update:modelValue",
+            Array.isArray(this.modelValue)
+              ? [...this.modelValue, this.data]
+              : [this.data]
+          );
         }
       },
     },

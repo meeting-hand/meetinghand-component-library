@@ -3,7 +3,7 @@
 .mh-status {
     display: inline-block;
     border-radius: $border-radius-large;
-    height: 28px;
+    min-height: 16px;
     .mh-status-container {
         padding: 4px;
         display: flex;

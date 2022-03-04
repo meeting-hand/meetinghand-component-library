@@ -1,22 +1,25 @@
 {
-	"name": "@meetinghand/select",
-	"description": "Meetinghand Component Library Component for select",
-	"version": "0.0.50-alpha.0",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-	},
-	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-	"bugs": {
-		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-	},
-	"author": "Fatih Sinan Yaman",
-	"main": "./dist/index.js",
-	"module": "./index.js",
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"@meetinghand/style": "file:../style"
-	}
+    "name": "@meetinghand/select",
+    "description": "Meetinghand Component Library Component for select",
+    "version": "0.0.131",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "files": [
+        "src"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@meetinghand/style": "^0.0.117",
+        "lodash": "^4.17.21"
+    },
+    "gitHead": "6d570f3a1355c59938e5ca75264f753d4e6fb285"
 }

@@ -1,34 +1,40 @@
 <template>
-  <div class="mh-input-label" v-if="label">
-    <label :for="elId">
-      {{ label }}
-    </label>
-    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
-      <mh-icon name="system-info" />
-    </tooltip>
-  </div>
+  <div :class="['mh-input', className]">
+    <div class="mh-input-label" v-if="label">
+      <label :for="elId">
+        {{ label }}
+      </label>
+      <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+        <mh-icon name="system-info" />
+      </tooltip>
+    </div>
 
-  <component
-    :is="inputType"
-    :class="className"
-    :hasError="hasError"
-    :errorMessage="errorMessage"
-    :disabled="disabled"
-    :placeholder="placeholder"
-    :leftIcon="leftIcon"
-    :rightIcon="rightIcon"
-    :allowClear="allowClear"
-    :email="email"
-    :id="elId"
-    v-model="value"
-  />
+    <component
+      :is="inputType"
+      :hasError="hasError"
+      :errorMessage="errorMessage"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      :leftIcon="leftIcon"
+      :rightIcon="rightIcon"
+      :allowClear="allowClear"
+      :textTransform="textTransform"
+      :email="email"
+      :autocomplete="autocomplete"
+      :maxLength="maxLength"
+      :mask="mask"
+      :countryCode="countryCode"
+      :id="elId"
+      v-model="value"
+    />
+  </div>
 </template>
 
 <script>
 import Default from "./types/default.vue";
 import Password from "./types/password.vue";
 import Tel from "./types/tel.vue";
-import Tooltip from "../../tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
 import MhIcon from "@meetinghand/style/icons/index.vue";
 import props from "./utils/props";
 
@@ -69,6 +75,8 @@ export default {
       },
     });
 
+    const className = props.class;
+
     const elId = props.id
       ? props.id
       : "_" + Math.random().toString(36).substr(2, 9);
@@ -76,6 +84,7 @@ export default {
     return {
       value,
       elId,
+      className,
     };
   },
 };

@@ -1,38 +1,36 @@
 <template>
-  <div class="mh-input-text">
-    <span v-if="title" class="mh-input__title">{{ title }}</span>
-    <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
-      <mh-icon name="system-info" />
-    </tooltip>
+  <div class="mh-text-area">
+    <div v-if="title" class="mh-text-area-label">
+      <span class="mh-text-area-title">{{ title }}</span>
+      <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
+        <img src="./assets/icons/system-info.svg" alt="" />
+      </tooltip>
+    </div>
+    <textarea
+      v-model="value"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :rows="rows"
+      :class="[{ error: errorStatus }, { disabled: disabled }]"
+    />
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
   </div>
-  <a-textarea
-    v-model:value="value"
-    :placeholder="placeholder"
-    :auto-size="{ minRows: Number(minRows), maxRows: Number(maxRows) }"
-    :disabled="disabled"
-    :class="[{ error: errorStatus }]"
-  />
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
 </template>
 
 <script>
-import { Input } from "ant-design-vue";
-import MHIcon from "@meetinghand/style/icons/index.vue";
-import Tooltip from "../../tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
 
 export default {
   name: "MhTextArea",
   components: {
-    [Input.TextArea.name]: Input.TextArea,
-    "mh-icon": MHIcon,
     Tooltip,
   },
   props: {
     modelValue: {
       type: String,
-      required: true,
+      default: "",
     },
     placeholder: {
       type: String,
@@ -40,7 +38,6 @@ export default {
     },
     disabled: {
       type: Boolean,
-      required: false,
       default: false,
     },
     hasError: {
@@ -59,13 +56,9 @@ export default {
       type: String,
       default: null,
     },
-    minRows: {
-      type: String,
-      default: "5",
-    },
-    maxRows: {
-      type: String,
-      default: "7",
+    rows: {
+      type: Number,
+      default: 5,
     },
     tooltip: {
       type: String,

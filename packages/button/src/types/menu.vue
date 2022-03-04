@@ -1,30 +1,34 @@
 <template>
-  <a-button
-    type="primary"
+  <button
+    :type="submit ? 'submit' : 'button'"
     :class="[
-      `menu-btn`,
+      `mh-menu-button`,
+      `mh-button`,
+      `size-${size}`,
       `alignment-${iconAlignment}`,
       { wait: wait },
       { disabled: disabled },
     ]"
     :disabled="disabled || wait"
-    :htmlType="submit ? 'submit' : 'button'"
   >
     <mh-icon :name="icon" v-if="icon" />
-    <slot></slot>
+    <slot v-if="!wait"></slot>
     <mh-icon name="wait" class="wait-spinner" v-if="wait" />
-  </a-button>
+  </button>
 </template>
 <script>
-import { Button } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 export default {
   name: "MhButtonPrimary",
   components: {
-    [Button.name]: Button,
     "mh-icon": MHIcon,
   },
   props: {
+    size: {
+      type: String,
+      default: "default",
+      validator: (_v) => ["default", "large"].includes(_v),
+    },
     icon: {
       type: String,
       default: null,

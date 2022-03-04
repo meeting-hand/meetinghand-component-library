@@ -1,13 +1,13 @@
 <template></template>
 <script>
-import Notification from "ant-design-vue/lib/notification";
+import Notification from "ant-design-vue/es/notification";
 import Button from "@meetinghand/button";
 
 import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
 import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
 import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
-import UiCheck from "@meetinghand/style/icons/uiCheck.vue";
+import SystemStatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
 
 import { h, onBeforeUnmount, onMounted } from "vue";
 
@@ -20,6 +20,10 @@ export default {
       validator: (_v) => ["success", "error", "info", "hint"].includes(_v),
     },
     description: {
+      type: String,
+      default: "",
+    },
+    message: {
       type: String,
       default: "",
     },
@@ -40,7 +44,7 @@ export default {
 
     const openNotification = () => {
       const icons = {
-        success: UiCheck,
+        success: SystemStatusSuccess,
         error: StatusError,
         info: StatusInfo,
         hint: StatusHint,
@@ -48,8 +52,9 @@ export default {
 
       Notification.open({
         description: props.description,
+        message: props.message,
         duration: props.duration,
-        class: props.type,
+        class: [props.type, { title: props.message }],
         icon: h(icons[props.type]),
         placement: props.placement,
         key: key,

@@ -1,4 +1,9 @@
 <template>
+  <div class="mh-date-picker-label" v-if="label">
+    <label>
+      {{ label }}
+    </label>
+  </div>
   <a-date-picker
     v-model:value="value"
     :format="format"
@@ -14,10 +19,10 @@
 </template>
 
 <script>
-import { DatePicker } from "ant-design-vue";
-
-import MhDate from "@meetinghand/style/icons/uiDate.vue";
 import { computed, h } from "vue";
+
+import { DatePicker } from "ant-design-vue";
+import MhDate from "@meetinghand/style/icons/uiDate.vue";
 
 export default {
   name: "MhDatePickerDefault",
@@ -55,6 +60,18 @@ export default {
     },
     disabledEndDate: {
       type: [String, Date],
+    },
+    label: {
+      type: String,
+      default: null,
+    },
+    labelLeft: {
+      type: String,
+      default: null,
+    },
+    labelRight: {
+      type: String,
+      default: null,
     },
   },
   setup(props, { emit }) {

@@ -21,7 +21,7 @@ storiesOf("Status", module).add("All", () => ({
       <br/>
 			<hr/>
       <h1>Disabled</h1>
-      <Status color="green" message="Disabled" disabled icon/>
+      <Status color="green" message="Disabled" disabled icon="ui-check"/>
       <br/>
       <br/>
   </div>

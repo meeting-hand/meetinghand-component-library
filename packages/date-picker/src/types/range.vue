@@ -14,13 +14,14 @@
   <a-range-picker
     v-model:value="value"
     :format="format"
-    :valueFormat="format[0]"
+    :valueFormat="format"
     :class="[
       { error: hasError },
       'mh-range-picker',
       { 'mh-range-picker-opened': status },
     ]"
     :disabled="disabled"
+    :disabledDate="disabledDate"
     :placeholder="placeholder"
     :allowClear="false"
     :id="id"
@@ -48,8 +49,8 @@ export default {
       default: () => ["", ""],
     },
     format: {
-      type: Array,
-      default: () => ["DD.MM.YYYY", "DD.MM.YYYY"],
+      type: String,
+      default: "DD.MM.YYYY",
     },
     hasError: {
       type: Boolean,
@@ -81,6 +82,10 @@ export default {
       type: String,
       default: null,
     },
+    label: {
+      type: String,
+      default: null,
+    },
   },
   setup(props, { emit }) {
     const status = ref(false);
@@ -96,6 +101,23 @@ export default {
       },
     });
 
+    const disabledDate = (_d) => {
+      _d = _d.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+      if (
+        props.disabledStartDate &&
+        new Date(props.disabledStartDate).getTime() >= new Date(_d).getTime()
+      ) {
+        return true;
+      }
+      if (
+        props.disabledEndDate &&
+        new Date(_d).getTime() > new Date(props.disabledEndDate).getTime()
+      ) {
+        return true;
+      }
+      return false;
+    };
+
     const openChange = (newStatus) => {
       status.value = newStatus;
     };
@@ -105,6 +127,7 @@ export default {
       openChange,
       status,
       icon,
+      disabledDate,
     };
   },
 };

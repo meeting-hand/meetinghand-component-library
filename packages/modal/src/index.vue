@@ -2,6 +2,7 @@
   <a-modal
     v-model:visible="modelValue"
     :closable="closable"
+    :maskClosable="maskClosable"
     :destroyOnClose="true"
     @cancel="close()"
     :class="[`mh-modal-${size}`, modalType]"
@@ -22,12 +23,11 @@
 </template>
 
 <script>
-import { Modal } from "ant-design-vue";
+import { h } from "vue";
 
+import { Modal } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 import SystemClose from "@meetinghand/style/icons/systemClose.vue";
-
-import { h } from "vue";
 
 export default {
   name: "MhModal",
@@ -66,7 +66,10 @@ export default {
     },
     closable: {
       type: Boolean,
-      required: false,
+      default: true,
+    },
+    maskClosable: {
+      type: Boolean,
       default: true,
     },
     dialogTitle: {

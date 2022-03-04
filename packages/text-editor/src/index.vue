@@ -1,32 +1,43 @@
-<template>
-  <div
-    :class="[{ error: errorStatus }, 'mh-text-editor', { disabled: readOnly }]"
-  >
-    <quill-editor
-      :toolbar="toolbar"
-      :placeholder="placeholder"
-      v-model:content="value"
-      contentType="html"
-      :readOnly="readOnly"
+ <template>
+  <div class="mh-text-editor">
+    <label class="mh-text-editor-label" v-if="label">{{ label }}</label>
+    <div
+      :class="[
+        { error: errorStatus },
+        'mh-text-editor-container',
+        { disabled: readOnly },
+      ]"
     >
-    </quill-editor>
-    <div class="editor-footer" v-if="maxWordCount">
-      {{ wordCount }} / {{ maxWordCount }}
+      <div :id="elementRef" v-html="initialValue"></div>
+      <div class="editor-footer" v-if="maxWordCount">
+        {{ wordCount }} / {{ maxWordCount }}
+      </div>
     </div>
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
   </div>
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
 </template>
 
 <script>
-import { QuillEditor, Quill } from "@vueup/vue-quill";
+import Quill from "quill";
+
+import { defineComponent, onMounted, ref } from "vue";
+
+import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
+import { ImageDrop } from "quill-image-drop-module";
+
+Quill.register("modules/blotFormatter", BlotFormatter);
+Quill.register("modules/imageDrop", ImageDrop);
+
 import MhEditorIcons from "./assets/icons";
+import { debounce } from "lodash";
 
-// TODO: Undo, redo, preview, write and table buttons will be added
-export default {
+export default defineComponent({
   name: "TextEditor",
-
+  data() {
+    return {};
+  },
   props: {
     placeholder: {
       type: String,
@@ -34,7 +45,7 @@ export default {
     },
     modelValue: {
       type: String,
-      required: true,
+      default: "",
     },
     hasError: {
       type: Boolean,
@@ -56,12 +67,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    label: {
+      type: String,
+      required: false,
+    },
     toolbar: {
       type: Array,
       default() {
         return [
-          "undo",
-          "redo",
           "bold",
           "italic",
           "underline",
@@ -69,24 +82,22 @@ export default {
           "blockquote",
           "link",
           "image",
-          "table",
           { align: "left" },
           { align: "center" },
           { align: "right" },
           { list: "ordered" },
           { list: "bullet" },
           "code-block",
-          { script: "sub" },
-          { script: "super" },
         ];
       },
     },
     maxWordCount: {
       type: Number,
     },
-  },
-  components: {
-    QuillEditor,
+    elementRef: {
+      type: String,
+      default: "MHEditor",
+    },
   },
   computed: {
     errorStatus: function (props) {
@@ -104,14 +115,15 @@ export default {
       return this.value.split(/\b\S+\b/).length - 1;
     },
   },
-  setup() {
+  emits: ["update:modelValue", "setQuill"],
+  setup(props, { emit }) {
     var icons = Quill.import("ui/icons");
+
+    const initialValue = props.modelValue;
 
     icons.bold = MhEditorIcons.bold;
     icons.italic = MhEditorIcons.italic;
     icons.underline = MhEditorIcons.underline;
-    icons.undo = MhEditorIcons.undo;
-    icons.redo = MhEditorIcons.redo;
     icons.strike = MhEditorIcons.strike;
     icons.link = MhEditorIcons.link;
     icons.blockquote = MhEditorIcons.blockquote;
@@ -126,10 +138,44 @@ export default {
     icons.align.right = MhEditorIcons.right;
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
-    icons.write = MhEditorIcons.write;
-    icons.preview = MhEditorIcons.preview;
+
+    const setupEditor = () => {
+      var quill = new Quill(`#${props.elementRef}`, {
+        theme: "snow",
+        modules: {
+          toolbar: props.toolbar,
+          blotFormatter: {},
+          imageDrop: true,
+        },
+        placeholder: props.placeholder,
+      });
+
+      emit("setQuill", quill);
+
+      quill.on(
+        "text-change",
+        debounce(() => {
+          if (document.getElementById(props.elementRef)) {
+            emit(
+              "update:modelValue",
+              document
+                .getElementById(props.elementRef)
+                .getElementsByClassName("ql-editor")[0].innerHTML
+            );
+          }
+        }, 100)
+      );
+    };
+
+    onMounted(() => {
+      setupEditor();
+    });
+
+    return {
+      initialValue,
+    };
   },
-};
+});
 </script>
 <style lang="scss">
 @import "./assets/main.scss";

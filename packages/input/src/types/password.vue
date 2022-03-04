@@ -1,17 +1,16 @@
 <template>
-  <div class="mh-input">
-    <a-input-password
-      :placeholder="placeholder"
-      :class="[{ error: errorStatus }]"
-      :disabled="disabled"
-      :id="id"
-      v-model:value="value"
-    >
-    </a-input-password>
-    <span v-if="errorMessage" class="mh-input__error">
-      {{ errorMessage }}
-    </span>
-  </div>
+  <a-input-password
+    :placeholder="placeholder"
+    :class="[{ error: errorStatus }]"
+    :disabled="disabled"
+    :id="id"
+    :autocomplete="autocomplete"
+    v-model:value="value"
+  >
+  </a-input-password>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 {
-	"name": "@meetinghand/paragraph",
-	"description": "Meetinghand Component Library Component for paragraph",
-	"version": "0.0.51-alpha.0",
+	"name": "@meetinghand/textarea",
+	"description": "Meetinghand Component Library Component for textarea",
+	"version": "0.0.130",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -11,12 +11,20 @@
 		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
 	},
 	"author": "Fatih Sinan Yaman",
-	"main": "./dist/index.js",
-	"module": "./index.js",
+	"files": [
+		"dist",
+		"index.d.ts"
+	],
+	"main": "./dist/lib.umd.js",
+	"module": "./dist/lib.es.js",
 	"publishConfig": {
 		"access": "public"
 	},
 	"dependencies": {
-		"@meetinghand/style": "file:../style"
+		"@meetinghand/style": "file:../style",
+		"@meetinghand/tooltip": "file:../tooltip"
+	},
+	"scripts": {
+		"build": "vite build"
 	}
 }

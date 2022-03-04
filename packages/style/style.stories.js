@@ -116,6 +116,21 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="system-slide" />
 			<mh-icon name="system-settings" />
 			<mh-icon name="system-attachment" />
+			<mh-icon name="ui-dashboard" />
+			<mh-icon name="ui-report" />
+			<mh-icon name="ui-event-program" />
+			<mh-icon name="ui-engagement" />
+			<mh-icon name="editor-link" />
+			<mh-icon name="editor-undo" />
+			<mh-icon name="editor-image" />
+			<mh-icon name="vm-youtube" />
+			<mh-icon name="ui-coffee" />
+			<mh-icon name="ui-clipboard" />
+			<mh-icon name="system-mobile-phone" />
+			<mh-icon name="share-screen" />
+			<mh-icon name="system-group-chat" />
+			<mh-icon name="system-poll" />
+
 			<h1>Social</h1>
 			<mh-icon name="social-google" />
 			<mh-icon name="social-facebook" />
@@ -136,6 +151,11 @@ storiesOf("Style", module).add("icons", () => ({
 			<mh-icon name="success" />
 			<mh-icon name="claps" />
 			<mh-icon name="ui-flag" />
+			<h1>Package</h1>
+			<mh-icon name="package-participant" />
+			<mh-icon name="package-abstract" />
+			<mh-icon name="package-virtual" />
+			<mh-icon name="package-mobile" />
 		</div>
     `,
 }));

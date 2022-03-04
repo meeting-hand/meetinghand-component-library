@@ -1,6 +1,6 @@
 <template>
-  <div class="mh-input-number-text">
-    <span v-if="title" class="mh-input__title">{{ title }}</span>
+  <div v-if="label" class="mh-input-number-text">
+    <span class="mh-input__title">{{ label }}</span>
     <tooltip v-if="tooltip" size="large" placement="top" :text="tooltip">
       <mh-icon name="system-info" />
     </tooltip>
@@ -13,6 +13,7 @@
     :class="[{ error: hasError }]"
     :disabled="disabled"
     :parser="parser"
+    :formatter="formatter"
   />
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -20,11 +21,11 @@
 </template>
 
 <script>
-import { InputNumber } from "ant-design-vue";
 import { computed } from "vue";
 
+import InputNumber from "ant-design-vue/es/input-number";
 import MhIcon from "@meetinghand/style/icons/index.vue";
-import Tooltip from "../../../tooltip/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
 
 export default {
   name: "InputNumberDefault",
@@ -36,7 +37,6 @@ export default {
   props: {
     modelValue: {
       type: Number,
-      required: true,
     },
     min: {
       type: Number,
@@ -65,13 +65,21 @@ export default {
     currency: {
       type: String,
     },
-    title: {
+    label: {
       type: String,
       default: null,
     },
     tooltip: {
       type: String,
       default: null,
+    },
+    symbol: {
+      type: String,
+      default: null,
+    },
+    symbolAlignment: {
+      type: String,
+      default: "right",
     },
   },
 
@@ -85,7 +93,17 @@ export default {
       },
     });
 
+    const formatter = (e) => {
+      if (props.symbol) {
+        return props.symbolAlignment === "left"
+          ? `${props.symbol}${e}`
+          : `${e}${props.symbol}`;
+      }
+      return e;
+    };
+
     const parser = (e) => {
+      e = e.toString().replace(props.symbol, "");
       if (e == "") {
         e = props.min;
       }
@@ -99,6 +117,7 @@ export default {
     return {
       value,
       parser,
+      formatter,
     };
   },
 };

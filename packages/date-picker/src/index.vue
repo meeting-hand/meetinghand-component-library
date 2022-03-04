@@ -1,20 +1,23 @@
 <template>
-  <component
-    :is="type"
-    :id="id"
-    :format="format"
-    :disabled="disabled"
-    :placeholder="placeholder"
-    :hasError="hasError"
-    :disabledStartDate="disabledStartDate"
-    :disabledEndDate="disabledEndDate"
-    v-model="value"
-    :labelLeft="labelLeft"
-    :labelRight="labelRight"
-  />
-  <span v-if="errorMessage" class="mh-input__error">
-    {{ errorMessage }}
-  </span>
+  <div class="mh-date-picker">
+    <component
+      :is="type"
+      :id="id"
+      :format="format"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      :hasError="hasError"
+      :disabledStartDate="disabledStartDate"
+      :disabledEndDate="disabledEndDate"
+      v-model="value"
+      :labelLeft="labelLeft"
+      :labelRight="labelRight"
+      :label="label"
+    />
+    <span v-if="errorMessage" class="mh-input__error">
+      {{ errorMessage }}
+    </span>
+  </div>
 </template>
 
 <script>
@@ -33,7 +36,7 @@ export default {
       default: "",
     },
     format: {
-      type: [String, Array],
+      type: String,
       default: "DD.MM.YYYY",
     },
     hasError: {
@@ -72,6 +75,10 @@ export default {
       default: null,
     },
     labelRight: {
+      type: String,
+      default: null,
+    },
+    label: {
       type: String,
       default: null,
     },

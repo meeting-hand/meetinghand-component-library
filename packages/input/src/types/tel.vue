@@ -1,35 +1,36 @@
 <template>
-  <div class="mh-input" v-if="loaded">
-    <a-input
-      :placeholder="placeholder"
-      :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
-      :disabled="disabled"
-      ref="telInput"
-      :id="id"
-      :defaultValue="defaultValue"
-      @change="inputChanged"
-    >
-      <template #addonBefore>
-        <a-select
-          v-model:value="dialCode"
-          :options="phoneCodes"
-          :suffixIcon="suffixIcon"
-          option-filter-prop="label"
-          :filter-option="filterOption"
-          show-search
-          @change="setCleave"
-          :disabled="disabled"
-        >
-        </a-select>
-      </template>
-    </a-input>
-    <span v-if="errorMessage" class="mh-input__error">
-      {{ errorMessage }}
-    </span>
-  </div>
+  <a-input
+    :placeholder="placeholder"
+    :class="[{ error: errorStatus }, 'mh-tel-input', { disabled: disabled }]"
+    :disabled="disabled"
+    ref="telInput"
+    :id="id"
+    :defaultValue="defaultValue"
+    :autocomplete="autocomplete"
+    @change="inputChanged"
+    v-if="loaded"
+  >
+    <template #addonBefore>
+      <a-select
+        v-model:value="dialCode"
+        :options="phoneCodes"
+        :suffixIcon="suffixIcon"
+        option-filter-prop="label"
+        :filter-option="filterOption"
+        show-search
+        @change="setCleave"
+        :disabled="disabled"
+      >
+      </a-select>
+    </template>
+  </a-input>
+  <span v-if="errorMessage" class="mh-input__error">
+    {{ errorMessage }}
+  </span>
 </template>
 
 <script>
+import { watch } from "vue";
 import { Input, Select } from "ant-design-vue";
 
 import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
@@ -40,7 +41,7 @@ import { h, ref, onMounted, computed } from "vue";
 
 import inputProps from "../utils/props";
 
-import "@meetinghand/style/lib/scss/ant/select.scss";
+//import "@meetinghand/style/lib/scss/ant/select.scss";
 
 export default {
   name: "MhInputTel",
@@ -121,9 +122,10 @@ export default {
         return props.modelValue;
       },
       set() {
+        const formattedValue = cleave.getFormattedValue();
         emit(
           "update:modelValue",
-          `(${dialCode._value}) ${cleave.getFormattedValue()}`
+          formattedValue ? `(${dialCode._value}) ${formattedValue}` : ""
         );
       },
     });
@@ -150,14 +152,35 @@ export default {
       return props.hasError || props.errorMessage;
     });
 
+    const setDefaultCountry = () => {
+      const defaultCountry = countryPhoneCodes.value.find(
+        (country) =>
+          country.countryCode.toLowerCase() === props.countryCode.toLowerCase()
+      );
+      if (defaultCountry) {
+        dialCode.value = defaultCountry.dialCode;
+      }
+    };
+
     onMounted(async () => {
       await loadPhoneCodes();
 
       if (valueDialCode.value) {
         dialCode.value = valueDialCode.value;
+      } else if (props.countryCode) {
+        setDefaultCountry();
       }
 
       setCleave(dialCode.value);
+
+      watch(
+        () => props.countryCode,
+        () => {
+          if (!cleave.getFormattedValue()) {
+            setDefaultCountry();
+          }
+        }
+      );
     });
 
     return {

@@ -2,6 +2,7 @@
 @import "@meetinghand/style/lib/scss/ant/radio.scss";
 
 /* Radio Type */
+
 .ant-radio-wrapper {
     span {
         height: 20px;
@@ -34,7 +35,6 @@
     right: 0%;
     top: 0%;
     bottom: 0%;
-
     border: $border-size-default solid $color-mono-grey;
     box-sizing: border-box;
     border-radius: $border-radius-giant;
@@ -44,9 +44,12 @@
     }
 }
 
+
 /* Radio Type End */
 
+
 /* Button Type */
+
 .mh-btn-radio {
     border: $border-size-default solid $transparent-hover-3;
     border-radius: $border-radius-giant;
@@ -68,5 +71,10 @@
         color: $color-mono-grey;
         background-color: transparent;
     }
+    span {
+        font-weight: $font-weight-default;
+    }
 }
+
+
 /* Button Type End */

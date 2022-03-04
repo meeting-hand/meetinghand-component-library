@@ -86,6 +86,7 @@ import UiResizeVideo from "./uiResizeVideo.vue";
 import UiSponsor from "./uiSponsor.vue";
 import UiEmoji from "./uiEmoji.vue";
 import UiBuilding from "./uiBuilding.vue";
+import UiCoffee from "./uiCoffee.vue";
 import SystemAttachment from "./systemAttachment.vue";
 import SystemSendUp from "./systemSendUp.vue";
 import SystemLike from "./systemLike.vue";
@@ -115,6 +116,38 @@ import Claps from "./claps.vue";
 import SocialApple from "./socialApple.vue";
 import UiGift from "./uiGift.vue";
 import UiFlag from "./uiFlag.vue";
+import UiDashboard from "./uiDashboard.vue";
+import UiReport from "./uiReport.vue";
+import UiEventProgram from "./uiEventProgram.vue";
+import UiEngagement from "./uiEngagement.vue";
+import PackageAbstract from "./packageAbstract.vue";
+import PackageMobile from "./packageMobile.vue";
+import PackageParticipant from "./packageParticipant.vue";
+import PackageVirtual from "./packageVirtual.vue";
+import EditorLink from "./editorLink.vue";
+import EditorUndo from "./editorUndo.vue";
+import Speakers from "./speakers.vue";
+import EditorImage from "./editorImage.vue";
+import VmYoutube from "./vmYoutube.vue";
+import VmZoom from "./vmZoom.vue";
+import VmVimeo from "./vmVimeo.vue";
+import VmGoogleMeet from "./vmGoogleMeet.vue";
+import UiClipboard from "./uiClipboard.vue";
+import SystemMobilePhone from "./systemMobilePhone.vue";
+import UiUpset from "./uiUpset.vue";
+import UiSmile from "./uiSmile.vue";
+import ShareScreen from "./shareScreen.vue";
+import SystemGroupChat from "./systemGroupChat.vue";
+import UiEmojiAdd from "./uiEmojiAdd.vue";
+import SystemPoll from "./systemPoll.vue";
+import UiCamCheck from "./uiCamCheck.vue";
+import UiHearth from "./uiHearth.vue";
+import UiMailNotification from "./uiMailNotification.vue";
+import EditorBulletList from "./editorBulletList.vue";
+import UiLineGraph from "./uiLineGraph.vue";
+import EditorTable from "./editorTable.vue";
+import SystemIncrease from "./systemIncrease.vue";
+import SystemDecrease from "./systemDecrease.vue";
 
 const iconList = [
   "arrow-down",
@@ -201,6 +234,11 @@ const iconList = [
   "ui-sponsor",
   "ui-emoji",
   "ui-building",
+  "ui-coffee",
+  "ui-dashboard",
+  "ui-report",
+  "ui-event-program",
+  "ui-engagement",
   "system-attachment",
   "system-send-up",
   "system-like",
@@ -230,6 +268,34 @@ const iconList = [
   "social-apple",
   "ui-gift",
   "ui-flag",
+  "package-abstract",
+  "package-mobile",
+  "package-participant",
+  "package-virtual",
+  "editor-link",
+  "editor-undo",
+  "speakers",
+  "editor-image",
+  "vm-youtube",
+  "vm-zoom",
+  "vm-vimeo",
+  "vm-google-meet",
+  "ui-clipboard",
+  "system-mobile-phone",
+  "ui-upset",
+  "ui-smile",
+  "share-screen",
+  "system-group-chat",
+  "ui-emoji-add",
+  "system-poll",
+  "ui-cam-check",
+  "ui-hearth",
+  "ui-mail-notification",
+  "editor-bullet-list",
+  "ui-line-graph",
+  "editor-table",
+  "system-increase",
+  "system-decrease",
 ];
 
 export default {
@@ -319,6 +385,11 @@ export default {
     UiSponsor,
     UiEmoji,
     UiBuilding,
+    UiCoffee,
+    UiDashboard,
+    UiReport,
+    UiEventProgram,
+    UiEngagement,
     SystemAttachment,
     SystemSendUp,
     SystemLike,
@@ -348,6 +419,34 @@ export default {
     SocialApple,
     UiGift,
     UiFlag,
+    PackageAbstract,
+    PackageMobile,
+    PackageParticipant,
+    PackageVirtual,
+    EditorLink,
+    EditorUndo,
+    Speakers,
+    EditorImage,
+    VmYoutube,
+    VmZoom,
+    VmVimeo,
+    VmGoogleMeet,
+    UiClipboard,
+    SystemMobilePhone,
+    UiUpset,
+    UiSmile,
+    ShareScreen,
+    SystemGroupChat,
+    UiEmojiAdd,
+    SystemPoll,
+    UiCamCheck,
+    UiHearth,
+    UiMailNotification,
+    EditorBulletList,
+    UiLineGraph,
+    EditorTable,
+    SystemIncrease,
+    SystemDecrease,
   },
   props: {
     name: {

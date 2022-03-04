@@ -1,26 +1,37 @@
 <template>
-  <a-button
-    :class="[`size-${size}`, { disabled: disabled }, 'iconic-btn', color]"
-    :disabled="disabled"
-    :htmlType="submit ? 'submit' : 'button'"
+  <button
+    :type="submit ? 'submit' : 'button'"
+    :class="[
+      `mh-iconic-button`,
+      `mh-button`,
+      `size-${size}`,
+      { 'iconic-circular': circular },
+      { wait: wait },
+      { disabled: disabled },
+      color,
+    ]"
+    :disabled="disabled || wait"
   >
     <mh-icon :name="icon" v-if="icon" />
-  </a-button>
+    <slot v-if="!wait"></slot>
+    <mh-icon name="wait" class="wait-spinner" v-if="wait" />
+  </button>
 </template>
+
 <script>
-import { Button } from "ant-design-vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
+
 export default {
   name: "MhButtonRow",
   components: {
-    [Button.name]: Button,
     "mh-icon": MHIcon,
   },
   props: {
     size: {
       type: String,
       default: "default",
-      validator: (_v) => ["default", "circular", "small", "tiny"].includes(_v),
+      validator: (_v) =>
+        ["default", "circular", "small", "tiny", "text"].includes(_v),
     },
     icon: {
       type: String,
@@ -38,6 +49,14 @@ export default {
       type: String,
       default: null,
       validator: (_v) => ["blue", "green", "red"].includes(_v),
+    },
+    wait: {
+      type: Boolean,
+      default: false,
+    },
+    circular: {
+      type: Boolean,
+      default: false,
     },
   },
 };

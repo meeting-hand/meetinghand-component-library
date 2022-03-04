@@ -1,0 +1,85 @@
+@import "@meetinghand/style/lib/scss/variables.scss";
+@import "@meetinghand/style/lib/scss/mixins.scss";
+@import "@meetinghand/style/lib/scss/icons.scss";
+@import "@meetinghand/style/lib/scss/ant/checkbox.scss";
+.questions {
+    margin-bottom: $spacing-default;
+    .question {
+        margin-top: $spacing-default;
+    }
+    .question-checkbox {
+        label {
+            font-weight: $font-weight-default;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
+    }
+    &.deep-2 {
+        margin-left: 16px;
+    }
+    &.deep-3 {
+        margin-left: 16px;
+    }
+}
+
+.question {
+    margin-bottom: $spacing-default;
+    &.questions {
+        margin-top: $spacing-default;
+    }
+}
+
+.question-file {
+    p {
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        color: $color-primary-red;
+        margin-left: $spacing-small;
+        margin-top: 4px;
+        display: block;
+    }
+    div {
+        @include flex-row(flex-start, flex-start);
+        .download-button {
+            margin-left: $spacing-default;
+        }
+    }
+}
+
+.question-radio {
+    label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+    }
+    .ant-radio-wrapper {
+        margin-top: $spacing-default;
+        span {
+            font-weight: normal;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
+    }
+    .other-input {
+        margin-top: $spacing-medium;
+    }
+}
+
+.question-checkbox {
+    label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+    }
+    .mh-checkbox {
+        margin-top: $spacing-default;
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+    }
+}

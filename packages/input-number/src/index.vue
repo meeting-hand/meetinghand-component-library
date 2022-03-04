@@ -1,17 +1,21 @@
 <template>
-  <component
-    :is="type"
-    v-model="value"
-    :min="min"
-    :max="max"
-    :step="step"
-    :hasError="hasError"
-    :disabled="disabled"
-    :currency="currency"
-    :errorMessage="errorMessage"
-    :title="title"
-    :tooltip="tooltip"
-  />
+  <div class="mh-input-number">
+    <component
+      :is="type"
+      v-model="value"
+      :min="min"
+      :max="max"
+      :step="step"
+      :hasError="hasError"
+      :disabled="disabled"
+      :currency="currency"
+      :errorMessage="errorMessage"
+      :label="label"
+      :tooltip="tooltip"
+      :symbol="symbol"
+      :symbolAlignment="symbolAlignment"
+    />
+  </div>
 </template>
 
 <script>
@@ -27,7 +31,6 @@ export default {
   props: {
     modelValue: {
       type: Number,
-      required: true,
     },
     min: {
       type: Number,
@@ -62,13 +65,22 @@ export default {
       type: String,
       default: "USD",
     },
-    title: {
+    label: {
       type: String,
       default: null,
     },
     tooltip: {
       type: String,
       default: null,
+    },
+    symbol: {
+      type: String,
+      default: null,
+    },
+    symbolAlignment: {
+      type: String,
+      default: "right",
+      validator: (data) => ["left", "right"].includes(data),
     },
   },
   computed: {
