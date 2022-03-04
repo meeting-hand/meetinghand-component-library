@@ -15,13 +15,14 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            .banner-icon {
-                .mh-icon {
-                    width: $icon-size-medium;
-                    height: $icon-size-medium;
-                    margin-right: $spacing-medium;
-                }
+            .mh-icon {
+                min-width: $icon-size-medium;
+                max-width: $icon-size-medium;
+                width: $icon-size-medium;
+                height: $icon-size-medium;
+                margin-right: $spacing-medium;
             }
+
             .banner-text {
                 .banner-text-title {
                     font-weight: $font-weight-large;
@@ -88,6 +89,8 @@
         flex-direction: row;
         align-items: center;
         .mh-icon {
+            min-width: $icon-size-medium;
+            max-width: $icon-size-medium;
             width: $icon-size-medium;
             height: $icon-size-medium;
             margin-right: $spacing-small;
