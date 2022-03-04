@@ -101,14 +101,6 @@
             &.ant-select-open {
                 background-color: $color-secondary-blue;
                 box-sizing: border-box;
-                border-radius: $border-radius-default;
-                .ant-select-arrow {
-                    svg {
-                        width: $icon-size-default;
-                        height: $icon-size-default;
-                        fill: $color-primary-red;
-                    }
-                }
                 &:hover {
                     background: $color-secondary-red;
                 }
