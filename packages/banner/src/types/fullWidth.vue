@@ -1,13 +1,11 @@
 <template>
   <div :class="[`full-width-banner`, bannerType]">
     <div class="banner-left">
-      <div class="banner-icon">
-        <mh-icon
-          :name="
-            bannerType === 'gift' ? 'ui-gift' : 'system-status-' + bannerType
-          "
-        />
-      </div>
+      <mh-icon
+        :name="
+          bannerType === 'gift' ? 'ui-gift' : 'system-status-' + bannerType
+        "
+      />
       <div class="banner-text">
         <div class="banner-text-title">
           {{ title }}
