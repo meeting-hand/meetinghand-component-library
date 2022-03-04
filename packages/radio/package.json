@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/radio",
     "description": "Meetinghand Component Library Component for radio",
-    "version": "0.0.138",
+    "version": "0.0.139",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
