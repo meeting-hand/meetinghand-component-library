@@ -1,19 +1,27 @@
 <template>
-  <a-radio
-    :disabled="disabled"
-    :id="id"
+  <label
     v-if="type === 'default'"
-    v-model:checked="value"
+    :for="id"
+    :class="['mh-radio', { 'mh-radio-disabled': disabled }]"
   >
+    <input
+      type="radio"
+      name="radio"
+      class="mh-radio-inner"
+      :id="id"
+      :disabled="disabled"
+      :checked="radioField"
+      v-model="radioField"
+    />
     {{ text }}
     <slot></slot>
-  </a-radio>
+  </label>
   <mh-button
     @click="set()"
     :class="[
-      'mh-btn-radio',
-      { 'mh-btn-radio-selected': value },
-      { 'mh-btn-radio-disabled': disabled },
+      'mh-button-radio',
+      { 'mh-button-radio-selected': data === modelValue },
+      { 'mh-button-radio-disabled': disabled },
     ]"
     :disabled="disabled"
     type="secondary"
@@ -27,15 +35,14 @@
 </template>
 
 <script>
-import Radio from "ant-design-vue/es/radio";
+import { defineComponent, computed } from "vue";
+
 import MhButton from "@meetinghand/button/src/index.vue";
 
 import "./assets/main.scss";
 
-export default {
-  name: "MhRadio",
+export default defineComponent({
   components: {
-    [Radio.name]: Radio,
     MhButton,
   },
   props: {
@@ -72,21 +79,25 @@ export default {
       default: () => "_" + Math.random().toString(36).substr(2, 9),
     },
   },
-  computed: {
-    value: {
+  setup(props, { emit }) {
+    const radioField = computed({
       get() {
-        return this.modelValue == this.data;
+        return props.modelValue === props.data;
       },
       set() {
-        this.$emit("update:modelValue", this.data);
+        emit("update:modelValue", props.data);
       },
-    },
+    });
+
+    const set = () => {
+      if (props.disabled) return;
+      emit("update:modelValue", props.data);
+    };
+
+    return {
+      radioField,
+      set,
+    };
   },
-  methods: {
-    set() {
-      if (this.disabled) return;
-      this.value = this.modelValue;
-    },
-  },
-};
+});
 </script>
