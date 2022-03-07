@@ -6,11 +6,11 @@
   >
     <input
       type="radio"
-      name="radio"
+      :name="id"
       class="mh-radio-inner"
       :id="id"
       :disabled="disabled"
-      :checked="radioField"
+      :checked="modelValue === data"
       v-model="radioField"
     />
     {{ text }}
@@ -57,6 +57,7 @@ export default defineComponent({
     },
     modelValue: {
       type: [String, Number, Boolean],
+      required: true,
     },
     data: {
       type: [String, Number, Boolean],
