@@ -52,7 +52,7 @@ storiesOf("Button", module).add("primary", () => ({
       </mh-button>
       <hr />
       <h1>Green</h1>
-      <mh-button type="primary" size="large" color="green">
+      <mh-button type="primary" size="large" color="green" disabled>
         Green
       </mh-button>
       <hr />

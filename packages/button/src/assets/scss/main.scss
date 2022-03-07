@@ -87,8 +87,8 @@
             background: $color-button-hover-green;
         }
         &.disabled {
-            background-color: #f5564a;
             color: $color-mono-white;
+            background-color: $color-primary-participant;
             .mh-icon {
                 fill: $color-mono-white;
             }
