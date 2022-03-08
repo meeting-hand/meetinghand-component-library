@@ -4,14 +4,14 @@ import MhRadio from "./index";
 import "../../assets/storybook/storybook.css";
 
 storiesOf("Radio", module).add("Default", () => ({
-    components: { MhRadio },
-    data() {
-        return {
-            value1: true,
-            value2: false,
-        };
-    },
-    template: `
+	components: { MhRadio },
+	data() {
+		return {
+			value1: true,
+			value2: "Mehmet",
+		};
+	},
+	template: `
   <div class="storybook-radio">
       <h1>Default</h1>
       <mh-radio v-model="value1" text="Ahmet Ozturk"  :data="true" error-message="this field is required"/>
@@ -31,14 +31,14 @@ storiesOf("Radio", module).add("Default", () => ({
     `,
 }));
 storiesOf("Radio", module).add("Button", () => ({
-    components: { MhRadio },
-    data() {
-        return {
-            value1: "Ahmet",
-            value2: "Mehmet",
-        };
-    },
-    template: `
+	components: { MhRadio },
+	data() {
+		return {
+			value1: "Ahmet",
+			value2: "Mehmet",
+		};
+	},
+	template: `
   <div class="storybook-radio">
       <h1>Default</h1>
       <mh-radio v-model="value1" text="Ahmet Ozturk" data="Ahmet" type="button" />
