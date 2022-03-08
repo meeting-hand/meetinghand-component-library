@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/emoji",
     "description": "Meetinghand Component Library Component for emoji",
-    "version": "0.0.58",
+    "version": "0.0.59",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
