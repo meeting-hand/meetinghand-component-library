@@ -81,7 +81,10 @@
             }
         }
         &.wait {
-            background-color: #f5564a;
+            background-color: rgba($color-primary-red, 0.4);
+            &:hover {
+                background: rgba($color-primary-red, 0.5);
+            }
         }
     }
     &.green {
@@ -97,7 +100,10 @@
             }
         }
         &.wait {
-            background-color: $color-primary-participant;
+            background-color: rgba($color-primary-participant, 0.4);
+            &:hover {
+                background: rgba($color-primary-participant, 0.5);
+            }
         }
     }
     &.disabled {
@@ -111,7 +117,6 @@
         border: none;
         background-color: rgba($color-primary-blue, 0.4);
         padding: $spacing-medium $spacing-default;
-
         &:hover {
             background: rgba($color-primary-blue, 0.5);
         }
