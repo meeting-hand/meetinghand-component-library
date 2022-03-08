@@ -80,6 +80,9 @@
                 fill: $color-mono-white;
             }
         }
+        &.wait {
+            background-color: #f5564a;
+        }
     }
     &.green {
         background: $color-primary-participant;
@@ -92,6 +95,9 @@
             .mh-icon {
                 fill: $color-mono-white;
             }
+        }
+        &.wait {
+            background-color: $color-primary-participant;
         }
     }
     &.disabled {
