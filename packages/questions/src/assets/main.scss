@@ -54,14 +54,12 @@
         line-height: $line-height-default;
         color: $color-mono-black;
     }
-    .ant-radio-wrapper {
+    .mh-radio {
         margin-top: $spacing-default;
-        span {
-            font-weight: normal;
-            font-size: $font-size-default;
-            line-height: $line-height-default;
-            color: $color-mono-black;
-        }
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
     }
     .other-input {
         margin-top: $spacing-medium;
@@ -70,16 +68,12 @@
 
 .question-checkbox {
     label {
-        font-weight: $font-weight-default;
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        color: $color-mono-black;
-    }
-    .mh-checkbox {
-        margin-top: $spacing-default;
-        font-weight: normal;
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        color: $color-mono-black;
+        &.mh-checkbox {
+            margin-top: $spacing-default;
+            font-weight: normal;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
     }
 }
