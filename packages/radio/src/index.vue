@@ -1,12 +1,11 @@
 <template>
   <label
     v-if="type === 'default'"
-    :for="id"
     :class="['mh-radio', { 'mh-radio-disabled': disabled }]"
+    :for="id"
   >
     <input
       type="radio"
-      :name="id"
       class="mh-radio-inner"
       :id="id"
       :disabled="disabled"
