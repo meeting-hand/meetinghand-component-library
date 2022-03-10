@@ -56,11 +56,9 @@ export default defineComponent({
       default: false,
     },
     modelValue: {
-      type: [String, Number, Boolean],
       required: true,
     },
     data: {
-      type: [String, Number, Boolean],
       required: true,
     },
     text: {

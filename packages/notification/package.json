@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/notification",
     "description": "Meetinghand Component Library Component for notification",
-    "version": "0.0.139",
+    "version": "0.0.140",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"

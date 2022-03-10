@@ -87,7 +87,6 @@ input[type="radio"]:checked::before {
     &.mh-button-radio-selected {
         background-color: $color-secondary-blue;
         border-color: $color-primary-blue;
-        font-weight: $font-weight-large;
         color: $color-primary-blue;
     }
     &.mh-button-radio-disabled {
