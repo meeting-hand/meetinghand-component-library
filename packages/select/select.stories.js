@@ -13,27 +13,22 @@ storiesOf("Select", module).add("Default", () => ({
             select4: null,
             selectOpts: [{
                     value: 1,
-                    selectedLabel: "selected: Neset Ertas",
                     label: "<b>Neset Ertas</b>",
                 },
                 {
                     value: 2,
-                    selectedLabel: "selected: Freddie Mercury",
                     label: "Freddie Mercury",
                 },
                 {
                     value: 3,
-                    selectedLabel: "selected: Grace Slick",
                     label: "Grace Slick",
                 },
                 {
                     value: 4,
-                    selectedLabel: "selected: Hasan ali yucel",
                     label: "Hasan ali yucel",
                 },
                 {
                     value: 5,
-                    selectedLabel: "selected: ahmet hamdi",
                     label: "ahmet hamdi",
                 },
             ],
