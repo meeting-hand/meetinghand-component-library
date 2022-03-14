@@ -10,6 +10,7 @@ storiesOf("Select", module).add("Default", () => ({
             select1: null,
             select2: null,
             select3: 1,
+            select4: null,
             selectOpts: [{
                     value: 1,
                     selectedLabel: "selected: Neset Ertas",
@@ -34,6 +35,32 @@ storiesOf("Select", module).add("Default", () => ({
                     value: 5,
                     selectedLabel: "selected: ahmet hamdi",
                     label: "ahmet hamdi",
+                },
+            ],
+            selectOpts2: [{
+                    value: "K44LTI",
+                    label: "K44LTI",
+                    selectedLabel: "Discount: ₺10.00",
+                },
+                {
+                    value: "WG08TH",
+                    label: "WG08TH",
+                    selectedLabel: "Discount: ₺10.00",
+                },
+                {
+                    value: "Heyyou",
+                    label: "Heyyou",
+                    selectedLabel: "Discount: ₺10.00",
+                },
+                {
+                    value: "XYIGZK",
+                    label: "XYIGZK",
+                    selectedLabel: "Discount: ₺10.00",
+                },
+                {
+                    value: "JSUUSV",
+                    label: "JSUUSV",
+                    selectedLabel: "Discount: ₺10.00",
                 },
             ],
         };
@@ -61,6 +88,9 @@ storiesOf("Select", module).add("Default", () => ({
       		<mh-select v-model="select2" disabled :options="selectOpts" placeholder="Birini seciniz" size="small"/> <span v-if="select2" style="margin-left: 30px;">Value: {{ select2 }}</span>
 			<hr />
       		<mh-select v-model="select3" has-error error-message="this field is required" :options="selectOpts" placeholder="Birini seciniz" size="small"/> <span v-if="select3" style="margin-left: 30px;">Value: {{ select3 }}</span>
+			<br /><br />
+			<mh-select v-model="select4" :options="selectOpts2" searchable />
+			{{ select4 }}
 			<br /><br />
 	</div>
     `,
