@@ -5,8 +5,7 @@
     :disabled="disabled"
     :filter-option="filterOption"
     :placeholder="placeholder"
-    :options="options"
-    option-filter-prop="label"
+    option-label-prop="label"
     :show-search="searchable"
     :size="size"
     :suffixIcon="suffixIcon"
@@ -21,6 +20,15 @@
         <span>{{ emptyStateDescription }}</span>
       </div>
     </template>
+    <a-select-option
+      :disabled="opt.disabled"
+      :value="opt.value"
+      :label="opt.selectedLabel"
+      :key="keyOpt"
+      v-for="(opt, keyOpt) in optionsList"
+    >
+      <span v-html="opt.label"></span>
+    </a-select-option>
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}
@@ -41,6 +49,7 @@ export default {
   name: "default",
   components: {
     [Select.name]: Select,
+    ASelectOption: Select.Option,
     StatusError,
   },
   props: {
@@ -50,6 +59,15 @@ export default {
     const suffixIcon = h(ArrowIcon);
 
     const removeIcon = h(SystemClose);
+
+    const optionsList = computed(() =>
+      props.options.map((option) => {
+        return {
+          ...option,
+          selectedLabel: option?.optionLabel || option.selectedLabel,
+        };
+      })
+    );
 
     const filterOption = (input, option) => {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
@@ -81,6 +99,7 @@ export default {
       suffixIcon,
       mode,
       removeIcon,
+      optionsList,
     };
   },
 };
