@@ -1,6 +1,11 @@
 <template>
   <div class="abstract-text-preview">
-    <h3>{{ topic }}</h3>
+    <div class="abstract-type-topic">
+      <h3>{{ topic }}</h3>
+      <h3 v-if="presentationType" class="presentation-type">
+        {{ presentationType }}
+      </h3>
+    </div>
     <h1>{{ title }}</h1>
     <div class="abstract-flex-row" v-if="authorStatus && authorList.length > 0">
       <div
@@ -65,6 +70,10 @@ import { fetchCountries, sortAuthors } from "../composables/author";
 export default defineComponent({
   props: {
     topic: {
+      type: String,
+      default: null,
+    },
+    presentationType: {
       type: String,
       default: null,
     },

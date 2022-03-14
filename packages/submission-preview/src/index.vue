@@ -12,6 +12,7 @@
       :keywordLabel="keywordLabel"
       :referenceLabel="referenceLabel"
       :authorStatus="authorStatus"
+      :presentationType="presentationType"
     />
   </div>
 </template>
@@ -35,6 +36,10 @@ export default defineComponent({
       validator: (_v) => ["text", "file"].includes(_v),
     },
     topic: {
+      type: String,
+      default: null,
+    },
+    presentationType: {
       type: String,
       default: null,
     },

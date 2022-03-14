@@ -166,12 +166,23 @@
             color: $color-mono-black;
             margin-bottom: $spacing-default;
         }
-        h3 {
-            font-weight: $font-weight-large;
-            font-size: $font-size-default;
-            line-height: $line-height-default;
-            margin-bottom: $spacing-xxlarge;
-            text-align: left;
+        .abstract-type-topic {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            h3 {
+                font-weight: $font-weight-large;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                margin-bottom: $spacing-xxlarge;
+                text-align: left;
+                &.presentation-type {
+                    &::before {
+                        content: "-";
+                        margin: $spacing-xxsmall $spacing-small;
+                    }
+                }
+            }
         }
         h1 {
             font-weight: $font-weight-large;
