@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/input",
     "description": "Meetinghand Component Library Component for input",
-    "version": "0.0.152",
+    "version": "0.0.153",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -18,7 +18,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/select": "^0.0.134",
+        "@meetinghand/select": "^0.0.135",
         "@meetinghand/style": "^0.0.119",
         "@meetinghand/tooltip": "^0.0.122",
         "cleave.js": "^1.6.0"
