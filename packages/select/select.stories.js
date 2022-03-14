@@ -4,37 +4,41 @@ import MhSelect from "./index";
 import "../../assets/storybook/storybook.css";
 
 storiesOf("Select", module).add("Default", () => ({
-	components: { MhSelect },
-	data() {
-		return {
-			select1: null,
-			select2: null,
-			select3: 1,
-			selectOpts: [
-				{
-					value: 1,
-					label: "Neset Ertas",
-				},
-				{
-					value: 2,
-					label: "Freddie Mercury",
-				},
-				{
-					value: 3,
-					label: "Grace Slick",
-				},
-				{
-					value: 4,
-					label: "Hasan ali yucel",
-				},
-				{
-					value: 5,
-					label: "ahmet hamdi",
-				},
-			],
-		};
-	},
-	template: `
+    components: { MhSelect },
+    data() {
+        return {
+            select1: null,
+            select2: null,
+            select3: 1,
+            selectOpts: [{
+                    value: 1,
+                    selectedLabel: "selected: Neset Ertas",
+                    label: "<b>Neset Ertas</b>",
+                },
+                {
+                    value: 2,
+                    selectedLabel: "selected: Freddie Mercury",
+                    label: "Freddie Mercury",
+                },
+                {
+                    value: 3,
+                    selectedLabel: "selected: Grace Slick",
+                    label: "Grace Slick",
+                },
+                {
+                    value: 4,
+                    selectedLabel: "selected: Hasan ali yucel",
+                    label: "Hasan ali yucel",
+                },
+                {
+                    value: 5,
+                    selectedLabel: "selected: ahmet hamdi",
+                    label: "ahmet hamdi",
+                },
+            ],
+        };
+    },
+    template: `
 	<div class="storybook-select">
 			<h1>Default</h1>
       <mh-select v-model="select1" :options="selectOpts" placeholder="Birini seciniz" /> <span v-if="select1" style="margin-left: 30px;">Value: {{ select1 }}</span>
@@ -63,15 +67,15 @@ storiesOf("Select", module).add("Default", () => ({
 }));
 
 storiesOf("Select", module).add("Country", () => ({
-	components: { MhSelect },
-	data() {
-		return {
-			select1: null,
-			select2: "TR",
-			select3: "US",
-		};
-	},
-	template: `
+    components: { MhSelect },
+    data() {
+        return {
+            select1: null,
+            select2: "TR",
+            select3: "US",
+        };
+    },
+    template: `
 	<div class="storybook-select">
 			<h1>Default</h1>
       <mh-select v-model="select1" input-type="country" placeholder="Birini seciniz" label="Country" :truncateLength="15" />
