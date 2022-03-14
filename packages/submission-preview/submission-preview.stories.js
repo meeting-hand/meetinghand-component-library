@@ -155,7 +155,7 @@ storiesOf("SubmissionPreview", module).add("SubmissionPreview!", () => ({
 		};
 	},
 	template: `
-      <SubmissionPreview type="text" topic="Topic 1" title="Title" :authors="authors" :body="body" :keywords="keywords" :references="references" keywordLabel="buralar hep dutluktu"/>
+      <SubmissionPreview type="text" topic="Topic 1" presentationType="Oral" title="Title" :authors="authors" :body="body" :keywords="keywords" :references="references" keywordLabel="buralar hep dutluktu"/>
       <br/>
       <SubmissionPreview type="file" :body="body" :authors="authors" title="Title"/>
     `,
