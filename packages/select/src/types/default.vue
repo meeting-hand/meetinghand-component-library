@@ -70,7 +70,11 @@ export default {
     );
 
     const filterOption = (input, option) => {
-      return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
+      return (
+        optionsList.value[option.key].label
+          .toLowerCase()
+          .indexOf(input.toLowerCase()) >= 0
+      );
     };
 
     const mode =
