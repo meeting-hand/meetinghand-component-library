@@ -99,22 +99,26 @@ export default {
     const suffixIcon = h(ArrowIcon);
 
     const setCleave = async (dialCode) => {
-      const country = countryPhoneCodes.value.find(
-        (_c) => _c.dialCode === dialCode
-      );
+      try {
+        const country = countryPhoneCodes.value.find(
+          (_c) => _c.dialCode === dialCode
+        );
 
-      if (!country) return;
+        if (!country) return;
 
-      await includeFile(
-        `https://meetinghand.s3.eu-central-1.amazonaws.com/assets/resources/cleave-country-formats/cleave-phone.${country.countryCode.toLowerCase()}.js`
-      );
+        await includeFile(
+          `https://meetinghand.s3.eu-central-1.amazonaws.com/assets/resources/cleave-country-formats/cleave-phone.${country.countryCode.toLowerCase()}.js`
+        );
 
-      cleave = new Cleave(document.getElementById(props.id), {
-        phone: true,
-        phoneRegionCode: country.countryCode.toLowerCase(),
-      });
+        cleave = new Cleave(document.getElementById(props.id), {
+          phone: true,
+          phoneRegionCode: country.countryCode.toLowerCase(),
+        });
 
-      inputChanged(value.value);
+        inputChanged(value.value);
+      } catch (error) {
+        console.warn(error);
+      }
     };
 
     const value = computed({
