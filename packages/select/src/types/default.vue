@@ -12,6 +12,7 @@
     :removeIcon="removeIcon"
     :id="id"
     :mode="mode"
+    allow-clear
     v-model:value="value"
   >
     <template v-slot:notFoundContent>
