@@ -13,7 +13,11 @@
       :labelLeft="labelLeft"
       :labelRight="labelRight"
       :label="label"
-    />
+    >
+      <template v-slot:tooltip>
+        <slot name="tooltip"> </slot>
+      </template>
+    </component>
     <span v-if="errorMessage" class="mh-input__error">
       {{ errorMessage }}
     </span>

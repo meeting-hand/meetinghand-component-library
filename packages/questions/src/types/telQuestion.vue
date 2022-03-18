@@ -3,9 +3,10 @@
     <mh-input
       :label="question.label"
       :error-message="errorMessage"
-      v-model="value"
       :tooltip="question.information"
+      :placeholder="question.hint"
       input-type="tel"
+      v-model="value"
     />
   </div>
 </template>

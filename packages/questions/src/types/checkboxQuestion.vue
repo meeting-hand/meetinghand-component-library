@@ -1,6 +1,16 @@
 <template>
   <div class="question question-checkbox">
-    <label>{{ question.label }}</label>
+    <label>
+      {{ question.label }}
+      <tooltip
+        v-if="question.information"
+        size="large"
+        placement="top"
+        :text="question.information"
+      >
+        <mh-icon name="system-info" />
+      </tooltip>
+    </label>
     <ul>
       <li :key="option.id" v-for="option in question.eventFormFieldOptions">
         <mh-checkbox
@@ -22,16 +32,21 @@
   </div>
 </template>
 <script>
+import { inject } from "vue";
+
+import { questionValidation } from "../composables/validations";
+
 import MhCheckbox from "@meetinghand/checkbox";
 import MhQuestions from "../index.vue";
-
-import { inject } from "vue";
-import { questionValidation } from "../composables/validations";
+import Tooltip from "@meetinghand/tooltip";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 export default {
   components: {
     MhCheckbox,
     MhQuestions,
+    Tooltip,
+    MhIcon,
   },
   props: {
     question: {
