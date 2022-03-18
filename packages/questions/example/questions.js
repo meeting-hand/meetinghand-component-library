@@ -152,7 +152,7 @@ export default [{
     {
         id: 1525,
         type: "checkbox",
-        required: false,
+        required: true,
         label: "Aliquam ipsam itaque totam.",
         information: "Accusamus qui quibusdam quisquam adipisci beatae nam. Aut ut cumque ducimus repellendus veniam.",
         textTransform: null,

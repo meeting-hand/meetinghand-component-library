@@ -75,6 +75,10 @@
             color: $color-mono-black;
         }
     }
+    .mh-input__error {
+        margin-left: 0;
+        margin-top: $spacing-medium;
+    }
 }
 
 .question-textarea {
