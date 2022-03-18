@@ -108,21 +108,24 @@
     line-height: $line-height-default;
     color: $color-mono-black;
     width: 100%;
-    // .warning {
-    //     .mh-icon {
-    //         width: 48px;
-    //         height: 42px;
-    //         margin-left: $spacing-xxsmall;
-    //         margin-top: $spacing-xxsmall;
-    //     }
-    // }
-    // .success {
-    //     padding-bottom: $spacing-default;
-    //     .mh-icon {
-    //         width: $spacing-xxxlarge;
-    //         height: $spacing-xxxlarge;
-    //     }
-    // }
+}
+
+.confirm-modal {
+    .warning {
+        .mh-icon {
+            width: 48px;
+            height: 42px;
+            margin-left: $spacing-xxsmall;
+            margin-top: $spacing-xxsmall;
+        }
+    }
+    .success {
+        padding-bottom: $spacing-default;
+        .mh-icon {
+            width: $spacing-xxxlarge;
+            height: $spacing-xxxlarge;
+        }
+    }
 }
 
 .ant-modal-footer {
