@@ -2,6 +2,7 @@
   <div :class="['mh-select', className]">
     <label :for="elId" v-if="label" class="mh-select-label">
       {{ label }}
+      <slot name="tooltip"></slot>
     </label>
     <component
       :is="inputType"

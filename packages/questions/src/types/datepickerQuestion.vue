@@ -2,22 +2,37 @@
   <div class="question question-select">
     <mh-datepicker
       v-model="value"
-      :placeholder="question.information"
+      :placeholder="question.hint"
       :format="dateFormat"
       :error-message="errorMessage"
       :label="question.label"
-    />
+    >
+      <template v-slot:tooltip>
+        <tooltip
+          v-if="question.information"
+          size="large"
+          placement="top"
+          :text="question.information"
+        >
+          <mh-icon name="system-info" />
+        </tooltip>
+      </template>
+    </mh-datepicker>
   </div>
 </template>
 <script>
-import MhDatepicker from "@meetinghand/date-picker/src/index.vue";
-
 import { inject } from "vue";
 import { questionValidation } from "../composables/validations";
+
+import MhDatepicker from "@meetinghand/date-picker/src/index.vue";
+import Tooltip from "@meetinghand/tooltip";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 export default {
   components: {
     MhDatepicker,
+    Tooltip,
+    MhIcon,
   },
   props: {
     question: {

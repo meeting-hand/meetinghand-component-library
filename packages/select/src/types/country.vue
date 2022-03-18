@@ -36,6 +36,7 @@
         <span>{{ emptyStateDescription }}</span>
       </div>
     </template>
+    <template v-slot:placeholder> hey!! </template>
   </a-select>
   <span v-if="errorMessage" class="mh-input__error">
     {{ errorMessage }}

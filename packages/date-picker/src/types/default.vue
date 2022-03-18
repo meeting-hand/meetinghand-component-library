@@ -2,6 +2,7 @@
   <div class="mh-date-picker-label" v-if="label">
     <label>
       {{ label }}
+      <slot name="tooltip"> </slot>
     </label>
   </div>
   <a-date-picker
