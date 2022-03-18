@@ -69,18 +69,18 @@
 }
 
 .question-checkbox {
+    label {
+        &.mh-checkbox {
+            margin-top: $spacing-default;
+            font-weight: normal;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
+    }
     .mh-input__error {
         margin-left: 0;
         margin-top: $spacing-medium;
-    }
-    >label {
-        @include flex-row(flex-start, center);
-        svg {
-            margin-left: $spacing-small;
-            width: $icon-size-default;
-            height: $icon-size-default;
-            fill: $color-mono-grey-2;
-        }
     }
 }
 
