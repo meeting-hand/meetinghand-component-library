@@ -1,6 +1,7 @@
 <template>
   <div class="question question-file">
     <p class="file-upload-title">File Upload</p>
+    <span class="file-button-label">Upload File {{ textUploadLabel() }}</span>
     <transition name="fade" mode="out-in">
       <div v-if="!value" class="file-upload-wrapper">
         <div
@@ -9,28 +10,28 @@
         >
           <mh-icon name="system-attachment" />
           <span>
-            {{ question.label }}
+            {{ question.label || "Click to upload doc file (Max. Size: 5 Mb)" }}
           </span>
         </div>
         <input
           type="file"
-          style="opacity: 0; position: absolute"
+          style="opacity: 0; position: absolute; cursor: pointer"
           :accept="acceptedTypes()"
           ref="fileInput"
           @change="onChangeFileUpload($event)"
         />
       </div>
       <div v-else class="file-upload-wrapper">
-        <div class="file-download-button file-button">
-          <mh-icon name="ui-check" />
-          {{ value.name || question.label }}
-          <a
-            :href="value"
-            v-if="typeof value === 'string' && isFilePath()"
-            target="_blank"
-          >
-          </a>
-        </div>
+        <a
+          :href="value"
+          v-if="typeof value === 'string' && isFilePath()"
+          target="_blank"
+        >
+          <div class="file-download-button file-button">
+            <mh-icon name="ui-check" />
+            {{ value.name || question.label }}
+          </div>
+        </a>
         <mh-button type="iconic" @click="removeFile()" icon="ui-delete" />
       </div>
     </transition>
@@ -143,6 +144,10 @@ export default {
       return acceptedExtensions.flat();
     };
 
+    const textUploadLabel = () => {
+      return `(${acceptedTypes().join(", ").toString()})`;
+    };
+
     const removeFile = () => {
       updateValue(null);
     };
@@ -161,6 +166,7 @@ export default {
       isFilePath,
       value,
       errorMessage,
+      textUploadLabel,
     };
   },
 };

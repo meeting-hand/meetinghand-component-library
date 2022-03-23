@@ -15,10 +15,10 @@
         }
     }
     &.deep-2 {
-        margin-left: 16px;
+        margin-left: $spacing-default;
     }
     &.deep-3 {
-        margin-left: 16px;
+        margin-left: $spacing-default;
     }
 }
 
@@ -31,17 +31,24 @@
 
 .question-file {
     .file-upload-title {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 24px;
-        color: #000000;
-        margin-bottom: 16px;
+        font-weight: $font-weight-small;
+        font-size: $font-size-xlarge;
+        line-height: $line-height-large;
+        color: $color-mono-black;
+        margin-bottom: $spacing-default;
+    }
+    .file-button-label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        margin-bottom: $spacing-xsmall;
     }
     .file-upload-wrapper {
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: fit-content;
+        justify-content: flex-start;
         cursor: pointer;
         input {
             display: flex;
@@ -52,22 +59,24 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            background: #f7f7f7;
-            border-radius: 6px;
-            padding: 12px;
+            background: $color-mono-light-grey-2;
+            border-radius: $border-radius-default;
+            padding: $spacing-medium;
+            cursor: pointer;
+            width: 408px;
         }
         .file-upload-button {
             .mh-icon {
-                width: 20px;
-                height: 20px;
-                fill: #979797;
-                margin-right: 12px;
+                width: $icon-size-default;
+                height: $icon-size-default;
+                fill: $color-mono-grey-2;
+                margin-right: $spacing-medium;
             }
             span {
                 font-weight: 600;
-                font-size: 14px;
-                line-height: 20px;
-                color: #979797;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-grey-2;
             }
         }
         .file-download-button {
@@ -75,20 +84,18 @@
             flex-direction: row;
             align-items: center;
             .mh-icon {
-                width: 20px;
-                height: 20px;
-                fill: #4caf50;
-                margin-right: 12px;
+                width: $icon-size-default;
+                height: $icon-size-default;
+                fill: $color-primary-green;
+                margin-right: $spacing-medium;
             }
-            a {
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 20px;
-                color: #565656;
-            }
+            font-weight: $font-weight-small;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-grey-3;
         }
         .mh-iconic-button {
-            margin-left: 16px;
+            margin-left: $spacing-default;
         }
     }
 }
