@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/color-picker",
     "description": "Meetinghand Component Library Component for color-picker",
-    "version": "0.0.127",
+    "version": "0.0.128",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
