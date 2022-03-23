@@ -50,6 +50,7 @@
         align-items: center;
         justify-content: flex-start;
         cursor: pointer;
+        width: 100%;
         input {
             display: flex;
             min-height: 44px;
@@ -63,7 +64,7 @@
             border-radius: $border-radius-default;
             padding: $spacing-medium;
             cursor: pointer;
-            width: 408px;
+            min-width: 400px;
         }
         .file-upload-button {
             .mh-icon {
@@ -89,10 +90,14 @@
                 fill: $color-primary-green;
                 margin-right: $spacing-medium;
             }
-            font-weight: $font-weight-small;
-            font-size: $font-size-default;
-            line-height: $line-height-default;
-            color: $color-mono-grey-3;
+            a {
+                display: block;
+                font-weight: $font-weight-small;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-grey-3;
+                width: 100%;
+            }
         }
         .mh-iconic-button {
             margin-left: $spacing-default;

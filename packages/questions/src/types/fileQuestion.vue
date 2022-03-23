@@ -22,16 +22,19 @@
         />
       </div>
       <div v-else class="file-upload-wrapper">
-        <a
-          :href="value"
-          v-if="typeof value === 'string' && isFilePath()"
-          target="_blank"
-        >
-          <div class="file-download-button file-button">
-            <mh-icon name="ui-check" />
+        <div class="file-download-button file-button">
+          <mh-icon name="ui-check" />
+          <a
+            :href="value"
+            v-if="typeof value === 'string' && isFilePath()"
+            target="_blank"
+          >
             {{ value.name || question.label }}
-          </div>
-        </a>
+          </a>
+          <a v-else>
+            {{ value.name || question.label }}
+          </a>
+        </div>
         <mh-button type="iconic" @click="removeFile()" icon="ui-delete" />
       </div>
     </transition>
