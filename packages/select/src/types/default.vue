@@ -65,7 +65,7 @@ export default {
       props.options.map((option) => {
         return {
           ...option,
-          selectedLabel: option?.selectedLabel || option.label,
+          selectedLabel: option.selectedLabel || option.label,
         };
       })
     );

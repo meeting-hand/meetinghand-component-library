@@ -30,22 +30,66 @@
 }
 
 .question-file {
-    p {
-        font-size: $font-size-small;
-        line-height: $line-height-small;
-        color: $color-primary-red;
-        margin-left: $spacing-small;
-        margin-top: 4px;
-        display: block;
+    .file-upload-title {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: #000000;
+        margin-bottom: 16px;
     }
-    div {
-        @include flex-row(flex-start, flex-start);
-        .download-button {
-            margin-left: $spacing-default;
+    .file-upload-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: fit-content;
+        cursor: pointer;
+        input {
+            display: flex;
+            min-height: 44px;
+            width: fit-content;
         }
-    }
-    .mh-button {
-        white-space: pre-wrap;
+        .file-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: #f7f7f7;
+            border-radius: 6px;
+            padding: 12px;
+        }
+        .file-upload-button {
+            .mh-icon {
+                width: 20px;
+                height: 20px;
+                fill: #979797;
+                margin-right: 12px;
+            }
+            span {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                color: #979797;
+            }
+        }
+        .file-download-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .mh-icon {
+                width: 20px;
+                height: 20px;
+                fill: #4caf50;
+                margin-right: 12px;
+            }
+            a {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: #565656;
+            }
+        }
+        .mh-iconic-button {
+            margin-left: 16px;
+        }
     }
 }
 
@@ -92,10 +136,10 @@
 
 .question-checkbox,
 .question-radio,
-.question-select>.mh-select,
-.question-country>.mh-select,
+.question-select > .mh-select,
+.question-country > .mh-select,
 .mh-date-picker .mh-date-picker-label {
-    >label {
+    > label {
         @include flex-row(flex-start, center);
         svg {
             margin-left: $spacing-small;
