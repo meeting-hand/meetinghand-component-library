@@ -148,6 +148,8 @@ import UiLineGraph from "./uiLineGraph.vue";
 import EditorTable from "./editorTable.vue";
 import SystemIncrease from "./systemIncrease.vue";
 import SystemDecrease from "./systemDecrease.vue";
+import CalendarOverDue from "./calendarOverDue.vue";
+import PlugDisconnected from "./plugDisconnected.vue";
 
 const iconList = [
   "arrow-down",
@@ -296,6 +298,8 @@ const iconList = [
   "editor-table",
   "system-increase",
   "system-decrease",
+  "calendar-over-due",
+  "plug-disconnected",
 ];
 
 export default {
@@ -447,6 +451,8 @@ export default {
     EditorTable,
     SystemIncrease,
     SystemDecrease,
+    CalendarOverDue,
+    PlugDisconnected,
   },
   props: {
     name: {

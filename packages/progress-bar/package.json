@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/progress-bar",
     "description": "Meetinghand Component Library Component for progress bar",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
