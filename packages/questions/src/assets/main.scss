@@ -43,6 +43,7 @@
         line-height: $line-height-default;
         color: $color-mono-black;
         margin-bottom: $spacing-xsmall;
+        display: block;
     }
     .file-upload-wrapper {
         display: flex;
