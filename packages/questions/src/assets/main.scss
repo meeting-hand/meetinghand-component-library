@@ -15,10 +15,10 @@
         }
     }
     &.deep-2 {
-        margin-left: 16px;
+        margin-left: $spacing-default;
     }
     &.deep-3 {
-        margin-left: 16px;
+        margin-left: $spacing-default;
     }
 }
 
@@ -30,22 +30,79 @@
 }
 
 .question-file {
-    p {
-        font-size: $font-size-small;
-        line-height: $line-height-small;
-        color: $color-primary-red;
-        margin-left: $spacing-small;
-        margin-top: 4px;
+    .file-upload-title {
+        font-weight: $font-weight-small;
+        font-size: $font-size-xlarge;
+        line-height: $line-height-large;
+        color: $color-mono-black;
+        margin-bottom: $spacing-default;
+    }
+    .file-button-label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        margin-bottom: $spacing-xsmall;
         display: block;
     }
-    div {
-        @include flex-row(flex-start, flex-start);
-        .download-button {
+    .file-upload-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        width: 100%;
+        input {
+            display: flex;
+            min-height: 44px;
+            width: fit-content;
+        }
+        .file-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: $color-mono-light-grey-2;
+            border-radius: $border-radius-default;
+            padding: $spacing-medium;
+            cursor: pointer;
+            width: 100%;
+        }
+        .file-upload-button {
+            .mh-icon {
+                width: $icon-size-default;
+                height: $icon-size-default;
+                fill: $color-mono-grey-2;
+                margin-right: $spacing-medium;
+            }
+            span {
+                font-weight: 600;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-grey-2;
+            }
+        }
+        .file-download-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .mh-icon {
+                width: $icon-size-default;
+                height: $icon-size-default;
+                fill: $color-primary-green;
+                margin-right: $spacing-medium;
+            }
+            a {
+                display: block;
+                font-weight: $font-weight-small;
+                font-size: $font-size-default;
+                line-height: $line-height-default;
+                color: $color-mono-grey-3;
+                width: 100%;
+            }
+        }
+        .mh-iconic-button {
             margin-left: $spacing-default;
         }
-    }
-    .mh-button {
-        white-space: pre-wrap;
     }
 }
 
@@ -92,10 +149,10 @@
 
 .question-checkbox,
 .question-radio,
-.question-select>.mh-select,
-.question-country>.mh-select,
+.question-select > .mh-select,
+.question-country > .mh-select,
 .mh-date-picker .mh-date-picker-label {
-    >label {
+    > label {
         @include flex-row(flex-start, center);
         svg {
             margin-left: $spacing-small;

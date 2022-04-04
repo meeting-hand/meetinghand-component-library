@@ -1,34 +1,34 @@
 {
-    "name": "@meetinghand/questions",
-    "description": "Meetinghand Component Library Component for questions",
-    "version": "0.0.136",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
-    },
-    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
-    "bugs": {
-        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
-    },
-    "author": "Fatih Sinan Yaman",
-    "files": [
-        "src"
-    ],
-    "publishConfig": {
-        "access": "public"
-    },
-    "dependencies": {
-        "@meetinghand/banner": "^0.0.136",
-        "@meetinghand/button": "^0.0.165",
-        "@meetinghand/checkbox": "^0.0.127",
-        "@meetinghand/date-picker": "^0.0.138",
-        "@meetinghand/input": "^0.0.157",
-        "@meetinghand/input-number": "^0.0.134",
-        "@meetinghand/radio": "^0.0.146",
-        "@meetinghand/select": "^0.0.139",
-        "@meetinghand/style": "^0.0.120",
-        "@meetinghand/textarea": "^0.0.133",
-        "@meetinghand/tooltip": "^0.0.123"
-    },
-    "gitHead": "6d570f3a1355c59938e5ca75264f753d4e6fb285"
+	"name": "@meetinghand/questions",
+	"description": "Meetinghand Component Library Component for questions",
+	"version": "0.0.141",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+	},
+	"homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+	"bugs": {
+		"url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+	},
+	"author": "Fatih Sinan Yaman",
+	"files": [
+		"src"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@meetinghand/banner": "file:../banner",
+		"@meetinghand/button": "file:../button",
+		"@meetinghand/checkbox": "file:../checkbox",
+		"@meetinghand/date-picker": "file:../date-picker",
+		"@meetinghand/input": "file:../input",
+		"@meetinghand/input-number": "file:../input-number",
+		"@meetinghand/radio": "file:../radio",
+		"@meetinghand/select": "file:../select",
+		"@meetinghand/style": "file:../style",
+		"@meetinghand/textarea": "file:../textarea",
+		"@meetinghand/tooltip": "file:../tooltip"
+	},
+	"gitHead": "6d570f3a1355c59938e5ca75264f753d4e6fb285"
 }
