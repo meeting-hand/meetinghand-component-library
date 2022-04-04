@@ -1,13 +1,12 @@
  <template>
   <div class="mh-text-editor">
-    <label class="mh-text-editor-label notranslate" v-if="label">{{
-      label
-    }}</label>
+    <label class="mh-text-editor-label" v-if="label">{{ label }}</label>
     <div
       :class="[
         { error: errorStatus },
         'mh-text-editor-container',
         { disabled: readOnly },
+        'notranslate',
       ]"
     >
       <div :id="elementRef" v-html="initialValue"></div>
