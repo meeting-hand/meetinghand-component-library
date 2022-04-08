@@ -8,3 +8,15 @@ export const fbRTDBSnapshot2Array = (snapshot) => {
         }) :
         [];
 };
+
+export const fbRTDBObj2Array = (data) => {
+    return data ? Object.keys(data).map((id) => data[id]) : [];
+};
+
+export const createdAtTimeStamp2DateObj = (list, timestampKey = "createdAt") =>
+    list.map((_i) => {
+        return {
+            ..._i,
+            [timestampKey]: new Date(_i[timestampKey]),
+        };
+    });
