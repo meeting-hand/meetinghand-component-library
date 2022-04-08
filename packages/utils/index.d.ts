@@ -10,7 +10,7 @@ export function downloadFile(
 	name: string,
 	token: string,
 	body?: any
-): Promise<boolean>;
+): Promise<void>;
 
 export function fbRTDBSnapshot2Array(snapshot: any): any[];
 
@@ -24,7 +24,7 @@ export function parseJwt(token: string): any;
 
 export function isFBTokenExpiry(token: string): boolean;
 
-export function loadScript(url: string, callback: () => any): boolean;
+export function loadScript(url: string, callback: () => any): void;
 
 export function isCountryRequireState(countryCode: string): boolean;
 
