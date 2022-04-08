@@ -11,12 +11,12 @@
         "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
     },
     "author": "Fatih Sinan Yaman",
-    "main": "./dist/@meetinghand/utils.umd.js",
-    "module": "./dist/@meetinghand/utils.es.js",
+    "main": "./dist/lib.umd.js",
+    "module": "./dist/lib.es.js",
     "exports": {
         ".": {
-            "import": "./dist/@meetinghand/utils.es.js",
-            "require": "./dist/@meetinghand/utils.umd.js"
+            "import": "./dist/lib.es.js",
+            "require": "./dist/lib.umd.js"
         }
     },
     "scripts": {
