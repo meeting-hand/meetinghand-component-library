@@ -9,14 +9,14 @@ export function downloadFile(
 	url: string,
 	name: string,
 	token: string,
-	body: any
+	body?: any
 ): Promise<boolean>;
 
 export function fbRTDBSnapshot2Array(snapshot: any): any[];
 
 export function fbRTDBObj2Array(snapshot: any): any[];
 
-export function createdAtTimeStamp2DateObj(list: any[], key: string): any[];
+export function createdAtTimeStamp2DateObj(list: any[], key?: string): any[];
 
 export function removeTempId(data: any[], name: string): any[];
 
