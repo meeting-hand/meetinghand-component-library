@@ -18,7 +18,7 @@ export function fbRTDBObj2Array(snapshot: any): any[];
 
 export function createdAtTimeStamp2DateObj(list: any[], key?: string): any[];
 
-export function removeTempId(data: any[], name: string): any[];
+export function removeTempId(data: any[], name?: string): any[];
 
 export function parseJwt(token: string): any;
 
