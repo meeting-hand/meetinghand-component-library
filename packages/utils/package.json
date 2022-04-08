@@ -1,0 +1,31 @@
+{
+    "name": "@meetinghand/utils",
+    "description": "Meetinghand Component Library Component for utils",
+    "version": "0.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "main": "./dist/@meetinghand/utils.umd.js",
+    "module": "./dist/@meetinghand/utils.es.js",
+    "exports": {
+        ".": {
+            "import": "./dist/@meetinghand/utils.es.js",
+            "require": "./dist/@meetinghand/utils.umd.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist/*"
+    ]
+}
