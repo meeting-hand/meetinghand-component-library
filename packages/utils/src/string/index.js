@@ -1,1 +1,3 @@
-export const getUniqueID = () => Math.random().toString(36).substr(2, 9);
+import { v4 as uuidv4 } from "uuid";
+
+export const getUniqueID = () => uuidv4();
