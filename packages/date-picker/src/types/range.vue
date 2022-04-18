@@ -26,22 +26,27 @@
     :allowClear="false"
     :id="id"
     @openChange="openChange"
-    separator=""
-    :suffixIcon="icon"
-  />
+  >
+    <template #suffixIcon>
+      <chevron-down />
+    </template>
+    <template #separator>
+      <chevron-down />
+    </template>
+  </a-range-picker>
 </template>
 
 <script>
 import { DatePicker } from "ant-design-vue";
 import { computed, ref, h } from "vue";
-import MhDate from "@meetinghand/style/icons/uiDate.vue";
-import MHIcon from "@meetinghand/style/icons/index.vue";
+
+import ChevronDown from "@meetinghand/style/icons/chevronDown.vue";
 
 export default {
   name: "MhDatePickerRange",
   components: {
     [DatePicker.RangePicker.name]: DatePicker.RangePicker,
-    "mh-icon": MHIcon,
+    ChevronDown,
   },
   props: {
     modelValue: {
@@ -90,8 +95,6 @@ export default {
   setup(props, { emit }) {
     const status = ref(false);
 
-    const icon = h(MhDate);
-
     const value = computed({
       get() {
         return props.modelValue;
@@ -126,7 +129,6 @@ export default {
       value,
       openChange,
       status,
-      icon,
       disabledDate,
     };
   },

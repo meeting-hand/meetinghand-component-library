@@ -12,23 +12,27 @@
     :class="[{ error: hasError }]"
     :disabled="disabled"
     :placeholder="placeholder"
-    :suffix-icon="icon"
     :id="id"
     :disabledDate="disabledDate"
     :allowClear="false"
-  />
+  >
+    <template #suffixIcon>
+      <chevron-down />
+    </template>
+  </a-date-picker>
 </template>
 
 <script>
 import { computed, h } from "vue";
 
 import { DatePicker } from "ant-design-vue";
-import MhDate from "@meetinghand/style/icons/uiDate.vue";
+import ChevronDown from "@meetinghand/style/icons/chevronDown.vue";
 
 export default {
   name: "MhDatePickerDefault",
   components: {
     [DatePicker.name]: DatePicker,
+    ChevronDown,
   },
   props: {
     modelValue: {
@@ -76,8 +80,6 @@ export default {
     },
   },
   setup(props, { emit }) {
-    const icon = h(MhDate);
-
     const value = computed({
       get() {
         return props.modelValue;
@@ -105,7 +107,6 @@ export default {
     };
 
     return {
-      icon,
       value,
       disabledDate,
     };
