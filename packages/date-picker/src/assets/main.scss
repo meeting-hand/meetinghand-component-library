@@ -23,6 +23,14 @@
 			}
 		}
 	}
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.04);
+		border-color: #b6b6b6;
+		&.error {
+			border-color: $color-primary-red;
+			background-color: $color-secondary-red;
+		}
+	}
 }
 
 .ant-picker-focused {
@@ -51,6 +59,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.ant-picker-header > button {
+	font-size: 20px;
 }
 
 .ant-picker-header-view button {
@@ -149,6 +161,10 @@
 		border-radius: 6px;
 		transition: border 0.3s, box-shadow 0.3s, background 0.3s;
 		width: 258px;
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.04);
+			border-color: #b6b6b6;
+		}
 	}
 	.ant-picker-suffix {
 		svg {
