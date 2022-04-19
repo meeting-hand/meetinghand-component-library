@@ -36,6 +36,10 @@
 .ant-picker-focused {
 	background-color: $color-secondary-blue;
 	border: $border-size-default solid $color-primary-blue;
+	&:hover {
+		background-color: $color-secondary-blue;
+		border: $border-size-default solid $color-primary-blue;
+	}
 }
 
 .ant-picker-panel-container {
@@ -79,6 +83,67 @@
 	margin-left: 4px;
 }
 
+.ant-picker-year-panel,
+.ant-picker-month-panel {
+	.ant-picker-cell::before {
+		top: 25%;
+	}
+
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start-single::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-end-near-hover::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-start-near-hover::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-end-single::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range)::after {
+		position: absolute;
+		top: 25%;
+		z-index: 0;
+		height: 24px;
+		border-top: 1px dashed #7ec1ff;
+		border-bottom: 1px dashed #7ec1ff;
+		transform: translateY(-50%);
+		transition: all 0.3s;
+		content: "";
+	}
+}
+
+.ant-picker-date-panel {
+	.ant-picker-cell,
+	.ant-picker-cell-inner {
+		width: 32px;
+		height: 32px;
+		padding: 8px;
+	}
+	.ant-picker-cell-inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):not(.ant-picker-cell-range-start)
+		.ant-picker-cell-inner,
+	.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):not(.ant-picker-cell-range-end)
+		.ant-picker-cell-inner,
+	.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+	.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+	.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+		border-radius: 99px;
+	}
+	.ant-picker-cell::before {
+		height: 32px;
+	}
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end)::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start-single::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-end-near-hover::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-start-near-hover::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-end-single::after,
+	.ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range)::after {
+		height: 32px;
+	}
+}
+
 .ant-picker-cell-in-view.ant-picker-cell-today {
 	color: #2196f3;
 	border: none;
@@ -87,6 +152,9 @@
 .ant-picker-cell-in-view {
 	&.ant-picker-cell-today .ant-picker-cell-inner::before {
 		display: none;
+	}
+	&.ant-picker-cell-in-range::before {
+		background-color: rgba(0, 0, 0, 0.04);
 	}
 }
 
@@ -109,7 +177,7 @@
 	}
 }
 
-.ant-picker-focused {
+.mh-range-picker-opened {
 	.ant-picker-suffix {
 		svg {
 			fill: #2196f3;
@@ -206,4 +274,8 @@
 			}
 		}
 	}
+}
+
+.ant-picker-range-arrow {
+	display: none !important;
 }
