@@ -142,6 +142,15 @@
 	.ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range)::after {
 		height: 32px;
 	}
+	.ant-picker-content {
+		th {
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 16px;
+			color: #979797;
+			vertical-align: middle;
+		}
+	}
 }
 
 .ant-picker-cell-in-view.ant-picker-cell-today {
