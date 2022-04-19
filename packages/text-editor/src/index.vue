@@ -26,11 +26,11 @@ import Quill from "quill";
 import { defineComponent, onMounted, ref } from "vue";
 
 import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
-import { ImageDrop } from "quill-image-drop-module";
+//import { ImageDrop } from "quill-image-drop-module";
 import ImageUploader from "quill-image-uploader";
 
 Quill.register("modules/blotFormatter", BlotFormatter);
-Quill.register("modules/imageDrop", ImageDrop);
+//Quill.register("modules/imageDrop", ImageDrop);
 Quill.register("modules/imageUploader", ImageUploader);
 
 import MhEditorIcons from "./assets/icons";
@@ -159,7 +159,7 @@ export default defineComponent({
         modules: {
           toolbar: props.toolbar,
           blotFormatter: {},
-          imageDrop: true,
+          //imageDrop: true,
           imageUploader: {
             upload: (file) =>
               imageUpload(file, props.imageUploadUrl, props.bearerToken),
