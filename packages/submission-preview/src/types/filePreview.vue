@@ -13,7 +13,9 @@
         :key="index"
       >
         <p>{{ author.firstname }} {{ author.lastname }}</p>
-        <sup v-if="author.authorNumber !== 0">{{ author.authorNumber }}</sup>
+        <sup v-if="author.authorNumber !== 0 && authorNumberStatus">{{
+          author.authorNumber
+        }}</sup>
       </div>
     </div>
     <div class="abstract-flex-col" v-if="authorStatus && authorList.length > 0">
@@ -22,7 +24,7 @@
         v-for="(authorLocation, index) in authorLocations"
         :key="index"
       >
-        <sup>
+        <sup v-if="authorLocation.authorNumber != 0 && authorNumberStatus">
           {{ authorLocation.authorNumber }}
         </sup>
         <span>{{ authorLocation.location }}</span>
@@ -45,9 +47,13 @@
 </template>
 
 <script >
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, computed } from "vue";
 
-import { fetchCountries, sortAuthors } from "../composables/author";
+import {
+  fetchCountries,
+  sortAuthors,
+  hasAuthorNumber,
+} from "../composables/author";
 
 import MhButton from "@meetinghand/button";
 import MhIcon from "@meetinghand/style/icons/index.vue";
@@ -113,9 +119,14 @@ export default defineComponent({
 
     fetchCountries(authorLocations, authorList);
 
+    const authorNumberStatus = computed(() =>
+      hasAuthorNumber(authorLocations.value)
+    );
+
     return {
       authorList,
       authorLocations,
+      authorNumberStatus,
     };
   },
 });
