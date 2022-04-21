@@ -56,3 +56,12 @@ export const fetchCountries = async (authorLocations, authorList) => {
 			};
 		});
 };
+
+export const hasAuthorNumber = (authorLocations) => {
+	if (authorLocations.length > 0) {
+		return !authorLocations.every(
+			(_a) => _a.location === authorLocations[0].location
+		);
+	}
+	return true;
+};
