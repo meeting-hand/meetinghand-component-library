@@ -34,7 +34,6 @@
 <script>
 import { DatePicker } from "ant-design-vue";
 import { computed, ref, h } from "vue";
-import MhDate from "@meetinghand/style/icons/uiDate.vue";
 import MHIcon from "@meetinghand/style/icons/index.vue";
 
 export default {
@@ -90,7 +89,7 @@ export default {
   setup(props, { emit }) {
     const status = ref(false);
 
-    const icon = h(MhDate);
+    const icon = h(MHIcon, { name: "ui-date" });
 
     const value = computed({
       get() {

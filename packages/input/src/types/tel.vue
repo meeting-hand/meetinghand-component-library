@@ -33,7 +33,7 @@
 import { watch } from "vue";
 import { Input, Select } from "ant-design-vue";
 
-import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import Cleave from "cleave.js";
 
@@ -96,7 +96,7 @@ export default {
       return option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0;
     };
 
-    const suffixIcon = h(ArrowIcon);
+    const suffixIcon = h(MhIcon, { name: "chevron-down" });
 
     const setCleave = async (dialCode) => {
       try {
@@ -193,7 +193,6 @@ export default {
       filterOption,
       setCleave,
       dialCode,
-      suffixIcon,
       value,
       cleave,
       inputChanged,

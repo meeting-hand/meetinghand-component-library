@@ -23,7 +23,7 @@
 import { computed, h } from "vue";
 
 import { DatePicker } from "ant-design-vue";
-import MhDate from "@meetinghand/style/icons/uiDate.vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 export default {
   name: "MhDatePickerDefault",
@@ -76,7 +76,7 @@ export default {
     },
   },
   setup(props, { emit }) {
-    const icon = h(MhDate);
+    const icon = h(MhIcon, { name: "ui-date" });
 
     const value = computed({
       get() {

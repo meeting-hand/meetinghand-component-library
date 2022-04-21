@@ -17,5 +17,8 @@
 	"files": [
 		"lib/*",
 		"icons/*"
-	]
+	],
+	"dependencies": {
+		"vue-inline-svg": "^3.1.0"
+	}
 }
