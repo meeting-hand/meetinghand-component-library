@@ -1,7 +1,7 @@
 {
 	"name": "@meetinghand/textarea",
 	"description": "Meetinghand Component Library Component for textarea",
-	"version": "0.0.130",
+	"version": "0.0.136",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"

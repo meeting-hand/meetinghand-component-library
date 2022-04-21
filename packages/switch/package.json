@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/switch",
     "description": "Meetinghand Component Library Component for switch",
-    "version": "0.0.120",
+    "version": "0.0.126",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"

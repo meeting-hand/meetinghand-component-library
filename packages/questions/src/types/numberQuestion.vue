@@ -6,6 +6,9 @@
       :tooltip="question.information"
       :textTransform="question.textTransform"
       :placeholder="question.hint"
+      :step="question.numberStepCount"
+      :min="question.numberMin"
+      :max="question.numberMax"
       v-model="value"
     />
   </div>

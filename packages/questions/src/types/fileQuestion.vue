@@ -1,44 +1,41 @@
 <template>
   <div class="question question-file">
+    <p class="file-upload-title">File Upload</p>
+    <span class="file-button-label">Upload File {{ textUploadLabel() }}</span>
     <transition name="fade" mode="out-in">
-      <div v-if="!value">
-        <mh-button
-          type="secondary"
-          icon="ui-download-file"
+      <div v-if="!value" class="file-upload-wrapper">
+        <div
+          class="file-upload-button file-button"
           @click="onFileUploadClick()"
         >
-          {{ question.label }}
-        </mh-button>
+          <mh-icon name="system-attachment" />
+          <span>
+            {{ question.label || "Click to upload doc file (Max. Size: 5 Mb)" }}
+          </span>
+        </div>
         <input
           type="file"
-          style="opacity: 0; position: absolute"
+          style="opacity: 0; position: absolute; cursor: pointer"
           :accept="acceptedTypes()"
           ref="fileInput"
           @change="onChangeFileUpload($event)"
         />
       </div>
-      <div v-else>
-        <mh-button
-          type="secondary"
-          color="red"
-          @click="removeFile()"
-          icon="system-close"
-        >
-          {{ value.name || question.label }}
-        </mh-button>
-        <a
-          :href="value"
-          v-if="typeof value === 'string' && isFilePath()"
-          target="_blank"
-          class="download-button"
-        >
-          <mh-button
-            type="iconic"
-            icon="ui-download-file"
-            size="default"
-            color="blue"
-          />
-        </a>
+      <div v-else class="file-upload-wrapper">
+        <div class="file-download-button file-button">
+          <mh-icon name="ui-check" />
+          <a
+            :href="value"
+            v-if="typeof value === 'string' && isFilePath()"
+            target="_blank"
+          >
+            {{ value.name || question.label }}
+          </a>
+          <a v-else>
+            {{ value.name || question.label }}
+          </a>
+        </div>
+        <mh-button type="iconic" @click="removeFile()" icon="ui-delete" />
       </div>
     </transition>
     <span v-if="errorMessage" class="mh-input__error">{{ errorMessage }}</span>
@@ -49,6 +46,7 @@ import { ref, inject } from "vue";
 
 import MhInput from "@meetinghand/input/src/index.vue";
 import MhButton from "@meetinghand/button";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import { questionValidation } from "../composables/validations";
 
@@ -56,6 +54,7 @@ export default {
   components: {
     MhInput,
     MhButton,
+    MhIcon,
   },
   props: {
     question: {
@@ -148,6 +147,10 @@ export default {
       return acceptedExtensions.flat();
     };
 
+    const textUploadLabel = () => {
+      return `(${acceptedTypes().join(", ").toString()})`;
+    };
+
     const removeFile = () => {
       updateValue(null);
     };
@@ -166,6 +169,7 @@ export default {
       isFilePath,
       value,
       errorMessage,
+      textUploadLabel,
     };
   },
 };

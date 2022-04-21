@@ -20,7 +20,11 @@ const question2YupDataType = (question) => {
 
 const questionYupValidations = (_y, question) => {
     if (question.required) {
-        _y = _y.required().nullable();
+        if (question.type === "checkbox") {
+            _y = _y.min(1);
+        } else {
+            _y = _y.required().nullable();
+        }
     } else {
         _y = _y.nullable();
     }

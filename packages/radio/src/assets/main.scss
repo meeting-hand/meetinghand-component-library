@@ -1,72 +1,95 @@
 @import "@meetinghand/style/lib/scss/variables.scss";
-@import "@meetinghand/style/lib/scss/ant/radio.scss";
 
 /* Radio Type */
 
-.ant-radio-wrapper {
-    span {
-        height: 20px;
-        top: $spacing-xxsmall;
-        font-size: $font-size-default;
-        line-height: $line-height-default;
-        color: $color-mono-black;
-    }
-}
-
-.ant-radio-inner {
-    width: 20px;
-    height: 20px;
-    border: $border-size-default solid $color-primary-blue;
-    box-sizing: border-box;
-    border-radius: $border-radius-giant;
-    border-color: $color-primary-blue;
-    &:hover {
-        background-color: $color-secondary-blue;
-    }
-    &::after {
-        background: $color-primary-blue;
-        width: $spacing-medium;
-        height: $spacing-medium;
-    }
-}
-
-.ant-radio-disabled .ant-radio-inner {
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    border: $border-size-default solid $color-mono-grey;
-    box-sizing: border-box;
-    border-radius: $border-radius-giant;
-    background-color: none;
-    &:hover {
-        background-color: none;
-    }
-}
-
-
-/* Radio Type End */
-
-
-/* Button Type */
-
-.mh-btn-radio {
-    border: $border-size-default solid $transparent-hover-3;
-    border-radius: $border-radius-giant;
-    color: $color-mono-black;
+.mh-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-style: normal;
     font-weight: normal;
     font-size: $font-size-default;
     line-height: $line-height-default;
+    color: $color-mono-black;
+    cursor: pointer;
+    .mh-radio-inner {
+        margin-right: $spacing-small;
+        color: $color-primary-blue;
+        cursor: pointer;
+    }
+    &.mh-radio-disabled {
+        cursor: not-allowed;
+    }
+}
+
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    /* Not removed via appearance */
+    margin: 0;
+
+    font: inherit;
+    color: $color-primary-blue;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid $color-primary-blue;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:disabled {
+        color: $color-mono-grey;
+        border-color: $color-mono-grey;
+        cursor: not-allowed;
+        &::before {
+            background-color: $color-mono-grey;
+        }
+    }
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    // box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: $color-primary-blue;
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+/* Radio Type End */
+
+/* Button Type */
+
+.mh-button-radio {
+    border: $border-size-default solid $transparent-hover-3;
+    border-radius: $border-radius-giant;
+    font-weight: 500;
+    font-size: $font-size-default;
+    line-height: $line-height-default;
+    color: $color-mono-black;
+    background-color: transparent;
+    transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
     &:hover {
         color: $color-mono-black;
     }
-    &.mh-btn-radio-selected {
+    &.mh-button-radio-selected {
         background-color: $color-secondary-blue;
         border-color: $color-primary-blue;
-        font-weight: $font-weight-large;
         color: $color-primary-blue;
     }
-    &.mh-btn-radio-disabled {
+    &.mh-button-radio-disabled {
         border-color: $color-mono-light-grey-4;
         color: $color-mono-grey;
         background-color: transparent;
@@ -75,6 +98,5 @@
         font-weight: $font-weight-default;
     }
 }
-
 
 /* Button Type End */

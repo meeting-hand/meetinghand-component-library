@@ -1,6 +1,11 @@
 <template>
   <div class="abstract-text-preview">
-    <h3>{{ topic }}</h3>
+    <div class="abstract-type-topic">
+      <h3>{{ topic }}</h3>
+      <h3 v-if="presentationType" class="presentation-type">
+        {{ presentationType }}
+      </h3>
+    </div>
     <h1>{{ title }}</h1>
     <div class="abstract-flex-row" v-if="authorStatus && authorList.length > 0">
       <div
@@ -12,7 +17,9 @@
         :key="index"
       >
         <p>{{ author.firstname }} {{ author.lastname }}</p>
-        <sup v-if="author.authorNumber !== 0">{{ author.authorNumber }}</sup>
+        <sup v-if="author.authorNumber !== 0 && authorNumberStatus">{{
+          author.authorNumber
+        }}</sup>
       </div>
     </div>
     <div class="abstract-flex-col" v-if="authorStatus && authorList.length > 0">
@@ -21,7 +28,7 @@
         v-for="(authorLocation, index) in authorLocations"
         :key="index"
       >
-        <sup>
+        <sup v-if="authorLocation.authorNumber != 0 && authorNumberStatus">
           {{ authorLocation.authorNumber }}
         </sup>
         <span>{{ authorLocation.location }}</span>
@@ -58,13 +65,21 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { computed, defineComponent, ref } from "vue";
 
-import { fetchCountries, sortAuthors } from "../composables/author";
+import {
+  fetchCountries,
+  sortAuthors,
+  hasAuthorNumber,
+} from "../composables/author";
 
 export default defineComponent({
   props: {
     topic: {
+      type: String,
+      default: null,
+    },
+    presentationType: {
       type: String,
       default: null,
     },
@@ -118,9 +133,13 @@ export default defineComponent({
 
     fetchCountries(authorLocations, authorList);
 
+    const authorNumberStatus = computed(() =>
+      hasAuthorNumber(authorLocations.value)
+    );
     return {
       authorList,
       authorLocations,
+      authorNumberStatus,
     };
   },
 });

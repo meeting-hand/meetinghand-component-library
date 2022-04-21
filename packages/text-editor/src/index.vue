@@ -6,6 +6,7 @@
         { error: errorStatus },
         'mh-text-editor-container',
         { disabled: readOnly },
+        'notranslate',
       ]"
     >
       <div :id="elementRef" v-html="initialValue"></div>
@@ -25,13 +26,16 @@ import Quill from "quill";
 import { defineComponent, onMounted, ref } from "vue";
 
 import BlotFormatter from "quill-blot-formatter/dist/BlotFormatter";
-import { ImageDrop } from "quill-image-drop-module";
+//import { ImageDrop } from "quill-image-drop-module";
+import ImageUploader from "quill-image-uploader";
 
 Quill.register("modules/blotFormatter", BlotFormatter);
-Quill.register("modules/imageDrop", ImageDrop);
+//Quill.register("modules/imageDrop", ImageDrop);
+Quill.register("modules/imageUploader", ImageUploader);
 
 import MhEditorIcons from "./assets/icons";
 import { debounce } from "lodash";
+import { imageUpload } from "./utils/imageUpload";
 
 export default defineComponent({
   name: "TextEditor",
@@ -98,6 +102,16 @@ export default defineComponent({
       type: String,
       default: "MHEditor",
     },
+    imageUploadUrl: {
+      type: String,
+      default:
+        //"https://meetinghand.xyz/api/customer/events/30/website/upload_image",
+        "https://meetinghand.xyz/api/events/lyk2-38cmuapqeh/submission/upload_image",
+    },
+    bearerToken: {
+      type: String,
+      default: null,
+    },
   },
   computed: {
     errorStatus: function (props) {
@@ -145,7 +159,11 @@ export default defineComponent({
         modules: {
           toolbar: props.toolbar,
           blotFormatter: {},
-          imageDrop: true,
+          //imageDrop: true,
+          imageUploader: {
+            upload: (file) =>
+              imageUpload(file, props.imageUploadUrl, props.bearerToken),
+          },
         },
         placeholder: props.placeholder,
       });

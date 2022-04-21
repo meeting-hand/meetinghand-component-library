@@ -80,6 +80,12 @@
                 fill: $color-mono-white;
             }
         }
+        &.wait {
+            background-color: rgba($color-primary-red, 0.4);
+            &:hover {
+                background: rgba($color-primary-red, 0.5);
+            }
+        }
     }
     &.green {
         background: $color-primary-participant;
@@ -87,10 +93,16 @@
             background: $color-button-hover-green;
         }
         &.disabled {
-            background-color: #f5564a;
             color: $color-mono-white;
+            background-color: $color-primary-participant;
             .mh-icon {
                 fill: $color-mono-white;
+            }
+        }
+        &.wait {
+            background-color: rgba($color-primary-participant, 0.4);
+            &:hover {
+                background: rgba($color-primary-participant, 0.5);
             }
         }
     }
@@ -105,7 +117,6 @@
         border: none;
         background-color: rgba($color-primary-blue, 0.4);
         padding: $spacing-medium $spacing-default;
-
         &:hover {
             background: rgba($color-primary-blue, 0.5);
         }

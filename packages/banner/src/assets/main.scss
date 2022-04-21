@@ -17,7 +17,7 @@
             align-items: center;
             .mh-icon {
                 min-width: $icon-size-medium;
-                max-width: $icon-size-medium;
+                min-height: $icon-size-medium;
                 width: $icon-size-medium;
                 height: $icon-size-medium;
                 margin-right: $spacing-medium;
@@ -90,7 +90,7 @@
         align-items: center;
         .mh-icon {
             min-width: $icon-size-medium;
-            max-width: $icon-size-medium;
+            min-height: $icon-size-medium;
             width: $icon-size-medium;
             height: $icon-size-medium;
             margin-right: $spacing-small;

@@ -8,10 +8,12 @@ storiesOf("Questions", module).add("Questions!", () => ({
     data() {
         return {
             questions: [...QuestionData],
+            errors: {},
         };
     },
     methods: {},
     template: `
-		<questions v-model:questions="questions" dateFormat="EU" />
+		<questions :errors="errors" v-model:questions="questions" dateFormat="EU" />
+		{{ errors }}
     `,
 }));
