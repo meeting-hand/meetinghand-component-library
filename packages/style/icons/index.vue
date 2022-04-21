@@ -1,9 +1,5 @@
 <template>
-  <inline-svg
-    :src="importedIcon"
-    :class="['mh-icon', `mh-icon-${name}`]"
-    v-if="importedIcon"
-  ></inline-svg>
+  <component :is="dynamicComponent" />
 </template>
 <script>
 const iconList = [
@@ -157,18 +153,20 @@ const iconList = [
   "plug-disconnected",
 ];
 
-import InlineSvg from "vue-inline-svg";
-import { ref, watch } from "vue";
+import { defineAsyncComponent } from "vue";
 
 export default {
   name: "MhIcon",
-  data() {
-    return {
-      importedIcon: null,
-    };
-  },
-  components: {
-    InlineSvg,
+  computed: {
+    dynamicComponent() {
+      const name = this.name;
+
+      return defineAsyncComponent(() =>
+        import(
+          `./${name.replace(/-./g, (match) => match[1].toUpperCase())}.vue`
+        )
+      );
+    },
   },
   props: {
     name: {
@@ -176,31 +174,6 @@ export default {
       required: true,
       validator: (_i) => iconList.includes(_i),
     },
-  },
-  setup(props) {
-    const importedIcon = ref(null);
-
-    const fetchIcon = async () => {
-      importedIcon.value = (
-        await import(
-          `./${props.name.replace(/-./g, (match) =>
-            match[1].toUpperCase()
-          )}.svg`
-        )
-      ).default;
-    };
-
-    fetchIcon();
-
-    watch(
-      () => props.name,
-      () => {
-        fetchIcon();
-      }
-    );
-    return {
-      importedIcon,
-    };
   },
 };
 </script>
