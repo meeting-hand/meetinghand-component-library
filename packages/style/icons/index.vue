@@ -1,7 +1,8 @@
 <template>
   <inline-svg
-    :src="svgPath"
+    :src="importedIcon"
     :class="['mh-icon', `mh-icon-${name}`]"
+    v-if="importedIcon"
   ></inline-svg>
 </template>
 <script>
@@ -157,9 +158,15 @@ const iconList = [
 ];
 
 import InlineSvg from "vue-inline-svg";
+import { ref, watch } from "vue";
 
 export default {
   name: "MhIcon",
+  data() {
+    return {
+      importedIcon: null,
+    };
+  },
   components: {
     InlineSvg,
   },
@@ -170,12 +177,30 @@ export default {
       validator: (_i) => iconList.includes(_i),
     },
   },
-  computed: {
-    svgPath() {
-      return require(`./${this.name.replace(/-./g, (match) =>
-        match[1].toUpperCase()
-      )}.svg`);
-    },
+  setup(props) {
+    const importedIcon = ref(null);
+
+    const fetchIcon = async () => {
+      importedIcon.value = (
+        await import(
+          `./${props.name.replace(/-./g, (match) =>
+            match[1].toUpperCase()
+          )}.svg`
+        )
+      ).default;
+    };
+
+    fetchIcon();
+
+    watch(
+      () => props.name,
+      () => {
+        fetchIcon();
+      }
+    );
+    return {
+      importedIcon,
+    };
   },
 };
 </script>
