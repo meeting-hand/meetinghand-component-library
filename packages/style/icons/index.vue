@@ -159,13 +159,10 @@ export default {
   name: "MhIcon",
   computed: {
     dynamicComponent() {
-      const name = this.name;
+      //const name = this.name.replace(/-./g, (match) => match[1].toUpperCase());
+      const name = "arrowDown.vue";
 
-      return defineAsyncComponent(() =>
-        import(
-          `./${name.replace(/-./g, (match) => match[1].toUpperCase())}.vue`
-        )
-      );
+      return defineAsyncComponent(() => import(`${name}.vue`));
     },
   },
   props: {
