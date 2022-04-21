@@ -18,7 +18,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@meetinghand/style": "^0.0.123",
+        "@meetinghand/style": "file:../style",
         "lodash": "^4.17.21"
     },
     "gitHead": "6d570f3a1355c59938e5ca75264f753d4e6fb285"

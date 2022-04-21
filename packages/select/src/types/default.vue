@@ -17,7 +17,7 @@
   >
     <template v-slot:notFoundContent>
       <div class="mh-select-empty-state">
-        <status-error />
+        <mh-icon name="status-error" />
         <span>{{ emptyStateDescription }}</span>
       </div>
     </template>
@@ -40,9 +40,7 @@
 import { computed, h } from "vue";
 
 import { Select } from "ant-design-vue";
-import ArrowIcon from "@meetinghand/style/icons/chevronDown.vue";
-import SystemClose from "@meetinghand/style/icons/systemClose.vue";
-import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import defaultProps from "../utils/props";
 
@@ -51,15 +49,15 @@ export default {
   components: {
     [Select.name]: Select,
     ASelectOption: Select.Option,
-    StatusError,
+    MhIcon,
   },
   props: {
     ...defaultProps,
   },
   setup(props, { emit }) {
-    const suffixIcon = h(ArrowIcon);
+    const suffixIcon = h(MhIcon, { name: "chevron-down" });
 
-    const removeIcon = h(SystemClose);
+    const removeIcon = h(MhIcon, { name: "system-close" });
 
     const optionsList = computed(() =>
       props.options.map((option) => {

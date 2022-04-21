@@ -3,11 +3,7 @@
 import Notification from "ant-design-vue/es/notification";
 import Button from "@meetinghand/button";
 
-import StatusError from "@meetinghand/style/icons/systemStatusError.vue";
-import StatusInfo from "@meetinghand/style/icons/systemStatusInfo.vue";
-import StatusHint from "@meetinghand/style/icons/systemStatusHint.vue";
-import SystemClose from "@meetinghand/style/icons/systemClose.vue";
-import SystemStatusSuccess from "@meetinghand/style/icons/systemStatusSuccess.vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 import { h, onBeforeUnmount, onMounted } from "vue";
 
@@ -44,10 +40,10 @@ export default {
 
     const openNotification = () => {
       const icons = {
-        success: SystemStatusSuccess,
-        error: StatusError,
-        info: StatusInfo,
-        hint: StatusHint,
+        success: "system-status-success",
+        error: "system-status-error",
+        info: "system-status-info",
+        hint: "system-status-hint",
       };
 
       Notification.open({
@@ -55,13 +51,13 @@ export default {
         message: props.message,
         duration: props.duration,
         class: [props.type, { title: props.message }],
-        icon: h(icons[props.type]),
+        icon: h(MhIcon, { name: icons[props.type] }),
         placement: props.placement,
         key: key,
         onClose: () => {
           emit("close", true);
         },
-        closeIcon: h(SystemClose),
+        closeIcon: h(MhIcon, { name: "system-close" }),
         btn: h(
           Button,
           {

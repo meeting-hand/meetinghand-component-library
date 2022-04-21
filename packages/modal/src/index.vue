@@ -26,14 +26,13 @@
 import { h } from "vue";
 
 import { Modal } from "ant-design-vue";
-import MHIcon from "@meetinghand/style/icons/index.vue";
-import SystemClose from "@meetinghand/style/icons/systemClose.vue";
+import MhIcon from "@meetinghand/style/icons/index.vue";
 
 export default {
   name: "MhModal",
   components: {
     [Modal.name]: Modal,
-    "mh-icon": MHIcon,
+    "mh-icon": MhIcon,
   },
   computed: {
     width() {
@@ -47,7 +46,7 @@ export default {
       return this.$slots.footer ? this.$slots.footer : null;
     },
     closeIcon() {
-      return h(SystemClose);
+      return h(MhIcon, { name: "system-close" });
     },
   },
   props: {
