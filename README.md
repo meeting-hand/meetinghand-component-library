@@ -1,43 +1,16 @@
-# MeetingHand Component Library 
-## Install
-Initialize the project as follows:
+# Vue 3 + TypeScript + Vite
 
-    git clone https://github.com/meeting-hand/meetinghand-component-library.git
-    cd meetinghand-component-library
-    npm run initialize
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-This downloads the project into `meetinghand-component-library` folder, installs all dependencies, prepares Lerna monorepo and creates symlinks for internal dependencies. All is now ready for build.
+## Recommended IDE Setup
 
-## Create New Package
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-    npm run new {packageName}
+## Type Support For `.vue` Imports in TS
 
-package files will be automatic generation
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
 
+1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
+2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
-## Build
-Run the following to build all packages:
-
-    npm run build
-
-This runs a production build. In each package you will now find `/dist` folder where package code is bundled.
-
-## StoryBook
-Run the following to livepreview all packages:
-
-    npm run storybook
-
-This runs storybook for preview & development. 
-
-## Publish Packages
-Lerna will be publish automaticly all packages indipendent versions under the organization scope. For example: [meetinghand](https://www.npmjs.com/settings/meetinghand/packages)
-
-    npm run publish
-
-package files will be automatic generation
-
-
-## License
-
-MIT
-
+You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).

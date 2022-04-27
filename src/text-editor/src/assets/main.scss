@@ -1,0 +1,246 @@
+@import "quill/dist/quill.snow.css";
+@import "../../../style/lib/scss/colors.scss";
+@import "../../../style/lib/scss/variables.scss";
+.mh-text-editor {
+    .mh-text-editor-label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        margin-bottom: $spacing-xsmall;
+        display: block;
+    }
+    .mh-text-editor-container {
+        width: 832px;
+        border: $border-size-default solid $color-mono-grey;
+        box-sizing: border-box;
+        border-radius: $border-radius-xxlarge;
+        &.error {
+            border: $border-size-default solid $color-primary-red;
+            &:focus-within {
+                border: $border-size-default solid $color-primary-red;
+                box-sizing: border-box;
+                border-top-left-radius: $border-radius-xxlarge;
+                border-top-right-radius: $border-radius-xxlarge;
+            }
+        }
+        &.disabled {
+            background: $color-mono-light-grey-3;
+            cursor: not-allowed;
+            pointer-events: none;
+            .ql-toolbar {
+                background: $color-mono-light-grey-3 !important;
+            }
+            .ql-snow {
+                background: $color-mono-light-grey-3;
+            }
+            button {
+                pointer-events: none;
+            }
+        }
+        .ql-toolbar {
+            &.ql-snow {
+                background: $color-mono-white;
+                border: none;
+                border-bottom: $border-size-default solid $color-mono-grey;
+                padding: 14px 0px 14px 16px;
+                border-top-left-radius: $border-radius-xxlarge;
+                border-top-right-radius: $border-radius-xxlarge;
+            }
+            .ql-formats {
+                margin-right: $spacing-xxsmall;
+            }
+            button {
+                display: flex;
+                justify-content: center;
+                border-radius: $border-radius-default;
+                svg {
+                    height: $icon-size-default;
+                }
+                &:hover {
+                    background: $transparent-hover-2;
+                }
+            }
+            // .ql-write {
+            // 	width: 49px;
+            // 	margin-right: $spacing-small;
+            // }
+            // .ql-preview {
+            // 	width: 67px;
+            // 	margin-right: 36px;
+            // }
+            .ql-redo {
+                margin-right: $spacing-xxlarge;
+                &::after {
+                    content: "";
+                    position: relative;
+                    width: 1px;
+                    height: $icon-size-default;
+                    left: 24px;
+                    border-right: $border-size-default solid $transparent-hover-3;
+                    pointer-events: none;
+                }
+            }
+            .ql-blockquote {
+                margin-right: $spacing-xxlarge;
+                &::after {
+                    content: "";
+                    position: relative;
+                    width: 1px;
+                    height: $icon-size-default;
+                    left: 24px;
+                    border-right: $border-size-default solid $transparent-hover-3;
+                    pointer-events: none;
+                }
+            }
+            .ql-table {
+                margin-right: $spacing-xxlarge;
+                &::after {
+                    content: "";
+                    position: relative;
+                    width: 1px;
+                    height: $icon-size-default;
+                    left: 24px;
+                    border-right: $border-size-default solid $transparent-hover-3;
+                    pointer-events: none;
+                }
+            }
+            button:nth-of-type(16) {
+                margin-left: $spacing-xxlarge;
+                &::after {
+                    content: "";
+                    position: relative;
+                    width: 1px;
+                    height: $icon-size-default;
+                    left: -36px;
+                    border-right: $border-size-default solid $transparent-hover-3;
+                    pointer-events: none;
+                }
+            }
+            .ql-code-block {
+                margin-left: 20px;
+                &::after {
+                    content: "";
+                    position: relative;
+                    width: 1px;
+                    height: 20px;
+                    left: -30px;
+                    border-right: $border-size-default solid $transparent-hover-3;
+                    pointer-events: none;
+                }
+            }
+        }
+        .ql-container {
+            &.ql-snow {
+                border: none;
+                box-sizing: border-box;
+                border-bottom-left-radius: $border-radius-xxlarge;
+                border-bottom-right-radius: $border-radius-xxlarge;
+            }
+        }
+        .ql-editor {
+            min-height: 171px;
+            &.ql-blank {
+                width: 832px;
+            }
+            p {
+                font-style: normal;
+                font-weight: normal;
+                font-size: $font-size-large;
+                line-height: $line-height-default;
+                color: $color-mono-black;
+            }
+            &::before {
+                font-style: normal;
+                color: $color-mono-grey;
+                font-size: $font-size-large;
+                line-height: $line-height-default;
+            }
+        }
+        &:focus-within {
+            border: $border-size-default solid $color-primary-blue;
+            box-sizing: border-box;
+            border-top-left-radius: $border-radius-xxlarge;
+            border-top-right-radius: $border-radius-xxlarge;
+        }
+        .editor-footer {
+            border-top: $border-size-default solid $color-mono-light-grey-5;
+            margin: $spacing-xxsmall $spacing-default;
+            padding: $spacing-small $spacing-xxsmall;
+            color: $color-mono-grey-2;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
+            text-align: right;
+        }
+    }
+}
+
+.ql-snow.ql-toolbar button.ql-active {
+    background: $transparent-hover-2;
+}
+
+.ql-snow.ql-toolbar button.ql-active .ql-fill {
+    fill: $color-mono-grey-3;
+}
+
+.ql-snow.ql-toolbar button.ql-active .ql-stroke {
+    stroke: $color-mono-grey-3;
+}
+
+strong {
+    font-weight: bold !important;
+}
+
+em {
+    font-style: italic !important;
+}
+
+.ql-snow {
+    .ql-header {
+        color: $color-mono-grey-2;
+    }
+    &.ql-toolbar {
+        .ql-picker-label {
+            &:hover {
+                color: $color-mono-grey-2;
+                .ql-stroke {
+                    stroke: $color-mono-grey-2;
+                }
+            }
+            &.ql-active {
+                color: $color-primary-blue;
+                .ql-stroke {
+                    stroke: $color-primary-blue;
+                }
+            }
+        }
+        .ql-picker-item {
+            &:hover {
+                color: $color-primary-blue;
+            }
+        }
+    }
+    .ql-picker-label {
+        border-radius: $border-radius-default;
+        &:hover {
+            color: $color-mono-grey-2;
+            background-color: $transparent-hover-2;
+        }
+        .ql-stroke {
+            stroke: $color-mono-grey-2;
+            &:hover {
+                stroke: $color-mono-grey-2;
+            }
+        }
+    }
+    .ql-picker-options {
+        border: $border-size-default solid $transparent-hover-3;
+        box-sizing: border-box;
+        box-shadow: 0px 12px 16px $shadow-1;
+        border-radius: $border-radius-xxlarge;
+    }
+}
+
+.blot-formatter__toolbar {
+    display: none !important;
+}

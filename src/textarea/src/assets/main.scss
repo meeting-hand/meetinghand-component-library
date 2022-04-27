@@ -1,0 +1,68 @@
+@import "../../../style/lib/scss/variables.scss";
+.mh-text-area {
+    width: 360px;
+    height: auto;
+    .mh-text-area-label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 6px;
+        .mh-text-area-title {
+            font-style: normal;
+            font-weight: $font-weight-default;
+            font-size: $font-size-default !important;
+            line-height: $line-height-default;
+            color: $color-mono-black;
+        }
+        img {
+            margin-left: 8px;
+        }
+    }
+    textarea {
+        width: 100%;
+        border: $border-size-default solid $color-mono-grey;
+        box-sizing: border-box;
+        border-radius: $border-radius-default;
+        background-color: transparent;
+        padding: $spacing-medium;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        resize: none;
+        &::after {
+            border: $border-size-default solid $color-primary-blue;
+            box-sizing: border-box;
+            border-radius: $border-radius-default;
+        }
+        &:hover {
+            background-color: none;
+        }
+        &::placeholder {
+            font-weight: normal;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+            color: $color-mono-grey-2;
+        }
+        &.disabled {
+            background: $color-mono-light-grey;
+            border: $border-size-default solid $color-mono-light-grey-5;
+            cursor: not-allowed;
+            &::placeholder {
+                color: $color-mono-grey;
+            }
+        }
+        &.error {
+            border-color: $color-primary-red;
+            &::after {
+                border-color: $color-primary-red;
+            }
+            &:focus {
+                border-color: $color-primary-red;
+            }
+        }
+        &:focus {
+            outline: none !important;
+            border: 1px solid $color-primary-blue;
+        }
+    }
+}

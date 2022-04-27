@@ -1,0 +1,1 @@
+declare module "@meetinghand/lib/text-editor"

@@ -1,0 +1,59 @@
+{
+    "name": "@meetinghand/lib",
+    "description": "MeetingHand Components",
+    "version": "0.1.01",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
+    },
+    "homepage": "https://github.com/meeting-hand/meetinghand-component-library#readme",
+    "bugs": {
+        "url": "https://github.com/meeting-hand/meetinghand-component-library/issues"
+    },
+    "author": "Fatih Sinan Yaman",
+    "files": [
+        "button",
+        "style",
+        "banner",
+        "checkbox",
+        "color-picker",
+        "date-picker",
+        "divider",
+        "emoji",
+        "input",
+        "input-number",
+        "modal",
+        "notification",
+        "progress-bar",
+        "question-values",
+        "questions",
+        "radio",
+        "select",
+        "status",
+        "style",
+        "submission-preview",
+        "switch",
+        "text-editor",
+        "textarea",
+        "tooltip",
+        "types",
+        "utils"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "vue-inline-svg": "^3.1.0",
+        "accounting": "^0.4.1",
+        "quill": "^1.3.6",
+        "quill-better-table": "^1.2.10",
+        "quill-blot-formatter": "^1.0.5",
+        "quill-image-drop-module": "^1.0.3",
+        "quill-image-uploader": "^1.2.2",
+        "uuid": "^8.3.2",
+        "ant-design-vue": "2.1.4",
+        "cleave.js": "^1.6.0",
+        "lodash": "^4.17.21",
+        "@types/cleave.js": "^1.4.6"
+    }
+}

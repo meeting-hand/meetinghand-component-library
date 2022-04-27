@@ -1,0 +1,21 @@
+@import "../../../style/lib/scss/variables.scss";
+@import "../../../style/lib/scss/ant/tooltip.scss";
+.mh-tooltip {
+    background-color: $color-mono-black;
+    box-sizing: border-box;
+    border-radius: $border-radius-large;
+    box-shadow: 0px 12px 16px $shadow-1;
+    padding: $spacing-medium;
+    .ant-tooltip-inner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $color-mono-white;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+        padding: 0;
+        min-height: $line-height-small;
+    }
+}
