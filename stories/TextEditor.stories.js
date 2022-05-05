@@ -23,7 +23,7 @@ storiesOf("TextEditor", module).add("All", () => ({
                 "blockquote",
                 "link",
                 "image",
-                { align: "left" },
+                { align: "" }, //left
                 { align: "center" },
                 { align: "right" },
                 { list: "ordered" },
