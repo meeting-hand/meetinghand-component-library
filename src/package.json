@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/lib",
     "description": "MeetingHand Components",
-    "version": "0.1.04",
+    "version": "0.1.5",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
