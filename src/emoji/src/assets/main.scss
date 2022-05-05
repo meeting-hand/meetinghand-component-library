@@ -1,0 +1,27 @@
+@import "../../../style/lib/scss/variables.scss";
+@import "../../../style/lib/scss/icons.scss";
+.list-emoji-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: $spacing-medium;
+    height: 44px;
+    max-width: 100%;
+    background: $color-mono-white;
+    box-shadow: $spacing-xxsmall 4px $spacing-small $transparent-hover-3;
+    border-radius: $border-radius-giant;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: $spacing-xxsmall 4px;
+    .emoji {
+        font-size: 20px;
+        line-height: 20px;
+        vertical-align: middle;
+        line-height: 2;
+        cursor: pointer;
+    }
+    .emoji:not(:last-child) {
+        margin-right: $spacing-medium;
+    }
+}

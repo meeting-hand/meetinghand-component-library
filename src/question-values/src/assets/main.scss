@@ -1,0 +1,24 @@
+@import "../../../style/lib/scss/variables.scss";
+.questions-value-wrapper {
+    .question-row {
+        .question {
+            label {
+                color: $color-mono-grey-3;
+            }
+            .value {
+                span {
+                    color: $color-mono-black;
+                    font-weight: $font-weight-large;
+                }
+            }
+            .no-answer {
+                span {
+                    color: $color-mono-grey;
+                }
+            }
+        }
+    }
+    .question-row:not(:last-child) {
+        margin-bottom: $spacing-default;
+    }
+}

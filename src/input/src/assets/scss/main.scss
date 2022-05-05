@@ -1,0 +1,301 @@
+@import "../../../../style/lib/scss/variables.scss";
+@import "../../../../style/lib/scss/icons.scss";
+@import "../../../../style/lib/scss/ant/input.scss";
+.mh-input-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        margin-right: $spacing-small;
+        cursor: pointer;
+    }
+    margin-bottom: $spacing-xsmall;
+    cursor: pointer;
+    .mh-icon {
+        width: $icon-size-default;
+        height: $icon-size-default;
+        fill: $color-mono-grey;
+        outline: none;
+    }
+}
+
+.mh-input {
+    .ant-input {
+        min-width: 100px;
+        max-width: 100%;
+        padding: 11px $spacing-medium !important;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        font-weight: $font-weight-small;
+        box-shadow: none;
+        &::placeholder {
+            color: $color-mono-grey-2;
+        }
+        &:hover {
+            background-color: rgba($color-mono-black, 0.04);
+            border: $border-size-default solid $color-mono-grey;
+        }
+        &:focus {
+            border-color: $color-primary-blue;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        &.error {
+            border: $border-size-default solid $color-primary-red;
+        }
+        &.ant-input-disabled {
+            background-color: transparent;
+            color: $color-mono-grey;
+            border-color: $color-mono-grey;
+            &::placeholder {
+                color: $color-mono-grey;
+            }
+            &:hover {
+                border-color: $color-mono-grey;
+            }
+        }
+    }
+    .ant-input,
+    .ant-input-affix-wrapper {
+        border-radius: $border-radius-default;
+        background: transparent;
+        transition: background-color 0.5s ease, border 0.5s ease;
+        border: $border-size-default solid $color-mono-grey-2;
+        color: $color-mono-black;
+    }
+    .ant-input-affix-wrapper {
+        margin: $spacing-xxsmall;
+        padding: $spacing-xxsmall;
+        .ant-input {
+            background: none;
+            border: none !important;
+        }
+        .ant-input-prefix,
+        .ant-input-suffix {
+            margin: $spacing-xxsmall !important;
+            padding: $spacing-xxsmall !important;
+            background: transparent;
+            .anticon {
+                margin: $spacing-xxsmall;
+            }
+            svg {
+                width: $icon-size-default;
+                height: $icon-size-default;
+                fill: $color-mono-grey-2;
+            }
+        }
+        .ant-input-prefix {
+            svg {
+                margin-left: $spacing-medium;
+            }
+        }
+        .ant-input-suffix {
+            svg {
+                margin-right: $spacing-medium;
+            }
+            .ant-input-clear-icon {
+                svg {
+                    display: none;
+                }
+                &::after {
+                    @include close-icon();
+                    content: "";
+                    width: 14px;
+                    height: 14px;
+                    display: block;
+                    margin-right: $spacing-medium;
+                }
+            }
+        }
+        &:hover {
+            background-color: rgba($color-mono-black, 0.04);
+            border: $border-size-default solid $color-mono-grey;
+        }
+        &.error {
+            border: $border-size-default solid $color-primary-red;
+            .ant-input-prefix,
+            .ant-input-suffix {
+                svg {
+                    fill: $color-primary-red;
+                }
+            }
+        }
+        .ant-input-disabled {
+            .ant-input-prefix,
+            .ant-input-suffix {
+                svg {
+                    fill: $color-mono-grey;
+                }
+            }
+        }
+        &.ant-input-affix-wrapper-disabled {
+            background-color: transparent;
+            color: $color-mono-grey;
+            border-color: $color-mono-grey;
+            svg {
+                fill: $color-mono-grey;
+            }
+        }
+    }
+    .ant-input-affix-wrapper-focused {
+        border-color: $color-primary-blue;
+        outline: none;
+        box-shadow: none;
+        &:hover:not(.error) {
+            border-color: $color-primary-blue;
+        }
+        .ant-input-prefix,
+        .ant-input-suffix {
+            svg {
+                fill: $color-primary-blue;
+            }
+            .ant-input-clear-icon {
+                &::after {
+                    @include close-icon("%232196f3");
+                }
+            }
+        }
+    }
+}
+
+
+/* Tel */
+
+.mh-tel-input {
+    border: $border-size-default solid $color-mono-grey-2;
+    border-radius: $border-radius-default;
+    .ant-input-group-addon {
+        background: transparent;
+        border: none;
+        margin: $spacing-xxsmall;
+    }
+    .ant-input-wrapper {
+        .ant-input {
+            border: none;
+            background: none;
+            padding-left: $spacing-xxsmall !important;
+        }
+    }
+    .ant-select {
+        min-width: 80px;
+        .ant-select-selection-search {
+            .ant-select-selection-search-input {
+                caret-color: $color-mono-grey-2;
+                text-align: center;
+                font-family: Inter;
+                font-size: $font-size-default;
+                color: $color-mono-grey-2;
+            }
+        }
+        .ant-select-selection-item {
+            font-family: Inter;
+            font-size: $font-size-default;
+            color: $color-mono-grey-2;
+        }
+        .ant-select-selector {
+            border: none !important;
+            box-shadow: none !important;
+            padding: $spacing-xxsmall;
+            height: auto !important;
+        }
+        .ant-select-arrow {
+            width: 14px;
+            height: 14px;
+            top: 50%;
+            margin-top: -8px;
+            svg {
+                fill: $color-mono-grey-2;
+                width: 14px;
+            }
+        }
+    }
+    &.error {
+        border: $border-size-default solid $color-primary-red !important;
+    }
+    &.disabled {
+        background-color: $color-mono-light-grey;
+        color: $color-mono-grey;
+    }
+    &:hover {
+        background-color: rgba($color-mono-black, 0.04);
+        border: $border-size-default solid $color-mono-grey;
+    }
+    &:focus-within {
+        border-color: $color-primary-blue;
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+
+/* Password */
+
+.ant-input-password {
+    .anticon {
+        svg {
+            display: none;
+        }
+        &::after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            display: block;
+            margin-right: $spacing-medium;
+        }
+        &.anticon-eye-invisible {
+            &::after {
+                @include password-icon-show();
+            }
+        }
+        &.anticon-eye {
+            &::after {
+                @include password-icon-hide();
+            }
+        }
+    }
+    &.ant-input-affix-wrapper-focused {
+        .ant-input-password-icon {
+            &.anticon-eye-invisible {
+                &::after {
+                    @include password-icon-show("%232196f3");
+                }
+            }
+            &.anticon-eye {
+                &::after {
+                    @include password-icon-hide("%232196f3");
+                }
+            }
+        }
+    }
+}
+
+.error {
+    .ant-input-prefix,
+    .ant-input-suffix {
+        svg {
+            fill: $color-primary-red;
+        }
+        .ant-input-clear-icon {
+            &::after {
+                @include close-icon("%23f44336");
+            }
+        }
+        .ant-input-password-icon {
+            &.anticon-eye-invisible {
+                &::after {
+                    @include password-icon-show("%23f44336");
+                }
+            }
+            &.anticon-eye {
+                &::after {
+                    @include password-icon-hide("%23f44336");
+                }
+            }
+        }
+    }
+}

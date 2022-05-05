@@ -1,0 +1,21 @@
+@import "../../../style/lib/scss/variables.scss";
+.mh-divider {
+    width: 100%;
+    border: none;
+    background-color: $transparent-hover-3;
+    margin: $spacing-xxsmall;
+    padding: $spacing-xxsmall;
+    &.size-thin {
+        height: 1px;
+        background-color: $transparent-hover-3;
+    }
+    &.size-normal {
+        height: 4px;
+    }
+    &.size-medium {
+        height: $spacing-small;
+    }
+    &.size-bold {
+        height: $spacing-default;
+    }
+}

@@ -1,0 +1,143 @@
+@import "../../../style/lib/scss/variables.scss";
+@import "../../../style/lib/scss/ant/notification.scss";
+.ant-notification-notice {
+    background: $color-mono-white;
+    border: $border-size-default solid $transparent-hover;
+    box-sizing: border-box;
+    box-shadow: $spacing-xxsmall $spacing-medium $spacing-default $shadow-1;
+    border-radius: $border-radius-xxlarge;
+    min-height: 54px;
+    svg {
+        margin-top: $spacing-xxsmall;
+        margin-left: $spacing-xxsmall;
+        width: $icon-size-default;
+        height: $icon-size-default;
+    }
+    .ant-notification-notice-content {
+        margin: $spacing-xxsmall;
+        padding: $spacing-xxsmall;
+        .ant-btn-default {
+            color: $color-mono-black;
+            &:hover {
+                color: $color-mono-black;
+            }
+        }
+    }
+    .ant-notification-notice-icon {
+        margin-left: $spacing-xxsmall;
+        width: $icon-size-default;
+        height: $icon-size-default;
+    }
+    .ant-notification-notice-message {
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+    }
+    .ant-notification-notice-description {
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        margin-left: -10px;
+        margin-right: 16px;
+        color: $color-mono-black;
+        margin-top: $spacing-default;
+        margin-bottom: $spacing-default;
+        max-width: 360px;
+        text-align: start;
+    }
+    .anticon-close {
+        svg {
+            margin-top: $spacing-xxsmall;
+            margin-right: $spacing-xxsmall;
+            width: $spacing-default;
+            height: $spacing-default;
+            fill: $color-mono-grey;
+            background: $color-mono-white;
+        }
+    }
+    .ant-notification-notice-btn {
+        position: absolute;
+        left: 400px;
+    }
+    &.success {
+        background-color: $color-secondary-participant;
+        .ant-notification-notice-message {
+            color: $color-primary-green;
+        }
+        svg {
+            fill: $color-primary-participant;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.title {
+        min-height: 68px;
+        .ant-notification-notice-message {
+            position: absolute;
+            top: 8px;
+            left: 48px;
+            margin: 0px;
+            font-weight: $font-weight-large;
+            font-size: $font-size-default;
+            line-height: $line-height-default;
+        }
+        .ant-notification-notice-icon {
+            position: absolute;
+            top: 8px;
+            left: 24px;
+        }
+        .ant-notification-notice-description {
+            margin-left: 12px;
+            margin-top: 30px;
+        }
+    }
+    &.error {
+        background-color: $color-secondary-red;
+        .ant-notification-notice-message {
+            color: $color-primary-red;
+        }
+        svg {
+            fill: $color-primary-red;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.info {
+        background-color: $color-secondary-blue;
+        .ant-notification-notice-message {
+            color: $color-primary-blue;
+        }
+        svg {
+            fill: $color-primary-blue;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+    &.hint {
+        background-color: $color-secondary-yellow;
+        .ant-notification-notice-message {
+            color: $color-primary-onsite;
+        }
+        svg {
+            fill: $color-primary-onsite;
+        }
+        .anticon-close {
+            svg {
+                fill: $color-mono-grey-2;
+            }
+        }
+    }
+}
+
+.ant-notification-close-x {
+    display: none;
+}
