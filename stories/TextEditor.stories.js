@@ -1,8 +1,14 @@
 import { storiesOf } from "@storybook/vue3";
 import MhTextEditor from "../src/text-editor/index";
+import { defineAsyncComponent } from "vue";
 
 storiesOf("TextEditor", module).add("All", () => ({
-    components: { MhTextEditor },
+    components: {
+        MhTextEditor: defineAsyncComponent({
+            loader: () =>
+                import ("../src/text-editor/src/index.vue"),
+        }),
+    },
     data() {
         return {
             text1: "<p><b>Gandalf</b> the grey</p>",
@@ -17,7 +23,7 @@ storiesOf("TextEditor", module).add("All", () => ({
                 "blockquote",
                 "link",
                 "image",
-                { align: "left" },
+                { align: "" }, //left
                 { align: "center" },
                 { align: "right" },
                 { list: "ordered" },

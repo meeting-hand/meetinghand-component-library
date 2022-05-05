@@ -1,7 +1,7 @@
 {
     "name": "@meetinghand/lib",
     "description": "MeetingHand Components",
-    "version": "0.1.01",
+    "version": "0.1.04",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/meeting-hand/meetinghand-component-library.git"
@@ -54,6 +54,7 @@
         "ant-design-vue": "2.1.4",
         "cleave.js": "^1.6.0",
         "lodash": "^4.17.21",
-        "@types/cleave.js": "^1.4.6"
+        "@types/cleave.js": "^1.4.6",
+        "@types/quill": "^2.0.9"
     }
 }

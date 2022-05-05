@@ -83,7 +83,7 @@ export default defineComponent({
           "blockquote",
           "link",
           "image",
-          { align: "left" },
+          { align: "" }, //left
           { align: "center" },
           { align: "right" },
           { list: "ordered" },
@@ -145,7 +145,7 @@ export default defineComponent({
     icons.list.bullet = MhEditorIcons.bullet;
 
     icons.align.center = MhEditorIcons.center;
-    icons.align.left = MhEditorIcons.left;
+    icons.align[""] = MhEditorIcons.left;
     icons.align.right = MhEditorIcons.right;
     icons.script.sub = MhEditorIcons.sub;
     icons.script.super = MhEditorIcons.super;
