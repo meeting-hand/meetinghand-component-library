@@ -37,7 +37,7 @@ export default defineComponent({
   },
   props: {
     emojis: {
-      type: Array as () => any[],
+      type: Array as () => string[],
       default: () => [
         "&#x1F600;",
         "&#x1F44F;",

@@ -26,7 +26,7 @@ export default defineComponent({
       validator: (_v: any) => ["default", "palette"].includes(_v),
     },
     colors: {
-      type: Array as () => any[],
+      type: Array as () => string[],
       default: () => [
         "#6421F3",
         "#3F51B5",

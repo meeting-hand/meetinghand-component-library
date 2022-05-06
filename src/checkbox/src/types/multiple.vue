@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 export default defineComponent({
   name: "MhCheckboxMultiple",
   props: {
@@ -63,7 +64,7 @@ export default defineComponent({
         if (!value) {
           this.$emit(
             "update:modelValue",
-            this.modelValue.filter((_v) => _v !== this.data)
+            this.modelValue?.filter((_v) => _v !== this.data)
           );
         } else {
           this.$emit(
