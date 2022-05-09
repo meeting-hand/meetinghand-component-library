@@ -2,9 +2,10 @@
 @import "../../../style/lib/scss/ant/switch.scss";
 .ant-switch {
     background-color: $color-mono-light-grey-5;
+    border-color: $color-mono-light-grey-5;
     &::after {
-        background-color: $color-primary-blue;
-        top: 1.5px;
+        background-color: $color-mono-white;
+        top: 8%;
     }
 }
 
@@ -33,6 +34,6 @@
     }
     &::after {
         background: $color-mono-grey;
-        top: 1.5px;
+        top: 10%;
     }
 }
