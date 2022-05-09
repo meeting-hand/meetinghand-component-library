@@ -23,7 +23,7 @@
     border: $border-size-default solid $color-mono-grey;
     border-color: $color-mono-grey;
     &.ant-switch-checked {
-        background: #b6b6b6;
+        background: $color-mono-grey;
         &::after {
             background-color: $color-mono-light-grey-5;
         }
