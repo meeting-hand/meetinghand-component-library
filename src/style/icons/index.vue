@@ -158,6 +158,7 @@ const iconList = [
   "system-decrease",
   "calendar-over-due",
   "plug-disconnected",
+  "ui-record",
 ];
 
 export default defineComponent({
