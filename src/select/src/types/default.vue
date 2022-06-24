@@ -17,7 +17,7 @@
   >
     <template v-slot:notFoundContent>
       <div class="mh-select-empty-state">
-        <mh-icon name="status-error" />
+        <mh-icon name="system-status-error" />
         <span>{{ emptyStateDescription }}</span>
       </div>
     </template>
