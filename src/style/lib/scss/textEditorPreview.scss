@@ -402,3 +402,13 @@
     height: auto;
     max-width: 100%;
 }
+
+.ql-preview sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+.ql-preview sup {
+    vertical-align: super;
+    font-size: smaller;
+}

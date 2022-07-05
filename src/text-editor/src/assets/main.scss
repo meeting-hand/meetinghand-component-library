@@ -156,6 +156,15 @@
                 font-size: $font-size-large;
                 line-height: $line-height-default;
             }
+            sub {
+                vertical-align: sub;
+                font-size: smaller;
+            }
+
+            sup {
+                vertical-align: super;
+                font-size: smaller;
+            }
         }
         &:focus-within {
             border: $border-size-default solid $color-primary-blue;
