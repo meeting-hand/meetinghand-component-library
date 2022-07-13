@@ -147,14 +147,14 @@
                 font-style: normal;
                 font-weight: normal;
                 font-size: $font-size-large;
-                line-height: $line-height-default;
+                line-height: $line-height-large;
                 color: $color-mono-black;
             }
             &::before {
                 font-style: normal;
                 color: $color-mono-grey;
                 font-size: $font-size-large;
-                line-height: $line-height-default;
+                line-height: $line-height-large;
             }
             sub {
                 vertical-align: sub;
