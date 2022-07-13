@@ -4,7 +4,7 @@
       :is="type"
       :topic="topic"
       :title="title"
-      :authors="authors"
+      :authors="JSON.parse(JSON.stringify(authors))"
       :body="body"
       :keywords="keywords"
       :references="references"
