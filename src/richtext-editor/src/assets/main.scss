@@ -1,0 +1,50 @@
+@import "../../../style/lib/scss/colors.scss";
+@import "../../../style/lib/scss/variables.scss";
+.mh-rich-text-editor {
+    .mh-text-editor-label {
+        font-weight: $font-weight-default;
+        font-size: $font-size-default;
+        line-height: $line-height-default;
+        color: $color-mono-black;
+        margin-bottom: $spacing-xsmall;
+        display: block;
+    }
+    .mh-text-editor-container {
+        width: 832px;
+        border: $border-size-default solid $color-mono-grey;
+        box-sizing: border-box;
+        border-radius: $border-radius-xxlarge;
+        &.error {
+            border: $border-size-default solid $color-primary-red;
+            &:focus-within {
+                border: $border-size-default solid $color-primary-red;
+                box-sizing: border-box;
+                border-top-left-radius: $border-radius-xxlarge;
+                border-top-right-radius: $border-radius-xxlarge;
+            }
+        }
+        &.disabled {
+            background: $color-mono-light-grey-3;
+            cursor: not-allowed;
+            pointer-events: none;
+            .ql-toolbar {
+                background: $color-mono-light-grey-3 !important;
+            }
+            .ql-snow {
+                background: $color-mono-light-grey-3;
+            }
+            button {
+                pointer-events: none;
+            }
+        }
+        .editor-footer {
+            border-top: $border-size-default solid $color-mono-light-grey-5;
+            margin: $spacing-xxsmall $spacing-default;
+            padding: $spacing-small $spacing-xxsmall;
+            color: $color-mono-grey-2;
+            font-size: $font-size-small;
+            line-height: $line-height-small;
+            text-align: right;
+        }
+    }
+}
