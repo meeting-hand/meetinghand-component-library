@@ -45,7 +45,7 @@
     "peerDependencies": {
         "vue-inline-svg": "^3.1.0",
         "accounting": "^0.4.1",
-        "quill": "^1.3.6",
+        "quill": "^1.3.7",
         "quill-better-table": "^1.2.10",
         "quill-blot-formatter": "^1.0.5",
         "quill-image-drop-module": "^1.0.3",
