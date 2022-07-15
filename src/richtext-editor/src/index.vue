@@ -121,7 +121,7 @@ export default {
       default: null,
     },
   },
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "setEditorInstance"],
   setup(props, { emit }) {
     const errorStatus = computed(() => props.hasError || props.errorMessage);
 
@@ -148,7 +148,7 @@ export default {
     };
 
     const editorSetup = (editor) => {
-      //console.log("SETUP =>", editor);
+      emit("setEditorInstance", editor);
     };
 
     return {
