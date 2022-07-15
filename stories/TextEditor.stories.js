@@ -1,5 +1,4 @@
 import { storiesOf } from "@storybook/vue3";
-import MhTextEditor from "../src/text-editor/index";
 import { defineAsyncComponent } from "vue";
 
 storiesOf("TextEditor", module).add("All", () => ({
