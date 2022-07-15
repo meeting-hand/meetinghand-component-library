@@ -13,7 +13,7 @@ storiesOf("RichTextEditor", module).add("All", () => ({
             text1: "<p><b>Gandalf</b> the grey</p>",
             text2: "",
             text3: "",
-            text4: "",
+            text4: "this is disabled!",
             toolbar: "undo redo | casechange blocks | bold italic backcolor forecolor link image superscript subscript | \
            alignleft aligncenter alignright alignjustify | \
            bullist numlst outdent indent table charmap fullscreen | removeformat | a11ycheck code help",

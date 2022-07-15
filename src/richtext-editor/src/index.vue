@@ -11,6 +11,7 @@
     >
       <editor
         api-key="009kx8n78zv67cnjbxjtr879m76r37n9od3j1ozckgu9tx9x"
+        :ref="elementRef"
         :init="{
           height: 500,
           menubar: false,
@@ -43,6 +44,7 @@
           paste_as_text: true,
           file_picker_types: 'image',
           setup: editorSetup,
+          readonly: readOnly,
         }"
         v-model="value"
       />
