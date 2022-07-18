@@ -10,13 +10,12 @@
       ]"
     >
       <editor
-        api-key="009kx8n78zv67cnjbxjtr879m76r37n9od3j1ozckgu9tx9x"
-        :ref="elementRef"
+        :tinymce-script-src="selfHostedUrl"
         :init="{
           height: 500,
           menubar: false,
           plugins:
-            'paste preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
+            'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
           toolbar: toolbar,
           images_upload_handler: imageUploadHandler,
           file_picker_types: 'image',
@@ -70,7 +69,7 @@
   </div>
 </template>
 <script>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 import Editor from "@tinymce/tinymce-vue";
 import { imageUpload } from "./utils/imageUpload";
@@ -135,6 +134,9 @@ export default {
   },
   emits: ["update:modelValue", "setEditorInstance"],
   setup(props, { emit }) {
+    const selfHostedUrl =
+      "https://s3.eu-central-1.amazonaws.com/meetinghand/assets/tinymce/tinymce.min.js";
+
     const errorStatus = computed(() => props.hasError || props.errorMessage);
 
     const value = computed({
@@ -148,16 +150,8 @@ export default {
 
     const wordCount = computed(() => value.value.split(/\b\S+\b/).length - 1);
 
-    const imageUploadHandler = (blobInfo, success, failure, progress) => {
-      imageUpload(
-        props.imageUploadUrl,
-        props.bearerToken,
-        blobInfo,
-        success,
-        failure,
-        progress
-      );
-    };
+    const imageUploadHandler = (blobInfo, progress) =>
+      imageUpload(props.imageUploadUrl, props.bearerToken, blobInfo, progress);
 
     const editorSetup = (editor) => {
       emit("setEditorInstance", editor);
@@ -169,6 +163,7 @@ export default {
       wordCount,
       imageUploadHandler,
       editorSetup,
+      selfHostedUrl,
     };
   },
 };

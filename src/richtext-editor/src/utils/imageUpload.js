@@ -1,65 +1,53 @@
-export const imageUpload = async(
-    url,
-    bearerToken,
-    blobInfo,
-    success,
-    failure,
-    progress
-) => {
-    var xhr, formData;
+export const imageUpload = (url, bearerToken, blobInfo, progress) =>
+    new Promise(async(resolve, reject) => {
+        const toBase64 = (file) =>
+            new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = (error) => reject(error);
+            });
 
-    const toBase64 = (file) =>
-        new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = (error) => reject(error);
-        });
-
-    xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-    if (bearerToken) {
-        xhr.setRequestHeader("authorization", bearerToken);
-    }
-    xhr.open("POST", url);
-
-    xhr.upload.onprogress = function(e) {
-        progress((e.loaded / e.total) * 100);
-    };
-
-    xhr.onload = function() {
-        var json;
-
-        if (xhr.status === 403) {
-            failure("HTTP Error: " + xhr.status, { remove: true });
-            return;
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        if (bearerToken) {
+            xhr.setRequestHeader("authorization", bearerToken);
         }
+        xhr.open("POST", url);
 
-        if (xhr.status < 200 || xhr.status >= 300) {
-            failure("HTTP Error: " + xhr.status);
-            return;
-        }
+        xhr.upload.onprogress = (e) => {
+            progress((e.loaded / e.total) * 100);
+        };
 
-        json = JSON.parse(xhr.responseText);
+        xhr.onload = () => {
+            if (xhr.status === 403) {
+                reject({ message: "HTTP Error: " + xhr.status, remove: true });
+                return;
+            }
 
-        if (!json || typeof json.data.url != "string") {
-            failure("Invalid JSON: " + xhr.responseText);
-            return;
-        }
+            if (xhr.status < 200 || xhr.status >= 300) {
+                reject("HTTP Error: " + xhr.status);
+                return;
+            }
 
-        console.log(json);
+            const json = JSON.parse(xhr.responseText);
 
-        success(json.data.url);
-    };
+            if (!json || typeof json.data.url != "string") {
+                reject("Invalid JSON: " + xhr.responseText);
+                return;
+            }
 
-    xhr.onerror = function() {
-        failure(
-            "Image upload failed due to a XHR Transport error. Code: " + xhr.status
-        );
-    };
+            resolve(json.data.url);
+        };
 
-    formData = new FormData();
-    formData.append("image", await toBase64(blobInfo.blob()));
+        xhr.onerror = () => {
+            reject(
+                "Image upload failed due to a XHR Transport error. Code: " + xhr.status
+            );
+        };
 
-    xhr.send(formData);
-};
+        const formData = new FormData();
+        formData.append("image", await toBase64(blobInfo.blob()));
+
+        xhr.send(formData);
+    });
