@@ -10,10 +10,10 @@ export const imageUpload = (url, bearerToken, blobInfo, progress) =>
 
         const xhr = new XMLHttpRequest();
         xhr.withCredentials = false;
+        xhr.open("POST", url);
         if (bearerToken) {
             xhr.setRequestHeader("authorization", bearerToken);
         }
-        xhr.open("POST", url);
 
         xhr.upload.onprogress = (e) => {
             progress((e.loaded / e.total) * 100);
