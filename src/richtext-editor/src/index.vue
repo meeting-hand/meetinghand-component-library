@@ -14,7 +14,7 @@
         :init="{
           height: 500,
           menubar: false,
-          plugins: plugins,
+          plugins: plugins(),
           toolbar: toolbar,
           images_upload_handler: imageUploadHandler,
           file_picker_types: 'image',
@@ -149,12 +149,14 @@ export default {
 
     const wordCount = computed(() => value.value.split(/\b\S+\b/).length - 1);
 
-    const plugins = computed(() => {
+    const plugins = () => {
+      const plugins =
+        "preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons";
       if (props.toolbar.includes("image")) {
-        return "preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons";
+        return plugins;
       }
-      return "preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons";
-    });
+      return plugins.replace("image", "");
+    };
 
     const imageUploadHandler = (blobInfo, progress) =>
       imageUpload(props.imageUploadUrl, props.bearerToken, blobInfo, progress);
