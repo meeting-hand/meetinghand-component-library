@@ -21,7 +21,7 @@ storiesOf("RichTextEditor", module).add("All", () => ({
 	},
 	template: `
       <h1>Default</h1>
-	  		<mh-text-editor elementRef="text1" v-model="text1" placeholder="Placeholder" label="Lorem ipsum" />
+	  		<mh-text-editor elementRef="text1" v-model="text1" placeholder="Placeholder" label="Lorem ipsum" :max-word-count="100" />
       	<br /><br />
 				{{ text1 }}
 

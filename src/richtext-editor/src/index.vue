@@ -72,6 +72,7 @@ import { computed, ref } from "vue";
 
 import Editor from "@tinymce/tinymce-vue";
 import { imageUpload } from "./utils/imageUpload";
+import { CountWords, html2String } from "../../utils/index";
 
 import "./assets/main.scss";
 
@@ -147,7 +148,7 @@ export default {
       },
     });
 
-    const wordCount = computed(() => value.value.split(/\b\S+\b/).length - 1);
+    const wordCount = computed(() => CountWords(html2String(value.value)));
 
     const plugins = () => {
       const plugins =
