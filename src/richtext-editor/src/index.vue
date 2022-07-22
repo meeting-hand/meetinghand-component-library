@@ -14,7 +14,7 @@
         :init="{
           height: 500,
           menubar: false,
-          plugins: plugins(),
+          plugins: plugins,
           toolbar: toolbar,
           images_upload_handler: imageUploadHandler,
           file_picker_types: 'image',
@@ -24,6 +24,9 @@
           image_caption: true,
           setup: editorSetup,
           readonly: readOnly,
+          quickbars_insert_toolbar: quickbarsInsertToolbar,
+          quickbars_selection_toolbar:
+            'bold italic underline | formatselect | bullist numlist | blockquote quicklink',
           color_map: [
             '#FFFFFF',
             '#FFFFFF',
@@ -150,14 +153,19 @@ export default {
 
     const wordCount = computed(() => CountWords(html2String(value.value)));
 
-    const plugins = () => {
-      const plugins =
-        "preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons";
-      if (props.toolbar.includes("image")) {
-        return plugins;
-      }
-      return plugins.replace("image", "");
-    };
+    const plugins = ref(
+      "preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons"
+    );
+
+    const quickbarsInsertToolbar = ref("image quicktable");
+
+    if (!props.toolbar.includes("image")) {
+      plugins.value = plugins.value.replace("image", "");
+      quickbarsInsertToolbar.value = quickbarsInsertToolbar.value.replace(
+        "image",
+        ""
+      );
+    }
 
     const imageUploadHandler = (blobInfo, progress) =>
       imageUpload(props.imageUploadUrl, props.bearerToken, blobInfo, progress);
@@ -174,6 +182,7 @@ export default {
       editorSetup,
       selfHostedUrl,
       plugins,
+      quickbarsInsertToolbar,
     };
   },
 };
