@@ -412,3 +412,13 @@
     vertical-align: super;
     font-size: smaller;
 }
+
+.ql-preview table,
+.ql-preview tbody,
+.ql-preview tfoot,
+.ql-preview thead,
+.ql-preview tr,
+.ql-preview th,
+.ql-preview td {
+    border: black;
+}
